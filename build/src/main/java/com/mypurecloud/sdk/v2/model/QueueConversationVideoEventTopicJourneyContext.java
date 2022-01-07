@@ -18,8 +18,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * QueueConversationVideoEventTopicJourneyContext
+ * A subset of the Journey System&#39;s data relevant to a part of a conversation (for external linkage and internal usage/context).
  */
+@ApiModel(description = "A subset of the Journey System's data relevant to a part of a conversation (for external linkage and internal usage/context).")
 
 public class QueueConversationVideoEventTopicJourneyContext  implements Serializable {
   

@@ -58,10 +58,12 @@ public class BotAggregationQuery  implements Serializable {
     BOTVERSION("botVersion"),
     CONVERSATIONID("conversationId"),
     EXTERNALCONTACTID("externalContactId"),
+    KNOWLEDGEBASEID("knowledgeBaseId"),
     LASTACTIONID("lastActionId"),
     LASTINPUTACTIONID("lastInputActionId"),
     MEDIATYPE("mediaType"),
-    MESSAGETYPE("messageType");
+    MESSAGETYPE("messageType"),
+    SELFSERVED("selfServed");
 
     private String value;
 

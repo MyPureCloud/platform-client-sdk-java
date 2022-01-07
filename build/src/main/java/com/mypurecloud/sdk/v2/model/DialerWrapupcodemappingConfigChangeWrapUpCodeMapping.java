@@ -82,13 +82,14 @@ public class DialerWrapupcodemappingConfigChangeWrapUpCodeMapping  implements Se
 
   
   /**
+   * The globally unique identifier for the object.
    **/
   public DialerWrapupcodemappingConfigChangeWrapUpCodeMapping id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -99,13 +100,14 @@ public class DialerWrapupcodemappingConfigChangeWrapUpCodeMapping  implements Se
 
   
   /**
+   * The UI-visible name of the object
    **/
   public DialerWrapupcodemappingConfigChangeWrapUpCodeMapping name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The UI-visible name of the object")
   @JsonProperty("name")
   public String getName() {
     return name;
@@ -116,13 +118,14 @@ public class DialerWrapupcodemappingConfigChangeWrapUpCodeMapping  implements Se
 
   
   /**
+   * Creation time of the entity
    **/
   public DialerWrapupcodemappingConfigChangeWrapUpCodeMapping dateCreated(Date dateCreated) {
     this.dateCreated = dateCreated;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Creation time of the entity")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
@@ -133,13 +136,14 @@ public class DialerWrapupcodemappingConfigChangeWrapUpCodeMapping  implements Se
 
   
   /**
+   * Last modified time of the entity
    **/
   public DialerWrapupcodemappingConfigChangeWrapUpCodeMapping dateModified(Date dateModified) {
     this.dateModified = dateModified;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Last modified time of the entity")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
@@ -150,13 +154,14 @@ public class DialerWrapupcodemappingConfigChangeWrapUpCodeMapping  implements Se
 
   
   /**
+   * Required for updates, must match the version number of the most recent update
    **/
   public DialerWrapupcodemappingConfigChangeWrapUpCodeMapping version(Integer version) {
     this.version = version;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Required for updates, must match the version number of the most recent update")
   @JsonProperty("version")
   public Integer getVersion() {
     return version;

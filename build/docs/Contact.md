@@ -46,6 +46,7 @@ title: Contact
 | HOME | &quot;HOME&quot; |
 | MOBILE | &quot;MOBILE&quot; |
 | MAIN | &quot;MAIN&quot; |
+| OTHER | &quot;OTHER&quot; |
 {: class="table table-striped"}
 
 

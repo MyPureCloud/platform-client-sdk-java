@@ -36,16 +36,16 @@ public class ConversationCallbackEventTopicVoicemail  implements Serializable {
     }
   }
   /**
-   * Gets or Sets uploadStatus
+   * current state of the voicemail upload
    */
  @JsonDeserialize(using = UploadStatusEnumDeserializer.class)
   public enum UploadStatusEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    PENDING("PENDING"),
-    COMPLETE("COMPLETE"),
-    FAILED("FAILED"),
-    TIMEOUT("TIMEOUT"),
-    NONE("NONE");
+    PENDING("pending"),
+    COMPLETE("complete"),
+    FAILED("failed"),
+    TIMEOUT("timeout"),
+    NONE("none");
 
     private String value;
 
@@ -76,13 +76,14 @@ public class ConversationCallbackEventTopicVoicemail  implements Serializable {
 
   
   /**
+   * The voicemail id
    **/
   public ConversationCallbackEventTopicVoicemail id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The voicemail id")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -93,13 +94,14 @@ public class ConversationCallbackEventTopicVoicemail  implements Serializable {
 
   
   /**
+   * current state of the voicemail upload
    **/
   public ConversationCallbackEventTopicVoicemail uploadStatus(UploadStatusEnum uploadStatus) {
     this.uploadStatus = uploadStatus;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "current state of the voicemail upload")
   @JsonProperty("uploadStatus")
   public UploadStatusEnum getUploadStatus() {
     return uploadStatus;

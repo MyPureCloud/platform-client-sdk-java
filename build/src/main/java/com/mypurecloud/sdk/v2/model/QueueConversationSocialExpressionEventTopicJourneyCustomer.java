@@ -15,8 +15,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * QueueConversationSocialExpressionEventTopicJourneyCustomer
+ * A subset of the Journey System&#39;s customer data at a point-in-time (for external linkage and internal usage/context)
  */
+@ApiModel(description = "A subset of the Journey System's customer data at a point-in-time (for external linkage and internal usage/context)")
 
 public class QueueConversationSocialExpressionEventTopicJourneyCustomer  implements Serializable {
   
@@ -25,13 +26,14 @@ public class QueueConversationSocialExpressionEventTopicJourneyCustomer  impleme
 
   
   /**
+   * An ID of a customer within the Journey System at a point-in-time.  Note that a customer entity can have multiple customerIds based on the stitching process.  Depending on the context within the PureCloud conversation, this may or may not be mutable.
    **/
   public QueueConversationSocialExpressionEventTopicJourneyCustomer id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "An ID of a customer within the Journey System at a point-in-time.  Note that a customer entity can have multiple customerIds based on the stitching process.  Depending on the context within the PureCloud conversation, this may or may not be mutable.")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -42,13 +44,14 @@ public class QueueConversationSocialExpressionEventTopicJourneyCustomer  impleme
 
   
   /**
+   * The type of the customerId within the Journey System (e.g. cookie).
    **/
   public QueueConversationSocialExpressionEventTopicJourneyCustomer idType(String idType) {
     this.idType = idType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The type of the customerId within the Journey System (e.g. cookie).")
   @JsonProperty("idType")
   public String getIdType() {
     return idType;

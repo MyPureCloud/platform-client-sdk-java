@@ -35,13 +35,13 @@ public class ConversationEventTopicDisconnectReason  implements Serializable {
     }
   }
   /**
-   * Gets or Sets type
+   * Disconnect reason protocol type.
    */
  @JsonDeserialize(using = TypeEnumDeserializer.class)
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    Q_850("Q_850"),
-    SIP("SIP");
+    Q850("q850"),
+    SIP("sip");
 
     private String value;
 
@@ -74,13 +74,14 @@ public class ConversationEventTopicDisconnectReason  implements Serializable {
 
   
   /**
+   * Disconnect reason protocol type.
    **/
   public ConversationEventTopicDisconnectReason type(TypeEnum type) {
     this.type = type;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Disconnect reason protocol type.")
   @JsonProperty("type")
   public TypeEnum getType() {
     return type;
@@ -91,13 +92,14 @@ public class ConversationEventTopicDisconnectReason  implements Serializable {
 
   
   /**
+   * Protocol specific reason code. See the Q.850 and SIP specs.
    **/
   public ConversationEventTopicDisconnectReason code(Integer code) {
     this.code = code;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Protocol specific reason code. See the Q.850 and SIP specs.")
   @JsonProperty("code")
   public Integer getCode() {
     return code;
@@ -108,13 +110,14 @@ public class ConversationEventTopicDisconnectReason  implements Serializable {
 
   
   /**
+   * Human readable English description of the disconnect reason.
    **/
   public ConversationEventTopicDisconnectReason phrase(String phrase) {
     this.phrase = phrase;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Human readable English description of the disconnect reason.")
   @JsonProperty("phrase")
   public String getPhrase() {
     return phrase;

@@ -19,6 +19,7 @@ import com.mypurecloud.sdk.v2.model.MetricDefinition;
 import com.mypurecloud.sdk.v2.model.GetMetricDefinitionsResponse;
 import com.mypurecloud.sdk.v2.model.GetMetricsResponse;
 import com.mypurecloud.sdk.v2.model.PerformanceProfile;
+import com.mypurecloud.sdk.v2.model.MemberListing;
 import com.mypurecloud.sdk.v2.model.GetMetricResponse;
 import com.mypurecloud.sdk.v2.model.GetProfilesResponse;
 import com.mypurecloud.sdk.v2.model.WorkdayMetricListing;
@@ -32,6 +33,11 @@ import com.mypurecloud.sdk.v2.model.SingleWorkdayAverageValues;
 import com.mypurecloud.sdk.v2.model.GamificationStatus;
 import com.mypurecloud.sdk.v2.model.ObjectiveTemplate;
 import com.mypurecloud.sdk.v2.model.GetTemplatesResponse;
+import com.mypurecloud.sdk.v2.model.Assignment;
+import com.mypurecloud.sdk.v2.model.AssignUsers;
+import com.mypurecloud.sdk.v2.model.AssignmentValidation;
+import com.mypurecloud.sdk.v2.model.ValidateAssignUsers;
+import com.mypurecloud.sdk.v2.model.TargetPerformanceProfile;
 import com.mypurecloud.sdk.v2.model.CreatePerformanceProfile;
 
 
@@ -44,6 +50,7 @@ import com.mypurecloud.sdk.v2.api.request.GetGamificationMetricdefinitionRequest
 import com.mypurecloud.sdk.v2.api.request.GetGamificationMetricdefinitionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationProfileRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationProfileMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationProfileMetricRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationProfileMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationProfileMetricsObjectivedetailsRequest;
@@ -73,6 +80,9 @@ import com.mypurecloud.sdk.v2.api.request.GetGamificationTemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileActivateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileDeactivateRequest;
+import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileMembersRequest;
+import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileMembersValidateRequest;
+import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileMetricLinkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationProfilesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutGamificationMetricRequest;
@@ -837,6 +847,85 @@ public class GamificationApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<PerformanceProfile> response = (ApiResponse<PerformanceProfile>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Members of a given performance profile
+   * 
+   * @param performanceProfileId Performance Profile Id (required)
+   * @return MemberListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MemberListing getGamificationProfileMembers(String performanceProfileId) throws IOException, ApiException {
+    return  getGamificationProfileMembers(createGetGamificationProfileMembersRequest(performanceProfileId));
+  }
+
+  /**
+   * Members of a given performance profile
+   * 
+   * @param performanceProfileId Performance Profile Id (required)
+   * @return MemberListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MemberListing> getGamificationProfileMembersWithHttpInfo(String performanceProfileId) throws IOException {
+    return getGamificationProfileMembers(createGetGamificationProfileMembersRequest(performanceProfileId).withHttpInfo());
+  }
+
+  private GetGamificationProfileMembersRequest createGetGamificationProfileMembersRequest(String performanceProfileId) {
+    return GetGamificationProfileMembersRequest.builder()
+            .withPerformanceProfileId(performanceProfileId)
+    
+            .build();
+  }
+
+  /**
+   * Members of a given performance profile
+   * 
+   * @param request The request object
+   * @return MemberListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MemberListing getGamificationProfileMembers(GetGamificationProfileMembersRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MemberListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MemberListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Members of a given performance profile
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MemberListing> getGamificationProfileMembers(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MemberListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MemberListing> response = (ApiResponse<MemberListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MemberListing> response = (ApiResponse<MemberListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -3252,6 +3341,259 @@ public class GamificationApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<PerformanceProfile> response = (ApiResponse<PerformanceProfile>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Assign members to a given performance profile
+   * 
+   * @param performanceProfileId Performance Profile Id (required)
+   * @param body assignUsers (required)
+   * @return Assignment
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Assignment postGamificationProfileMembers(String performanceProfileId, AssignUsers body) throws IOException, ApiException {
+    return  postGamificationProfileMembers(createPostGamificationProfileMembersRequest(performanceProfileId, body));
+  }
+
+  /**
+   * Assign members to a given performance profile
+   * 
+   * @param performanceProfileId Performance Profile Id (required)
+   * @param body assignUsers (required)
+   * @return Assignment
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Assignment> postGamificationProfileMembersWithHttpInfo(String performanceProfileId, AssignUsers body) throws IOException {
+    return postGamificationProfileMembers(createPostGamificationProfileMembersRequest(performanceProfileId, body).withHttpInfo());
+  }
+
+  private PostGamificationProfileMembersRequest createPostGamificationProfileMembersRequest(String performanceProfileId, AssignUsers body) {
+    return PostGamificationProfileMembersRequest.builder()
+            .withPerformanceProfileId(performanceProfileId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Assign members to a given performance profile
+   * 
+   * @param request The request object
+   * @return Assignment
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Assignment postGamificationProfileMembers(PostGamificationProfileMembersRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Assignment> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Assignment>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Assign members to a given performance profile
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Assignment> postGamificationProfileMembers(ApiRequest<AssignUsers> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Assignment>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Assignment> response = (ApiResponse<Assignment>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Assignment> response = (ApiResponse<Assignment>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Validate member assignment
+   * 
+   * @param performanceProfileId Performance Profile Id (required)
+   * @param body memberAssignments (required)
+   * @return AssignmentValidation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AssignmentValidation postGamificationProfileMembersValidate(String performanceProfileId, ValidateAssignUsers body) throws IOException, ApiException {
+    return  postGamificationProfileMembersValidate(createPostGamificationProfileMembersValidateRequest(performanceProfileId, body));
+  }
+
+  /**
+   * Validate member assignment
+   * 
+   * @param performanceProfileId Performance Profile Id (required)
+   * @param body memberAssignments (required)
+   * @return AssignmentValidation
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AssignmentValidation> postGamificationProfileMembersValidateWithHttpInfo(String performanceProfileId, ValidateAssignUsers body) throws IOException {
+    return postGamificationProfileMembersValidate(createPostGamificationProfileMembersValidateRequest(performanceProfileId, body).withHttpInfo());
+  }
+
+  private PostGamificationProfileMembersValidateRequest createPostGamificationProfileMembersValidateRequest(String performanceProfileId, ValidateAssignUsers body) {
+    return PostGamificationProfileMembersValidateRequest.builder()
+            .withPerformanceProfileId(performanceProfileId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Validate member assignment
+   * 
+   * @param request The request object
+   * @return AssignmentValidation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AssignmentValidation postGamificationProfileMembersValidate(PostGamificationProfileMembersValidateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AssignmentValidation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AssignmentValidation>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Validate member assignment
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AssignmentValidation> postGamificationProfileMembersValidate(ApiRequest<ValidateAssignUsers> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AssignmentValidation>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AssignmentValidation> response = (ApiResponse<AssignmentValidation>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AssignmentValidation> response = (ApiResponse<AssignmentValidation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Creates a linked metric
+   * 
+   * @param sourceProfileId Source Performance Profile Id (required)
+   * @param sourceMetricId Source Metric Id (required)
+   * @param body linkedMetric (required)
+   * @return Metric
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Metric postGamificationProfileMetricLink(String sourceProfileId, String sourceMetricId, TargetPerformanceProfile body) throws IOException, ApiException {
+    return  postGamificationProfileMetricLink(createPostGamificationProfileMetricLinkRequest(sourceProfileId, sourceMetricId, body));
+  }
+
+  /**
+   * Creates a linked metric
+   * 
+   * @param sourceProfileId Source Performance Profile Id (required)
+   * @param sourceMetricId Source Metric Id (required)
+   * @param body linkedMetric (required)
+   * @return Metric
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Metric> postGamificationProfileMetricLinkWithHttpInfo(String sourceProfileId, String sourceMetricId, TargetPerformanceProfile body) throws IOException {
+    return postGamificationProfileMetricLink(createPostGamificationProfileMetricLinkRequest(sourceProfileId, sourceMetricId, body).withHttpInfo());
+  }
+
+  private PostGamificationProfileMetricLinkRequest createPostGamificationProfileMetricLinkRequest(String sourceProfileId, String sourceMetricId, TargetPerformanceProfile body) {
+    return PostGamificationProfileMetricLinkRequest.builder()
+            .withSourceProfileId(sourceProfileId)
+    
+            .withSourceMetricId(sourceMetricId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Creates a linked metric
+   * 
+   * @param request The request object
+   * @return Metric
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Metric postGamificationProfileMetricLink(PostGamificationProfileMetricLinkRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Metric> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Metric>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Creates a linked metric
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Metric> postGamificationProfileMetricLink(ApiRequest<TargetPerformanceProfile> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Metric>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Metric> response = (ApiResponse<Metric>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Metric> response = (ApiResponse<Metric>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

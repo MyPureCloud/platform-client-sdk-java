@@ -10,9 +10,12 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.KpiResult;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -29,6 +32,7 @@ public class ComparisonPeriod  implements Serializable {
   private Long kpiTotalOff = null;
   private Long interactionCountOn = null;
   private Long interactionCountOff = null;
+  private List<KpiResult> kpiResults = new ArrayList<KpiResult>();
   private String selfUri = null;
 
   
@@ -88,6 +92,13 @@ public class ComparisonPeriod  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "KPI results for each metric")
+  @JsonProperty("kpiResults")
+  public List<KpiResult> getKpiResults() {
+    return kpiResults;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -113,12 +124,13 @@ public class ComparisonPeriod  implements Serializable {
         Objects.equals(this.kpiTotalOff, comparisonPeriod.kpiTotalOff) &&
         Objects.equals(this.interactionCountOn, comparisonPeriod.interactionCountOn) &&
         Objects.equals(this.interactionCountOff, comparisonPeriod.interactionCountOff) &&
+        Objects.equals(this.kpiResults, comparisonPeriod.kpiResults) &&
         Objects.equals(this.selfUri, comparisonPeriod.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, kpi, dateStarted, dateEnded, kpiTotalOn, kpiTotalOff, interactionCountOn, interactionCountOff, selfUri);
+    return Objects.hash(id, kpi, dateStarted, dateEnded, kpiTotalOn, kpiTotalOff, interactionCountOn, interactionCountOff, kpiResults, selfUri);
   }
 
   @Override
@@ -134,6 +146,7 @@ public class ComparisonPeriod  implements Serializable {
     sb.append("    kpiTotalOff: ").append(toIndentedString(kpiTotalOff)).append("\n");
     sb.append("    interactionCountOn: ").append(toIndentedString(interactionCountOn)).append("\n");
     sb.append("    interactionCountOff: ").append(toIndentedString(interactionCountOff)).append("\n");
+    sb.append("    kpiResults: ").append(toIndentedString(kpiResults)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -18,8 +18,9 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * QueueConversationSocialExpressionEventTopicWrapup
+ * Call wrap up or disposition data.
  */
+@ApiModel(description = "Call wrap up or disposition data.")
 
 public class QueueConversationSocialExpressionEventTopicWrapup  implements Serializable {
   
@@ -28,17 +29,17 @@ public class QueueConversationSocialExpressionEventTopicWrapup  implements Seria
   private List<String> tags = new ArrayList<String>();
   private Integer durationSeconds = null;
   private Date endTime = null;
-  private Object additionalProperties = null;
 
   
   /**
+   * The user configured wrap up code name.
    **/
   public QueueConversationSocialExpressionEventTopicWrapup code(String code) {
     this.code = code;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The user configured wrap up code name.")
   @JsonProperty("code")
   public String getCode() {
     return code;
@@ -49,13 +50,14 @@ public class QueueConversationSocialExpressionEventTopicWrapup  implements Seria
 
   
   /**
+   * Text entered by the agent to describe the call or disposition.
    **/
   public QueueConversationSocialExpressionEventTopicWrapup notes(String notes) {
     this.notes = notes;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Text entered by the agent to describe the call or disposition.")
   @JsonProperty("notes")
   public String getNotes() {
     return notes;
@@ -66,13 +68,14 @@ public class QueueConversationSocialExpressionEventTopicWrapup  implements Seria
 
   
   /**
+   * List of tags selected by the agent to describe the call or disposition.
    **/
   public QueueConversationSocialExpressionEventTopicWrapup tags(List<String> tags) {
     this.tags = tags;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of tags selected by the agent to describe the call or disposition.")
   @JsonProperty("tags")
   public List<String> getTags() {
     return tags;
@@ -83,13 +86,14 @@ public class QueueConversationSocialExpressionEventTopicWrapup  implements Seria
 
   
   /**
+   * The length of time in seconds that the agent spent doing after call work., Note, the format of utc-millisec should be ignored, our code generator needs it to generate a Long for us internally
    **/
   public QueueConversationSocialExpressionEventTopicWrapup durationSeconds(Integer durationSeconds) {
     this.durationSeconds = durationSeconds;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The length of time in seconds that the agent spent doing after call work., Note, the format of utc-millisec should be ignored, our code generator needs it to generate a Long for us internally")
   @JsonProperty("durationSeconds")
   public Integer getDurationSeconds() {
     return durationSeconds;
@@ -100,36 +104,20 @@ public class QueueConversationSocialExpressionEventTopicWrapup  implements Seria
 
   
   /**
+   * The timestamp when the wrapup was finished.
    **/
   public QueueConversationSocialExpressionEventTopicWrapup endTime(Date endTime) {
     this.endTime = endTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The timestamp when the wrapup was finished.")
   @JsonProperty("endTime")
   public Date getEndTime() {
     return endTime;
   }
   public void setEndTime(Date endTime) {
     this.endTime = endTime;
-  }
-
-  
-  /**
-   **/
-  public QueueConversationSocialExpressionEventTopicWrapup additionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Object getAdditionalProperties() {
-    return additionalProperties;
-  }
-  public void setAdditionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
   }
 
   
@@ -147,13 +135,12 @@ public class QueueConversationSocialExpressionEventTopicWrapup  implements Seria
         Objects.equals(this.notes, queueConversationSocialExpressionEventTopicWrapup.notes) &&
         Objects.equals(this.tags, queueConversationSocialExpressionEventTopicWrapup.tags) &&
         Objects.equals(this.durationSeconds, queueConversationSocialExpressionEventTopicWrapup.durationSeconds) &&
-        Objects.equals(this.endTime, queueConversationSocialExpressionEventTopicWrapup.endTime) &&
-        Objects.equals(this.additionalProperties, queueConversationSocialExpressionEventTopicWrapup.additionalProperties);
+        Objects.equals(this.endTime, queueConversationSocialExpressionEventTopicWrapup.endTime);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, notes, tags, durationSeconds, endTime, additionalProperties);
+    return Objects.hash(code, notes, tags, durationSeconds, endTime);
   }
 
   @Override
@@ -166,7 +153,6 @@ public class QueueConversationSocialExpressionEventTopicWrapup  implements Seria
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    durationSeconds: ").append(toIndentedString(durationSeconds)).append("\n");
     sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

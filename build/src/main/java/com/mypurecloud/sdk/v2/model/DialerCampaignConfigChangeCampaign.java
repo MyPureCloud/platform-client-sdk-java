@@ -29,11 +29,6 @@ import java.io.Serializable;
 
 public class DialerCampaignConfigChangeCampaign  implements Serializable {
   
-  private String id = null;
-  private String name = null;
-  private Date dateCreated = null;
-  private Date dateModified = null;
-  private Integer version = null;
   private DialerCampaignConfigChangeUriReference contactList = null;
   private DialerCampaignConfigChangeUriReference queue = null;
 
@@ -50,17 +45,17 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
     }
   }
   /**
-   * Gets or Sets dialingMode
+   * dialing mode of the campaign
    */
  @JsonDeserialize(using = DialingModeEnumDeserializer.class)
   public enum DialingModeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    AGENTLESS("AGENTLESS"),
-    EXTERNAL("EXTERNAL"),
-    PREVIEW("PREVIEW"),
-    POWER("POWER"),
-    PREDICTIVE("PREDICTIVE"),
-    PROGRESSIVE("PROGRESSIVE");
+    AGENTLESS("agentless"),
+    EXTERNAL("external"),
+    PREVIEW("preview"),
+    POWER("power"),
+    PREDICTIVE("predictive"),
+    PROGRESSIVE("progressive");
 
     private String value;
 
@@ -110,11 +105,11 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
  @JsonDeserialize(using = CampaignStatusEnumDeserializer.class)
   public enum CampaignStatusEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    ON("ON"),
-    OFF("OFF"),
-    COMPLETE("COMPLETE"),
-    STOPPING("STOPPING"),
-    INVALID("INVALID");
+    ON("on"),
+    OFF("off"),
+    COMPLETE("complete"),
+    STOPPING("stopping"),
+    INVALID("invalid");
 
     private String value;
 
@@ -163,92 +158,11 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
   private List<DialerCampaignConfigChangeUriReference> contactListFilters = new ArrayList<DialerCampaignConfigChangeUriReference>();
   private DialerCampaignConfigChangeUriReference division = null;
   private String agentOwnedColumn = null;
-  private Object additionalProperties = null;
-
-  
-  /**
-   **/
-  public DialerCampaignConfigChangeCampaign id(String id) {
-    this.id = id;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("id")
-  public String getId() {
-    return id;
-  }
-  public void setId(String id) {
-    this.id = id;
-  }
-
-  
-  /**
-   **/
-  public DialerCampaignConfigChangeCampaign name(String name) {
-    this.name = name;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("name")
-  public String getName() {
-    return name;
-  }
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  
-  /**
-   **/
-  public DialerCampaignConfigChangeCampaign dateCreated(Date dateCreated) {
-    this.dateCreated = dateCreated;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("dateCreated")
-  public Date getDateCreated() {
-    return dateCreated;
-  }
-  public void setDateCreated(Date dateCreated) {
-    this.dateCreated = dateCreated;
-  }
-
-  
-  /**
-   **/
-  public DialerCampaignConfigChangeCampaign dateModified(Date dateModified) {
-    this.dateModified = dateModified;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("dateModified")
-  public Date getDateModified() {
-    return dateModified;
-  }
-  public void setDateModified(Date dateModified) {
-    this.dateModified = dateModified;
-  }
-
-  
-  /**
-   **/
-  public DialerCampaignConfigChangeCampaign version(Integer version) {
-    this.version = version;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("version")
-  public Integer getVersion() {
-    return version;
-  }
-  public void setVersion(Integer version) {
-    this.version = version;
-  }
+  private String id = null;
+  private String name = null;
+  private Date dateCreated = null;
+  private Date dateModified = null;
+  private Integer version = null;
 
   
   /**
@@ -269,13 +183,14 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
 
   
   /**
+   * A UriReference for a resource
    **/
   public DialerCampaignConfigChangeCampaign queue(DialerCampaignConfigChangeUriReference queue) {
     this.queue = queue;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A UriReference for a resource")
   @JsonProperty("queue")
   public DialerCampaignConfigChangeUriReference getQueue() {
     return queue;
@@ -286,13 +201,14 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
 
   
   /**
+   * dialing mode of the campaign
    **/
   public DialerCampaignConfigChangeCampaign dialingMode(DialingModeEnum dialingMode) {
     this.dialingMode = dialingMode;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "dialing mode of the campaign")
   @JsonProperty("dialingMode")
   public DialingModeEnum getDialingMode() {
     return dialingMode;
@@ -303,13 +219,14 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
 
   
   /**
+   * A UriReference for a resource
    **/
   public DialerCampaignConfigChangeCampaign script(DialerCampaignConfigChangeUriReference script) {
     this.script = script;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A UriReference for a resource")
   @JsonProperty("script")
   public DialerCampaignConfigChangeUriReference getScript() {
     return script;
@@ -320,13 +237,14 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
 
   
   /**
+   * A UriReference for a resource
    **/
   public DialerCampaignConfigChangeCampaign edgeGroup(DialerCampaignConfigChangeUriReference edgeGroup) {
     this.edgeGroup = edgeGroup;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A UriReference for a resource")
   @JsonProperty("edgeGroup")
   public DialerCampaignConfigChangeUriReference getEdgeGroup() {
     return edgeGroup;
@@ -337,13 +255,14 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
 
   
   /**
+   * A UriReference for a resource
    **/
   public DialerCampaignConfigChangeCampaign site(DialerCampaignConfigChangeUriReference site) {
     this.site = site;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A UriReference for a resource")
   @JsonProperty("site")
   public DialerCampaignConfigChangeUriReference getSite() {
     return site;
@@ -371,13 +290,14 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
 
   
   /**
+   * the contact list phone columns to be called for the campaign
    **/
   public DialerCampaignConfigChangeCampaign phoneColumns(List<DialerCampaignConfigChangePhoneColumn> phoneColumns) {
     this.phoneColumns = phoneColumns;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "the contact list phone columns to be called for the campaign")
   @JsonProperty("phoneColumns")
   public List<DialerCampaignConfigChangePhoneColumn> getPhoneColumns() {
     return phoneColumns;
@@ -388,13 +308,14 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
 
   
   /**
+   * the targeted abandon rate percentage
    **/
   public DialerCampaignConfigChangeCampaign abandonRate(BigDecimal abandonRate) {
     this.abandonRate = abandonRate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "the targeted abandon rate percentage")
   @JsonProperty("abandonRate")
   public BigDecimal getAbandonRate() {
     return abandonRate;
@@ -405,13 +326,14 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
 
   
   /**
+   * identifiers of the do not call lists
    **/
   public DialerCampaignConfigChangeCampaign dncLists(List<DialerCampaignConfigChangeUriReference> dncLists) {
     this.dncLists = dncLists;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "identifiers of the do not call lists")
   @JsonProperty("dncLists")
   public List<DialerCampaignConfigChangeUriReference> getDncLists() {
     return dncLists;
@@ -422,13 +344,14 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
 
   
   /**
+   * A UriReference for a resource
    **/
   public DialerCampaignConfigChangeCampaign callableTimeSet(DialerCampaignConfigChangeUriReference callableTimeSet) {
     this.callableTimeSet = callableTimeSet;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A UriReference for a resource")
   @JsonProperty("callableTimeSet")
   public DialerCampaignConfigChangeUriReference getCallableTimeSet() {
     return callableTimeSet;
@@ -439,13 +362,14 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
 
   
   /**
+   * A UriReference for a resource
    **/
   public DialerCampaignConfigChangeCampaign callAnalysisResponseSet(DialerCampaignConfigChangeUriReference callAnalysisResponseSet) {
     this.callAnalysisResponseSet = callAnalysisResponseSet;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A UriReference for a resource")
   @JsonProperty("callAnalysisResponseSet")
   public DialerCampaignConfigChangeUriReference getCallAnalysisResponseSet() {
     return callAnalysisResponseSet;
@@ -456,13 +380,14 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
 
   
   /**
+   * caller id name to be displayed on the outbound call
    **/
   public DialerCampaignConfigChangeCampaign callerName(String callerName) {
     this.callerName = callerName;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "caller id name to be displayed on the outbound call")
   @JsonProperty("callerName")
   public String getCallerName() {
     return callerName;
@@ -473,13 +398,14 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
 
   
   /**
+   * caller id phone number to be displayed on the outbound call
    **/
   public DialerCampaignConfigChangeCampaign callerAddress(String callerAddress) {
     this.callerAddress = callerAddress;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "caller id phone number to be displayed on the outbound call")
   @JsonProperty("callerAddress")
   public String getCallerAddress() {
     return callerAddress;
@@ -490,13 +416,14 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
 
   
   /**
+   * for agentless campaigns, the number of outbound lines to be concurrently dialed
    **/
   public DialerCampaignConfigChangeCampaign outboundLineCount(Integer outboundLineCount) {
     this.outboundLineCount = outboundLineCount;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "for agentless campaigns, the number of outbound lines to be concurrently dialed")
   @JsonProperty("outboundLineCount")
   public Integer getOutboundLineCount() {
     return outboundLineCount;
@@ -507,13 +434,14 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
 
   
   /**
+   * a list of current error conditions associated with the campaign
    **/
   public DialerCampaignConfigChangeCampaign errors(List<DialerCampaignConfigChangeRestErrorDetail> errors) {
     this.errors = errors;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "a list of current error conditions associated with the campaign")
   @JsonProperty("errors")
   public List<DialerCampaignConfigChangeRestErrorDetail> getErrors() {
     return errors;
@@ -524,13 +452,14 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
 
   
   /**
+   * identifiers of the rule sets
    **/
   public DialerCampaignConfigChangeCampaign ruleSets(List<DialerCampaignConfigChangeUriReference> ruleSets) {
     this.ruleSets = ruleSets;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "identifiers of the rule sets")
   @JsonProperty("ruleSets")
   public List<DialerCampaignConfigChangeUriReference> getRuleSets() {
     return ruleSets;
@@ -541,13 +470,14 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
 
   
   /**
+   * for preview campaigns, indicator of whether the agent can skip a preview without placing a call
    **/
   public DialerCampaignConfigChangeCampaign skipPreviewDisabled(Boolean skipPreviewDisabled) {
     this.skipPreviewDisabled = skipPreviewDisabled;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "for preview campaigns, indicator of whether the agent can skip a preview without placing a call")
   @JsonProperty("skipPreviewDisabled")
   public Boolean getSkipPreviewDisabled() {
     return skipPreviewDisabled;
@@ -558,13 +488,14 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
 
   
   /**
+   * for preview campaigns, number of seconds before a call will be automatically placed. A value of 0 indicates no automatic placement of calls
    **/
   public DialerCampaignConfigChangeCampaign previewTimeOutSeconds(Integer previewTimeOutSeconds) {
     this.previewTimeOutSeconds = previewTimeOutSeconds;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "for preview campaigns, number of seconds before a call will be automatically placed. A value of 0 indicates no automatic placement of calls")
   @JsonProperty("previewTimeOutSeconds")
   public Integer getPreviewTimeOutSeconds() {
     return previewTimeOutSeconds;
@@ -575,13 +506,14 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
 
   
   /**
+   * for preview campaigns with multiple phone columns, indicator if one (true) or multiple (false) phone numbers will be available to call for each preview
    **/
   public DialerCampaignConfigChangeCampaign singleNumberPreview(Boolean singleNumberPreview) {
     this.singleNumberPreview = singleNumberPreview;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "for preview campaigns with multiple phone columns, indicator if one (true) or multiple (false) phone numbers will be available to call for each preview")
   @JsonProperty("singleNumberPreview")
   public Boolean getSingleNumberPreview() {
     return singleNumberPreview;
@@ -609,13 +541,14 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
 
   
   /**
+   * List of contact sort objects.
    **/
   public DialerCampaignConfigChangeCampaign contactSorts(List<DialerCampaignConfigChangeContactSort> contactSorts) {
     this.contactSorts = contactSorts;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of contact sort objects.")
   @JsonProperty("contactSorts")
   public List<DialerCampaignConfigChangeContactSort> getContactSorts() {
     return contactSorts;
@@ -626,13 +559,14 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
 
   
   /**
+   * for non-preview campaigns, how long to wait before dispositioning as 'no-answer', default 30 seconds
    **/
   public DialerCampaignConfigChangeCampaign noAnswerTimeout(Integer noAnswerTimeout) {
     this.noAnswerTimeout = noAnswerTimeout;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "for non-preview campaigns, how long to wait before dispositioning as 'no-answer', default 30 seconds")
   @JsonProperty("noAnswerTimeout")
   public Integer getNoAnswerTimeout() {
     return noAnswerTimeout;
@@ -643,13 +577,14 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
 
   
   /**
+   * The language the edge will use to analyze the call
    **/
   public DialerCampaignConfigChangeCampaign callAnalysisLanguage(String callAnalysisLanguage) {
     this.callAnalysisLanguage = callAnalysisLanguage;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The language the edge will use to analyze the call")
   @JsonProperty("callAnalysisLanguage")
   public String getCallAnalysisLanguage() {
     return callAnalysisLanguage;
@@ -660,13 +595,14 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
 
   
   /**
+   * The priority of this campaign relative to other campaigns
    **/
   public DialerCampaignConfigChangeCampaign priority(Integer priority) {
     this.priority = priority;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The priority of this campaign relative to other campaigns")
   @JsonProperty("priority")
   public Integer getPriority() {
     return priority;
@@ -677,13 +613,14 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
 
   
   /**
+   * List of contact filters
    **/
   public DialerCampaignConfigChangeCampaign contactListFilters(List<DialerCampaignConfigChangeUriReference> contactListFilters) {
     this.contactListFilters = contactListFilters;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of contact filters")
   @JsonProperty("contactListFilters")
   public List<DialerCampaignConfigChangeUriReference> getContactListFilters() {
     return contactListFilters;
@@ -694,13 +631,14 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
 
   
   /**
+   * A UriReference for a resource
    **/
   public DialerCampaignConfigChangeCampaign division(DialerCampaignConfigChangeUriReference division) {
     this.division = division;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A UriReference for a resource")
   @JsonProperty("division")
   public DialerCampaignConfigChangeUriReference getDivision() {
     return division;
@@ -711,13 +649,14 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
 
   
   /**
+   * For Preview Campaigns. Name of the contact column in the contact list containing the userIds of agents to assign specific contact records to.
    **/
   public DialerCampaignConfigChangeCampaign agentOwnedColumn(String agentOwnedColumn) {
     this.agentOwnedColumn = agentOwnedColumn;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "For Preview Campaigns. Name of the contact column in the contact list containing the userIds of agents to assign specific contact records to.")
   @JsonProperty("agentOwnedColumn")
   public String getAgentOwnedColumn() {
     return agentOwnedColumn;
@@ -728,19 +667,92 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
 
   
   /**
+   * The globally unique identifier for the object.
    **/
-  public DialerCampaignConfigChangeCampaign additionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
+  public DialerCampaignConfigChangeCampaign id(String id) {
+    this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Object getAdditionalProperties() {
-    return additionalProperties;
+  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
+  @JsonProperty("id")
+  public String getId() {
+    return id;
   }
-  public void setAdditionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
+  public void setId(String id) {
+    this.id = id;
+  }
+
+  
+  /**
+   * The UI-visible name of the object
+   **/
+  public DialerCampaignConfigChangeCampaign name(String name) {
+    this.name = name;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The UI-visible name of the object")
+  @JsonProperty("name")
+  public String getName() {
+    return name;
+  }
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  
+  /**
+   * Creation time of the entity
+   **/
+  public DialerCampaignConfigChangeCampaign dateCreated(Date dateCreated) {
+    this.dateCreated = dateCreated;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Creation time of the entity")
+  @JsonProperty("dateCreated")
+  public Date getDateCreated() {
+    return dateCreated;
+  }
+  public void setDateCreated(Date dateCreated) {
+    this.dateCreated = dateCreated;
+  }
+
+  
+  /**
+   * Last modified time of the entity
+   **/
+  public DialerCampaignConfigChangeCampaign dateModified(Date dateModified) {
+    this.dateModified = dateModified;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Last modified time of the entity")
+  @JsonProperty("dateModified")
+  public Date getDateModified() {
+    return dateModified;
+  }
+  public void setDateModified(Date dateModified) {
+    this.dateModified = dateModified;
+  }
+
+  
+  /**
+   * Required for updates, must match the version number of the most recent update
+   **/
+  public DialerCampaignConfigChangeCampaign version(Integer version) {
+    this.version = version;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Required for updates, must match the version number of the most recent update")
+  @JsonProperty("version")
+  public Integer getVersion() {
+    return version;
+  }
+  public void setVersion(Integer version) {
+    this.version = version;
   }
 
   
@@ -754,12 +766,7 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
       return false;
     }
     DialerCampaignConfigChangeCampaign dialerCampaignConfigChangeCampaign = (DialerCampaignConfigChangeCampaign) o;
-    return Objects.equals(this.id, dialerCampaignConfigChangeCampaign.id) &&
-        Objects.equals(this.name, dialerCampaignConfigChangeCampaign.name) &&
-        Objects.equals(this.dateCreated, dialerCampaignConfigChangeCampaign.dateCreated) &&
-        Objects.equals(this.dateModified, dialerCampaignConfigChangeCampaign.dateModified) &&
-        Objects.equals(this.version, dialerCampaignConfigChangeCampaign.version) &&
-        Objects.equals(this.contactList, dialerCampaignConfigChangeCampaign.contactList) &&
+    return Objects.equals(this.contactList, dialerCampaignConfigChangeCampaign.contactList) &&
         Objects.equals(this.queue, dialerCampaignConfigChangeCampaign.queue) &&
         Objects.equals(this.dialingMode, dialerCampaignConfigChangeCampaign.dialingMode) &&
         Objects.equals(this.script, dialerCampaignConfigChangeCampaign.script) &&
@@ -787,12 +794,16 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
         Objects.equals(this.contactListFilters, dialerCampaignConfigChangeCampaign.contactListFilters) &&
         Objects.equals(this.division, dialerCampaignConfigChangeCampaign.division) &&
         Objects.equals(this.agentOwnedColumn, dialerCampaignConfigChangeCampaign.agentOwnedColumn) &&
-        Objects.equals(this.additionalProperties, dialerCampaignConfigChangeCampaign.additionalProperties);
+        Objects.equals(this.id, dialerCampaignConfigChangeCampaign.id) &&
+        Objects.equals(this.name, dialerCampaignConfigChangeCampaign.name) &&
+        Objects.equals(this.dateCreated, dialerCampaignConfigChangeCampaign.dateCreated) &&
+        Objects.equals(this.dateModified, dialerCampaignConfigChangeCampaign.dateModified) &&
+        Objects.equals(this.version, dialerCampaignConfigChangeCampaign.version);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, contactList, queue, dialingMode, script, edgeGroup, site, campaignStatus, phoneColumns, abandonRate, dncLists, callableTimeSet, callAnalysisResponseSet, callerName, callerAddress, outboundLineCount, errors, ruleSets, skipPreviewDisabled, previewTimeOutSeconds, singleNumberPreview, contactSort, contactSorts, noAnswerTimeout, callAnalysisLanguage, priority, contactListFilters, division, agentOwnedColumn, additionalProperties);
+    return Objects.hash(contactList, queue, dialingMode, script, edgeGroup, site, campaignStatus, phoneColumns, abandonRate, dncLists, callableTimeSet, callAnalysisResponseSet, callerName, callerAddress, outboundLineCount, errors, ruleSets, skipPreviewDisabled, previewTimeOutSeconds, singleNumberPreview, contactSort, contactSorts, noAnswerTimeout, callAnalysisLanguage, priority, contactListFilters, division, agentOwnedColumn, id, name, dateCreated, dateModified, version);
   }
 
   @Override
@@ -800,11 +811,6 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class DialerCampaignConfigChangeCampaign {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
-    sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
-    sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    contactList: ").append(toIndentedString(contactList)).append("\n");
     sb.append("    queue: ").append(toIndentedString(queue)).append("\n");
     sb.append("    dialingMode: ").append(toIndentedString(dialingMode)).append("\n");
@@ -833,7 +839,11 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
     sb.append("    contactListFilters: ").append(toIndentedString(contactListFilters)).append("\n");
     sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    agentOwnedColumn: ").append(toIndentedString(agentOwnedColumn)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
+    sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
+    sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("}");
     return sb.toString();
   }

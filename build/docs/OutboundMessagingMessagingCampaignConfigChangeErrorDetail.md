@@ -8,8 +8,8 @@ title: OutboundMessagingMessagingCampaignConfigChangeErrorDetail
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **error** | <!----><!---->**String**<!----> |  |  [optional] |
-| **details** | <!----><!---->**String**<!----> |  |  [optional] |
+| **error** | <!----><!---->**String**<!----> | The name of the error code. |  [optional] |
+| **details** | <!----><!---->**String**<!----> | The additional information regarding the error message. |  [optional] |
 {: class="table table-striped"}
 
 

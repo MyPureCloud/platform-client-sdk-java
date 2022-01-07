@@ -25,109 +25,24 @@ import java.io.Serializable;
 
 public class DialerResponsesetConfigChangeResponseSet  implements Serializable {
   
+  private Map<String, DialerResponsesetConfigChangeReaction> responses = null;
+  private Boolean beepDetectionEnabled = null;
   private String id = null;
   private String name = null;
   private Date dateCreated = null;
   private Date dateModified = null;
   private Integer version = null;
-  private Map<String, DialerResponsesetConfigChangeReaction> responses = null;
-  private Boolean beepDetectionEnabled = null;
-  private Object additionalProperties = null;
 
   
   /**
-   **/
-  public DialerResponsesetConfigChangeResponseSet id(String id) {
-    this.id = id;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("id")
-  public String getId() {
-    return id;
-  }
-  public void setId(String id) {
-    this.id = id;
-  }
-
-  
-  /**
-   **/
-  public DialerResponsesetConfigChangeResponseSet name(String name) {
-    this.name = name;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("name")
-  public String getName() {
-    return name;
-  }
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  
-  /**
-   **/
-  public DialerResponsesetConfigChangeResponseSet dateCreated(Date dateCreated) {
-    this.dateCreated = dateCreated;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("dateCreated")
-  public Date getDateCreated() {
-    return dateCreated;
-  }
-  public void setDateCreated(Date dateCreated) {
-    this.dateCreated = dateCreated;
-  }
-
-  
-  /**
-   **/
-  public DialerResponsesetConfigChangeResponseSet dateModified(Date dateModified) {
-    this.dateModified = dateModified;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("dateModified")
-  public Date getDateModified() {
-    return dateModified;
-  }
-  public void setDateModified(Date dateModified) {
-    this.dateModified = dateModified;
-  }
-
-  
-  /**
-   **/
-  public DialerResponsesetConfigChangeResponseSet version(Integer version) {
-    this.version = version;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("version")
-  public Integer getVersion() {
-    return version;
-  }
-  public void setVersion(Integer version) {
-    this.version = version;
-  }
-
-  
-  /**
+   * Map of disposition identifiers to reactions. For example: {\"disposition.classification.callable.person\": {\"reactionType\": \"transfer\"}}
    **/
   public DialerResponsesetConfigChangeResponseSet responses(Map<String, DialerResponsesetConfigChangeReaction> responses) {
     this.responses = responses;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Map of disposition identifiers to reactions. For example: {\"disposition.classification.callable.person\": {\"reactionType\": \"transfer\"}}")
   @JsonProperty("responses")
   public Map<String, DialerResponsesetConfigChangeReaction> getResponses() {
     return responses;
@@ -138,13 +53,14 @@ public class DialerResponsesetConfigChangeResponseSet  implements Serializable {
 
   
   /**
+   * When beep detection is enabled, answering machine detection will wait for the beep before transferring the call
    **/
   public DialerResponsesetConfigChangeResponseSet beepDetectionEnabled(Boolean beepDetectionEnabled) {
     this.beepDetectionEnabled = beepDetectionEnabled;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "When beep detection is enabled, answering machine detection will wait for the beep before transferring the call")
   @JsonProperty("beepDetectionEnabled")
   public Boolean getBeepDetectionEnabled() {
     return beepDetectionEnabled;
@@ -155,19 +71,92 @@ public class DialerResponsesetConfigChangeResponseSet  implements Serializable {
 
   
   /**
+   * The globally unique identifier for the object.
    **/
-  public DialerResponsesetConfigChangeResponseSet additionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
+  public DialerResponsesetConfigChangeResponseSet id(String id) {
+    this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Object getAdditionalProperties() {
-    return additionalProperties;
+  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
+  @JsonProperty("id")
+  public String getId() {
+    return id;
   }
-  public void setAdditionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
+  public void setId(String id) {
+    this.id = id;
+  }
+
+  
+  /**
+   * The UI-visible name of the object
+   **/
+  public DialerResponsesetConfigChangeResponseSet name(String name) {
+    this.name = name;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The UI-visible name of the object")
+  @JsonProperty("name")
+  public String getName() {
+    return name;
+  }
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  
+  /**
+   * Creation time of the entity
+   **/
+  public DialerResponsesetConfigChangeResponseSet dateCreated(Date dateCreated) {
+    this.dateCreated = dateCreated;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Creation time of the entity")
+  @JsonProperty("dateCreated")
+  public Date getDateCreated() {
+    return dateCreated;
+  }
+  public void setDateCreated(Date dateCreated) {
+    this.dateCreated = dateCreated;
+  }
+
+  
+  /**
+   * Last modified time of the entity
+   **/
+  public DialerResponsesetConfigChangeResponseSet dateModified(Date dateModified) {
+    this.dateModified = dateModified;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Last modified time of the entity")
+  @JsonProperty("dateModified")
+  public Date getDateModified() {
+    return dateModified;
+  }
+  public void setDateModified(Date dateModified) {
+    this.dateModified = dateModified;
+  }
+
+  
+  /**
+   * Required for updates, must match the version number of the most recent update
+   **/
+  public DialerResponsesetConfigChangeResponseSet version(Integer version) {
+    this.version = version;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Required for updates, must match the version number of the most recent update")
+  @JsonProperty("version")
+  public Integer getVersion() {
+    return version;
+  }
+  public void setVersion(Integer version) {
+    this.version = version;
   }
 
   
@@ -181,19 +170,18 @@ public class DialerResponsesetConfigChangeResponseSet  implements Serializable {
       return false;
     }
     DialerResponsesetConfigChangeResponseSet dialerResponsesetConfigChangeResponseSet = (DialerResponsesetConfigChangeResponseSet) o;
-    return Objects.equals(this.id, dialerResponsesetConfigChangeResponseSet.id) &&
+    return Objects.equals(this.responses, dialerResponsesetConfigChangeResponseSet.responses) &&
+        Objects.equals(this.beepDetectionEnabled, dialerResponsesetConfigChangeResponseSet.beepDetectionEnabled) &&
+        Objects.equals(this.id, dialerResponsesetConfigChangeResponseSet.id) &&
         Objects.equals(this.name, dialerResponsesetConfigChangeResponseSet.name) &&
         Objects.equals(this.dateCreated, dialerResponsesetConfigChangeResponseSet.dateCreated) &&
         Objects.equals(this.dateModified, dialerResponsesetConfigChangeResponseSet.dateModified) &&
-        Objects.equals(this.version, dialerResponsesetConfigChangeResponseSet.version) &&
-        Objects.equals(this.responses, dialerResponsesetConfigChangeResponseSet.responses) &&
-        Objects.equals(this.beepDetectionEnabled, dialerResponsesetConfigChangeResponseSet.beepDetectionEnabled) &&
-        Objects.equals(this.additionalProperties, dialerResponsesetConfigChangeResponseSet.additionalProperties);
+        Objects.equals(this.version, dialerResponsesetConfigChangeResponseSet.version);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, responses, beepDetectionEnabled, additionalProperties);
+    return Objects.hash(responses, beepDetectionEnabled, id, name, dateCreated, dateModified, version);
   }
 
   @Override
@@ -201,14 +189,13 @@ public class DialerResponsesetConfigChangeResponseSet  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class DialerResponsesetConfigChangeResponseSet {\n");
     
+    sb.append("    responses: ").append(toIndentedString(responses)).append("\n");
+    sb.append("    beepDetectionEnabled: ").append(toIndentedString(beepDetectionEnabled)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
-    sb.append("    responses: ").append(toIndentedString(responses)).append("\n");
-    sb.append("    beepDetectionEnabled: ").append(toIndentedString(beepDetectionEnabled)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

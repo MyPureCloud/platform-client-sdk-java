@@ -28,13 +28,14 @@ public class ArchitectPromptNotificationPromptNotification  implements Serializa
 
   
   /**
+   * The prompt ID
    **/
   public ArchitectPromptNotificationPromptNotification id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The prompt ID")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -45,13 +46,14 @@ public class ArchitectPromptNotificationPromptNotification  implements Serializa
 
   
   /**
+   * The prompt name
    **/
   public ArchitectPromptNotificationPromptNotification name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The prompt name")
   @JsonProperty("name")
   public String getName() {
     return name;
@@ -62,13 +64,14 @@ public class ArchitectPromptNotificationPromptNotification  implements Serializa
 
   
   /**
+   * The prompt description
    **/
   public ArchitectPromptNotificationPromptNotification description(String description) {
     this.description = description;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The prompt description")
   @JsonProperty("description")
   public String getDescription() {
     return description;

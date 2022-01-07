@@ -42,18 +42,18 @@ public class QueueConversationVideoEventTopicMessageDetails  implements Serializ
     }
   }
   /**
-   * Gets or Sets messageStatus
+   * Indicates the delivery status of the message.
    */
  @JsonDeserialize(using = MessageStatusEnumDeserializer.class)
   public enum MessageStatusEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    QUEUED("QUEUED"),
-    SENT("SENT"),
-    FAILED("FAILED"),
-    RECEIVED("RECEIVED"),
-    DELIVERY_SUCCESS("DELIVERY_SUCCESS"),
-    DELIVERY_FAILED("DELIVERY_FAILED"),
-    READ("READ");
+    QUEUED("queued"),
+    SENT("sent"),
+    FAILED("failed"),
+    RECEIVED("received"),
+    DELIVERY_SUCCESS("delivery-success"),
+    DELIVERY_FAILED("delivery-failed"),
+    READ("read");
 
     private String value;
 
@@ -87,13 +87,14 @@ public class QueueConversationVideoEventTopicMessageDetails  implements Serializ
 
   
   /**
+   * UUID identifying the message media.
    **/
   public QueueConversationVideoEventTopicMessageDetails messageId(String messageId) {
     this.messageId = messageId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "UUID identifying the message media.")
   @JsonProperty("messageId")
   public String getMessageId() {
     return messageId;
@@ -104,13 +105,14 @@ public class QueueConversationVideoEventTopicMessageDetails  implements Serializ
 
   
   /**
+   * The time when the message was sent or received.
    **/
   public QueueConversationVideoEventTopicMessageDetails messageTime(Date messageTime) {
     this.messageTime = messageTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The time when the message was sent or received.")
   @JsonProperty("messageTime")
   public Date getMessageTime() {
     return messageTime;
@@ -121,13 +123,14 @@ public class QueueConversationVideoEventTopicMessageDetails  implements Serializ
 
   
   /**
+   * Indicates the delivery status of the message.
    **/
   public QueueConversationVideoEventTopicMessageDetails messageStatus(MessageStatusEnum messageStatus) {
     this.messageStatus = messageStatus;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Indicates the delivery status of the message.")
   @JsonProperty("messageStatus")
   public MessageStatusEnum getMessageStatus() {
     return messageStatus;
@@ -138,13 +141,14 @@ public class QueueConversationVideoEventTopicMessageDetails  implements Serializ
 
   
   /**
+   * The message segment count, greater than 1 if the message content was split into multiple parts for this message type, e.g. SMS character limits.
    **/
   public QueueConversationVideoEventTopicMessageDetails messageSegmentCount(Integer messageSegmentCount) {
     this.messageSegmentCount = messageSegmentCount;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The message segment count, greater than 1 if the message content was split into multiple parts for this message type, e.g. SMS character limits.")
   @JsonProperty("messageSegmentCount")
   public Integer getMessageSegmentCount() {
     return messageSegmentCount;
@@ -155,13 +159,14 @@ public class QueueConversationVideoEventTopicMessageDetails  implements Serializ
 
   
   /**
+   * The media (images, files, etc) associated with this message, if any
    **/
   public QueueConversationVideoEventTopicMessageDetails media(List<QueueConversationVideoEventTopicMessageMedia> media) {
     this.media = media;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The media (images, files, etc) associated with this message, if any")
   @JsonProperty("media")
   public List<QueueConversationVideoEventTopicMessageMedia> getMedia() {
     return media;
@@ -172,13 +177,14 @@ public class QueueConversationVideoEventTopicMessageDetails  implements Serializ
 
   
   /**
+   * A list of stickers included in the message
    **/
   public QueueConversationVideoEventTopicMessageDetails stickers(List<QueueConversationVideoEventTopicMessageSticker> stickers) {
     this.stickers = stickers;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A list of stickers included in the message")
   @JsonProperty("stickers")
   public List<QueueConversationVideoEventTopicMessageSticker> getStickers() {
     return stickers;

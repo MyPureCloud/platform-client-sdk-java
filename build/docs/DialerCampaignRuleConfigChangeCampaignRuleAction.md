@@ -8,11 +8,10 @@ title: DialerCampaignRuleConfigChangeCampaignRuleAction
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **parameters** | <!----><!---->**Map&lt;String, String&gt;**<!----> |  |  [optional] |
-| **actionType** | [**ActionTypeEnum**](#ActionTypeEnum)<!----> |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the action |  [optional] |
+| **parameters** | <!----><!---->**Map&lt;String, String&gt;**<!----> | The parameters to match this action |  [optional] |
+| **actionType** | [**ActionTypeEnum**](#ActionTypeEnum)<!----> | The type of this action |  [optional] |
 | **campaignRuleActionEntities** | <!----><!---->[**DialerCampaignRuleConfigChangeCampaignRuleActionEntities**](DialerCampaignRuleConfigChangeCampaignRuleActionEntities.html)<!----> |  |  [optional] |
-| **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 
@@ -23,12 +22,12 @@ title: DialerCampaignRuleConfigChangeCampaignRuleAction
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| TURN_ON_CAMPAIGN | &quot;TURN_ON_CAMPAIGN&quot; |
-| TURN_OFF_CAMPAIGN | &quot;TURN_OFF_CAMPAIGN&quot; |
-| TURN_ON_SEQUENCE | &quot;TURN_ON_SEQUENCE&quot; |
-| TURN_OFF_SEQUENCE | &quot;TURN_OFF_SEQUENCE&quot; |
-| SET_CAMPAIGN_PRIORITY | &quot;SET_CAMPAIGN_PRIORITY&quot; |
-| RECYCLE_CAMPAIGN | &quot;RECYCLE_CAMPAIGN&quot; |
+| TURNONCAMPAIGN | &quot;turnOnCampaign&quot; |
+| TURNOFFCAMPAIGN | &quot;turnOffCampaign&quot; |
+| TURNONSEQUENCE | &quot;turnOnSequence&quot; |
+| TURNOFFSEQUENCE | &quot;turnOffSequence&quot; |
+| SETCAMPAIGNPRIORITY | &quot;setCampaignPriority&quot; |
+| RECYCLECAMPAIGN | &quot;recycleCampaign&quot; |
 {: class="table table-striped"}
 
 

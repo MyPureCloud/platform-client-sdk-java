@@ -15,8 +15,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * OutboundMessagingMessagingCampaignConfigChangeSmsPhoneNumberRef
+ * A reference for an SmsPhoneNumber
  */
+@ApiModel(description = "A reference for an SmsPhoneNumber")
 
 public class OutboundMessagingMessagingCampaignConfigChangeSmsPhoneNumberRef  implements Serializable {
   
@@ -24,13 +25,14 @@ public class OutboundMessagingMessagingCampaignConfigChangeSmsPhoneNumberRef  im
 
   
   /**
+   * The unique phone number
    **/
   public OutboundMessagingMessagingCampaignConfigChangeSmsPhoneNumberRef phoneNumber(String phoneNumber) {
     this.phoneNumber = phoneNumber;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The unique phone number")
   @JsonProperty("phoneNumber")
   public String getPhoneNumber() {
     return phoneNumber;

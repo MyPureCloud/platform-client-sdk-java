@@ -8,10 +8,9 @@ title: DialerCampaignRuleConfigChangeCampaignRuleCondition
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **parameters** | <!----><!---->**Map&lt;String, String&gt;**<!----> |  |  [optional] |
-| **conditionType** | [**ConditionTypeEnum**](#ConditionTypeEnum)<!----> |  |  [optional] |
-| **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the condition |  [optional] |
+| **parameters** | <!----><!---->**Map&lt;String, String&gt;**<!----> | The parameters to match this condition |  [optional] |
+| **conditionType** | [**ConditionTypeEnum**](#ConditionTypeEnum)<!----> | The type of this condition |  [optional] |
 {: class="table table-striped"}
 
 
@@ -22,8 +21,8 @@ title: DialerCampaignRuleConfigChangeCampaignRuleCondition
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| CAMPAIGN_PROGRESS | &quot;CAMPAIGN_PROGRESS&quot; |
-| CAMPAIGN_AGENTS | &quot;CAMPAIGN_AGENTS&quot; |
+| CAMPAIGNPROGRESS | &quot;campaignProgress&quot; |
+| CAMPAIGNAGENTS | &quot;campaignAgents&quot; |
 {: class="table table-striped"}
 
 

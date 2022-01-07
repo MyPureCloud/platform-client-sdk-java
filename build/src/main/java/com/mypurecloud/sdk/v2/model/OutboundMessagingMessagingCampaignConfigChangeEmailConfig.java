@@ -20,8 +20,9 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * OutboundMessagingMessagingCampaignConfigChangeEmailConfig
+ * An outbound-messaging messaging campaign email Config
  */
+@ApiModel(description = "An outbound-messaging messaging campaign email Config")
 
 public class OutboundMessagingMessagingCampaignConfigChangeEmailConfig  implements Serializable {
   
@@ -32,13 +33,14 @@ public class OutboundMessagingMessagingCampaignConfigChangeEmailConfig  implemen
 
   
   /**
+   * The Contact List column specifying the email to send to the contact.
    **/
   public OutboundMessagingMessagingCampaignConfigChangeEmailConfig emailColumns(List<String> emailColumns) {
     this.emailColumns = emailColumns;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The Contact List column specifying the email to send to the contact.")
   @JsonProperty("emailColumns")
   public List<String> getEmailColumns() {
     return emailColumns;
@@ -49,13 +51,14 @@ public class OutboundMessagingMessagingCampaignConfigChangeEmailConfig  implemen
 
   
   /**
+   * A reference for a Response
    **/
   public OutboundMessagingMessagingCampaignConfigChangeEmailConfig contentTemplate(OutboundMessagingMessagingCampaignConfigChangeResponseRef contentTemplate) {
     this.contentTemplate = contentTemplate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A reference for a Response")
   @JsonProperty("contentTemplate")
   public OutboundMessagingMessagingCampaignConfigChangeResponseRef getContentTemplate() {
     return contentTemplate;

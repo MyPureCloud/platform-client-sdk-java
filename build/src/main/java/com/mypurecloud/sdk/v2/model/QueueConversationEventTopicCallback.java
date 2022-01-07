@@ -42,21 +42,21 @@ public class QueueConversationEventTopicCallback  implements Serializable {
     }
   }
   /**
-   * Gets or Sets state
+   * The connection state of this communication.
    */
  @JsonDeserialize(using = StateEnumDeserializer.class)
   public enum StateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    ALERTING("ALERTING"),
-    DIALING("DIALING"),
-    CONTACTING("CONTACTING"),
-    OFFERING("OFFERING"),
-    CONNECTED("CONNECTED"),
-    DISCONNECTED("DISCONNECTED"),
-    TERMINATED("TERMINATED"),
-    SCHEDULED("SCHEDULED"),
-    UPLOADING("UPLOADING"),
-    NONE("NONE");
+    ALERTING("alerting"),
+    DIALING("dialing"),
+    CONTACTING("contacting"),
+    OFFERING("offering"),
+    CONNECTED("connected"),
+    DISCONNECTED("disconnected"),
+    TERMINATED("terminated"),
+    SCHEDULED("scheduled"),
+    UPLOADING("uploading"),
+    NONE("none");
 
     private String value;
 
@@ -99,13 +99,13 @@ public class QueueConversationEventTopicCallback  implements Serializable {
     }
   }
   /**
-   * Gets or Sets direction
+   * The direction of the call
    */
  @JsonDeserialize(using = DirectionEnumDeserializer.class)
   public enum DirectionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    INBOUND("INBOUND"),
-    OUTBOUND("OUTBOUND");
+    INBOUND("inbound"),
+    OUTBOUND("outbound");
 
     private String value;
 
@@ -148,27 +148,27 @@ public class QueueConversationEventTopicCallback  implements Serializable {
     }
   }
   /**
-   * Gets or Sets disconnectType
+   * System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
    */
  @JsonDeserialize(using = DisconnectTypeEnumDeserializer.class)
   public enum DisconnectTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    ENDPOINT("ENDPOINT"),
-    CLIENT("CLIENT"),
-    SYSTEM("SYSTEM"),
-    TIMEOUT("TIMEOUT"),
-    TRANSFER("TRANSFER"),
-    TRANSFER_CONFERENCE("TRANSFER_CONFERENCE"),
-    TRANSFER_CONSULT("TRANSFER_CONSULT"),
-    TRANSFER_NOANSWER("TRANSFER_NOANSWER"),
-    TRANSFER_NOTAVAILABLE("TRANSFER_NOTAVAILABLE"),
-    TRANSFER_FORWARD("TRANSFER_FORWARD"),
-    TRANSPORT_FAILURE("TRANSPORT_FAILURE"),
-    ERROR("ERROR"),
-    PEER("PEER"),
-    OTHER("OTHER"),
-    SPAM("SPAM"),
-    UNCALLABLE("UNCALLABLE");
+    ENDPOINT("endpoint"),
+    CLIENT("client"),
+    SYSTEM("system"),
+    TIMEOUT("timeout"),
+    TRANSFER("transfer"),
+    TRANSFER_CONFERENCE("transfer.conference"),
+    TRANSFER_CONSULT("transfer.consult"),
+    TRANSFER_NOANSWER("transfer.noanswer"),
+    TRANSFER_NOTAVAILABLE("transfer.notavailable"),
+    TRANSFER_FORWARD("transfer.forward"),
+    TRANSPORT_FAILURE("transport.failure"),
+    ERROR("error"),
+    PEER("peer"),
+    OTHER("other"),
+    SPAM("spam"),
+    UNCALLABLE("uncallable");
 
     private String value;
 
@@ -216,17 +216,17 @@ public class QueueConversationEventTopicCallback  implements Serializable {
   private Boolean afterCallWorkRequired = null;
   private String callerId = null;
   private String callerIdName = null;
-  private Object additionalProperties = null;
 
   
   /**
+   * The connection state of this communication.
    **/
   public QueueConversationEventTopicCallback state(StateEnum state) {
     this.state = state;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The connection state of this communication.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
@@ -237,13 +237,14 @@ public class QueueConversationEventTopicCallback  implements Serializable {
 
   
   /**
+   * A globally unique identifier for this communication.
    **/
   public QueueConversationEventTopicCallback id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A globally unique identifier for this communication.")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -254,13 +255,14 @@ public class QueueConversationEventTopicCallback  implements Serializable {
 
   
   /**
+   * The direction of the call
    **/
   public QueueConversationEventTopicCallback direction(DirectionEnum direction) {
     this.direction = direction;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The direction of the call")
   @JsonProperty("direction")
   public DirectionEnum getDirection() {
     return direction;
@@ -271,13 +273,14 @@ public class QueueConversationEventTopicCallback  implements Serializable {
 
   
   /**
+   * True if this call is held and the person on this side hears silence.
    **/
   public QueueConversationEventTopicCallback held(Boolean held) {
     this.held = held;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "True if this call is held and the person on this side hears silence.")
   @JsonProperty("held")
   public Boolean getHeld() {
     return held;
@@ -288,13 +291,14 @@ public class QueueConversationEventTopicCallback  implements Serializable {
 
   
   /**
+   * System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
    **/
   public QueueConversationEventTopicCallback disconnectType(DisconnectTypeEnum disconnectType) {
     this.disconnectType = disconnectType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.")
   @JsonProperty("disconnectType")
   public DisconnectTypeEnum getDisconnectType() {
     return disconnectType;
@@ -305,13 +309,14 @@ public class QueueConversationEventTopicCallback  implements Serializable {
 
   
   /**
+   * The timestamp the callback was placed on hold in the cloud clock if the callback is currently on hold.
    **/
   public QueueConversationEventTopicCallback startHoldTime(Date startHoldTime) {
     this.startHoldTime = startHoldTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The timestamp the callback was placed on hold in the cloud clock if the callback is currently on hold.")
   @JsonProperty("startHoldTime")
   public Date getStartHoldTime() {
     return startHoldTime;
@@ -356,13 +361,14 @@ public class QueueConversationEventTopicCallback  implements Serializable {
 
   
   /**
+   * The phone number(s) to use to place the callback.
    **/
   public QueueConversationEventTopicCallback callbackNumbers(List<String> callbackNumbers) {
     this.callbackNumbers = callbackNumbers;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The phone number(s) to use to place the callback.")
   @JsonProperty("callbackNumbers")
   public List<String> getCallbackNumbers() {
     return callbackNumbers;
@@ -373,13 +379,14 @@ public class QueueConversationEventTopicCallback  implements Serializable {
 
   
   /**
+   * The name of the user requesting a callback.
    **/
   public QueueConversationEventTopicCallback callbackUserName(String callbackUserName) {
     this.callbackUserName = callbackUserName;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The name of the user requesting a callback.")
   @JsonProperty("callbackUserName")
   public String getCallbackUserName() {
     return callbackUserName;
@@ -390,13 +397,14 @@ public class QueueConversationEventTopicCallback  implements Serializable {
 
   
   /**
+   * The UUID of the script to use.
    **/
   public QueueConversationEventTopicCallback scriptId(String scriptId) {
     this.scriptId = scriptId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The UUID of the script to use.")
   @JsonProperty("scriptId")
   public String getScriptId() {
     return scriptId;
@@ -407,13 +415,14 @@ public class QueueConversationEventTopicCallback  implements Serializable {
 
   
   /**
+   * The id of the peer communication corresponding to a matching leg for this communication.
    **/
   public QueueConversationEventTopicCallback peerId(String peerId) {
     this.peerId = peerId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The id of the peer communication corresponding to a matching leg for this communication.")
   @JsonProperty("peerId")
   public String getPeerId() {
     return peerId;
@@ -424,13 +433,14 @@ public class QueueConversationEventTopicCallback  implements Serializable {
 
   
   /**
+   * True if the call for the callback uses external dialing.
    **/
   public QueueConversationEventTopicCallback externalCampaign(Boolean externalCampaign) {
     this.externalCampaign = externalCampaign;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "True if the call for the callback uses external dialing.")
   @JsonProperty("externalCampaign")
   public Boolean getExternalCampaign() {
     return externalCampaign;
@@ -441,13 +451,14 @@ public class QueueConversationEventTopicCallback  implements Serializable {
 
   
   /**
+   * True if the ability to skip a callback should be enabled.
    **/
   public QueueConversationEventTopicCallback skipEnabled(Boolean skipEnabled) {
     this.skipEnabled = skipEnabled;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "True if the ability to skip a callback should be enabled.")
   @JsonProperty("skipEnabled")
   public Boolean getSkipEnabled() {
     return skipEnabled;
@@ -458,13 +469,14 @@ public class QueueConversationEventTopicCallback  implements Serializable {
 
   
   /**
+   * The source provider of the callback.
    **/
   public QueueConversationEventTopicCallback provider(String provider) {
     this.provider = provider;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The source provider of the callback.")
   @JsonProperty("provider")
   public String getProvider() {
     return provider;
@@ -475,13 +487,14 @@ public class QueueConversationEventTopicCallback  implements Serializable {
 
   
   /**
+   * The number of seconds before the system automatically places a call for a callback.  0 means the automatic placement is disabled.
    **/
   public QueueConversationEventTopicCallback timeoutSeconds(Integer timeoutSeconds) {
     this.timeoutSeconds = timeoutSeconds;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The number of seconds before the system automatically places a call for a callback.  0 means the automatic placement is disabled.")
   @JsonProperty("timeoutSeconds")
   public Integer getTimeoutSeconds() {
     return timeoutSeconds;
@@ -492,13 +505,14 @@ public class QueueConversationEventTopicCallback  implements Serializable {
 
   
   /**
+   * The timestamp when this communication was connected in the cloud clock.
    **/
   public QueueConversationEventTopicCallback connectedTime(Date connectedTime) {
     this.connectedTime = connectedTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The timestamp when this communication was connected in the cloud clock.")
   @JsonProperty("connectedTime")
   public Date getConnectedTime() {
     return connectedTime;
@@ -509,13 +523,14 @@ public class QueueConversationEventTopicCallback  implements Serializable {
 
   
   /**
+   * The timestamp when this communication disconnected from the conversation in the provider clock.
    **/
   public QueueConversationEventTopicCallback disconnectedTime(Date disconnectedTime) {
     this.disconnectedTime = disconnectedTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The timestamp when this communication disconnected from the conversation in the provider clock.")
   @JsonProperty("disconnectedTime")
   public Date getDisconnectedTime() {
     return disconnectedTime;
@@ -526,13 +541,14 @@ public class QueueConversationEventTopicCallback  implements Serializable {
 
   
   /**
+   * The timestamp when this communication is scheduled in the provider clock. If this value is missing it indicates the callback will be placed immediately.
    **/
   public QueueConversationEventTopicCallback callbackScheduledTime(Date callbackScheduledTime) {
     this.callbackScheduledTime = callbackScheduledTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The timestamp when this communication is scheduled in the provider clock. If this value is missing it indicates the callback will be placed immediately.")
   @JsonProperty("callbackScheduledTime")
   public Date getCallbackScheduledTime() {
     return callbackScheduledTime;
@@ -543,13 +559,14 @@ public class QueueConversationEventTopicCallback  implements Serializable {
 
   
   /**
+   * The id of the config for automatically placing the callback (and handling the disposition). If null, the callback will not be placed automatically but routed to an agent as per normal.
    **/
   public QueueConversationEventTopicCallback automatedCallbackConfigId(String automatedCallbackConfigId) {
     this.automatedCallbackConfigId = automatedCallbackConfigId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The id of the config for automatically placing the callback (and handling the disposition). If null, the callback will not be placed automatically but routed to an agent as per normal.")
   @JsonProperty("automatedCallbackConfigId")
   public String getAutomatedCallbackConfigId() {
     return automatedCallbackConfigId;
@@ -560,13 +577,14 @@ public class QueueConversationEventTopicCallback  implements Serializable {
 
   
   /**
+   * Call wrap up or disposition data.
    **/
   public QueueConversationEventTopicCallback wrapup(QueueConversationEventTopicWrapup wrapup) {
     this.wrapup = wrapup;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Call wrap up or disposition data.")
   @JsonProperty("wrapup")
   public QueueConversationEventTopicWrapup getWrapup() {
     return wrapup;
@@ -577,13 +595,14 @@ public class QueueConversationEventTopicCallback  implements Serializable {
 
   
   /**
+   * A communication's after-call work data.
    **/
   public QueueConversationEventTopicCallback afterCallWork(QueueConversationEventTopicAfterCallWork afterCallWork) {
     this.afterCallWork = afterCallWork;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A communication's after-call work data.")
   @JsonProperty("afterCallWork")
   public QueueConversationEventTopicAfterCallWork getAfterCallWork() {
     return afterCallWork;
@@ -594,13 +613,14 @@ public class QueueConversationEventTopicCallback  implements Serializable {
 
   
   /**
+   * Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.
    **/
   public QueueConversationEventTopicCallback afterCallWorkRequired(Boolean afterCallWorkRequired) {
     this.afterCallWorkRequired = afterCallWorkRequired;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.")
   @JsonProperty("afterCallWorkRequired")
   public Boolean getAfterCallWorkRequired() {
     return afterCallWorkRequired;
@@ -611,13 +631,14 @@ public class QueueConversationEventTopicCallback  implements Serializable {
 
   
   /**
+   * The phone number displayed to recipients of the phone call. The value should conform to the E164 format.
    **/
   public QueueConversationEventTopicCallback callerId(String callerId) {
     this.callerId = callerId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The phone number displayed to recipients of the phone call. The value should conform to the E164 format.")
   @JsonProperty("callerId")
   public String getCallerId() {
     return callerId;
@@ -628,36 +649,20 @@ public class QueueConversationEventTopicCallback  implements Serializable {
 
   
   /**
+   * The name displayed to recipients of the phone call.
    **/
   public QueueConversationEventTopicCallback callerIdName(String callerIdName) {
     this.callerIdName = callerIdName;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The name displayed to recipients of the phone call.")
   @JsonProperty("callerIdName")
   public String getCallerIdName() {
     return callerIdName;
   }
   public void setCallerIdName(String callerIdName) {
     this.callerIdName = callerIdName;
-  }
-
-  
-  /**
-   **/
-  public QueueConversationEventTopicCallback additionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Object getAdditionalProperties() {
-    return additionalProperties;
-  }
-  public void setAdditionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
   }
 
   
@@ -695,13 +700,12 @@ public class QueueConversationEventTopicCallback  implements Serializable {
         Objects.equals(this.afterCallWork, queueConversationEventTopicCallback.afterCallWork) &&
         Objects.equals(this.afterCallWorkRequired, queueConversationEventTopicCallback.afterCallWorkRequired) &&
         Objects.equals(this.callerId, queueConversationEventTopicCallback.callerId) &&
-        Objects.equals(this.callerIdName, queueConversationEventTopicCallback.callerIdName) &&
-        Objects.equals(this.additionalProperties, queueConversationEventTopicCallback.additionalProperties);
+        Objects.equals(this.callerIdName, queueConversationEventTopicCallback.callerIdName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, direction, held, disconnectType, startHoldTime, dialerPreview, voicemail, callbackNumbers, callbackUserName, scriptId, peerId, externalCampaign, skipEnabled, provider, timeoutSeconds, connectedTime, disconnectedTime, callbackScheduledTime, automatedCallbackConfigId, wrapup, afterCallWork, afterCallWorkRequired, callerId, callerIdName, additionalProperties);
+    return Objects.hash(state, id, direction, held, disconnectType, startHoldTime, dialerPreview, voicemail, callbackNumbers, callbackUserName, scriptId, peerId, externalCampaign, skipEnabled, provider, timeoutSeconds, connectedTime, disconnectedTime, callbackScheduledTime, automatedCallbackConfigId, wrapup, afterCallWork, afterCallWorkRequired, callerId, callerIdName);
   }
 
   @Override
@@ -734,7 +738,6 @@ public class QueueConversationEventTopicCallback  implements Serializable {
     sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
     sb.append("    callerId: ").append(toIndentedString(callerId)).append("\n");
     sb.append("    callerIdName: ").append(toIndentedString(callerIdName)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

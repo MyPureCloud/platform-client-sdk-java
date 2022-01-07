@@ -29,6 +29,7 @@ import com.mypurecloud.sdk.v2.model.MetricDefinition;
 import com.mypurecloud.sdk.v2.model.GetMetricDefinitionsResponse;
 import com.mypurecloud.sdk.v2.model.GetMetricsResponse;
 import com.mypurecloud.sdk.v2.model.PerformanceProfile;
+import com.mypurecloud.sdk.v2.model.MemberListing;
 import com.mypurecloud.sdk.v2.model.GetMetricResponse;
 import com.mypurecloud.sdk.v2.model.GetProfilesResponse;
 import com.mypurecloud.sdk.v2.model.WorkdayMetricListing;
@@ -42,6 +43,11 @@ import com.mypurecloud.sdk.v2.model.SingleWorkdayAverageValues;
 import com.mypurecloud.sdk.v2.model.GamificationStatus;
 import com.mypurecloud.sdk.v2.model.ObjectiveTemplate;
 import com.mypurecloud.sdk.v2.model.GetTemplatesResponse;
+import com.mypurecloud.sdk.v2.model.Assignment;
+import com.mypurecloud.sdk.v2.model.AssignUsers;
+import com.mypurecloud.sdk.v2.model.AssignmentValidation;
+import com.mypurecloud.sdk.v2.model.ValidateAssignUsers;
+import com.mypurecloud.sdk.v2.model.TargetPerformanceProfile;
 import com.mypurecloud.sdk.v2.model.CreatePerformanceProfile;
 
 public class GetGamificationProfileMetricsRequest {

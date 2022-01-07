@@ -41,19 +41,19 @@ public class QueueConversationSocialExpressionEventTopicCobrowse  implements Ser
     }
   }
   /**
-   * Gets or Sets state
+   * The connection state of this communication.
    */
  @JsonDeserialize(using = StateEnumDeserializer.class)
   public enum StateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    ALERTING("ALERTING"),
-    DIALING("DIALING"),
-    CONTACTING("CONTACTING"),
-    OFFERING("OFFERING"),
-    CONNECTED("CONNECTED"),
-    DISCONNECTED("DISCONNECTED"),
-    TERMINATED("TERMINATED"),
-    NONE("NONE");
+    ALERTING("alerting"),
+    DIALING("dialing"),
+    CONTACTING("contacting"),
+    OFFERING("offering"),
+    CONNECTED("connected"),
+    DISCONNECTED("disconnected"),
+    TERMINATED("terminated"),
+    NONE("none");
 
     private String value;
 
@@ -95,25 +95,25 @@ public class QueueConversationSocialExpressionEventTopicCobrowse  implements Ser
     }
   }
   /**
-   * Gets or Sets disconnectType
+   * System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
    */
  @JsonDeserialize(using = DisconnectTypeEnumDeserializer.class)
   public enum DisconnectTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    ENDPOINT("ENDPOINT"),
-    CLIENT("CLIENT"),
-    SYSTEM("SYSTEM"),
-    TIMEOUT("TIMEOUT"),
-    TRANSFER("TRANSFER"),
-    TRANSFER_CONFERENCE("TRANSFER_CONFERENCE"),
-    TRANSFER_CONSULT("TRANSFER_CONSULT"),
-    TRANSFER_FORWARD("TRANSFER_FORWARD"),
-    TRANSPORT_FAILURE("TRANSPORT_FAILURE"),
-    ERROR("ERROR"),
-    PEER("PEER"),
-    OTHER("OTHER"),
-    SPAM("SPAM"),
-    UNCALLABLE("UNCALLABLE");
+    ENDPOINT("endpoint"),
+    CLIENT("client"),
+    SYSTEM("system"),
+    TIMEOUT("timeout"),
+    TRANSFER("transfer"),
+    TRANSFER_CONFERENCE("transfer.conference"),
+    TRANSFER_CONSULT("transfer.consult"),
+    TRANSFER_FORWARD("transfer.forward"),
+    TRANSPORT_FAILURE("transport.failure"),
+    ERROR("error"),
+    PEER("peer"),
+    OTHER("other"),
+    SPAM("spam"),
+    UNCALLABLE("uncallable");
 
     private String value;
 
@@ -157,17 +157,17 @@ public class QueueConversationSocialExpressionEventTopicCobrowse  implements Ser
   private QueueConversationSocialExpressionEventTopicWrapup wrapup = null;
   private QueueConversationSocialExpressionEventTopicAfterCallWork afterCallWork = null;
   private Boolean afterCallWorkRequired = null;
-  private Object additionalProperties = null;
 
   
   /**
+   * The connection state of this communication.
    **/
   public QueueConversationSocialExpressionEventTopicCobrowse state(StateEnum state) {
     this.state = state;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The connection state of this communication.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
@@ -178,13 +178,14 @@ public class QueueConversationSocialExpressionEventTopicCobrowse  implements Ser
 
   
   /**
+   * System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
    **/
   public QueueConversationSocialExpressionEventTopicCobrowse disconnectType(DisconnectTypeEnum disconnectType) {
     this.disconnectType = disconnectType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.")
   @JsonProperty("disconnectType")
   public DisconnectTypeEnum getDisconnectType() {
     return disconnectType;
@@ -195,13 +196,14 @@ public class QueueConversationSocialExpressionEventTopicCobrowse  implements Ser
 
   
   /**
+   * A globally unique identifier for this communication.
    **/
   public QueueConversationSocialExpressionEventTopicCobrowse id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A globally unique identifier for this communication.")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -212,13 +214,14 @@ public class QueueConversationSocialExpressionEventTopicCobrowse  implements Ser
 
   
   /**
+   * Address and name data for a call endpoint.
    **/
   public QueueConversationSocialExpressionEventTopicCobrowse self(QueueConversationSocialExpressionEventTopicAddress self) {
     this.self = self;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Address and name data for a call endpoint.")
   @JsonProperty("self")
   public QueueConversationSocialExpressionEventTopicAddress getSelf() {
     return self;
@@ -229,13 +232,14 @@ public class QueueConversationSocialExpressionEventTopicCobrowse  implements Ser
 
   
   /**
+   * The room id for the chat.
    **/
   public QueueConversationSocialExpressionEventTopicCobrowse roomId(String roomId) {
     this.roomId = roomId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The room id for the chat.")
   @JsonProperty("roomId")
   public String getRoomId() {
     return roomId;
@@ -246,13 +250,14 @@ public class QueueConversationSocialExpressionEventTopicCobrowse  implements Ser
 
   
   /**
+   * The co-browse session ID.
    **/
   public QueueConversationSocialExpressionEventTopicCobrowse cobrowseSessionId(String cobrowseSessionId) {
     this.cobrowseSessionId = cobrowseSessionId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The co-browse session ID.")
   @JsonProperty("cobrowseSessionId")
   public String getCobrowseSessionId() {
     return cobrowseSessionId;
@@ -263,13 +268,14 @@ public class QueueConversationSocialExpressionEventTopicCobrowse  implements Ser
 
   
   /**
+   * This value identifies the role of the co-browse client within the co-browse session (a client is a sharer or a viewer).
    **/
   public QueueConversationSocialExpressionEventTopicCobrowse cobrowseRole(String cobrowseRole) {
     this.cobrowseRole = cobrowseRole;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "This value identifies the role of the co-browse client within the co-browse session (a client is a sharer or a viewer).")
   @JsonProperty("cobrowseRole")
   public String getCobrowseRole() {
     return cobrowseRole;
@@ -280,13 +286,14 @@ public class QueueConversationSocialExpressionEventTopicCobrowse  implements Ser
 
   
   /**
+   * ID of co-browse participants for which this client has been granted control (list is empty if this client cannot control any shared pages).
    **/
   public QueueConversationSocialExpressionEventTopicCobrowse controlling(List<String> controlling) {
     this.controlling = controlling;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "ID of co-browse participants for which this client has been granted control (list is empty if this client cannot control any shared pages).")
   @JsonProperty("controlling")
   public List<String> getControlling() {
     return controlling;
@@ -297,13 +304,14 @@ public class QueueConversationSocialExpressionEventTopicCobrowse  implements Ser
 
   
   /**
+   * The URL that can be used to open co-browse session in web browser.
    **/
   public QueueConversationSocialExpressionEventTopicCobrowse viewerUrl(String viewerUrl) {
     this.viewerUrl = viewerUrl;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The URL that can be used to open co-browse session in web browser.")
   @JsonProperty("viewerUrl")
   public String getViewerUrl() {
     return viewerUrl;
@@ -314,13 +322,14 @@ public class QueueConversationSocialExpressionEventTopicCobrowse  implements Ser
 
   
   /**
+   * The source provider of the co-browse communication.
    **/
   public QueueConversationSocialExpressionEventTopicCobrowse provider(String provider) {
     this.provider = provider;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The source provider of the co-browse communication.")
   @JsonProperty("provider")
   public String getProvider() {
     return provider;
@@ -331,13 +340,14 @@ public class QueueConversationSocialExpressionEventTopicCobrowse  implements Ser
 
   
   /**
+   * The UUID of the script to use.
    **/
   public QueueConversationSocialExpressionEventTopicCobrowse scriptId(String scriptId) {
     this.scriptId = scriptId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The UUID of the script to use.")
   @JsonProperty("scriptId")
   public String getScriptId() {
     return scriptId;
@@ -348,13 +358,14 @@ public class QueueConversationSocialExpressionEventTopicCobrowse  implements Ser
 
   
   /**
+   * The id of the peer communication corresponding to a matching leg for this communication.
    **/
   public QueueConversationSocialExpressionEventTopicCobrowse peerId(String peerId) {
     this.peerId = peerId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The id of the peer communication corresponding to a matching leg for this communication.")
   @JsonProperty("peerId")
   public String getPeerId() {
     return peerId;
@@ -365,13 +376,14 @@ public class QueueConversationSocialExpressionEventTopicCobrowse  implements Ser
 
   
   /**
+   * The time when the provider event which triggered this conversation update happened in the corrected provider clock (milliseconds since 1970-01-01 00:00:00 UTC).
    **/
   public QueueConversationSocialExpressionEventTopicCobrowse providerEventTime(Date providerEventTime) {
     this.providerEventTime = providerEventTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The time when the provider event which triggered this conversation update happened in the corrected provider clock (milliseconds since 1970-01-01 00:00:00 UTC).")
   @JsonProperty("providerEventTime")
   public Date getProviderEventTime() {
     return providerEventTime;
@@ -382,13 +394,14 @@ public class QueueConversationSocialExpressionEventTopicCobrowse  implements Ser
 
   
   /**
+   * The timestamp when this communication was connected in the cloud clock.
    **/
   public QueueConversationSocialExpressionEventTopicCobrowse connectedTime(Date connectedTime) {
     this.connectedTime = connectedTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The timestamp when this communication was connected in the cloud clock.")
   @JsonProperty("connectedTime")
   public Date getConnectedTime() {
     return connectedTime;
@@ -399,13 +412,14 @@ public class QueueConversationSocialExpressionEventTopicCobrowse  implements Ser
 
   
   /**
+   * The timestamp when this communication disconnected from the conversation in the provider clock.
    **/
   public QueueConversationSocialExpressionEventTopicCobrowse disconnectedTime(Date disconnectedTime) {
     this.disconnectedTime = disconnectedTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The timestamp when this communication disconnected from the conversation in the provider clock.")
   @JsonProperty("disconnectedTime")
   public Date getDisconnectedTime() {
     return disconnectedTime;
@@ -416,13 +430,14 @@ public class QueueConversationSocialExpressionEventTopicCobrowse  implements Ser
 
   
   /**
+   * Call wrap up or disposition data.
    **/
   public QueueConversationSocialExpressionEventTopicCobrowse wrapup(QueueConversationSocialExpressionEventTopicWrapup wrapup) {
     this.wrapup = wrapup;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Call wrap up or disposition data.")
   @JsonProperty("wrapup")
   public QueueConversationSocialExpressionEventTopicWrapup getWrapup() {
     return wrapup;
@@ -433,13 +448,14 @@ public class QueueConversationSocialExpressionEventTopicCobrowse  implements Ser
 
   
   /**
+   * A communication's after-call work data.
    **/
   public QueueConversationSocialExpressionEventTopicCobrowse afterCallWork(QueueConversationSocialExpressionEventTopicAfterCallWork afterCallWork) {
     this.afterCallWork = afterCallWork;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A communication's after-call work data.")
   @JsonProperty("afterCallWork")
   public QueueConversationSocialExpressionEventTopicAfterCallWork getAfterCallWork() {
     return afterCallWork;
@@ -450,36 +466,20 @@ public class QueueConversationSocialExpressionEventTopicCobrowse  implements Ser
 
   
   /**
+   * Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.
    **/
   public QueueConversationSocialExpressionEventTopicCobrowse afterCallWorkRequired(Boolean afterCallWorkRequired) {
     this.afterCallWorkRequired = afterCallWorkRequired;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.")
   @JsonProperty("afterCallWorkRequired")
   public Boolean getAfterCallWorkRequired() {
     return afterCallWorkRequired;
   }
   public void setAfterCallWorkRequired(Boolean afterCallWorkRequired) {
     this.afterCallWorkRequired = afterCallWorkRequired;
-  }
-
-  
-  /**
-   **/
-  public QueueConversationSocialExpressionEventTopicCobrowse additionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Object getAdditionalProperties() {
-    return additionalProperties;
-  }
-  public void setAdditionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
   }
 
   
@@ -510,13 +510,12 @@ public class QueueConversationSocialExpressionEventTopicCobrowse  implements Ser
         Objects.equals(this.disconnectedTime, queueConversationSocialExpressionEventTopicCobrowse.disconnectedTime) &&
         Objects.equals(this.wrapup, queueConversationSocialExpressionEventTopicCobrowse.wrapup) &&
         Objects.equals(this.afterCallWork, queueConversationSocialExpressionEventTopicCobrowse.afterCallWork) &&
-        Objects.equals(this.afterCallWorkRequired, queueConversationSocialExpressionEventTopicCobrowse.afterCallWorkRequired) &&
-        Objects.equals(this.additionalProperties, queueConversationSocialExpressionEventTopicCobrowse.additionalProperties);
+        Objects.equals(this.afterCallWorkRequired, queueConversationSocialExpressionEventTopicCobrowse.afterCallWorkRequired);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, disconnectType, id, self, roomId, cobrowseSessionId, cobrowseRole, controlling, viewerUrl, provider, scriptId, peerId, providerEventTime, connectedTime, disconnectedTime, wrapup, afterCallWork, afterCallWorkRequired, additionalProperties);
+    return Objects.hash(state, disconnectType, id, self, roomId, cobrowseSessionId, cobrowseRole, controlling, viewerUrl, provider, scriptId, peerId, providerEventTime, connectedTime, disconnectedTime, wrapup, afterCallWork, afterCallWorkRequired);
   }
 
   @Override
@@ -542,7 +541,6 @@ public class QueueConversationSocialExpressionEventTopicCobrowse  implements Ser
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -8,8 +8,8 @@ title: ConversationScreenShareEventTopicScoredAgent
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **agent** | <!----><!---->[**ConversationScreenShareEventTopicUriReference**](ConversationScreenShareEventTopicUriReference.html)<!----> |  |  [optional] |
-| **score** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **agent** | <!----><!---->[**ConversationScreenShareEventTopicUriReference**](ConversationScreenShareEventTopicUriReference.html)<!----> | A UriReference for a resource |  [optional] |
+| **score** | <!----><!---->**Integer**<!----> | Agent&#39;s score for the current conversation, from 0 - 100, higher being better |  [optional] |
 {: class="table table-striped"}
 
 

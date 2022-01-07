@@ -28,13 +28,14 @@ public class ArchitectFlowOutcomeNotificationFlowOutcomeNotification  implements
 
   
   /**
+   * The flow outcome ID
    **/
   public ArchitectFlowOutcomeNotificationFlowOutcomeNotification id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The flow outcome ID")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -45,13 +46,14 @@ public class ArchitectFlowOutcomeNotificationFlowOutcomeNotification  implements
 
   
   /**
+   * The flow outcome name
    **/
   public ArchitectFlowOutcomeNotificationFlowOutcomeNotification name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The flow outcome name")
   @JsonProperty("name")
   public String getName() {
     return name;
@@ -62,13 +64,14 @@ public class ArchitectFlowOutcomeNotificationFlowOutcomeNotification  implements
 
   
   /**
+   * The flow outcome description
    **/
   public ArchitectFlowOutcomeNotificationFlowOutcomeNotification description(String description) {
     this.description = description;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The flow outcome description")
   @JsonProperty("description")
   public String getDescription() {
     return description;

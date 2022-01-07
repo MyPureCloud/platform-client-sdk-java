@@ -18,59 +18,26 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * DialerCampaignRuleConfigChangeCampaignRuleActionEntities
+ * the campaign/sequence entities that this action acts on
  */
+@ApiModel(description = "the campaign/sequence entities that this action acts on")
 
 public class DialerCampaignRuleConfigChangeCampaignRuleActionEntities  implements Serializable {
   
+  private Boolean useTriggeringEntity = null;
   private List<DialerCampaignRuleConfigChangeUriReference> campaigns = new ArrayList<DialerCampaignRuleConfigChangeUriReference>();
   private List<DialerCampaignRuleConfigChangeUriReference> sequences = new ArrayList<DialerCampaignRuleConfigChangeUriReference>();
-  private Boolean useTriggeringEntity = null;
-  private Object additionalProperties = null;
 
   
   /**
-   **/
-  public DialerCampaignRuleConfigChangeCampaignRuleActionEntities campaigns(List<DialerCampaignRuleConfigChangeUriReference> campaigns) {
-    this.campaigns = campaigns;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("campaigns")
-  public List<DialerCampaignRuleConfigChangeUriReference> getCampaigns() {
-    return campaigns;
-  }
-  public void setCampaigns(List<DialerCampaignRuleConfigChangeUriReference> campaigns) {
-    this.campaigns = campaigns;
-  }
-
-  
-  /**
-   **/
-  public DialerCampaignRuleConfigChangeCampaignRuleActionEntities sequences(List<DialerCampaignRuleConfigChangeUriReference> sequences) {
-    this.sequences = sequences;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("sequences")
-  public List<DialerCampaignRuleConfigChangeUriReference> getSequences() {
-    return sequences;
-  }
-  public void setSequences(List<DialerCampaignRuleConfigChangeUriReference> sequences) {
-    this.sequences = sequences;
-  }
-
-  
-  /**
+   * Whether this action should act on the entity that triggered it
    **/
   public DialerCampaignRuleConfigChangeCampaignRuleActionEntities useTriggeringEntity(Boolean useTriggeringEntity) {
     this.useTriggeringEntity = useTriggeringEntity;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Whether this action should act on the entity that triggered it")
   @JsonProperty("useTriggeringEntity")
   public Boolean getUseTriggeringEntity() {
     return useTriggeringEntity;
@@ -81,19 +48,38 @@ public class DialerCampaignRuleConfigChangeCampaignRuleActionEntities  implement
 
   
   /**
+   * A list of campaignIds to act on
    **/
-  public DialerCampaignRuleConfigChangeCampaignRuleActionEntities additionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
+  public DialerCampaignRuleConfigChangeCampaignRuleActionEntities campaigns(List<DialerCampaignRuleConfigChangeUriReference> campaigns) {
+    this.campaigns = campaigns;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Object getAdditionalProperties() {
-    return additionalProperties;
+  @ApiModelProperty(example = "null", value = "A list of campaignIds to act on")
+  @JsonProperty("campaigns")
+  public List<DialerCampaignRuleConfigChangeUriReference> getCampaigns() {
+    return campaigns;
   }
-  public void setAdditionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
+  public void setCampaigns(List<DialerCampaignRuleConfigChangeUriReference> campaigns) {
+    this.campaigns = campaigns;
+  }
+
+  
+  /**
+   * A list of sequenceIds to act on
+   **/
+  public DialerCampaignRuleConfigChangeCampaignRuleActionEntities sequences(List<DialerCampaignRuleConfigChangeUriReference> sequences) {
+    this.sequences = sequences;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A list of sequenceIds to act on")
+  @JsonProperty("sequences")
+  public List<DialerCampaignRuleConfigChangeUriReference> getSequences() {
+    return sequences;
+  }
+  public void setSequences(List<DialerCampaignRuleConfigChangeUriReference> sequences) {
+    this.sequences = sequences;
   }
 
   
@@ -107,15 +93,14 @@ public class DialerCampaignRuleConfigChangeCampaignRuleActionEntities  implement
       return false;
     }
     DialerCampaignRuleConfigChangeCampaignRuleActionEntities dialerCampaignRuleConfigChangeCampaignRuleActionEntities = (DialerCampaignRuleConfigChangeCampaignRuleActionEntities) o;
-    return Objects.equals(this.campaigns, dialerCampaignRuleConfigChangeCampaignRuleActionEntities.campaigns) &&
-        Objects.equals(this.sequences, dialerCampaignRuleConfigChangeCampaignRuleActionEntities.sequences) &&
-        Objects.equals(this.useTriggeringEntity, dialerCampaignRuleConfigChangeCampaignRuleActionEntities.useTriggeringEntity) &&
-        Objects.equals(this.additionalProperties, dialerCampaignRuleConfigChangeCampaignRuleActionEntities.additionalProperties);
+    return Objects.equals(this.useTriggeringEntity, dialerCampaignRuleConfigChangeCampaignRuleActionEntities.useTriggeringEntity) &&
+        Objects.equals(this.campaigns, dialerCampaignRuleConfigChangeCampaignRuleActionEntities.campaigns) &&
+        Objects.equals(this.sequences, dialerCampaignRuleConfigChangeCampaignRuleActionEntities.sequences);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(campaigns, sequences, useTriggeringEntity, additionalProperties);
+    return Objects.hash(useTriggeringEntity, campaigns, sequences);
   }
 
   @Override
@@ -123,10 +108,9 @@ public class DialerCampaignRuleConfigChangeCampaignRuleActionEntities  implement
     StringBuilder sb = new StringBuilder();
     sb.append("class DialerCampaignRuleConfigChangeCampaignRuleActionEntities {\n");
     
+    sb.append("    useTriggeringEntity: ").append(toIndentedString(useTriggeringEntity)).append("\n");
     sb.append("    campaigns: ").append(toIndentedString(campaigns)).append("\n");
     sb.append("    sequences: ").append(toIndentedString(sequences)).append("\n");
-    sb.append("    useTriggeringEntity: ").append(toIndentedString(useTriggeringEntity)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

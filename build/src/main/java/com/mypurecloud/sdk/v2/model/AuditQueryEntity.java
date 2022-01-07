@@ -68,6 +68,7 @@ public class AuditQueryEntity  implements Serializable {
     CONFIGURATIONVERSION("ConfigurationVersion"),
     CONTACTLIST("ContactList"),
     CONTACTLISTFILTER("ContactListFilter"),
+    CONTACTSCHEMA("ContactSchema"),
     CONVERSATIONATTRIBUTES("ConversationAttributes"),
     CONVERSATIONACCOUNT("ConversationAccount"),
     CONVERSATIONDEFAULTSUPPORTEDCONTENT("ConversationDefaultSupportedContent"),
@@ -99,6 +100,7 @@ public class AuditQueryEntity  implements Serializable {
     EXTENSIONPOOL("ExtensionPool"),
     EXTERNALMETRICSDATA("ExternalMetricsData"),
     EXTERNALMETRICSDEFINITION("ExternalMetricsDefinition"),
+    EXTERNALORGANIZATIONSCHEMA("ExternalOrganizationSchema"),
     FEEDBACK("Feedback"),
     FLOW("Flow"),
     FLOWMILESTONE("FlowMilestone"),
@@ -188,9 +190,12 @@ public class AuditQueryEntity  implements Serializable {
     VOICEMAILPOLICY("VoicemailPolicy"),
     VOICEMAILUSERPOLICY("VoicemailUserPolicy"),
     WEBHOOK("Webhook"),
+    WORKBIN("Workbin"),
+    WORKITEM("Workitem"),
     WORKPLAN("WorkPlan"),
     WORKPLANROTATION("WorkPlanRotation"),
     WORKSPACE("Workspace"),
+    WORKTYPE("Worktype"),
     WRAPUPCODE("WrapupCode"),
     WRAPUPCODEMAPPING("WrapUpCodeMapping"),
     PARTICIPANT("Participant");
@@ -306,7 +311,8 @@ public class AuditQueryEntity  implements Serializable {
     REASSIGN("Reassign"),
     RESCHEDULE("Reschedule"),
     CANCEL("Cancel"),
-    SOFTDELETE("SoftDelete");
+    SOFTDELETE("SoftDelete"),
+    HARDDELETE("HardDelete");
 
     private String value;
 

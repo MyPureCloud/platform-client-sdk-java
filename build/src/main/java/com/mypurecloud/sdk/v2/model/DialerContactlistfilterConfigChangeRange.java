@@ -17,8 +17,9 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * DialerContactlistfilterConfigChangeRange
+ * FilterRange is one of the attributes of a FilterPredicate
  */
+@ApiModel(description = "FilterRange is one of the attributes of a FilterPredicate")
 
 public class DialerContactlistfilterConfigChangeRange  implements Serializable {
   
@@ -27,17 +28,17 @@ public class DialerContactlistfilterConfigChangeRange  implements Serializable {
   private Boolean minInclusive = null;
   private Boolean maxInclusive = null;
   private List<String> inSet = new ArrayList<String>();
-  private Object additionalProperties = null;
 
   
   /**
+   * Minimum end of the range
    **/
   public DialerContactlistfilterConfigChangeRange min(String min) {
     this.min = min;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Minimum end of the range")
   @JsonProperty("min")
   public String getMin() {
     return min;
@@ -48,13 +49,14 @@ public class DialerContactlistfilterConfigChangeRange  implements Serializable {
 
   
   /**
+   * Maximum end of the range
    **/
   public DialerContactlistfilterConfigChangeRange max(String max) {
     this.max = max;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Maximum end of the range")
   @JsonProperty("max")
   public String getMax() {
     return max;
@@ -65,13 +67,14 @@ public class DialerContactlistfilterConfigChangeRange  implements Serializable {
 
   
   /**
+   * Whether or not to include the minimum in the range
    **/
   public DialerContactlistfilterConfigChangeRange minInclusive(Boolean minInclusive) {
     this.minInclusive = minInclusive;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Whether or not to include the minimum in the range")
   @JsonProperty("minInclusive")
   public Boolean getMinInclusive() {
     return minInclusive;
@@ -82,13 +85,14 @@ public class DialerContactlistfilterConfigChangeRange  implements Serializable {
 
   
   /**
+   * Whether or not to include the maximum in the range
    **/
   public DialerContactlistfilterConfigChangeRange maxInclusive(Boolean maxInclusive) {
     this.maxInclusive = maxInclusive;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Whether or not to include the maximum in the range")
   @JsonProperty("maxInclusive")
   public Boolean getMaxInclusive() {
     return maxInclusive;
@@ -99,36 +103,20 @@ public class DialerContactlistfilterConfigChangeRange  implements Serializable {
 
   
   /**
+   * Elements that apply to the IN operator
    **/
   public DialerContactlistfilterConfigChangeRange inSet(List<String> inSet) {
     this.inSet = inSet;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Elements that apply to the IN operator")
   @JsonProperty("inSet")
   public List<String> getInSet() {
     return inSet;
   }
   public void setInSet(List<String> inSet) {
     this.inSet = inSet;
-  }
-
-  
-  /**
-   **/
-  public DialerContactlistfilterConfigChangeRange additionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Object getAdditionalProperties() {
-    return additionalProperties;
-  }
-  public void setAdditionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
   }
 
   
@@ -146,13 +134,12 @@ public class DialerContactlistfilterConfigChangeRange  implements Serializable {
         Objects.equals(this.max, dialerContactlistfilterConfigChangeRange.max) &&
         Objects.equals(this.minInclusive, dialerContactlistfilterConfigChangeRange.minInclusive) &&
         Objects.equals(this.maxInclusive, dialerContactlistfilterConfigChangeRange.maxInclusive) &&
-        Objects.equals(this.inSet, dialerContactlistfilterConfigChangeRange.inSet) &&
-        Objects.equals(this.additionalProperties, dialerContactlistfilterConfigChangeRange.additionalProperties);
+        Objects.equals(this.inSet, dialerContactlistfilterConfigChangeRange.inSet);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(min, max, minInclusive, maxInclusive, inSet, additionalProperties);
+    return Objects.hash(min, max, minInclusive, maxInclusive, inSet);
   }
 
   @Override
@@ -165,7 +152,6 @@ public class DialerContactlistfilterConfigChangeRange  implements Serializable {
     sb.append("    minInclusive: ").append(toIndentedString(minInclusive)).append("\n");
     sb.append("    maxInclusive: ").append(toIndentedString(maxInclusive)).append("\n");
     sb.append("    inSet: ").append(toIndentedString(inSet)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

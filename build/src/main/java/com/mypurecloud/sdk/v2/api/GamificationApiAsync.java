@@ -22,6 +22,7 @@ import com.mypurecloud.sdk.v2.model.MetricDefinition;
 import com.mypurecloud.sdk.v2.model.GetMetricDefinitionsResponse;
 import com.mypurecloud.sdk.v2.model.GetMetricsResponse;
 import com.mypurecloud.sdk.v2.model.PerformanceProfile;
+import com.mypurecloud.sdk.v2.model.MemberListing;
 import com.mypurecloud.sdk.v2.model.GetMetricResponse;
 import com.mypurecloud.sdk.v2.model.GetProfilesResponse;
 import com.mypurecloud.sdk.v2.model.WorkdayMetricListing;
@@ -35,6 +36,11 @@ import com.mypurecloud.sdk.v2.model.SingleWorkdayAverageValues;
 import com.mypurecloud.sdk.v2.model.GamificationStatus;
 import com.mypurecloud.sdk.v2.model.ObjectiveTemplate;
 import com.mypurecloud.sdk.v2.model.GetTemplatesResponse;
+import com.mypurecloud.sdk.v2.model.Assignment;
+import com.mypurecloud.sdk.v2.model.AssignUsers;
+import com.mypurecloud.sdk.v2.model.AssignmentValidation;
+import com.mypurecloud.sdk.v2.model.ValidateAssignUsers;
+import com.mypurecloud.sdk.v2.model.TargetPerformanceProfile;
 import com.mypurecloud.sdk.v2.model.CreatePerformanceProfile;
 
 
@@ -47,6 +53,7 @@ import com.mypurecloud.sdk.v2.api.request.GetGamificationMetricdefinitionRequest
 import com.mypurecloud.sdk.v2.api.request.GetGamificationMetricdefinitionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationProfileRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationProfileMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationProfileMetricRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationProfileMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationProfileMetricsObjectivedetailsRequest;
@@ -76,6 +83,9 @@ import com.mypurecloud.sdk.v2.api.request.GetGamificationTemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileActivateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileDeactivateRequest;
+import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileMembersRequest;
+import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileMembersValidateRequest;
+import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileMetricLinkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationProfilesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutGamificationMetricRequest;
@@ -775,6 +785,82 @@ public class GamificationApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<PerformanceProfile> response = (ApiResponse<PerformanceProfile>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Members of a given performance profile
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<MemberListing> getGamificationProfileMembersAsync(GetGamificationProfileMembersRequest request, final AsyncApiCallback<MemberListing> callback) {
+    try {
+      final SettableFuture<MemberListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<MemberListing>() {}, new AsyncApiCallback<ApiResponse<MemberListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<MemberListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Members of a given performance profile
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<MemberListing>> getGamificationProfileMembersAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<MemberListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<MemberListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<MemberListing>() {}, new AsyncApiCallback<ApiResponse<MemberListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<MemberListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MemberListing> response = (ApiResponse<MemberListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MemberListing> response = (ApiResponse<MemberListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -2979,6 +3065,234 @@ public class GamificationApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<PerformanceProfile> response = (ApiResponse<PerformanceProfile>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Assign members to a given performance profile
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Assignment> postGamificationProfileMembersAsync(PostGamificationProfileMembersRequest request, final AsyncApiCallback<Assignment> callback) {
+    try {
+      final SettableFuture<Assignment> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Assignment>() {}, new AsyncApiCallback<ApiResponse<Assignment>>() {
+        @Override
+        public void onCompleted(ApiResponse<Assignment> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Assign members to a given performance profile
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Assignment>> postGamificationProfileMembersAsync(ApiRequest<AssignUsers> request, final AsyncApiCallback<ApiResponse<Assignment>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Assignment>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Assignment>() {}, new AsyncApiCallback<ApiResponse<Assignment>>() {
+        @Override
+        public void onCompleted(ApiResponse<Assignment> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Assignment> response = (ApiResponse<Assignment>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Assignment> response = (ApiResponse<Assignment>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Validate member assignment
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AssignmentValidation> postGamificationProfileMembersValidateAsync(PostGamificationProfileMembersValidateRequest request, final AsyncApiCallback<AssignmentValidation> callback) {
+    try {
+      final SettableFuture<AssignmentValidation> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AssignmentValidation>() {}, new AsyncApiCallback<ApiResponse<AssignmentValidation>>() {
+        @Override
+        public void onCompleted(ApiResponse<AssignmentValidation> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Validate member assignment
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AssignmentValidation>> postGamificationProfileMembersValidateAsync(ApiRequest<ValidateAssignUsers> request, final AsyncApiCallback<ApiResponse<AssignmentValidation>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AssignmentValidation>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AssignmentValidation>() {}, new AsyncApiCallback<ApiResponse<AssignmentValidation>>() {
+        @Override
+        public void onCompleted(ApiResponse<AssignmentValidation> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AssignmentValidation> response = (ApiResponse<AssignmentValidation>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AssignmentValidation> response = (ApiResponse<AssignmentValidation>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Creates a linked metric
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Metric> postGamificationProfileMetricLinkAsync(PostGamificationProfileMetricLinkRequest request, final AsyncApiCallback<Metric> callback) {
+    try {
+      final SettableFuture<Metric> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Metric>() {}, new AsyncApiCallback<ApiResponse<Metric>>() {
+        @Override
+        public void onCompleted(ApiResponse<Metric> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Creates a linked metric
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Metric>> postGamificationProfileMetricLinkAsync(ApiRequest<TargetPerformanceProfile> request, final AsyncApiCallback<ApiResponse<Metric>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Metric>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Metric>() {}, new AsyncApiCallback<ApiResponse<Metric>>() {
+        @Override
+        public void onCompleted(ApiResponse<Metric> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Metric> response = (ApiResponse<Metric>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Metric> response = (ApiResponse<Metric>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -26,13 +26,14 @@ public class ConversationCobrowseEventTopicScoredAgent  implements Serializable 
 
   
   /**
+   * A UriReference for a resource
    **/
   public ConversationCobrowseEventTopicScoredAgent agent(ConversationCobrowseEventTopicUriReference agent) {
     this.agent = agent;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A UriReference for a resource")
   @JsonProperty("agent")
   public ConversationCobrowseEventTopicUriReference getAgent() {
     return agent;
@@ -43,13 +44,14 @@ public class ConversationCobrowseEventTopicScoredAgent  implements Serializable 
 
   
   /**
+   * Agent's score for the current conversation, from 0 - 100, higher being better
    **/
   public ConversationCobrowseEventTopicScoredAgent score(Integer score) {
     this.score = score;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Agent's score for the current conversation, from 0 - 100, higher being better")
   @JsonProperty("score")
   public Integer getScore() {
     return score;

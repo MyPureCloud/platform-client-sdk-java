@@ -33,13 +33,14 @@ public class ArchitectFlowNotificationFlowNotification  implements Serializable 
 
   
   /**
+   * The flow ID
    **/
   public ArchitectFlowNotificationFlowNotification id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The flow ID")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -50,13 +51,14 @@ public class ArchitectFlowNotificationFlowNotification  implements Serializable 
 
   
   /**
+   * The flow name
    **/
   public ArchitectFlowNotificationFlowNotification name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The flow name")
   @JsonProperty("name")
   public String getName() {
     return name;
@@ -67,13 +69,14 @@ public class ArchitectFlowNotificationFlowNotification  implements Serializable 
 
   
   /**
+   * The flow description
    **/
   public ArchitectFlowNotificationFlowNotification description(String description) {
     this.description = description;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The flow description")
   @JsonProperty("description")
   public String getDescription() {
     return description;
@@ -84,13 +87,14 @@ public class ArchitectFlowNotificationFlowNotification  implements Serializable 
 
   
   /**
+   * The flow deleted state
    **/
   public ArchitectFlowNotificationFlowNotification deleted(Boolean deleted) {
     this.deleted = deleted;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The flow deleted state")
   @JsonProperty("deleted")
   public Boolean getDeleted() {
     return deleted;
@@ -118,13 +122,14 @@ public class ArchitectFlowNotificationFlowNotification  implements Serializable 
 
   
   /**
+   * A bare-bones flow version object
    **/
   public ArchitectFlowNotificationFlowNotification savedVersion(ArchitectFlowNotificationFlowVersion savedVersion) {
     this.savedVersion = savedVersion;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A bare-bones flow version object")
   @JsonProperty("savedVersion")
   public ArchitectFlowNotificationFlowVersion getSavedVersion() {
     return savedVersion;
@@ -135,13 +140,14 @@ public class ArchitectFlowNotificationFlowNotification  implements Serializable 
 
   
   /**
+   * A bare-bones flow version object
    **/
   public ArchitectFlowNotificationFlowNotification publishedVersion(ArchitectFlowNotificationFlowVersion publishedVersion) {
     this.publishedVersion = publishedVersion;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A bare-bones flow version object")
   @JsonProperty("publishedVersion")
   public ArchitectFlowNotificationFlowVersion getPublishedVersion() {
     return publishedVersion;

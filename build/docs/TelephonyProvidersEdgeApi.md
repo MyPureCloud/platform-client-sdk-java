@@ -55,6 +55,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getTelephonyProvidersEdgesEdgegroupEdgetrunkbase**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesEdgegroupEdgetrunkbase) | Gets the edge trunk base associated with the edge group |
 | [**getTelephonyProvidersEdgesEdgegroups**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesEdgegroups) | Get the list of edge groups. |
 | [**getTelephonyProvidersEdgesEdgeversionreport**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesEdgeversionreport) | Get the edge version report. |
+| [**getTelephonyProvidersEdgesExpired**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesExpired) | List of edges more than 4 edge versions behind the latest software. |
 | [**getTelephonyProvidersEdgesExtension**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesExtension) | Get an extension by ID. |
 | [**getTelephonyProvidersEdgesExtensionpool**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesExtensionpool) | Get an extension pool by ID |
 | [**getTelephonyProvidersEdgesExtensionpools**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesExtensionpools) | Get a listing of extension pools |
@@ -3240,6 +3241,66 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**EdgeVersionReport**](EdgeVersionReport.html)
+
+<a name="getTelephonyProvidersEdgesExpired"></a>
+
+# **getTelephonyProvidersEdgesExpired**
+
+
+
+> [ExpiredEdgeListing](ExpiredEdgeListing.html) getTelephonyProvidersEdgesExpired()
+
+List of edges more than 4 edge versions behind the latest software.
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/expired  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
+* internal:edge:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
+try {
+    ExpiredEdgeListing result = apiInstance.getTelephonyProvidersEdgesExpired();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesExpired");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**ExpiredEdgeListing**](ExpiredEdgeListing.html)
 
 <a name="getTelephonyProvidersEdgesExtension"></a>
 

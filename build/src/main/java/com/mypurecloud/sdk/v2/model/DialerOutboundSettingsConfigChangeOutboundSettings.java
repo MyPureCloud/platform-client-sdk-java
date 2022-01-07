@@ -24,11 +24,6 @@ import java.io.Serializable;
 
 public class DialerOutboundSettingsConfigChangeOutboundSettings  implements Serializable {
   
-  private String id = null;
-  private String name = null;
-  private Date dateCreated = null;
-  private Date dateModified = null;
-  private Integer version = null;
   private Integer maxCallsPerAgent = null;
   private BigDecimal maxLineUtilization = null;
   private BigDecimal abandonSeconds = null;
@@ -46,7 +41,7 @@ public class DialerOutboundSettingsConfigChangeOutboundSettings  implements Seri
     }
   }
   /**
-   * Gets or Sets complianceAbandonRateDenominator
+   * The denominator to be used in determining the compliance abandon rate
    */
  @JsonDeserialize(using = ComplianceAbandonRateDenominatorEnumDeserializer.class)
   public enum ComplianceAbandonRateDenominatorEnum {
@@ -81,101 +76,22 @@ public class DialerOutboundSettingsConfigChangeOutboundSettings  implements Seri
   }
   private ComplianceAbandonRateDenominatorEnum complianceAbandonRateDenominator = null;
   private DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings automaticTimeZoneMapping = null;
+  private String id = null;
+  private String name = null;
+  private Date dateCreated = null;
+  private Date dateModified = null;
+  private Integer version = null;
 
   
   /**
-   **/
-  public DialerOutboundSettingsConfigChangeOutboundSettings id(String id) {
-    this.id = id;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("id")
-  public String getId() {
-    return id;
-  }
-  public void setId(String id) {
-    this.id = id;
-  }
-
-  
-  /**
-   **/
-  public DialerOutboundSettingsConfigChangeOutboundSettings name(String name) {
-    this.name = name;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("name")
-  public String getName() {
-    return name;
-  }
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  
-  /**
-   **/
-  public DialerOutboundSettingsConfigChangeOutboundSettings dateCreated(Date dateCreated) {
-    this.dateCreated = dateCreated;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("dateCreated")
-  public Date getDateCreated() {
-    return dateCreated;
-  }
-  public void setDateCreated(Date dateCreated) {
-    this.dateCreated = dateCreated;
-  }
-
-  
-  /**
-   **/
-  public DialerOutboundSettingsConfigChangeOutboundSettings dateModified(Date dateModified) {
-    this.dateModified = dateModified;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("dateModified")
-  public Date getDateModified() {
-    return dateModified;
-  }
-  public void setDateModified(Date dateModified) {
-    this.dateModified = dateModified;
-  }
-
-  
-  /**
-   **/
-  public DialerOutboundSettingsConfigChangeOutboundSettings version(Integer version) {
-    this.version = version;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("version")
-  public Integer getVersion() {
-    return version;
-  }
-  public void setVersion(Integer version) {
-    this.version = version;
-  }
-
-  
-  /**
+   * The maximum number of calls that can be placed per agent on any campaign
    **/
   public DialerOutboundSettingsConfigChangeOutboundSettings maxCallsPerAgent(Integer maxCallsPerAgent) {
     this.maxCallsPerAgent = maxCallsPerAgent;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The maximum number of calls that can be placed per agent on any campaign")
   @JsonProperty("maxCallsPerAgent")
   public Integer getMaxCallsPerAgent() {
     return maxCallsPerAgent;
@@ -186,13 +102,14 @@ public class DialerOutboundSettingsConfigChangeOutboundSettings  implements Seri
 
   
   /**
+   * The maximum percentage of lines that should be used for Outbound, expressed as a decimal in the range [0.0, 1.0]
    **/
   public DialerOutboundSettingsConfigChangeOutboundSettings maxLineUtilization(BigDecimal maxLineUtilization) {
     this.maxLineUtilization = maxLineUtilization;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The maximum percentage of lines that should be used for Outbound, expressed as a decimal in the range [0.0, 1.0]")
   @JsonProperty("maxLineUtilization")
   public BigDecimal getMaxLineUtilization() {
     return maxLineUtilization;
@@ -203,13 +120,14 @@ public class DialerOutboundSettingsConfigChangeOutboundSettings  implements Seri
 
   
   /**
+   * The number of seconds used to determine if a call is abandoned
    **/
   public DialerOutboundSettingsConfigChangeOutboundSettings abandonSeconds(BigDecimal abandonSeconds) {
     this.abandonSeconds = abandonSeconds;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The number of seconds used to determine if a call is abandoned")
   @JsonProperty("abandonSeconds")
   public BigDecimal getAbandonSeconds() {
     return abandonSeconds;
@@ -220,13 +138,14 @@ public class DialerOutboundSettingsConfigChangeOutboundSettings  implements Seri
 
   
   /**
+   * The denominator to be used in determining the compliance abandon rate
    **/
   public DialerOutboundSettingsConfigChangeOutboundSettings complianceAbandonRateDenominator(ComplianceAbandonRateDenominatorEnum complianceAbandonRateDenominator) {
     this.complianceAbandonRateDenominator = complianceAbandonRateDenominator;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The denominator to be used in determining the compliance abandon rate")
   @JsonProperty("complianceAbandonRateDenominator")
   public ComplianceAbandonRateDenominatorEnum getComplianceAbandonRateDenominator() {
     return complianceAbandonRateDenominator;
@@ -253,6 +172,96 @@ public class DialerOutboundSettingsConfigChangeOutboundSettings  implements Seri
   }
 
   
+  /**
+   * The globally unique identifier for the object.
+   **/
+  public DialerOutboundSettingsConfigChangeOutboundSettings id(String id) {
+    this.id = id;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
+  @JsonProperty("id")
+  public String getId() {
+    return id;
+  }
+  public void setId(String id) {
+    this.id = id;
+  }
+
+  
+  /**
+   * The UI-visible name of the object
+   **/
+  public DialerOutboundSettingsConfigChangeOutboundSettings name(String name) {
+    this.name = name;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The UI-visible name of the object")
+  @JsonProperty("name")
+  public String getName() {
+    return name;
+  }
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  
+  /**
+   * Creation time of the entity
+   **/
+  public DialerOutboundSettingsConfigChangeOutboundSettings dateCreated(Date dateCreated) {
+    this.dateCreated = dateCreated;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Creation time of the entity")
+  @JsonProperty("dateCreated")
+  public Date getDateCreated() {
+    return dateCreated;
+  }
+  public void setDateCreated(Date dateCreated) {
+    this.dateCreated = dateCreated;
+  }
+
+  
+  /**
+   * Last modified time of the entity
+   **/
+  public DialerOutboundSettingsConfigChangeOutboundSettings dateModified(Date dateModified) {
+    this.dateModified = dateModified;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Last modified time of the entity")
+  @JsonProperty("dateModified")
+  public Date getDateModified() {
+    return dateModified;
+  }
+  public void setDateModified(Date dateModified) {
+    this.dateModified = dateModified;
+  }
+
+  
+  /**
+   * Required for updates, must match the version number of the most recent update
+   **/
+  public DialerOutboundSettingsConfigChangeOutboundSettings version(Integer version) {
+    this.version = version;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Required for updates, must match the version number of the most recent update")
+  @JsonProperty("version")
+  public Integer getVersion() {
+    return version;
+  }
+  public void setVersion(Integer version) {
+    this.version = version;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -263,21 +272,21 @@ public class DialerOutboundSettingsConfigChangeOutboundSettings  implements Seri
       return false;
     }
     DialerOutboundSettingsConfigChangeOutboundSettings dialerOutboundSettingsConfigChangeOutboundSettings = (DialerOutboundSettingsConfigChangeOutboundSettings) o;
-    return Objects.equals(this.id, dialerOutboundSettingsConfigChangeOutboundSettings.id) &&
-        Objects.equals(this.name, dialerOutboundSettingsConfigChangeOutboundSettings.name) &&
-        Objects.equals(this.dateCreated, dialerOutboundSettingsConfigChangeOutboundSettings.dateCreated) &&
-        Objects.equals(this.dateModified, dialerOutboundSettingsConfigChangeOutboundSettings.dateModified) &&
-        Objects.equals(this.version, dialerOutboundSettingsConfigChangeOutboundSettings.version) &&
-        Objects.equals(this.maxCallsPerAgent, dialerOutboundSettingsConfigChangeOutboundSettings.maxCallsPerAgent) &&
+    return Objects.equals(this.maxCallsPerAgent, dialerOutboundSettingsConfigChangeOutboundSettings.maxCallsPerAgent) &&
         Objects.equals(this.maxLineUtilization, dialerOutboundSettingsConfigChangeOutboundSettings.maxLineUtilization) &&
         Objects.equals(this.abandonSeconds, dialerOutboundSettingsConfigChangeOutboundSettings.abandonSeconds) &&
         Objects.equals(this.complianceAbandonRateDenominator, dialerOutboundSettingsConfigChangeOutboundSettings.complianceAbandonRateDenominator) &&
-        Objects.equals(this.automaticTimeZoneMapping, dialerOutboundSettingsConfigChangeOutboundSettings.automaticTimeZoneMapping);
+        Objects.equals(this.automaticTimeZoneMapping, dialerOutboundSettingsConfigChangeOutboundSettings.automaticTimeZoneMapping) &&
+        Objects.equals(this.id, dialerOutboundSettingsConfigChangeOutboundSettings.id) &&
+        Objects.equals(this.name, dialerOutboundSettingsConfigChangeOutboundSettings.name) &&
+        Objects.equals(this.dateCreated, dialerOutboundSettingsConfigChangeOutboundSettings.dateCreated) &&
+        Objects.equals(this.dateModified, dialerOutboundSettingsConfigChangeOutboundSettings.dateModified) &&
+        Objects.equals(this.version, dialerOutboundSettingsConfigChangeOutboundSettings.version);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, maxCallsPerAgent, maxLineUtilization, abandonSeconds, complianceAbandonRateDenominator, automaticTimeZoneMapping);
+    return Objects.hash(maxCallsPerAgent, maxLineUtilization, abandonSeconds, complianceAbandonRateDenominator, automaticTimeZoneMapping, id, name, dateCreated, dateModified, version);
   }
 
   @Override
@@ -285,16 +294,16 @@ public class DialerOutboundSettingsConfigChangeOutboundSettings  implements Seri
     StringBuilder sb = new StringBuilder();
     sb.append("class DialerOutboundSettingsConfigChangeOutboundSettings {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
-    sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
-    sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    maxCallsPerAgent: ").append(toIndentedString(maxCallsPerAgent)).append("\n");
     sb.append("    maxLineUtilization: ").append(toIndentedString(maxLineUtilization)).append("\n");
     sb.append("    abandonSeconds: ").append(toIndentedString(abandonSeconds)).append("\n");
     sb.append("    complianceAbandonRateDenominator: ").append(toIndentedString(complianceAbandonRateDenominator)).append("\n");
     sb.append("    automaticTimeZoneMapping: ").append(toIndentedString(automaticTimeZoneMapping)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
+    sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
+    sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("}");
     return sb.toString();
   }

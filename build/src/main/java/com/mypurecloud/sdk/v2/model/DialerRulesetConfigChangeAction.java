@@ -27,17 +27,17 @@ public class DialerRulesetConfigChangeAction  implements Serializable {
   private String actionTypeName = null;
   private String updateOption = null;
   private Map<String, String> properties = null;
-  private Object additionalProperties = null;
 
   
   /**
+   * Type of the action
    **/
   public DialerRulesetConfigChangeAction type(String type) {
     this.type = type;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Type of the action")
   @JsonProperty("type")
   public String getType() {
     return type;
@@ -48,13 +48,14 @@ public class DialerRulesetConfigChangeAction  implements Serializable {
 
   
   /**
+   * Identifier of the action
    **/
   public DialerRulesetConfigChangeAction actionTypeName(String actionTypeName) {
     this.actionTypeName = actionTypeName;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Identifier of the action")
   @JsonProperty("actionTypeName")
   public String getActionTypeName() {
     return actionTypeName;
@@ -65,13 +66,14 @@ public class DialerRulesetConfigChangeAction  implements Serializable {
 
   
   /**
+   * Indicator of the type of update action (applicable only to certain types of actions)
    **/
   public DialerRulesetConfigChangeAction updateOption(String updateOption) {
     this.updateOption = updateOption;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Indicator of the type of update action (applicable only to certain types of actions)")
   @JsonProperty("updateOption")
   public String getUpdateOption() {
     return updateOption;
@@ -82,36 +84,20 @@ public class DialerRulesetConfigChangeAction  implements Serializable {
 
   
   /**
+   * Map of key-value pairs pertinent to the action (different actions require different properties)
    **/
   public DialerRulesetConfigChangeAction properties(Map<String, String> properties) {
     this.properties = properties;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Map of key-value pairs pertinent to the action (different actions require different properties)")
   @JsonProperty("properties")
   public Map<String, String> getProperties() {
     return properties;
   }
   public void setProperties(Map<String, String> properties) {
     this.properties = properties;
-  }
-
-  
-  /**
-   **/
-  public DialerRulesetConfigChangeAction additionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Object getAdditionalProperties() {
-    return additionalProperties;
-  }
-  public void setAdditionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
   }
 
   
@@ -128,13 +114,12 @@ public class DialerRulesetConfigChangeAction  implements Serializable {
     return Objects.equals(this.type, dialerRulesetConfigChangeAction.type) &&
         Objects.equals(this.actionTypeName, dialerRulesetConfigChangeAction.actionTypeName) &&
         Objects.equals(this.updateOption, dialerRulesetConfigChangeAction.updateOption) &&
-        Objects.equals(this.properties, dialerRulesetConfigChangeAction.properties) &&
-        Objects.equals(this.additionalProperties, dialerRulesetConfigChangeAction.additionalProperties);
+        Objects.equals(this.properties, dialerRulesetConfigChangeAction.properties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, actionTypeName, updateOption, properties, additionalProperties);
+    return Objects.hash(type, actionTypeName, updateOption, properties);
   }
 
   @Override
@@ -146,7 +131,6 @@ public class DialerRulesetConfigChangeAction  implements Serializable {
     sb.append("    actionTypeName: ").append(toIndentedString(actionTypeName)).append("\n");
     sb.append("    updateOption: ").append(toIndentedString(updateOption)).append("\n");
     sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

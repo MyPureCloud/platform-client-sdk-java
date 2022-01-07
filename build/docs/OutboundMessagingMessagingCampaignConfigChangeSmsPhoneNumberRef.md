@@ -8,7 +8,7 @@ title: OutboundMessagingMessagingCampaignConfigChangeSmsPhoneNumberRef
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **phoneNumber** | <!----><!---->**String**<!----> |  |  [optional] |
+| **phoneNumber** | <!----><!---->**String**<!----> | The unique phone number |  [optional] |
 {: class="table table-striped"}
 
 

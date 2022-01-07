@@ -25,100 +25,14 @@ import java.io.Serializable;
 
 public class DialerRulesetConfigChangeRuleSet  implements Serializable {
   
+  private DialerRulesetConfigChangeUriReference contactList = null;
+  private DialerRulesetConfigChangeUriReference queue = null;
+  private List<DialerRulesetConfigChangeRule> rules = new ArrayList<DialerRulesetConfigChangeRule>();
   private String id = null;
   private String name = null;
   private Date dateCreated = null;
   private Date dateModified = null;
   private Integer version = null;
-  private DialerRulesetConfigChangeUriReference contactList = null;
-  private DialerRulesetConfigChangeUriReference queue = null;
-  private List<DialerRulesetConfigChangeRule> rules = new ArrayList<DialerRulesetConfigChangeRule>();
-  private Object additionalProperties = null;
-
-  
-  /**
-   **/
-  public DialerRulesetConfigChangeRuleSet id(String id) {
-    this.id = id;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("id")
-  public String getId() {
-    return id;
-  }
-  public void setId(String id) {
-    this.id = id;
-  }
-
-  
-  /**
-   **/
-  public DialerRulesetConfigChangeRuleSet name(String name) {
-    this.name = name;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("name")
-  public String getName() {
-    return name;
-  }
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  
-  /**
-   **/
-  public DialerRulesetConfigChangeRuleSet dateCreated(Date dateCreated) {
-    this.dateCreated = dateCreated;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("dateCreated")
-  public Date getDateCreated() {
-    return dateCreated;
-  }
-  public void setDateCreated(Date dateCreated) {
-    this.dateCreated = dateCreated;
-  }
-
-  
-  /**
-   **/
-  public DialerRulesetConfigChangeRuleSet dateModified(Date dateModified) {
-    this.dateModified = dateModified;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("dateModified")
-  public Date getDateModified() {
-    return dateModified;
-  }
-  public void setDateModified(Date dateModified) {
-    this.dateModified = dateModified;
-  }
-
-  
-  /**
-   **/
-  public DialerRulesetConfigChangeRuleSet version(Integer version) {
-    this.version = version;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("version")
-  public Integer getVersion() {
-    return version;
-  }
-  public void setVersion(Integer version) {
-    this.version = version;
-  }
 
   
   /**
@@ -139,13 +53,14 @@ public class DialerRulesetConfigChangeRuleSet  implements Serializable {
 
   
   /**
+   * A UriReference for a resource
    **/
   public DialerRulesetConfigChangeRuleSet queue(DialerRulesetConfigChangeUriReference queue) {
     this.queue = queue;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A UriReference for a resource")
   @JsonProperty("queue")
   public DialerRulesetConfigChangeUriReference getQueue() {
     return queue;
@@ -173,19 +88,92 @@ public class DialerRulesetConfigChangeRuleSet  implements Serializable {
 
   
   /**
+   * The globally unique identifier for the object.
    **/
-  public DialerRulesetConfigChangeRuleSet additionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
+  public DialerRulesetConfigChangeRuleSet id(String id) {
+    this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Object getAdditionalProperties() {
-    return additionalProperties;
+  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
+  @JsonProperty("id")
+  public String getId() {
+    return id;
   }
-  public void setAdditionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
+  public void setId(String id) {
+    this.id = id;
+  }
+
+  
+  /**
+   * The UI-visible name of the object
+   **/
+  public DialerRulesetConfigChangeRuleSet name(String name) {
+    this.name = name;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The UI-visible name of the object")
+  @JsonProperty("name")
+  public String getName() {
+    return name;
+  }
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  
+  /**
+   * Creation time of the entity
+   **/
+  public DialerRulesetConfigChangeRuleSet dateCreated(Date dateCreated) {
+    this.dateCreated = dateCreated;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Creation time of the entity")
+  @JsonProperty("dateCreated")
+  public Date getDateCreated() {
+    return dateCreated;
+  }
+  public void setDateCreated(Date dateCreated) {
+    this.dateCreated = dateCreated;
+  }
+
+  
+  /**
+   * Last modified time of the entity
+   **/
+  public DialerRulesetConfigChangeRuleSet dateModified(Date dateModified) {
+    this.dateModified = dateModified;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Last modified time of the entity")
+  @JsonProperty("dateModified")
+  public Date getDateModified() {
+    return dateModified;
+  }
+  public void setDateModified(Date dateModified) {
+    this.dateModified = dateModified;
+  }
+
+  
+  /**
+   * Required for updates, must match the version number of the most recent update
+   **/
+  public DialerRulesetConfigChangeRuleSet version(Integer version) {
+    this.version = version;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Required for updates, must match the version number of the most recent update")
+  @JsonProperty("version")
+  public Integer getVersion() {
+    return version;
+  }
+  public void setVersion(Integer version) {
+    this.version = version;
   }
 
   
@@ -199,20 +187,19 @@ public class DialerRulesetConfigChangeRuleSet  implements Serializable {
       return false;
     }
     DialerRulesetConfigChangeRuleSet dialerRulesetConfigChangeRuleSet = (DialerRulesetConfigChangeRuleSet) o;
-    return Objects.equals(this.id, dialerRulesetConfigChangeRuleSet.id) &&
+    return Objects.equals(this.contactList, dialerRulesetConfigChangeRuleSet.contactList) &&
+        Objects.equals(this.queue, dialerRulesetConfigChangeRuleSet.queue) &&
+        Objects.equals(this.rules, dialerRulesetConfigChangeRuleSet.rules) &&
+        Objects.equals(this.id, dialerRulesetConfigChangeRuleSet.id) &&
         Objects.equals(this.name, dialerRulesetConfigChangeRuleSet.name) &&
         Objects.equals(this.dateCreated, dialerRulesetConfigChangeRuleSet.dateCreated) &&
         Objects.equals(this.dateModified, dialerRulesetConfigChangeRuleSet.dateModified) &&
-        Objects.equals(this.version, dialerRulesetConfigChangeRuleSet.version) &&
-        Objects.equals(this.contactList, dialerRulesetConfigChangeRuleSet.contactList) &&
-        Objects.equals(this.queue, dialerRulesetConfigChangeRuleSet.queue) &&
-        Objects.equals(this.rules, dialerRulesetConfigChangeRuleSet.rules) &&
-        Objects.equals(this.additionalProperties, dialerRulesetConfigChangeRuleSet.additionalProperties);
+        Objects.equals(this.version, dialerRulesetConfigChangeRuleSet.version);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, contactList, queue, rules, additionalProperties);
+    return Objects.hash(contactList, queue, rules, id, name, dateCreated, dateModified, version);
   }
 
   @Override
@@ -220,15 +207,14 @@ public class DialerRulesetConfigChangeRuleSet  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class DialerRulesetConfigChangeRuleSet {\n");
     
+    sb.append("    contactList: ").append(toIndentedString(contactList)).append("\n");
+    sb.append("    queue: ").append(toIndentedString(queue)).append("\n");
+    sb.append("    rules: ").append(toIndentedString(rules)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
-    sb.append("    contactList: ").append(toIndentedString(contactList)).append("\n");
-    sb.append("    queue: ").append(toIndentedString(queue)).append("\n");
-    sb.append("    rules: ").append(toIndentedString(rules)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

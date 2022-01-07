@@ -33,6 +33,7 @@ public class AnalyticsConversationWithoutAttributes  implements Serializable {
   private Date conversationStart = null;
   private List<String> divisionIds = new ArrayList<String>();
   private String externalTag = null;
+  private List<String> knowledgeBaseIds = new ArrayList<String>();
   private Double mediaStatsMinConversationMos = null;
   private Double mediaStatsMinConversationRFactor = null;
 
@@ -83,6 +84,7 @@ public class AnalyticsConversationWithoutAttributes  implements Serializable {
     }
   }
   private OriginatingDirectionEnum originatingDirection = null;
+  private Boolean selfServed = null;
   private List<AnalyticsEvaluation> evaluations = new ArrayList<AnalyticsEvaluation>();
   private List<AnalyticsSurvey> surveys = new ArrayList<AnalyticsSurvey>();
   private List<AnalyticsResolution> resolutions = new ArrayList<AnalyticsResolution>();
@@ -180,6 +182,24 @@ public class AnalyticsConversationWithoutAttributes  implements Serializable {
 
   
   /**
+   * The unique identifier(s) of the knowledge base(s) used
+   **/
+  public AnalyticsConversationWithoutAttributes knowledgeBaseIds(List<String> knowledgeBaseIds) {
+    this.knowledgeBaseIds = knowledgeBaseIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The unique identifier(s) of the knowledge base(s) used")
+  @JsonProperty("knowledgeBaseIds")
+  public List<String> getKnowledgeBaseIds() {
+    return knowledgeBaseIds;
+  }
+  public void setKnowledgeBaseIds(List<String> knowledgeBaseIds) {
+    this.knowledgeBaseIds = knowledgeBaseIds;
+  }
+
+  
+  /**
    * The lowest estimated average MOS among all the audio streams belonging to this conversation
    **/
   public AnalyticsConversationWithoutAttributes mediaStatsMinConversationMos(Double mediaStatsMinConversationMos) {
@@ -230,6 +250,24 @@ public class AnalyticsConversationWithoutAttributes  implements Serializable {
   }
   public void setOriginatingDirection(OriginatingDirectionEnum originatingDirection) {
     this.originatingDirection = originatingDirection;
+  }
+
+  
+  /**
+   * Indicates whether all flow sessions were self serviced
+   **/
+  public AnalyticsConversationWithoutAttributes selfServed(Boolean selfServed) {
+    this.selfServed = selfServed;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates whether all flow sessions were self serviced")
+  @JsonProperty("selfServed")
+  public Boolean getSelfServed() {
+    return selfServed;
+  }
+  public void setSelfServed(Boolean selfServed) {
+    this.selfServed = selfServed;
   }
 
   
@@ -320,9 +358,11 @@ public class AnalyticsConversationWithoutAttributes  implements Serializable {
         Objects.equals(this.conversationStart, analyticsConversationWithoutAttributes.conversationStart) &&
         Objects.equals(this.divisionIds, analyticsConversationWithoutAttributes.divisionIds) &&
         Objects.equals(this.externalTag, analyticsConversationWithoutAttributes.externalTag) &&
+        Objects.equals(this.knowledgeBaseIds, analyticsConversationWithoutAttributes.knowledgeBaseIds) &&
         Objects.equals(this.mediaStatsMinConversationMos, analyticsConversationWithoutAttributes.mediaStatsMinConversationMos) &&
         Objects.equals(this.mediaStatsMinConversationRFactor, analyticsConversationWithoutAttributes.mediaStatsMinConversationRFactor) &&
         Objects.equals(this.originatingDirection, analyticsConversationWithoutAttributes.originatingDirection) &&
+        Objects.equals(this.selfServed, analyticsConversationWithoutAttributes.selfServed) &&
         Objects.equals(this.evaluations, analyticsConversationWithoutAttributes.evaluations) &&
         Objects.equals(this.surveys, analyticsConversationWithoutAttributes.surveys) &&
         Objects.equals(this.resolutions, analyticsConversationWithoutAttributes.resolutions) &&
@@ -331,7 +371,7 @@ public class AnalyticsConversationWithoutAttributes  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(conversationEnd, conversationId, conversationStart, divisionIds, externalTag, mediaStatsMinConversationMos, mediaStatsMinConversationRFactor, originatingDirection, evaluations, surveys, resolutions, participants);
+    return Objects.hash(conversationEnd, conversationId, conversationStart, divisionIds, externalTag, knowledgeBaseIds, mediaStatsMinConversationMos, mediaStatsMinConversationRFactor, originatingDirection, selfServed, evaluations, surveys, resolutions, participants);
   }
 
   @Override
@@ -344,9 +384,11 @@ public class AnalyticsConversationWithoutAttributes  implements Serializable {
     sb.append("    conversationStart: ").append(toIndentedString(conversationStart)).append("\n");
     sb.append("    divisionIds: ").append(toIndentedString(divisionIds)).append("\n");
     sb.append("    externalTag: ").append(toIndentedString(externalTag)).append("\n");
+    sb.append("    knowledgeBaseIds: ").append(toIndentedString(knowledgeBaseIds)).append("\n");
     sb.append("    mediaStatsMinConversationMos: ").append(toIndentedString(mediaStatsMinConversationMos)).append("\n");
     sb.append("    mediaStatsMinConversationRFactor: ").append(toIndentedString(mediaStatsMinConversationRFactor)).append("\n");
     sb.append("    originatingDirection: ").append(toIndentedString(originatingDirection)).append("\n");
+    sb.append("    selfServed: ").append(toIndentedString(selfServed)).append("\n");
     sb.append("    evaluations: ").append(toIndentedString(evaluations)).append("\n");
     sb.append("    surveys: ").append(toIndentedString(surveys)).append("\n");
     sb.append("    resolutions: ").append(toIndentedString(resolutions)).append("\n");

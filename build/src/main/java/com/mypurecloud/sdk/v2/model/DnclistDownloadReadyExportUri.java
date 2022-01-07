@@ -22,7 +22,6 @@ public class DnclistDownloadReadyExportUri  implements Serializable {
   
   private String uri = null;
   private String exportTimestamp = null;
-  private Object additionalProperties = null;
 
   
   /**
@@ -59,23 +58,6 @@ public class DnclistDownloadReadyExportUri  implements Serializable {
   }
 
   
-  /**
-   **/
-  public DnclistDownloadReadyExportUri additionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Object getAdditionalProperties() {
-    return additionalProperties;
-  }
-  public void setAdditionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
-  }
-
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -87,13 +69,12 @@ public class DnclistDownloadReadyExportUri  implements Serializable {
     }
     DnclistDownloadReadyExportUri dnclistDownloadReadyExportUri = (DnclistDownloadReadyExportUri) o;
     return Objects.equals(this.uri, dnclistDownloadReadyExportUri.uri) &&
-        Objects.equals(this.exportTimestamp, dnclistDownloadReadyExportUri.exportTimestamp) &&
-        Objects.equals(this.additionalProperties, dnclistDownloadReadyExportUri.additionalProperties);
+        Objects.equals(this.exportTimestamp, dnclistDownloadReadyExportUri.exportTimestamp);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(uri, exportTimestamp, additionalProperties);
+    return Objects.hash(uri, exportTimestamp);
   }
 
   @Override
@@ -103,7 +84,6 @@ public class DnclistDownloadReadyExportUri  implements Serializable {
     
     sb.append("    uri: ").append(toIndentedString(uri)).append("\n");
     sb.append("    exportTimestamp: ").append(toIndentedString(exportTimestamp)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

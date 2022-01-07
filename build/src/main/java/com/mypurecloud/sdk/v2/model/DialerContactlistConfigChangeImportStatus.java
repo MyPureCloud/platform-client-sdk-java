@@ -35,7 +35,7 @@ public class DialerContactlistConfigChangeImportStatus  implements Serializable 
     }
   }
   /**
-   * Gets or Sets importState
+   * current status of the import
    */
  @JsonDeserialize(using = ImportStateEnumDeserializer.class)
   public enum ImportStateEnum {
@@ -73,17 +73,17 @@ public class DialerContactlistConfigChangeImportStatus  implements Serializable 
   private Integer completedRecords = null;
   private Integer percentageComplete = null;
   private String failureReason = null;
-  private Object additionalProperties = null;
 
   
   /**
+   * current status of the import
    **/
   public DialerContactlistConfigChangeImportStatus importState(ImportStateEnum importState) {
     this.importState = importState;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "current status of the import")
   @JsonProperty("importState")
   public ImportStateEnum getImportState() {
     return importState;
@@ -94,13 +94,14 @@ public class DialerContactlistConfigChangeImportStatus  implements Serializable 
 
   
   /**
+   * total number of records to be imported
    **/
   public DialerContactlistConfigChangeImportStatus totalRecords(Integer totalRecords) {
     this.totalRecords = totalRecords;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "total number of records to be imported")
   @JsonProperty("totalRecords")
   public Integer getTotalRecords() {
     return totalRecords;
@@ -111,13 +112,14 @@ public class DialerContactlistConfigChangeImportStatus  implements Serializable 
 
   
   /**
+   * number of records finished importing
    **/
   public DialerContactlistConfigChangeImportStatus completedRecords(Integer completedRecords) {
     this.completedRecords = completedRecords;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "number of records finished importing")
   @JsonProperty("completedRecords")
   public Integer getCompletedRecords() {
     return completedRecords;
@@ -128,13 +130,14 @@ public class DialerContactlistConfigChangeImportStatus  implements Serializable 
 
   
   /**
+   * percentage of records finished importing
    **/
   public DialerContactlistConfigChangeImportStatus percentageComplete(Integer percentageComplete) {
     this.percentageComplete = percentageComplete;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "percentage of records finished importing")
   @JsonProperty("percentageComplete")
   public Integer getPercentageComplete() {
     return percentageComplete;
@@ -145,36 +148,20 @@ public class DialerContactlistConfigChangeImportStatus  implements Serializable 
 
   
   /**
+   * if the import has failed, the reason for the failure
    **/
   public DialerContactlistConfigChangeImportStatus failureReason(String failureReason) {
     this.failureReason = failureReason;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "if the import has failed, the reason for the failure")
   @JsonProperty("failureReason")
   public String getFailureReason() {
     return failureReason;
   }
   public void setFailureReason(String failureReason) {
     this.failureReason = failureReason;
-  }
-
-  
-  /**
-   **/
-  public DialerContactlistConfigChangeImportStatus additionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Object getAdditionalProperties() {
-    return additionalProperties;
-  }
-  public void setAdditionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
   }
 
   
@@ -192,13 +179,12 @@ public class DialerContactlistConfigChangeImportStatus  implements Serializable 
         Objects.equals(this.totalRecords, dialerContactlistConfigChangeImportStatus.totalRecords) &&
         Objects.equals(this.completedRecords, dialerContactlistConfigChangeImportStatus.completedRecords) &&
         Objects.equals(this.percentageComplete, dialerContactlistConfigChangeImportStatus.percentageComplete) &&
-        Objects.equals(this.failureReason, dialerContactlistConfigChangeImportStatus.failureReason) &&
-        Objects.equals(this.additionalProperties, dialerContactlistConfigChangeImportStatus.additionalProperties);
+        Objects.equals(this.failureReason, dialerContactlistConfigChangeImportStatus.failureReason);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(importState, totalRecords, completedRecords, percentageComplete, failureReason, additionalProperties);
+    return Objects.hash(importState, totalRecords, completedRecords, percentageComplete, failureReason);
   }
 
   @Override
@@ -211,7 +197,6 @@ public class DialerContactlistConfigChangeImportStatus  implements Serializable 
     sb.append("    completedRecords: ").append(toIndentedString(completedRecords)).append("\n");
     sb.append("    percentageComplete: ").append(toIndentedString(percentageComplete)).append("\n");
     sb.append("    failureReason: ").append(toIndentedString(failureReason)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -26,13 +26,14 @@ public class QueueConversationVideoEventTopicScoredAgent  implements Serializabl
 
   
   /**
+   * A UriReference for a resource
    **/
   public QueueConversationVideoEventTopicScoredAgent agent(QueueConversationVideoEventTopicUriReference agent) {
     this.agent = agent;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A UriReference for a resource")
   @JsonProperty("agent")
   public QueueConversationVideoEventTopicUriReference getAgent() {
     return agent;
@@ -43,13 +44,14 @@ public class QueueConversationVideoEventTopicScoredAgent  implements Serializabl
 
   
   /**
+   * Agent's score for the current conversation, from 0 - 100, higher being better
    **/
   public QueueConversationVideoEventTopicScoredAgent score(Integer score) {
     this.score = score;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Agent's score for the current conversation, from 0 - 100, higher being better")
   @JsonProperty("score")
   public Integer getScore() {
     return score;

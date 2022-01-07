@@ -8,14 +8,14 @@ title: ConversationEventTopicFaxStatus
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **direction** | <!----><!---->**String**<!----> |  |  [optional] |
-| **expectedPages** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **activePage** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **linesTransmitted** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **bytesTransmitted** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **baudRate** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **pageErrors** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **lineErrors** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **direction** | <!----><!---->**String**<!----> | The fax direction, either \&quot;send\&quot; or \&quot;receive\&quot;. |  [optional] |
+| **expectedPages** | <!----><!---->**Integer**<!----> | Total number of expected pages, if known. |  [optional] |
+| **activePage** | <!----><!---->**Integer**<!----> | Active page of the transmission. |  [optional] |
+| **linesTransmitted** | <!----><!---->**Integer**<!----> | Number of lines that have completed transmission. |  [optional] |
+| **bytesTransmitted** | <!----><!---->**Integer**<!----> | Number of bytes that have competed transmission. |  [optional] |
+| **baudRate** | <!----><!---->**Integer**<!----> | Current signaling rate of transmission, baud rate. |  [optional] |
+| **pageErrors** | <!----><!---->**Integer**<!----> | Number of page errors. |  [optional] |
+| **lineErrors** | <!----><!---->**Integer**<!----> | Number of line errors. |  [optional] |
 {: class="table table-striped"}
 
 

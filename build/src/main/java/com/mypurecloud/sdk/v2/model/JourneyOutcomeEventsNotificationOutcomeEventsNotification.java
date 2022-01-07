@@ -32,6 +32,7 @@ public class JourneyOutcomeEventsNotificationOutcomeEventsNotification  implemen
   private Date createdDate = null;
   private String customerId = null;
   private String customerIdType = null;
+  private JourneyOutcomeEventsNotificationSession session = null;
 
   private static class EventTypeEnumDeserializer extends StdDeserializer<EventTypeEnum> {
     public EventTypeEnumDeserializer() {
@@ -51,10 +52,7 @@ public class JourneyOutcomeEventsNotificationOutcomeEventsNotification  implemen
  @JsonDeserialize(using = EventTypeEnumDeserializer.class)
   public enum EventTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    WEBEVENT("WebEvent"),
-    WEBACTIONEVENT("WebActionEvent"),
     OUTCOMEACHIEVEDEVENT("OutcomeAchievedEvent"),
-    BLOCKEDWEBACTIONOFFEREVENT("BlockedWebActionOfferEvent"),
     OUTCOMEATTRIBUTIONEVENT("OutcomeAttributionEvent");
 
     private String value;
@@ -83,7 +81,6 @@ public class JourneyOutcomeEventsNotificationOutcomeEventsNotification  implemen
     }
   }
   private EventTypeEnum eventType = null;
-  private JourneyOutcomeEventsNotificationSession session = null;
   private JourneyOutcomeEventsNotificationOutcomeAchievedMessage outcomeAchievedEvent = null;
   private JourneyOutcomeEventsNotificationOutcomeAttributionMessage outcomeAttributionEventMessage = null;
 
@@ -192,23 +189,6 @@ public class JourneyOutcomeEventsNotificationOutcomeEventsNotification  implemen
   
   /**
    **/
-  public JourneyOutcomeEventsNotificationOutcomeEventsNotification eventType(EventTypeEnum eventType) {
-    this.eventType = eventType;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("eventType")
-  public EventTypeEnum getEventType() {
-    return eventType;
-  }
-  public void setEventType(EventTypeEnum eventType) {
-    this.eventType = eventType;
-  }
-
-  
-  /**
-   **/
   public JourneyOutcomeEventsNotificationOutcomeEventsNotification session(JourneyOutcomeEventsNotificationSession session) {
     this.session = session;
     return this;
@@ -221,6 +201,23 @@ public class JourneyOutcomeEventsNotificationOutcomeEventsNotification  implemen
   }
   public void setSession(JourneyOutcomeEventsNotificationSession session) {
     this.session = session;
+  }
+
+  
+  /**
+   **/
+  public JourneyOutcomeEventsNotificationOutcomeEventsNotification eventType(EventTypeEnum eventType) {
+    this.eventType = eventType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("eventType")
+  public EventTypeEnum getEventType() {
+    return eventType;
+  }
+  public void setEventType(EventTypeEnum eventType) {
+    this.eventType = eventType;
   }
 
   
@@ -274,15 +271,15 @@ public class JourneyOutcomeEventsNotificationOutcomeEventsNotification  implemen
         Objects.equals(this.createdDate, journeyOutcomeEventsNotificationOutcomeEventsNotification.createdDate) &&
         Objects.equals(this.customerId, journeyOutcomeEventsNotificationOutcomeEventsNotification.customerId) &&
         Objects.equals(this.customerIdType, journeyOutcomeEventsNotificationOutcomeEventsNotification.customerIdType) &&
-        Objects.equals(this.eventType, journeyOutcomeEventsNotificationOutcomeEventsNotification.eventType) &&
         Objects.equals(this.session, journeyOutcomeEventsNotificationOutcomeEventsNotification.session) &&
+        Objects.equals(this.eventType, journeyOutcomeEventsNotificationOutcomeEventsNotification.eventType) &&
         Objects.equals(this.outcomeAchievedEvent, journeyOutcomeEventsNotificationOutcomeEventsNotification.outcomeAchievedEvent) &&
         Objects.equals(this.outcomeAttributionEventMessage, journeyOutcomeEventsNotificationOutcomeEventsNotification.outcomeAttributionEventMessage);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, correlationId, externalContact, createdDate, customerId, customerIdType, eventType, session, outcomeAchievedEvent, outcomeAttributionEventMessage);
+    return Objects.hash(id, correlationId, externalContact, createdDate, customerId, customerIdType, session, eventType, outcomeAchievedEvent, outcomeAttributionEventMessage);
   }
 
   @Override
@@ -296,8 +293,8 @@ public class JourneyOutcomeEventsNotificationOutcomeEventsNotification  implemen
     sb.append("    createdDate: ").append(toIndentedString(createdDate)).append("\n");
     sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
     sb.append("    customerIdType: ").append(toIndentedString(customerIdType)).append("\n");
-    sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
     sb.append("    session: ").append(toIndentedString(session)).append("\n");
+    sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
     sb.append("    outcomeAchievedEvent: ").append(toIndentedString(outcomeAchievedEvent)).append("\n");
     sb.append("    outcomeAttributionEventMessage: ").append(toIndentedString(outcomeAttributionEventMessage)).append("\n");
     sb.append("}");

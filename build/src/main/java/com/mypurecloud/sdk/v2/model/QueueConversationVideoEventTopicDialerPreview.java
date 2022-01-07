@@ -18,8 +18,9 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * QueueConversationVideoEventTopicDialerPreview
+ * The preview data to be used when this callback is a Preview.
  */
+@ApiModel(description = "The preview data to be used when this callback is a Preview.")
 
 public class QueueConversationVideoEventTopicDialerPreview  implements Serializable {
   
@@ -28,7 +29,6 @@ public class QueueConversationVideoEventTopicDialerPreview  implements Serializa
   private String contactListId = null;
   private String campaignId = null;
   private List<QueueConversationVideoEventTopicPhoneNumberColumn> phoneNumberColumns = new ArrayList<QueueConversationVideoEventTopicPhoneNumberColumn>();
-  private Object additionalProperties = null;
 
   
   /**
@@ -49,13 +49,14 @@ public class QueueConversationVideoEventTopicDialerPreview  implements Serializa
 
   
   /**
+   * The contact associated with this preview data pop
    **/
   public QueueConversationVideoEventTopicDialerPreview contactId(String contactId) {
     this.contactId = contactId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The contact associated with this preview data pop")
   @JsonProperty("contactId")
   public String getContactId() {
     return contactId;
@@ -66,13 +67,14 @@ public class QueueConversationVideoEventTopicDialerPreview  implements Serializa
 
   
   /**
+   * The contactList associated with this preview data pop.
    **/
   public QueueConversationVideoEventTopicDialerPreview contactListId(String contactListId) {
     this.contactListId = contactListId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The contactList associated with this preview data pop.")
   @JsonProperty("contactListId")
   public String getContactListId() {
     return contactListId;
@@ -83,13 +85,14 @@ public class QueueConversationVideoEventTopicDialerPreview  implements Serializa
 
   
   /**
+   * The campaignId associated with this preview data pop.
    **/
   public QueueConversationVideoEventTopicDialerPreview campaignId(String campaignId) {
     this.campaignId = campaignId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The campaignId associated with this preview data pop.")
   @JsonProperty("campaignId")
   public String getCampaignId() {
     return campaignId;
@@ -100,36 +103,20 @@ public class QueueConversationVideoEventTopicDialerPreview  implements Serializa
 
   
   /**
+   * The phone number columns associated with this campaign
    **/
   public QueueConversationVideoEventTopicDialerPreview phoneNumberColumns(List<QueueConversationVideoEventTopicPhoneNumberColumn> phoneNumberColumns) {
     this.phoneNumberColumns = phoneNumberColumns;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The phone number columns associated with this campaign")
   @JsonProperty("phoneNumberColumns")
   public List<QueueConversationVideoEventTopicPhoneNumberColumn> getPhoneNumberColumns() {
     return phoneNumberColumns;
   }
   public void setPhoneNumberColumns(List<QueueConversationVideoEventTopicPhoneNumberColumn> phoneNumberColumns) {
     this.phoneNumberColumns = phoneNumberColumns;
-  }
-
-  
-  /**
-   **/
-  public QueueConversationVideoEventTopicDialerPreview additionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Object getAdditionalProperties() {
-    return additionalProperties;
-  }
-  public void setAdditionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
   }
 
   
@@ -147,13 +134,12 @@ public class QueueConversationVideoEventTopicDialerPreview  implements Serializa
         Objects.equals(this.contactId, queueConversationVideoEventTopicDialerPreview.contactId) &&
         Objects.equals(this.contactListId, queueConversationVideoEventTopicDialerPreview.contactListId) &&
         Objects.equals(this.campaignId, queueConversationVideoEventTopicDialerPreview.campaignId) &&
-        Objects.equals(this.phoneNumberColumns, queueConversationVideoEventTopicDialerPreview.phoneNumberColumns) &&
-        Objects.equals(this.additionalProperties, queueConversationVideoEventTopicDialerPreview.additionalProperties);
+        Objects.equals(this.phoneNumberColumns, queueConversationVideoEventTopicDialerPreview.phoneNumberColumns);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, contactId, contactListId, campaignId, phoneNumberColumns, additionalProperties);
+    return Objects.hash(id, contactId, contactListId, campaignId, phoneNumberColumns);
   }
 
   @Override
@@ -166,7 +152,6 @@ public class QueueConversationVideoEventTopicDialerPreview  implements Serializa
     sb.append("    contactListId: ").append(toIndentedString(contactListId)).append("\n");
     sb.append("    campaignId: ").append(toIndentedString(campaignId)).append("\n");
     sb.append("    phoneNumberColumns: ").append(toIndentedString(phoneNumberColumns)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

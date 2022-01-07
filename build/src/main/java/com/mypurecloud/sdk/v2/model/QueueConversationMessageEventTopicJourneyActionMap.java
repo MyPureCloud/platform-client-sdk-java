@@ -15,8 +15,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * QueueConversationMessageEventTopicJourneyActionMap
+ * Details about the action map from the Journey System which triggered this action
  */
+@ApiModel(description = "Details about the action map from the Journey System which triggered this action")
 
 public class QueueConversationMessageEventTopicJourneyActionMap  implements Serializable {
   
@@ -25,13 +26,14 @@ public class QueueConversationMessageEventTopicJourneyActionMap  implements Seri
 
   
   /**
+   * The ID of the actionMap in the Journey System which triggered this action
    **/
   public QueueConversationMessageEventTopicJourneyActionMap id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The ID of the actionMap in the Journey System which triggered this action")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -42,13 +44,14 @@ public class QueueConversationMessageEventTopicJourneyActionMap  implements Seri
 
   
   /**
+   * The version number of the actionMap in the Journey System at the time this action was triggered
    **/
   public QueueConversationMessageEventTopicJourneyActionMap version(Integer version) {
     this.version = version;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The version number of the actionMap in the Journey System at the time this action was triggered")
   @JsonProperty("version")
   public Integer getVersion() {
     return version;

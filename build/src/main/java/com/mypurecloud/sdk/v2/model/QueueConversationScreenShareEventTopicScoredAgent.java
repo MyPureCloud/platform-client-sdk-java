@@ -26,13 +26,14 @@ public class QueueConversationScreenShareEventTopicScoredAgent  implements Seria
 
   
   /**
+   * A UriReference for a resource
    **/
   public QueueConversationScreenShareEventTopicScoredAgent agent(QueueConversationScreenShareEventTopicUriReference agent) {
     this.agent = agent;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A UriReference for a resource")
   @JsonProperty("agent")
   public QueueConversationScreenShareEventTopicUriReference getAgent() {
     return agent;
@@ -43,13 +44,14 @@ public class QueueConversationScreenShareEventTopicScoredAgent  implements Seria
 
   
   /**
+   * Agent's score for the current conversation, from 0 - 100, higher being better
    **/
   public QueueConversationScreenShareEventTopicScoredAgent score(Integer score) {
     this.score = score;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Agent's score for the current conversation, from 0 - 100, higher being better")
   @JsonProperty("score")
   public Integer getScore() {
     return score;

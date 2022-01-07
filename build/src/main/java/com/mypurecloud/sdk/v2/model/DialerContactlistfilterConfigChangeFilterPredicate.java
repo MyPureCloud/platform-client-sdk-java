@@ -37,13 +37,13 @@ public class DialerContactlistfilterConfigChangeFilterPredicate  implements Seri
     }
   }
   /**
-   * Gets or Sets columnType
+   * Whether a contact column is numeric or alphabetic
    */
  @JsonDeserialize(using = ColumnTypeEnumDeserializer.class)
   public enum ColumnTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    NUMERIC("NUMERIC"),
-    ALPHABETIC("ALPHABETIC");
+    NUMERIC("numeric"),
+    ALPHABETIC("alphabetic");
 
     private String value;
 
@@ -85,7 +85,7 @@ public class DialerContactlistfilterConfigChangeFilterPredicate  implements Seri
     }
   }
   /**
-   * Gets or Sets operator
+   * The comparison operator
    */
  @JsonDeserialize(using = OperatorEnumDeserializer.class)
   public enum OperatorEnum {
@@ -132,17 +132,17 @@ public class DialerContactlistfilterConfigChangeFilterPredicate  implements Seri
   private String value = null;
   private DialerContactlistfilterConfigChangeRange range = null;
   private Boolean inverted = null;
-  private Object additionalProperties = null;
 
   
   /**
+   * The contact list column
    **/
   public DialerContactlistfilterConfigChangeFilterPredicate column(String column) {
     this.column = column;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The contact list column")
   @JsonProperty("column")
   public String getColumn() {
     return column;
@@ -153,13 +153,14 @@ public class DialerContactlistfilterConfigChangeFilterPredicate  implements Seri
 
   
   /**
+   * Whether a contact column is numeric or alphabetic
    **/
   public DialerContactlistfilterConfigChangeFilterPredicate columnType(ColumnTypeEnum columnType) {
     this.columnType = columnType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Whether a contact column is numeric or alphabetic")
   @JsonProperty("columnType")
   public ColumnTypeEnum getColumnType() {
     return columnType;
@@ -170,13 +171,14 @@ public class DialerContactlistfilterConfigChangeFilterPredicate  implements Seri
 
   
   /**
+   * The comparison operator
    **/
   public DialerContactlistfilterConfigChangeFilterPredicate operator(OperatorEnum operator) {
     this.operator = operator;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The comparison operator")
   @JsonProperty("operator")
   public OperatorEnum getOperator() {
     return operator;
@@ -187,13 +189,14 @@ public class DialerContactlistfilterConfigChangeFilterPredicate  implements Seri
 
   
   /**
+   * The value the predicate applies to
    **/
   public DialerContactlistfilterConfigChangeFilterPredicate value(String value) {
     this.value = value;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The value the predicate applies to")
   @JsonProperty("value")
   public String getValue() {
     return value;
@@ -221,36 +224,20 @@ public class DialerContactlistfilterConfigChangeFilterPredicate  implements Seri
 
   
   /**
+   * Whether or not to invert to result of evaluating the predicate
    **/
   public DialerContactlistfilterConfigChangeFilterPredicate inverted(Boolean inverted) {
     this.inverted = inverted;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Whether or not to invert to result of evaluating the predicate")
   @JsonProperty("inverted")
   public Boolean getInverted() {
     return inverted;
   }
   public void setInverted(Boolean inverted) {
     this.inverted = inverted;
-  }
-
-  
-  /**
-   **/
-  public DialerContactlistfilterConfigChangeFilterPredicate additionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Object getAdditionalProperties() {
-    return additionalProperties;
-  }
-  public void setAdditionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
   }
 
   
@@ -269,13 +256,12 @@ public class DialerContactlistfilterConfigChangeFilterPredicate  implements Seri
         Objects.equals(this.operator, dialerContactlistfilterConfigChangeFilterPredicate.operator) &&
         Objects.equals(this.value, dialerContactlistfilterConfigChangeFilterPredicate.value) &&
         Objects.equals(this.range, dialerContactlistfilterConfigChangeFilterPredicate.range) &&
-        Objects.equals(this.inverted, dialerContactlistfilterConfigChangeFilterPredicate.inverted) &&
-        Objects.equals(this.additionalProperties, dialerContactlistfilterConfigChangeFilterPredicate.additionalProperties);
+        Objects.equals(this.inverted, dialerContactlistfilterConfigChangeFilterPredicate.inverted);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(column, columnType, operator, value, range, inverted, additionalProperties);
+    return Objects.hash(column, columnType, operator, value, range, inverted);
   }
 
   @Override
@@ -289,7 +275,6 @@ public class DialerContactlistfilterConfigChangeFilterPredicate  implements Seri
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    range: ").append(toIndentedString(range)).append("\n");
     sb.append("    inverted: ").append(toIndentedString(inverted)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

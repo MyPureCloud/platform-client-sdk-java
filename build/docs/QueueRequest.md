@@ -28,6 +28,7 @@ title: QueueRequest
 | **emailInQueueFlow** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | The in-queue flow to use for email conversations waiting in queue. |  [optional] |
 | **messageInQueueFlow** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | The in-queue flow to use for message conversations waiting in queue. |  [optional] |
 | **whisperPrompt** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | The prompt used for whisper on the queue, if configured. |  [optional] |
+| **onHoldPrompt** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | The audio to be played when calls on this queue are on hold. If not configured, the default on-hold music will play. |  [optional] |
 | **autoAnswerOnly** | <!----><!---->**Boolean**<!----> | Specifies whether the configured whisper should play for all ACD calls, or only for those which are auto-answered. |  [optional] |
 | **enableTranscription** | <!----><!---->**Boolean**<!----> | Indicates whether voice transcription is enabled for this queue. |  [optional] |
 | **enableManualAssignment** | <!----><!---->**Boolean**<!----> | Indicates whether manual assignment is enabled for this queue. |  [optional] |

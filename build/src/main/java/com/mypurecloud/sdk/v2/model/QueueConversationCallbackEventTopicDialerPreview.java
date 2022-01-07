@@ -28,7 +28,6 @@ public class QueueConversationCallbackEventTopicDialerPreview  implements Serial
   private String contactListId = null;
   private String campaignId = null;
   private List<QueueConversationCallbackEventTopicPhoneNumberColumn> phoneNumberColumns = new ArrayList<QueueConversationCallbackEventTopicPhoneNumberColumn>();
-  private Object additionalProperties = null;
 
   
   /**
@@ -49,13 +48,14 @@ public class QueueConversationCallbackEventTopicDialerPreview  implements Serial
 
   
   /**
+   * The contact associated with this preview data pop
    **/
   public QueueConversationCallbackEventTopicDialerPreview contactId(String contactId) {
     this.contactId = contactId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The contact associated with this preview data pop")
   @JsonProperty("contactId")
   public String getContactId() {
     return contactId;
@@ -66,13 +66,14 @@ public class QueueConversationCallbackEventTopicDialerPreview  implements Serial
 
   
   /**
+   * The contactList associated with this preview data pop.
    **/
   public QueueConversationCallbackEventTopicDialerPreview contactListId(String contactListId) {
     this.contactListId = contactListId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The contactList associated with this preview data pop.")
   @JsonProperty("contactListId")
   public String getContactListId() {
     return contactListId;
@@ -83,13 +84,14 @@ public class QueueConversationCallbackEventTopicDialerPreview  implements Serial
 
   
   /**
+   * The campaignId associated with this preview data pop.
    **/
   public QueueConversationCallbackEventTopicDialerPreview campaignId(String campaignId) {
     this.campaignId = campaignId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The campaignId associated with this preview data pop.")
   @JsonProperty("campaignId")
   public String getCampaignId() {
     return campaignId;
@@ -100,36 +102,20 @@ public class QueueConversationCallbackEventTopicDialerPreview  implements Serial
 
   
   /**
+   * The phone number columns associated with this campaign
    **/
   public QueueConversationCallbackEventTopicDialerPreview phoneNumberColumns(List<QueueConversationCallbackEventTopicPhoneNumberColumn> phoneNumberColumns) {
     this.phoneNumberColumns = phoneNumberColumns;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The phone number columns associated with this campaign")
   @JsonProperty("phoneNumberColumns")
   public List<QueueConversationCallbackEventTopicPhoneNumberColumn> getPhoneNumberColumns() {
     return phoneNumberColumns;
   }
   public void setPhoneNumberColumns(List<QueueConversationCallbackEventTopicPhoneNumberColumn> phoneNumberColumns) {
     this.phoneNumberColumns = phoneNumberColumns;
-  }
-
-  
-  /**
-   **/
-  public QueueConversationCallbackEventTopicDialerPreview additionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Object getAdditionalProperties() {
-    return additionalProperties;
-  }
-  public void setAdditionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
   }
 
   
@@ -147,13 +133,12 @@ public class QueueConversationCallbackEventTopicDialerPreview  implements Serial
         Objects.equals(this.contactId, queueConversationCallbackEventTopicDialerPreview.contactId) &&
         Objects.equals(this.contactListId, queueConversationCallbackEventTopicDialerPreview.contactListId) &&
         Objects.equals(this.campaignId, queueConversationCallbackEventTopicDialerPreview.campaignId) &&
-        Objects.equals(this.phoneNumberColumns, queueConversationCallbackEventTopicDialerPreview.phoneNumberColumns) &&
-        Objects.equals(this.additionalProperties, queueConversationCallbackEventTopicDialerPreview.additionalProperties);
+        Objects.equals(this.phoneNumberColumns, queueConversationCallbackEventTopicDialerPreview.phoneNumberColumns);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, contactId, contactListId, campaignId, phoneNumberColumns, additionalProperties);
+    return Objects.hash(id, contactId, contactListId, campaignId, phoneNumberColumns);
   }
 
   @Override
@@ -166,7 +151,6 @@ public class QueueConversationCallbackEventTopicDialerPreview  implements Serial
     sb.append("    contactListId: ").append(toIndentedString(contactListId)).append("\n");
     sb.append("    campaignId: ").append(toIndentedString(campaignId)).append("\n");
     sb.append("    phoneNumberColumns: ").append(toIndentedString(phoneNumberColumns)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

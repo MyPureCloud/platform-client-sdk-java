@@ -8,11 +8,11 @@ title: DialerWrapupcodemappingConfigChangeWrapUpCodeMapping
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **dateModified** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **version** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
+| **name** | <!----><!---->**String**<!----> | The UI-visible name of the object |  [optional] |
+| **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | Creation time of the entity |  [optional] |
+| **dateModified** | <!----><!---->[**Date**](Date.html)<!----> | Last modified time of the entity |  [optional] |
+| **version** | <!----><!---->**Integer**<!----> | Required for updates, must match the version number of the most recent update |  [optional] |
 | **defaultSet** | <!---->[**List&lt;DefaultSetEnum&gt;**](#DefaultSetEnum)<!----> |  |  [optional] |
 | **mapping** | <!----><!---->[**Map&lt;String, List&lt;String&gt;&gt;**](List.html)<!----> |  |  [optional] |
 {: class="table table-striped"}

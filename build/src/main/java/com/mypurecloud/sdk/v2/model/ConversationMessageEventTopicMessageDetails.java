@@ -49,13 +49,13 @@ public class ConversationMessageEventTopicMessageDetails  implements Serializabl
  @JsonDeserialize(using = MessageStatusEnumDeserializer.class)
   public enum MessageStatusEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    QUEUED("QUEUED"),
-    SENT("SENT"),
-    FAILED("FAILED"),
-    RECEIVED("RECEIVED"),
-    DELIVERY_SUCCESS("DELIVERY_SUCCESS"),
-    DELIVERY_FAILED("DELIVERY_FAILED"),
-    READ("READ");
+    QUEUED("queued"),
+    SENT("sent"),
+    FAILED("failed"),
+    RECEIVED("received"),
+    DELIVERY_SUCCESS("delivery-success"),
+    DELIVERY_FAILED("delivery-failed"),
+    READ("read");
 
     private String value;
 

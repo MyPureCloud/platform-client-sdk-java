@@ -15,8 +15,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * QueueConversationVideoEventTopicAddress
+ * Address and name data for a call endpoint.
  */
+@ApiModel(description = "Address and name data for a call endpoint.")
 
 public class QueueConversationVideoEventTopicAddress  implements Serializable {
   
@@ -25,17 +26,17 @@ public class QueueConversationVideoEventTopicAddress  implements Serializable {
   private String addressNormalized = null;
   private String addressRaw = null;
   private String addressDisplayable = null;
-  private Object additionalProperties = null;
 
   
   /**
+   * This will be nameRaw if present, or a locality lookup of the address field otherwise.
    **/
   public QueueConversationVideoEventTopicAddress name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "This will be nameRaw if present, or a locality lookup of the address field otherwise.")
   @JsonProperty("name")
   public String getName() {
     return name;
@@ -46,13 +47,14 @@ public class QueueConversationVideoEventTopicAddress  implements Serializable {
 
   
   /**
+   * The name as close to the bits on the wire as possible.
    **/
   public QueueConversationVideoEventTopicAddress nameRaw(String nameRaw) {
     this.nameRaw = nameRaw;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The name as close to the bits on the wire as possible.")
   @JsonProperty("nameRaw")
   public String getNameRaw() {
     return nameRaw;
@@ -63,13 +65,14 @@ public class QueueConversationVideoEventTopicAddress  implements Serializable {
 
   
   /**
+   * The normalized address. This field is acquired from the Address Normalization Table.  The addressRaw could have gone through some transformations, such as only using the numeric portion, before being run through the Address Normalization Table.
    **/
   public QueueConversationVideoEventTopicAddress addressNormalized(String addressNormalized) {
     this.addressNormalized = addressNormalized;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The normalized address. This field is acquired from the Address Normalization Table.  The addressRaw could have gone through some transformations, such as only using the numeric portion, before being run through the Address Normalization Table.")
   @JsonProperty("addressNormalized")
   public String getAddressNormalized() {
     return addressNormalized;
@@ -80,13 +83,14 @@ public class QueueConversationVideoEventTopicAddress  implements Serializable {
 
   
   /**
+   * The address as close to the bits on the wire as possible.
    **/
   public QueueConversationVideoEventTopicAddress addressRaw(String addressRaw) {
     this.addressRaw = addressRaw;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The address as close to the bits on the wire as possible.")
   @JsonProperty("addressRaw")
   public String getAddressRaw() {
     return addressRaw;
@@ -97,36 +101,20 @@ public class QueueConversationVideoEventTopicAddress  implements Serializable {
 
   
   /**
+   * The displayable address. This field is acquired from the Address Normalization Table.  The addressRaw could have gone through some transformations, such as only using the numeric portion, before being run through the Address Normalization Table.
    **/
   public QueueConversationVideoEventTopicAddress addressDisplayable(String addressDisplayable) {
     this.addressDisplayable = addressDisplayable;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The displayable address. This field is acquired from the Address Normalization Table.  The addressRaw could have gone through some transformations, such as only using the numeric portion, before being run through the Address Normalization Table.")
   @JsonProperty("addressDisplayable")
   public String getAddressDisplayable() {
     return addressDisplayable;
   }
   public void setAddressDisplayable(String addressDisplayable) {
     this.addressDisplayable = addressDisplayable;
-  }
-
-  
-  /**
-   **/
-  public QueueConversationVideoEventTopicAddress additionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Object getAdditionalProperties() {
-    return additionalProperties;
-  }
-  public void setAdditionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
   }
 
   
@@ -144,13 +132,12 @@ public class QueueConversationVideoEventTopicAddress  implements Serializable {
         Objects.equals(this.nameRaw, queueConversationVideoEventTopicAddress.nameRaw) &&
         Objects.equals(this.addressNormalized, queueConversationVideoEventTopicAddress.addressNormalized) &&
         Objects.equals(this.addressRaw, queueConversationVideoEventTopicAddress.addressRaw) &&
-        Objects.equals(this.addressDisplayable, queueConversationVideoEventTopicAddress.addressDisplayable) &&
-        Objects.equals(this.additionalProperties, queueConversationVideoEventTopicAddress.additionalProperties);
+        Objects.equals(this.addressDisplayable, queueConversationVideoEventTopicAddress.addressDisplayable);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, nameRaw, addressNormalized, addressRaw, addressDisplayable, additionalProperties);
+    return Objects.hash(name, nameRaw, addressNormalized, addressRaw, addressDisplayable);
   }
 
   @Override
@@ -163,7 +150,6 @@ public class QueueConversationVideoEventTopicAddress  implements Serializable {
     sb.append("    addressNormalized: ").append(toIndentedString(addressNormalized)).append("\n");
     sb.append("    addressRaw: ").append(toIndentedString(addressRaw)).append("\n");
     sb.append("    addressDisplayable: ").append(toIndentedString(addressDisplayable)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

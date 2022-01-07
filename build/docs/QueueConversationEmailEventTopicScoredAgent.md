@@ -8,8 +8,8 @@ title: QueueConversationEmailEventTopicScoredAgent
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **agent** | <!----><!---->[**QueueConversationEmailEventTopicUriReference**](QueueConversationEmailEventTopicUriReference.html)<!----> |  |  [optional] |
-| **score** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **agent** | <!----><!---->[**QueueConversationEmailEventTopicUriReference**](QueueConversationEmailEventTopicUriReference.html)<!----> | A UriReference for a resource |  [optional] |
+| **score** | <!----><!---->**Integer**<!----> | Agent&#39;s score for the current conversation, from 0 - 100, higher being better |  [optional] |
 {: class="table table-striped"}
 
 

@@ -44,6 +44,7 @@ import com.mypurecloud.sdk.v2.model.EdgeGroup;
 import com.mypurecloud.sdk.v2.model.EdgeTrunkBase;
 import com.mypurecloud.sdk.v2.model.EdgeGroupEntityListing;
 import com.mypurecloud.sdk.v2.model.EdgeVersionReport;
+import com.mypurecloud.sdk.v2.model.ExpiredEdgeListing;
 import com.mypurecloud.sdk.v2.model.Extension;
 import com.mypurecloud.sdk.v2.model.ExtensionPool;
 import com.mypurecloud.sdk.v2.model.ExtensionPoolEntityListing;
@@ -131,6 +132,7 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesEdgegroupReq
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesEdgegroupEdgetrunkbaseRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesEdgegroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesEdgeversionreportRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesExpiredRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesExtensionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesExtensionpoolRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesExtensionpoolsRequest;
@@ -3869,6 +3871,82 @@ public class TelephonyProvidersEdgeApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<EdgeVersionReport> response = (ApiResponse<EdgeVersionReport>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * List of edges more than 4 edge versions behind the latest software.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ExpiredEdgeListing> getTelephonyProvidersEdgesExpiredAsync(GetTelephonyProvidersEdgesExpiredRequest request, final AsyncApiCallback<ExpiredEdgeListing> callback) {
+    try {
+      final SettableFuture<ExpiredEdgeListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExpiredEdgeListing>() {}, new AsyncApiCallback<ApiResponse<ExpiredEdgeListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExpiredEdgeListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * List of edges more than 4 edge versions behind the latest software.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ExpiredEdgeListing>> getTelephonyProvidersEdgesExpiredAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ExpiredEdgeListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ExpiredEdgeListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ExpiredEdgeListing>() {}, new AsyncApiCallback<ApiResponse<ExpiredEdgeListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExpiredEdgeListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExpiredEdgeListing> response = (ApiResponse<ExpiredEdgeListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExpiredEdgeListing> response = (ApiResponse<ExpiredEdgeListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

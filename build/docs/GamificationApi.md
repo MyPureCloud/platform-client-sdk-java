@@ -16,6 +16,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getGamificationMetricdefinitions**](GamificationApi.html#getGamificationMetricdefinitions) | All metric definitions |
 | [**getGamificationMetrics**](GamificationApi.html#getGamificationMetrics) | All gamified metrics for a given profile |
 | [**getGamificationProfile**](GamificationApi.html#getGamificationProfile) | Performance profile by id |
+| [**getGamificationProfileMembers**](GamificationApi.html#getGamificationProfileMembers) | Members of a given performance profile |
 | [**getGamificationProfileMetric**](GamificationApi.html#getGamificationProfileMetric) | Performance profile gamified metric by id |
 | [**getGamificationProfileMetrics**](GamificationApi.html#getGamificationProfileMetrics) | All gamified metrics for a given performance profile |
 | [**getGamificationProfileMetricsObjectivedetails**](GamificationApi.html#getGamificationProfileMetricsObjectivedetails) | All metrics for a given performance profile with objective details such as order and maxPoints |
@@ -45,6 +46,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postGamificationMetrics**](GamificationApi.html#postGamificationMetrics) | Creates a gamified metric with a given metric definition and metric objective |
 | [**postGamificationProfileActivate**](GamificationApi.html#postGamificationProfileActivate) | Activate a performance profile |
 | [**postGamificationProfileDeactivate**](GamificationApi.html#postGamificationProfileDeactivate) | Deactivate a performance profile |
+| [**postGamificationProfileMembers**](GamificationApi.html#postGamificationProfileMembers) | Assign members to a given performance profile |
+| [**postGamificationProfileMembersValidate**](GamificationApi.html#postGamificationProfileMembersValidate) | Validate member assignment |
+| [**postGamificationProfileMetricLink**](GamificationApi.html#postGamificationProfileMetricLink) | Creates a linked metric |
 | [**postGamificationProfileMetrics**](GamificationApi.html#postGamificationProfileMetrics) | Creates a gamified metric with a given metric definition and metric objective under in a performance profile |
 | [**postGamificationProfiles**](GamificationApi.html#postGamificationProfiles) | Create a new custom performance profile |
 | [**putGamificationMetric**](GamificationApi.html#putGamificationMetric) | Updates a metric |
@@ -637,6 +641,69 @@ try {
 ### Return type
 
 [**PerformanceProfile**](PerformanceProfile.html)
+
+<a name="getGamificationProfileMembers"></a>
+
+# **getGamificationProfileMembers**
+
+
+
+> [MemberListing](MemberListing.html) getGamificationProfileMembers(performanceProfileId)
+
+Members of a given performance profile
+
+
+
+Wraps GET /api/v2/gamification/profiles/{performanceProfileId}/members  
+
+Requires ANY permissions: 
+
+* gamification:profile:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.GamificationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GamificationApi apiInstance = new GamificationApi();
+String performanceProfileId = "performanceProfileId_example"; // String | Performance Profile Id
+try {
+    MemberListing result = apiInstance.getGamificationProfileMembers(performanceProfileId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GamificationApi#getGamificationProfileMembers");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **performanceProfileId** | **String**| Performance Profile Id | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**MemberListing**](MemberListing.html)
 
 <a name="getGamificationProfileMetric"></a>
 
@@ -2529,6 +2596,203 @@ try {
 ### Return type
 
 [**PerformanceProfile**](PerformanceProfile.html)
+
+<a name="postGamificationProfileMembers"></a>
+
+# **postGamificationProfileMembers**
+
+
+
+> [Assignment](Assignment.html) postGamificationProfileMembers(performanceProfileId, body)
+
+Assign members to a given performance profile
+
+
+
+Wraps POST /api/v2/gamification/profiles/{performanceProfileId}/members  
+
+Requires ANY permissions: 
+
+* gamification:profile:update
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.GamificationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GamificationApi apiInstance = new GamificationApi();
+String performanceProfileId = "performanceProfileId_example"; // String | Performance Profile Id
+AssignUsers body = new AssignUsers(); // AssignUsers | assignUsers
+try {
+    Assignment result = apiInstance.postGamificationProfileMembers(performanceProfileId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GamificationApi#postGamificationProfileMembers");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **performanceProfileId** | **String**| Performance Profile Id | 
+| **body** | [**AssignUsers**](AssignUsers.html)| assignUsers | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Assignment**](Assignment.html)
+
+<a name="postGamificationProfileMembersValidate"></a>
+
+# **postGamificationProfileMembersValidate**
+
+
+
+> [AssignmentValidation](AssignmentValidation.html) postGamificationProfileMembersValidate(performanceProfileId, body)
+
+Validate member assignment
+
+
+
+Wraps POST /api/v2/gamification/profiles/{performanceProfileId}/members/validate  
+
+Requires ANY permissions: 
+
+* gamification:profile:update
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.GamificationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GamificationApi apiInstance = new GamificationApi();
+String performanceProfileId = "performanceProfileId_example"; // String | Performance Profile Id
+ValidateAssignUsers body = new ValidateAssignUsers(); // ValidateAssignUsers | memberAssignments
+try {
+    AssignmentValidation result = apiInstance.postGamificationProfileMembersValidate(performanceProfileId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GamificationApi#postGamificationProfileMembersValidate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **performanceProfileId** | **String**| Performance Profile Id | 
+| **body** | [**ValidateAssignUsers**](ValidateAssignUsers.html)| memberAssignments | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AssignmentValidation**](AssignmentValidation.html)
+
+<a name="postGamificationProfileMetricLink"></a>
+
+# **postGamificationProfileMetricLink**
+
+
+
+> [Metric](Metric.html) postGamificationProfileMetricLink(sourceProfileId, sourceMetricId, body)
+
+Creates a linked metric
+
+
+
+Wraps POST /api/v2/gamification/profiles/{sourceProfileId}/metrics/{sourceMetricId}/link  
+
+Requires ANY permissions: 
+
+* gamification:profile:update
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.GamificationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GamificationApi apiInstance = new GamificationApi();
+String sourceProfileId = "sourceProfileId_example"; // String | Source Performance Profile Id
+String sourceMetricId = "sourceMetricId_example"; // String | Source Metric Id
+TargetPerformanceProfile body = new TargetPerformanceProfile(); // TargetPerformanceProfile | linkedMetric
+try {
+    Metric result = apiInstance.postGamificationProfileMetricLink(sourceProfileId, sourceMetricId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GamificationApi#postGamificationProfileMetricLink");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **sourceProfileId** | **String**| Source Performance Profile Id | 
+| **sourceMetricId** | **String**| Source Metric Id | 
+| **body** | [**TargetPerformanceProfile**](TargetPerformanceProfile.html)| linkedMetric | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Metric**](Metric.html)
 
 <a name="postGamificationProfileMetrics"></a>
 

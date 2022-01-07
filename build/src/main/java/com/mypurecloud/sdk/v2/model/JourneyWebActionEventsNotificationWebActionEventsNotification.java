@@ -32,6 +32,7 @@ public class JourneyWebActionEventsNotificationWebActionEventsNotification  impl
   private Date createdDate = null;
   private String customerId = null;
   private String customerIdType = null;
+  private JourneyWebActionEventsNotificationSession session = null;
 
   private static class EventTypeEnumDeserializer extends StdDeserializer<EventTypeEnum> {
     public EventTypeEnumDeserializer() {
@@ -51,11 +52,8 @@ public class JourneyWebActionEventsNotificationWebActionEventsNotification  impl
  @JsonDeserialize(using = EventTypeEnumDeserializer.class)
   public enum EventTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    WEBEVENT("WebEvent"),
     WEBACTIONEVENT("WebActionEvent"),
-    OUTCOMEACHIEVEDEVENT("OutcomeAchievedEvent"),
-    BLOCKEDWEBACTIONOFFEREVENT("BlockedWebActionOfferEvent"),
-    OUTCOMEATTRIBUTIONEVENT("OutcomeAttributionEvent");
+    BLOCKEDWEBACTIONOFFEREVENT("BlockedWebActionOfferEvent");
 
     private String value;
 
@@ -83,7 +81,6 @@ public class JourneyWebActionEventsNotificationWebActionEventsNotification  impl
     }
   }
   private EventTypeEnum eventType = null;
-  private JourneyWebActionEventsNotificationSession session = null;
   private JourneyWebActionEventsNotificationWebActionMessage webActionEvent = null;
   private JourneyWebActionEventsNotificationBlockedWebActionOfferMessage blockedWebActionOfferEvent = null;
 
@@ -192,23 +189,6 @@ public class JourneyWebActionEventsNotificationWebActionEventsNotification  impl
   
   /**
    **/
-  public JourneyWebActionEventsNotificationWebActionEventsNotification eventType(EventTypeEnum eventType) {
-    this.eventType = eventType;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("eventType")
-  public EventTypeEnum getEventType() {
-    return eventType;
-  }
-  public void setEventType(EventTypeEnum eventType) {
-    this.eventType = eventType;
-  }
-
-  
-  /**
-   **/
   public JourneyWebActionEventsNotificationWebActionEventsNotification session(JourneyWebActionEventsNotificationSession session) {
     this.session = session;
     return this;
@@ -221,6 +201,23 @@ public class JourneyWebActionEventsNotificationWebActionEventsNotification  impl
   }
   public void setSession(JourneyWebActionEventsNotificationSession session) {
     this.session = session;
+  }
+
+  
+  /**
+   **/
+  public JourneyWebActionEventsNotificationWebActionEventsNotification eventType(EventTypeEnum eventType) {
+    this.eventType = eventType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("eventType")
+  public EventTypeEnum getEventType() {
+    return eventType;
+  }
+  public void setEventType(EventTypeEnum eventType) {
+    this.eventType = eventType;
   }
 
   
@@ -274,15 +271,15 @@ public class JourneyWebActionEventsNotificationWebActionEventsNotification  impl
         Objects.equals(this.createdDate, journeyWebActionEventsNotificationWebActionEventsNotification.createdDate) &&
         Objects.equals(this.customerId, journeyWebActionEventsNotificationWebActionEventsNotification.customerId) &&
         Objects.equals(this.customerIdType, journeyWebActionEventsNotificationWebActionEventsNotification.customerIdType) &&
-        Objects.equals(this.eventType, journeyWebActionEventsNotificationWebActionEventsNotification.eventType) &&
         Objects.equals(this.session, journeyWebActionEventsNotificationWebActionEventsNotification.session) &&
+        Objects.equals(this.eventType, journeyWebActionEventsNotificationWebActionEventsNotification.eventType) &&
         Objects.equals(this.webActionEvent, journeyWebActionEventsNotificationWebActionEventsNotification.webActionEvent) &&
         Objects.equals(this.blockedWebActionOfferEvent, journeyWebActionEventsNotificationWebActionEventsNotification.blockedWebActionOfferEvent);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, correlationId, externalContact, createdDate, customerId, customerIdType, eventType, session, webActionEvent, blockedWebActionOfferEvent);
+    return Objects.hash(id, correlationId, externalContact, createdDate, customerId, customerIdType, session, eventType, webActionEvent, blockedWebActionOfferEvent);
   }
 
   @Override
@@ -296,8 +293,8 @@ public class JourneyWebActionEventsNotificationWebActionEventsNotification  impl
     sb.append("    createdDate: ").append(toIndentedString(createdDate)).append("\n");
     sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
     sb.append("    customerIdType: ").append(toIndentedString(customerIdType)).append("\n");
-    sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
     sb.append("    session: ").append(toIndentedString(session)).append("\n");
+    sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
     sb.append("    webActionEvent: ").append(toIndentedString(webActionEvent)).append("\n");
     sb.append("    blockedWebActionOfferEvent: ").append(toIndentedString(blockedWebActionOfferEvent)).append("\n");
     sb.append("}");

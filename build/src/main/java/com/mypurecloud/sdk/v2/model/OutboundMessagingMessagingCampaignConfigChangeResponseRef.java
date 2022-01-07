@@ -15,8 +15,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * OutboundMessagingMessagingCampaignConfigChangeResponseRef
+ * A reference for a Response
  */
+@ApiModel(description = "A reference for a Response")
 
 public class OutboundMessagingMessagingCampaignConfigChangeResponseRef  implements Serializable {
   
@@ -24,13 +25,14 @@ public class OutboundMessagingMessagingCampaignConfigChangeResponseRef  implemen
 
   
   /**
+   * The unique response id
    **/
   public OutboundMessagingMessagingCampaignConfigChangeResponseRef id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The unique response id")
   @JsonProperty("id")
   public String getId() {
     return id;

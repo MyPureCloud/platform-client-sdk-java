@@ -18,8 +18,9 @@ import java.util.Map;
 
 import java.io.Serializable;
 /**
- * ConversationEventTopicErrorDetails
+ * Detailed information about an error response.
  */
+@ApiModel(description = "Detailed information about an error response.")
 
 public class ConversationEventTopicErrorDetails  implements Serializable {
   
@@ -30,17 +31,17 @@ public class ConversationEventTopicErrorDetails  implements Serializable {
   private Map<String, String> messageParams = null;
   private String contextId = null;
   private String uri = null;
-  private Object additionalProperties = null;
 
   
   /**
+   * The HTTP status code for this message (400, 401, 403, 404, 500, etc.
    **/
   public ConversationEventTopicErrorDetails status(Integer status) {
     this.status = status;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The HTTP status code for this message (400, 401, 403, 404, 500, etc.")
   @JsonProperty("status")
   public Integer getStatus() {
     return status;
@@ -51,13 +52,14 @@ public class ConversationEventTopicErrorDetails  implements Serializable {
 
   
   /**
+   * A code unique to this error.
    **/
   public ConversationEventTopicErrorDetails code(String code) {
     this.code = code;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A code unique to this error.")
   @JsonProperty("code")
   public String getCode() {
     return code;
@@ -68,13 +70,14 @@ public class ConversationEventTopicErrorDetails  implements Serializable {
 
   
   /**
+   * Friendly description of this error.
    **/
   public ConversationEventTopicErrorDetails message(String message) {
     this.message = message;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Friendly description of this error.")
   @JsonProperty("message")
   public String getMessage() {
     return message;
@@ -85,13 +88,14 @@ public class ConversationEventTopicErrorDetails  implements Serializable {
 
   
   /**
+   * This is the same as message except it uses template fields for variable replacement. For instance: 'User {username} was not found'
    **/
   public ConversationEventTopicErrorDetails messageWithParams(String messageWithParams) {
     this.messageWithParams = messageWithParams;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "This is the same as message except it uses template fields for variable replacement. For instance: 'User {username} was not found'")
   @JsonProperty("messageWithParams")
   public String getMessageWithParams() {
     return messageWithParams;
@@ -102,13 +106,14 @@ public class ConversationEventTopicErrorDetails  implements Serializable {
 
   
   /**
+   * Used in conjunction with messageWithParams. These are the template parameters. For instance: UserParam.key = 'username', UserParam.value = 'john.doe'
    **/
   public ConversationEventTopicErrorDetails messageParams(Map<String, String> messageParams) {
     this.messageParams = messageParams;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Used in conjunction with messageWithParams. These are the template parameters. For instance: UserParam.key = 'username', UserParam.value = 'john.doe'")
   @JsonProperty("messageParams")
   public Map<String, String> getMessageParams() {
     return messageParams;
@@ -119,13 +124,14 @@ public class ConversationEventTopicErrorDetails  implements Serializable {
 
   
   /**
+   * The correlation Id or context Id for this message. If left blank the Public API will look at the HTTP response header 'ININ-Correlation-Id' instead.
    **/
   public ConversationEventTopicErrorDetails contextId(String contextId) {
     this.contextId = contextId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The correlation Id or context Id for this message. If left blank the Public API will look at the HTTP response header 'ININ-Correlation-Id' instead.")
   @JsonProperty("contextId")
   public String getContextId() {
     return contextId;
@@ -152,23 +158,6 @@ public class ConversationEventTopicErrorDetails  implements Serializable {
   }
 
   
-  /**
-   **/
-  public ConversationEventTopicErrorDetails additionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Object getAdditionalProperties() {
-    return additionalProperties;
-  }
-  public void setAdditionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
-  }
-
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -185,13 +174,12 @@ public class ConversationEventTopicErrorDetails  implements Serializable {
         Objects.equals(this.messageWithParams, conversationEventTopicErrorDetails.messageWithParams) &&
         Objects.equals(this.messageParams, conversationEventTopicErrorDetails.messageParams) &&
         Objects.equals(this.contextId, conversationEventTopicErrorDetails.contextId) &&
-        Objects.equals(this.uri, conversationEventTopicErrorDetails.uri) &&
-        Objects.equals(this.additionalProperties, conversationEventTopicErrorDetails.additionalProperties);
+        Objects.equals(this.uri, conversationEventTopicErrorDetails.uri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, code, message, messageWithParams, messageParams, contextId, uri, additionalProperties);
+    return Objects.hash(status, code, message, messageWithParams, messageParams, contextId, uri);
   }
 
   @Override
@@ -206,7 +194,6 @@ public class ConversationEventTopicErrorDetails  implements Serializable {
     sb.append("    messageParams: ").append(toIndentedString(messageParams)).append("\n");
     sb.append("    contextId: ").append(toIndentedString(contextId)).append("\n");
     sb.append("    uri: ").append(toIndentedString(uri)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

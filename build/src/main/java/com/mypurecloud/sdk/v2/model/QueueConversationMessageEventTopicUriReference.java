@@ -25,13 +25,14 @@ public class QueueConversationMessageEventTopicUriReference  implements Serializ
 
   
   /**
+   * The ID of the resource
    **/
   public QueueConversationMessageEventTopicUriReference id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The ID of the resource")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -42,13 +43,14 @@ public class QueueConversationMessageEventTopicUriReference  implements Serializ
 
   
   /**
+   * The name of the resource
    **/
   public QueueConversationMessageEventTopicUriReference name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The name of the resource")
   @JsonProperty("name")
   public String getName() {
     return name;

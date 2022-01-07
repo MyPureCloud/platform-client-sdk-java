@@ -11,7 +11,7 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.Division;
+import com.mypurecloud.sdk.v2.model.WritableDivision;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -24,7 +24,7 @@ public class MemberGroup  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private Division division = null;
+  private WritableDivision division = null;
 
   private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
     public TypeEnumDeserializer() {
@@ -77,10 +77,21 @@ public class MemberGroup  implements Serializable {
   private String selfUri = null;
 
   
+  /**
+   * The globally unique identifier for the object.
+   **/
+  public MemberGroup id(String id) {
+    this.id = id;
+    return this;
+  }
+  
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")
   public String getId() {
     return id;
+  }
+  public void setId(String id) {
+    this.id = id;
   }
 
   
@@ -104,17 +115,17 @@ public class MemberGroup  implements Serializable {
   /**
    * The division to which this entity belongs.
    **/
-  public MemberGroup division(Division division) {
+  public MemberGroup division(WritableDivision division) {
     this.division = division;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The division to which this entity belongs.")
   @JsonProperty("division")
-  public Division getDivision() {
+  public WritableDivision getDivision() {
     return division;
   }
-  public void setDivision(Division division) {
+  public void setDivision(WritableDivision division) {
     this.division = division;
   }
 

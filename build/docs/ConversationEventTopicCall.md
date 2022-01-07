@@ -8,33 +8,32 @@ title: ConversationEventTopicCall
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **state** | [**StateEnum**](#StateEnum)<!----> |  |  [optional] |
-| **recording** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **recordingState** | [**RecordingStateEnum**](#RecordingStateEnum)<!----> |  |  [optional] |
-| **muted** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **confined** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **held** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> | A globally unique identifier for this communication. |  [optional] |
+| **state** | [**StateEnum**](#StateEnum)<!----> | The connection state of this communication. |  [optional] |
+| **recording** | <!----><!---->**Boolean**<!----> | True if this call is being recorded. |  [optional] |
+| **recordingState** | [**RecordingStateEnum**](#RecordingStateEnum)<!----> | State of recording on this call. |  [optional] |
+| **muted** | <!----><!---->**Boolean**<!----> | True if this call is muted so that remote participants can&#39;t hear any audio from this end. |  [optional] |
+| **confined** | <!----><!---->**Boolean**<!----> | True if this call is held and the person on this side hears hold music. |  [optional] |
+| **held** | <!----><!---->**Boolean**<!----> | True if this call is held and the person on this side hears silence. |  [optional] |
 | **errorInfo** | <!----><!---->[**ConversationEventTopicErrorDetails**](ConversationEventTopicErrorDetails.html)<!----> |  |  [optional] |
-| **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum)<!----> |  |  [optional] |
-| **startHoldTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **direction** | [**DirectionEnum**](#DirectionEnum)<!----> |  |  [optional] |
-| **documentId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum)<!----> | System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects. |  [optional] |
+| **startHoldTime** | <!----><!---->[**Date**](Date.html)<!----> | The timestamp the call was placed on hold in the cloud clock if the call is currently on hold. |  [optional] |
+| **direction** | [**DirectionEnum**](#DirectionEnum)<!----> | Whether a call is inbound or outbound. |  [optional] |
+| **documentId** | <!----><!---->**String**<!----> | If call is a fax of a document in content management, the id of the document in content management. |  [optional] |
 | **self** | <!----><!---->[**ConversationEventTopicAddress**](ConversationEventTopicAddress.html)<!----> |  |  [optional] |
-| **other** | <!----><!---->[**ConversationEventTopicAddress**](ConversationEventTopicAddress.html)<!----> |  |  [optional] |
-| **provider** | <!----><!---->**String**<!----> |  |  [optional] |
-| **scriptId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **peerId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **connectedTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **disconnectedTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **disconnectReasons** | <!----><!---->[**List&lt;ConversationEventTopicDisconnectReason&gt;**](ConversationEventTopicDisconnectReason.html)<!----> |  |  [optional] |
+| **other** | <!----><!---->[**ConversationEventTopicAddress**](ConversationEventTopicAddress.html)<!----> | Address and name data for a call endpoint. |  [optional] |
+| **provider** | <!----><!---->**String**<!----> | The source provider of the call. |  [optional] |
+| **scriptId** | <!----><!---->**String**<!----> | The UUID of the script to use. |  [optional] |
+| **peerId** | <!----><!---->**String**<!----> | The id of the peer communication corresponding to a matching leg for this communication. |  [optional] |
+| **connectedTime** | <!----><!---->[**Date**](Date.html)<!----> | The timestamp when this communication was connected in the cloud clock. |  [optional] |
+| **disconnectedTime** | <!----><!---->[**Date**](Date.html)<!----> | The timestamp when this communication disconnected from the conversation in the provider clock. |  [optional] |
+| **disconnectReasons** | <!----><!---->[**List&lt;ConversationEventTopicDisconnectReason&gt;**](ConversationEventTopicDisconnectReason.html)<!----> | List of reasons that this call was disconnected. This will be set once the call disconnects. |  [optional] |
 | **faxStatus** | <!----><!---->[**ConversationEventTopicFaxStatus**](ConversationEventTopicFaxStatus.html)<!----> |  |  [optional] |
-| **uuiData** | <!----><!---->**String**<!----> |  |  [optional] |
-| **wrapup** | <!----><!---->[**ConversationEventTopicWrapup**](ConversationEventTopicWrapup.html)<!----> |  |  [optional] |
+| **uuiData** | <!----><!---->**String**<!----> | User to User Information (UUI) data managed by SIP session application. |  [optional] |
+| **wrapup** | <!----><!---->[**ConversationEventTopicWrapup**](ConversationEventTopicWrapup.html)<!----> | Call wrap up or disposition data. |  [optional] |
 | **afterCallWork** | <!----><!---->[**ConversationEventTopicAfterCallWork**](ConversationEventTopicAfterCallWork.html)<!----> |  |  [optional] |
-| **afterCallWorkRequired** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **agentAssistantId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
+| **afterCallWorkRequired** | <!----><!---->**Boolean**<!----> | Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested. |  [optional] |
+| **agentAssistantId** | <!----><!---->**String**<!----> | UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation. |  [optional] |
 {: class="table table-striped"}
 
 
@@ -45,17 +44,17 @@ title: ConversationEventTopicCall
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ALERTING | &quot;ALERTING&quot; |
-| DIALING | &quot;DIALING&quot; |
-| CONTACTING | &quot;CONTACTING&quot; |
-| OFFERING | &quot;OFFERING&quot; |
-| CONNECTED | &quot;CONNECTED&quot; |
-| DISCONNECTED | &quot;DISCONNECTED&quot; |
-| TERMINATED | &quot;TERMINATED&quot; |
-| UPLOADING | &quot;UPLOADING&quot; |
-| CONVERTING | &quot;CONVERTING&quot; |
-| TRANSMITTING | &quot;TRANSMITTING&quot; |
-| NONE | &quot;NONE&quot; |
+| ALERTING | &quot;alerting&quot; |
+| DIALING | &quot;dialing&quot; |
+| CONTACTING | &quot;contacting&quot; |
+| OFFERING | &quot;offering&quot; |
+| CONNECTED | &quot;connected&quot; |
+| DISCONNECTED | &quot;disconnected&quot; |
+| TERMINATED | &quot;terminated&quot; |
+| UPLOADING | &quot;uploading&quot; |
+| CONVERTING | &quot;converting&quot; |
+| TRANSMITTING | &quot;transmitting&quot; |
+| NONE | &quot;none&quot; |
 {: class="table table-striped"}
 
 
@@ -66,9 +65,9 @@ title: ConversationEventTopicCall
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| NONE | &quot;NONE&quot; |
-| ACTIVE | &quot;ACTIVE&quot; |
-| PAUSED | &quot;PAUSED&quot; |
+| NONE | &quot;none&quot; |
+| ACTIVE | &quot;active&quot; |
+| PAUSED | &quot;paused&quot; |
 {: class="table table-striped"}
 
 
@@ -79,22 +78,22 @@ title: ConversationEventTopicCall
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ENDPOINT | &quot;ENDPOINT&quot; |
-| CLIENT | &quot;CLIENT&quot; |
-| SYSTEM | &quot;SYSTEM&quot; |
-| TIMEOUT | &quot;TIMEOUT&quot; |
-| TRANSFER | &quot;TRANSFER&quot; |
-| TRANSFER_CONFERENCE | &quot;TRANSFER_CONFERENCE&quot; |
-| TRANSFER_CONSULT | &quot;TRANSFER_CONSULT&quot; |
-| TRANSFER_FORWARD | &quot;TRANSFER_FORWARD&quot; |
-| TRANSFER_NOANSWER | &quot;TRANSFER_NOANSWER&quot; |
-| TRANSFER_NOTAVAILABLE | &quot;TRANSFER_NOTAVAILABLE&quot; |
-| TRANSPORT_FAILURE | &quot;TRANSPORT_FAILURE&quot; |
-| ERROR | &quot;ERROR&quot; |
-| PEER | &quot;PEER&quot; |
-| OTHER | &quot;OTHER&quot; |
-| SPAM | &quot;SPAM&quot; |
-| UNCALLABLE | &quot;UNCALLABLE&quot; |
+| ENDPOINT | &quot;endpoint&quot; |
+| CLIENT | &quot;client&quot; |
+| SYSTEM | &quot;system&quot; |
+| TIMEOUT | &quot;timeout&quot; |
+| TRANSFER | &quot;transfer&quot; |
+| TRANSFER_CONFERENCE | &quot;transfer.conference&quot; |
+| TRANSFER_CONSULT | &quot;transfer.consult&quot; |
+| TRANSFER_FORWARD | &quot;transfer.forward&quot; |
+| TRANSFER_NOANSWER | &quot;transfer.noanswer&quot; |
+| TRANSFER_NOTAVAILABLE | &quot;transfer.notavailable&quot; |
+| TRANSPORT_FAILURE | &quot;transport.failure&quot; |
+| ERROR | &quot;error&quot; |
+| PEER | &quot;peer&quot; |
+| OTHER | &quot;other&quot; |
+| SPAM | &quot;spam&quot; |
+| UNCALLABLE | &quot;uncallable&quot; |
 {: class="table table-striped"}
 
 
@@ -105,8 +104,8 @@ title: ConversationEventTopicCall
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| OUTBOUND | &quot;OUTBOUND&quot; |
-| INBOUND | &quot;INBOUND&quot; |
+| OUTBOUND | &quot;outbound&quot; |
+| INBOUND | &quot;inbound&quot; |
 {: class="table table-striped"}
 
 

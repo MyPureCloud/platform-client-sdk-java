@@ -51,6 +51,7 @@ import com.mypurecloud.sdk.v2.model.EdgeGroup;
 import com.mypurecloud.sdk.v2.model.EdgeTrunkBase;
 import com.mypurecloud.sdk.v2.model.EdgeGroupEntityListing;
 import com.mypurecloud.sdk.v2.model.EdgeVersionReport;
+import com.mypurecloud.sdk.v2.model.ExpiredEdgeListing;
 import com.mypurecloud.sdk.v2.model.Extension;
 import com.mypurecloud.sdk.v2.model.ExtensionPool;
 import com.mypurecloud.sdk.v2.model.ExtensionPoolEntityListing;

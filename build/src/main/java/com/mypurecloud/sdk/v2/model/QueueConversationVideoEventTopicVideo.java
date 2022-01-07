@@ -41,19 +41,19 @@ public class QueueConversationVideoEventTopicVideo  implements Serializable {
     }
   }
   /**
-   * Gets or Sets state
+   * The connection state of this communication.
    */
  @JsonDeserialize(using = StateEnumDeserializer.class)
   public enum StateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    ALERTING("ALERTING"),
-    DIALING("DIALING"),
-    CONTACTING("CONTACTING"),
-    OFFERING("OFFERING"),
-    CONNECTED("CONNECTED"),
-    DISCONNECTED("DISCONNECTED"),
-    TERMINATED("TERMINATED"),
-    NONE("NONE");
+    ALERTING("alerting"),
+    DIALING("dialing"),
+    CONTACTING("contacting"),
+    OFFERING("offering"),
+    CONNECTED("connected"),
+    DISCONNECTED("disconnected"),
+    TERMINATED("terminated"),
+    NONE("none");
 
     private String value;
 
@@ -104,27 +104,27 @@ public class QueueConversationVideoEventTopicVideo  implements Serializable {
     }
   }
   /**
-   * Gets or Sets disconnectType
+   * System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
    */
  @JsonDeserialize(using = DisconnectTypeEnumDeserializer.class)
   public enum DisconnectTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    ENDPOINT("ENDPOINT"),
-    CLIENT("CLIENT"),
-    SYSTEM("SYSTEM"),
-    TIMEOUT("TIMEOUT"),
-    TRANSFER("TRANSFER"),
-    TRANSFER_CONFERENCE("TRANSFER_CONFERENCE"),
-    TRANSFER_CONSULT("TRANSFER_CONSULT"),
-    TRANSFER_FORWARD("TRANSFER_FORWARD"),
-    TRANSFER_NOANSWER("TRANSFER_NOANSWER"),
-    TRANSFER_NOTAVAILABLE("TRANSFER_NOTAVAILABLE"),
-    TRANSPORT_FAILURE("TRANSPORT_FAILURE"),
-    ERROR("ERROR"),
-    PEER("PEER"),
-    OTHER("OTHER"),
-    SPAM("SPAM"),
-    UNCALLABLE("UNCALLABLE");
+    ENDPOINT("endpoint"),
+    CLIENT("client"),
+    SYSTEM("system"),
+    TIMEOUT("timeout"),
+    TRANSFER("transfer"),
+    TRANSFER_CONFERENCE("transfer.conference"),
+    TRANSFER_CONSULT("transfer.consult"),
+    TRANSFER_FORWARD("transfer.forward"),
+    TRANSFER_NOANSWER("transfer.noanswer"),
+    TRANSFER_NOTAVAILABLE("transfer.notavailable"),
+    TRANSPORT_FAILURE("transport.failure"),
+    ERROR("error"),
+    PEER("peer"),
+    OTHER("other"),
+    SPAM("spam"),
+    UNCALLABLE("uncallable");
 
     private String value;
 
@@ -158,17 +158,17 @@ public class QueueConversationVideoEventTopicVideo  implements Serializable {
   private QueueConversationVideoEventTopicWrapup wrapup = null;
   private QueueConversationVideoEventTopicAfterCallWork afterCallWork = null;
   private Boolean afterCallWorkRequired = null;
-  private Object additionalProperties = null;
 
   
   /**
+   * The connection state of this communication.
    **/
   public QueueConversationVideoEventTopicVideo state(StateEnum state) {
     this.state = state;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The connection state of this communication.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
@@ -179,13 +179,14 @@ public class QueueConversationVideoEventTopicVideo  implements Serializable {
 
   
   /**
+   * Address and name data for a call endpoint.
    **/
   public QueueConversationVideoEventTopicVideo self(QueueConversationVideoEventTopicAddress self) {
     this.self = self;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Address and name data for a call endpoint.")
   @JsonProperty("self")
   public QueueConversationVideoEventTopicAddress getSelf() {
     return self;
@@ -196,13 +197,14 @@ public class QueueConversationVideoEventTopicVideo  implements Serializable {
 
   
   /**
+   * A globally unique identifier for this communication.
    **/
   public QueueConversationVideoEventTopicVideo id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A globally unique identifier for this communication.")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -213,13 +215,14 @@ public class QueueConversationVideoEventTopicVideo  implements Serializable {
 
   
   /**
+   * The room id context (xmpp jid) for the conference session.
    **/
   public QueueConversationVideoEventTopicVideo context(String context) {
     this.context = context;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The room id context (xmpp jid) for the conference session.")
   @JsonProperty("context")
   public String getContext() {
     return context;
@@ -230,13 +233,14 @@ public class QueueConversationVideoEventTopicVideo  implements Serializable {
 
   
   /**
+   * Indicates whether this participant has muted their outgoing audio.
    **/
   public QueueConversationVideoEventTopicVideo audioMuted(Boolean audioMuted) {
     this.audioMuted = audioMuted;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Indicates whether this participant has muted their outgoing audio.")
   @JsonProperty("audioMuted")
   public Boolean getAudioMuted() {
     return audioMuted;
@@ -247,13 +251,14 @@ public class QueueConversationVideoEventTopicVideo  implements Serializable {
 
   
   /**
+   * Indicates whether this participant has muted/paused their outgoing video.
    **/
   public QueueConversationVideoEventTopicVideo videoMuted(Boolean videoMuted) {
     this.videoMuted = videoMuted;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Indicates whether this participant has muted/paused their outgoing video.")
   @JsonProperty("videoMuted")
   public Boolean getVideoMuted() {
     return videoMuted;
@@ -264,13 +269,14 @@ public class QueueConversationVideoEventTopicVideo  implements Serializable {
 
   
   /**
+   * Indicates whether this participant is sharing their screen to the session.
    **/
   public QueueConversationVideoEventTopicVideo sharingScreen(Boolean sharingScreen) {
     this.sharingScreen = sharingScreen;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Indicates whether this participant is sharing their screen to the session.")
   @JsonProperty("sharingScreen")
   public Boolean getSharingScreen() {
     return sharingScreen;
@@ -281,13 +287,14 @@ public class QueueConversationVideoEventTopicVideo  implements Serializable {
 
   
   /**
+   * The media provider controlling the video.
    **/
   public QueueConversationVideoEventTopicVideo provider(String provider) {
     this.provider = provider;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The media provider controlling the video.")
   @JsonProperty("provider")
   public String getProvider() {
     return provider;
@@ -298,13 +305,14 @@ public class QueueConversationVideoEventTopicVideo  implements Serializable {
 
   
   /**
+   * The UUID of the script to use.
    **/
   public QueueConversationVideoEventTopicVideo scriptId(String scriptId) {
     this.scriptId = scriptId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The UUID of the script to use.")
   @JsonProperty("scriptId")
   public String getScriptId() {
     return scriptId;
@@ -315,13 +323,14 @@ public class QueueConversationVideoEventTopicVideo  implements Serializable {
 
   
   /**
+   * The id of the peer communication corresponding to a matching leg for this communication.
    **/
   public QueueConversationVideoEventTopicVideo peerId(String peerId) {
     this.peerId = peerId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The id of the peer communication corresponding to a matching leg for this communication.")
   @JsonProperty("peerId")
   public String getPeerId() {
     return peerId;
@@ -332,13 +341,14 @@ public class QueueConversationVideoEventTopicVideo  implements Serializable {
 
   
   /**
+   * System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
    **/
   public QueueConversationVideoEventTopicVideo disconnectType(DisconnectTypeEnum disconnectType) {
     this.disconnectType = disconnectType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.")
   @JsonProperty("disconnectType")
   public DisconnectTypeEnum getDisconnectType() {
     return disconnectType;
@@ -349,13 +359,14 @@ public class QueueConversationVideoEventTopicVideo  implements Serializable {
 
   
   /**
+   * The timestamp when this communication was connected in the cloud clock.
    **/
   public QueueConversationVideoEventTopicVideo connectedTime(Date connectedTime) {
     this.connectedTime = connectedTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The timestamp when this communication was connected in the cloud clock.")
   @JsonProperty("connectedTime")
   public Date getConnectedTime() {
     return connectedTime;
@@ -366,13 +377,14 @@ public class QueueConversationVideoEventTopicVideo  implements Serializable {
 
   
   /**
+   * The timestamp when this communication disconnected from the conversation in the provider clock.
    **/
   public QueueConversationVideoEventTopicVideo disconnectedTime(Date disconnectedTime) {
     this.disconnectedTime = disconnectedTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The timestamp when this communication disconnected from the conversation in the provider clock.")
   @JsonProperty("disconnectedTime")
   public Date getDisconnectedTime() {
     return disconnectedTime;
@@ -383,13 +395,14 @@ public class QueueConversationVideoEventTopicVideo  implements Serializable {
 
   
   /**
+   * List of media stream ids
    **/
   public QueueConversationVideoEventTopicVideo msids(List<String> msids) {
     this.msids = msids;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of media stream ids")
   @JsonProperty("msids")
   public List<String> getMsids() {
     return msids;
@@ -400,13 +413,14 @@ public class QueueConversationVideoEventTopicVideo  implements Serializable {
 
   
   /**
+   * Call wrap up or disposition data.
    **/
   public QueueConversationVideoEventTopicVideo wrapup(QueueConversationVideoEventTopicWrapup wrapup) {
     this.wrapup = wrapup;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Call wrap up or disposition data.")
   @JsonProperty("wrapup")
   public QueueConversationVideoEventTopicWrapup getWrapup() {
     return wrapup;
@@ -417,13 +431,14 @@ public class QueueConversationVideoEventTopicVideo  implements Serializable {
 
   
   /**
+   * A communication's after-call work data.
    **/
   public QueueConversationVideoEventTopicVideo afterCallWork(QueueConversationVideoEventTopicAfterCallWork afterCallWork) {
     this.afterCallWork = afterCallWork;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A communication's after-call work data.")
   @JsonProperty("afterCallWork")
   public QueueConversationVideoEventTopicAfterCallWork getAfterCallWork() {
     return afterCallWork;
@@ -434,36 +449,20 @@ public class QueueConversationVideoEventTopicVideo  implements Serializable {
 
   
   /**
+   * Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.
    **/
   public QueueConversationVideoEventTopicVideo afterCallWorkRequired(Boolean afterCallWorkRequired) {
     this.afterCallWorkRequired = afterCallWorkRequired;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.")
   @JsonProperty("afterCallWorkRequired")
   public Boolean getAfterCallWorkRequired() {
     return afterCallWorkRequired;
   }
   public void setAfterCallWorkRequired(Boolean afterCallWorkRequired) {
     this.afterCallWorkRequired = afterCallWorkRequired;
-  }
-
-  
-  /**
-   **/
-  public QueueConversationVideoEventTopicVideo additionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Object getAdditionalProperties() {
-    return additionalProperties;
-  }
-  public void setAdditionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
   }
 
   
@@ -493,13 +492,12 @@ public class QueueConversationVideoEventTopicVideo  implements Serializable {
         Objects.equals(this.msids, queueConversationVideoEventTopicVideo.msids) &&
         Objects.equals(this.wrapup, queueConversationVideoEventTopicVideo.wrapup) &&
         Objects.equals(this.afterCallWork, queueConversationVideoEventTopicVideo.afterCallWork) &&
-        Objects.equals(this.afterCallWorkRequired, queueConversationVideoEventTopicVideo.afterCallWorkRequired) &&
-        Objects.equals(this.additionalProperties, queueConversationVideoEventTopicVideo.additionalProperties);
+        Objects.equals(this.afterCallWorkRequired, queueConversationVideoEventTopicVideo.afterCallWorkRequired);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, self, id, context, audioMuted, videoMuted, sharingScreen, provider, scriptId, peerId, disconnectType, connectedTime, disconnectedTime, msids, wrapup, afterCallWork, afterCallWorkRequired, additionalProperties);
+    return Objects.hash(state, self, id, context, audioMuted, videoMuted, sharingScreen, provider, scriptId, peerId, disconnectType, connectedTime, disconnectedTime, msids, wrapup, afterCallWork, afterCallWorkRequired);
   }
 
   @Override
@@ -524,7 +522,6 @@ public class QueueConversationVideoEventTopicVideo  implements Serializable {
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

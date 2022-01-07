@@ -28,13 +28,14 @@ public class QueueConversationEventTopicMessageMedia  implements Serializable {
 
   
   /**
+   * The location of the media, useful for retrieving it
    **/
   public QueueConversationEventTopicMessageMedia url(String url) {
     this.url = url;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The location of the media, useful for retrieving it")
   @JsonProperty("url")
   public String getUrl() {
     return url;
@@ -45,13 +46,14 @@ public class QueueConversationEventTopicMessageMedia  implements Serializable {
 
   
   /**
+   * The optional internet media type of the the media object.  If null then the media type should be dictated by the url
    **/
   public QueueConversationEventTopicMessageMedia mediaType(String mediaType) {
     this.mediaType = mediaType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The optional internet media type of the the media object.  If null then the media type should be dictated by the url")
   @JsonProperty("mediaType")
   public String getMediaType() {
     return mediaType;
@@ -62,13 +64,14 @@ public class QueueConversationEventTopicMessageMedia  implements Serializable {
 
   
   /**
+   * The optional content length of the the media object, in bytes.
    **/
   public QueueConversationEventTopicMessageMedia contentLengthBytes(Integer contentLengthBytes) {
     this.contentLengthBytes = contentLengthBytes;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The optional content length of the the media object, in bytes.")
   @JsonProperty("contentLengthBytes")
   public Integer getContentLengthBytes() {
     return contentLengthBytes;
@@ -79,13 +82,14 @@ public class QueueConversationEventTopicMessageMedia  implements Serializable {
 
   
   /**
+   * The optional name of the the media object.
    **/
   public QueueConversationEventTopicMessageMedia name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The optional name of the the media object.")
   @JsonProperty("name")
   public String getName() {
     return name;
@@ -96,13 +100,14 @@ public class QueueConversationEventTopicMessageMedia  implements Serializable {
 
   
   /**
+   * The optional id of the the media object.
    **/
   public QueueConversationEventTopicMessageMedia id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The optional id of the the media object.")
   @JsonProperty("id")
   public String getId() {
     return id;

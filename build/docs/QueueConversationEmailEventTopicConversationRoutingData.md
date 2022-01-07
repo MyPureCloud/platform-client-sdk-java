@@ -8,11 +8,11 @@ title: QueueConversationEmailEventTopicConversationRoutingData
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **queue** | <!----><!---->[**QueueConversationEmailEventTopicUriReference**](QueueConversationEmailEventTopicUriReference.html)<!----> |  |  [optional] |
-| **language** | <!----><!---->[**QueueConversationEmailEventTopicUriReference**](QueueConversationEmailEventTopicUriReference.html)<!----> |  |  [optional] |
-| **priority** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **skills** | <!----><!---->[**List&lt;QueueConversationEmailEventTopicUriReference&gt;**](QueueConversationEmailEventTopicUriReference.html)<!----> |  |  [optional] |
-| **scoredAgents** | <!----><!---->[**List&lt;QueueConversationEmailEventTopicScoredAgent&gt;**](QueueConversationEmailEventTopicScoredAgent.html)<!----> |  |  [optional] |
+| **queue** | <!----><!---->[**QueueConversationEmailEventTopicUriReference**](QueueConversationEmailEventTopicUriReference.html)<!----> | A UriReference for a resource |  [optional] |
+| **language** | <!----><!---->[**QueueConversationEmailEventTopicUriReference**](QueueConversationEmailEventTopicUriReference.html)<!----> | A UriReference for a resource |  [optional] |
+| **priority** | <!----><!---->**Integer**<!----> | The priority of the conversation to use for routing decisions |  [optional] |
+| **skills** | <!----><!---->[**List&lt;QueueConversationEmailEventTopicUriReference&gt;**](QueueConversationEmailEventTopicUriReference.html)<!----> | The skills to use for routing decisions |  [optional] |
+| **scoredAgents** | <!----><!---->[**List&lt;QueueConversationEmailEventTopicScoredAgent&gt;**](QueueConversationEmailEventTopicScoredAgent.html)<!----> | A collection of agents and their assigned scores for this conversation (0 - 100, higher being better), for use in routing to preferred agents |  [optional] |
 {: class="table table-striped"}
 
 

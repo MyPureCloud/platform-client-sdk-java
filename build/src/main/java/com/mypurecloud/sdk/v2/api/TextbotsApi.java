@@ -10,8 +10,9 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.TextBotFlowTurnRequest;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.BotSearchResponseEntityListing;
+import com.mypurecloud.sdk.v2.model.TextBotFlowTurnRequest;
 import com.mypurecloud.sdk.v2.model.TextBotFlowTurnResponse;
 import com.mypurecloud.sdk.v2.model.TextBotFlowLaunchRequest;
 import com.mypurecloud.sdk.v2.model.TextBotFlowLaunchResponse;
@@ -19,6 +20,7 @@ import com.mypurecloud.sdk.v2.model.PostTextResponse;
 import com.mypurecloud.sdk.v2.model.PostTextRequest;
 
 
+import com.mypurecloud.sdk.v2.api.request.GetTextbotsBotsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTextbotsBotflowsSessionTurnsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTextbotsBotflowsSessionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTextbotsBotsExecuteRequest;
@@ -39,6 +41,97 @@ public class TextbotsApi {
 
   public TextbotsApi(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  
+  /**
+   * Find bots using the currently configured friendly name or ID.
+   * The name does allow case-insensitive partial string matches or by IDs (up to 50), but not both at the same time. Optionally you can limit the scope of the search by providing one or more bot types.  You can specify the maximum results to return, up to a limit of 100
+   * @param botType Bot types (optional)
+   * @param botName Bot name (optional)
+   * @param botId Bot IDs (optional)
+   * @param pageSize The maximum results to return (optional, default to 25)
+   * @return BotSearchResponseEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BotSearchResponseEntityListing getTextbotsBotsSearch(List<String> botType, String botName, List<String> botId, Integer pageSize) throws IOException, ApiException {
+    return  getTextbotsBotsSearch(createGetTextbotsBotsSearchRequest(botType, botName, botId, pageSize));
+  }
+
+  /**
+   * Find bots using the currently configured friendly name or ID.
+   * The name does allow case-insensitive partial string matches or by IDs (up to 50), but not both at the same time. Optionally you can limit the scope of the search by providing one or more bot types.  You can specify the maximum results to return, up to a limit of 100
+   * @param botType Bot types (optional)
+   * @param botName Bot name (optional)
+   * @param botId Bot IDs (optional)
+   * @param pageSize The maximum results to return (optional, default to 25)
+   * @return BotSearchResponseEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BotSearchResponseEntityListing> getTextbotsBotsSearchWithHttpInfo(List<String> botType, String botName, List<String> botId, Integer pageSize) throws IOException {
+    return getTextbotsBotsSearch(createGetTextbotsBotsSearchRequest(botType, botName, botId, pageSize).withHttpInfo());
+  }
+
+  private GetTextbotsBotsSearchRequest createGetTextbotsBotsSearchRequest(List<String> botType, String botName, List<String> botId, Integer pageSize) {
+    return GetTextbotsBotsSearchRequest.builder()
+            .withBotType(botType)
+    
+            .withBotName(botName)
+    
+            .withBotId(botId)
+    
+            .withPageSize(pageSize)
+    
+            .build();
+  }
+
+  /**
+   * Find bots using the currently configured friendly name or ID.
+   * The name does allow case-insensitive partial string matches or by IDs (up to 50), but not both at the same time. Optionally you can limit the scope of the search by providing one or more bot types.  You can specify the maximum results to return, up to a limit of 100
+   * @param request The request object
+   * @return BotSearchResponseEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BotSearchResponseEntityListing getTextbotsBotsSearch(GetTextbotsBotsSearchRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BotSearchResponseEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BotSearchResponseEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Find bots using the currently configured friendly name or ID.
+   * The name does allow case-insensitive partial string matches or by IDs (up to 50), but not both at the same time. Optionally you can limit the scope of the search by providing one or more bot types.  You can specify the maximum results to return, up to a limit of 100
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BotSearchResponseEntityListing> getTextbotsBotsSearch(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BotSearchResponseEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BotSearchResponseEntityListing> response = (ApiResponse<BotSearchResponseEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BotSearchResponseEntityListing> response = (ApiResponse<BotSearchResponseEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   

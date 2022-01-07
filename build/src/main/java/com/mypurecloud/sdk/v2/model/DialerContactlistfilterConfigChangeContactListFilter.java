@@ -26,11 +26,6 @@ import java.io.Serializable;
 
 public class DialerContactlistfilterConfigChangeContactListFilter  implements Serializable {
   
-  private String id = null;
-  private String name = null;
-  private Date dateCreated = null;
-  private Date dateModified = null;
-  private Integer version = null;
   private DialerContactlistfilterConfigChangeUriReference contactList = null;
   private List<String> contactListColumns = new ArrayList<String>();
   private List<DialerContactlistfilterConfigChangeFilterClause> clauses = new ArrayList<DialerContactlistfilterConfigChangeFilterClause>();
@@ -48,7 +43,7 @@ public class DialerContactlistfilterConfigChangeContactListFilter  implements Se
     }
   }
   /**
-   * Gets or Sets filterType
+   * Contact list filter type
    */
  @JsonDeserialize(using = FilterTypeEnumDeserializer.class)
   public enum FilterTypeEnum {
@@ -82,92 +77,11 @@ public class DialerContactlistfilterConfigChangeContactListFilter  implements Se
     }
   }
   private FilterTypeEnum filterType = null;
-  private Object additionalProperties = null;
-
-  
-  /**
-   **/
-  public DialerContactlistfilterConfigChangeContactListFilter id(String id) {
-    this.id = id;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("id")
-  public String getId() {
-    return id;
-  }
-  public void setId(String id) {
-    this.id = id;
-  }
-
-  
-  /**
-   **/
-  public DialerContactlistfilterConfigChangeContactListFilter name(String name) {
-    this.name = name;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("name")
-  public String getName() {
-    return name;
-  }
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  
-  /**
-   **/
-  public DialerContactlistfilterConfigChangeContactListFilter dateCreated(Date dateCreated) {
-    this.dateCreated = dateCreated;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("dateCreated")
-  public Date getDateCreated() {
-    return dateCreated;
-  }
-  public void setDateCreated(Date dateCreated) {
-    this.dateCreated = dateCreated;
-  }
-
-  
-  /**
-   **/
-  public DialerContactlistfilterConfigChangeContactListFilter dateModified(Date dateModified) {
-    this.dateModified = dateModified;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("dateModified")
-  public Date getDateModified() {
-    return dateModified;
-  }
-  public void setDateModified(Date dateModified) {
-    this.dateModified = dateModified;
-  }
-
-  
-  /**
-   **/
-  public DialerContactlistfilterConfigChangeContactListFilter version(Integer version) {
-    this.version = version;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("version")
-  public Integer getVersion() {
-    return version;
-  }
-  public void setVersion(Integer version) {
-    this.version = version;
-  }
+  private String id = null;
+  private String name = null;
+  private Date dateCreated = null;
+  private Date dateModified = null;
+  private Integer version = null;
 
   
   /**
@@ -188,13 +102,14 @@ public class DialerContactlistfilterConfigChangeContactListFilter  implements Se
 
   
   /**
+   * The list of contact list columns
    **/
   public DialerContactlistfilterConfigChangeContactListFilter contactListColumns(List<String> contactListColumns) {
     this.contactListColumns = contactListColumns;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The list of contact list columns")
   @JsonProperty("contactListColumns")
   public List<String> getContactListColumns() {
     return contactListColumns;
@@ -222,13 +137,14 @@ public class DialerContactlistfilterConfigChangeContactListFilter  implements Se
 
   
   /**
+   * Contact list filter type
    **/
   public DialerContactlistfilterConfigChangeContactListFilter filterType(FilterTypeEnum filterType) {
     this.filterType = filterType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Contact list filter type")
   @JsonProperty("filterType")
   public FilterTypeEnum getFilterType() {
     return filterType;
@@ -239,19 +155,92 @@ public class DialerContactlistfilterConfigChangeContactListFilter  implements Se
 
   
   /**
+   * The globally unique identifier for the object.
    **/
-  public DialerContactlistfilterConfigChangeContactListFilter additionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
+  public DialerContactlistfilterConfigChangeContactListFilter id(String id) {
+    this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Object getAdditionalProperties() {
-    return additionalProperties;
+  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
+  @JsonProperty("id")
+  public String getId() {
+    return id;
   }
-  public void setAdditionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
+  public void setId(String id) {
+    this.id = id;
+  }
+
+  
+  /**
+   * The UI-visible name of the object
+   **/
+  public DialerContactlistfilterConfigChangeContactListFilter name(String name) {
+    this.name = name;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The UI-visible name of the object")
+  @JsonProperty("name")
+  public String getName() {
+    return name;
+  }
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  
+  /**
+   * Creation time of the entity
+   **/
+  public DialerContactlistfilterConfigChangeContactListFilter dateCreated(Date dateCreated) {
+    this.dateCreated = dateCreated;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Creation time of the entity")
+  @JsonProperty("dateCreated")
+  public Date getDateCreated() {
+    return dateCreated;
+  }
+  public void setDateCreated(Date dateCreated) {
+    this.dateCreated = dateCreated;
+  }
+
+  
+  /**
+   * Last modified time of the entity
+   **/
+  public DialerContactlistfilterConfigChangeContactListFilter dateModified(Date dateModified) {
+    this.dateModified = dateModified;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Last modified time of the entity")
+  @JsonProperty("dateModified")
+  public Date getDateModified() {
+    return dateModified;
+  }
+  public void setDateModified(Date dateModified) {
+    this.dateModified = dateModified;
+  }
+
+  
+  /**
+   * Required for updates, must match the version number of the most recent update
+   **/
+  public DialerContactlistfilterConfigChangeContactListFilter version(Integer version) {
+    this.version = version;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Required for updates, must match the version number of the most recent update")
+  @JsonProperty("version")
+  public Integer getVersion() {
+    return version;
+  }
+  public void setVersion(Integer version) {
+    this.version = version;
   }
 
   
@@ -265,21 +254,20 @@ public class DialerContactlistfilterConfigChangeContactListFilter  implements Se
       return false;
     }
     DialerContactlistfilterConfigChangeContactListFilter dialerContactlistfilterConfigChangeContactListFilter = (DialerContactlistfilterConfigChangeContactListFilter) o;
-    return Objects.equals(this.id, dialerContactlistfilterConfigChangeContactListFilter.id) &&
-        Objects.equals(this.name, dialerContactlistfilterConfigChangeContactListFilter.name) &&
-        Objects.equals(this.dateCreated, dialerContactlistfilterConfigChangeContactListFilter.dateCreated) &&
-        Objects.equals(this.dateModified, dialerContactlistfilterConfigChangeContactListFilter.dateModified) &&
-        Objects.equals(this.version, dialerContactlistfilterConfigChangeContactListFilter.version) &&
-        Objects.equals(this.contactList, dialerContactlistfilterConfigChangeContactListFilter.contactList) &&
+    return Objects.equals(this.contactList, dialerContactlistfilterConfigChangeContactListFilter.contactList) &&
         Objects.equals(this.contactListColumns, dialerContactlistfilterConfigChangeContactListFilter.contactListColumns) &&
         Objects.equals(this.clauses, dialerContactlistfilterConfigChangeContactListFilter.clauses) &&
         Objects.equals(this.filterType, dialerContactlistfilterConfigChangeContactListFilter.filterType) &&
-        Objects.equals(this.additionalProperties, dialerContactlistfilterConfigChangeContactListFilter.additionalProperties);
+        Objects.equals(this.id, dialerContactlistfilterConfigChangeContactListFilter.id) &&
+        Objects.equals(this.name, dialerContactlistfilterConfigChangeContactListFilter.name) &&
+        Objects.equals(this.dateCreated, dialerContactlistfilterConfigChangeContactListFilter.dateCreated) &&
+        Objects.equals(this.dateModified, dialerContactlistfilterConfigChangeContactListFilter.dateModified) &&
+        Objects.equals(this.version, dialerContactlistfilterConfigChangeContactListFilter.version);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, contactList, contactListColumns, clauses, filterType, additionalProperties);
+    return Objects.hash(contactList, contactListColumns, clauses, filterType, id, name, dateCreated, dateModified, version);
   }
 
   @Override
@@ -287,16 +275,15 @@ public class DialerContactlistfilterConfigChangeContactListFilter  implements Se
     StringBuilder sb = new StringBuilder();
     sb.append("class DialerContactlistfilterConfigChangeContactListFilter {\n");
     
+    sb.append("    contactList: ").append(toIndentedString(contactList)).append("\n");
+    sb.append("    contactListColumns: ").append(toIndentedString(contactListColumns)).append("\n");
+    sb.append("    clauses: ").append(toIndentedString(clauses)).append("\n");
+    sb.append("    filterType: ").append(toIndentedString(filterType)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
-    sb.append("    contactList: ").append(toIndentedString(contactList)).append("\n");
-    sb.append("    contactListColumns: ").append(toIndentedString(contactListColumns)).append("\n");
-    sb.append("    clauses: ").append(toIndentedString(clauses)).append("\n");
-    sb.append("    filterType: ").append(toIndentedString(filterType)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

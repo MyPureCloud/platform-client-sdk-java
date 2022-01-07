@@ -22,17 +22,17 @@ public class DialerCampaignConfigChangeRestErrorDetail  implements Serializable 
   
   private String error = null;
   private String details = null;
-  private Object additionalProperties = null;
 
   
   /**
+   * name of the error
    **/
   public DialerCampaignConfigChangeRestErrorDetail error(String error) {
     this.error = error;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "name of the error")
   @JsonProperty("error")
   public String getError() {
     return error;
@@ -43,36 +43,20 @@ public class DialerCampaignConfigChangeRestErrorDetail  implements Serializable 
 
   
   /**
+   * additional information regarding the error
    **/
   public DialerCampaignConfigChangeRestErrorDetail details(String details) {
     this.details = details;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "additional information regarding the error")
   @JsonProperty("details")
   public String getDetails() {
     return details;
   }
   public void setDetails(String details) {
     this.details = details;
-  }
-
-  
-  /**
-   **/
-  public DialerCampaignConfigChangeRestErrorDetail additionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Object getAdditionalProperties() {
-    return additionalProperties;
-  }
-  public void setAdditionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
   }
 
   
@@ -87,13 +71,12 @@ public class DialerCampaignConfigChangeRestErrorDetail  implements Serializable 
     }
     DialerCampaignConfigChangeRestErrorDetail dialerCampaignConfigChangeRestErrorDetail = (DialerCampaignConfigChangeRestErrorDetail) o;
     return Objects.equals(this.error, dialerCampaignConfigChangeRestErrorDetail.error) &&
-        Objects.equals(this.details, dialerCampaignConfigChangeRestErrorDetail.details) &&
-        Objects.equals(this.additionalProperties, dialerCampaignConfigChangeRestErrorDetail.additionalProperties);
+        Objects.equals(this.details, dialerCampaignConfigChangeRestErrorDetail.details);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(error, details, additionalProperties);
+    return Objects.hash(error, details);
   }
 
   @Override
@@ -103,7 +86,6 @@ public class DialerCampaignConfigChangeRestErrorDetail  implements Serializable 
     
     sb.append("    error: ").append(toIndentedString(error)).append("\n");
     sb.append("    details: ").append(toIndentedString(details)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

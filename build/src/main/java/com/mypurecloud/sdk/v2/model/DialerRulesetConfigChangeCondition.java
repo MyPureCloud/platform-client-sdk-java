@@ -26,6 +26,7 @@ import java.io.Serializable;
 
 public class DialerRulesetConfigChangeCondition  implements Serializable {
   
+  private DialerRulesetConfigChangeUriReference dataAction = null;
   private String type = null;
   private Boolean inverted = null;
   private String attributeName = null;
@@ -44,7 +45,7 @@ public class DialerRulesetConfigChangeCondition  implements Serializable {
     }
   }
   /**
-   * Gets or Sets valueType
+   * Determines the type of the value associated with the condition
    */
  @JsonDeserialize(using = ValueTypeEnumDeserializer.class)
   public enum ValueTypeEnum {
@@ -94,7 +95,7 @@ public class DialerRulesetConfigChangeCondition  implements Serializable {
     }
   }
   /**
-   * Gets or Sets operator
+   * An operation type for condition evaluation
    */
  @JsonDeserialize(using = OperatorEnumDeserializer.class)
   public enum OperatorEnum {
@@ -151,7 +152,7 @@ public class DialerRulesetConfigChangeCondition  implements Serializable {
     }
   }
   /**
-   * Gets or Sets propertyType
+   * Determines the type of the property associated with the condition
    */
  @JsonDeserialize(using = PropertyTypeEnumDeserializer.class)
   public enum PropertyTypeEnum {
@@ -194,273 +195,17 @@ public class DialerRulesetConfigChangeCondition  implements Serializable {
   private String agentWrapupField = null;
   private List<DialerRulesetConfigChangeContactColumnToDataActionFieldMapping> contactColumnToDataActionFieldMappings = new ArrayList<DialerRulesetConfigChangeContactColumnToDataActionFieldMapping>();
   private List<DialerRulesetConfigChangeDataActionConditionPredicate> predicates = new ArrayList<DialerRulesetConfigChangeDataActionConditionPredicate>();
-  private DialerRulesetConfigChangeUriReference dataAction = null;
-  private Object additionalProperties = null;
 
   
   /**
-   **/
-  public DialerRulesetConfigChangeCondition type(String type) {
-    this.type = type;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("type")
-  public String getType() {
-    return type;
-  }
-  public void setType(String type) {
-    this.type = type;
-  }
-
-  
-  /**
-   **/
-  public DialerRulesetConfigChangeCondition inverted(Boolean inverted) {
-    this.inverted = inverted;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("inverted")
-  public Boolean getInverted() {
-    return inverted;
-  }
-  public void setInverted(Boolean inverted) {
-    this.inverted = inverted;
-  }
-
-  
-  /**
-   **/
-  public DialerRulesetConfigChangeCondition attributeName(String attributeName) {
-    this.attributeName = attributeName;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("attributeName")
-  public String getAttributeName() {
-    return attributeName;
-  }
-  public void setAttributeName(String attributeName) {
-    this.attributeName = attributeName;
-  }
-
-  
-  /**
-   **/
-  public DialerRulesetConfigChangeCondition value(String value) {
-    this.value = value;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("value")
-  public String getValue() {
-    return value;
-  }
-  public void setValue(String value) {
-    this.value = value;
-  }
-
-  
-  /**
-   **/
-  public DialerRulesetConfigChangeCondition valueType(ValueTypeEnum valueType) {
-    this.valueType = valueType;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("valueType")
-  public ValueTypeEnum getValueType() {
-    return valueType;
-  }
-  public void setValueType(ValueTypeEnum valueType) {
-    this.valueType = valueType;
-  }
-
-  
-  /**
-   **/
-  public DialerRulesetConfigChangeCondition operator(OperatorEnum operator) {
-    this.operator = operator;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("operator")
-  public OperatorEnum getOperator() {
-    return operator;
-  }
-  public void setOperator(OperatorEnum operator) {
-    this.operator = operator;
-  }
-
-  
-  /**
-   **/
-  public DialerRulesetConfigChangeCondition codes(List<String> codes) {
-    this.codes = codes;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("codes")
-  public List<String> getCodes() {
-    return codes;
-  }
-  public void setCodes(List<String> codes) {
-    this.codes = codes;
-  }
-
-  
-  /**
-   **/
-  public DialerRulesetConfigChangeCondition propertyType(PropertyTypeEnum propertyType) {
-    this.propertyType = propertyType;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("propertyType")
-  public PropertyTypeEnum getPropertyType() {
-    return propertyType;
-  }
-  public void setPropertyType(PropertyTypeEnum propertyType) {
-    this.propertyType = propertyType;
-  }
-
-  
-  /**
-   **/
-  public DialerRulesetConfigChangeCondition property(String property) {
-    this.property = property;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("property")
-  public String getProperty() {
-    return property;
-  }
-  public void setProperty(String property) {
-    this.property = property;
-  }
-
-  
-  /**
-   **/
-  public DialerRulesetConfigChangeCondition dataNotFoundResolution(Boolean dataNotFoundResolution) {
-    this.dataNotFoundResolution = dataNotFoundResolution;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("dataNotFoundResolution")
-  public Boolean getDataNotFoundResolution() {
-    return dataNotFoundResolution;
-  }
-  public void setDataNotFoundResolution(Boolean dataNotFoundResolution) {
-    this.dataNotFoundResolution = dataNotFoundResolution;
-  }
-
-  
-  /**
-   **/
-  public DialerRulesetConfigChangeCondition contactIdField(String contactIdField) {
-    this.contactIdField = contactIdField;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("contactIdField")
-  public String getContactIdField() {
-    return contactIdField;
-  }
-  public void setContactIdField(String contactIdField) {
-    this.contactIdField = contactIdField;
-  }
-
-  
-  /**
-   **/
-  public DialerRulesetConfigChangeCondition callAnalysisResultField(String callAnalysisResultField) {
-    this.callAnalysisResultField = callAnalysisResultField;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("callAnalysisResultField")
-  public String getCallAnalysisResultField() {
-    return callAnalysisResultField;
-  }
-  public void setCallAnalysisResultField(String callAnalysisResultField) {
-    this.callAnalysisResultField = callAnalysisResultField;
-  }
-
-  
-  /**
-   **/
-  public DialerRulesetConfigChangeCondition agentWrapupField(String agentWrapupField) {
-    this.agentWrapupField = agentWrapupField;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("agentWrapupField")
-  public String getAgentWrapupField() {
-    return agentWrapupField;
-  }
-  public void setAgentWrapupField(String agentWrapupField) {
-    this.agentWrapupField = agentWrapupField;
-  }
-
-  
-  /**
-   **/
-  public DialerRulesetConfigChangeCondition contactColumnToDataActionFieldMappings(List<DialerRulesetConfigChangeContactColumnToDataActionFieldMapping> contactColumnToDataActionFieldMappings) {
-    this.contactColumnToDataActionFieldMappings = contactColumnToDataActionFieldMappings;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("contactColumnToDataActionFieldMappings")
-  public List<DialerRulesetConfigChangeContactColumnToDataActionFieldMapping> getContactColumnToDataActionFieldMappings() {
-    return contactColumnToDataActionFieldMappings;
-  }
-  public void setContactColumnToDataActionFieldMappings(List<DialerRulesetConfigChangeContactColumnToDataActionFieldMapping> contactColumnToDataActionFieldMappings) {
-    this.contactColumnToDataActionFieldMappings = contactColumnToDataActionFieldMappings;
-  }
-
-  
-  /**
-   **/
-  public DialerRulesetConfigChangeCondition predicates(List<DialerRulesetConfigChangeDataActionConditionPredicate> predicates) {
-    this.predicates = predicates;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("predicates")
-  public List<DialerRulesetConfigChangeDataActionConditionPredicate> getPredicates() {
-    return predicates;
-  }
-  public void setPredicates(List<DialerRulesetConfigChangeDataActionConditionPredicate> predicates) {
-    this.predicates = predicates;
-  }
-
-  
-  /**
+   * A UriReference for a resource
    **/
   public DialerRulesetConfigChangeCondition dataAction(DialerRulesetConfigChangeUriReference dataAction) {
     this.dataAction = dataAction;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A UriReference for a resource")
   @JsonProperty("dataAction")
   public DialerRulesetConfigChangeUriReference getDataAction() {
     return dataAction;
@@ -471,19 +216,272 @@ public class DialerRulesetConfigChangeCondition  implements Serializable {
 
   
   /**
+   * The type of the condition
    **/
-  public DialerRulesetConfigChangeCondition additionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
+  public DialerRulesetConfigChangeCondition type(String type) {
+    this.type = type;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Object getAdditionalProperties() {
-    return additionalProperties;
+  @ApiModelProperty(example = "null", value = "The type of the condition")
+  @JsonProperty("type")
+  public String getType() {
+    return type;
   }
-  public void setAdditionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
+  public void setType(String type) {
+    this.type = type;
+  }
+
+  
+  /**
+   * Indicates whether to evaluate for the opposite of the stated condition; default is false
+   **/
+  public DialerRulesetConfigChangeCondition inverted(Boolean inverted) {
+    this.inverted = inverted;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates whether to evaluate for the opposite of the stated condition; default is false")
+  @JsonProperty("inverted")
+  public Boolean getInverted() {
+    return inverted;
+  }
+  public void setInverted(Boolean inverted) {
+    this.inverted = inverted;
+  }
+
+  
+  /**
+   * An attribute name associated with the condition (applies only to certain rule conditions)
+   **/
+  public DialerRulesetConfigChangeCondition attributeName(String attributeName) {
+    this.attributeName = attributeName;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "An attribute name associated with the condition (applies only to certain rule conditions)")
+  @JsonProperty("attributeName")
+  public String getAttributeName() {
+    return attributeName;
+  }
+  public void setAttributeName(String attributeName) {
+    this.attributeName = attributeName;
+  }
+
+  
+  /**
+   * A value associated with the condition
+   **/
+  public DialerRulesetConfigChangeCondition value(String value) {
+    this.value = value;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A value associated with the condition")
+  @JsonProperty("value")
+  public String getValue() {
+    return value;
+  }
+  public void setValue(String value) {
+    this.value = value;
+  }
+
+  
+  /**
+   * Determines the type of the value associated with the condition
+   **/
+  public DialerRulesetConfigChangeCondition valueType(ValueTypeEnum valueType) {
+    this.valueType = valueType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Determines the type of the value associated with the condition")
+  @JsonProperty("valueType")
+  public ValueTypeEnum getValueType() {
+    return valueType;
+  }
+  public void setValueType(ValueTypeEnum valueType) {
+    this.valueType = valueType;
+  }
+
+  
+  /**
+   * An operation type for condition evaluation
+   **/
+  public DialerRulesetConfigChangeCondition operator(OperatorEnum operator) {
+    this.operator = operator;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "An operation type for condition evaluation")
+  @JsonProperty("operator")
+  public OperatorEnum getOperator() {
+    return operator;
+  }
+  public void setOperator(OperatorEnum operator) {
+    this.operator = operator;
+  }
+
+  
+  /**
+   * List of wrap-up code identifiers (used only in conditions of type 'wrapupCondition')
+   **/
+  public DialerRulesetConfigChangeCondition codes(List<String> codes) {
+    this.codes = codes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "List of wrap-up code identifiers (used only in conditions of type 'wrapupCondition')")
+  @JsonProperty("codes")
+  public List<String> getCodes() {
+    return codes;
+  }
+  public void setCodes(List<String> codes) {
+    this.codes = codes;
+  }
+
+  
+  /**
+   * Determines the type of the property associated with the condition
+   **/
+  public DialerRulesetConfigChangeCondition propertyType(PropertyTypeEnum propertyType) {
+    this.propertyType = propertyType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Determines the type of the property associated with the condition")
+  @JsonProperty("propertyType")
+  public PropertyTypeEnum getPropertyType() {
+    return propertyType;
+  }
+  public void setPropertyType(PropertyTypeEnum propertyType) {
+    this.propertyType = propertyType;
+  }
+
+  
+  /**
+   * A value associated with the property type of this condition
+   **/
+  public DialerRulesetConfigChangeCondition property(String property) {
+    this.property = property;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A value associated with the property type of this condition")
+  @JsonProperty("property")
+  public String getProperty() {
+    return property;
+  }
+  public void setProperty(String property) {
+    this.property = property;
+  }
+
+  
+  /**
+   * The result of this condition if the data action returns a result indicating there was no data. Required for a DataActionCondition.
+   **/
+  public DialerRulesetConfigChangeCondition dataNotFoundResolution(Boolean dataNotFoundResolution) {
+    this.dataNotFoundResolution = dataNotFoundResolution;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The result of this condition if the data action returns a result indicating there was no data. Required for a DataActionCondition.")
+  @JsonProperty("dataNotFoundResolution")
+  public Boolean getDataNotFoundResolution() {
+    return dataNotFoundResolution;
+  }
+  public void setDataNotFoundResolution(Boolean dataNotFoundResolution) {
+    this.dataNotFoundResolution = dataNotFoundResolution;
+  }
+
+  
+  /**
+   * The input field from the data action that the contactId will be passed to for this condition. Valid for a dataActionCondition.
+   **/
+  public DialerRulesetConfigChangeCondition contactIdField(String contactIdField) {
+    this.contactIdField = contactIdField;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The input field from the data action that the contactId will be passed to for this condition. Valid for a dataActionCondition.")
+  @JsonProperty("contactIdField")
+  public String getContactIdField() {
+    return contactIdField;
+  }
+  public void setContactIdField(String contactIdField) {
+    this.contactIdField = contactIdField;
+  }
+
+  
+  /**
+   * The input field from the data action that the callAnalysisResult will be passed to for this condition. Valid for a wrapup dataActionCondition.
+   **/
+  public DialerRulesetConfigChangeCondition callAnalysisResultField(String callAnalysisResultField) {
+    this.callAnalysisResultField = callAnalysisResultField;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The input field from the data action that the callAnalysisResult will be passed to for this condition. Valid for a wrapup dataActionCondition.")
+  @JsonProperty("callAnalysisResultField")
+  public String getCallAnalysisResultField() {
+    return callAnalysisResultField;
+  }
+  public void setCallAnalysisResultField(String callAnalysisResultField) {
+    this.callAnalysisResultField = callAnalysisResultField;
+  }
+
+  
+  /**
+   * The input field from the data action that the agentWrapup will be passed to for this condition. Valid for a wrapup dataActionCondition.
+   **/
+  public DialerRulesetConfigChangeCondition agentWrapupField(String agentWrapupField) {
+    this.agentWrapupField = agentWrapupField;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The input field from the data action that the agentWrapup will be passed to for this condition. Valid for a wrapup dataActionCondition.")
+  @JsonProperty("agentWrapupField")
+  public String getAgentWrapupField() {
+    return agentWrapupField;
+  }
+  public void setAgentWrapupField(String agentWrapupField) {
+    this.agentWrapupField = agentWrapupField;
+  }
+
+  
+  /**
+   * A list of mappings defining which contact data fields will be passed to which data action input fields for this condition. Valid for a dataActionCondition.
+   **/
+  public DialerRulesetConfigChangeCondition contactColumnToDataActionFieldMappings(List<DialerRulesetConfigChangeContactColumnToDataActionFieldMapping> contactColumnToDataActionFieldMappings) {
+    this.contactColumnToDataActionFieldMappings = contactColumnToDataActionFieldMappings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A list of mappings defining which contact data fields will be passed to which data action input fields for this condition. Valid for a dataActionCondition.")
+  @JsonProperty("contactColumnToDataActionFieldMappings")
+  public List<DialerRulesetConfigChangeContactColumnToDataActionFieldMapping> getContactColumnToDataActionFieldMappings() {
+    return contactColumnToDataActionFieldMappings;
+  }
+  public void setContactColumnToDataActionFieldMappings(List<DialerRulesetConfigChangeContactColumnToDataActionFieldMapping> contactColumnToDataActionFieldMappings) {
+    this.contactColumnToDataActionFieldMappings = contactColumnToDataActionFieldMappings;
+  }
+
+  
+  /**
+   * A list of predicates defining the comparisons to use for this condition. Required for a dataActionCondition.
+   **/
+  public DialerRulesetConfigChangeCondition predicates(List<DialerRulesetConfigChangeDataActionConditionPredicate> predicates) {
+    this.predicates = predicates;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A list of predicates defining the comparisons to use for this condition. Required for a dataActionCondition.")
+  @JsonProperty("predicates")
+  public List<DialerRulesetConfigChangeDataActionConditionPredicate> getPredicates() {
+    return predicates;
+  }
+  public void setPredicates(List<DialerRulesetConfigChangeDataActionConditionPredicate> predicates) {
+    this.predicates = predicates;
   }
 
   
@@ -497,7 +495,8 @@ public class DialerRulesetConfigChangeCondition  implements Serializable {
       return false;
     }
     DialerRulesetConfigChangeCondition dialerRulesetConfigChangeCondition = (DialerRulesetConfigChangeCondition) o;
-    return Objects.equals(this.type, dialerRulesetConfigChangeCondition.type) &&
+    return Objects.equals(this.dataAction, dialerRulesetConfigChangeCondition.dataAction) &&
+        Objects.equals(this.type, dialerRulesetConfigChangeCondition.type) &&
         Objects.equals(this.inverted, dialerRulesetConfigChangeCondition.inverted) &&
         Objects.equals(this.attributeName, dialerRulesetConfigChangeCondition.attributeName) &&
         Objects.equals(this.value, dialerRulesetConfigChangeCondition.value) &&
@@ -511,14 +510,12 @@ public class DialerRulesetConfigChangeCondition  implements Serializable {
         Objects.equals(this.callAnalysisResultField, dialerRulesetConfigChangeCondition.callAnalysisResultField) &&
         Objects.equals(this.agentWrapupField, dialerRulesetConfigChangeCondition.agentWrapupField) &&
         Objects.equals(this.contactColumnToDataActionFieldMappings, dialerRulesetConfigChangeCondition.contactColumnToDataActionFieldMappings) &&
-        Objects.equals(this.predicates, dialerRulesetConfigChangeCondition.predicates) &&
-        Objects.equals(this.dataAction, dialerRulesetConfigChangeCondition.dataAction) &&
-        Objects.equals(this.additionalProperties, dialerRulesetConfigChangeCondition.additionalProperties);
+        Objects.equals(this.predicates, dialerRulesetConfigChangeCondition.predicates);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, inverted, attributeName, value, valueType, operator, codes, propertyType, property, dataNotFoundResolution, contactIdField, callAnalysisResultField, agentWrapupField, contactColumnToDataActionFieldMappings, predicates, dataAction, additionalProperties);
+    return Objects.hash(dataAction, type, inverted, attributeName, value, valueType, operator, codes, propertyType, property, dataNotFoundResolution, contactIdField, callAnalysisResultField, agentWrapupField, contactColumnToDataActionFieldMappings, predicates);
   }
 
   @Override
@@ -526,6 +523,7 @@ public class DialerRulesetConfigChangeCondition  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class DialerRulesetConfigChangeCondition {\n");
     
+    sb.append("    dataAction: ").append(toIndentedString(dataAction)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    inverted: ").append(toIndentedString(inverted)).append("\n");
     sb.append("    attributeName: ").append(toIndentedString(attributeName)).append("\n");
@@ -541,8 +539,6 @@ public class DialerRulesetConfigChangeCondition  implements Serializable {
     sb.append("    agentWrapupField: ").append(toIndentedString(agentWrapupField)).append("\n");
     sb.append("    contactColumnToDataActionFieldMappings: ").append(toIndentedString(contactColumnToDataActionFieldMappings)).append("\n");
     sb.append("    predicates: ").append(toIndentedString(predicates)).append("\n");
-    sb.append("    dataAction: ").append(toIndentedString(dataAction)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

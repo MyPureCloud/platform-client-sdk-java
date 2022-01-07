@@ -15,8 +15,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * DialerOutboundSettingsConfigChangeAtzmTimeSlot
+ * The time interval to place outbound calls
  */
+@ApiModel(description = "The time interval to place outbound calls")
 
 public class DialerOutboundSettingsConfigChangeAtzmTimeSlot  implements Serializable {
   
@@ -25,13 +26,14 @@ public class DialerOutboundSettingsConfigChangeAtzmTimeSlot  implements Serializ
 
   
   /**
+   * The earliest time to dial a contact
    **/
   public DialerOutboundSettingsConfigChangeAtzmTimeSlot earliestCallableTime(String earliestCallableTime) {
     this.earliestCallableTime = earliestCallableTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The earliest time to dial a contact")
   @JsonProperty("earliestCallableTime")
   public String getEarliestCallableTime() {
     return earliestCallableTime;
@@ -42,13 +44,14 @@ public class DialerOutboundSettingsConfigChangeAtzmTimeSlot  implements Serializ
 
   
   /**
+   * The latest time to dial a contact
    **/
   public DialerOutboundSettingsConfigChangeAtzmTimeSlot latestCallableTime(String latestCallableTime) {
     this.latestCallableTime = latestCallableTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The latest time to dial a contact")
   @JsonProperty("latestCallableTime")
   public String getLatestCallableTime() {
     return latestCallableTime;

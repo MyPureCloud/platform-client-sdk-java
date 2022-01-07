@@ -38,7 +38,7 @@ public class DialerContactlistfilterConfigChangeFilterClause  implements Seriali
     }
   }
   /**
-   * Gets or Sets filterType
+   * Contact list filter type
    */
  @JsonDeserialize(using = FilterTypeEnumDeserializer.class)
   public enum FilterTypeEnum {
@@ -73,17 +73,17 @@ public class DialerContactlistfilterConfigChangeFilterClause  implements Seriali
   }
   private FilterTypeEnum filterType = null;
   private List<DialerContactlistfilterConfigChangeFilterPredicate> predicates = new ArrayList<DialerContactlistfilterConfigChangeFilterPredicate>();
-  private Object additionalProperties = null;
 
   
   /**
+   * Contact list filter type
    **/
   public DialerContactlistfilterConfigChangeFilterClause filterType(FilterTypeEnum filterType) {
     this.filterType = filterType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Contact list filter type")
   @JsonProperty("filterType")
   public FilterTypeEnum getFilterType() {
     return filterType;
@@ -94,36 +94,20 @@ public class DialerContactlistfilterConfigChangeFilterClause  implements Seriali
 
   
   /**
+   * The list of predicates in that clause
    **/
   public DialerContactlistfilterConfigChangeFilterClause predicates(List<DialerContactlistfilterConfigChangeFilterPredicate> predicates) {
     this.predicates = predicates;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The list of predicates in that clause")
   @JsonProperty("predicates")
   public List<DialerContactlistfilterConfigChangeFilterPredicate> getPredicates() {
     return predicates;
   }
   public void setPredicates(List<DialerContactlistfilterConfigChangeFilterPredicate> predicates) {
     this.predicates = predicates;
-  }
-
-  
-  /**
-   **/
-  public DialerContactlistfilterConfigChangeFilterClause additionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Object getAdditionalProperties() {
-    return additionalProperties;
-  }
-  public void setAdditionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
   }
 
   
@@ -138,13 +122,12 @@ public class DialerContactlistfilterConfigChangeFilterClause  implements Seriali
     }
     DialerContactlistfilterConfigChangeFilterClause dialerContactlistfilterConfigChangeFilterClause = (DialerContactlistfilterConfigChangeFilterClause) o;
     return Objects.equals(this.filterType, dialerContactlistfilterConfigChangeFilterClause.filterType) &&
-        Objects.equals(this.predicates, dialerContactlistfilterConfigChangeFilterClause.predicates) &&
-        Objects.equals(this.additionalProperties, dialerContactlistfilterConfigChangeFilterClause.additionalProperties);
+        Objects.equals(this.predicates, dialerContactlistfilterConfigChangeFilterClause.predicates);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(filterType, predicates, additionalProperties);
+    return Objects.hash(filterType, predicates);
   }
 
   @Override
@@ -154,7 +137,6 @@ public class DialerContactlistfilterConfigChangeFilterClause  implements Seriali
     
     sb.append("    filterType: ").append(toIndentedString(filterType)).append("\n");
     sb.append("    predicates: ").append(toIndentedString(predicates)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

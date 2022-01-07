@@ -132,7 +132,8 @@ public class AuditQueryExecutionStatusResponse  implements Serializable {
     WORKFORCEMANAGEMENT("WorkforceManagement"),
     MESSAGING("Messaging"),
     SUPPORTABILITY("Supportability"),
-    CALLBACK("Callback");
+    CALLBACK("Callback"),
+    WORKITEMS("Workitems");
 
     private String value;
 

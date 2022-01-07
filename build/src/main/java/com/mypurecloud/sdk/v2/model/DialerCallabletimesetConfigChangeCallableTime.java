@@ -25,17 +25,17 @@ public class DialerCallabletimesetConfigChangeCallableTime  implements Serializa
   
   private List<DialerCallabletimesetConfigChangeTimeSlot> timeSlots = new ArrayList<DialerCallabletimesetConfigChangeTimeSlot>();
   private String timeZoneId = null;
-  private Object additionalProperties = null;
 
   
   /**
+   * The time slots
    **/
   public DialerCallabletimesetConfigChangeCallableTime timeSlots(List<DialerCallabletimesetConfigChangeTimeSlot> timeSlots) {
     this.timeSlots = timeSlots;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The time slots")
   @JsonProperty("timeSlots")
   public List<DialerCallabletimesetConfigChangeTimeSlot> getTimeSlots() {
     return timeSlots;
@@ -46,36 +46,20 @@ public class DialerCallabletimesetConfigChangeCallableTime  implements Serializa
 
   
   /**
+   * The ISO ID for the timezone
    **/
   public DialerCallabletimesetConfigChangeCallableTime timeZoneId(String timeZoneId) {
     this.timeZoneId = timeZoneId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The ISO ID for the timezone")
   @JsonProperty("timeZoneId")
   public String getTimeZoneId() {
     return timeZoneId;
   }
   public void setTimeZoneId(String timeZoneId) {
     this.timeZoneId = timeZoneId;
-  }
-
-  
-  /**
-   **/
-  public DialerCallabletimesetConfigChangeCallableTime additionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Object getAdditionalProperties() {
-    return additionalProperties;
-  }
-  public void setAdditionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
   }
 
   
@@ -90,13 +74,12 @@ public class DialerCallabletimesetConfigChangeCallableTime  implements Serializa
     }
     DialerCallabletimesetConfigChangeCallableTime dialerCallabletimesetConfigChangeCallableTime = (DialerCallabletimesetConfigChangeCallableTime) o;
     return Objects.equals(this.timeSlots, dialerCallabletimesetConfigChangeCallableTime.timeSlots) &&
-        Objects.equals(this.timeZoneId, dialerCallabletimesetConfigChangeCallableTime.timeZoneId) &&
-        Objects.equals(this.additionalProperties, dialerCallabletimesetConfigChangeCallableTime.additionalProperties);
+        Objects.equals(this.timeZoneId, dialerCallabletimesetConfigChangeCallableTime.timeZoneId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(timeSlots, timeZoneId, additionalProperties);
+    return Objects.hash(timeSlots, timeZoneId);
   }
 
   @Override
@@ -106,7 +89,6 @@ public class DialerCallabletimesetConfigChangeCallableTime  implements Serializa
     
     sb.append("    timeSlots: ").append(toIndentedString(timeSlots)).append("\n");
     sb.append("    timeZoneId: ").append(toIndentedString(timeZoneId)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

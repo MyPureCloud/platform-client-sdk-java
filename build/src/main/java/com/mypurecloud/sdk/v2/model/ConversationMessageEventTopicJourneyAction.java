@@ -16,8 +16,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * ConversationMessageEventTopicJourneyAction
+ * A subset of the Journey System&#39;s action data relevant to a part of a conversation (for external linkage and internal usage/context)
  */
+@ApiModel(description = "A subset of the Journey System's action data relevant to a part of a conversation (for external linkage and internal usage/context)")
 
 public class ConversationMessageEventTopicJourneyAction  implements Serializable {
   
@@ -26,13 +27,14 @@ public class ConversationMessageEventTopicJourneyAction  implements Serializable
 
   
   /**
+   * The ID of an action from the Journey System (an action is spawned from an actionMap)
    **/
   public ConversationMessageEventTopicJourneyAction id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The ID of an action from the Journey System (an action is spawned from an actionMap)")
   @JsonProperty("id")
   public String getId() {
     return id;

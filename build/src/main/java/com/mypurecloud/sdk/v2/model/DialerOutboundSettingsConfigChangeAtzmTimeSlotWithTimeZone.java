@@ -15,24 +15,44 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone
+ * The time interval to place outbound calls
  */
+@ApiModel(description = "The time interval to place outbound calls")
 
 public class DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone  implements Serializable {
   
+  private String timeZoneId = null;
   private String earliestCallableTime = null;
   private String latestCallableTime = null;
-  private String timeZoneId = null;
 
   
   /**
+   * The time zone to use for contacts that cannot be mapped
+   **/
+  public DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone timeZoneId(String timeZoneId) {
+    this.timeZoneId = timeZoneId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The time zone to use for contacts that cannot be mapped")
+  @JsonProperty("timeZoneId")
+  public String getTimeZoneId() {
+    return timeZoneId;
+  }
+  public void setTimeZoneId(String timeZoneId) {
+    this.timeZoneId = timeZoneId;
+  }
+
+  
+  /**
+   * The earliest time to dial a contact
    **/
   public DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone earliestCallableTime(String earliestCallableTime) {
     this.earliestCallableTime = earliestCallableTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The earliest time to dial a contact")
   @JsonProperty("earliestCallableTime")
   public String getEarliestCallableTime() {
     return earliestCallableTime;
@@ -43,36 +63,20 @@ public class DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone  impleme
 
   
   /**
+   * The latest time to dial a contact
    **/
   public DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone latestCallableTime(String latestCallableTime) {
     this.latestCallableTime = latestCallableTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The latest time to dial a contact")
   @JsonProperty("latestCallableTime")
   public String getLatestCallableTime() {
     return latestCallableTime;
   }
   public void setLatestCallableTime(String latestCallableTime) {
     this.latestCallableTime = latestCallableTime;
-  }
-
-  
-  /**
-   **/
-  public DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone timeZoneId(String timeZoneId) {
-    this.timeZoneId = timeZoneId;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("timeZoneId")
-  public String getTimeZoneId() {
-    return timeZoneId;
-  }
-  public void setTimeZoneId(String timeZoneId) {
-    this.timeZoneId = timeZoneId;
   }
 
   
@@ -86,14 +90,14 @@ public class DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone  impleme
       return false;
     }
     DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone dialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone = (DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone) o;
-    return Objects.equals(this.earliestCallableTime, dialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone.earliestCallableTime) &&
-        Objects.equals(this.latestCallableTime, dialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone.latestCallableTime) &&
-        Objects.equals(this.timeZoneId, dialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone.timeZoneId);
+    return Objects.equals(this.timeZoneId, dialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone.timeZoneId) &&
+        Objects.equals(this.earliestCallableTime, dialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone.earliestCallableTime) &&
+        Objects.equals(this.latestCallableTime, dialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone.latestCallableTime);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(earliestCallableTime, latestCallableTime, timeZoneId);
+    return Objects.hash(timeZoneId, earliestCallableTime, latestCallableTime);
   }
 
   @Override
@@ -101,9 +105,9 @@ public class DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone  impleme
     StringBuilder sb = new StringBuilder();
     sb.append("class DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone {\n");
     
+    sb.append("    timeZoneId: ").append(toIndentedString(timeZoneId)).append("\n");
     sb.append("    earliestCallableTime: ").append(toIndentedString(earliestCallableTime)).append("\n");
     sb.append("    latestCallableTime: ").append(toIndentedString(latestCallableTime)).append("\n");
-    sb.append("    timeZoneId: ").append(toIndentedString(timeZoneId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

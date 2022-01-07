@@ -26,102 +26,16 @@ import java.io.Serializable;
 
 public class DialerCampaignRuleConfigChangeCampaignRule  implements Serializable {
   
-  private String id = null;
-  private String name = null;
-  private Date dateCreated = null;
-  private Date dateModified = null;
-  private Integer version = null;
   private DialerCampaignRuleConfigChangeCampaignRuleEntities campaignRuleEntities = null;
   private List<DialerCampaignRuleConfigChangeCampaignRuleCondition> campaignRuleConditions = new ArrayList<DialerCampaignRuleConfigChangeCampaignRuleCondition>();
   private List<DialerCampaignRuleConfigChangeCampaignRuleAction> campaignRuleActions = new ArrayList<DialerCampaignRuleConfigChangeCampaignRuleAction>();
   private Boolean matchAnyConditions = null;
   private Boolean enabled = null;
-  private Object additionalProperties = null;
-
-  
-  /**
-   **/
-  public DialerCampaignRuleConfigChangeCampaignRule id(String id) {
-    this.id = id;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("id")
-  public String getId() {
-    return id;
-  }
-  public void setId(String id) {
-    this.id = id;
-  }
-
-  
-  /**
-   **/
-  public DialerCampaignRuleConfigChangeCampaignRule name(String name) {
-    this.name = name;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("name")
-  public String getName() {
-    return name;
-  }
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  
-  /**
-   **/
-  public DialerCampaignRuleConfigChangeCampaignRule dateCreated(Date dateCreated) {
-    this.dateCreated = dateCreated;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("dateCreated")
-  public Date getDateCreated() {
-    return dateCreated;
-  }
-  public void setDateCreated(Date dateCreated) {
-    this.dateCreated = dateCreated;
-  }
-
-  
-  /**
-   **/
-  public DialerCampaignRuleConfigChangeCampaignRule dateModified(Date dateModified) {
-    this.dateModified = dateModified;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("dateModified")
-  public Date getDateModified() {
-    return dateModified;
-  }
-  public void setDateModified(Date dateModified) {
-    this.dateModified = dateModified;
-  }
-
-  
-  /**
-   **/
-  public DialerCampaignRuleConfigChangeCampaignRule version(Integer version) {
-    this.version = version;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("version")
-  public Integer getVersion() {
-    return version;
-  }
-  public void setVersion(Integer version) {
-    this.version = version;
-  }
+  private String id = null;
+  private String name = null;
+  private Date dateCreated = null;
+  private Date dateModified = null;
+  private Integer version = null;
 
   
   /**
@@ -142,13 +56,14 @@ public class DialerCampaignRuleConfigChangeCampaignRule  implements Serializable
 
   
   /**
+   * The list of conditions that will trigger this Campaign Rule
    **/
   public DialerCampaignRuleConfigChangeCampaignRule campaignRuleConditions(List<DialerCampaignRuleConfigChangeCampaignRuleCondition> campaignRuleConditions) {
     this.campaignRuleConditions = campaignRuleConditions;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The list of conditions that will trigger this Campaign Rule")
   @JsonProperty("campaignRuleConditions")
   public List<DialerCampaignRuleConfigChangeCampaignRuleCondition> getCampaignRuleConditions() {
     return campaignRuleConditions;
@@ -159,13 +74,14 @@ public class DialerCampaignRuleConfigChangeCampaignRule  implements Serializable
 
   
   /**
+   * The list of actions that will be taken when this Campaign Rule's conditions are met
    **/
   public DialerCampaignRuleConfigChangeCampaignRule campaignRuleActions(List<DialerCampaignRuleConfigChangeCampaignRuleAction> campaignRuleActions) {
     this.campaignRuleActions = campaignRuleActions;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The list of actions that will be taken when this Campaign Rule's conditions are met")
   @JsonProperty("campaignRuleActions")
   public List<DialerCampaignRuleConfigChangeCampaignRuleAction> getCampaignRuleActions() {
     return campaignRuleActions;
@@ -176,13 +92,14 @@ public class DialerCampaignRuleConfigChangeCampaignRule  implements Serializable
 
   
   /**
+   * Whether this Campaign Rule should match any conditions (inclusive OR) or match all conditions (ALL)
    **/
   public DialerCampaignRuleConfigChangeCampaignRule matchAnyConditions(Boolean matchAnyConditions) {
     this.matchAnyConditions = matchAnyConditions;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Whether this Campaign Rule should match any conditions (inclusive OR) or match all conditions (ALL)")
   @JsonProperty("matchAnyConditions")
   public Boolean getMatchAnyConditions() {
     return matchAnyConditions;
@@ -193,13 +110,14 @@ public class DialerCampaignRuleConfigChangeCampaignRule  implements Serializable
 
   
   /**
+   * Whether this campaign rule is enabled
    **/
   public DialerCampaignRuleConfigChangeCampaignRule enabled(Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Whether this campaign rule is enabled")
   @JsonProperty("enabled")
   public Boolean getEnabled() {
     return enabled;
@@ -210,19 +128,92 @@ public class DialerCampaignRuleConfigChangeCampaignRule  implements Serializable
 
   
   /**
+   * The globally unique identifier for the object.
    **/
-  public DialerCampaignRuleConfigChangeCampaignRule additionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
+  public DialerCampaignRuleConfigChangeCampaignRule id(String id) {
+    this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Object getAdditionalProperties() {
-    return additionalProperties;
+  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
+  @JsonProperty("id")
+  public String getId() {
+    return id;
   }
-  public void setAdditionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
+  public void setId(String id) {
+    this.id = id;
+  }
+
+  
+  /**
+   * The UI-visible name of the object
+   **/
+  public DialerCampaignRuleConfigChangeCampaignRule name(String name) {
+    this.name = name;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The UI-visible name of the object")
+  @JsonProperty("name")
+  public String getName() {
+    return name;
+  }
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  
+  /**
+   * Creation time of the entity
+   **/
+  public DialerCampaignRuleConfigChangeCampaignRule dateCreated(Date dateCreated) {
+    this.dateCreated = dateCreated;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Creation time of the entity")
+  @JsonProperty("dateCreated")
+  public Date getDateCreated() {
+    return dateCreated;
+  }
+  public void setDateCreated(Date dateCreated) {
+    this.dateCreated = dateCreated;
+  }
+
+  
+  /**
+   * Last modified time of the entity
+   **/
+  public DialerCampaignRuleConfigChangeCampaignRule dateModified(Date dateModified) {
+    this.dateModified = dateModified;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Last modified time of the entity")
+  @JsonProperty("dateModified")
+  public Date getDateModified() {
+    return dateModified;
+  }
+  public void setDateModified(Date dateModified) {
+    this.dateModified = dateModified;
+  }
+
+  
+  /**
+   * Required for updates, must match the version number of the most recent update
+   **/
+  public DialerCampaignRuleConfigChangeCampaignRule version(Integer version) {
+    this.version = version;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Required for updates, must match the version number of the most recent update")
+  @JsonProperty("version")
+  public Integer getVersion() {
+    return version;
+  }
+  public void setVersion(Integer version) {
+    this.version = version;
   }
 
   
@@ -236,22 +227,21 @@ public class DialerCampaignRuleConfigChangeCampaignRule  implements Serializable
       return false;
     }
     DialerCampaignRuleConfigChangeCampaignRule dialerCampaignRuleConfigChangeCampaignRule = (DialerCampaignRuleConfigChangeCampaignRule) o;
-    return Objects.equals(this.id, dialerCampaignRuleConfigChangeCampaignRule.id) &&
-        Objects.equals(this.name, dialerCampaignRuleConfigChangeCampaignRule.name) &&
-        Objects.equals(this.dateCreated, dialerCampaignRuleConfigChangeCampaignRule.dateCreated) &&
-        Objects.equals(this.dateModified, dialerCampaignRuleConfigChangeCampaignRule.dateModified) &&
-        Objects.equals(this.version, dialerCampaignRuleConfigChangeCampaignRule.version) &&
-        Objects.equals(this.campaignRuleEntities, dialerCampaignRuleConfigChangeCampaignRule.campaignRuleEntities) &&
+    return Objects.equals(this.campaignRuleEntities, dialerCampaignRuleConfigChangeCampaignRule.campaignRuleEntities) &&
         Objects.equals(this.campaignRuleConditions, dialerCampaignRuleConfigChangeCampaignRule.campaignRuleConditions) &&
         Objects.equals(this.campaignRuleActions, dialerCampaignRuleConfigChangeCampaignRule.campaignRuleActions) &&
         Objects.equals(this.matchAnyConditions, dialerCampaignRuleConfigChangeCampaignRule.matchAnyConditions) &&
         Objects.equals(this.enabled, dialerCampaignRuleConfigChangeCampaignRule.enabled) &&
-        Objects.equals(this.additionalProperties, dialerCampaignRuleConfigChangeCampaignRule.additionalProperties);
+        Objects.equals(this.id, dialerCampaignRuleConfigChangeCampaignRule.id) &&
+        Objects.equals(this.name, dialerCampaignRuleConfigChangeCampaignRule.name) &&
+        Objects.equals(this.dateCreated, dialerCampaignRuleConfigChangeCampaignRule.dateCreated) &&
+        Objects.equals(this.dateModified, dialerCampaignRuleConfigChangeCampaignRule.dateModified) &&
+        Objects.equals(this.version, dialerCampaignRuleConfigChangeCampaignRule.version);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, campaignRuleEntities, campaignRuleConditions, campaignRuleActions, matchAnyConditions, enabled, additionalProperties);
+    return Objects.hash(campaignRuleEntities, campaignRuleConditions, campaignRuleActions, matchAnyConditions, enabled, id, name, dateCreated, dateModified, version);
   }
 
   @Override
@@ -259,17 +249,16 @@ public class DialerCampaignRuleConfigChangeCampaignRule  implements Serializable
     StringBuilder sb = new StringBuilder();
     sb.append("class DialerCampaignRuleConfigChangeCampaignRule {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
-    sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
-    sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    campaignRuleEntities: ").append(toIndentedString(campaignRuleEntities)).append("\n");
     sb.append("    campaignRuleConditions: ").append(toIndentedString(campaignRuleConditions)).append("\n");
     sb.append("    campaignRuleActions: ").append(toIndentedString(campaignRuleActions)).append("\n");
     sb.append("    matchAnyConditions: ").append(toIndentedString(matchAnyConditions)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
+    sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
+    sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("}");
     return sb.toString();
   }

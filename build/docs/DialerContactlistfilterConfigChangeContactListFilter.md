@@ -8,16 +8,15 @@ title: DialerContactlistfilterConfigChangeContactListFilter
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **dateModified** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **version** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **contactList** | <!----><!---->[**DialerContactlistfilterConfigChangeUriReference**](DialerContactlistfilterConfigChangeUriReference.html)<!----> |  |  [optional] |
-| **contactListColumns** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
+| **contactListColumns** | <!----><!---->**List&lt;String&gt;**<!----> | The list of contact list columns |  [optional] |
 | **clauses** | <!----><!---->[**List&lt;DialerContactlistfilterConfigChangeFilterClause&gt;**](DialerContactlistfilterConfigChangeFilterClause.html)<!----> |  |  [optional] |
-| **filterType** | [**FilterTypeEnum**](#FilterTypeEnum)<!----> |  |  [optional] |
-| **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
+| **filterType** | [**FilterTypeEnum**](#FilterTypeEnum)<!----> | Contact list filter type |  [optional] |
+| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
+| **name** | <!----><!---->**String**<!----> | The UI-visible name of the object |  [optional] |
+| **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | Creation time of the entity |  [optional] |
+| **dateModified** | <!----><!---->[**Date**](Date.html)<!----> | Last modified time of the entity |  [optional] |
+| **version** | <!----><!---->**Integer**<!----> | Required for updates, must match the version number of the most recent update |  [optional] |
 {: class="table table-striped"}
 
 

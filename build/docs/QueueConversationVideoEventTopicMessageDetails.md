@@ -8,12 +8,12 @@ title: QueueConversationVideoEventTopicMessageDetails
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **messageId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **messageTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **messageStatus** | [**MessageStatusEnum**](#MessageStatusEnum)<!----> |  |  [optional] |
-| **messageSegmentCount** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **media** | <!----><!---->[**List&lt;QueueConversationVideoEventTopicMessageMedia&gt;**](QueueConversationVideoEventTopicMessageMedia.html)<!----> |  |  [optional] |
-| **stickers** | <!----><!---->[**List&lt;QueueConversationVideoEventTopicMessageSticker&gt;**](QueueConversationVideoEventTopicMessageSticker.html)<!----> |  |  [optional] |
+| **messageId** | <!----><!---->**String**<!----> | UUID identifying the message media. |  [optional] |
+| **messageTime** | <!----><!---->[**Date**](Date.html)<!----> | The time when the message was sent or received. |  [optional] |
+| **messageStatus** | [**MessageStatusEnum**](#MessageStatusEnum)<!----> | Indicates the delivery status of the message. |  [optional] |
+| **messageSegmentCount** | <!----><!---->**Integer**<!----> | The message segment count, greater than 1 if the message content was split into multiple parts for this message type, e.g. SMS character limits. |  [optional] |
+| **media** | <!----><!---->[**List&lt;QueueConversationVideoEventTopicMessageMedia&gt;**](QueueConversationVideoEventTopicMessageMedia.html)<!----> | The media (images, files, etc) associated with this message, if any |  [optional] |
+| **stickers** | <!----><!---->[**List&lt;QueueConversationVideoEventTopicMessageSticker&gt;**](QueueConversationVideoEventTopicMessageSticker.html)<!----> | A list of stickers included in the message |  [optional] |
 {: class="table table-striped"}
 
 
@@ -24,13 +24,13 @@ title: QueueConversationVideoEventTopicMessageDetails
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| QUEUED | &quot;QUEUED&quot; |
-| SENT | &quot;SENT&quot; |
-| FAILED | &quot;FAILED&quot; |
-| RECEIVED | &quot;RECEIVED&quot; |
-| DELIVERY_SUCCESS | &quot;DELIVERY_SUCCESS&quot; |
-| DELIVERY_FAILED | &quot;DELIVERY_FAILED&quot; |
-| READ | &quot;READ&quot; |
+| QUEUED | &quot;queued&quot; |
+| SENT | &quot;sent&quot; |
+| FAILED | &quot;failed&quot; |
+| RECEIVED | &quot;received&quot; |
+| DELIVERY_SUCCESS | &quot;delivery-success&quot; |
+| DELIVERY_FAILED | &quot;delivery-failed&quot; |
+| READ | &quot;read&quot; |
 {: class="table table-striped"}
 
 

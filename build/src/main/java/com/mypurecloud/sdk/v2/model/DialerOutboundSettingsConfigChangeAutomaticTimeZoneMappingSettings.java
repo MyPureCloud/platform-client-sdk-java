@@ -18,8 +18,9 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings
+ * The settings for automatic time zone mapping
  */
+@ApiModel(description = "The settings for automatic time zone mapping")
 
 public class DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings  implements Serializable {
   
@@ -27,13 +28,14 @@ public class DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings 
 
   
   /**
+   * The time intervals to use for automatic time zone mapping
    **/
   public DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings callableWindows(List<DialerOutboundSettingsConfigChangeCallableWindow> callableWindows) {
     this.callableWindows = callableWindows;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The time intervals to use for automatic time zone mapping")
   @JsonProperty("callableWindows")
   public List<DialerOutboundSettingsConfigChangeCallableWindow> getCallableWindows() {
     return callableWindows;

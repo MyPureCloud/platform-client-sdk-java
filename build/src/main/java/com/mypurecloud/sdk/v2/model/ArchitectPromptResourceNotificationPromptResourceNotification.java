@@ -30,13 +30,14 @@ public class ArchitectPromptResourceNotificationPromptResourceNotification  impl
 
   
   /**
+   * Id of the prompt that this notification is for.
    **/
   public ArchitectPromptResourceNotificationPromptResourceNotification promptId(String promptId) {
     this.promptId = promptId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Id of the prompt that this notification is for.")
   @JsonProperty("promptId")
   public String getPromptId() {
     return promptId;
@@ -47,13 +48,14 @@ public class ArchitectPromptResourceNotificationPromptResourceNotification  impl
 
   
   /**
+   * Id of the prompt resource that this notification is for.
    **/
   public ArchitectPromptResourceNotificationPromptResourceNotification id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Id of the prompt resource that this notification is for.")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -64,13 +66,14 @@ public class ArchitectPromptResourceNotificationPromptResourceNotification  impl
 
   
   /**
+   * Language resource that this notification is for.
    **/
   public ArchitectPromptResourceNotificationPromptResourceNotification language(String language) {
     this.language = language;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Language resource that this notification is for.")
   @JsonProperty("language")
   public String getLanguage() {
     return language;
@@ -81,13 +84,14 @@ public class ArchitectPromptResourceNotificationPromptResourceNotification  impl
 
   
   /**
+   * Uri to the file for this prompt resource.
    **/
   public ArchitectPromptResourceNotificationPromptResourceNotification mediaUri(String mediaUri) {
     this.mediaUri = mediaUri;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Uri to the file for this prompt resource.")
   @JsonProperty("mediaUri")
   public String getMediaUri() {
     return mediaUri;
@@ -98,13 +102,14 @@ public class ArchitectPromptResourceNotificationPromptResourceNotification  impl
 
   
   /**
+   * Current upload status of the prompt resource (created, uploaded, transcoded, transcodeFailed).
    **/
   public ArchitectPromptResourceNotificationPromptResourceNotification uploadStatus(String uploadStatus) {
     this.uploadStatus = uploadStatus;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Current upload status of the prompt resource (created, uploaded, transcoded, transcodeFailed).")
   @JsonProperty("uploadStatus")
   public String getUploadStatus() {
     return uploadStatus;
@@ -115,13 +120,14 @@ public class ArchitectPromptResourceNotificationPromptResourceNotification  impl
 
   
   /**
+   * Duration (in seconds) for the transcoded audio file.
    **/
   public ArchitectPromptResourceNotificationPromptResourceNotification durationSeconds(BigDecimal durationSeconds) {
     this.durationSeconds = durationSeconds;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Duration (in seconds) for the transcoded audio file.")
   @JsonProperty("durationSeconds")
   public BigDecimal getDurationSeconds() {
     return durationSeconds;

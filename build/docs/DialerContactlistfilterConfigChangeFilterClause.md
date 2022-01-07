@@ -8,9 +8,8 @@ title: DialerContactlistfilterConfigChangeFilterClause
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **filterType** | [**FilterTypeEnum**](#FilterTypeEnum)<!----> |  |  [optional] |
-| **predicates** | <!----><!---->[**List&lt;DialerContactlistfilterConfigChangeFilterPredicate&gt;**](DialerContactlistfilterConfigChangeFilterPredicate.html)<!----> |  |  [optional] |
-| **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
+| **filterType** | [**FilterTypeEnum**](#FilterTypeEnum)<!----> | Contact list filter type |  [optional] |
+| **predicates** | <!----><!---->[**List&lt;DialerContactlistfilterConfigChangeFilterPredicate&gt;**](DialerContactlistfilterConfigChangeFilterPredicate.html)<!----> | The list of predicates in that clause |  [optional] |
 {: class="table table-striped"}
 
 

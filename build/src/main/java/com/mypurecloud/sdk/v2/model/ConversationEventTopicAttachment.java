@@ -25,17 +25,17 @@ public class ConversationEventTopicAttachment  implements Serializable {
   private String contentUri = null;
   private String contentType = null;
   private Integer contentLength = null;
-  private Object additionalProperties = null;
 
   
   /**
+   * The unique identifier for the attachment.
    **/
   public ConversationEventTopicAttachment attachmentId(String attachmentId) {
     this.attachmentId = attachmentId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The unique identifier for the attachment.")
   @JsonProperty("attachmentId")
   public String getAttachmentId() {
     return attachmentId;
@@ -46,13 +46,14 @@ public class ConversationEventTopicAttachment  implements Serializable {
 
   
   /**
+   * The name of the attachment.
    **/
   public ConversationEventTopicAttachment name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The name of the attachment.")
   @JsonProperty("name")
   public String getName() {
     return name;
@@ -63,13 +64,14 @@ public class ConversationEventTopicAttachment  implements Serializable {
 
   
   /**
+   * The content uri of the attachment. If set, this is commonly a public api download location.
    **/
   public ConversationEventTopicAttachment contentUri(String contentUri) {
     this.contentUri = contentUri;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The content uri of the attachment. If set, this is commonly a public api download location.")
   @JsonProperty("contentUri")
   public String getContentUri() {
     return contentUri;
@@ -80,13 +82,14 @@ public class ConversationEventTopicAttachment  implements Serializable {
 
   
   /**
+   * The type of file the attachment is.
    **/
   public ConversationEventTopicAttachment contentType(String contentType) {
     this.contentType = contentType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The type of file the attachment is.")
   @JsonProperty("contentType")
   public String getContentType() {
     return contentType;
@@ -97,36 +100,20 @@ public class ConversationEventTopicAttachment  implements Serializable {
 
   
   /**
+   * The length of the attachment file.
    **/
   public ConversationEventTopicAttachment contentLength(Integer contentLength) {
     this.contentLength = contentLength;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The length of the attachment file.")
   @JsonProperty("contentLength")
   public Integer getContentLength() {
     return contentLength;
   }
   public void setContentLength(Integer contentLength) {
     this.contentLength = contentLength;
-  }
-
-  
-  /**
-   **/
-  public ConversationEventTopicAttachment additionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Object getAdditionalProperties() {
-    return additionalProperties;
-  }
-  public void setAdditionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
   }
 
   
@@ -144,13 +131,12 @@ public class ConversationEventTopicAttachment  implements Serializable {
         Objects.equals(this.name, conversationEventTopicAttachment.name) &&
         Objects.equals(this.contentUri, conversationEventTopicAttachment.contentUri) &&
         Objects.equals(this.contentType, conversationEventTopicAttachment.contentType) &&
-        Objects.equals(this.contentLength, conversationEventTopicAttachment.contentLength) &&
-        Objects.equals(this.additionalProperties, conversationEventTopicAttachment.additionalProperties);
+        Objects.equals(this.contentLength, conversationEventTopicAttachment.contentLength);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(attachmentId, name, contentUri, contentType, contentLength, additionalProperties);
+    return Objects.hash(attachmentId, name, contentUri, contentType, contentLength);
   }
 
   @Override
@@ -163,7 +149,6 @@ public class ConversationEventTopicAttachment  implements Serializable {
     sb.append("    contentUri: ").append(toIndentedString(contentUri)).append("\n");
     sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
     sb.append("    contentLength: ").append(toIndentedString(contentLength)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

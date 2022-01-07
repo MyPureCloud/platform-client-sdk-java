@@ -17,8 +17,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * OutboundMessagingMessagingCampaignConfigChangeSmsConfig
+ * An outbound-messaging messaging campaign SMS Config
  */
+@ApiModel(description = "An outbound-messaging messaging campaign SMS Config")
 
 public class OutboundMessagingMessagingCampaignConfigChangeSmsConfig  implements Serializable {
   
@@ -29,13 +30,14 @@ public class OutboundMessagingMessagingCampaignConfigChangeSmsConfig  implements
 
   
   /**
+   * The Contact List column specifying the message to send to the contact.
    **/
   public OutboundMessagingMessagingCampaignConfigChangeSmsConfig messageColumn(String messageColumn) {
     this.messageColumn = messageColumn;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The Contact List column specifying the message to send to the contact.")
   @JsonProperty("messageColumn")
   public String getMessageColumn() {
     return messageColumn;
@@ -46,13 +48,14 @@ public class OutboundMessagingMessagingCampaignConfigChangeSmsConfig  implements
 
   
   /**
+   * The Contact List column specifying the phone number to send a message to.
    **/
   public OutboundMessagingMessagingCampaignConfigChangeSmsConfig phoneColumn(String phoneColumn) {
     this.phoneColumn = phoneColumn;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The Contact List column specifying the phone number to send a message to.")
   @JsonProperty("phoneColumn")
   public String getPhoneColumn() {
     return phoneColumn;

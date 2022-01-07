@@ -65,6 +65,7 @@ title: ConversationAggregationQuery
 | JOURNEYCUSTOMERIDTYPE | &quot;journeyCustomerIdType&quot; |
 | JOURNEYCUSTOMERSESSIONID | &quot;journeyCustomerSessionId&quot; |
 | JOURNEYCUSTOMERSESSIONIDTYPE | &quot;journeyCustomerSessionIdType&quot; |
+| KNOWLEDGEBASEID | &quot;knowledgeBaseId&quot; |
 | MEDIACOUNT | &quot;mediaCount&quot; |
 | MEDIATYPE | &quot;mediaType&quot; |
 | MESSAGETYPE | &quot;messageType&quot; |
@@ -90,6 +91,7 @@ title: ConversationAggregationQuery
 | SCOREDAGENTID | &quot;scoredAgentId&quot; |
 | SELECTEDAGENTID | &quot;selectedAgentId&quot; |
 | SELECTEDAGENTRANK | &quot;selectedAgentRank&quot; |
+| SELFSERVED | &quot;selfServed&quot; |
 | SESSIONDNIS | &quot;sessionDnis&quot; |
 | SESSIONID | &quot;sessionId&quot; |
 | STATIONID | &quot;stationId&quot; |
@@ -123,6 +125,7 @@ title: ConversationAggregationQuery
 | NTRANSFERRED | &quot;nTransferred&quot; |
 | OEXTERNALMEDIACOUNT | &quot;oExternalMediaCount&quot; |
 | OMEDIACOUNT | &quot;oMediaCount&quot; |
+| OMESSAGETURN | &quot;oMessageTurn&quot; |
 | OSERVICELEVEL | &quot;oServiceLevel&quot; |
 | OSERVICETARGET | &quot;oServiceTarget&quot; |
 | TABANDON | &quot;tAbandon&quot; |
@@ -135,6 +138,7 @@ title: ConversationAggregationQuery
 | TCALLBACKCOMPLETE | &quot;tCallbackComplete&quot; |
 | TCOACHING | &quot;tCoaching&quot; |
 | TCOACHINGCOMPLETE | &quot;tCoachingComplete&quot; |
+| TCONNECTED | &quot;tConnected&quot; |
 | TCONTACTING | &quot;tContacting&quot; |
 | TDIALING | &quot;tDialing&quot; |
 | TFLOWOUT | &quot;tFlowOut&quot; |

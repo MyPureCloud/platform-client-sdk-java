@@ -75,17 +75,17 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
     }
   }
   /**
-   * Gets or Sets screenRecordingState
+   * The current screen recording state for this participant.
    */
  @JsonDeserialize(using = ScreenRecordingStateEnumDeserializer.class)
   public enum ScreenRecordingStateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    REQUESTED("REQUESTED"),
-    ACTIVE("ACTIVE"),
-    PAUSED("PAUSED"),
-    STOPPED("STOPPED"),
-    ERROR("ERROR"),
-    TIMEOUT("TIMEOUT");
+    REQUESTED("requested"),
+    ACTIVE("active"),
+    PAUSED("paused"),
+    STOPPED("stopped"),
+    ERROR("error"),
+    TIMEOUT("timeout");
 
     private String value;
 
@@ -124,17 +124,17 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
   private List<QueueConversationVideoEventTopicScreenshare> screenshares = new ArrayList<QueueConversationVideoEventTopicScreenshare>();
   private List<QueueConversationVideoEventTopicSocialExpression> socialExpressions = new ArrayList<QueueConversationVideoEventTopicSocialExpression>();
   private List<QueueConversationVideoEventTopicVideo> videos = new ArrayList<QueueConversationVideoEventTopicVideo>();
-  private Object additionalProperties = null;
 
   
   /**
+   * A globally unique identifier for this conversation.
    **/
   public QueueConversationVideoEventTopicParticipant id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A globally unique identifier for this conversation.")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -145,13 +145,14 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
 
   
   /**
+   * The timestamp when this participant was connected to the conversation in the provider clock.
    **/
   public QueueConversationVideoEventTopicParticipant connectedTime(Date connectedTime) {
     this.connectedTime = connectedTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The timestamp when this participant was connected to the conversation in the provider clock.")
   @JsonProperty("connectedTime")
   public Date getConnectedTime() {
     return connectedTime;
@@ -162,13 +163,14 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
 
   
   /**
+   * The timestamp when this participant disconnected from the conversation in the provider clock.
    **/
   public QueueConversationVideoEventTopicParticipant endTime(Date endTime) {
     this.endTime = endTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The timestamp when this participant disconnected from the conversation in the provider clock.")
   @JsonProperty("endTime")
   public Date getEndTime() {
     return endTime;
@@ -179,13 +181,14 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
 
   
   /**
+   * If this participant represents a user, then this will be the globally unique identifier for the user.
    **/
   public QueueConversationVideoEventTopicParticipant userId(String userId) {
     this.userId = userId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "If this participant represents a user, then this will be the globally unique identifier for the user.")
   @JsonProperty("userId")
   public String getUserId() {
     return userId;
@@ -196,13 +199,14 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
 
   
   /**
+   * If this participant represents an external contact, then this will be the globally unique identifier for the external contact.
    **/
   public QueueConversationVideoEventTopicParticipant externalContactId(String externalContactId) {
     this.externalContactId = externalContactId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "If this participant represents an external contact, then this will be the globally unique identifier for the external contact.")
   @JsonProperty("externalContactId")
   public String getExternalContactId() {
     return externalContactId;
@@ -213,13 +217,14 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
 
   
   /**
+   * If this participant represents an external org, then this will be the globally unique identifier for the external org.
    **/
   public QueueConversationVideoEventTopicParticipant externalOrganizationId(String externalOrganizationId) {
     this.externalOrganizationId = externalOrganizationId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "If this participant represents an external org, then this will be the globally unique identifier for the external org.")
   @JsonProperty("externalOrganizationId")
   public String getExternalOrganizationId() {
     return externalOrganizationId;
@@ -230,13 +235,14 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
 
   
   /**
+   * A human readable name identifying the participant.
    **/
   public QueueConversationVideoEventTopicParticipant name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A human readable name identifying the participant.")
   @JsonProperty("name")
   public String getName() {
     return name;
@@ -247,13 +253,14 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
 
   
   /**
+   * If present, the queue id that the communication channel came in on.
    **/
   public QueueConversationVideoEventTopicParticipant queueId(String queueId) {
     this.queueId = queueId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "If present, the queue id that the communication channel came in on.")
   @JsonProperty("queueId")
   public String getQueueId() {
     return queueId;
@@ -264,13 +271,14 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
 
   
   /**
+   * If present, the group id that the participant represents.
    **/
   public QueueConversationVideoEventTopicParticipant groupId(String groupId) {
     this.groupId = groupId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "If present, the group id that the participant represents.")
   @JsonProperty("groupId")
   public String getGroupId() {
     return groupId;
@@ -281,13 +289,14 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
 
   
   /**
+   * The team id that this participant is a member of when added to the conversation.
    **/
   public QueueConversationVideoEventTopicParticipant teamId(String teamId) {
     this.teamId = teamId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The team id that this participant is a member of when added to the conversation.")
   @JsonProperty("teamId")
   public String getTeamId() {
     return teamId;
@@ -298,13 +307,14 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
 
   
   /**
+   * A well known string that specifies the purpose or type of this participant.
    **/
   public QueueConversationVideoEventTopicParticipant purpose(String purpose) {
     this.purpose = purpose;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A well known string that specifies the purpose or type of this participant.")
   @JsonProperty("purpose")
   public String getPurpose() {
     return purpose;
@@ -315,13 +325,14 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
 
   
   /**
+   * If this participant is part of a consult transfer, then this will be the participant id of the participant being transferred.
    **/
   public QueueConversationVideoEventTopicParticipant consultParticipantId(String consultParticipantId) {
     this.consultParticipantId = consultParticipantId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "If this participant is part of a consult transfer, then this will be the participant id of the participant being transferred.")
   @JsonProperty("consultParticipantId")
   public String getConsultParticipantId() {
     return consultParticipantId;
@@ -332,13 +343,14 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
 
   
   /**
+   * The address for the this participant. For a phone call this will be the ANI.
    **/
   public QueueConversationVideoEventTopicParticipant address(String address) {
     this.address = address;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The address for the this participant. For a phone call this will be the ANI.")
   @JsonProperty("address")
   public String getAddress() {
     return address;
@@ -349,13 +361,14 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
 
   
   /**
+   * True iff this participant is required to enter wrapup for this conversation.
    **/
   public QueueConversationVideoEventTopicParticipant wrapupRequired(Boolean wrapupRequired) {
     this.wrapupRequired = wrapupRequired;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "True iff this participant is required to enter wrapup for this conversation.")
   @JsonProperty("wrapupRequired")
   public Boolean getWrapupRequired() {
     return wrapupRequired;
@@ -366,13 +379,14 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
 
   
   /**
+   * True when a participant is expected to enter a wrapup code once the call connects.
    **/
   public QueueConversationVideoEventTopicParticipant wrapupExpected(Boolean wrapupExpected) {
     this.wrapupExpected = wrapupExpected;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "True when a participant is expected to enter a wrapup code once the call connects.")
   @JsonProperty("wrapupExpected")
   public Boolean getWrapupExpected() {
     return wrapupExpected;
@@ -383,13 +397,14 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
 
   
   /**
+   * This field controls how the UI prompts the agent for a wrapup.
    **/
   public QueueConversationVideoEventTopicParticipant wrapupPrompt(String wrapupPrompt) {
     this.wrapupPrompt = wrapupPrompt;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "This field controls how the UI prompts the agent for a wrapup.")
   @JsonProperty("wrapupPrompt")
   public String getWrapupPrompt() {
     return wrapupPrompt;
@@ -400,13 +415,14 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
 
   
   /**
+   * Specifies how long a timed ACW session will last.
    **/
   public QueueConversationVideoEventTopicParticipant wrapupTimeoutMs(Integer wrapupTimeoutMs) {
     this.wrapupTimeoutMs = wrapupTimeoutMs;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Specifies how long a timed ACW session will last.")
   @JsonProperty("wrapupTimeoutMs")
   public Integer getWrapupTimeoutMs() {
     return wrapupTimeoutMs;
@@ -434,13 +450,14 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
 
   
   /**
+   * The timestamp when this participant started after-call work.
    **/
   public QueueConversationVideoEventTopicParticipant startAcwTime(Date startAcwTime) {
     this.startAcwTime = startAcwTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The timestamp when this participant started after-call work.")
   @JsonProperty("startAcwTime")
   public Date getStartAcwTime() {
     return startAcwTime;
@@ -451,13 +468,14 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
 
   
   /**
+   * The timestamp when this participant ended after-call work.
    **/
   public QueueConversationVideoEventTopicParticipant endAcwTime(Date endAcwTime) {
     this.endAcwTime = endAcwTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The timestamp when this participant ended after-call work.")
   @JsonProperty("endAcwTime")
   public Date getEndAcwTime() {
     return endAcwTime;
@@ -485,13 +503,14 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
 
   
   /**
+   * Specifies how long the agent has to answer an interaction before being marked as not responding.
    **/
   public QueueConversationVideoEventTopicParticipant alertingTimeoutMs(Integer alertingTimeoutMs) {
     this.alertingTimeoutMs = alertingTimeoutMs;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Specifies how long the agent has to answer an interaction before being marked as not responding.")
   @JsonProperty("alertingTimeoutMs")
   public Integer getAlertingTimeoutMs() {
     return alertingTimeoutMs;
@@ -502,13 +521,14 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
 
   
   /**
+   * If this participant is a monitor, then this will be the id of the participant that is being monitored.
    **/
   public QueueConversationVideoEventTopicParticipant monitoredParticipantId(String monitoredParticipantId) {
     this.monitoredParticipantId = monitoredParticipantId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "If this participant is a monitor, then this will be the id of the participant that is being monitored.")
   @JsonProperty("monitoredParticipantId")
   public String getMonitoredParticipantId() {
     return monitoredParticipantId;
@@ -519,13 +539,14 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
 
   
   /**
+   * If this participant is a coach, then this will be the id of the participant that is being coached.
    **/
   public QueueConversationVideoEventTopicParticipant coachedParticipantId(String coachedParticipantId) {
     this.coachedParticipantId = coachedParticipantId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "If this participant is a coach, then this will be the id of the participant that is being coached.")
   @JsonProperty("coachedParticipantId")
   public String getCoachedParticipantId() {
     return coachedParticipantId;
@@ -536,13 +557,14 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
 
   
   /**
+   * The current screen recording state for this participant.
    **/
   public QueueConversationVideoEventTopicParticipant screenRecordingState(ScreenRecordingStateEnum screenRecordingState) {
     this.screenRecordingState = screenRecordingState;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The current screen recording state for this participant.")
   @JsonProperty("screenRecordingState")
   public ScreenRecordingStateEnum getScreenRecordingState() {
     return screenRecordingState;
@@ -553,13 +575,14 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
 
   
   /**
+   * If this participant has flagged the conversation, the reason code given.
    **/
   public QueueConversationVideoEventTopicParticipant flaggedReason(String flaggedReason) {
     this.flaggedReason = flaggedReason;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "If this participant has flagged the conversation, the reason code given.")
   @JsonProperty("flaggedReason")
   public String getFlaggedReason() {
     return flaggedReason;
@@ -570,13 +593,14 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
 
   
   /**
+   * Additional participant attributes
    **/
   public QueueConversationVideoEventTopicParticipant attributes(Map<String, String> attributes) {
     this.attributes = attributes;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Additional participant attributes")
   @JsonProperty("attributes")
   public Map<String, String> getAttributes() {
     return attributes;
@@ -739,23 +763,6 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
   }
 
   
-  /**
-   **/
-  public QueueConversationVideoEventTopicParticipant additionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Object getAdditionalProperties() {
-    return additionalProperties;
-  }
-  public void setAdditionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
-  }
-
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -801,13 +808,12 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
         Objects.equals(this.messages, queueConversationVideoEventTopicParticipant.messages) &&
         Objects.equals(this.screenshares, queueConversationVideoEventTopicParticipant.screenshares) &&
         Objects.equals(this.socialExpressions, queueConversationVideoEventTopicParticipant.socialExpressions) &&
-        Objects.equals(this.videos, queueConversationVideoEventTopicParticipant.videos) &&
-        Objects.equals(this.additionalProperties, queueConversationVideoEventTopicParticipant.additionalProperties);
+        Objects.equals(this.videos, queueConversationVideoEventTopicParticipant.videos);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, connectedTime, endTime, userId, externalContactId, externalOrganizationId, name, queueId, groupId, teamId, purpose, consultParticipantId, address, wrapupRequired, wrapupExpected, wrapupPrompt, wrapupTimeoutMs, wrapup, startAcwTime, endAcwTime, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, coachedParticipantId, screenRecordingState, flaggedReason, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos, additionalProperties);
+    return Objects.hash(id, connectedTime, endTime, userId, externalContactId, externalOrganizationId, name, queueId, groupId, teamId, purpose, consultParticipantId, address, wrapupRequired, wrapupExpected, wrapupPrompt, wrapupTimeoutMs, wrapup, startAcwTime, endAcwTime, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, coachedParticipantId, screenRecordingState, flaggedReason, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos);
   }
 
   @Override
@@ -851,7 +857,6 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
     sb.append("    screenshares: ").append(toIndentedString(screenshares)).append("\n");
     sb.append("    socialExpressions: ").append(toIndentedString(socialExpressions)).append("\n");
     sb.append("    videos: ").append(toIndentedString(videos)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

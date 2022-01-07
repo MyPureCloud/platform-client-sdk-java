@@ -25,13 +25,14 @@ public class ConversationEventTopicMessageSticker  implements Serializable {
 
   
   /**
+   * The location of the sticker, useful for retrieving it
    **/
   public ConversationEventTopicMessageSticker url(String url) {
     this.url = url;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The location of the sticker, useful for retrieving it")
   @JsonProperty("url")
   public String getUrl() {
     return url;
@@ -42,13 +43,14 @@ public class ConversationEventTopicMessageSticker  implements Serializable {
 
   
   /**
+   * The unique id of the the sticker object.
    **/
   public ConversationEventTopicMessageSticker id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The unique id of the the sticker object.")
   @JsonProperty("id")
   public String getId() {
     return id;

@@ -75,15 +75,15 @@ title: JourneyAggregationQuery
 | NWEBACTIONSACCEPTED | &quot;nWebActionsAccepted&quot; |
 | NWEBACTIONSENGAGED | &quot;nWebActionsEngaged&quot; |
 | NWEBACTIONSERRORED | &quot;nWebActionsErrored&quot; |
+| NWEBACTIONSFREQUENCYCAPREACHED | &quot;nWebActionsFrequencyCapReached&quot; |
 | NWEBACTIONSIGNORED | &quot;nWebActionsIgnored&quot; |
 | NWEBACTIONSOFFERED | &quot;nWebActionsOffered&quot; |
+| NWEBACTIONSOFFEREDOUTSIDESCHEDULE | &quot;nWebActionsOfferedOutsideSchedule&quot; |
 | NWEBACTIONSQUALIFIED | &quot;nWebActionsQualified&quot; |
 | NWEBACTIONSQUALIFIEDOUTSIDESCHEDULE | &quot;nWebActionsQualifiedOutsideSchedule&quot; |
 | NWEBACTIONSREJECTED | &quot;nWebActionsRejected&quot; |
 | NWEBACTIONSSTARTED | &quot;nWebActionsStarted&quot; |
 | NWEBACTIONSTIMEDOUT | &quot;nWebActionsTimedout&quot; |
-| NWEBACTIONSFREQUENCYCAPREACHED | &quot;nWebActionsFrequencyCapReached&quot; |
-| NWEBACTIONSOFFEREDOUTSIDESCHEDULE | &quot;nWebActionsOfferedOutsideSchedule&quot; |
 | OJOURNEYOUTCOMEVALUE | &quot;oJourneyOutcomeValue&quot; |
 {: class="table table-striped"}
 

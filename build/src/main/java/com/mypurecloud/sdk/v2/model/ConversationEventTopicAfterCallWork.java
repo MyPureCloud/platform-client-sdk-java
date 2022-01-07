@@ -17,8 +17,9 @@ import java.util.Date;
 
 import java.io.Serializable;
 /**
- * ConversationEventTopicAfterCallWork
+ * A communication&#39;s after-call work data.
  */
+@ApiModel(description = "A communication's after-call work data.")
 
 public class ConversationEventTopicAfterCallWork  implements Serializable {
   
@@ -36,16 +37,16 @@ public class ConversationEventTopicAfterCallWork  implements Serializable {
     }
   }
   /**
-   * Gets or Sets state
+   * The communication's after-call work state.
    */
  @JsonDeserialize(using = StateEnumDeserializer.class)
   public enum StateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    UNKNOWN("UNKNOWN"),
-    SKIPPED("SKIPPED"),
-    PENDING("PENDING"),
-    COMPLETE("COMPLETE"),
-    NOT_APPLICABLE("NOT_APPLICABLE");
+    UNKNOWN("unknown"),
+    SKIPPED("skipped"),
+    PENDING("pending"),
+    COMPLETE("complete"),
+    NOTAPPLICABLE("notApplicable");
 
     private String value;
 
@@ -78,13 +79,14 @@ public class ConversationEventTopicAfterCallWork  implements Serializable {
 
   
   /**
+   * The communication's after-call work state.
    **/
   public ConversationEventTopicAfterCallWork state(StateEnum state) {
     this.state = state;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The communication's after-call work state.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
@@ -95,13 +97,14 @@ public class ConversationEventTopicAfterCallWork  implements Serializable {
 
   
   /**
+   * The timestamp when this communication started after-call work in the cloud clock.
    **/
   public ConversationEventTopicAfterCallWork startTime(Date startTime) {
     this.startTime = startTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The timestamp when this communication started after-call work in the cloud clock.")
   @JsonProperty("startTime")
   public Date getStartTime() {
     return startTime;
@@ -112,13 +115,14 @@ public class ConversationEventTopicAfterCallWork  implements Serializable {
 
   
   /**
+   * The timestamp when this communication ended after-call work in the cloud clock.
    **/
   public ConversationEventTopicAfterCallWork endTime(Date endTime) {
     this.endTime = endTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The timestamp when this communication ended after-call work in the cloud clock.")
   @JsonProperty("endTime")
   public Date getEndTime() {
     return endTime;

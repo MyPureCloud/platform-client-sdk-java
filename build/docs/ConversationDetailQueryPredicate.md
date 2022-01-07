@@ -75,6 +75,7 @@ title: ConversationDetailQueryPredicate
 | OEXTERNALMEDIACOUNT | &quot;oExternalMediaCount&quot; |
 | OFLOWMILESTONE | &quot;oFlowMilestone&quot; |
 | OMEDIACOUNT | &quot;oMediaCount&quot; |
+| OMESSAGETURN | &quot;oMessageTurn&quot; |
 | TABANDON | &quot;tAbandon&quot; |
 | TACD | &quot;tAcd&quot; |
 | TACW | &quot;tAcw&quot; |
@@ -85,6 +86,7 @@ title: ConversationDetailQueryPredicate
 | TCALLBACKCOMPLETE | &quot;tCallbackComplete&quot; |
 | TCOACHING | &quot;tCoaching&quot; |
 | TCOACHINGCOMPLETE | &quot;tCoachingComplete&quot; |
+| TCONNECTED | &quot;tConnected&quot; |
 | TCONTACTING | &quot;tContacting&quot; |
 | TCONVERSATIONDURATION | &quot;tConversationDuration&quot; |
 | TDIALING | &quot;tDialing&quot; |

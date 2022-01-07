@@ -8,23 +8,22 @@ title: DialerRulesetConfigChangeCondition
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | <!----><!---->**String**<!----> |  |  [optional] |
-| **inverted** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **attributeName** | <!----><!---->**String**<!----> |  |  [optional] |
-| **value** | <!----><!---->**String**<!----> |  |  [optional] |
-| **valueType** | [**ValueTypeEnum**](#ValueTypeEnum)<!----> |  |  [optional] |
-| **operator** | [**OperatorEnum**](#OperatorEnum)<!----> |  |  [optional] |
-| **codes** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-| **propertyType** | [**PropertyTypeEnum**](#PropertyTypeEnum)<!----> |  |  [optional] |
-| **property** | <!----><!---->**String**<!----> |  |  [optional] |
-| **dataNotFoundResolution** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **contactIdField** | <!----><!---->**String**<!----> |  |  [optional] |
-| **callAnalysisResultField** | <!----><!---->**String**<!----> |  |  [optional] |
-| **agentWrapupField** | <!----><!---->**String**<!----> |  |  [optional] |
-| **contactColumnToDataActionFieldMappings** | <!----><!---->[**List&lt;DialerRulesetConfigChangeContactColumnToDataActionFieldMapping&gt;**](DialerRulesetConfigChangeContactColumnToDataActionFieldMapping.html)<!----> |  |  [optional] |
-| **predicates** | <!----><!---->[**List&lt;DialerRulesetConfigChangeDataActionConditionPredicate&gt;**](DialerRulesetConfigChangeDataActionConditionPredicate.html)<!----> |  |  [optional] |
-| **dataAction** | <!----><!---->[**DialerRulesetConfigChangeUriReference**](DialerRulesetConfigChangeUriReference.html)<!----> |  |  [optional] |
-| **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
+| **dataAction** | <!----><!---->[**DialerRulesetConfigChangeUriReference**](DialerRulesetConfigChangeUriReference.html)<!----> | A UriReference for a resource |  [optional] |
+| **type** | <!----><!---->**String**<!----> | The type of the condition |  [optional] |
+| **inverted** | <!----><!---->**Boolean**<!----> | Indicates whether to evaluate for the opposite of the stated condition; default is false |  [optional] |
+| **attributeName** | <!----><!---->**String**<!----> | An attribute name associated with the condition (applies only to certain rule conditions) |  [optional] |
+| **value** | <!----><!---->**String**<!----> | A value associated with the condition |  [optional] |
+| **valueType** | [**ValueTypeEnum**](#ValueTypeEnum)<!----> | Determines the type of the value associated with the condition |  [optional] |
+| **operator** | [**OperatorEnum**](#OperatorEnum)<!----> | An operation type for condition evaluation |  [optional] |
+| **codes** | <!----><!---->**List&lt;String&gt;**<!----> | List of wrap-up code identifiers (used only in conditions of type &#39;wrapupCondition&#39;) |  [optional] |
+| **propertyType** | [**PropertyTypeEnum**](#PropertyTypeEnum)<!----> | Determines the type of the property associated with the condition |  [optional] |
+| **property** | <!----><!---->**String**<!----> | A value associated with the property type of this condition |  [optional] |
+| **dataNotFoundResolution** | <!----><!---->**Boolean**<!----> | The result of this condition if the data action returns a result indicating there was no data. Required for a DataActionCondition. |  [optional] |
+| **contactIdField** | <!----><!---->**String**<!----> | The input field from the data action that the contactId will be passed to for this condition. Valid for a dataActionCondition. |  [optional] |
+| **callAnalysisResultField** | <!----><!---->**String**<!----> | The input field from the data action that the callAnalysisResult will be passed to for this condition. Valid for a wrapup dataActionCondition. |  [optional] |
+| **agentWrapupField** | <!----><!---->**String**<!----> | The input field from the data action that the agentWrapup will be passed to for this condition. Valid for a wrapup dataActionCondition. |  [optional] |
+| **contactColumnToDataActionFieldMappings** | <!----><!---->[**List&lt;DialerRulesetConfigChangeContactColumnToDataActionFieldMapping&gt;**](DialerRulesetConfigChangeContactColumnToDataActionFieldMapping.html)<!----> | A list of mappings defining which contact data fields will be passed to which data action input fields for this condition. Valid for a dataActionCondition. |  [optional] |
+| **predicates** | <!----><!---->[**List&lt;DialerRulesetConfigChangeDataActionConditionPredicate&gt;**](DialerRulesetConfigChangeDataActionConditionPredicate.html)<!----> | A list of predicates defining the comparisons to use for this condition. Required for a dataActionCondition. |  [optional] |
 {: class="table table-striped"}
 
 

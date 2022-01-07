@@ -127,19 +127,19 @@ title: ConversationMessageEventTopicMessageMediaParticipant
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| UNKNOWN | &quot;UNKNOWN&quot; |
-| SMS | &quot;SMS&quot; |
-| TWITTER | &quot;TWITTER&quot; |
-| FACEBOOK | &quot;FACEBOOK&quot; |
-| LINE | &quot;LINE&quot; |
-| VIBER | &quot;VIBER&quot; |
-| WECHAT | &quot;WECHAT&quot; |
-| WHATSAPP | &quot;WHATSAPP&quot; |
-| TELEGRAM | &quot;TELEGRAM&quot; |
-| KAKAO | &quot;KAKAO&quot; |
-| WEBMESSAGING | &quot;WEBMESSAGING&quot; |
-| OPEN | &quot;OPEN&quot; |
-| INSTAGRAM | &quot;INSTAGRAM&quot; |
+| UNKNOWN | &quot;unknown&quot; |
+| SMS | &quot;sms&quot; |
+| TWITTER | &quot;twitter&quot; |
+| FACEBOOK | &quot;facebook&quot; |
+| LINE | &quot;line&quot; |
+| VIBER | &quot;viber&quot; |
+| WECHAT | &quot;wechat&quot; |
+| WHATSAPP | &quot;whatsapp&quot; |
+| TELEGRAM | &quot;telegram&quot; |
+| KAKAO | &quot;kakao&quot; |
+| WEBMESSAGING | &quot;webmessaging&quot; |
+| OPEN | &quot;open&quot; |
+| INSTAGRAM | &quot;instagram&quot; |
 {: class="table table-striped"}
 
 

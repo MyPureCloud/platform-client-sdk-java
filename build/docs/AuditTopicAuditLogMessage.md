@@ -119,12 +119,14 @@ title: AuditTopicAuditLogMessage
 | ACCESSTOKEN | &quot;AccessToken&quot; |
 | ACTIONMAP | &quot;ActionMap&quot; |
 | ACTIONTEMPLATE | &quot;ActionTemplate&quot; |
+| ACTIVITYCODE | &quot;ActivityCode&quot; |
 | AGENTROUTINGINFO | &quot;AgentRoutingInfo&quot; |
 | ASSIGNMENT | &quot;Assignment&quot; |
 | ATTEMPTLIMITS | &quot;AttemptLimits&quot; |
 | AUTHORGANIZATION | &quot;AuthOrganization&quot; |
 | AUTHUSER | &quot;AuthUser&quot; |
 | BULKACTIONS | &quot;BulkActions&quot; |
+| BUSINESSUNIT | &quot;BusinessUnit&quot; |
 | CALLANALYSISRESPONSESET | &quot;CallAnalysisResponseSet&quot; |
 | CALLABLETIMESET | &quot;CallableTimeSet&quot; |
 | CAMPAIGN | &quot;Campaign&quot; |
@@ -162,6 +164,7 @@ title: AuditTopicAuditLogMessage
 | IVR | &quot;IVR&quot; |
 | LINE | &quot;Line&quot; |
 | LINEBASE | &quot;LineBase&quot; |
+| MANAGEMENTUNIT | &quot;ManagementUnit&quot; |
 | MAXORGROUTINGUTILIZATIONCAPACITY | &quot;MaxOrgRoutingUtilizationCapacity&quot; |
 | MESSAGINGCAMPAIGN | &quot;MessagingCampaign&quot; |
 | METRIC | &quot;Metric&quot; |
@@ -176,6 +179,7 @@ title: AuditTopicAuditLogMessage
 | OUTCOME | &quot;Outcome&quot; |
 | PHONE | &quot;Phone&quot; |
 | PHONEBASE | &quot;PhoneBase&quot; |
+| PLANNINGGROUP | &quot;PlanningGroup&quot; |
 | PREDICTOR | &quot;Predictor&quot; |
 | PROFILE | &quot;Profile&quot; |
 | PROFILEMEMBERS | &quot;ProfileMembers&quot; |
@@ -196,6 +200,7 @@ title: AuditTopicAuditLogMessage
 | SEGMENT | &quot;Segment&quot; |
 | SEQUENCE | &quot;Sequence&quot; |
 | SEQUENCESCHEDULE | &quot;SequenceSchedule&quot; |
+| SERVICEGOALTEMPLATE | &quot;ServiceGoalTemplate&quot; |
 | SESSIONTYPE | &quot;SessionType&quot; |
 | SHIFTTRADE | &quot;ShiftTrade&quot; |
 | SITE | &quot;Site&quot; |
@@ -212,6 +217,7 @@ title: AuditTopicAuditLogMessage
 | VOICEMAILPOLICY | &quot;VoicemailPolicy&quot; |
 | VOICEMAILUSERPOLICY | &quot;VoicemailUserPolicy&quot; |
 | WORKPLAN | &quot;WorkPlan&quot; |
+| WORKPLANROTATION | &quot;WorkPlanRotation&quot; |
 | WORKSPACE | &quot;Workspace&quot; |
 | WRAPUPCODEMAPPING | &quot;WrapUpCodeMapping&quot; |
 | WRAPUPCODE | &quot;WrapupCode&quot; |

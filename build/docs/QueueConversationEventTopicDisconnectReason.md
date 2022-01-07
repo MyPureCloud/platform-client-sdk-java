@@ -8,9 +8,9 @@ title: QueueConversationEventTopicDisconnectReason
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
-| **code** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **phrase** | <!----><!---->**String**<!----> |  |  [optional] |
+| **type** | [**TypeEnum**](#TypeEnum)<!----> | Disconnect reason protocol type. |  [optional] |
+| **code** | <!----><!---->**Integer**<!----> | Protocol specific reason code. See the Q.850 and SIP specs. |  [optional] |
+| **phrase** | <!----><!---->**String**<!----> | Human readable English description of the disconnect reason. |  [optional] |
 {: class="table table-striped"}
 
 
@@ -21,8 +21,8 @@ title: QueueConversationEventTopicDisconnectReason
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| Q_850 | &quot;Q_850&quot; |
-| SIP | &quot;SIP&quot; |
+| Q850 | &quot;q850&quot; |
+| SIP | &quot;sip&quot; |
 {: class="table table-striped"}
 
 

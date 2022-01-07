@@ -103,6 +103,7 @@ public class QueueRequest  implements Serializable {
   private DomainEntityRef emailInQueueFlow = null;
   private DomainEntityRef messageInQueueFlow = null;
   private DomainEntityRef whisperPrompt = null;
+  private DomainEntityRef onHoldPrompt = null;
   private Boolean autoAnswerOnly = null;
   private Boolean enableTranscription = null;
   private Boolean enableManualAssignment = null;
@@ -431,6 +432,24 @@ public class QueueRequest  implements Serializable {
 
   
   /**
+   * The audio to be played when calls on this queue are on hold. If not configured, the default on-hold music will play.
+   **/
+  public QueueRequest onHoldPrompt(DomainEntityRef onHoldPrompt) {
+    this.onHoldPrompt = onHoldPrompt;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The audio to be played when calls on this queue are on hold. If not configured, the default on-hold music will play.")
+  @JsonProperty("onHoldPrompt")
+  public DomainEntityRef getOnHoldPrompt() {
+    return onHoldPrompt;
+  }
+  public void setOnHoldPrompt(DomainEntityRef onHoldPrompt) {
+    this.onHoldPrompt = onHoldPrompt;
+  }
+
+  
+  /**
    * Specifies whether the configured whisper should play for all ACD calls, or only for those which are auto-answered.
    **/
   public QueueRequest autoAnswerOnly(Boolean autoAnswerOnly) {
@@ -610,6 +629,7 @@ public class QueueRequest  implements Serializable {
         Objects.equals(this.emailInQueueFlow, queueRequest.emailInQueueFlow) &&
         Objects.equals(this.messageInQueueFlow, queueRequest.messageInQueueFlow) &&
         Objects.equals(this.whisperPrompt, queueRequest.whisperPrompt) &&
+        Objects.equals(this.onHoldPrompt, queueRequest.onHoldPrompt) &&
         Objects.equals(this.autoAnswerOnly, queueRequest.autoAnswerOnly) &&
         Objects.equals(this.enableTranscription, queueRequest.enableTranscription) &&
         Objects.equals(this.enableManualAssignment, queueRequest.enableManualAssignment) &&
@@ -623,7 +643,7 @@ public class QueueRequest  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, userMemberCount, joinedMemberCount, mediaSettings, routingRules, bullseye, acwSettings, skillEvaluationMethod, queueFlow, emailInQueueFlow, messageInQueueFlow, whisperPrompt, autoAnswerOnly, enableTranscription, enableManualAssignment, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, selfUri);
+    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, userMemberCount, joinedMemberCount, mediaSettings, routingRules, bullseye, acwSettings, skillEvaluationMethod, queueFlow, emailInQueueFlow, messageInQueueFlow, whisperPrompt, onHoldPrompt, autoAnswerOnly, enableTranscription, enableManualAssignment, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, selfUri);
   }
 
   @Override
@@ -651,6 +671,7 @@ public class QueueRequest  implements Serializable {
     sb.append("    emailInQueueFlow: ").append(toIndentedString(emailInQueueFlow)).append("\n");
     sb.append("    messageInQueueFlow: ").append(toIndentedString(messageInQueueFlow)).append("\n");
     sb.append("    whisperPrompt: ").append(toIndentedString(whisperPrompt)).append("\n");
+    sb.append("    onHoldPrompt: ").append(toIndentedString(onHoldPrompt)).append("\n");
     sb.append("    autoAnswerOnly: ").append(toIndentedString(autoAnswerOnly)).append("\n");
     sb.append("    enableTranscription: ").append(toIndentedString(enableTranscription)).append("\n");
     sb.append("    enableManualAssignment: ").append(toIndentedString(enableManualAssignment)).append("\n");

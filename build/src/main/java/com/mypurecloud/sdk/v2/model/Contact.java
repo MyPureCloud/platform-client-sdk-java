@@ -98,7 +98,8 @@ public class Contact  implements Serializable {
     WORK4("WORK4"),
     HOME("HOME"),
     MOBILE("MOBILE"),
-    MAIN("MAIN");
+    MAIN("MAIN"),
+    OTHER("OTHER");
 
     private String value;
 

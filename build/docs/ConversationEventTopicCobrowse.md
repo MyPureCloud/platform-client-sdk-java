@@ -8,25 +8,24 @@ title: ConversationEventTopicCobrowse
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **state** | [**StateEnum**](#StateEnum)<!----> |  |  [optional] |
-| **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum)<!----> |  |  [optional] |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **self** | <!----><!---->[**ConversationEventTopicAddress**](ConversationEventTopicAddress.html)<!----> |  |  [optional] |
-| **roomId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **cobrowseSessionId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **cobrowseRole** | <!----><!---->**String**<!----> |  |  [optional] |
-| **controlling** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-| **viewerUrl** | <!----><!---->**String**<!----> |  |  [optional] |
-| **provider** | <!----><!---->**String**<!----> |  |  [optional] |
-| **scriptId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **peerId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **providerEventTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **connectedTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **disconnectedTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **wrapup** | <!----><!---->[**ConversationEventTopicWrapup**](ConversationEventTopicWrapup.html)<!----> |  |  [optional] |
-| **afterCallWork** | <!----><!---->[**ConversationEventTopicAfterCallWork**](ConversationEventTopicAfterCallWork.html)<!----> |  |  [optional] |
-| **afterCallWorkRequired** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
+| **state** | [**StateEnum**](#StateEnum)<!----> | The connection state of this communication. |  [optional] |
+| **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum)<!----> | System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects. |  [optional] |
+| **id** | <!----><!---->**String**<!----> | A globally unique identifier for this communication. |  [optional] |
+| **self** | <!----><!---->[**ConversationEventTopicAddress**](ConversationEventTopicAddress.html)<!----> | Address and name data for a call endpoint. |  [optional] |
+| **roomId** | <!----><!---->**String**<!----> | The room id for the chat. |  [optional] |
+| **cobrowseSessionId** | <!----><!---->**String**<!----> | The co-browse session ID. |  [optional] |
+| **cobrowseRole** | <!----><!---->**String**<!----> | This value identifies the role of the co-browse client within the co-browse session (a client is a sharer or a viewer). |  [optional] |
+| **controlling** | <!----><!---->**List&lt;String&gt;**<!----> | ID of co-browse participants for which this client has been granted control (list is empty if this client cannot control any shared pages). |  [optional] |
+| **viewerUrl** | <!----><!---->**String**<!----> | The URL that can be used to open co-browse session in web browser. |  [optional] |
+| **provider** | <!----><!---->**String**<!----> | The source provider of the co-browse communication. |  [optional] |
+| **scriptId** | <!----><!---->**String**<!----> | The UUID of the script to use. |  [optional] |
+| **peerId** | <!----><!---->**String**<!----> | The id of the peer communication corresponding to a matching leg for this communication. |  [optional] |
+| **providerEventTime** | <!----><!---->[**Date**](Date.html)<!----> | The time when the provider event which triggered this conversation update happened in the corrected provider clock (milliseconds since 1970-01-01 00:00:00 UTC). |  [optional] |
+| **connectedTime** | <!----><!---->[**Date**](Date.html)<!----> | The timestamp when this communication was connected in the cloud clock. |  [optional] |
+| **disconnectedTime** | <!----><!---->[**Date**](Date.html)<!----> | The timestamp when this communication disconnected from the conversation in the provider clock. |  [optional] |
+| **wrapup** | <!----><!---->[**ConversationEventTopicWrapup**](ConversationEventTopicWrapup.html)<!----> | Call wrap up or disposition data. |  [optional] |
+| **afterCallWork** | <!----><!---->[**ConversationEventTopicAfterCallWork**](ConversationEventTopicAfterCallWork.html)<!----> | A communication&#39;s after-call work data. |  [optional] |
+| **afterCallWorkRequired** | <!----><!---->**Boolean**<!----> | Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested. |  [optional] |
 {: class="table table-striped"}
 
 
@@ -37,14 +36,14 @@ title: ConversationEventTopicCobrowse
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ALERTING | &quot;ALERTING&quot; |
-| DIALING | &quot;DIALING&quot; |
-| CONTACTING | &quot;CONTACTING&quot; |
-| OFFERING | &quot;OFFERING&quot; |
-| CONNECTED | &quot;CONNECTED&quot; |
-| DISCONNECTED | &quot;DISCONNECTED&quot; |
-| TERMINATED | &quot;TERMINATED&quot; |
-| NONE | &quot;NONE&quot; |
+| ALERTING | &quot;alerting&quot; |
+| DIALING | &quot;dialing&quot; |
+| CONTACTING | &quot;contacting&quot; |
+| OFFERING | &quot;offering&quot; |
+| CONNECTED | &quot;connected&quot; |
+| DISCONNECTED | &quot;disconnected&quot; |
+| TERMINATED | &quot;terminated&quot; |
+| NONE | &quot;none&quot; |
 {: class="table table-striped"}
 
 
@@ -55,20 +54,20 @@ title: ConversationEventTopicCobrowse
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ENDPOINT | &quot;ENDPOINT&quot; |
-| CLIENT | &quot;CLIENT&quot; |
-| SYSTEM | &quot;SYSTEM&quot; |
-| TIMEOUT | &quot;TIMEOUT&quot; |
-| TRANSFER | &quot;TRANSFER&quot; |
-| TRANSFER_CONFERENCE | &quot;TRANSFER_CONFERENCE&quot; |
-| TRANSFER_CONSULT | &quot;TRANSFER_CONSULT&quot; |
-| TRANSFER_FORWARD | &quot;TRANSFER_FORWARD&quot; |
-| TRANSPORT_FAILURE | &quot;TRANSPORT_FAILURE&quot; |
-| ERROR | &quot;ERROR&quot; |
-| PEER | &quot;PEER&quot; |
-| OTHER | &quot;OTHER&quot; |
-| SPAM | &quot;SPAM&quot; |
-| UNCALLABLE | &quot;UNCALLABLE&quot; |
+| ENDPOINT | &quot;endpoint&quot; |
+| CLIENT | &quot;client&quot; |
+| SYSTEM | &quot;system&quot; |
+| TIMEOUT | &quot;timeout&quot; |
+| TRANSFER | &quot;transfer&quot; |
+| TRANSFER_CONFERENCE | &quot;transfer.conference&quot; |
+| TRANSFER_CONSULT | &quot;transfer.consult&quot; |
+| TRANSFER_FORWARD | &quot;transfer.forward&quot; |
+| TRANSPORT_FAILURE | &quot;transport.failure&quot; |
+| ERROR | &quot;error&quot; |
+| PEER | &quot;peer&quot; |
+| OTHER | &quot;other&quot; |
+| SPAM | &quot;spam&quot; |
+| UNCALLABLE | &quot;uncallable&quot; |
 {: class="table table-striped"}
 
 

@@ -16,8 +16,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * ArchitectFlowNotificationUser
+ * The user who initiated the change.
  */
+@ApiModel(description = "The user who initiated the change.")
 
 public class ArchitectFlowNotificationUser  implements Serializable {
   
@@ -27,13 +28,14 @@ public class ArchitectFlowNotificationUser  implements Serializable {
 
   
   /**
+   * The ID of the user.
    **/
   public ArchitectFlowNotificationUser id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The ID of the user.")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -44,13 +46,14 @@ public class ArchitectFlowNotificationUser  implements Serializable {
 
   
   /**
+   * The name of the user, if available.
    **/
   public ArchitectFlowNotificationUser name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The name of the user, if available.")
   @JsonProperty("name")
   public String getName() {
     return name;

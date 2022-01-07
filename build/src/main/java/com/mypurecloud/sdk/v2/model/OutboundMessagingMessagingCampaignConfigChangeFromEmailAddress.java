@@ -16,8 +16,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * OutboundMessagingMessagingCampaignConfigChangeFromEmailAddress
+ * An outbound-messaging messaging campaign email address
  */
+@ApiModel(description = "An outbound-messaging messaging campaign email address")
 
 public class OutboundMessagingMessagingCampaignConfigChangeFromEmailAddress  implements Serializable {
   
@@ -27,13 +28,14 @@ public class OutboundMessagingMessagingCampaignConfigChangeFromEmailAddress  imp
 
   
   /**
+   * The friendly name of the email address.
    **/
   public OutboundMessagingMessagingCampaignConfigChangeFromEmailAddress friendlyName(String friendlyName) {
     this.friendlyName = friendlyName;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The friendly name of the email address.")
   @JsonProperty("friendlyName")
   public String getFriendlyName() {
     return friendlyName;
@@ -44,13 +46,14 @@ public class OutboundMessagingMessagingCampaignConfigChangeFromEmailAddress  imp
 
   
   /**
+   * The local part of the email address.
    **/
   public OutboundMessagingMessagingCampaignConfigChangeFromEmailAddress localPart(String localPart) {
     this.localPart = localPart;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The local part of the email address.")
   @JsonProperty("localPart")
   public String getLocalPart() {
     return localPart;
@@ -61,13 +64,14 @@ public class OutboundMessagingMessagingCampaignConfigChangeFromEmailAddress  imp
 
   
   /**
+   * A UriReference for a resource
    **/
   public OutboundMessagingMessagingCampaignConfigChangeFromEmailAddress domain(OutboundMessagingMessagingCampaignConfigChangeUriReference domain) {
     this.domain = domain;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A UriReference for a resource")
   @JsonProperty("domain")
   public OutboundMessagingMessagingCampaignConfigChangeUriReference getDomain() {
     return domain;

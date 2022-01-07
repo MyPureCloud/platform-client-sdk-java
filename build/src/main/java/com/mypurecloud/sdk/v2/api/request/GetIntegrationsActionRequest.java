@@ -34,6 +34,7 @@ import com.mypurecloud.sdk.v2.model.BotConnectorBotVersionSummaryEntityListing;
 import com.mypurecloud.sdk.v2.model.BotList;
 import com.mypurecloud.sdk.v2.model.BotConnectorBotSummaryEntityListing;
 import com.mypurecloud.sdk.v2.model.ClientAppEntityListing;
+import com.mypurecloud.sdk.v2.model.UCIntegrationListing;
 import com.mypurecloud.sdk.v2.model.Credential;
 import com.mypurecloud.sdk.v2.model.CredentialInfoListing;
 import com.mypurecloud.sdk.v2.model.CredentialTypeListing;

@@ -8,12 +8,11 @@ title: DialerDnclistConfigChangeImportStatus
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **importState** | [**ImportStateEnum**](#ImportStateEnum)<!----> |  |  [optional] |
-| **totalRecords** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **completedRecords** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **percentageComplete** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **failureReason** | <!----><!---->**String**<!----> |  |  [optional] |
-| **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
+| **importState** | [**ImportStateEnum**](#ImportStateEnum)<!----> | current status of the import |  [optional] |
+| **totalRecords** | <!----><!---->**Integer**<!----> | total number of records to be imported |  [optional] |
+| **completedRecords** | <!----><!---->**Integer**<!----> | number of records finished importing |  [optional] |
+| **percentageComplete** | <!----><!---->**Integer**<!----> | percentage of records finished importing |  [optional] |
+| **failureReason** | <!----><!---->**String**<!----> | if the import has failed, the reason for the failure |  [optional] |
 {: class="table table-striped"}
 
 

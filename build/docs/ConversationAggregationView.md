@@ -38,6 +38,7 @@ title: ConversationAggregationView
 | NTRANSFERRED | &quot;nTransferred&quot; |
 | OEXTERNALMEDIACOUNT | &quot;oExternalMediaCount&quot; |
 | OMEDIACOUNT | &quot;oMediaCount&quot; |
+| OMESSAGETURN | &quot;oMessageTurn&quot; |
 | OSERVICELEVEL | &quot;oServiceLevel&quot; |
 | OSERVICETARGET | &quot;oServiceTarget&quot; |
 | TABANDON | &quot;tAbandon&quot; |
@@ -50,6 +51,7 @@ title: ConversationAggregationView
 | TCALLBACKCOMPLETE | &quot;tCallbackComplete&quot; |
 | TCOACHING | &quot;tCoaching&quot; |
 | TCOACHINGCOMPLETE | &quot;tCoachingComplete&quot; |
+| TCONNECTED | &quot;tConnected&quot; |
 | TCONTACTING | &quot;tContacting&quot; |
 | TDIALING | &quot;tDialing&quot; |
 | TFLOWOUT | &quot;tFlowOut&quot; |

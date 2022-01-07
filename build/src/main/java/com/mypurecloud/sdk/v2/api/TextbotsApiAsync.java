@@ -13,8 +13,9 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.TextBotFlowTurnRequest;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.BotSearchResponseEntityListing;
+import com.mypurecloud.sdk.v2.model.TextBotFlowTurnRequest;
 import com.mypurecloud.sdk.v2.model.TextBotFlowTurnResponse;
 import com.mypurecloud.sdk.v2.model.TextBotFlowLaunchRequest;
 import com.mypurecloud.sdk.v2.model.TextBotFlowLaunchResponse;
@@ -22,6 +23,7 @@ import com.mypurecloud.sdk.v2.model.PostTextResponse;
 import com.mypurecloud.sdk.v2.model.PostTextRequest;
 
 
+import com.mypurecloud.sdk.v2.api.request.GetTextbotsBotsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTextbotsBotflowsSessionTurnsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTextbotsBotflowsSessionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTextbotsBotsExecuteRequest;
@@ -43,6 +45,82 @@ public class TextbotsApiAsync {
 
   public TextbotsApiAsync(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  
+  /**
+   * Find bots using the currently configured friendly name or ID.
+   * The name does allow case-insensitive partial string matches or by IDs (up to 50), but not both at the same time. Optionally you can limit the scope of the search by providing one or more bot types.  You can specify the maximum results to return, up to a limit of 100
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BotSearchResponseEntityListing> getTextbotsBotsSearchAsync(GetTextbotsBotsSearchRequest request, final AsyncApiCallback<BotSearchResponseEntityListing> callback) {
+    try {
+      final SettableFuture<BotSearchResponseEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BotSearchResponseEntityListing>() {}, new AsyncApiCallback<ApiResponse<BotSearchResponseEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<BotSearchResponseEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Find bots using the currently configured friendly name or ID.
+   * The name does allow case-insensitive partial string matches or by IDs (up to 50), but not both at the same time. Optionally you can limit the scope of the search by providing one or more bot types.  You can specify the maximum results to return, up to a limit of 100
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BotSearchResponseEntityListing>> getTextbotsBotsSearchAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<BotSearchResponseEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BotSearchResponseEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BotSearchResponseEntityListing>() {}, new AsyncApiCallback<ApiResponse<BotSearchResponseEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<BotSearchResponseEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BotSearchResponseEntityListing> response = (ApiResponse<BotSearchResponseEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BotSearchResponseEntityListing> response = (ApiResponse<BotSearchResponseEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   

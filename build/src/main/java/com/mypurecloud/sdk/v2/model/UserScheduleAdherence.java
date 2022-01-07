@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.BusinessUnit;
 import com.mypurecloud.sdk.v2.model.ManagementUnit;
 import com.mypurecloud.sdk.v2.model.QueueReference;
 import com.mypurecloud.sdk.v2.model.Team;
@@ -31,6 +32,7 @@ public class UserScheduleAdherence  implements Serializable {
   private String id = null;
   private String name = null;
   private UserReference user = null;
+  private BusinessUnit businessUnit = null;
   private ManagementUnit managementUnit = null;
   private Team team = null;
 
@@ -392,6 +394,13 @@ public class UserScheduleAdherence  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "The business unit to which this user belongs")
+  @JsonProperty("businessUnit")
+  public BusinessUnit getBusinessUnit() {
+    return businessUnit;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The management unit to which this user belongs")
   @JsonProperty("managementUnit")
   public ManagementUnit getManagementUnit() {
@@ -517,6 +526,7 @@ public class UserScheduleAdherence  implements Serializable {
     return Objects.equals(this.id, userScheduleAdherence.id) &&
         Objects.equals(this.name, userScheduleAdherence.name) &&
         Objects.equals(this.user, userScheduleAdherence.user) &&
+        Objects.equals(this.businessUnit, userScheduleAdherence.businessUnit) &&
         Objects.equals(this.managementUnit, userScheduleAdherence.managementUnit) &&
         Objects.equals(this.team, userScheduleAdherence.team) &&
         Objects.equals(this.scheduledActivityCategory, userScheduleAdherence.scheduledActivityCategory) &&
@@ -537,7 +547,7 @@ public class UserScheduleAdherence  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, user, managementUnit, team, scheduledActivityCategory, systemPresence, organizationSecondaryPresenceId, routingStatus, actualActivityCategory, isOutOfOffice, adherenceState, impact, timeOfAdherenceChange, presenceUpdateTime, activeQueues, activeQueuesModifiedTime, removedFromManagementUnit, selfUri);
+    return Objects.hash(id, name, user, businessUnit, managementUnit, team, scheduledActivityCategory, systemPresence, organizationSecondaryPresenceId, routingStatus, actualActivityCategory, isOutOfOffice, adherenceState, impact, timeOfAdherenceChange, presenceUpdateTime, activeQueues, activeQueuesModifiedTime, removedFromManagementUnit, selfUri);
   }
 
   @Override
@@ -548,6 +558,7 @@ public class UserScheduleAdherence  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
+    sb.append("    businessUnit: ").append(toIndentedString(businessUnit)).append("\n");
     sb.append("    managementUnit: ").append(toIndentedString(managementUnit)).append("\n");
     sb.append("    team: ").append(toIndentedString(team)).append("\n");
     sb.append("    scheduledActivityCategory: ").append(toIndentedString(scheduledActivityCategory)).append("\n");

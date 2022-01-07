@@ -87,7 +87,8 @@ public class AuditLogMessage  implements Serializable {
     WORKFORCEMANAGEMENT("WorkforceManagement"),
     MESSAGING("Messaging"),
     SUPPORTABILITY("Supportability"),
-    CALLBACK("Callback");
+    CALLBACK("Callback"),
+    WORKITEMS("Workitems");
 
     private String value;
 
@@ -203,7 +204,8 @@ public class AuditLogMessage  implements Serializable {
     REASSIGN("Reassign"),
     RESCHEDULE("Reschedule"),
     CANCEL("Cancel"),
-    SOFTDELETE("SoftDelete");
+    SOFTDELETE("SoftDelete"),
+    HARDDELETE("HardDelete");
 
     private String value;
 
@@ -277,6 +279,7 @@ public class AuditLogMessage  implements Serializable {
     CONFIGURATIONVERSION("ConfigurationVersion"),
     CONTACTLIST("ContactList"),
     CONTACTLISTFILTER("ContactListFilter"),
+    CONTACTSCHEMA("ContactSchema"),
     CONVERSATIONATTRIBUTES("ConversationAttributes"),
     CONVERSATIONACCOUNT("ConversationAccount"),
     CONVERSATIONDEFAULTSUPPORTEDCONTENT("ConversationDefaultSupportedContent"),
@@ -308,6 +311,7 @@ public class AuditLogMessage  implements Serializable {
     EXTENSIONPOOL("ExtensionPool"),
     EXTERNALMETRICSDATA("ExternalMetricsData"),
     EXTERNALMETRICSDEFINITION("ExternalMetricsDefinition"),
+    EXTERNALORGANIZATIONSCHEMA("ExternalOrganizationSchema"),
     FEEDBACK("Feedback"),
     FLOW("Flow"),
     FLOWMILESTONE("FlowMilestone"),
@@ -397,9 +401,12 @@ public class AuditLogMessage  implements Serializable {
     VOICEMAILPOLICY("VoicemailPolicy"),
     VOICEMAILUSERPOLICY("VoicemailUserPolicy"),
     WEBHOOK("Webhook"),
+    WORKBIN("Workbin"),
+    WORKITEM("Workitem"),
     WORKPLAN("WorkPlan"),
     WORKPLANROTATION("WorkPlanRotation"),
     WORKSPACE("Workspace"),
+    WORKTYPE("Worktype"),
     WRAPUPCODE("WrapupCode"),
     WRAPUPCODEMAPPING("WrapUpCodeMapping"),
     PARTICIPANT("Participant");

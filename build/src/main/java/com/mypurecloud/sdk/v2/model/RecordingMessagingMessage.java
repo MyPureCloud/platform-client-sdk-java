@@ -15,6 +15,7 @@ import com.mypurecloud.sdk.v2.model.ExternalContact;
 import com.mypurecloud.sdk.v2.model.MessageMediaAttachment;
 import com.mypurecloud.sdk.v2.model.MessageStickerAttachment;
 import com.mypurecloud.sdk.v2.model.QuickReply;
+import com.mypurecloud.sdk.v2.model.RecordingContentStory;
 import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -40,6 +41,7 @@ public class RecordingMessagingMessage  implements Serializable {
   private List<MessageStickerAttachment> messageStickerAttachments = new ArrayList<MessageStickerAttachment>();
   private List<QuickReply> quickReplies = new ArrayList<QuickReply>();
   private ButtonResponse buttonResponse = null;
+  private RecordingContentStory story = null;
 
   
   /**
@@ -240,6 +242,24 @@ public class RecordingMessagingMessage  implements Serializable {
   }
 
   
+  /**
+   * Ephemeral story content.
+   **/
+  public RecordingMessagingMessage story(RecordingContentStory story) {
+    this.story = story;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Ephemeral story content.")
+  @JsonProperty("story")
+  public RecordingContentStory getStory() {
+    return story;
+  }
+  public void setStory(RecordingContentStory story) {
+    this.story = story;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -260,12 +280,13 @@ public class RecordingMessagingMessage  implements Serializable {
         Objects.equals(this.messageMediaAttachments, recordingMessagingMessage.messageMediaAttachments) &&
         Objects.equals(this.messageStickerAttachments, recordingMessagingMessage.messageStickerAttachments) &&
         Objects.equals(this.quickReplies, recordingMessagingMessage.quickReplies) &&
-        Objects.equals(this.buttonResponse, recordingMessagingMessage.buttonResponse);
+        Objects.equals(this.buttonResponse, recordingMessagingMessage.buttonResponse) &&
+        Objects.equals(this.story, recordingMessagingMessage.story);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(from, fromUser, fromExternalContact, to, timestamp, id, messageText, messageMediaAttachments, messageStickerAttachments, quickReplies, buttonResponse);
+    return Objects.hash(from, fromUser, fromExternalContact, to, timestamp, id, messageText, messageMediaAttachments, messageStickerAttachments, quickReplies, buttonResponse, story);
   }
 
   @Override
@@ -284,6 +305,7 @@ public class RecordingMessagingMessage  implements Serializable {
     sb.append("    messageStickerAttachments: ").append(toIndentedString(messageStickerAttachments)).append("\n");
     sb.append("    quickReplies: ").append(toIndentedString(quickReplies)).append("\n");
     sb.append("    buttonResponse: ").append(toIndentedString(buttonResponse)).append("\n");
+    sb.append("    story: ").append(toIndentedString(story)).append("\n");
     sb.append("}");
     return sb.toString();
   }

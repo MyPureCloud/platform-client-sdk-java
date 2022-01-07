@@ -8,12 +8,11 @@ title: DialerRulesetConfigChangeDataActionConditionPredicate
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **outputField** | <!----><!---->**String**<!----> |  |  [optional] |
-| **outputOperator** | [**OutputOperatorEnum**](#OutputOperatorEnum)<!----> |  |  [optional] |
-| **comparisonValue** | <!----><!---->**String**<!----> |  |  [optional] |
-| **outputFieldMissingResolution** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **inverted** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
+| **outputField** | <!----><!---->**String**<!----> | The name of an output field from the data action&#39;s output to use for this condition |  [optional] |
+| **outputOperator** | [**OutputOperatorEnum**](#OutputOperatorEnum)<!----> | The operation with which to evaluate this condition |  [optional] |
+| **comparisonValue** | <!----><!---->**String**<!----> | The value to compare against for this condition |  [optional] |
+| **outputFieldMissingResolution** | <!----><!---->**Boolean**<!----> | The result of this predicate if the requested output field is missing from the data action&#39;s result |  [optional] |
+| **inverted** | <!----><!---->**Boolean**<!----> | If true, inverts the result of evaluating this Predicate. Default is false. |  [optional] |
 {: class="table table-striped"}
 
 

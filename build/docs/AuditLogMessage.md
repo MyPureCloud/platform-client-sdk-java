@@ -65,6 +65,7 @@ title: AuditLogMessage
 | MESSAGING | &quot;Messaging&quot; |
 | SUPPORTABILITY | &quot;Supportability&quot; |
 | CALLBACK | &quot;Callback&quot; |
+| WORKITEMS | &quot;Workitems&quot; |
 {: class="table table-striped"}
 
 
@@ -143,6 +144,7 @@ title: AuditLogMessage
 | RESCHEDULE | &quot;Reschedule&quot; |
 | CANCEL | &quot;Cancel&quot; |
 | SOFTDELETE | &quot;SoftDelete&quot; |
+| HARDDELETE | &quot;HardDelete&quot; |
 {: class="table table-striped"}
 
 
@@ -179,6 +181,7 @@ title: AuditLogMessage
 | CONFIGURATIONVERSION | &quot;ConfigurationVersion&quot; |
 | CONTACTLIST | &quot;ContactList&quot; |
 | CONTACTLISTFILTER | &quot;ContactListFilter&quot; |
+| CONTACTSCHEMA | &quot;ContactSchema&quot; |
 | CONVERSATIONATTRIBUTES | &quot;ConversationAttributes&quot; |
 | CONVERSATIONACCOUNT | &quot;ConversationAccount&quot; |
 | CONVERSATIONDEFAULTSUPPORTEDCONTENT | &quot;ConversationDefaultSupportedContent&quot; |
@@ -210,6 +213,7 @@ title: AuditLogMessage
 | EXTENSIONPOOL | &quot;ExtensionPool&quot; |
 | EXTERNALMETRICSDATA | &quot;ExternalMetricsData&quot; |
 | EXTERNALMETRICSDEFINITION | &quot;ExternalMetricsDefinition&quot; |
+| EXTERNALORGANIZATIONSCHEMA | &quot;ExternalOrganizationSchema&quot; |
 | FEEDBACK | &quot;Feedback&quot; |
 | FLOW | &quot;Flow&quot; |
 | FLOWMILESTONE | &quot;FlowMilestone&quot; |
@@ -299,9 +303,12 @@ title: AuditLogMessage
 | VOICEMAILPOLICY | &quot;VoicemailPolicy&quot; |
 | VOICEMAILUSERPOLICY | &quot;VoicemailUserPolicy&quot; |
 | WEBHOOK | &quot;Webhook&quot; |
+| WORKBIN | &quot;Workbin&quot; |
+| WORKITEM | &quot;Workitem&quot; |
 | WORKPLAN | &quot;WorkPlan&quot; |
 | WORKPLANROTATION | &quot;WorkPlanRotation&quot; |
 | WORKSPACE | &quot;Workspace&quot; |
+| WORKTYPE | &quot;Worktype&quot; |
 | WRAPUPCODE | &quot;WrapupCode&quot; |
 | WRAPUPCODEMAPPING | &quot;WrapUpCodeMapping&quot; |
 | PARTICIPANT | &quot;Participant&quot; |

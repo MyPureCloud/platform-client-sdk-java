@@ -41,17 +41,17 @@ public class DialerCampaignRuleConfigChangeCampaignRuleAction  implements Serial
     }
   }
   /**
-   * Gets or Sets actionType
+   * The type of this action
    */
  @JsonDeserialize(using = ActionTypeEnumDeserializer.class)
   public enum ActionTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    TURN_ON_CAMPAIGN("TURN_ON_CAMPAIGN"),
-    TURN_OFF_CAMPAIGN("TURN_OFF_CAMPAIGN"),
-    TURN_ON_SEQUENCE("TURN_ON_SEQUENCE"),
-    TURN_OFF_SEQUENCE("TURN_OFF_SEQUENCE"),
-    SET_CAMPAIGN_PRIORITY("SET_CAMPAIGN_PRIORITY"),
-    RECYCLE_CAMPAIGN("RECYCLE_CAMPAIGN");
+    TURNONCAMPAIGN("turnOnCampaign"),
+    TURNOFFCAMPAIGN("turnOffCampaign"),
+    TURNONSEQUENCE("turnOnSequence"),
+    TURNOFFSEQUENCE("turnOffSequence"),
+    SETCAMPAIGNPRIORITY("setCampaignPriority"),
+    RECYCLECAMPAIGN("recycleCampaign");
 
     private String value;
 
@@ -80,17 +80,17 @@ public class DialerCampaignRuleConfigChangeCampaignRuleAction  implements Serial
   }
   private ActionTypeEnum actionType = null;
   private DialerCampaignRuleConfigChangeCampaignRuleActionEntities campaignRuleActionEntities = null;
-  private Object additionalProperties = null;
 
   
   /**
+   * The globally unique identifier for the action
    **/
   public DialerCampaignRuleConfigChangeCampaignRuleAction id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The globally unique identifier for the action")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -101,13 +101,14 @@ public class DialerCampaignRuleConfigChangeCampaignRuleAction  implements Serial
 
   
   /**
+   * The parameters to match this action
    **/
   public DialerCampaignRuleConfigChangeCampaignRuleAction parameters(Map<String, String> parameters) {
     this.parameters = parameters;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The parameters to match this action")
   @JsonProperty("parameters")
   public Map<String, String> getParameters() {
     return parameters;
@@ -118,13 +119,14 @@ public class DialerCampaignRuleConfigChangeCampaignRuleAction  implements Serial
 
   
   /**
+   * The type of this action
    **/
   public DialerCampaignRuleConfigChangeCampaignRuleAction actionType(ActionTypeEnum actionType) {
     this.actionType = actionType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The type of this action")
   @JsonProperty("actionType")
   public ActionTypeEnum getActionType() {
     return actionType;
@@ -151,23 +153,6 @@ public class DialerCampaignRuleConfigChangeCampaignRuleAction  implements Serial
   }
 
   
-  /**
-   **/
-  public DialerCampaignRuleConfigChangeCampaignRuleAction additionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Object getAdditionalProperties() {
-    return additionalProperties;
-  }
-  public void setAdditionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
-  }
-
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -181,13 +166,12 @@ public class DialerCampaignRuleConfigChangeCampaignRuleAction  implements Serial
     return Objects.equals(this.id, dialerCampaignRuleConfigChangeCampaignRuleAction.id) &&
         Objects.equals(this.parameters, dialerCampaignRuleConfigChangeCampaignRuleAction.parameters) &&
         Objects.equals(this.actionType, dialerCampaignRuleConfigChangeCampaignRuleAction.actionType) &&
-        Objects.equals(this.campaignRuleActionEntities, dialerCampaignRuleConfigChangeCampaignRuleAction.campaignRuleActionEntities) &&
-        Objects.equals(this.additionalProperties, dialerCampaignRuleConfigChangeCampaignRuleAction.additionalProperties);
+        Objects.equals(this.campaignRuleActionEntities, dialerCampaignRuleConfigChangeCampaignRuleAction.campaignRuleActionEntities);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, parameters, actionType, campaignRuleActionEntities, additionalProperties);
+    return Objects.hash(id, parameters, actionType, campaignRuleActionEntities);
   }
 
   @Override
@@ -199,7 +183,6 @@ public class DialerCampaignRuleConfigChangeCampaignRuleAction  implements Serial
     sb.append("    parameters: ").append(toIndentedString(parameters)).append("\n");
     sb.append("    actionType: ").append(toIndentedString(actionType)).append("\n");
     sb.append("    campaignRuleActionEntities: ").append(toIndentedString(campaignRuleActionEntities)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

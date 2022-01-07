@@ -22,17 +22,17 @@ public class DialerCampaignScheduleConfigChangeScheduleInterval  implements Seri
   
   private String start = null;
   private String end = null;
-  private Object additionalProperties = null;
 
   
   /**
+   * scheduled start time represented as an ISO-8601 string; for example, yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
   public DialerCampaignScheduleConfigChangeScheduleInterval start(String start) {
     this.start = start;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "scheduled start time represented as an ISO-8601 string; for example, yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("start")
   public String getStart() {
     return start;
@@ -43,36 +43,20 @@ public class DialerCampaignScheduleConfigChangeScheduleInterval  implements Seri
 
   
   /**
+   * scheduled end time represented as an ISO-8601 string; for example, yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
   public DialerCampaignScheduleConfigChangeScheduleInterval end(String end) {
     this.end = end;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "scheduled end time represented as an ISO-8601 string; for example, yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("end")
   public String getEnd() {
     return end;
   }
   public void setEnd(String end) {
     this.end = end;
-  }
-
-  
-  /**
-   **/
-  public DialerCampaignScheduleConfigChangeScheduleInterval additionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Object getAdditionalProperties() {
-    return additionalProperties;
-  }
-  public void setAdditionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
   }
 
   
@@ -87,13 +71,12 @@ public class DialerCampaignScheduleConfigChangeScheduleInterval  implements Seri
     }
     DialerCampaignScheduleConfigChangeScheduleInterval dialerCampaignScheduleConfigChangeScheduleInterval = (DialerCampaignScheduleConfigChangeScheduleInterval) o;
     return Objects.equals(this.start, dialerCampaignScheduleConfigChangeScheduleInterval.start) &&
-        Objects.equals(this.end, dialerCampaignScheduleConfigChangeScheduleInterval.end) &&
-        Objects.equals(this.additionalProperties, dialerCampaignScheduleConfigChangeScheduleInterval.additionalProperties);
+        Objects.equals(this.end, dialerCampaignScheduleConfigChangeScheduleInterval.end);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(start, end, additionalProperties);
+    return Objects.hash(start, end);
   }
 
   @Override
@@ -103,7 +86,6 @@ public class DialerCampaignScheduleConfigChangeScheduleInterval  implements Seri
     
     sb.append("    start: ").append(toIndentedString(start)).append("\n");
     sb.append("    end: ").append(toIndentedString(end)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -9,11 +9,10 @@ title: ConversationEventTopicDialerPreview
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **contactId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **contactListId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **campaignId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **phoneNumberColumns** | <!----><!---->[**List&lt;ConversationEventTopicPhoneNumberColumn&gt;**](ConversationEventTopicPhoneNumberColumn.html)<!----> |  |  [optional] |
-| **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
+| **contactId** | <!----><!---->**String**<!----> | The contact associated with this preview data pop |  [optional] |
+| **contactListId** | <!----><!---->**String**<!----> | The contactList associated with this preview data pop. |  [optional] |
+| **campaignId** | <!----><!---->**String**<!----> | The campaignId associated with this preview data pop. |  [optional] |
+| **phoneNumberColumns** | <!----><!---->[**List&lt;ConversationEventTopicPhoneNumberColumn&gt;**](ConversationEventTopicPhoneNumberColumn.html)<!----> | The phone number columns associated with this campaign |  [optional] |
 {: class="table table-striped"}
 
 

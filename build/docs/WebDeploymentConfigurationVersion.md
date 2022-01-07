@@ -15,6 +15,7 @@ title: WebDeploymentConfigurationVersion
 | **languages** | <!----><!---->**List&lt;String&gt;**<!----> | A list of languages supported on the configuration |  [optional] |
 | **defaultLanguage** | <!----><!---->**String**<!----> | The default language to use for the configuration |  [optional] |
 | **messenger** | <!----><!---->[**MessengerSettings**](MessengerSettings.html)<!----> | The settings for messenger |  [optional] |
+| **supportCenter** | <!----><!---->[**SupportCenterSettings**](SupportCenterSettings.html)<!----> | The settings for support center |  [optional] |
 | **cobrowse** | <!----><!---->[**CobrowseSettings**](CobrowseSettings.html)<!----> | The settings for cobrowse |  [optional] |
 | **journeyEvents** | <!----><!---->[**JourneyEventsSettings**](JourneyEventsSettings.html)<!----> | The settings for journey events |  [optional] |
 | **authenticationSettings** | <!----><!---->[**AuthenticationSettings**](AuthenticationSettings.html)<!----> | The settings for authenticated deployments |  [optional] |

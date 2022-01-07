@@ -25,13 +25,14 @@ public class QueueConversationSocialExpressionEventTopicMessageSticker  implemen
 
   
   /**
+   * The location of the sticker, useful for retrieving it
    **/
   public QueueConversationSocialExpressionEventTopicMessageSticker url(String url) {
     this.url = url;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The location of the sticker, useful for retrieving it")
   @JsonProperty("url")
   public String getUrl() {
     return url;
@@ -42,13 +43,14 @@ public class QueueConversationSocialExpressionEventTopicMessageSticker  implemen
 
   
   /**
+   * The unique id of the the sticker object.
    **/
   public QueueConversationSocialExpressionEventTopicMessageSticker id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The unique id of the the sticker object.")
   @JsonProperty("id")
   public String getId() {
     return id;

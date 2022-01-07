@@ -9,38 +9,16 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import java.io.Serializable;
 /**
- * ArchitectFlowNotificationErrorMessageParams
+ * The error message params, if the action failed
  */
+@ApiModel(description = "The error message params, if the action failed")
 
 public class ArchitectFlowNotificationErrorMessageParams  implements Serializable {
   
-  private Map<String, String> additionalProperties = null;
-
-  
-  /**
-   **/
-  public ArchitectFlowNotificationErrorMessageParams additionalProperties(Map<String, String> additionalProperties) {
-    this.additionalProperties = additionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Map<String, String> getAdditionalProperties() {
-    return additionalProperties;
-  }
-  public void setAdditionalProperties(Map<String, String> additionalProperties) {
-    this.additionalProperties = additionalProperties;
-  }
 
   
 
@@ -52,13 +30,12 @@ public class ArchitectFlowNotificationErrorMessageParams  implements Serializabl
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ArchitectFlowNotificationErrorMessageParams architectFlowNotificationErrorMessageParams = (ArchitectFlowNotificationErrorMessageParams) o;
-    return Objects.equals(this.additionalProperties, architectFlowNotificationErrorMessageParams.additionalProperties);
+    return true;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(additionalProperties);
+    return Objects.hash();
   }
 
   @Override
@@ -66,7 +43,6 @@ public class ArchitectFlowNotificationErrorMessageParams  implements Serializabl
     StringBuilder sb = new StringBuilder();
     sb.append("class ArchitectFlowNotificationErrorMessageParams {\n");
     
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -29,12 +29,6 @@ import java.io.Serializable;
 
 public class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign  implements Serializable {
   
-  private String id = null;
-  private OutboundMessagingMessagingCampaignConfigChangeUriReference division = null;
-  private String name = null;
-  private Date dateCreated = null;
-  private Date dateModified = null;
-  private Integer version = null;
 
   private static class CampaignStatusEnumDeserializer extends StdDeserializer<CampaignStatusEnum> {
     public CampaignStatusEnumDeserializer() {
@@ -54,11 +48,11 @@ public class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign  im
  @JsonDeserialize(using = CampaignStatusEnumDeserializer.class)
   public enum CampaignStatusEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    ON("ON"),
-    OFF("OFF"),
-    COMPLETE("COMPLETE"),
-    STOPPING("STOPPING"),
-    INVALID("INVALID");
+    ON("on"),
+    OFF("off"),
+    COMPLETE("complete"),
+    STOPPING("stopping"),
+    INVALID("invalid");
 
     private String value;
 
@@ -96,108 +90,12 @@ public class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign  im
   private OutboundMessagingMessagingCampaignConfigChangeSmsConfig smsConfig = null;
   private OutboundMessagingMessagingCampaignConfigChangeEmailConfig emailConfig = null;
   private List<OutboundMessagingMessagingCampaignConfigChangeErrorDetail> errors = new ArrayList<OutboundMessagingMessagingCampaignConfigChangeErrorDetail>();
-
-  
-  /**
-   **/
-  public OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign id(String id) {
-    this.id = id;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("id")
-  public String getId() {
-    return id;
-  }
-  public void setId(String id) {
-    this.id = id;
-  }
-
-  
-  /**
-   **/
-  public OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign division(OutboundMessagingMessagingCampaignConfigChangeUriReference division) {
-    this.division = division;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("division")
-  public OutboundMessagingMessagingCampaignConfigChangeUriReference getDivision() {
-    return division;
-  }
-  public void setDivision(OutboundMessagingMessagingCampaignConfigChangeUriReference division) {
-    this.division = division;
-  }
-
-  
-  /**
-   **/
-  public OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign name(String name) {
-    this.name = name;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("name")
-  public String getName() {
-    return name;
-  }
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  
-  /**
-   **/
-  public OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign dateCreated(Date dateCreated) {
-    this.dateCreated = dateCreated;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("dateCreated")
-  public Date getDateCreated() {
-    return dateCreated;
-  }
-  public void setDateCreated(Date dateCreated) {
-    this.dateCreated = dateCreated;
-  }
-
-  
-  /**
-   **/
-  public OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign dateModified(Date dateModified) {
-    this.dateModified = dateModified;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("dateModified")
-  public Date getDateModified() {
-    return dateModified;
-  }
-  public void setDateModified(Date dateModified) {
-    this.dateModified = dateModified;
-  }
-
-  
-  /**
-   **/
-  public OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign version(Integer version) {
-    this.version = version;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("version")
-  public Integer getVersion() {
-    return version;
-  }
-  public void setVersion(Integer version) {
-    this.version = version;
-  }
+  private String id = null;
+  private OutboundMessagingMessagingCampaignConfigChangeUriReference division = null;
+  private String name = null;
+  private Date dateCreated = null;
+  private Date dateModified = null;
+  private Integer version = null;
 
   
   /**
@@ -235,13 +133,14 @@ public class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign  im
 
   
   /**
+   * A UriReference for a resource
    **/
   public OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign contactList(OutboundMessagingMessagingCampaignConfigChangeUriReference contactList) {
     this.contactList = contactList;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A UriReference for a resource")
   @JsonProperty("contactList")
   public OutboundMessagingMessagingCampaignConfigChangeUriReference getContactList() {
     return contactList;
@@ -252,13 +151,14 @@ public class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign  im
 
   
   /**
+   * The dnc lists to check before sending a message for this messaging campaign.
    **/
   public OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign dncLists(List<OutboundMessagingMessagingCampaignConfigChangeUriReference> dncLists) {
     this.dncLists = dncLists;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The dnc lists to check before sending a message for this messaging campaign.")
   @JsonProperty("dncLists")
   public List<OutboundMessagingMessagingCampaignConfigChangeUriReference> getDncLists() {
     return dncLists;
@@ -269,13 +169,14 @@ public class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign  im
 
   
   /**
+   * The contact list filters to check before sending a message for this messaging campaign.
    **/
   public OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign contactListFilters(List<OutboundMessagingMessagingCampaignConfigChangeUriReference> contactListFilters) {
     this.contactListFilters = contactListFilters;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The contact list filters to check before sending a message for this messaging campaign.")
   @JsonProperty("contactListFilters")
   public List<OutboundMessagingMessagingCampaignConfigChangeUriReference> getContactListFilters() {
     return contactListFilters;
@@ -286,13 +187,14 @@ public class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign  im
 
   
   /**
+   * Whether this messaging campaign is always running.
    **/
   public OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign alwaysRunning(Boolean alwaysRunning) {
     this.alwaysRunning = alwaysRunning;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Whether this messaging campaign is always running.")
   @JsonProperty("alwaysRunning")
   public Boolean getAlwaysRunning() {
     return alwaysRunning;
@@ -303,13 +205,14 @@ public class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign  im
 
   
   /**
+   * The order in which to sort contacts for dialing, based on up to four columns.
    **/
   public OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign contactSorts(List<OutboundMessagingMessagingCampaignConfigChangeContactSort> contactSorts) {
     this.contactSorts = contactSorts;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The order in which to sort contacts for dialing, based on up to four columns.")
   @JsonProperty("contactSorts")
   public List<OutboundMessagingMessagingCampaignConfigChangeContactSort> getContactSorts() {
     return contactSorts;
@@ -320,13 +223,14 @@ public class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign  im
 
   
   /**
+   * How many messages this messaging campaign will send per minute.
    **/
   public OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign messagesPerMinute(Integer messagesPerMinute) {
     this.messagesPerMinute = messagesPerMinute;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "How many messages this messaging campaign will send per minute.")
   @JsonProperty("messagesPerMinute")
   public Integer getMessagesPerMinute() {
     return messagesPerMinute;
@@ -371,19 +275,128 @@ public class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign  im
 
   
   /**
+   * A list of current error conditions associated with this messaging campaign
    **/
   public OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign errors(List<OutboundMessagingMessagingCampaignConfigChangeErrorDetail> errors) {
     this.errors = errors;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A list of current error conditions associated with this messaging campaign")
   @JsonProperty("errors")
   public List<OutboundMessagingMessagingCampaignConfigChangeErrorDetail> getErrors() {
     return errors;
   }
   public void setErrors(List<OutboundMessagingMessagingCampaignConfigChangeErrorDetail> errors) {
     this.errors = errors;
+  }
+
+  
+  /**
+   * The globally unique identifier for the object.
+   **/
+  public OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign id(String id) {
+    this.id = id;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
+  @JsonProperty("id")
+  public String getId() {
+    return id;
+  }
+  public void setId(String id) {
+    this.id = id;
+  }
+
+  
+  /**
+   * A UriReference for a resource
+   **/
+  public OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign division(OutboundMessagingMessagingCampaignConfigChangeUriReference division) {
+    this.division = division;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A UriReference for a resource")
+  @JsonProperty("division")
+  public OutboundMessagingMessagingCampaignConfigChangeUriReference getDivision() {
+    return division;
+  }
+  public void setDivision(OutboundMessagingMessagingCampaignConfigChangeUriReference division) {
+    this.division = division;
+  }
+
+  
+  /**
+   * The UI-visible name of the object
+   **/
+  public OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign name(String name) {
+    this.name = name;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The UI-visible name of the object")
+  @JsonProperty("name")
+  public String getName() {
+    return name;
+  }
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  
+  /**
+   * Creation time of the entity
+   **/
+  public OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign dateCreated(Date dateCreated) {
+    this.dateCreated = dateCreated;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Creation time of the entity")
+  @JsonProperty("dateCreated")
+  public Date getDateCreated() {
+    return dateCreated;
+  }
+  public void setDateCreated(Date dateCreated) {
+    this.dateCreated = dateCreated;
+  }
+
+  
+  /**
+   * Last modified time of the entity
+   **/
+  public OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign dateModified(Date dateModified) {
+    this.dateModified = dateModified;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Last modified time of the entity")
+  @JsonProperty("dateModified")
+  public Date getDateModified() {
+    return dateModified;
+  }
+  public void setDateModified(Date dateModified) {
+    this.dateModified = dateModified;
+  }
+
+  
+  /**
+   * Required for updates, must match the version number of the most recent update
+   **/
+  public OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign version(Integer version) {
+    this.version = version;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Required for updates, must match the version number of the most recent update")
+  @JsonProperty("version")
+  public Integer getVersion() {
+    return version;
+  }
+  public void setVersion(Integer version) {
+    this.version = version;
   }
 
   
@@ -397,13 +410,7 @@ public class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign  im
       return false;
     }
     OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign outboundMessagingMessagingCampaignConfigChangeMessagingCampaign = (OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign) o;
-    return Objects.equals(this.id, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.id) &&
-        Objects.equals(this.division, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.division) &&
-        Objects.equals(this.name, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.name) &&
-        Objects.equals(this.dateCreated, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.dateCreated) &&
-        Objects.equals(this.dateModified, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.dateModified) &&
-        Objects.equals(this.version, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.version) &&
-        Objects.equals(this.campaignStatus, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.campaignStatus) &&
+    return Objects.equals(this.campaignStatus, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.campaignStatus) &&
         Objects.equals(this.callableTimeSet, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.callableTimeSet) &&
         Objects.equals(this.contactList, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.contactList) &&
         Objects.equals(this.dncLists, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.dncLists) &&
@@ -413,12 +420,18 @@ public class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign  im
         Objects.equals(this.messagesPerMinute, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.messagesPerMinute) &&
         Objects.equals(this.smsConfig, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.smsConfig) &&
         Objects.equals(this.emailConfig, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.emailConfig) &&
-        Objects.equals(this.errors, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.errors);
+        Objects.equals(this.errors, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.errors) &&
+        Objects.equals(this.id, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.id) &&
+        Objects.equals(this.division, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.division) &&
+        Objects.equals(this.name, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.name) &&
+        Objects.equals(this.dateCreated, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.dateCreated) &&
+        Objects.equals(this.dateModified, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.dateModified) &&
+        Objects.equals(this.version, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.version);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, division, name, dateCreated, dateModified, version, campaignStatus, callableTimeSet, contactList, dncLists, contactListFilters, alwaysRunning, contactSorts, messagesPerMinute, smsConfig, emailConfig, errors);
+    return Objects.hash(campaignStatus, callableTimeSet, contactList, dncLists, contactListFilters, alwaysRunning, contactSorts, messagesPerMinute, smsConfig, emailConfig, errors, id, division, name, dateCreated, dateModified, version);
   }
 
   @Override
@@ -426,12 +439,6 @@ public class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign  im
     StringBuilder sb = new StringBuilder();
     sb.append("class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    division: ").append(toIndentedString(division)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
-    sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
-    sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    campaignStatus: ").append(toIndentedString(campaignStatus)).append("\n");
     sb.append("    callableTimeSet: ").append(toIndentedString(callableTimeSet)).append("\n");
     sb.append("    contactList: ").append(toIndentedString(contactList)).append("\n");
@@ -443,6 +450,12 @@ public class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign  im
     sb.append("    smsConfig: ").append(toIndentedString(smsConfig)).append("\n");
     sb.append("    emailConfig: ").append(toIndentedString(emailConfig)).append("\n");
     sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    division: ").append(toIndentedString(division)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
+    sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
+    sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("}");
     return sb.toString();
   }

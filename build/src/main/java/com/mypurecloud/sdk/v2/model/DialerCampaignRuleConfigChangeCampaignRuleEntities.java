@@ -28,13 +28,14 @@ public class DialerCampaignRuleConfigChangeCampaignRuleEntities  implements Seri
 
   
   /**
+   * A list of campaignIds to act on
    **/
   public DialerCampaignRuleConfigChangeCampaignRuleEntities campaigns(List<DialerCampaignRuleConfigChangeUriReference> campaigns) {
     this.campaigns = campaigns;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A list of campaignIds to act on")
   @JsonProperty("campaigns")
   public List<DialerCampaignRuleConfigChangeUriReference> getCampaigns() {
     return campaigns;
@@ -45,13 +46,14 @@ public class DialerCampaignRuleConfigChangeCampaignRuleEntities  implements Seri
 
   
   /**
+   * A list of sequenceIds to act on
    **/
   public DialerCampaignRuleConfigChangeCampaignRuleEntities sequences(List<DialerCampaignRuleConfigChangeUriReference> sequences) {
     this.sequences = sequences;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A list of sequenceIds to act on")
   @JsonProperty("sequences")
   public List<DialerCampaignRuleConfigChangeUriReference> getSequences() {
     return sequences;

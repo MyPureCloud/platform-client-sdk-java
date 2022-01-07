@@ -38,10 +38,12 @@ title: BotAggregationQuery
 | BOTVERSION | &quot;botVersion&quot; |
 | CONVERSATIONID | &quot;conversationId&quot; |
 | EXTERNALCONTACTID | &quot;externalContactId&quot; |
+| KNOWLEDGEBASEID | &quot;knowledgeBaseId&quot; |
 | LASTACTIONID | &quot;lastActionId&quot; |
 | LASTINPUTACTIONID | &quot;lastInputActionId&quot; |
 | MEDIATYPE | &quot;mediaType&quot; |
 | MESSAGETYPE | &quot;messageType&quot; |
+| SELFSERVED | &quot;selfServed&quot; |
 {: class="table table-striped"}
 
 

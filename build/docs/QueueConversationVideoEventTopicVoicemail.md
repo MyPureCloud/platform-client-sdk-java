@@ -8,8 +8,8 @@ title: QueueConversationVideoEventTopicVoicemail
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **uploadStatus** | [**UploadStatusEnum**](#UploadStatusEnum)<!----> |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> | The voicemail id |  [optional] |
+| **uploadStatus** | [**UploadStatusEnum**](#UploadStatusEnum)<!----> | current state of the voicemail upload |  [optional] |
 {: class="table table-striped"}
 
 
@@ -20,11 +20,11 @@ title: QueueConversationVideoEventTopicVoicemail
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| PENDING | &quot;PENDING&quot; |
-| COMPLETE | &quot;COMPLETE&quot; |
-| FAILED | &quot;FAILED&quot; |
-| TIMEOUT | &quot;TIMEOUT&quot; |
-| NONE | &quot;NONE&quot; |
+| PENDING | &quot;pending&quot; |
+| COMPLETE | &quot;complete&quot; |
+| FAILED | &quot;failed&quot; |
+| TIMEOUT | &quot;timeout&quot; |
+| NONE | &quot;none&quot; |
 {: class="table table-striped"}
 
 

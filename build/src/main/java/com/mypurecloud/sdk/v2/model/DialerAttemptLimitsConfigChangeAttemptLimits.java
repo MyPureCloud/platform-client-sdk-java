@@ -26,11 +26,6 @@ import java.io.Serializable;
 
 public class DialerAttemptLimitsConfigChangeAttemptLimits  implements Serializable {
   
-  private String id = null;
-  private String name = null;
-  private Date dateCreated = null;
-  private Date dateModified = null;
-  private Integer version = null;
   private Integer maxAttemptsPerContact = null;
   private Integer maxAttemptsPerNumber = null;
   private String timeZoneId = null;
@@ -48,7 +43,7 @@ public class DialerAttemptLimitsConfigChangeAttemptLimits  implements Serializab
     }
   }
   /**
-   * Gets or Sets resetPeriod
+   * After how long the number of attempts will be set back to 0
    */
  @JsonDeserialize(using = ResetPeriodEnumDeserializer.class)
   public enum ResetPeriodEnum {
@@ -84,92 +79,11 @@ public class DialerAttemptLimitsConfigChangeAttemptLimits  implements Serializab
   private ResetPeriodEnum resetPeriod = null;
   private Map<String, DialerAttemptLimitsConfigChangeRecallEntry> recallEntries = null;
   private Boolean breadthFirstRecalls = null;
-  private Object additionalProperties = null;
-
-  
-  /**
-   **/
-  public DialerAttemptLimitsConfigChangeAttemptLimits id(String id) {
-    this.id = id;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("id")
-  public String getId() {
-    return id;
-  }
-  public void setId(String id) {
-    this.id = id;
-  }
-
-  
-  /**
-   **/
-  public DialerAttemptLimitsConfigChangeAttemptLimits name(String name) {
-    this.name = name;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("name")
-  public String getName() {
-    return name;
-  }
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  
-  /**
-   **/
-  public DialerAttemptLimitsConfigChangeAttemptLimits dateCreated(Date dateCreated) {
-    this.dateCreated = dateCreated;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("dateCreated")
-  public Date getDateCreated() {
-    return dateCreated;
-  }
-  public void setDateCreated(Date dateCreated) {
-    this.dateCreated = dateCreated;
-  }
-
-  
-  /**
-   **/
-  public DialerAttemptLimitsConfigChangeAttemptLimits dateModified(Date dateModified) {
-    this.dateModified = dateModified;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("dateModified")
-  public Date getDateModified() {
-    return dateModified;
-  }
-  public void setDateModified(Date dateModified) {
-    this.dateModified = dateModified;
-  }
-
-  
-  /**
-   **/
-  public DialerAttemptLimitsConfigChangeAttemptLimits version(Integer version) {
-    this.version = version;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("version")
-  public Integer getVersion() {
-    return version;
-  }
-  public void setVersion(Integer version) {
-    this.version = version;
-  }
+  private String id = null;
+  private String name = null;
+  private Date dateCreated = null;
+  private Date dateModified = null;
+  private Integer version = null;
 
   
   /**
@@ -207,13 +121,14 @@ public class DialerAttemptLimitsConfigChangeAttemptLimits  implements Serializab
 
   
   /**
+   * The timezone is necessary to define when \"today\" starts and ends
    **/
   public DialerAttemptLimitsConfigChangeAttemptLimits timeZoneId(String timeZoneId) {
     this.timeZoneId = timeZoneId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The timezone is necessary to define when \"today\" starts and ends")
   @JsonProperty("timeZoneId")
   public String getTimeZoneId() {
     return timeZoneId;
@@ -224,13 +139,14 @@ public class DialerAttemptLimitsConfigChangeAttemptLimits  implements Serializab
 
   
   /**
+   * After how long the number of attempts will be set back to 0
    **/
   public DialerAttemptLimitsConfigChangeAttemptLimits resetPeriod(ResetPeriodEnum resetPeriod) {
     this.resetPeriod = resetPeriod;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "After how long the number of attempts will be set back to 0")
   @JsonProperty("resetPeriod")
   public ResetPeriodEnum getResetPeriod() {
     return resetPeriod;
@@ -241,13 +157,14 @@ public class DialerAttemptLimitsConfigChangeAttemptLimits  implements Serializab
 
   
   /**
+   * Configuration for recall attempts
    **/
   public DialerAttemptLimitsConfigChangeAttemptLimits recallEntries(Map<String, DialerAttemptLimitsConfigChangeRecallEntry> recallEntries) {
     this.recallEntries = recallEntries;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Configuration for recall attempts")
   @JsonProperty("recallEntries")
   public Map<String, DialerAttemptLimitsConfigChangeRecallEntry> getRecallEntries() {
     return recallEntries;
@@ -258,13 +175,14 @@ public class DialerAttemptLimitsConfigChangeAttemptLimits  implements Serializab
 
   
   /**
+   * Whether recalls are performed before considering other numbers (true) or after (false)
    **/
   public DialerAttemptLimitsConfigChangeAttemptLimits breadthFirstRecalls(Boolean breadthFirstRecalls) {
     this.breadthFirstRecalls = breadthFirstRecalls;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Whether recalls are performed before considering other numbers (true) or after (false)")
   @JsonProperty("breadthFirstRecalls")
   public Boolean getBreadthFirstRecalls() {
     return breadthFirstRecalls;
@@ -275,19 +193,92 @@ public class DialerAttemptLimitsConfigChangeAttemptLimits  implements Serializab
 
   
   /**
+   * The globally unique identifier for the object.
    **/
-  public DialerAttemptLimitsConfigChangeAttemptLimits additionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
+  public DialerAttemptLimitsConfigChangeAttemptLimits id(String id) {
+    this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Object getAdditionalProperties() {
-    return additionalProperties;
+  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
+  @JsonProperty("id")
+  public String getId() {
+    return id;
   }
-  public void setAdditionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
+  public void setId(String id) {
+    this.id = id;
+  }
+
+  
+  /**
+   * The UI-visible name of the object
+   **/
+  public DialerAttemptLimitsConfigChangeAttemptLimits name(String name) {
+    this.name = name;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The UI-visible name of the object")
+  @JsonProperty("name")
+  public String getName() {
+    return name;
+  }
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  
+  /**
+   * Creation time of the entity
+   **/
+  public DialerAttemptLimitsConfigChangeAttemptLimits dateCreated(Date dateCreated) {
+    this.dateCreated = dateCreated;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Creation time of the entity")
+  @JsonProperty("dateCreated")
+  public Date getDateCreated() {
+    return dateCreated;
+  }
+  public void setDateCreated(Date dateCreated) {
+    this.dateCreated = dateCreated;
+  }
+
+  
+  /**
+   * Last modified time of the entity
+   **/
+  public DialerAttemptLimitsConfigChangeAttemptLimits dateModified(Date dateModified) {
+    this.dateModified = dateModified;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Last modified time of the entity")
+  @JsonProperty("dateModified")
+  public Date getDateModified() {
+    return dateModified;
+  }
+  public void setDateModified(Date dateModified) {
+    this.dateModified = dateModified;
+  }
+
+  
+  /**
+   * Required for updates, must match the version number of the most recent update
+   **/
+  public DialerAttemptLimitsConfigChangeAttemptLimits version(Integer version) {
+    this.version = version;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Required for updates, must match the version number of the most recent update")
+  @JsonProperty("version")
+  public Integer getVersion() {
+    return version;
+  }
+  public void setVersion(Integer version) {
+    this.version = version;
   }
 
   
@@ -301,23 +292,22 @@ public class DialerAttemptLimitsConfigChangeAttemptLimits  implements Serializab
       return false;
     }
     DialerAttemptLimitsConfigChangeAttemptLimits dialerAttemptLimitsConfigChangeAttemptLimits = (DialerAttemptLimitsConfigChangeAttemptLimits) o;
-    return Objects.equals(this.id, dialerAttemptLimitsConfigChangeAttemptLimits.id) &&
-        Objects.equals(this.name, dialerAttemptLimitsConfigChangeAttemptLimits.name) &&
-        Objects.equals(this.dateCreated, dialerAttemptLimitsConfigChangeAttemptLimits.dateCreated) &&
-        Objects.equals(this.dateModified, dialerAttemptLimitsConfigChangeAttemptLimits.dateModified) &&
-        Objects.equals(this.version, dialerAttemptLimitsConfigChangeAttemptLimits.version) &&
-        Objects.equals(this.maxAttemptsPerContact, dialerAttemptLimitsConfigChangeAttemptLimits.maxAttemptsPerContact) &&
+    return Objects.equals(this.maxAttemptsPerContact, dialerAttemptLimitsConfigChangeAttemptLimits.maxAttemptsPerContact) &&
         Objects.equals(this.maxAttemptsPerNumber, dialerAttemptLimitsConfigChangeAttemptLimits.maxAttemptsPerNumber) &&
         Objects.equals(this.timeZoneId, dialerAttemptLimitsConfigChangeAttemptLimits.timeZoneId) &&
         Objects.equals(this.resetPeriod, dialerAttemptLimitsConfigChangeAttemptLimits.resetPeriod) &&
         Objects.equals(this.recallEntries, dialerAttemptLimitsConfigChangeAttemptLimits.recallEntries) &&
         Objects.equals(this.breadthFirstRecalls, dialerAttemptLimitsConfigChangeAttemptLimits.breadthFirstRecalls) &&
-        Objects.equals(this.additionalProperties, dialerAttemptLimitsConfigChangeAttemptLimits.additionalProperties);
+        Objects.equals(this.id, dialerAttemptLimitsConfigChangeAttemptLimits.id) &&
+        Objects.equals(this.name, dialerAttemptLimitsConfigChangeAttemptLimits.name) &&
+        Objects.equals(this.dateCreated, dialerAttemptLimitsConfigChangeAttemptLimits.dateCreated) &&
+        Objects.equals(this.dateModified, dialerAttemptLimitsConfigChangeAttemptLimits.dateModified) &&
+        Objects.equals(this.version, dialerAttemptLimitsConfigChangeAttemptLimits.version);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, maxAttemptsPerContact, maxAttemptsPerNumber, timeZoneId, resetPeriod, recallEntries, breadthFirstRecalls, additionalProperties);
+    return Objects.hash(maxAttemptsPerContact, maxAttemptsPerNumber, timeZoneId, resetPeriod, recallEntries, breadthFirstRecalls, id, name, dateCreated, dateModified, version);
   }
 
   @Override
@@ -325,18 +315,17 @@ public class DialerAttemptLimitsConfigChangeAttemptLimits  implements Serializab
     StringBuilder sb = new StringBuilder();
     sb.append("class DialerAttemptLimitsConfigChangeAttemptLimits {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
-    sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
-    sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    maxAttemptsPerContact: ").append(toIndentedString(maxAttemptsPerContact)).append("\n");
     sb.append("    maxAttemptsPerNumber: ").append(toIndentedString(maxAttemptsPerNumber)).append("\n");
     sb.append("    timeZoneId: ").append(toIndentedString(timeZoneId)).append("\n");
     sb.append("    resetPeriod: ").append(toIndentedString(resetPeriod)).append("\n");
     sb.append("    recallEntries: ").append(toIndentedString(recallEntries)).append("\n");
     sb.append("    breadthFirstRecalls: ").append(toIndentedString(breadthFirstRecalls)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
+    sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
+    sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("}");
     return sb.toString();
   }

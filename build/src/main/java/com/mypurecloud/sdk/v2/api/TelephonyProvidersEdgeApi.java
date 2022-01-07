@@ -41,6 +41,7 @@ import com.mypurecloud.sdk.v2.model.EdgeGroup;
 import com.mypurecloud.sdk.v2.model.EdgeTrunkBase;
 import com.mypurecloud.sdk.v2.model.EdgeGroupEntityListing;
 import com.mypurecloud.sdk.v2.model.EdgeVersionReport;
+import com.mypurecloud.sdk.v2.model.ExpiredEdgeListing;
 import com.mypurecloud.sdk.v2.model.Extension;
 import com.mypurecloud.sdk.v2.model.ExtensionPool;
 import com.mypurecloud.sdk.v2.model.ExtensionPoolEntityListing;
@@ -128,6 +129,7 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesEdgegroupReq
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesEdgegroupEdgetrunkbaseRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesEdgegroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesEdgeversionreportRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesExpiredRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesExtensionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesExtensionpoolRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesExtensionpoolsRequest;
@@ -4193,6 +4195,81 @@ public class TelephonyProvidersEdgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<EdgeVersionReport> response = (ApiResponse<EdgeVersionReport>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * List of edges more than 4 edge versions behind the latest software.
+   * 
+   * @return ExpiredEdgeListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExpiredEdgeListing getTelephonyProvidersEdgesExpired() throws IOException, ApiException {
+    return  getTelephonyProvidersEdgesExpired(createGetTelephonyProvidersEdgesExpiredRequest());
+  }
+
+  /**
+   * List of edges more than 4 edge versions behind the latest software.
+   * 
+   * @return ExpiredEdgeListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExpiredEdgeListing> getTelephonyProvidersEdgesExpiredWithHttpInfo() throws IOException {
+    return getTelephonyProvidersEdgesExpired(createGetTelephonyProvidersEdgesExpiredRequest().withHttpInfo());
+  }
+
+  private GetTelephonyProvidersEdgesExpiredRequest createGetTelephonyProvidersEdgesExpiredRequest() {
+    return GetTelephonyProvidersEdgesExpiredRequest.builder()
+            .build();
+  }
+
+  /**
+   * List of edges more than 4 edge versions behind the latest software.
+   * 
+   * @param request The request object
+   * @return ExpiredEdgeListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExpiredEdgeListing getTelephonyProvidersEdgesExpired(GetTelephonyProvidersEdgesExpiredRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ExpiredEdgeListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExpiredEdgeListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * List of edges more than 4 edge versions behind the latest software.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExpiredEdgeListing> getTelephonyProvidersEdgesExpired(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExpiredEdgeListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExpiredEdgeListing> response = (ApiResponse<ExpiredEdgeListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExpiredEdgeListing> response = (ApiResponse<ExpiredEdgeListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

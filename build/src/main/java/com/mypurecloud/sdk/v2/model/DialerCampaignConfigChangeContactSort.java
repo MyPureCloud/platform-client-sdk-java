@@ -16,8 +16,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * DialerCampaignConfigChangeContactSort
+ * information determining the order in which the contacts will be dialed
  */
+@ApiModel(description = "information determining the order in which the contacts will be dialed")
 
 public class DialerCampaignConfigChangeContactSort  implements Serializable {
   
@@ -71,7 +72,6 @@ public class DialerCampaignConfigChangeContactSort  implements Serializable {
   }
   private DirectionEnum direction = null;
   private Boolean numeric = null;
-  private Object additionalProperties = null;
 
   
   /**
@@ -109,36 +109,20 @@ public class DialerCampaignConfigChangeContactSort  implements Serializable {
 
   
   /**
+   * Whether that column contains numeric data
    **/
   public DialerCampaignConfigChangeContactSort numeric(Boolean numeric) {
     this.numeric = numeric;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Whether that column contains numeric data")
   @JsonProperty("numeric")
   public Boolean getNumeric() {
     return numeric;
   }
   public void setNumeric(Boolean numeric) {
     this.numeric = numeric;
-  }
-
-  
-  /**
-   **/
-  public DialerCampaignConfigChangeContactSort additionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Object getAdditionalProperties() {
-    return additionalProperties;
-  }
-  public void setAdditionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
   }
 
   
@@ -154,13 +138,12 @@ public class DialerCampaignConfigChangeContactSort  implements Serializable {
     DialerCampaignConfigChangeContactSort dialerCampaignConfigChangeContactSort = (DialerCampaignConfigChangeContactSort) o;
     return Objects.equals(this.fieldName, dialerCampaignConfigChangeContactSort.fieldName) &&
         Objects.equals(this.direction, dialerCampaignConfigChangeContactSort.direction) &&
-        Objects.equals(this.numeric, dialerCampaignConfigChangeContactSort.numeric) &&
-        Objects.equals(this.additionalProperties, dialerCampaignConfigChangeContactSort.additionalProperties);
+        Objects.equals(this.numeric, dialerCampaignConfigChangeContactSort.numeric);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(fieldName, direction, numeric, additionalProperties);
+    return Objects.hash(fieldName, direction, numeric);
   }
 
   @Override
@@ -171,7 +154,6 @@ public class DialerCampaignConfigChangeContactSort  implements Serializable {
     sb.append("    fieldName: ").append(toIndentedString(fieldName)).append("\n");
     sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
     sb.append("    numeric: ").append(toIndentedString(numeric)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

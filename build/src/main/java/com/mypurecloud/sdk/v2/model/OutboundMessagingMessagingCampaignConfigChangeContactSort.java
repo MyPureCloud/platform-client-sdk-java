@@ -71,7 +71,6 @@ public class OutboundMessagingMessagingCampaignConfigChangeContactSort  implemen
   }
   private DirectionEnum direction = null;
   private Boolean numeric = null;
-  private Object additionalProperties = null;
 
   
   /**
@@ -109,36 +108,20 @@ public class OutboundMessagingMessagingCampaignConfigChangeContactSort  implemen
 
   
   /**
+   * Whether that column contains numeric data
    **/
   public OutboundMessagingMessagingCampaignConfigChangeContactSort numeric(Boolean numeric) {
     this.numeric = numeric;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Whether that column contains numeric data")
   @JsonProperty("numeric")
   public Boolean getNumeric() {
     return numeric;
   }
   public void setNumeric(Boolean numeric) {
     this.numeric = numeric;
-  }
-
-  
-  /**
-   **/
-  public OutboundMessagingMessagingCampaignConfigChangeContactSort additionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Object getAdditionalProperties() {
-    return additionalProperties;
-  }
-  public void setAdditionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
   }
 
   
@@ -154,13 +137,12 @@ public class OutboundMessagingMessagingCampaignConfigChangeContactSort  implemen
     OutboundMessagingMessagingCampaignConfigChangeContactSort outboundMessagingMessagingCampaignConfigChangeContactSort = (OutboundMessagingMessagingCampaignConfigChangeContactSort) o;
     return Objects.equals(this.fieldName, outboundMessagingMessagingCampaignConfigChangeContactSort.fieldName) &&
         Objects.equals(this.direction, outboundMessagingMessagingCampaignConfigChangeContactSort.direction) &&
-        Objects.equals(this.numeric, outboundMessagingMessagingCampaignConfigChangeContactSort.numeric) &&
-        Objects.equals(this.additionalProperties, outboundMessagingMessagingCampaignConfigChangeContactSort.additionalProperties);
+        Objects.equals(this.numeric, outboundMessagingMessagingCampaignConfigChangeContactSort.numeric);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(fieldName, direction, numeric, additionalProperties);
+    return Objects.hash(fieldName, direction, numeric);
   }
 
   @Override
@@ -171,7 +153,6 @@ public class OutboundMessagingMessagingCampaignConfigChangeContactSort  implemen
     sb.append("    fieldName: ").append(toIndentedString(fieldName)).append("\n");
     sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
     sb.append("    numeric: ").append(toIndentedString(numeric)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

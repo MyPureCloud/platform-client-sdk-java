@@ -30,13 +30,14 @@ public class ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuild
 
   
   /**
+   * The organization's new dependency tracking build status
    **/
   public ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification status(String status) {
     this.status = status;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The organization's new dependency tracking build status")
   @JsonProperty("status")
   public String getStatus() {
     return status;
@@ -81,13 +82,14 @@ public class ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuild
 
   
   /**
+   * The time the last build started, in ISO 8601 format
    **/
   public ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification startTime(Date startTime) {
     this.startTime = startTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The time the last build started, in ISO 8601 format")
   @JsonProperty("startTime")
   public Date getStartTime() {
     return startTime;

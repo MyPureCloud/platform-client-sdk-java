@@ -45,14 +45,14 @@ public class QueueConversationVideoEventTopicMessage  implements Serializable {
     }
   }
   /**
-   * Gets or Sets state
+   * The connection state of this communication.
    */
  @JsonDeserialize(using = StateEnumDeserializer.class)
   public enum StateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    ALERTING("ALERTING"),
-    CONNECTED("CONNECTED"),
-    DISCONNECTED("DISCONNECTED");
+    ALERTING("alerting"),
+    CONNECTED("connected"),
+    DISCONNECTED("disconnected");
 
     private String value;
 
@@ -99,27 +99,27 @@ public class QueueConversationVideoEventTopicMessage  implements Serializable {
     }
   }
   /**
-   * Gets or Sets disconnectType
+   * System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
    */
  @JsonDeserialize(using = DisconnectTypeEnumDeserializer.class)
   public enum DisconnectTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    ENDPOINT("ENDPOINT"),
-    CLIENT("CLIENT"),
-    SYSTEM("SYSTEM"),
-    TIMEOUT("TIMEOUT"),
-    TRANSFER("TRANSFER"),
-    TRANSFER_CONFERENCE("TRANSFER_CONFERENCE"),
-    TRANSFER_CONSULT("TRANSFER_CONSULT"),
-    TRANSFER_FORWARD("TRANSFER_FORWARD"),
-    TRANSFER_NOANSWER("TRANSFER_NOANSWER"),
-    TRANSFER_NOTAVAILABLE("TRANSFER_NOTAVAILABLE"),
-    TRANSPORT_FAILURE("TRANSPORT_FAILURE"),
-    ERROR("ERROR"),
-    PEER("PEER"),
-    OTHER("OTHER"),
-    SPAM("SPAM"),
-    UNCALLABLE("UNCALLABLE");
+    ENDPOINT("endpoint"),
+    CLIENT("client"),
+    SYSTEM("system"),
+    TIMEOUT("timeout"),
+    TRANSFER("transfer"),
+    TRANSFER_CONFERENCE("transfer.conference"),
+    TRANSFER_CONSULT("transfer.consult"),
+    TRANSFER_FORWARD("transfer.forward"),
+    TRANSFER_NOANSWER("transfer.noanswer"),
+    TRANSFER_NOTAVAILABLE("transfer.notavailable"),
+    TRANSPORT_FAILURE("transport.failure"),
+    ERROR("error"),
+    PEER("peer"),
+    OTHER("other"),
+    SPAM("spam"),
+    UNCALLABLE("uncallable");
 
     private String value;
 
@@ -168,24 +168,24 @@ public class QueueConversationVideoEventTopicMessage  implements Serializable {
     }
   }
   /**
-   * Gets or Sets type
+   * Indicates the type of message platform from which the message originated.
    */
  @JsonDeserialize(using = TypeEnumDeserializer.class)
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    UNKNOWN("UNKNOWN"),
-    SMS("SMS"),
-    TWITTER("TWITTER"),
-    FACEBOOK("FACEBOOK"),
-    LINE("LINE"),
-    VIBER("VIBER"),
-    WECHAT("WECHAT"),
-    WHATSAPP("WHATSAPP"),
-    TELEGRAM("TELEGRAM"),
-    KAKAO("KAKAO"),
-    WEBMESSAGING("WEBMESSAGING"),
-    OPEN("OPEN"),
-    INSTAGRAM("INSTAGRAM");
+    UNKNOWN("unknown"),
+    SMS("sms"),
+    TWITTER("twitter"),
+    FACEBOOK("facebook"),
+    LINE("line"),
+    VIBER("viber"),
+    WECHAT("wechat"),
+    WHATSAPP("whatsapp"),
+    TELEGRAM("telegram"),
+    KAKAO("kakao"),
+    WEBMESSAGING("webmessaging"),
+    OPEN("open"),
+    INSTAGRAM("instagram");
 
     private String value;
 
@@ -220,17 +220,17 @@ public class QueueConversationVideoEventTopicMessage  implements Serializable {
   private QueueConversationVideoEventTopicAfterCallWork afterCallWork = null;
   private Boolean afterCallWorkRequired = null;
   private String agentAssistantId = null;
-  private Object additionalProperties = null;
 
   
   /**
+   * A globally unique identifier for this communication.
    **/
   public QueueConversationVideoEventTopicMessage id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A globally unique identifier for this communication.")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -241,13 +241,14 @@ public class QueueConversationVideoEventTopicMessage  implements Serializable {
 
   
   /**
+   * The connection state of this communication.
    **/
   public QueueConversationVideoEventTopicMessage state(StateEnum state) {
     this.state = state;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The connection state of this communication.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
@@ -258,13 +259,14 @@ public class QueueConversationVideoEventTopicMessage  implements Serializable {
 
   
   /**
+   * True if this call is held and the person on this side hears silence.
    **/
   public QueueConversationVideoEventTopicMessage held(Boolean held) {
     this.held = held;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "True if this call is held and the person on this side hears silence.")
   @JsonProperty("held")
   public Boolean getHeld() {
     return held;
@@ -275,13 +277,14 @@ public class QueueConversationVideoEventTopicMessage  implements Serializable {
 
   
   /**
+   * Detailed information about an error response.
    **/
   public QueueConversationVideoEventTopicMessage errorInfo(QueueConversationVideoEventTopicErrorDetails errorInfo) {
     this.errorInfo = errorInfo;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Detailed information about an error response.")
   @JsonProperty("errorInfo")
   public QueueConversationVideoEventTopicErrorDetails getErrorInfo() {
     return errorInfo;
@@ -292,13 +295,14 @@ public class QueueConversationVideoEventTopicMessage  implements Serializable {
 
   
   /**
+   * The source provider of the email.
    **/
   public QueueConversationVideoEventTopicMessage provider(String provider) {
     this.provider = provider;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The source provider of the email.")
   @JsonProperty("provider")
   public String getProvider() {
     return provider;
@@ -309,13 +313,14 @@ public class QueueConversationVideoEventTopicMessage  implements Serializable {
 
   
   /**
+   * The UUID of the script to use.
    **/
   public QueueConversationVideoEventTopicMessage scriptId(String scriptId) {
     this.scriptId = scriptId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The UUID of the script to use.")
   @JsonProperty("scriptId")
   public String getScriptId() {
     return scriptId;
@@ -326,13 +331,14 @@ public class QueueConversationVideoEventTopicMessage  implements Serializable {
 
   
   /**
+   * The id of the peer communication corresponding to a matching leg for this communication.
    **/
   public QueueConversationVideoEventTopicMessage peerId(String peerId) {
     this.peerId = peerId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The id of the peer communication corresponding to a matching leg for this communication.")
   @JsonProperty("peerId")
   public String getPeerId() {
     return peerId;
@@ -343,13 +349,14 @@ public class QueueConversationVideoEventTopicMessage  implements Serializable {
 
   
   /**
+   * System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
    **/
   public QueueConversationVideoEventTopicMessage disconnectType(DisconnectTypeEnum disconnectType) {
     this.disconnectType = disconnectType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.")
   @JsonProperty("disconnectType")
   public DisconnectTypeEnum getDisconnectType() {
     return disconnectType;
@@ -360,13 +367,14 @@ public class QueueConversationVideoEventTopicMessage  implements Serializable {
 
   
   /**
+   * The timestamp the email was placed on hold in the cloud clock if the email is currently on hold.
    **/
   public QueueConversationVideoEventTopicMessage startHoldTime(Date startHoldTime) {
     this.startHoldTime = startHoldTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The timestamp the email was placed on hold in the cloud clock if the email is currently on hold.")
   @JsonProperty("startHoldTime")
   public Date getStartHoldTime() {
     return startHoldTime;
@@ -377,13 +385,14 @@ public class QueueConversationVideoEventTopicMessage  implements Serializable {
 
   
   /**
+   * The timestamp when this communication was connected in the cloud clock.
    **/
   public QueueConversationVideoEventTopicMessage connectedTime(Date connectedTime) {
     this.connectedTime = connectedTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The timestamp when this communication was connected in the cloud clock.")
   @JsonProperty("connectedTime")
   public Date getConnectedTime() {
     return connectedTime;
@@ -394,13 +403,14 @@ public class QueueConversationVideoEventTopicMessage  implements Serializable {
 
   
   /**
+   * The timestamp when this communication disconnected from the conversation in the provider clock.
    **/
   public QueueConversationVideoEventTopicMessage disconnectedTime(Date disconnectedTime) {
     this.disconnectedTime = disconnectedTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The timestamp when this communication disconnected from the conversation in the provider clock.")
   @JsonProperty("disconnectedTime")
   public Date getDisconnectedTime() {
     return disconnectedTime;
@@ -411,13 +421,14 @@ public class QueueConversationVideoEventTopicMessage  implements Serializable {
 
   
   /**
+   * Address and name data for a call endpoint.
    **/
   public QueueConversationVideoEventTopicMessage toAddress(QueueConversationVideoEventTopicAddress toAddress) {
     this.toAddress = toAddress;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Address and name data for a call endpoint.")
   @JsonProperty("toAddress")
   public QueueConversationVideoEventTopicAddress getToAddress() {
     return toAddress;
@@ -428,13 +439,14 @@ public class QueueConversationVideoEventTopicMessage  implements Serializable {
 
   
   /**
+   * Address and name data for a call endpoint.
    **/
   public QueueConversationVideoEventTopicMessage fromAddress(QueueConversationVideoEventTopicAddress fromAddress) {
     this.fromAddress = fromAddress;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Address and name data for a call endpoint.")
   @JsonProperty("fromAddress")
   public QueueConversationVideoEventTopicAddress getFromAddress() {
     return fromAddress;
@@ -445,13 +457,14 @@ public class QueueConversationVideoEventTopicMessage  implements Serializable {
 
   
   /**
+   * The messages sent on this communication channel.
    **/
   public QueueConversationVideoEventTopicMessage messages(List<QueueConversationVideoEventTopicMessageDetails> messages) {
     this.messages = messages;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The messages sent on this communication channel.")
   @JsonProperty("messages")
   public List<QueueConversationVideoEventTopicMessageDetails> getMessages() {
     return messages;
@@ -462,13 +475,14 @@ public class QueueConversationVideoEventTopicMessage  implements Serializable {
 
   
   /**
+   * the messages transcript file uri.
    **/
   public QueueConversationVideoEventTopicMessage messagesTranscriptUri(String messagesTranscriptUri) {
     this.messagesTranscriptUri = messagesTranscriptUri;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "the messages transcript file uri.")
   @JsonProperty("messagesTranscriptUri")
   public String getMessagesTranscriptUri() {
     return messagesTranscriptUri;
@@ -479,13 +493,14 @@ public class QueueConversationVideoEventTopicMessage  implements Serializable {
 
   
   /**
+   * Indicates the type of message platform from which the message originated.
    **/
   public QueueConversationVideoEventTopicMessage type(TypeEnum type) {
     this.type = type;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Indicates the type of message platform from which the message originated.")
   @JsonProperty("type")
   public TypeEnum getType() {
     return type;
@@ -496,13 +511,14 @@ public class QueueConversationVideoEventTopicMessage  implements Serializable {
 
   
   /**
+   * Indicates the country where the recipient is associated in ISO 3166-1 alpha-2 format.
    **/
   public QueueConversationVideoEventTopicMessage recipientCountry(String recipientCountry) {
     this.recipientCountry = recipientCountry;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Indicates the country where the recipient is associated in ISO 3166-1 alpha-2 format.")
   @JsonProperty("recipientCountry")
   public String getRecipientCountry() {
     return recipientCountry;
@@ -513,13 +529,14 @@ public class QueueConversationVideoEventTopicMessage  implements Serializable {
 
   
   /**
+   * The type of the recipient. Eg: Provisioned phoneNumber is the recipient for sms message type.
    **/
   public QueueConversationVideoEventTopicMessage recipientType(String recipientType) {
     this.recipientType = recipientType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The type of the recipient. Eg: Provisioned phoneNumber is the recipient for sms message type.")
   @JsonProperty("recipientType")
   public String getRecipientType() {
     return recipientType;
@@ -530,13 +547,14 @@ public class QueueConversationVideoEventTopicMessage  implements Serializable {
 
   
   /**
+   * A subset of the Journey System's data relevant to a part of a conversation (for external linkage and internal usage/context).
    **/
   public QueueConversationVideoEventTopicMessage journeyContext(QueueConversationVideoEventTopicJourneyContext journeyContext) {
     this.journeyContext = journeyContext;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A subset of the Journey System's data relevant to a part of a conversation (for external linkage and internal usage/context).")
   @JsonProperty("journeyContext")
   public QueueConversationVideoEventTopicJourneyContext getJourneyContext() {
     return journeyContext;
@@ -547,13 +565,14 @@ public class QueueConversationVideoEventTopicMessage  implements Serializable {
 
   
   /**
+   * Call wrap up or disposition data.
    **/
   public QueueConversationVideoEventTopicMessage wrapup(QueueConversationVideoEventTopicWrapup wrapup) {
     this.wrapup = wrapup;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Call wrap up or disposition data.")
   @JsonProperty("wrapup")
   public QueueConversationVideoEventTopicWrapup getWrapup() {
     return wrapup;
@@ -564,13 +583,14 @@ public class QueueConversationVideoEventTopicMessage  implements Serializable {
 
   
   /**
+   * A communication's after-call work data.
    **/
   public QueueConversationVideoEventTopicMessage afterCallWork(QueueConversationVideoEventTopicAfterCallWork afterCallWork) {
     this.afterCallWork = afterCallWork;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A communication's after-call work data.")
   @JsonProperty("afterCallWork")
   public QueueConversationVideoEventTopicAfterCallWork getAfterCallWork() {
     return afterCallWork;
@@ -581,13 +601,14 @@ public class QueueConversationVideoEventTopicMessage  implements Serializable {
 
   
   /**
+   * Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.
    **/
   public QueueConversationVideoEventTopicMessage afterCallWorkRequired(Boolean afterCallWorkRequired) {
     this.afterCallWorkRequired = afterCallWorkRequired;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.")
   @JsonProperty("afterCallWorkRequired")
   public Boolean getAfterCallWorkRequired() {
     return afterCallWorkRequired;
@@ -598,36 +619,20 @@ public class QueueConversationVideoEventTopicMessage  implements Serializable {
 
   
   /**
+   * UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation.
    **/
   public QueueConversationVideoEventTopicMessage agentAssistantId(String agentAssistantId) {
     this.agentAssistantId = agentAssistantId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation.")
   @JsonProperty("agentAssistantId")
   public String getAgentAssistantId() {
     return agentAssistantId;
   }
   public void setAgentAssistantId(String agentAssistantId) {
     this.agentAssistantId = agentAssistantId;
-  }
-
-  
-  /**
-   **/
-  public QueueConversationVideoEventTopicMessage additionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Object getAdditionalProperties() {
-    return additionalProperties;
-  }
-  public void setAdditionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
   }
 
   
@@ -663,13 +668,12 @@ public class QueueConversationVideoEventTopicMessage  implements Serializable {
         Objects.equals(this.wrapup, queueConversationVideoEventTopicMessage.wrapup) &&
         Objects.equals(this.afterCallWork, queueConversationVideoEventTopicMessage.afterCallWork) &&
         Objects.equals(this.afterCallWorkRequired, queueConversationVideoEventTopicMessage.afterCallWorkRequired) &&
-        Objects.equals(this.agentAssistantId, queueConversationVideoEventTopicMessage.agentAssistantId) &&
-        Objects.equals(this.additionalProperties, queueConversationVideoEventTopicMessage.additionalProperties);
+        Objects.equals(this.agentAssistantId, queueConversationVideoEventTopicMessage.agentAssistantId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, held, errorInfo, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, toAddress, fromAddress, messages, messagesTranscriptUri, type, recipientCountry, recipientType, journeyContext, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId, additionalProperties);
+    return Objects.hash(id, state, held, errorInfo, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, toAddress, fromAddress, messages, messagesTranscriptUri, type, recipientCountry, recipientType, journeyContext, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId);
   }
 
   @Override
@@ -700,7 +704,6 @@ public class QueueConversationVideoEventTopicMessage  implements Serializable {
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
     sb.append("    agentAssistantId: ").append(toIndentedString(agentAssistantId)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

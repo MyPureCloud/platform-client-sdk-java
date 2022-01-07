@@ -32,13 +32,14 @@ public class ConversationCallbackEventTopicConversationRoutingData  implements S
 
   
   /**
+   * A UriReference for a resource
    **/
   public ConversationCallbackEventTopicConversationRoutingData queue(ConversationCallbackEventTopicUriReference queue) {
     this.queue = queue;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A UriReference for a resource")
   @JsonProperty("queue")
   public ConversationCallbackEventTopicUriReference getQueue() {
     return queue;
@@ -49,13 +50,14 @@ public class ConversationCallbackEventTopicConversationRoutingData  implements S
 
   
   /**
+   * A UriReference for a resource
    **/
   public ConversationCallbackEventTopicConversationRoutingData language(ConversationCallbackEventTopicUriReference language) {
     this.language = language;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A UriReference for a resource")
   @JsonProperty("language")
   public ConversationCallbackEventTopicUriReference getLanguage() {
     return language;
@@ -66,13 +68,14 @@ public class ConversationCallbackEventTopicConversationRoutingData  implements S
 
   
   /**
+   * The priority of the conversation to use for routing decisions
    **/
   public ConversationCallbackEventTopicConversationRoutingData priority(Integer priority) {
     this.priority = priority;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The priority of the conversation to use for routing decisions")
   @JsonProperty("priority")
   public Integer getPriority() {
     return priority;
@@ -83,13 +86,14 @@ public class ConversationCallbackEventTopicConversationRoutingData  implements S
 
   
   /**
+   * The skills to use for routing decisions
    **/
   public ConversationCallbackEventTopicConversationRoutingData skills(List<ConversationCallbackEventTopicUriReference> skills) {
     this.skills = skills;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The skills to use for routing decisions")
   @JsonProperty("skills")
   public List<ConversationCallbackEventTopicUriReference> getSkills() {
     return skills;
@@ -100,13 +104,14 @@ public class ConversationCallbackEventTopicConversationRoutingData  implements S
 
   
   /**
+   * A collection of agents and their assigned scores for this conversation (0 - 100, higher being better), for use in routing to preferred agents
    **/
   public ConversationCallbackEventTopicConversationRoutingData scoredAgents(List<ConversationCallbackEventTopicScoredAgent> scoredAgents) {
     this.scoredAgents = scoredAgents;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A collection of agents and their assigned scores for this conversation (0 - 100, higher being better), for use in routing to preferred agents")
   @JsonProperty("scoredAgents")
   public List<ConversationCallbackEventTopicScoredAgent> getScoredAgents() {
     return scoredAgents;

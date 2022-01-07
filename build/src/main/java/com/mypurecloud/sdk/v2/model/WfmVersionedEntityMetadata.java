@@ -26,6 +26,8 @@ public class WfmVersionedEntityMetadata  implements Serializable {
   private Integer version = null;
   private UserReference modifiedBy = null;
   private Date dateModified = null;
+  private UserReference createdBy = null;
+  private Date dateCreated = null;
 
   
   /**
@@ -60,6 +62,20 @@ public class WfmVersionedEntityMetadata  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "The user who created the associated entity, if available")
+  @JsonProperty("createdBy")
+  public UserReference getCreatedBy() {
+    return createdBy;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "The date the associated entity was created, if available. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateCreated")
+  public Date getDateCreated() {
+    return dateCreated;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -72,12 +88,14 @@ public class WfmVersionedEntityMetadata  implements Serializable {
     WfmVersionedEntityMetadata wfmVersionedEntityMetadata = (WfmVersionedEntityMetadata) o;
     return Objects.equals(this.version, wfmVersionedEntityMetadata.version) &&
         Objects.equals(this.modifiedBy, wfmVersionedEntityMetadata.modifiedBy) &&
-        Objects.equals(this.dateModified, wfmVersionedEntityMetadata.dateModified);
+        Objects.equals(this.dateModified, wfmVersionedEntityMetadata.dateModified) &&
+        Objects.equals(this.createdBy, wfmVersionedEntityMetadata.createdBy) &&
+        Objects.equals(this.dateCreated, wfmVersionedEntityMetadata.dateCreated);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(version, modifiedBy, dateModified);
+    return Objects.hash(version, modifiedBy, dateModified, createdBy, dateCreated);
   }
 
   @Override
@@ -88,6 +106,8 @@ public class WfmVersionedEntityMetadata  implements Serializable {
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
+    sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
+    sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("}");
     return sb.toString();
   }

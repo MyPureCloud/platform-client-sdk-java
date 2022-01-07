@@ -24,13 +24,13 @@ title: QueueConversationMessageEventTopicMessageDetails
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| QUEUED | &quot;QUEUED&quot; |
-| SENT | &quot;SENT&quot; |
-| FAILED | &quot;FAILED&quot; |
-| RECEIVED | &quot;RECEIVED&quot; |
-| DELIVERY_SUCCESS | &quot;DELIVERY_SUCCESS&quot; |
-| DELIVERY_FAILED | &quot;DELIVERY_FAILED&quot; |
-| READ | &quot;READ&quot; |
+| QUEUED | &quot;queued&quot; |
+| SENT | &quot;sent&quot; |
+| FAILED | &quot;failed&quot; |
+| RECEIVED | &quot;received&quot; |
+| DELIVERY_SUCCESS | &quot;delivery-success&quot; |
+| DELIVERY_FAILED | &quot;delivery-failed&quot; |
+| READ | &quot;read&quot; |
 {: class="table table-striped"}
 
 

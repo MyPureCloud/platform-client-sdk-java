@@ -103,6 +103,7 @@ public class UserQueue  implements Serializable {
   private DomainEntityRef emailInQueueFlow = null;
   private DomainEntityRef messageInQueueFlow = null;
   private DomainEntityRef whisperPrompt = null;
+  private DomainEntityRef onHoldPrompt = null;
   private Boolean enableTranscription = null;
   private Boolean enableManualAssignment = null;
   private String callingPartyName = null;
@@ -430,6 +431,24 @@ public class UserQueue  implements Serializable {
 
   
   /**
+   * The audio to be played when calls on this queue are on hold. If not configured, the default on-hold music will play.
+   **/
+  public UserQueue onHoldPrompt(DomainEntityRef onHoldPrompt) {
+    this.onHoldPrompt = onHoldPrompt;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The audio to be played when calls on this queue are on hold. If not configured, the default on-hold music will play.")
+  @JsonProperty("onHoldPrompt")
+  public DomainEntityRef getOnHoldPrompt() {
+    return onHoldPrompt;
+  }
+  public void setOnHoldPrompt(DomainEntityRef onHoldPrompt) {
+    this.onHoldPrompt = onHoldPrompt;
+  }
+
+  
+  /**
    * Indicates whether voice transcription is enabled for this queue.
    **/
   public UserQueue enableTranscription(Boolean enableTranscription) {
@@ -608,6 +627,7 @@ public class UserQueue  implements Serializable {
         Objects.equals(this.emailInQueueFlow, userQueue.emailInQueueFlow) &&
         Objects.equals(this.messageInQueueFlow, userQueue.messageInQueueFlow) &&
         Objects.equals(this.whisperPrompt, userQueue.whisperPrompt) &&
+        Objects.equals(this.onHoldPrompt, userQueue.onHoldPrompt) &&
         Objects.equals(this.enableTranscription, userQueue.enableTranscription) &&
         Objects.equals(this.enableManualAssignment, userQueue.enableManualAssignment) &&
         Objects.equals(this.callingPartyName, userQueue.callingPartyName) &&
@@ -621,7 +641,7 @@ public class UserQueue  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, userMemberCount, joinedMemberCount, mediaSettings, routingRules, bullseye, acwSettings, skillEvaluationMethod, queueFlow, emailInQueueFlow, messageInQueueFlow, whisperPrompt, enableTranscription, enableManualAssignment, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, joined, selfUri);
+    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, userMemberCount, joinedMemberCount, mediaSettings, routingRules, bullseye, acwSettings, skillEvaluationMethod, queueFlow, emailInQueueFlow, messageInQueueFlow, whisperPrompt, onHoldPrompt, enableTranscription, enableManualAssignment, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, joined, selfUri);
   }
 
   @Override
@@ -649,6 +669,7 @@ public class UserQueue  implements Serializable {
     sb.append("    emailInQueueFlow: ").append(toIndentedString(emailInQueueFlow)).append("\n");
     sb.append("    messageInQueueFlow: ").append(toIndentedString(messageInQueueFlow)).append("\n");
     sb.append("    whisperPrompt: ").append(toIndentedString(whisperPrompt)).append("\n");
+    sb.append("    onHoldPrompt: ").append(toIndentedString(onHoldPrompt)).append("\n");
     sb.append("    enableTranscription: ").append(toIndentedString(enableTranscription)).append("\n");
     sb.append("    enableManualAssignment: ").append(toIndentedString(enableManualAssignment)).append("\n");
     sb.append("    callingPartyName: ").append(toIndentedString(callingPartyName)).append("\n");

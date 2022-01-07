@@ -15,8 +15,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * QueueConversationEventTopicFaxStatus
+ * Extra information on fax transmission.
  */
+@ApiModel(description = "Extra information on fax transmission.")
 
 public class QueueConversationEventTopicFaxStatus  implements Serializable {
   
@@ -31,13 +32,14 @@ public class QueueConversationEventTopicFaxStatus  implements Serializable {
 
   
   /**
+   * The fax direction, either \"send\" or \"receive\".
    **/
   public QueueConversationEventTopicFaxStatus direction(String direction) {
     this.direction = direction;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The fax direction, either \"send\" or \"receive\".")
   @JsonProperty("direction")
   public String getDirection() {
     return direction;
@@ -48,13 +50,14 @@ public class QueueConversationEventTopicFaxStatus  implements Serializable {
 
   
   /**
+   * Total number of expected pages, if known.
    **/
   public QueueConversationEventTopicFaxStatus expectedPages(Integer expectedPages) {
     this.expectedPages = expectedPages;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Total number of expected pages, if known.")
   @JsonProperty("expectedPages")
   public Integer getExpectedPages() {
     return expectedPages;
@@ -65,13 +68,14 @@ public class QueueConversationEventTopicFaxStatus  implements Serializable {
 
   
   /**
+   * Active page of the transmission.
    **/
   public QueueConversationEventTopicFaxStatus activePage(Integer activePage) {
     this.activePage = activePage;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Active page of the transmission.")
   @JsonProperty("activePage")
   public Integer getActivePage() {
     return activePage;
@@ -82,13 +86,14 @@ public class QueueConversationEventTopicFaxStatus  implements Serializable {
 
   
   /**
+   * Number of lines that have completed transmission.
    **/
   public QueueConversationEventTopicFaxStatus linesTransmitted(Integer linesTransmitted) {
     this.linesTransmitted = linesTransmitted;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Number of lines that have completed transmission.")
   @JsonProperty("linesTransmitted")
   public Integer getLinesTransmitted() {
     return linesTransmitted;
@@ -99,13 +104,14 @@ public class QueueConversationEventTopicFaxStatus  implements Serializable {
 
   
   /**
+   * Number of bytes that have competed transmission.
    **/
   public QueueConversationEventTopicFaxStatus bytesTransmitted(Integer bytesTransmitted) {
     this.bytesTransmitted = bytesTransmitted;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Number of bytes that have competed transmission.")
   @JsonProperty("bytesTransmitted")
   public Integer getBytesTransmitted() {
     return bytesTransmitted;
@@ -116,13 +122,14 @@ public class QueueConversationEventTopicFaxStatus  implements Serializable {
 
   
   /**
+   * Current signaling rate of transmission, baud rate.
    **/
   public QueueConversationEventTopicFaxStatus baudRate(Integer baudRate) {
     this.baudRate = baudRate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Current signaling rate of transmission, baud rate.")
   @JsonProperty("baudRate")
   public Integer getBaudRate() {
     return baudRate;
@@ -133,13 +140,14 @@ public class QueueConversationEventTopicFaxStatus  implements Serializable {
 
   
   /**
+   * Number of page errors.
    **/
   public QueueConversationEventTopicFaxStatus pageErrors(Integer pageErrors) {
     this.pageErrors = pageErrors;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Number of page errors.")
   @JsonProperty("pageErrors")
   public Integer getPageErrors() {
     return pageErrors;
@@ -150,13 +158,14 @@ public class QueueConversationEventTopicFaxStatus  implements Serializable {
 
   
   /**
+   * Number of line errors.
    **/
   public QueueConversationEventTopicFaxStatus lineErrors(Integer lineErrors) {
     this.lineErrors = lineErrors;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Number of line errors.")
   @JsonProperty("lineErrors")
   public Integer getLineErrors() {
     return lineErrors;

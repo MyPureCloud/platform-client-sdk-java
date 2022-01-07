@@ -36,7 +36,7 @@ public class DialerRulesetConfigChangeDataActionConditionPredicate  implements S
     }
   }
   /**
-   * Gets or Sets outputOperator
+   * The operation with which to evaluate this condition
    */
  @JsonDeserialize(using = OutputOperatorEnumDeserializer.class)
   public enum OutputOperatorEnum {
@@ -81,17 +81,17 @@ public class DialerRulesetConfigChangeDataActionConditionPredicate  implements S
   private String comparisonValue = null;
   private Boolean outputFieldMissingResolution = null;
   private Boolean inverted = null;
-  private Object additionalProperties = null;
 
   
   /**
+   * The name of an output field from the data action's output to use for this condition
    **/
   public DialerRulesetConfigChangeDataActionConditionPredicate outputField(String outputField) {
     this.outputField = outputField;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The name of an output field from the data action's output to use for this condition")
   @JsonProperty("outputField")
   public String getOutputField() {
     return outputField;
@@ -102,13 +102,14 @@ public class DialerRulesetConfigChangeDataActionConditionPredicate  implements S
 
   
   /**
+   * The operation with which to evaluate this condition
    **/
   public DialerRulesetConfigChangeDataActionConditionPredicate outputOperator(OutputOperatorEnum outputOperator) {
     this.outputOperator = outputOperator;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The operation with which to evaluate this condition")
   @JsonProperty("outputOperator")
   public OutputOperatorEnum getOutputOperator() {
     return outputOperator;
@@ -119,13 +120,14 @@ public class DialerRulesetConfigChangeDataActionConditionPredicate  implements S
 
   
   /**
+   * The value to compare against for this condition
    **/
   public DialerRulesetConfigChangeDataActionConditionPredicate comparisonValue(String comparisonValue) {
     this.comparisonValue = comparisonValue;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The value to compare against for this condition")
   @JsonProperty("comparisonValue")
   public String getComparisonValue() {
     return comparisonValue;
@@ -136,13 +138,14 @@ public class DialerRulesetConfigChangeDataActionConditionPredicate  implements S
 
   
   /**
+   * The result of this predicate if the requested output field is missing from the data action's result
    **/
   public DialerRulesetConfigChangeDataActionConditionPredicate outputFieldMissingResolution(Boolean outputFieldMissingResolution) {
     this.outputFieldMissingResolution = outputFieldMissingResolution;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The result of this predicate if the requested output field is missing from the data action's result")
   @JsonProperty("outputFieldMissingResolution")
   public Boolean getOutputFieldMissingResolution() {
     return outputFieldMissingResolution;
@@ -153,36 +156,20 @@ public class DialerRulesetConfigChangeDataActionConditionPredicate  implements S
 
   
   /**
+   * If true, inverts the result of evaluating this Predicate. Default is false.
    **/
   public DialerRulesetConfigChangeDataActionConditionPredicate inverted(Boolean inverted) {
     this.inverted = inverted;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "If true, inverts the result of evaluating this Predicate. Default is false.")
   @JsonProperty("inverted")
   public Boolean getInverted() {
     return inverted;
   }
   public void setInverted(Boolean inverted) {
     this.inverted = inverted;
-  }
-
-  
-  /**
-   **/
-  public DialerRulesetConfigChangeDataActionConditionPredicate additionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Object getAdditionalProperties() {
-    return additionalProperties;
-  }
-  public void setAdditionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
   }
 
   
@@ -200,13 +187,12 @@ public class DialerRulesetConfigChangeDataActionConditionPredicate  implements S
         Objects.equals(this.outputOperator, dialerRulesetConfigChangeDataActionConditionPredicate.outputOperator) &&
         Objects.equals(this.comparisonValue, dialerRulesetConfigChangeDataActionConditionPredicate.comparisonValue) &&
         Objects.equals(this.outputFieldMissingResolution, dialerRulesetConfigChangeDataActionConditionPredicate.outputFieldMissingResolution) &&
-        Objects.equals(this.inverted, dialerRulesetConfigChangeDataActionConditionPredicate.inverted) &&
-        Objects.equals(this.additionalProperties, dialerRulesetConfigChangeDataActionConditionPredicate.additionalProperties);
+        Objects.equals(this.inverted, dialerRulesetConfigChangeDataActionConditionPredicate.inverted);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(outputField, outputOperator, comparisonValue, outputFieldMissingResolution, inverted, additionalProperties);
+    return Objects.hash(outputField, outputOperator, comparisonValue, outputFieldMissingResolution, inverted);
   }
 
   @Override
@@ -219,7 +205,6 @@ public class DialerRulesetConfigChangeDataActionConditionPredicate  implements S
     sb.append("    comparisonValue: ").append(toIndentedString(comparisonValue)).append("\n");
     sb.append("    outputFieldMissingResolution: ").append(toIndentedString(outputFieldMissingResolution)).append("\n");
     sb.append("    inverted: ").append(toIndentedString(inverted)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

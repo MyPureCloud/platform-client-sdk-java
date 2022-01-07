@@ -40,13 +40,13 @@ public class DialerCampaignRuleConfigChangeCampaignRuleCondition  implements Ser
     }
   }
   /**
-   * Gets or Sets conditionType
+   * The type of this condition
    */
  @JsonDeserialize(using = ConditionTypeEnumDeserializer.class)
   public enum ConditionTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    CAMPAIGN_PROGRESS("CAMPAIGN_PROGRESS"),
-    CAMPAIGN_AGENTS("CAMPAIGN_AGENTS");
+    CAMPAIGNPROGRESS("campaignProgress"),
+    CAMPAIGNAGENTS("campaignAgents");
 
     private String value;
 
@@ -74,17 +74,17 @@ public class DialerCampaignRuleConfigChangeCampaignRuleCondition  implements Ser
     }
   }
   private ConditionTypeEnum conditionType = null;
-  private Object additionalProperties = null;
 
   
   /**
+   * The globally unique identifier for the condition
    **/
   public DialerCampaignRuleConfigChangeCampaignRuleCondition id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The globally unique identifier for the condition")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -95,13 +95,14 @@ public class DialerCampaignRuleConfigChangeCampaignRuleCondition  implements Ser
 
   
   /**
+   * The parameters to match this condition
    **/
   public DialerCampaignRuleConfigChangeCampaignRuleCondition parameters(Map<String, String> parameters) {
     this.parameters = parameters;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The parameters to match this condition")
   @JsonProperty("parameters")
   public Map<String, String> getParameters() {
     return parameters;
@@ -112,36 +113,20 @@ public class DialerCampaignRuleConfigChangeCampaignRuleCondition  implements Ser
 
   
   /**
+   * The type of this condition
    **/
   public DialerCampaignRuleConfigChangeCampaignRuleCondition conditionType(ConditionTypeEnum conditionType) {
     this.conditionType = conditionType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The type of this condition")
   @JsonProperty("conditionType")
   public ConditionTypeEnum getConditionType() {
     return conditionType;
   }
   public void setConditionType(ConditionTypeEnum conditionType) {
     this.conditionType = conditionType;
-  }
-
-  
-  /**
-   **/
-  public DialerCampaignRuleConfigChangeCampaignRuleCondition additionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Object getAdditionalProperties() {
-    return additionalProperties;
-  }
-  public void setAdditionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
   }
 
   
@@ -157,13 +142,12 @@ public class DialerCampaignRuleConfigChangeCampaignRuleCondition  implements Ser
     DialerCampaignRuleConfigChangeCampaignRuleCondition dialerCampaignRuleConfigChangeCampaignRuleCondition = (DialerCampaignRuleConfigChangeCampaignRuleCondition) o;
     return Objects.equals(this.id, dialerCampaignRuleConfigChangeCampaignRuleCondition.id) &&
         Objects.equals(this.parameters, dialerCampaignRuleConfigChangeCampaignRuleCondition.parameters) &&
-        Objects.equals(this.conditionType, dialerCampaignRuleConfigChangeCampaignRuleCondition.conditionType) &&
-        Objects.equals(this.additionalProperties, dialerCampaignRuleConfigChangeCampaignRuleCondition.additionalProperties);
+        Objects.equals(this.conditionType, dialerCampaignRuleConfigChangeCampaignRuleCondition.conditionType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, parameters, conditionType, additionalProperties);
+    return Objects.hash(id, parameters, conditionType);
   }
 
   @Override
@@ -174,7 +158,6 @@ public class DialerCampaignRuleConfigChangeCampaignRuleCondition  implements Ser
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    parameters: ").append(toIndentedString(parameters)).append("\n");
     sb.append("    conditionType: ").append(toIndentedString(conditionType)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

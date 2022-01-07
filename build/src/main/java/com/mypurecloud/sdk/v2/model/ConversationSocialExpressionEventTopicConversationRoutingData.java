@@ -32,13 +32,14 @@ public class ConversationSocialExpressionEventTopicConversationRoutingData  impl
 
   
   /**
+   * A UriReference for a resource
    **/
   public ConversationSocialExpressionEventTopicConversationRoutingData queue(ConversationSocialExpressionEventTopicUriReference queue) {
     this.queue = queue;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A UriReference for a resource")
   @JsonProperty("queue")
   public ConversationSocialExpressionEventTopicUriReference getQueue() {
     return queue;
@@ -49,13 +50,14 @@ public class ConversationSocialExpressionEventTopicConversationRoutingData  impl
 
   
   /**
+   * A UriReference for a resource
    **/
   public ConversationSocialExpressionEventTopicConversationRoutingData language(ConversationSocialExpressionEventTopicUriReference language) {
     this.language = language;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A UriReference for a resource")
   @JsonProperty("language")
   public ConversationSocialExpressionEventTopicUriReference getLanguage() {
     return language;
@@ -66,13 +68,14 @@ public class ConversationSocialExpressionEventTopicConversationRoutingData  impl
 
   
   /**
+   * The priority of the conversation to use for routing decisions
    **/
   public ConversationSocialExpressionEventTopicConversationRoutingData priority(Integer priority) {
     this.priority = priority;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The priority of the conversation to use for routing decisions")
   @JsonProperty("priority")
   public Integer getPriority() {
     return priority;
@@ -83,13 +86,14 @@ public class ConversationSocialExpressionEventTopicConversationRoutingData  impl
 
   
   /**
+   * The skills to use for routing decisions
    **/
   public ConversationSocialExpressionEventTopicConversationRoutingData skills(List<ConversationSocialExpressionEventTopicUriReference> skills) {
     this.skills = skills;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The skills to use for routing decisions")
   @JsonProperty("skills")
   public List<ConversationSocialExpressionEventTopicUriReference> getSkills() {
     return skills;
@@ -100,13 +104,14 @@ public class ConversationSocialExpressionEventTopicConversationRoutingData  impl
 
   
   /**
+   * A collection of agents and their assigned scores for this conversation (0 - 100, higher being better), for use in routing to preferred agents
    **/
   public ConversationSocialExpressionEventTopicConversationRoutingData scoredAgents(List<ConversationSocialExpressionEventTopicScoredAgent> scoredAgents) {
     this.scoredAgents = scoredAgents;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A collection of agents and their assigned scores for this conversation (0 - 100, higher being better), for use in routing to preferred agents")
   @JsonProperty("scoredAgents")
   public List<ConversationSocialExpressionEventTopicScoredAgent> getScoredAgents() {
     return scoredAgents;

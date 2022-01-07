@@ -22,7 +22,6 @@ public class QueueConversationSocialExpressionEventTopicPhoneNumberColumn  imple
   
   private String columnName = null;
   private String type = null;
-  private Object additionalProperties = null;
 
   
   /**
@@ -59,23 +58,6 @@ public class QueueConversationSocialExpressionEventTopicPhoneNumberColumn  imple
   }
 
   
-  /**
-   **/
-  public QueueConversationSocialExpressionEventTopicPhoneNumberColumn additionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Object getAdditionalProperties() {
-    return additionalProperties;
-  }
-  public void setAdditionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
-  }
-
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -87,13 +69,12 @@ public class QueueConversationSocialExpressionEventTopicPhoneNumberColumn  imple
     }
     QueueConversationSocialExpressionEventTopicPhoneNumberColumn queueConversationSocialExpressionEventTopicPhoneNumberColumn = (QueueConversationSocialExpressionEventTopicPhoneNumberColumn) o;
     return Objects.equals(this.columnName, queueConversationSocialExpressionEventTopicPhoneNumberColumn.columnName) &&
-        Objects.equals(this.type, queueConversationSocialExpressionEventTopicPhoneNumberColumn.type) &&
-        Objects.equals(this.additionalProperties, queueConversationSocialExpressionEventTopicPhoneNumberColumn.additionalProperties);
+        Objects.equals(this.type, queueConversationSocialExpressionEventTopicPhoneNumberColumn.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(columnName, type, additionalProperties);
+    return Objects.hash(columnName, type);
   }
 
   @Override
@@ -103,7 +84,6 @@ public class QueueConversationSocialExpressionEventTopicPhoneNumberColumn  imple
     
     sb.append("    columnName: ").append(toIndentedString(columnName)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

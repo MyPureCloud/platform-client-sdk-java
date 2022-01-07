@@ -15,8 +15,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * ArchitectFlowOutcomeNotificationClient
+ * The client who initiated the change.
  */
+@ApiModel(description = "The client who initiated the change.")
 
 public class ArchitectFlowOutcomeNotificationClient  implements Serializable {
   
@@ -25,13 +26,14 @@ public class ArchitectFlowOutcomeNotificationClient  implements Serializable {
 
   
   /**
+   * The ID of the client.
    **/
   public ArchitectFlowOutcomeNotificationClient id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The ID of the client.")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -42,13 +44,14 @@ public class ArchitectFlowOutcomeNotificationClient  implements Serializable {
 
   
   /**
+   * The name of the client, if available.
    **/
   public ArchitectFlowOutcomeNotificationClient name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The name of the client, if available.")
   @JsonProperty("name")
   public String getName() {
     return name;

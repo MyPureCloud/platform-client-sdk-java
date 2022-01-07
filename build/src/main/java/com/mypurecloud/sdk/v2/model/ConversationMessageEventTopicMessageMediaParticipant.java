@@ -297,19 +297,19 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
  @JsonDeserialize(using = TypeEnumDeserializer.class)
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    UNKNOWN("UNKNOWN"),
-    SMS("SMS"),
-    TWITTER("TWITTER"),
-    FACEBOOK("FACEBOOK"),
-    LINE("LINE"),
-    VIBER("VIBER"),
-    WECHAT("WECHAT"),
-    WHATSAPP("WHATSAPP"),
-    TELEGRAM("TELEGRAM"),
-    KAKAO("KAKAO"),
-    WEBMESSAGING("WEBMESSAGING"),
-    OPEN("OPEN"),
-    INSTAGRAM("INSTAGRAM");
+    UNKNOWN("unknown"),
+    SMS("sms"),
+    TWITTER("twitter"),
+    FACEBOOK("facebook"),
+    LINE("line"),
+    VIBER("viber"),
+    WECHAT("wechat"),
+    WHATSAPP("whatsapp"),
+    TELEGRAM("telegram"),
+    KAKAO("kakao"),
+    WEBMESSAGING("webmessaging"),
+    OPEN("open"),
+    INSTAGRAM("instagram");
 
     private String value;
 

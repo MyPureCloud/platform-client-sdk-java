@@ -36,7 +36,7 @@ public class AgentActivityChangedTopicRoutingStatus  implements Serializable {
     }
   }
   /**
-   * Gets or Sets status
+   * Indicates the Routing State of the agent.
    */
  @JsonDeserialize(using = StatusEnumDeserializer.class)
   public enum StatusEnum {
@@ -77,13 +77,14 @@ public class AgentActivityChangedTopicRoutingStatus  implements Serializable {
 
   
   /**
+   * Indicates the Routing State of the agent.
    **/
   public AgentActivityChangedTopicRoutingStatus status(StatusEnum status) {
     this.status = status;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Indicates the Routing State of the agent.")
   @JsonProperty("status")
   public StatusEnum getStatus() {
     return status;
@@ -94,13 +95,14 @@ public class AgentActivityChangedTopicRoutingStatus  implements Serializable {
 
   
   /**
+   * The timestamp when the agent went into this state.
    **/
   public AgentActivityChangedTopicRoutingStatus startTime(Date startTime) {
     this.startTime = startTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The timestamp when the agent went into this state.")
   @JsonProperty("startTime")
   public Date getStartTime() {
     return startTime;

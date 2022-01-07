@@ -27,11 +27,6 @@ import java.io.Serializable;
 
 public class DialerContactlistConfigChangeContactList  implements Serializable {
   
-  private String id = null;
-  private String name = null;
-  private Date dateCreated = null;
-  private Date dateModified = null;
-  private Integer version = null;
   private List<String> columnNames = new ArrayList<String>();
   private List<DialerContactlistConfigChangeContactPhoneNumberColumn> phoneColumns = new ArrayList<DialerContactlistConfigChangeContactPhoneNumberColumn>();
   private List<DialerContactlistConfigChangeEmailColumn> emailColumns = new ArrayList<DialerContactlistConfigChangeEmailColumn>();
@@ -43,102 +38,22 @@ public class DialerContactlistConfigChangeContactList  implements Serializable {
   private Boolean automaticTimeZoneMapping = null;
   private String zipCodeColumnName = null;
   private DialerContactlistConfigChangeUriReference division = null;
-  private Object additionalProperties = null;
+  private String id = null;
+  private String name = null;
+  private Date dateCreated = null;
+  private Date dateModified = null;
+  private Integer version = null;
 
   
   /**
-   **/
-  public DialerContactlistConfigChangeContactList id(String id) {
-    this.id = id;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("id")
-  public String getId() {
-    return id;
-  }
-  public void setId(String id) {
-    this.id = id;
-  }
-
-  
-  /**
-   **/
-  public DialerContactlistConfigChangeContactList name(String name) {
-    this.name = name;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("name")
-  public String getName() {
-    return name;
-  }
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  
-  /**
-   **/
-  public DialerContactlistConfigChangeContactList dateCreated(Date dateCreated) {
-    this.dateCreated = dateCreated;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("dateCreated")
-  public Date getDateCreated() {
-    return dateCreated;
-  }
-  public void setDateCreated(Date dateCreated) {
-    this.dateCreated = dateCreated;
-  }
-
-  
-  /**
-   **/
-  public DialerContactlistConfigChangeContactList dateModified(Date dateModified) {
-    this.dateModified = dateModified;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("dateModified")
-  public Date getDateModified() {
-    return dateModified;
-  }
-  public void setDateModified(Date dateModified) {
-    this.dateModified = dateModified;
-  }
-
-  
-  /**
-   **/
-  public DialerContactlistConfigChangeContactList version(Integer version) {
-    this.version = version;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("version")
-  public Integer getVersion() {
-    return version;
-  }
-  public void setVersion(Integer version) {
-    this.version = version;
-  }
-
-  
-  /**
+   * the contact column names
    **/
   public DialerContactlistConfigChangeContactList columnNames(List<String> columnNames) {
     this.columnNames = columnNames;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "the contact column names")
   @JsonProperty("columnNames")
   public List<String> getColumnNames() {
     return columnNames;
@@ -149,13 +64,14 @@ public class DialerContactlistConfigChangeContactList  implements Serializable {
 
   
   /**
+   * the columns containing phone numbers
    **/
   public DialerContactlistConfigChangeContactList phoneColumns(List<DialerContactlistConfigChangeContactPhoneNumberColumn> phoneColumns) {
     this.phoneColumns = phoneColumns;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "the columns containing phone numbers")
   @JsonProperty("phoneColumns")
   public List<DialerContactlistConfigChangeContactPhoneNumberColumn> getPhoneColumns() {
     return phoneColumns;
@@ -166,13 +82,14 @@ public class DialerContactlistConfigChangeContactList  implements Serializable {
 
   
   /**
+   * the columns containing email addresses
    **/
   public DialerContactlistConfigChangeContactList emailColumns(List<DialerContactlistConfigChangeEmailColumn> emailColumns) {
     this.emailColumns = emailColumns;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "the columns containing email addresses")
   @JsonProperty("emailColumns")
   public List<DialerContactlistConfigChangeEmailColumn> getEmailColumns() {
     return emailColumns;
@@ -200,13 +117,14 @@ public class DialerContactlistConfigChangeContactList  implements Serializable {
 
   
   /**
+   * the name of the column that holds the indicators for contacts that are to be dialed in preview mode only
    **/
   public DialerContactlistConfigChangeContactList previewModeColumnName(String previewModeColumnName) {
     this.previewModeColumnName = previewModeColumnName;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "the name of the column that holds the indicators for contacts that are to be dialed in preview mode only")
   @JsonProperty("previewModeColumnName")
   public String getPreviewModeColumnName() {
     return previewModeColumnName;
@@ -217,13 +135,14 @@ public class DialerContactlistConfigChangeContactList  implements Serializable {
 
   
   /**
+   * list of user-defined values indicating the contact is to be dialed in preview mode only
    **/
   public DialerContactlistConfigChangeContactList previewModeAcceptedValues(List<String> previewModeAcceptedValues) {
     this.previewModeAcceptedValues = previewModeAcceptedValues;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "list of user-defined values indicating the contact is to be dialed in preview mode only")
   @JsonProperty("previewModeAcceptedValues")
   public List<String> getPreviewModeAcceptedValues() {
     return previewModeAcceptedValues;
@@ -234,13 +153,14 @@ public class DialerContactlistConfigChangeContactList  implements Serializable {
 
   
   /**
+   * the number of contacts in the contact list
    **/
   public DialerContactlistConfigChangeContactList size(Integer size) {
     this.size = size;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "the number of contacts in the contact list")
   @JsonProperty("size")
   public Integer getSize() {
     return size;
@@ -268,13 +188,14 @@ public class DialerContactlistConfigChangeContactList  implements Serializable {
 
   
   /**
+   * whether or not automatic time zone mapping is enabled on the list
    **/
   public DialerContactlistConfigChangeContactList automaticTimeZoneMapping(Boolean automaticTimeZoneMapping) {
     this.automaticTimeZoneMapping = automaticTimeZoneMapping;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "whether or not automatic time zone mapping is enabled on the list")
   @JsonProperty("automaticTimeZoneMapping")
   public Boolean getAutomaticTimeZoneMapping() {
     return automaticTimeZoneMapping;
@@ -285,13 +206,14 @@ public class DialerContactlistConfigChangeContactList  implements Serializable {
 
   
   /**
+   * zip code column from the contact list to be used optionally with automatic time zone mapping
    **/
   public DialerContactlistConfigChangeContactList zipCodeColumnName(String zipCodeColumnName) {
     this.zipCodeColumnName = zipCodeColumnName;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "zip code column from the contact list to be used optionally with automatic time zone mapping")
   @JsonProperty("zipCodeColumnName")
   public String getZipCodeColumnName() {
     return zipCodeColumnName;
@@ -302,13 +224,14 @@ public class DialerContactlistConfigChangeContactList  implements Serializable {
 
   
   /**
+   * A UriReference for a resource
    **/
   public DialerContactlistConfigChangeContactList division(DialerContactlistConfigChangeUriReference division) {
     this.division = division;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A UriReference for a resource")
   @JsonProperty("division")
   public DialerContactlistConfigChangeUriReference getDivision() {
     return division;
@@ -319,19 +242,92 @@ public class DialerContactlistConfigChangeContactList  implements Serializable {
 
   
   /**
+   * The globally unique identifier for the object.
    **/
-  public DialerContactlistConfigChangeContactList additionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
+  public DialerContactlistConfigChangeContactList id(String id) {
+    this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Object getAdditionalProperties() {
-    return additionalProperties;
+  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
+  @JsonProperty("id")
+  public String getId() {
+    return id;
   }
-  public void setAdditionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
+  public void setId(String id) {
+    this.id = id;
+  }
+
+  
+  /**
+   * The UI-visible name of the object
+   **/
+  public DialerContactlistConfigChangeContactList name(String name) {
+    this.name = name;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The UI-visible name of the object")
+  @JsonProperty("name")
+  public String getName() {
+    return name;
+  }
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  
+  /**
+   * Creation time of the entity
+   **/
+  public DialerContactlistConfigChangeContactList dateCreated(Date dateCreated) {
+    this.dateCreated = dateCreated;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Creation time of the entity")
+  @JsonProperty("dateCreated")
+  public Date getDateCreated() {
+    return dateCreated;
+  }
+  public void setDateCreated(Date dateCreated) {
+    this.dateCreated = dateCreated;
+  }
+
+  
+  /**
+   * Last modified time of the entity
+   **/
+  public DialerContactlistConfigChangeContactList dateModified(Date dateModified) {
+    this.dateModified = dateModified;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Last modified time of the entity")
+  @JsonProperty("dateModified")
+  public Date getDateModified() {
+    return dateModified;
+  }
+  public void setDateModified(Date dateModified) {
+    this.dateModified = dateModified;
+  }
+
+  
+  /**
+   * Required for updates, must match the version number of the most recent update
+   **/
+  public DialerContactlistConfigChangeContactList version(Integer version) {
+    this.version = version;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Required for updates, must match the version number of the most recent update")
+  @JsonProperty("version")
+  public Integer getVersion() {
+    return version;
+  }
+  public void setVersion(Integer version) {
+    this.version = version;
   }
 
   
@@ -345,12 +341,7 @@ public class DialerContactlistConfigChangeContactList  implements Serializable {
       return false;
     }
     DialerContactlistConfigChangeContactList dialerContactlistConfigChangeContactList = (DialerContactlistConfigChangeContactList) o;
-    return Objects.equals(this.id, dialerContactlistConfigChangeContactList.id) &&
-        Objects.equals(this.name, dialerContactlistConfigChangeContactList.name) &&
-        Objects.equals(this.dateCreated, dialerContactlistConfigChangeContactList.dateCreated) &&
-        Objects.equals(this.dateModified, dialerContactlistConfigChangeContactList.dateModified) &&
-        Objects.equals(this.version, dialerContactlistConfigChangeContactList.version) &&
-        Objects.equals(this.columnNames, dialerContactlistConfigChangeContactList.columnNames) &&
+    return Objects.equals(this.columnNames, dialerContactlistConfigChangeContactList.columnNames) &&
         Objects.equals(this.phoneColumns, dialerContactlistConfigChangeContactList.phoneColumns) &&
         Objects.equals(this.emailColumns, dialerContactlistConfigChangeContactList.emailColumns) &&
         Objects.equals(this.importStatus, dialerContactlistConfigChangeContactList.importStatus) &&
@@ -361,12 +352,16 @@ public class DialerContactlistConfigChangeContactList  implements Serializable {
         Objects.equals(this.automaticTimeZoneMapping, dialerContactlistConfigChangeContactList.automaticTimeZoneMapping) &&
         Objects.equals(this.zipCodeColumnName, dialerContactlistConfigChangeContactList.zipCodeColumnName) &&
         Objects.equals(this.division, dialerContactlistConfigChangeContactList.division) &&
-        Objects.equals(this.additionalProperties, dialerContactlistConfigChangeContactList.additionalProperties);
+        Objects.equals(this.id, dialerContactlistConfigChangeContactList.id) &&
+        Objects.equals(this.name, dialerContactlistConfigChangeContactList.name) &&
+        Objects.equals(this.dateCreated, dialerContactlistConfigChangeContactList.dateCreated) &&
+        Objects.equals(this.dateModified, dialerContactlistConfigChangeContactList.dateModified) &&
+        Objects.equals(this.version, dialerContactlistConfigChangeContactList.version);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, columnNames, phoneColumns, emailColumns, importStatus, previewModeColumnName, previewModeAcceptedValues, size, attemptLimits, automaticTimeZoneMapping, zipCodeColumnName, division, additionalProperties);
+    return Objects.hash(columnNames, phoneColumns, emailColumns, importStatus, previewModeColumnName, previewModeAcceptedValues, size, attemptLimits, automaticTimeZoneMapping, zipCodeColumnName, division, id, name, dateCreated, dateModified, version);
   }
 
   @Override
@@ -374,11 +369,6 @@ public class DialerContactlistConfigChangeContactList  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class DialerContactlistConfigChangeContactList {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
-    sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
-    sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    columnNames: ").append(toIndentedString(columnNames)).append("\n");
     sb.append("    phoneColumns: ").append(toIndentedString(phoneColumns)).append("\n");
     sb.append("    emailColumns: ").append(toIndentedString(emailColumns)).append("\n");
@@ -390,7 +380,11 @@ public class DialerContactlistConfigChangeContactList  implements Serializable {
     sb.append("    automaticTimeZoneMapping: ").append(toIndentedString(automaticTimeZoneMapping)).append("\n");
     sb.append("    zipCodeColumnName: ").append(toIndentedString(zipCodeColumnName)).append("\n");
     sb.append("    division: ").append(toIndentedString(division)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
+    sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
+    sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("}");
     return sb.toString();
   }

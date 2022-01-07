@@ -40,6 +40,7 @@ title: Miner
 | EN_IN | &quot;en-in&quot; |
 | EN_ZA | &quot;en-za&quot; |
 | ES_US | &quot;es-us&quot; |
+| ES_ES | &quot;es-es&quot; |
 {: class="table table-striped"}
 
 

@@ -23,17 +23,17 @@ public class DialerCallabletimesetConfigChangeTimeSlot  implements Serializable 
   private String startTime = null;
   private String stopTime = null;
   private Integer day = null;
-  private Object additionalProperties = null;
 
   
   /**
+   * The start time of this time slot
    **/
   public DialerCallabletimesetConfigChangeTimeSlot startTime(String startTime) {
     this.startTime = startTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The start time of this time slot")
   @JsonProperty("startTime")
   public String getStartTime() {
     return startTime;
@@ -44,13 +44,14 @@ public class DialerCallabletimesetConfigChangeTimeSlot  implements Serializable 
 
   
   /**
+   * The stop time of this time slot
    **/
   public DialerCallabletimesetConfigChangeTimeSlot stopTime(String stopTime) {
     this.stopTime = stopTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The stop time of this time slot")
   @JsonProperty("stopTime")
   public String getStopTime() {
     return stopTime;
@@ -61,36 +62,20 @@ public class DialerCallabletimesetConfigChangeTimeSlot  implements Serializable 
 
   
   /**
+   * The day this time slot applies
    **/
   public DialerCallabletimesetConfigChangeTimeSlot day(Integer day) {
     this.day = day;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The day this time slot applies")
   @JsonProperty("day")
   public Integer getDay() {
     return day;
   }
   public void setDay(Integer day) {
     this.day = day;
-  }
-
-  
-  /**
-   **/
-  public DialerCallabletimesetConfigChangeTimeSlot additionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Object getAdditionalProperties() {
-    return additionalProperties;
-  }
-  public void setAdditionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
   }
 
   
@@ -106,13 +91,12 @@ public class DialerCallabletimesetConfigChangeTimeSlot  implements Serializable 
     DialerCallabletimesetConfigChangeTimeSlot dialerCallabletimesetConfigChangeTimeSlot = (DialerCallabletimesetConfigChangeTimeSlot) o;
     return Objects.equals(this.startTime, dialerCallabletimesetConfigChangeTimeSlot.startTime) &&
         Objects.equals(this.stopTime, dialerCallabletimesetConfigChangeTimeSlot.stopTime) &&
-        Objects.equals(this.day, dialerCallabletimesetConfigChangeTimeSlot.day) &&
-        Objects.equals(this.additionalProperties, dialerCallabletimesetConfigChangeTimeSlot.additionalProperties);
+        Objects.equals(this.day, dialerCallabletimesetConfigChangeTimeSlot.day);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(startTime, stopTime, day, additionalProperties);
+    return Objects.hash(startTime, stopTime, day);
   }
 
   @Override
@@ -123,7 +107,6 @@ public class DialerCallabletimesetConfigChangeTimeSlot  implements Serializable 
     sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
     sb.append("    stopTime: ").append(toIndentedString(stopTime)).append("\n");
     sb.append("    day: ").append(toIndentedString(day)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

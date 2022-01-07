@@ -38,19 +38,19 @@ public class QueueConversationVideoEventTopicSocialExpression  implements Serial
     }
   }
   /**
-   * Gets or Sets state
+   * The connection state of this communication.
    */
  @JsonDeserialize(using = StateEnumDeserializer.class)
   public enum StateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    ALERTING("ALERTING"),
-    DIALING("DIALING"),
-    CONTACTING("CONTACTING"),
-    OFFERING("OFFERING"),
-    CONNECTED("CONNECTED"),
-    DISCONNECTED("DISCONNECTED"),
-    TERMINATED("TERMINATED"),
-    NONE("NONE");
+    ALERTING("alerting"),
+    DIALING("dialing"),
+    CONTACTING("contacting"),
+    OFFERING("offering"),
+    CONNECTED("connected"),
+    DISCONNECTED("disconnected"),
+    TERMINATED("terminated"),
+    NONE("none");
 
     private String value;
 
@@ -102,27 +102,27 @@ public class QueueConversationVideoEventTopicSocialExpression  implements Serial
     }
   }
   /**
-   * Gets or Sets disconnectType
+   * System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
    */
  @JsonDeserialize(using = DisconnectTypeEnumDeserializer.class)
   public enum DisconnectTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    ENDPOINT("ENDPOINT"),
-    CLIENT("CLIENT"),
-    SYSTEM("SYSTEM"),
-    TIMEOUT("TIMEOUT"),
-    TRANSFER("TRANSFER"),
-    TRANSFER_CONFERENCE("TRANSFER_CONFERENCE"),
-    TRANSFER_CONSULT("TRANSFER_CONSULT"),
-    TRANSFER_FORWARD("TRANSFER_FORWARD"),
-    TRANSFER_NOANSWER("TRANSFER_NOANSWER"),
-    TRANSFER_NOTAVAILABLE("TRANSFER_NOTAVAILABLE"),
-    TRANSPORT_FAILURE("TRANSPORT_FAILURE"),
-    ERROR("ERROR"),
-    PEER("PEER"),
-    OTHER("OTHER"),
-    SPAM("SPAM"),
-    UNCALLABLE("UNCALLABLE");
+    ENDPOINT("endpoint"),
+    CLIENT("client"),
+    SYSTEM("system"),
+    TIMEOUT("timeout"),
+    TRANSFER("transfer"),
+    TRANSFER_CONFERENCE("transfer.conference"),
+    TRANSFER_CONSULT("transfer.consult"),
+    TRANSFER_FORWARD("transfer.forward"),
+    TRANSFER_NOANSWER("transfer.noanswer"),
+    TRANSFER_NOTAVAILABLE("transfer.notavailable"),
+    TRANSPORT_FAILURE("transport.failure"),
+    ERROR("error"),
+    PEER("peer"),
+    OTHER("other"),
+    SPAM("spam"),
+    UNCALLABLE("uncallable");
 
     private String value;
 
@@ -156,17 +156,17 @@ public class QueueConversationVideoEventTopicSocialExpression  implements Serial
   private QueueConversationVideoEventTopicWrapup wrapup = null;
   private QueueConversationVideoEventTopicAfterCallWork afterCallWork = null;
   private Boolean afterCallWorkRequired = null;
-  private Object additionalProperties = null;
 
   
   /**
+   * The connection state of this communication.
    **/
   public QueueConversationVideoEventTopicSocialExpression state(StateEnum state) {
     this.state = state;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The connection state of this communication.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
@@ -177,13 +177,14 @@ public class QueueConversationVideoEventTopicSocialExpression  implements Serial
 
   
   /**
+   * A globally unique identifier for this communication.
    **/
   public QueueConversationVideoEventTopicSocialExpression id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A globally unique identifier for this communication.")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -194,13 +195,14 @@ public class QueueConversationVideoEventTopicSocialExpression  implements Serial
 
   
   /**
+   * A globally unique identifier for the social media.
    **/
   public QueueConversationVideoEventTopicSocialExpression socialMediaId(String socialMediaId) {
     this.socialMediaId = socialMediaId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A globally unique identifier for the social media.")
   @JsonProperty("socialMediaId")
   public String getSocialMediaId() {
     return socialMediaId;
@@ -211,13 +213,14 @@ public class QueueConversationVideoEventTopicSocialExpression  implements Serial
 
   
   /**
+   * The social network of the communication
    **/
   public QueueConversationVideoEventTopicSocialExpression socialMediaHub(String socialMediaHub) {
     this.socialMediaHub = socialMediaHub;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The social network of the communication")
   @JsonProperty("socialMediaHub")
   public String getSocialMediaHub() {
     return socialMediaHub;
@@ -228,13 +231,14 @@ public class QueueConversationVideoEventTopicSocialExpression  implements Serial
 
   
   /**
+   * The social media user name of the communication
    **/
   public QueueConversationVideoEventTopicSocialExpression socialUserName(String socialUserName) {
     this.socialUserName = socialUserName;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The social media user name of the communication")
   @JsonProperty("socialUserName")
   public String getSocialUserName() {
     return socialUserName;
@@ -245,13 +249,14 @@ public class QueueConversationVideoEventTopicSocialExpression  implements Serial
 
   
   /**
+   * The text preview of the communication contents
    **/
   public QueueConversationVideoEventTopicSocialExpression previewText(String previewText) {
     this.previewText = previewText;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The text preview of the communication contents")
   @JsonProperty("previewText")
   public String getPreviewText() {
     return previewText;
@@ -262,13 +267,14 @@ public class QueueConversationVideoEventTopicSocialExpression  implements Serial
 
   
   /**
+   * A globally unique identifier for the recording associated with this chat.
    **/
   public QueueConversationVideoEventTopicSocialExpression recordingId(String recordingId) {
     this.recordingId = recordingId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A globally unique identifier for the recording associated with this chat.")
   @JsonProperty("recordingId")
   public String getRecordingId() {
     return recordingId;
@@ -279,13 +285,14 @@ public class QueueConversationVideoEventTopicSocialExpression  implements Serial
 
   
   /**
+   * True if this call is held and the person on this side hears silence.
    **/
   public QueueConversationVideoEventTopicSocialExpression held(Boolean held) {
     this.held = held;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "True if this call is held and the person on this side hears silence.")
   @JsonProperty("held")
   public Boolean getHeld() {
     return held;
@@ -296,13 +303,14 @@ public class QueueConversationVideoEventTopicSocialExpression  implements Serial
 
   
   /**
+   * The source provider of the social expression.
    **/
   public QueueConversationVideoEventTopicSocialExpression provider(String provider) {
     this.provider = provider;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The source provider of the social expression.")
   @JsonProperty("provider")
   public String getProvider() {
     return provider;
@@ -313,13 +321,14 @@ public class QueueConversationVideoEventTopicSocialExpression  implements Serial
 
   
   /**
+   * The UUID of the script to use.
    **/
   public QueueConversationVideoEventTopicSocialExpression scriptId(String scriptId) {
     this.scriptId = scriptId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The UUID of the script to use.")
   @JsonProperty("scriptId")
   public String getScriptId() {
     return scriptId;
@@ -330,13 +339,14 @@ public class QueueConversationVideoEventTopicSocialExpression  implements Serial
 
   
   /**
+   * The id of the peer communication corresponding to a matching leg for this communication.
    **/
   public QueueConversationVideoEventTopicSocialExpression peerId(String peerId) {
     this.peerId = peerId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The id of the peer communication corresponding to a matching leg for this communication.")
   @JsonProperty("peerId")
   public String getPeerId() {
     return peerId;
@@ -347,13 +357,14 @@ public class QueueConversationVideoEventTopicSocialExpression  implements Serial
 
   
   /**
+   * System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
    **/
   public QueueConversationVideoEventTopicSocialExpression disconnectType(DisconnectTypeEnum disconnectType) {
     this.disconnectType = disconnectType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.")
   @JsonProperty("disconnectType")
   public DisconnectTypeEnum getDisconnectType() {
     return disconnectType;
@@ -364,13 +375,14 @@ public class QueueConversationVideoEventTopicSocialExpression  implements Serial
 
   
   /**
+   * The timestamp the chat was placed on hold in the cloud clock if the chat is currently on hold.
    **/
   public QueueConversationVideoEventTopicSocialExpression startHoldTime(Date startHoldTime) {
     this.startHoldTime = startHoldTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The timestamp the chat was placed on hold in the cloud clock if the chat is currently on hold.")
   @JsonProperty("startHoldTime")
   public Date getStartHoldTime() {
     return startHoldTime;
@@ -381,13 +393,14 @@ public class QueueConversationVideoEventTopicSocialExpression  implements Serial
 
   
   /**
+   * The timestamp when this communication was connected in the cloud clock.
    **/
   public QueueConversationVideoEventTopicSocialExpression connectedTime(Date connectedTime) {
     this.connectedTime = connectedTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The timestamp when this communication was connected in the cloud clock.")
   @JsonProperty("connectedTime")
   public Date getConnectedTime() {
     return connectedTime;
@@ -398,13 +411,14 @@ public class QueueConversationVideoEventTopicSocialExpression  implements Serial
 
   
   /**
+   * The timestamp when this communication disconnected from the conversation in the provider clock.
    **/
   public QueueConversationVideoEventTopicSocialExpression disconnectedTime(Date disconnectedTime) {
     this.disconnectedTime = disconnectedTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The timestamp when this communication disconnected from the conversation in the provider clock.")
   @JsonProperty("disconnectedTime")
   public Date getDisconnectedTime() {
     return disconnectedTime;
@@ -415,13 +429,14 @@ public class QueueConversationVideoEventTopicSocialExpression  implements Serial
 
   
   /**
+   * Call wrap up or disposition data.
    **/
   public QueueConversationVideoEventTopicSocialExpression wrapup(QueueConversationVideoEventTopicWrapup wrapup) {
     this.wrapup = wrapup;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Call wrap up or disposition data.")
   @JsonProperty("wrapup")
   public QueueConversationVideoEventTopicWrapup getWrapup() {
     return wrapup;
@@ -432,13 +447,14 @@ public class QueueConversationVideoEventTopicSocialExpression  implements Serial
 
   
   /**
+   * A communication's after-call work data.
    **/
   public QueueConversationVideoEventTopicSocialExpression afterCallWork(QueueConversationVideoEventTopicAfterCallWork afterCallWork) {
     this.afterCallWork = afterCallWork;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A communication's after-call work data.")
   @JsonProperty("afterCallWork")
   public QueueConversationVideoEventTopicAfterCallWork getAfterCallWork() {
     return afterCallWork;
@@ -449,36 +465,20 @@ public class QueueConversationVideoEventTopicSocialExpression  implements Serial
 
   
   /**
+   * Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.
    **/
   public QueueConversationVideoEventTopicSocialExpression afterCallWorkRequired(Boolean afterCallWorkRequired) {
     this.afterCallWorkRequired = afterCallWorkRequired;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.")
   @JsonProperty("afterCallWorkRequired")
   public Boolean getAfterCallWorkRequired() {
     return afterCallWorkRequired;
   }
   public void setAfterCallWorkRequired(Boolean afterCallWorkRequired) {
     this.afterCallWorkRequired = afterCallWorkRequired;
-  }
-
-  
-  /**
-   **/
-  public QueueConversationVideoEventTopicSocialExpression additionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Object getAdditionalProperties() {
-    return additionalProperties;
-  }
-  public void setAdditionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
   }
 
   
@@ -509,13 +509,12 @@ public class QueueConversationVideoEventTopicSocialExpression  implements Serial
         Objects.equals(this.disconnectedTime, queueConversationVideoEventTopicSocialExpression.disconnectedTime) &&
         Objects.equals(this.wrapup, queueConversationVideoEventTopicSocialExpression.wrapup) &&
         Objects.equals(this.afterCallWork, queueConversationVideoEventTopicSocialExpression.afterCallWork) &&
-        Objects.equals(this.afterCallWorkRequired, queueConversationVideoEventTopicSocialExpression.afterCallWorkRequired) &&
-        Objects.equals(this.additionalProperties, queueConversationVideoEventTopicSocialExpression.additionalProperties);
+        Objects.equals(this.afterCallWorkRequired, queueConversationVideoEventTopicSocialExpression.afterCallWorkRequired);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, socialMediaId, socialMediaHub, socialUserName, previewText, recordingId, held, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, wrapup, afterCallWork, afterCallWorkRequired, additionalProperties);
+    return Objects.hash(state, id, socialMediaId, socialMediaHub, socialUserName, previewText, recordingId, held, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, wrapup, afterCallWork, afterCallWorkRequired);
   }
 
   @Override
@@ -541,7 +540,6 @@ public class QueueConversationVideoEventTopicSocialExpression  implements Serial
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

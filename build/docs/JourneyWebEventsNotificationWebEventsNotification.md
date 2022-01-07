@@ -14,8 +14,8 @@ title: JourneyWebEventsNotificationWebEventsNotification
 | **createdDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **customerId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **customerIdType** | <!----><!---->**String**<!----> |  |  [optional] |
-| **eventType** | [**EventTypeEnum**](#EventTypeEnum)<!----> |  |  [optional] |
 | **session** | <!----><!---->[**JourneyWebEventsNotificationSession**](JourneyWebEventsNotificationSession.html)<!----> |  |  [optional] |
+| **eventType** | [**EventTypeEnum**](#EventTypeEnum)<!----> |  |  [optional] |
 | **webEvent** | <!----><!---->[**JourneyWebEventsNotificationWebMessage**](JourneyWebEventsNotificationWebMessage.html)<!----> |  |  [optional] |
 | **webActionEvent** | <!----><!---->[**JourneyWebEventsNotificationWebActionMessage**](JourneyWebEventsNotificationWebActionMessage.html)<!----> |  |  [optional] |
 | **outcomeAchievedEvent** | <!----><!---->[**JourneyWebEventsNotificationOutcomeAchievedMessage**](JourneyWebEventsNotificationOutcomeAchievedMessage.html)<!----> |  |  [optional] |
@@ -32,8 +32,6 @@ title: JourneyWebEventsNotificationWebEventsNotification
 | WEBEVENT | &quot;WebEvent&quot; |
 | WEBACTIONEVENT | &quot;WebActionEvent&quot; |
 | OUTCOMEACHIEVEDEVENT | &quot;OutcomeAchievedEvent&quot; |
-| BLOCKEDWEBACTIONOFFEREVENT | &quot;BlockedWebActionOfferEvent&quot; |
-| OUTCOMEATTRIBUTIONEVENT | &quot;OutcomeAttributionEvent&quot; |
 {: class="table table-striped"}
 
 

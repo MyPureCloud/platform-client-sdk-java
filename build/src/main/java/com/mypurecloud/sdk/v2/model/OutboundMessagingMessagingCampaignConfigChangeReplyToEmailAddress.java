@@ -16,8 +16,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress
+ * An outbound-messaging messaging campaign email address
  */
+@ApiModel(description = "An outbound-messaging messaging campaign email address")
 
 public class OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress  implements Serializable {
   
@@ -26,13 +27,14 @@ public class OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress  
 
   
   /**
+   * A UriReference for a resource
    **/
   public OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress domain(OutboundMessagingMessagingCampaignConfigChangeUriReference domain) {
     this.domain = domain;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A UriReference for a resource")
   @JsonProperty("domain")
   public OutboundMessagingMessagingCampaignConfigChangeUriReference getDomain() {
     return domain;
@@ -43,13 +45,14 @@ public class OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress  
 
   
   /**
+   * A UriReference for a resource
    **/
   public OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress route(OutboundMessagingMessagingCampaignConfigChangeUriReference route) {
     this.route = route;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A UriReference for a resource")
   @JsonProperty("route")
   public OutboundMessagingMessagingCampaignConfigChangeUriReference getRoute() {
     return route;

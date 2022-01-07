@@ -22,17 +22,17 @@ public class DialerRulesetConfigChangeContactColumnToDataActionFieldMapping  imp
   
   private String contactColumnName = null;
   private String dataActionField = null;
-  private Object additionalProperties = null;
 
   
   /**
+   * The name of a contact column whose data will be passed to the data action
    **/
   public DialerRulesetConfigChangeContactColumnToDataActionFieldMapping contactColumnName(String contactColumnName) {
     this.contactColumnName = contactColumnName;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The name of a contact column whose data will be passed to the data action")
   @JsonProperty("contactColumnName")
   public String getContactColumnName() {
     return contactColumnName;
@@ -43,36 +43,20 @@ public class DialerRulesetConfigChangeContactColumnToDataActionFieldMapping  imp
 
   
   /**
+   * The name of an output field from the data action that the contact column data will be passed to
    **/
   public DialerRulesetConfigChangeContactColumnToDataActionFieldMapping dataActionField(String dataActionField) {
     this.dataActionField = dataActionField;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The name of an output field from the data action that the contact column data will be passed to")
   @JsonProperty("dataActionField")
   public String getDataActionField() {
     return dataActionField;
   }
   public void setDataActionField(String dataActionField) {
     this.dataActionField = dataActionField;
-  }
-
-  
-  /**
-   **/
-  public DialerRulesetConfigChangeContactColumnToDataActionFieldMapping additionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Object getAdditionalProperties() {
-    return additionalProperties;
-  }
-  public void setAdditionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
   }
 
   
@@ -87,13 +71,12 @@ public class DialerRulesetConfigChangeContactColumnToDataActionFieldMapping  imp
     }
     DialerRulesetConfigChangeContactColumnToDataActionFieldMapping dialerRulesetConfigChangeContactColumnToDataActionFieldMapping = (DialerRulesetConfigChangeContactColumnToDataActionFieldMapping) o;
     return Objects.equals(this.contactColumnName, dialerRulesetConfigChangeContactColumnToDataActionFieldMapping.contactColumnName) &&
-        Objects.equals(this.dataActionField, dialerRulesetConfigChangeContactColumnToDataActionFieldMapping.dataActionField) &&
-        Objects.equals(this.additionalProperties, dialerRulesetConfigChangeContactColumnToDataActionFieldMapping.additionalProperties);
+        Objects.equals(this.dataActionField, dialerRulesetConfigChangeContactColumnToDataActionFieldMapping.dataActionField);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(contactColumnName, dataActionField, additionalProperties);
+    return Objects.hash(contactColumnName, dataActionField);
   }
 
   @Override
@@ -103,7 +86,6 @@ public class DialerRulesetConfigChangeContactColumnToDataActionFieldMapping  imp
     
     sb.append("    contactColumnName: ").append(toIndentedString(contactColumnName)).append("\n");
     sb.append("    dataActionField: ").append(toIndentedString(dataActionField)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

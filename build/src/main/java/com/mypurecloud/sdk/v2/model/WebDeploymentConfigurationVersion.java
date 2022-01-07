@@ -16,6 +16,7 @@ import com.mypurecloud.sdk.v2.model.AuthenticationSettings;
 import com.mypurecloud.sdk.v2.model.CobrowseSettings;
 import com.mypurecloud.sdk.v2.model.JourneyEventsSettings;
 import com.mypurecloud.sdk.v2.model.MessengerSettings;
+import com.mypurecloud.sdk.v2.model.SupportCenterSettings;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -37,6 +38,7 @@ public class WebDeploymentConfigurationVersion  implements Serializable {
   private List<String> languages = new ArrayList<String>();
   private String defaultLanguage = null;
   private MessengerSettings messenger = null;
+  private SupportCenterSettings supportCenter = null;
   private CobrowseSettings cobrowse = null;
   private JourneyEventsSettings journeyEvents = null;
   private AuthenticationSettings authenticationSettings = null;
@@ -205,6 +207,24 @@ public class WebDeploymentConfigurationVersion  implements Serializable {
 
   
   /**
+   * The settings for support center
+   **/
+  public WebDeploymentConfigurationVersion supportCenter(SupportCenterSettings supportCenter) {
+    this.supportCenter = supportCenter;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The settings for support center")
+  @JsonProperty("supportCenter")
+  public SupportCenterSettings getSupportCenter() {
+    return supportCenter;
+  }
+  public void setSupportCenter(SupportCenterSettings supportCenter) {
+    this.supportCenter = supportCenter;
+  }
+
+  
+  /**
    * The settings for cobrowse
    **/
   public WebDeploymentConfigurationVersion cobrowse(CobrowseSettings cobrowse) {
@@ -342,6 +362,7 @@ public class WebDeploymentConfigurationVersion  implements Serializable {
         Objects.equals(this.languages, webDeploymentConfigurationVersion.languages) &&
         Objects.equals(this.defaultLanguage, webDeploymentConfigurationVersion.defaultLanguage) &&
         Objects.equals(this.messenger, webDeploymentConfigurationVersion.messenger) &&
+        Objects.equals(this.supportCenter, webDeploymentConfigurationVersion.supportCenter) &&
         Objects.equals(this.cobrowse, webDeploymentConfigurationVersion.cobrowse) &&
         Objects.equals(this.journeyEvents, webDeploymentConfigurationVersion.journeyEvents) &&
         Objects.equals(this.authenticationSettings, webDeploymentConfigurationVersion.authenticationSettings) &&
@@ -357,7 +378,7 @@ public class WebDeploymentConfigurationVersion  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, version, description, languages, defaultLanguage, messenger, cobrowse, journeyEvents, authenticationSettings, dateCreated, dateModified, datePublished, lastModifiedUser, createdUser, publishedUser, status, selfUri);
+    return Objects.hash(id, name, version, description, languages, defaultLanguage, messenger, supportCenter, cobrowse, journeyEvents, authenticationSettings, dateCreated, dateModified, datePublished, lastModifiedUser, createdUser, publishedUser, status, selfUri);
   }
 
   @Override
@@ -372,6 +393,7 @@ public class WebDeploymentConfigurationVersion  implements Serializable {
     sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
     sb.append("    defaultLanguage: ").append(toIndentedString(defaultLanguage)).append("\n");
     sb.append("    messenger: ").append(toIndentedString(messenger)).append("\n");
+    sb.append("    supportCenter: ").append(toIndentedString(supportCenter)).append("\n");
     sb.append("    cobrowse: ").append(toIndentedString(cobrowse)).append("\n");
     sb.append("    journeyEvents: ").append(toIndentedString(journeyEvents)).append("\n");
     sb.append("    authenticationSettings: ").append(toIndentedString(authenticationSettings)).append("\n");

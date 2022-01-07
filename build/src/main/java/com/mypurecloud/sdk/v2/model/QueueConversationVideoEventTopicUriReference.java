@@ -15,8 +15,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * QueueConversationVideoEventTopicUriReference
+ * A UriReference for a resource
  */
+@ApiModel(description = "A UriReference for a resource")
 
 public class QueueConversationVideoEventTopicUriReference  implements Serializable {
   
@@ -25,13 +26,14 @@ public class QueueConversationVideoEventTopicUriReference  implements Serializab
 
   
   /**
+   * The ID of the resource
    **/
   public QueueConversationVideoEventTopicUriReference id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The ID of the resource")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -42,13 +44,14 @@ public class QueueConversationVideoEventTopicUriReference  implements Serializab
 
   
   /**
+   * The name of the resource
    **/
   public QueueConversationVideoEventTopicUriReference name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The name of the resource")
   @JsonProperty("name")
   public String getName() {
     return name;

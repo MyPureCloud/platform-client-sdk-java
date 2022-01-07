@@ -54,6 +54,7 @@ title: AuditQueryService
 | MESSAGING | &quot;Messaging&quot; |
 | SUPPORTABILITY | &quot;Supportability&quot; |
 | CALLBACK | &quot;Callback&quot; |
+| WORKITEMS | &quot;Workitems&quot; |
 {: class="table table-striped"}
 
 

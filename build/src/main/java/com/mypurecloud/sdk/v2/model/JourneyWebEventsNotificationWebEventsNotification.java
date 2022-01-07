@@ -33,6 +33,7 @@ public class JourneyWebEventsNotificationWebEventsNotification  implements Seria
   private Date createdDate = null;
   private String customerId = null;
   private String customerIdType = null;
+  private JourneyWebEventsNotificationSession session = null;
 
   private static class EventTypeEnumDeserializer extends StdDeserializer<EventTypeEnum> {
     public EventTypeEnumDeserializer() {
@@ -54,9 +55,7 @@ public class JourneyWebEventsNotificationWebEventsNotification  implements Seria
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     WEBEVENT("WebEvent"),
     WEBACTIONEVENT("WebActionEvent"),
-    OUTCOMEACHIEVEDEVENT("OutcomeAchievedEvent"),
-    BLOCKEDWEBACTIONOFFEREVENT("BlockedWebActionOfferEvent"),
-    OUTCOMEATTRIBUTIONEVENT("OutcomeAttributionEvent");
+    OUTCOMEACHIEVEDEVENT("OutcomeAchievedEvent");
 
     private String value;
 
@@ -84,7 +83,6 @@ public class JourneyWebEventsNotificationWebEventsNotification  implements Seria
     }
   }
   private EventTypeEnum eventType = null;
-  private JourneyWebEventsNotificationSession session = null;
   private JourneyWebEventsNotificationWebMessage webEvent = null;
   private JourneyWebEventsNotificationWebActionMessage webActionEvent = null;
   private JourneyWebEventsNotificationOutcomeAchievedMessage outcomeAchievedEvent = null;
@@ -194,23 +192,6 @@ public class JourneyWebEventsNotificationWebEventsNotification  implements Seria
   
   /**
    **/
-  public JourneyWebEventsNotificationWebEventsNotification eventType(EventTypeEnum eventType) {
-    this.eventType = eventType;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("eventType")
-  public EventTypeEnum getEventType() {
-    return eventType;
-  }
-  public void setEventType(EventTypeEnum eventType) {
-    this.eventType = eventType;
-  }
-
-  
-  /**
-   **/
   public JourneyWebEventsNotificationWebEventsNotification session(JourneyWebEventsNotificationSession session) {
     this.session = session;
     return this;
@@ -223,6 +204,23 @@ public class JourneyWebEventsNotificationWebEventsNotification  implements Seria
   }
   public void setSession(JourneyWebEventsNotificationSession session) {
     this.session = session;
+  }
+
+  
+  /**
+   **/
+  public JourneyWebEventsNotificationWebEventsNotification eventType(EventTypeEnum eventType) {
+    this.eventType = eventType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("eventType")
+  public EventTypeEnum getEventType() {
+    return eventType;
+  }
+  public void setEventType(EventTypeEnum eventType) {
+    this.eventType = eventType;
   }
 
   
@@ -293,8 +291,8 @@ public class JourneyWebEventsNotificationWebEventsNotification  implements Seria
         Objects.equals(this.createdDate, journeyWebEventsNotificationWebEventsNotification.createdDate) &&
         Objects.equals(this.customerId, journeyWebEventsNotificationWebEventsNotification.customerId) &&
         Objects.equals(this.customerIdType, journeyWebEventsNotificationWebEventsNotification.customerIdType) &&
-        Objects.equals(this.eventType, journeyWebEventsNotificationWebEventsNotification.eventType) &&
         Objects.equals(this.session, journeyWebEventsNotificationWebEventsNotification.session) &&
+        Objects.equals(this.eventType, journeyWebEventsNotificationWebEventsNotification.eventType) &&
         Objects.equals(this.webEvent, journeyWebEventsNotificationWebEventsNotification.webEvent) &&
         Objects.equals(this.webActionEvent, journeyWebEventsNotificationWebEventsNotification.webActionEvent) &&
         Objects.equals(this.outcomeAchievedEvent, journeyWebEventsNotificationWebEventsNotification.outcomeAchievedEvent);
@@ -302,7 +300,7 @@ public class JourneyWebEventsNotificationWebEventsNotification  implements Seria
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, correlationId, externalContact, createdDate, customerId, customerIdType, eventType, session, webEvent, webActionEvent, outcomeAchievedEvent);
+    return Objects.hash(id, correlationId, externalContact, createdDate, customerId, customerIdType, session, eventType, webEvent, webActionEvent, outcomeAchievedEvent);
   }
 
   @Override
@@ -316,8 +314,8 @@ public class JourneyWebEventsNotificationWebEventsNotification  implements Seria
     sb.append("    createdDate: ").append(toIndentedString(createdDate)).append("\n");
     sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
     sb.append("    customerIdType: ").append(toIndentedString(customerIdType)).append("\n");
-    sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
     sb.append("    session: ").append(toIndentedString(session)).append("\n");
+    sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
     sb.append("    webEvent: ").append(toIndentedString(webEvent)).append("\n");
     sb.append("    webActionEvent: ").append(toIndentedString(webActionEvent)).append("\n");
     sb.append("    outcomeAchievedEvent: ").append(toIndentedString(outcomeAchievedEvent)).append("\n");

@@ -22,7 +22,6 @@ public class UserRoutingStatusUserParam  implements Serializable {
   
   private String key = null;
   private String value = null;
-  private Object additionalProperties = null;
 
   
   /**
@@ -59,23 +58,6 @@ public class UserRoutingStatusUserParam  implements Serializable {
   }
 
   
-  /**
-   **/
-  public UserRoutingStatusUserParam additionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Object getAdditionalProperties() {
-    return additionalProperties;
-  }
-  public void setAdditionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
-  }
-
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -87,13 +69,12 @@ public class UserRoutingStatusUserParam  implements Serializable {
     }
     UserRoutingStatusUserParam userRoutingStatusUserParam = (UserRoutingStatusUserParam) o;
     return Objects.equals(this.key, userRoutingStatusUserParam.key) &&
-        Objects.equals(this.value, userRoutingStatusUserParam.value) &&
-        Objects.equals(this.additionalProperties, userRoutingStatusUserParam.additionalProperties);
+        Objects.equals(this.value, userRoutingStatusUserParam.value);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(key, value, additionalProperties);
+    return Objects.hash(key, value);
   }
 
   @Override
@@ -103,7 +84,6 @@ public class UserRoutingStatusUserParam  implements Serializable {
     
     sb.append("    key: ").append(toIndentedString(key)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

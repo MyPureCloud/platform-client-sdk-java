@@ -38,19 +38,19 @@ public class ConversationEventTopicSocialExpression  implements Serializable {
     }
   }
   /**
-   * Gets or Sets state
+   * The connection state of this communication.
    */
  @JsonDeserialize(using = StateEnumDeserializer.class)
   public enum StateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    ALERTING("ALERTING"),
-    DIALING("DIALING"),
-    CONTACTING("CONTACTING"),
-    OFFERING("OFFERING"),
-    CONNECTED("CONNECTED"),
-    DISCONNECTED("DISCONNECTED"),
-    TERMINATED("TERMINATED"),
-    NONE("NONE");
+    ALERTING("alerting"),
+    DIALING("dialing"),
+    CONTACTING("contacting"),
+    OFFERING("offering"),
+    CONNECTED("connected"),
+    DISCONNECTED("disconnected"),
+    TERMINATED("terminated"),
+    NONE("none");
 
     private String value;
 
@@ -102,27 +102,27 @@ public class ConversationEventTopicSocialExpression  implements Serializable {
     }
   }
   /**
-   * Gets or Sets disconnectType
+   * System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
    */
  @JsonDeserialize(using = DisconnectTypeEnumDeserializer.class)
   public enum DisconnectTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    ENDPOINT("ENDPOINT"),
-    CLIENT("CLIENT"),
-    SYSTEM("SYSTEM"),
-    TIMEOUT("TIMEOUT"),
-    TRANSFER("TRANSFER"),
-    TRANSFER_CONFERENCE("TRANSFER_CONFERENCE"),
-    TRANSFER_CONSULT("TRANSFER_CONSULT"),
-    TRANSFER_FORWARD("TRANSFER_FORWARD"),
-    TRANSFER_NOANSWER("TRANSFER_NOANSWER"),
-    TRANSFER_NOTAVAILABLE("TRANSFER_NOTAVAILABLE"),
-    TRANSPORT_FAILURE("TRANSPORT_FAILURE"),
-    ERROR("ERROR"),
-    PEER("PEER"),
-    OTHER("OTHER"),
-    SPAM("SPAM"),
-    UNCALLABLE("UNCALLABLE");
+    ENDPOINT("endpoint"),
+    CLIENT("client"),
+    SYSTEM("system"),
+    TIMEOUT("timeout"),
+    TRANSFER("transfer"),
+    TRANSFER_CONFERENCE("transfer.conference"),
+    TRANSFER_CONSULT("transfer.consult"),
+    TRANSFER_FORWARD("transfer.forward"),
+    TRANSFER_NOANSWER("transfer.noanswer"),
+    TRANSFER_NOTAVAILABLE("transfer.notavailable"),
+    TRANSPORT_FAILURE("transport.failure"),
+    ERROR("error"),
+    PEER("peer"),
+    OTHER("other"),
+    SPAM("spam"),
+    UNCALLABLE("uncallable");
 
     private String value;
 
@@ -156,17 +156,17 @@ public class ConversationEventTopicSocialExpression  implements Serializable {
   private ConversationEventTopicWrapup wrapup = null;
   private ConversationEventTopicAfterCallWork afterCallWork = null;
   private Boolean afterCallWorkRequired = null;
-  private Object additionalProperties = null;
 
   
   /**
+   * The connection state of this communication.
    **/
   public ConversationEventTopicSocialExpression state(StateEnum state) {
     this.state = state;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The connection state of this communication.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
@@ -177,13 +177,14 @@ public class ConversationEventTopicSocialExpression  implements Serializable {
 
   
   /**
+   * A globally unique identifier for this communication.
    **/
   public ConversationEventTopicSocialExpression id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A globally unique identifier for this communication.")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -194,13 +195,14 @@ public class ConversationEventTopicSocialExpression  implements Serializable {
 
   
   /**
+   * A globally unique identifier for the social media.
    **/
   public ConversationEventTopicSocialExpression socialMediaId(String socialMediaId) {
     this.socialMediaId = socialMediaId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A globally unique identifier for the social media.")
   @JsonProperty("socialMediaId")
   public String getSocialMediaId() {
     return socialMediaId;
@@ -211,13 +213,14 @@ public class ConversationEventTopicSocialExpression  implements Serializable {
 
   
   /**
+   * The social network of the communication
    **/
   public ConversationEventTopicSocialExpression socialMediaHub(String socialMediaHub) {
     this.socialMediaHub = socialMediaHub;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The social network of the communication")
   @JsonProperty("socialMediaHub")
   public String getSocialMediaHub() {
     return socialMediaHub;
@@ -228,13 +231,14 @@ public class ConversationEventTopicSocialExpression  implements Serializable {
 
   
   /**
+   * The social media user name of the communication
    **/
   public ConversationEventTopicSocialExpression socialUserName(String socialUserName) {
     this.socialUserName = socialUserName;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The social media user name of the communication")
   @JsonProperty("socialUserName")
   public String getSocialUserName() {
     return socialUserName;
@@ -245,13 +249,14 @@ public class ConversationEventTopicSocialExpression  implements Serializable {
 
   
   /**
+   * The text preview of the communication contents
    **/
   public ConversationEventTopicSocialExpression previewText(String previewText) {
     this.previewText = previewText;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The text preview of the communication contents")
   @JsonProperty("previewText")
   public String getPreviewText() {
     return previewText;
@@ -262,13 +267,14 @@ public class ConversationEventTopicSocialExpression  implements Serializable {
 
   
   /**
+   * A globally unique identifier for the recording associated with this chat.
    **/
   public ConversationEventTopicSocialExpression recordingId(String recordingId) {
     this.recordingId = recordingId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A globally unique identifier for the recording associated with this chat.")
   @JsonProperty("recordingId")
   public String getRecordingId() {
     return recordingId;
@@ -279,13 +285,14 @@ public class ConversationEventTopicSocialExpression  implements Serializable {
 
   
   /**
+   * True if this call is held and the person on this side hears silence.
    **/
   public ConversationEventTopicSocialExpression held(Boolean held) {
     this.held = held;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "True if this call is held and the person on this side hears silence.")
   @JsonProperty("held")
   public Boolean getHeld() {
     return held;
@@ -296,13 +303,14 @@ public class ConversationEventTopicSocialExpression  implements Serializable {
 
   
   /**
+   * The source provider of the social expression.
    **/
   public ConversationEventTopicSocialExpression provider(String provider) {
     this.provider = provider;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The source provider of the social expression.")
   @JsonProperty("provider")
   public String getProvider() {
     return provider;
@@ -313,13 +321,14 @@ public class ConversationEventTopicSocialExpression  implements Serializable {
 
   
   /**
+   * The UUID of the script to use.
    **/
   public ConversationEventTopicSocialExpression scriptId(String scriptId) {
     this.scriptId = scriptId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The UUID of the script to use.")
   @JsonProperty("scriptId")
   public String getScriptId() {
     return scriptId;
@@ -330,13 +339,14 @@ public class ConversationEventTopicSocialExpression  implements Serializable {
 
   
   /**
+   * The id of the peer communication corresponding to a matching leg for this communication.
    **/
   public ConversationEventTopicSocialExpression peerId(String peerId) {
     this.peerId = peerId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The id of the peer communication corresponding to a matching leg for this communication.")
   @JsonProperty("peerId")
   public String getPeerId() {
     return peerId;
@@ -347,13 +357,14 @@ public class ConversationEventTopicSocialExpression  implements Serializable {
 
   
   /**
+   * System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
    **/
   public ConversationEventTopicSocialExpression disconnectType(DisconnectTypeEnum disconnectType) {
     this.disconnectType = disconnectType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.")
   @JsonProperty("disconnectType")
   public DisconnectTypeEnum getDisconnectType() {
     return disconnectType;
@@ -364,13 +375,14 @@ public class ConversationEventTopicSocialExpression  implements Serializable {
 
   
   /**
+   * The timestamp the chat was placed on hold in the cloud clock if the chat is currently on hold.
    **/
   public ConversationEventTopicSocialExpression startHoldTime(Date startHoldTime) {
     this.startHoldTime = startHoldTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The timestamp the chat was placed on hold in the cloud clock if the chat is currently on hold.")
   @JsonProperty("startHoldTime")
   public Date getStartHoldTime() {
     return startHoldTime;
@@ -381,13 +393,14 @@ public class ConversationEventTopicSocialExpression  implements Serializable {
 
   
   /**
+   * The timestamp when this communication was connected in the cloud clock.
    **/
   public ConversationEventTopicSocialExpression connectedTime(Date connectedTime) {
     this.connectedTime = connectedTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The timestamp when this communication was connected in the cloud clock.")
   @JsonProperty("connectedTime")
   public Date getConnectedTime() {
     return connectedTime;
@@ -398,13 +411,14 @@ public class ConversationEventTopicSocialExpression  implements Serializable {
 
   
   /**
+   * The timestamp when this communication disconnected from the conversation in the provider clock.
    **/
   public ConversationEventTopicSocialExpression disconnectedTime(Date disconnectedTime) {
     this.disconnectedTime = disconnectedTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The timestamp when this communication disconnected from the conversation in the provider clock.")
   @JsonProperty("disconnectedTime")
   public Date getDisconnectedTime() {
     return disconnectedTime;
@@ -415,13 +429,14 @@ public class ConversationEventTopicSocialExpression  implements Serializable {
 
   
   /**
+   * Call wrap up or disposition data.
    **/
   public ConversationEventTopicSocialExpression wrapup(ConversationEventTopicWrapup wrapup) {
     this.wrapup = wrapup;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Call wrap up or disposition data.")
   @JsonProperty("wrapup")
   public ConversationEventTopicWrapup getWrapup() {
     return wrapup;
@@ -432,13 +447,14 @@ public class ConversationEventTopicSocialExpression  implements Serializable {
 
   
   /**
+   * A communication's after-call work data.
    **/
   public ConversationEventTopicSocialExpression afterCallWork(ConversationEventTopicAfterCallWork afterCallWork) {
     this.afterCallWork = afterCallWork;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A communication's after-call work data.")
   @JsonProperty("afterCallWork")
   public ConversationEventTopicAfterCallWork getAfterCallWork() {
     return afterCallWork;
@@ -449,36 +465,20 @@ public class ConversationEventTopicSocialExpression  implements Serializable {
 
   
   /**
+   * Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.
    **/
   public ConversationEventTopicSocialExpression afterCallWorkRequired(Boolean afterCallWorkRequired) {
     this.afterCallWorkRequired = afterCallWorkRequired;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested.")
   @JsonProperty("afterCallWorkRequired")
   public Boolean getAfterCallWorkRequired() {
     return afterCallWorkRequired;
   }
   public void setAfterCallWorkRequired(Boolean afterCallWorkRequired) {
     this.afterCallWorkRequired = afterCallWorkRequired;
-  }
-
-  
-  /**
-   **/
-  public ConversationEventTopicSocialExpression additionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("additionalProperties")
-  public Object getAdditionalProperties() {
-    return additionalProperties;
-  }
-  public void setAdditionalProperties(Object additionalProperties) {
-    this.additionalProperties = additionalProperties;
   }
 
   
@@ -509,13 +509,12 @@ public class ConversationEventTopicSocialExpression  implements Serializable {
         Objects.equals(this.disconnectedTime, conversationEventTopicSocialExpression.disconnectedTime) &&
         Objects.equals(this.wrapup, conversationEventTopicSocialExpression.wrapup) &&
         Objects.equals(this.afterCallWork, conversationEventTopicSocialExpression.afterCallWork) &&
-        Objects.equals(this.afterCallWorkRequired, conversationEventTopicSocialExpression.afterCallWorkRequired) &&
-        Objects.equals(this.additionalProperties, conversationEventTopicSocialExpression.additionalProperties);
+        Objects.equals(this.afterCallWorkRequired, conversationEventTopicSocialExpression.afterCallWorkRequired);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, socialMediaId, socialMediaHub, socialUserName, previewText, recordingId, held, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, wrapup, afterCallWork, afterCallWorkRequired, additionalProperties);
+    return Objects.hash(state, id, socialMediaId, socialMediaHub, socialUserName, previewText, recordingId, held, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, wrapup, afterCallWork, afterCallWorkRequired);
   }
 
   @Override
@@ -541,7 +540,6 @@ public class ConversationEventTopicSocialExpression  implements Serializable {
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

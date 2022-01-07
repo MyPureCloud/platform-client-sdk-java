@@ -8,15 +8,14 @@ title: DialerCampaignScheduleConfigChangeCampaignSchedule
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **dateModified** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **version** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **intervals** | <!----><!---->[**List&lt;DialerCampaignScheduleConfigChangeScheduleInterval&gt;**](DialerCampaignScheduleConfigChangeScheduleInterval.html)<!----> |  |  [optional] |
-| **timeZone** | <!----><!---->**String**<!----> |  |  [optional] |
+| **intervals** | <!----><!---->[**List&lt;DialerCampaignScheduleConfigChangeScheduleInterval&gt;**](DialerCampaignScheduleConfigChangeScheduleInterval.html)<!----> | a list of start and end times |  [optional] |
+| **timeZone** | <!----><!---->**String**<!----> | time zone identifier to be applied to the intervals; for example Africa/Abidjan |  [optional] |
 | **campaign** | <!----><!---->[**DialerCampaignScheduleConfigChangeUriReference**](DialerCampaignScheduleConfigChangeUriReference.html)<!----> |  |  [optional] |
-| **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
+| **name** | <!----><!---->**String**<!----> | The UI-visible name of the object |  [optional] |
+| **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | Creation time of the entity |  [optional] |
+| **dateModified** | <!----><!---->[**Date**](Date.html)<!----> | Last modified time of the entity |  [optional] |
+| **version** | <!----><!---->**Integer**<!----> | Required for updates, must match the version number of the most recent update |  [optional] |
 {: class="table table-striped"}
 
 

@@ -19,8 +19,9 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * QueueConversationVideoEventTopicConversationRoutingData
+ * Information on how a communication should be routed to an agent.
  */
+@ApiModel(description = "Information on how a communication should be routed to an agent.")
 
 public class QueueConversationVideoEventTopicConversationRoutingData  implements Serializable {
   
@@ -49,13 +50,14 @@ public class QueueConversationVideoEventTopicConversationRoutingData  implements
 
   
   /**
+   * A UriReference for a resource
    **/
   public QueueConversationVideoEventTopicConversationRoutingData language(QueueConversationVideoEventTopicUriReference language) {
     this.language = language;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A UriReference for a resource")
   @JsonProperty("language")
   public QueueConversationVideoEventTopicUriReference getLanguage() {
     return language;
@@ -66,13 +68,14 @@ public class QueueConversationVideoEventTopicConversationRoutingData  implements
 
   
   /**
+   * The priority of the conversation to use for routing decisions
    **/
   public QueueConversationVideoEventTopicConversationRoutingData priority(Integer priority) {
     this.priority = priority;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The priority of the conversation to use for routing decisions")
   @JsonProperty("priority")
   public Integer getPriority() {
     return priority;
@@ -83,13 +86,14 @@ public class QueueConversationVideoEventTopicConversationRoutingData  implements
 
   
   /**
+   * The skills to use for routing decisions
    **/
   public QueueConversationVideoEventTopicConversationRoutingData skills(List<QueueConversationVideoEventTopicUriReference> skills) {
     this.skills = skills;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The skills to use for routing decisions")
   @JsonProperty("skills")
   public List<QueueConversationVideoEventTopicUriReference> getSkills() {
     return skills;
@@ -100,13 +104,14 @@ public class QueueConversationVideoEventTopicConversationRoutingData  implements
 
   
   /**
+   * A collection of agents and their assigned scores for this conversation (0 - 100, higher being better), for use in routing to preferred agents
    **/
   public QueueConversationVideoEventTopicConversationRoutingData scoredAgents(List<QueueConversationVideoEventTopicScoredAgent> scoredAgents) {
     this.scoredAgents = scoredAgents;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A collection of agents and their assigned scores for this conversation (0 - 100, higher being better), for use in routing to preferred agents")
   @JsonProperty("scoredAgents")
   public List<QueueConversationVideoEventTopicScoredAgent> getScoredAgents() {
     return scoredAgents;

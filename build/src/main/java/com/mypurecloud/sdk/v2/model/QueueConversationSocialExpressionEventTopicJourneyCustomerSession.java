@@ -15,8 +15,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * QueueConversationSocialExpressionEventTopicJourneyCustomerSession
+ * A subset of the Journey System&#39;s tracked customer session data at a point-in-time (for external linkage and internal usage/context)
  */
+@ApiModel(description = "A subset of the Journey System's tracked customer session data at a point-in-time (for external linkage and internal usage/context)")
 
 public class QueueConversationSocialExpressionEventTopicJourneyCustomerSession  implements Serializable {
   
@@ -25,13 +26,14 @@ public class QueueConversationSocialExpressionEventTopicJourneyCustomerSession  
 
   
   /**
+   * An ID of a Customer/User's session within the Journey System at a point-in-time
    **/
   public QueueConversationSocialExpressionEventTopicJourneyCustomerSession id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "An ID of a Customer/User's session within the Journey System at a point-in-time")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -42,13 +44,14 @@ public class QueueConversationSocialExpressionEventTopicJourneyCustomerSession  
 
   
   /**
+   * The type of the Customer/User's session within the Journey System (e.g. web, app)
    **/
   public QueueConversationSocialExpressionEventTopicJourneyCustomerSession type(String type) {
     this.type = type;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The type of the Customer/User's session within the Journey System (e.g. web, app)")
   @JsonProperty("type")
   public String getType() {
     return type;

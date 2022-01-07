@@ -10,7 +10,7 @@ title: MemberGroup
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
 | **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **division** | <!----><!---->[**Division**](Division.html)<!----> | The division to which this entity belongs. |  [optional] |
+| **division** | <!----><!---->[**WritableDivision**](WritableDivision.html)<!----> | The division to which this entity belongs. |  [optional] |
 | **type** | [**TypeEnum**](#TypeEnum)<!----> | The group type |  [optional] |
 | **memberCount** | <!----><!---->**Integer**<!----> | The number of members in this group |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |

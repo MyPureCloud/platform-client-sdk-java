@@ -25,13 +25,14 @@ public class OutboundMessagingMessagingCampaignConfigChangeErrorDetail  implemen
 
   
   /**
+   * The name of the error code.
    **/
   public OutboundMessagingMessagingCampaignConfigChangeErrorDetail error(String error) {
     this.error = error;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The name of the error code.")
   @JsonProperty("error")
   public String getError() {
     return error;
@@ -42,13 +43,14 @@ public class OutboundMessagingMessagingCampaignConfigChangeErrorDetail  implemen
 
   
   /**
+   * The additional information regarding the error message.
    **/
   public OutboundMessagingMessagingCampaignConfigChangeErrorDetail details(String details) {
     this.details = details;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The additional information regarding the error message.")
   @JsonProperty("details")
   public String getDetails() {
     return details;

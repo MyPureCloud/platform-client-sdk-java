@@ -15,8 +15,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * ArchitectFlowNotificationFlowVersion
+ * A bare-bones flow version object
  */
+@ApiModel(description = "A bare-bones flow version object")
 
 public class ArchitectFlowNotificationFlowVersion  implements Serializable {
   
@@ -24,13 +25,14 @@ public class ArchitectFlowNotificationFlowVersion  implements Serializable {
 
   
   /**
+   * The version ID
    **/
   public ArchitectFlowNotificationFlowVersion id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The version ID")
   @JsonProperty("id")
   public String getId() {
     return id;

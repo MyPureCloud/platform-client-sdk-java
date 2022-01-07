@@ -8,16 +8,16 @@ title: DialerOutboundSettingsConfigChangeOutboundSettings
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **dateModified** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **version** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **maxCallsPerAgent** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **maxLineUtilization** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
-| **abandonSeconds** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
-| **complianceAbandonRateDenominator** | [**ComplianceAbandonRateDenominatorEnum**](#ComplianceAbandonRateDenominatorEnum)<!----> |  |  [optional] |
+| **maxCallsPerAgent** | <!----><!---->**Integer**<!----> | The maximum number of calls that can be placed per agent on any campaign |  [optional] |
+| **maxLineUtilization** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> | The maximum percentage of lines that should be used for Outbound, expressed as a decimal in the range [0.0, 1.0] |  [optional] |
+| **abandonSeconds** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> | The number of seconds used to determine if a call is abandoned |  [optional] |
+| **complianceAbandonRateDenominator** | [**ComplianceAbandonRateDenominatorEnum**](#ComplianceAbandonRateDenominatorEnum)<!----> | The denominator to be used in determining the compliance abandon rate |  [optional] |
 | **automaticTimeZoneMapping** | <!----><!---->[**DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings**](DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings.html)<!----> |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
+| **name** | <!----><!---->**String**<!----> | The UI-visible name of the object |  [optional] |
+| **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | Creation time of the entity |  [optional] |
+| **dateModified** | <!----><!---->[**Date**](Date.html)<!----> | Last modified time of the entity |  [optional] |
+| **version** | <!----><!---->**Integer**<!----> | Required for updates, must match the version number of the most recent update |  [optional] |
 {: class="table table-striped"}
 
 

@@ -18,8 +18,9 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * UserRoutingStatusErrorInfo
+ * Error information that the Public API will receive in a response body. This allows backend services to pass an error message to consumers of the Public API.
  */
+@ApiModel(description = "Error information that the Public API will receive in a response body. This allows backend services to pass an error message to consumers of the Public API.")
 
 public class UserRoutingStatusErrorInfo  implements Serializable {
   
@@ -32,13 +33,14 @@ public class UserRoutingStatusErrorInfo  implements Serializable {
 
   
   /**
+   * A code unique to this error. Typically prefixed with the service that originated the error. For example CONFIG_USER_NOT_FOUND
    **/
   public UserRoutingStatusErrorInfo errorCode(String errorCode) {
     this.errorCode = errorCode;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A code unique to this error. Typically prefixed with the service that originated the error. For example CONFIG_USER_NOT_FOUND")
   @JsonProperty("errorCode")
   public String getErrorCode() {
     return errorCode;
@@ -49,13 +51,14 @@ public class UserRoutingStatusErrorInfo  implements Serializable {
 
   
   /**
+   * The HTTP status code for this message. If left blank the status code from the HTTP response is used.
    **/
   public UserRoutingStatusErrorInfo status(Integer status) {
     this.status = status;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The HTTP status code for this message. If left blank the status code from the HTTP response is used.")
   @JsonProperty("status")
   public Integer getStatus() {
     return status;
@@ -66,13 +69,14 @@ public class UserRoutingStatusErrorInfo  implements Serializable {
 
   
   /**
+   * The correlation Id or context Id for this message. If left blank the Public API will look at the HTTP response header 'ININ-Correlation-Id' instead.
    **/
   public UserRoutingStatusErrorInfo correlationId(String correlationId) {
     this.correlationId = correlationId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The correlation Id or context Id for this message. If left blank the Public API will look at the HTTP response header 'ININ-Correlation-Id' instead.")
   @JsonProperty("correlationId")
   public String getCorrelationId() {
     return correlationId;
@@ -83,13 +87,14 @@ public class UserRoutingStatusErrorInfo  implements Serializable {
 
   
   /**
+   * A customer friendly message. This should be a complete sentence, use proper grammar and only include information useful to a customer. This is not a dev message and should not include things like Org Id
    **/
   public UserRoutingStatusErrorInfo userMessage(String userMessage) {
     this.userMessage = userMessage;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A customer friendly message. This should be a complete sentence, use proper grammar and only include information useful to a customer. This is not a dev message and should not include things like Org Id")
   @JsonProperty("userMessage")
   public String getUserMessage() {
     return userMessage;
@@ -100,13 +105,14 @@ public class UserRoutingStatusErrorInfo  implements Serializable {
 
   
   /**
+   * This is the same as userMessage except it uses template fields for variable replacement. For instance: 'User {username} was not found'
    **/
   public UserRoutingStatusErrorInfo userParamsMessage(String userParamsMessage) {
     this.userParamsMessage = userParamsMessage;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "This is the same as userMessage except it uses template fields for variable replacement. For instance: 'User {username} was not found'")
   @JsonProperty("userParamsMessage")
   public String getUserParamsMessage() {
     return userParamsMessage;
@@ -117,13 +123,14 @@ public class UserRoutingStatusErrorInfo  implements Serializable {
 
   
   /**
+   * Used in conjunction with userParamsMessage. These are the template parameters. For instance: UserParam.key = 'username', UserParam.value = 'chuck.pulfer'
    **/
   public UserRoutingStatusErrorInfo userParams(List<UserRoutingStatusUserParam> userParams) {
     this.userParams = userParams;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Used in conjunction with userParamsMessage. These are the template parameters. For instance: UserParam.key = 'username', UserParam.value = 'chuck.pulfer'")
   @JsonProperty("userParams")
   public List<UserRoutingStatusUserParam> getUserParams() {
     return userParams;

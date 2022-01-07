@@ -75,6 +75,7 @@ title: ConversationAggregateQueryPredicate
 | JOURNEYCUSTOMERIDTYPE | &quot;journeyCustomerIdType&quot; |
 | JOURNEYCUSTOMERSESSIONID | &quot;journeyCustomerSessionId&quot; |
 | JOURNEYCUSTOMERSESSIONIDTYPE | &quot;journeyCustomerSessionIdType&quot; |
+| KNOWLEDGEBASEID | &quot;knowledgeBaseId&quot; |
 | MEDIACOUNT | &quot;mediaCount&quot; |
 | MEDIATYPE | &quot;mediaType&quot; |
 | MESSAGETYPE | &quot;messageType&quot; |
@@ -100,6 +101,7 @@ title: ConversationAggregateQueryPredicate
 | SCOREDAGENTID | &quot;scoredAgentId&quot; |
 | SELECTEDAGENTID | &quot;selectedAgentId&quot; |
 | SELECTEDAGENTRANK | &quot;selectedAgentRank&quot; |
+| SELFSERVED | &quot;selfServed&quot; |
 | SESSIONDNIS | &quot;sessionDnis&quot; |
 | SESSIONID | &quot;sessionId&quot; |
 | STATIONID | &quot;stationId&quot; |
