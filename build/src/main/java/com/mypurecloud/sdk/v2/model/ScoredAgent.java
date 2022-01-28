@@ -10,7 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -21,24 +21,24 @@ import java.io.Serializable;
 
 public class ScoredAgent  implements Serializable {
   
-  private AddressableEntityRef agent = null;
+  private DomainEntityRef agent = null;
   private Integer score = null;
 
   
   /**
    * The agent
    **/
-  public ScoredAgent agent(AddressableEntityRef agent) {
+  public ScoredAgent agent(DomainEntityRef agent) {
     this.agent = agent;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The agent")
   @JsonProperty("agent")
-  public AddressableEntityRef getAgent() {
+  public DomainEntityRef getAgent() {
     return agent;
   }
-  public void setAgent(AddressableEntityRef agent) {
+  public void setAgent(DomainEntityRef agent) {
     this.agent = agent;
   }
 

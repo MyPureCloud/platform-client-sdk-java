@@ -25,6 +25,7 @@ title: MinerExecuteRequest
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | CHAT | &quot;Chat&quot; |
 | CALL | &quot;Call&quot; |
+| MESSAGE | &quot;Message&quot; |
 {: class="table table-striped"}
 
 

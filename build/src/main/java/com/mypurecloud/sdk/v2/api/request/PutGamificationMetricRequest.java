@@ -43,6 +43,7 @@ import com.mypurecloud.sdk.v2.model.SingleWorkdayAverageValues;
 import com.mypurecloud.sdk.v2.model.GamificationStatus;
 import com.mypurecloud.sdk.v2.model.ObjectiveTemplate;
 import com.mypurecloud.sdk.v2.model.GetTemplatesResponse;
+import com.mypurecloud.sdk.v2.model.CreateMetric;
 import com.mypurecloud.sdk.v2.model.Assignment;
 import com.mypurecloud.sdk.v2.model.AssignUsers;
 import com.mypurecloud.sdk.v2.model.AssignmentValidation;
@@ -66,16 +67,16 @@ public class PutGamificationMetricRequest {
 	    return this;
 	} 
 	
-	private Metric body;
-	public Metric getBody() {
+	private CreateMetric body;
+	public CreateMetric getBody() {
 		return this.body;
 	}
 
-	public void setBody(Metric body) {
+	public void setBody(CreateMetric body) {
 		this.body = body;
 	}
 
-	public PutGamificationMetricRequest withBody(Metric body) {
+	public PutGamificationMetricRequest withBody(CreateMetric body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -113,7 +114,7 @@ public class PutGamificationMetricRequest {
         return this;
     }
 
-    public ApiRequest<Metric> withHttpInfo() {
+    public ApiRequest<CreateMetric> withHttpInfo() {
         
         // verify the required parameter 'metricId' is set
         if (this.metricId == null) {
@@ -145,7 +146,7 @@ public class PutGamificationMetricRequest {
 	}
 
 	
-	public static Builder builder(String metricId, Metric body) {
+	public static Builder builder(String metricId, CreateMetric body) {
 	    return new Builder()
 	            .withRequiredParams(metricId, body);
 	}
@@ -164,7 +165,7 @@ public class PutGamificationMetricRequest {
 			return this;
 		}
 		
-		public Builder withBody(Metric body) {
+		public Builder withBody(CreateMetric body) {
 			request.setBody(body);
 			return this;
 		}
@@ -176,7 +177,7 @@ public class PutGamificationMetricRequest {
 		
 
 		
-		public Builder withRequiredParams(String metricId, Metric body) {
+		public Builder withRequiredParams(String metricId, CreateMetric body) {
 			request.setMetricId(metricId);
 						request.setBody(body);
 			

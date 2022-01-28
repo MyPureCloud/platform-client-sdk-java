@@ -30,14 +30,14 @@ public class AdditionalMessage  implements Serializable {
 
   
   /**
-   * The body of the text message.
+   * The body of the text message.  Maximum character counts are: SMS - 765 characters, other channels - 2000 characters.
    **/
   public AdditionalMessage textBody(String textBody) {
     this.textBody = textBody;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The body of the text message.")
+  @ApiModelProperty(example = "null", required = true, value = "The body of the text message.  Maximum character counts are: SMS - 765 characters, other channels - 2000 characters.")
   @JsonProperty("textBody")
   public String getTextBody() {
     return textBody;

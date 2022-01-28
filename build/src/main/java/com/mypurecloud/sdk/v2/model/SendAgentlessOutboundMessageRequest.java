@@ -138,14 +138,14 @@ public class SendAgentlessOutboundMessageRequest  implements Serializable {
 
   
   /**
-   * The text of the message to send. This field is required in the case of SMS messenger type
+   * The text of the message to send. This field is required in the case of SMS messenger type. Maximum character counts are: SMS - 765 characters, other channels - 2000 characters.
    **/
   public SendAgentlessOutboundMessageRequest textBody(String textBody) {
     this.textBody = textBody;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The text of the message to send. This field is required in the case of SMS messenger type")
+  @ApiModelProperty(example = "null", value = "The text of the message to send. This field is required in the case of SMS messenger type. Maximum character counts are: SMS - 765 characters, other channels - 2000 characters.")
   @JsonProperty("textBody")
   public String getTextBody() {
     return textBody;

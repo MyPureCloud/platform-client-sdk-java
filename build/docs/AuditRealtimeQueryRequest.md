@@ -59,6 +59,7 @@ title: AuditRealtimeQueryRequest
 | SUPPORTABILITY | &quot;Supportability&quot; |
 | CALLBACK | &quot;Callback&quot; |
 | WORKITEMS | &quot;Workitems&quot; |
+| SCIM | &quot;SCIM&quot; |
 {: class="table table-striped"}
 
 

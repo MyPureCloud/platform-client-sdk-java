@@ -669,11 +669,11 @@ public class RecordingApi {
    * 
    * @param conversationId Conversation ID (required)
    * @param recordingId Recording ID (required)
-   * @param formatId The desired media format. (optional, default to WEBM)
-   * @param emailFormatId The desired media format when downloading an email recording. (optional, default to EML)
-   * @param chatFormatId The desired media format when downloading a chat recording. (optional, default to ZIP)
-   * @param messageFormatId The desired media format when downloading a message recording. (optional, default to ZIP)
-   * @param download requesting a download format of the recording (optional, default to false)
+   * @param formatId The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE (optional, default to WEBM)
+   * @param emailFormatId The desired media format when downloading an email recording. Valid values:EML,NONE (optional, default to EML)
+   * @param chatFormatId The desired media format when downloading a chat recording. Valid values:ZIP,NONE  (optional, default to ZIP)
+   * @param messageFormatId The desired media format when downloading a message recording. Valid values:ZIP,NONE (optional, default to ZIP)
+   * @param download requesting a download format of the recording. Valid values:true,false (optional, default to false)
    * @param fileName the name of the downloaded fileName (optional)
    * @param locale The locale for the requested file when downloading, as an ISO 639-1 code (optional)
    * @return Recording
@@ -689,11 +689,11 @@ public class RecordingApi {
    * 
    * @param conversationId Conversation ID (required)
    * @param recordingId Recording ID (required)
-   * @param formatId The desired media format. (optional, default to WEBM)
-   * @param emailFormatId The desired media format when downloading an email recording. (optional, default to EML)
-   * @param chatFormatId The desired media format when downloading a chat recording. (optional, default to ZIP)
-   * @param messageFormatId The desired media format when downloading a message recording. (optional, default to ZIP)
-   * @param download requesting a download format of the recording (optional, default to false)
+   * @param formatId The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE (optional, default to WEBM)
+   * @param emailFormatId The desired media format when downloading an email recording. Valid values:EML,NONE (optional, default to EML)
+   * @param chatFormatId The desired media format when downloading a chat recording. Valid values:ZIP,NONE  (optional, default to ZIP)
+   * @param messageFormatId The desired media format when downloading a message recording. Valid values:ZIP,NONE (optional, default to ZIP)
+   * @param download requesting a download format of the recording. Valid values:true,false (optional, default to false)
    * @param fileName the name of the downloaded fileName (optional)
    * @param locale The locale for the requested file when downloading, as an ISO 639-1 code (optional)
    * @return Recording
@@ -946,7 +946,7 @@ public class RecordingApi {
 
   
   /**
-   * Get recording metadata for a conversation. Does not return playable media.
+   * Get recording metadata for a conversation. Does not return playable media. Annotations won&#39;t be included in the response if recording:recording:view permission is missing.
    * 
    * @param conversationId Conversation ID (required)
    * @return List<RecordingMetadata>
@@ -958,7 +958,7 @@ public class RecordingApi {
   }
 
   /**
-   * Get recording metadata for a conversation. Does not return playable media.
+   * Get recording metadata for a conversation. Does not return playable media. Annotations won&#39;t be included in the response if recording:recording:view permission is missing.
    * 
    * @param conversationId Conversation ID (required)
    * @return List<RecordingMetadata>
@@ -976,7 +976,7 @@ public class RecordingApi {
   }
 
   /**
-   * Get recording metadata for a conversation. Does not return playable media.
+   * Get recording metadata for a conversation. Does not return playable media. Annotations won&#39;t be included in the response if recording:recording:view permission is missing.
    * 
    * @param request The request object
    * @return List<RecordingMetadata>
@@ -995,7 +995,7 @@ public class RecordingApi {
   }
 
   /**
-   * Get recording metadata for a conversation. Does not return playable media.
+   * Get recording metadata for a conversation. Does not return playable media. Annotations won&#39;t be included in the response if recording:recording:view permission is missing.
    * 
    * @param request The request object
    * @return the response
@@ -1112,7 +1112,7 @@ public class RecordingApi {
    * 
    * @param conversationId Conversation ID (required)
    * @param maxWaitMs The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. (optional, default to 5000)
-   * @param formatId The desired media format (optional, default to WEBM)
+   * @param formatId The desired media format . Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. (optional, default to WEBM)
    * @return List<Recording>
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1126,7 +1126,7 @@ public class RecordingApi {
    * 
    * @param conversationId Conversation ID (required)
    * @param maxWaitMs The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. (optional, default to 5000)
-   * @param formatId The desired media format (optional, default to WEBM)
+   * @param formatId The desired media format . Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. (optional, default to WEBM)
    * @return List<Recording>
    * @throws IOException if the request fails to be processed
    */

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.ConversationAppSettings;
 import com.mypurecloud.sdk.v2.model.Knowledge;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -22,7 +23,26 @@ import java.io.Serializable;
 
 public class MessengerApps  implements Serializable {
   
+  private ConversationAppSettings conversations = null;
   private Knowledge knowledge = null;
+
+  
+  /**
+   * The conversation settings that handles chats within the messenger
+   **/
+  public MessengerApps conversations(ConversationAppSettings conversations) {
+    this.conversations = conversations;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The conversation settings that handles chats within the messenger")
+  @JsonProperty("conversations")
+  public ConversationAppSettings getConversations() {
+    return conversations;
+  }
+  public void setConversations(ConversationAppSettings conversations) {
+    this.conversations = conversations;
+  }
 
   
   /**
@@ -53,12 +73,13 @@ public class MessengerApps  implements Serializable {
       return false;
     }
     MessengerApps messengerApps = (MessengerApps) o;
-    return Objects.equals(this.knowledge, messengerApps.knowledge);
+    return Objects.equals(this.conversations, messengerApps.conversations) &&
+        Objects.equals(this.knowledge, messengerApps.knowledge);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(knowledge);
+    return Objects.hash(conversations, knowledge);
   }
 
   @Override
@@ -66,6 +87,7 @@ public class MessengerApps  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class MessengerApps {\n");
     
+    sb.append("    conversations: ").append(toIndentedString(conversations)).append("\n");
     sb.append("    knowledge: ").append(toIndentedString(knowledge)).append("\n");
     sb.append("}");
     return sb.toString();

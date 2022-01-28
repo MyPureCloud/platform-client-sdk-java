@@ -77,7 +77,8 @@ public class AuditQueryService  implements Serializable {
     MESSAGING("Messaging"),
     SUPPORTABILITY("Supportability"),
     CALLBACK("Callback"),
-    WORKITEMS("Workitems");
+    WORKITEMS("Workitems"),
+    SCIM("SCIM");
 
     private String value;
 

@@ -48,7 +48,8 @@ public class LearningAssignmentAggregateQueryResponseMetric  implements Serializ
     NOVERDUEACTIVITIES("nOverdueActivities"),
     NPASSEDACTIVITIES("nPassedActivities"),
     NFAILEDACTIVITIES("nFailedActivities"),
-    OACTIVITYSCORE("oActivityScore");
+    OACTIVITYSCORE("oActivityScore"),
+    NNOTCOMPLETEDACTIVITIES("nNotCompletedActivities");
 
     private String value;
 

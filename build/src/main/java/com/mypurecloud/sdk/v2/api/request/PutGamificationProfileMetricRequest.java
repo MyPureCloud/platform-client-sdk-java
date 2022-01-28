@@ -43,6 +43,7 @@ import com.mypurecloud.sdk.v2.model.SingleWorkdayAverageValues;
 import com.mypurecloud.sdk.v2.model.GamificationStatus;
 import com.mypurecloud.sdk.v2.model.ObjectiveTemplate;
 import com.mypurecloud.sdk.v2.model.GetTemplatesResponse;
+import com.mypurecloud.sdk.v2.model.CreateMetric;
 import com.mypurecloud.sdk.v2.model.Assignment;
 import com.mypurecloud.sdk.v2.model.AssignUsers;
 import com.mypurecloud.sdk.v2.model.AssignmentValidation;
@@ -80,16 +81,16 @@ public class PutGamificationProfileMetricRequest {
 	    return this;
 	} 
 	
-	private Metric body;
-	public Metric getBody() {
+	private CreateMetric body;
+	public CreateMetric getBody() {
 		return this.body;
 	}
 
-	public void setBody(Metric body) {
+	public void setBody(CreateMetric body) {
 		this.body = body;
 	}
 
-	public PutGamificationProfileMetricRequest withBody(Metric body) {
+	public PutGamificationProfileMetricRequest withBody(CreateMetric body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -113,7 +114,7 @@ public class PutGamificationProfileMetricRequest {
         return this;
     }
 
-    public ApiRequest<Metric> withHttpInfo() {
+    public ApiRequest<CreateMetric> withHttpInfo() {
         
         // verify the required parameter 'profileId' is set
         if (this.profileId == null) {
@@ -150,7 +151,7 @@ public class PutGamificationProfileMetricRequest {
 	}
 
 	
-	public static Builder builder(String profileId, String metricId, Metric body) {
+	public static Builder builder(String profileId, String metricId, CreateMetric body) {
 	    return new Builder()
 	            .withRequiredParams(profileId, metricId, body);
 	}
@@ -174,14 +175,14 @@ public class PutGamificationProfileMetricRequest {
 			return this;
 		}
 		
-		public Builder withBody(Metric body) {
+		public Builder withBody(CreateMetric body) {
 			request.setBody(body);
 			return this;
 		}
 		
 
 		
-		public Builder withRequiredParams(String profileId, String metricId, Metric body) {
+		public Builder withRequiredParams(String profileId, String metricId, CreateMetric body) {
 			request.setProfileId(profileId);
 						request.setMetricId(metricId);
 						request.setBody(body);

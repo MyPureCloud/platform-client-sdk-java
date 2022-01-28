@@ -118,7 +118,7 @@ public class UtilitiesApi {
 
   
   /**
-   * Get public ip address ranges for PureCloud
+   * Get public ip address ranges for Genesys Cloud
    * 
    * @return IpAddressRangeListing
    * @throws ApiException if the request fails on the server
@@ -129,7 +129,7 @@ public class UtilitiesApi {
   }
 
   /**
-   * Get public ip address ranges for PureCloud
+   * Get public ip address ranges for Genesys Cloud
    * 
    * @return IpAddressRangeListing
    * @throws IOException if the request fails to be processed
@@ -144,7 +144,7 @@ public class UtilitiesApi {
   }
 
   /**
-   * Get public ip address ranges for PureCloud
+   * Get public ip address ranges for Genesys Cloud
    * 
    * @param request The request object
    * @return IpAddressRangeListing
@@ -163,7 +163,7 @@ public class UtilitiesApi {
   }
 
   /**
-   * Get public ip address ranges for PureCloud
+   * Get public ip address ranges for Genesys Cloud
    * 
    * @param request The request object
    * @return the response

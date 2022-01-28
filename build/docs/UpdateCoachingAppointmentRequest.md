@@ -15,6 +15,8 @@ title: UpdateCoachingAppointmentRequest
 | **conversationIds** | <!----><!---->**List&lt;String&gt;**<!----> | IDs of conversations associated with this coaching appointment. |  [optional] |
 | **documentIds** | <!----><!---->**List&lt;String&gt;**<!----> | IDs of documents associated with this coaching appointment. |  [optional] |
 | **status** | [**StatusEnum**](#StatusEnum)<!----> | The status of the coaching appointment. |  [optional] |
+| **wfmSchedule** | <!----><!---->[**WfmScheduleReference**](WfmScheduleReference.html)<!----> | The Workforce Management schedule the appointment is associated with. |  [optional] |
+| **externalLinks** | <!----><!---->**List&lt;String&gt;**<!----> | The list of external links related to the appointment |  [optional] |
 {: class="table table-striped"}
 
 

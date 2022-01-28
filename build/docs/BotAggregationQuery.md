@@ -55,6 +55,7 @@ title: BotAggregationQuery
 | ---- | ----- |
 | NBOTSESSIONS | &quot;nBotSessions&quot; |
 | OBOTINTENT | &quot;oBotIntent&quot; |
+| OBOTSESSIONQUERY | &quot;oBotSessionQuery&quot; |
 | OBOTSESSIONTURN | &quot;oBotSessionTurn&quot; |
 | OBOTSLOT | &quot;oBotSlot&quot; |
 | TBOTDISCONNECT | &quot;tBotDisconnect&quot; |

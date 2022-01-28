@@ -579,12 +579,13 @@ public class CoachingApi {
    * @param relationships Relationships to filter by (optional)
    * @param completionInterval Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
    * @param overdue Overdue status to filter by (optional)
+   * @param intervalCondition Filter condition for interval (optional)
    * @return CoachingAppointmentResponseList
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public CoachingAppointmentResponseList getCoachingAppointments(List<String> userIds, String interval, Integer pageNumber, Integer pageSize, List<String> statuses, List<String> facilitatorIds, String sortOrder, List<String> relationships, String completionInterval, String overdue) throws IOException, ApiException {
-    return  getCoachingAppointments(createGetCoachingAppointmentsRequest(userIds, interval, pageNumber, pageSize, statuses, facilitatorIds, sortOrder, relationships, completionInterval, overdue));
+  public CoachingAppointmentResponseList getCoachingAppointments(List<String> userIds, String interval, Integer pageNumber, Integer pageSize, List<String> statuses, List<String> facilitatorIds, String sortOrder, List<String> relationships, String completionInterval, String overdue, String intervalCondition) throws IOException, ApiException {
+    return  getCoachingAppointments(createGetCoachingAppointmentsRequest(userIds, interval, pageNumber, pageSize, statuses, facilitatorIds, sortOrder, relationships, completionInterval, overdue, intervalCondition));
   }
 
   /**
@@ -600,14 +601,15 @@ public class CoachingApi {
    * @param relationships Relationships to filter by (optional)
    * @param completionInterval Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
    * @param overdue Overdue status to filter by (optional)
+   * @param intervalCondition Filter condition for interval (optional)
    * @return CoachingAppointmentResponseList
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CoachingAppointmentResponseList> getCoachingAppointmentsWithHttpInfo(List<String> userIds, String interval, Integer pageNumber, Integer pageSize, List<String> statuses, List<String> facilitatorIds, String sortOrder, List<String> relationships, String completionInterval, String overdue) throws IOException {
-    return getCoachingAppointments(createGetCoachingAppointmentsRequest(userIds, interval, pageNumber, pageSize, statuses, facilitatorIds, sortOrder, relationships, completionInterval, overdue).withHttpInfo());
+  public ApiResponse<CoachingAppointmentResponseList> getCoachingAppointmentsWithHttpInfo(List<String> userIds, String interval, Integer pageNumber, Integer pageSize, List<String> statuses, List<String> facilitatorIds, String sortOrder, List<String> relationships, String completionInterval, String overdue, String intervalCondition) throws IOException {
+    return getCoachingAppointments(createGetCoachingAppointmentsRequest(userIds, interval, pageNumber, pageSize, statuses, facilitatorIds, sortOrder, relationships, completionInterval, overdue, intervalCondition).withHttpInfo());
   }
 
-  private GetCoachingAppointmentsRequest createGetCoachingAppointmentsRequest(List<String> userIds, String interval, Integer pageNumber, Integer pageSize, List<String> statuses, List<String> facilitatorIds, String sortOrder, List<String> relationships, String completionInterval, String overdue) {
+  private GetCoachingAppointmentsRequest createGetCoachingAppointmentsRequest(List<String> userIds, String interval, Integer pageNumber, Integer pageSize, List<String> statuses, List<String> facilitatorIds, String sortOrder, List<String> relationships, String completionInterval, String overdue, String intervalCondition) {
     return GetCoachingAppointmentsRequest.builder()
             .withUserIds(userIds)
     
@@ -628,6 +630,8 @@ public class CoachingApi {
             .withCompletionInterval(completionInterval)
     
             .withOverdue(overdue)
+    
+            .withIntervalCondition(intervalCondition)
     
             .build();
   }
@@ -693,12 +697,13 @@ public class CoachingApi {
    * @param relationships Relationships to filter by (optional)
    * @param completionInterval Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
    * @param overdue Overdue status to filter by (optional)
+   * @param intervalCondition Filter condition for interval (optional)
    * @return CoachingAppointmentResponseList
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public CoachingAppointmentResponseList getCoachingAppointmentsMe(String interval, Integer pageNumber, Integer pageSize, List<String> statuses, List<String> facilitatorIds, String sortOrder, List<String> relationships, String completionInterval, String overdue) throws IOException, ApiException {
-    return  getCoachingAppointmentsMe(createGetCoachingAppointmentsMeRequest(interval, pageNumber, pageSize, statuses, facilitatorIds, sortOrder, relationships, completionInterval, overdue));
+  public CoachingAppointmentResponseList getCoachingAppointmentsMe(String interval, Integer pageNumber, Integer pageSize, List<String> statuses, List<String> facilitatorIds, String sortOrder, List<String> relationships, String completionInterval, String overdue, String intervalCondition) throws IOException, ApiException {
+    return  getCoachingAppointmentsMe(createGetCoachingAppointmentsMeRequest(interval, pageNumber, pageSize, statuses, facilitatorIds, sortOrder, relationships, completionInterval, overdue, intervalCondition));
   }
 
   /**
@@ -713,14 +718,15 @@ public class CoachingApi {
    * @param relationships Relationships to filter by (optional)
    * @param completionInterval Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
    * @param overdue Overdue status to filter by (optional)
+   * @param intervalCondition Filter condition for interval (optional)
    * @return CoachingAppointmentResponseList
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CoachingAppointmentResponseList> getCoachingAppointmentsMeWithHttpInfo(String interval, Integer pageNumber, Integer pageSize, List<String> statuses, List<String> facilitatorIds, String sortOrder, List<String> relationships, String completionInterval, String overdue) throws IOException {
-    return getCoachingAppointmentsMe(createGetCoachingAppointmentsMeRequest(interval, pageNumber, pageSize, statuses, facilitatorIds, sortOrder, relationships, completionInterval, overdue).withHttpInfo());
+  public ApiResponse<CoachingAppointmentResponseList> getCoachingAppointmentsMeWithHttpInfo(String interval, Integer pageNumber, Integer pageSize, List<String> statuses, List<String> facilitatorIds, String sortOrder, List<String> relationships, String completionInterval, String overdue, String intervalCondition) throws IOException {
+    return getCoachingAppointmentsMe(createGetCoachingAppointmentsMeRequest(interval, pageNumber, pageSize, statuses, facilitatorIds, sortOrder, relationships, completionInterval, overdue, intervalCondition).withHttpInfo());
   }
 
-  private GetCoachingAppointmentsMeRequest createGetCoachingAppointmentsMeRequest(String interval, Integer pageNumber, Integer pageSize, List<String> statuses, List<String> facilitatorIds, String sortOrder, List<String> relationships, String completionInterval, String overdue) {
+  private GetCoachingAppointmentsMeRequest createGetCoachingAppointmentsMeRequest(String interval, Integer pageNumber, Integer pageSize, List<String> statuses, List<String> facilitatorIds, String sortOrder, List<String> relationships, String completionInterval, String overdue, String intervalCondition) {
     return GetCoachingAppointmentsMeRequest.builder()
             .withInterval(interval)
     
@@ -739,6 +745,8 @@ public class CoachingApi {
             .withCompletionInterval(completionInterval)
     
             .withOverdue(overdue)
+    
+            .withIntervalCondition(intervalCondition)
     
             .build();
   }

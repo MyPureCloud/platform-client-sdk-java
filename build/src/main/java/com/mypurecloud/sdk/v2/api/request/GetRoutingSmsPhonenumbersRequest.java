@@ -99,16 +99,16 @@ public class GetRoutingSmsPhonenumbersRequest {
 	    return this;
 	} 
 	
-	private String phoneNumberType;
-	public String getPhoneNumberType() {
+	private List<String> phoneNumberType;
+	public List<String> getPhoneNumberType() {
 		return this.phoneNumberType;
 	}
 
-	public void setPhoneNumberType(String phoneNumberType) {
+	public void setPhoneNumberType(List<String> phoneNumberType) {
 		this.phoneNumberType = phoneNumberType;
 	}
 
-	public GetRoutingSmsPhonenumbersRequest withPhoneNumberType(String phoneNumberType) {
+	public GetRoutingSmsPhonenumbersRequest withPhoneNumberType(List<String> phoneNumberType) {
 	    this.setPhoneNumberType(phoneNumberType);
 	    return this;
 	} 
@@ -145,16 +145,16 @@ public class GetRoutingSmsPhonenumbersRequest {
 		}
 	}
 	
-	private String phoneNumberStatus;
-	public String getPhoneNumberStatus() {
+	private List<String> phoneNumberStatus;
+	public List<String> getPhoneNumberStatus() {
 		return this.phoneNumberStatus;
 	}
 
-	public void setPhoneNumberStatus(String phoneNumberStatus) {
+	public void setPhoneNumberStatus(List<String> phoneNumberStatus) {
 		this.phoneNumberStatus = phoneNumberStatus;
 	}
 
-	public GetRoutingSmsPhonenumbersRequest withPhoneNumberStatus(String phoneNumberStatus) {
+	public GetRoutingSmsPhonenumbersRequest withPhoneNumberStatus(List<String> phoneNumberStatus) {
 	    this.setPhoneNumberStatus(phoneNumberStatus);
 	    return this;
 	} 
@@ -162,7 +162,10 @@ public class GetRoutingSmsPhonenumbersRequest {
 	public enum phoneNumberStatusValues { 
 		ACTIVE("active"), 
 		INVALID("invalid"), 
-		PORTING("porting");
+		INITIATED("initiated"), 
+		PORTING("porting"), 
+		PENDING("pending"), 
+		PENDING_CANCELLATION("pending-cancellation");
 
 		private String value;
 
@@ -189,6 +192,20 @@ public class GetRoutingSmsPhonenumbersRequest {
 			return String.valueOf(value);
 		}
 	}
+	
+	private List<String> countryCode;
+	public List<String> getCountryCode() {
+		return this.countryCode;
+	}
+
+	public void setCountryCode(List<String> countryCode) {
+		this.countryCode = countryCode;
+	}
+
+	public GetRoutingSmsPhonenumbersRequest withCountryCode(List<String> countryCode) {
+	    this.setCountryCode(countryCode);
+	    return this;
+	} 
 	
 	private Integer pageSize;
 	public Integer getPageSize() {
@@ -218,6 +235,115 @@ public class GetRoutingSmsPhonenumbersRequest {
 	    return this;
 	} 
 	
+	private String sortBy;
+	public String getSortBy() {
+		return this.sortBy;
+	}
+
+	public void setSortBy(String sortBy) {
+		this.sortBy = sortBy;
+	}
+
+	public GetRoutingSmsPhonenumbersRequest withSortBy(String sortBy) {
+	    this.setSortBy(sortBy);
+	    return this;
+	} 
+
+	public enum sortByValues { 
+		PHONENUMBER("phoneNumber"), 
+		COUNTRYCODE("countryCode"), 
+		COUNTRY("country"), 
+		PHONENUMBERSTATUS("phoneNumberStatus"), 
+		PHONENUMBERTYPE("phoneNumberType"), 
+		PURCHASEDATE("purchaseDate"), 
+		SUPPORTSMMS("supportsMms"), 
+		SUPPORTSSMS("supportsSms"), 
+		SUPPORTSVOICE("supportsVoice");
+
+		private String value;
+
+		sortByValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static sortByValues fromString(String key) {
+			if (key == null) return null;
+
+			for (sortByValues value : sortByValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return sortByValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+	
+	private String sortOrder;
+	public String getSortOrder() {
+		return this.sortOrder;
+	}
+
+	public void setSortOrder(String sortOrder) {
+		this.sortOrder = sortOrder;
+	}
+
+	public GetRoutingSmsPhonenumbersRequest withSortOrder(String sortOrder) {
+	    this.setSortOrder(sortOrder);
+	    return this;
+	} 
+
+	public enum sortOrderValues { 
+		ASCENDING("ascending"), 
+		DESCENDING("descending");
+
+		private String value;
+
+		sortOrderValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static sortOrderValues fromString(String key) {
+			if (key == null) return null;
+
+			for (sortOrderValues value : sortOrderValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return sortOrderValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+	
+	private String language;
+	public String getLanguage() {
+		return this.language;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
+	}
+
+	public GetRoutingSmsPhonenumbersRequest withLanguage(String language) {
+	    this.setLanguage(language);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -243,13 +369,21 @@ public class GetRoutingSmsPhonenumbersRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/routing/sms/phonenumbers")
                 .withQueryParameters("phoneNumber", "", phoneNumber)
         
-                .withQueryParameters("phoneNumberType", "", phoneNumberType)
+                .withQueryParameters("phoneNumberType", "multi", phoneNumberType)
         
-                .withQueryParameters("phoneNumberStatus", "", phoneNumberStatus)
+                .withQueryParameters("phoneNumberStatus", "multi", phoneNumberStatus)
+        
+                .withQueryParameters("countryCode", "multi", countryCode)
         
                 .withQueryParameters("pageSize", "", pageSize)
         
                 .withQueryParameters("pageNumber", "", pageNumber)
+        
+                .withQueryParameters("sortBy", "", sortBy)
+        
+                .withQueryParameters("sortOrder", "", sortOrder)
+        
+                .withQueryParameters("language", "", language)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -277,24 +411,37 @@ public class GetRoutingSmsPhonenumbersRequest {
 			return this;
 		}
 		
-		public Builder withPhoneNumberType(String phoneNumberType) {
+		public Builder withPhoneNumberType(List<String> phoneNumberType) {
 			request.setPhoneNumberType(phoneNumberType);
 			return this;
 		}
 
-		public Builder withPhoneNumberType(phoneNumberTypeValues phoneNumberType) {
-		    request.setPhoneNumberType(phoneNumberType.toString());
+		public Builder withPhoneNumberTypeEnumValues(List<phoneNumberTypeValues> phoneNumberType) {
+		    List<String> stringList = new ArrayList<>();
+	      for (phoneNumberTypeValues e : phoneNumberType) {
+	        stringList.add(e.toString());
+	      }
+	      request.setPhoneNumberType(stringList);
 		    return this;
 		}
 		
-		public Builder withPhoneNumberStatus(String phoneNumberStatus) {
+		public Builder withPhoneNumberStatus(List<String> phoneNumberStatus) {
 			request.setPhoneNumberStatus(phoneNumberStatus);
 			return this;
 		}
 
-		public Builder withPhoneNumberStatus(phoneNumberStatusValues phoneNumberStatus) {
-		    request.setPhoneNumberStatus(phoneNumberStatus.toString());
+		public Builder withPhoneNumberStatusEnumValues(List<phoneNumberStatusValues> phoneNumberStatus) {
+		    List<String> stringList = new ArrayList<>();
+	      for (phoneNumberStatusValues e : phoneNumberStatus) {
+	        stringList.add(e.toString());
+	      }
+	      request.setPhoneNumberStatus(stringList);
 		    return this;
+		}
+		
+		public Builder withCountryCode(List<String> countryCode) {
+			request.setCountryCode(countryCode);
+			return this;
 		}
 		
 		public Builder withPageSize(Integer pageSize) {
@@ -304,6 +451,31 @@ public class GetRoutingSmsPhonenumbersRequest {
 		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
+			return this;
+		}
+		
+		public Builder withSortBy(String sortBy) {
+			request.setSortBy(sortBy);
+			return this;
+		}
+
+		public Builder withSortBy(sortByValues sortBy) {
+		    request.setSortBy(sortBy.toString());
+		    return this;
+		}
+		
+		public Builder withSortOrder(String sortOrder) {
+			request.setSortOrder(sortOrder);
+			return this;
+		}
+
+		public Builder withSortOrder(sortOrderValues sortOrder) {
+		    request.setSortOrder(sortOrder.toString());
+		    return this;
+		}
+		
+		public Builder withLanguage(String language) {
+			request.setLanguage(language);
 			return this;
 		}
 		

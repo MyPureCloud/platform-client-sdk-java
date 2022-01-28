@@ -293,6 +293,50 @@ public class GetCoachingAppointmentsMeRequest {
 		}
 	}
 	
+	private String intervalCondition;
+	public String getIntervalCondition() {
+		return this.intervalCondition;
+	}
+
+	public void setIntervalCondition(String intervalCondition) {
+		this.intervalCondition = intervalCondition;
+	}
+
+	public GetCoachingAppointmentsMeRequest withIntervalCondition(String intervalCondition) {
+	    this.setIntervalCondition(intervalCondition);
+	    return this;
+	} 
+
+	public enum intervalConditionValues { 
+		STARTSIN("StartsIn"), 
+		OVERLAPS("Overlaps");
+
+		private String value;
+
+		intervalConditionValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static intervalConditionValues fromString(String key) {
+			if (key == null) return null;
+
+			for (intervalConditionValues value : intervalConditionValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return intervalConditionValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -333,6 +377,8 @@ public class GetCoachingAppointmentsMeRequest {
                 .withQueryParameters("completionInterval", "", completionInterval)
         
                 .withQueryParameters("overdue", "", overdue)
+        
+                .withQueryParameters("intervalCondition", "", intervalCondition)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -425,6 +471,16 @@ public class GetCoachingAppointmentsMeRequest {
 
 		public Builder withOverdue(overdueValues overdue) {
 		    request.setOverdue(overdue.toString());
+		    return this;
+		}
+		
+		public Builder withIntervalCondition(String intervalCondition) {
+			request.setIntervalCondition(intervalCondition);
+			return this;
+		}
+
+		public Builder withIntervalCondition(intervalConditionValues intervalCondition) {
+		    request.setIntervalCondition(intervalCondition.toString());
 		    return this;
 		}
 		

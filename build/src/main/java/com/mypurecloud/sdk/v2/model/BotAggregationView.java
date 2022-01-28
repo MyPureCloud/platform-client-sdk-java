@@ -43,6 +43,7 @@ public class BotAggregationView  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NBOTSESSIONS("nBotSessions"),
     OBOTINTENT("oBotIntent"),
+    OBOTSESSIONQUERY("oBotSessionQuery"),
     OBOTSESSIONTURN("oBotSessionTurn"),
     OBOTSLOT("oBotSlot"),
     TBOTDISCONNECT("tBotDisconnect"),

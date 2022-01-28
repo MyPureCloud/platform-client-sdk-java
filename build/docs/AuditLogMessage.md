@@ -66,6 +66,7 @@ title: AuditLogMessage
 | SUPPORTABILITY | &quot;Supportability&quot; |
 | CALLBACK | &quot;Callback&quot; |
 | WORKITEMS | &quot;Workitems&quot; |
+| SCIM | &quot;SCIM&quot; |
 {: class="table table-striped"}
 
 
@@ -160,6 +161,7 @@ title: AuditLogMessage
 | ACTIONTEMPLATE | &quot;ActionTemplate&quot; |
 | ACTIVITYCODE | &quot;ActivityCode&quot; |
 | AGENTROUTINGINFO | &quot;AgentRoutingInfo&quot; |
+| ANALYTICSREPORTINGSETTINGS | &quot;AnalyticsReportingSettings&quot; |
 | ANNOTATION | &quot;Annotation&quot; |
 | APPOINTMENT | &quot;Appointment&quot; |
 | ASSIGNMENT | &quot;Assignment&quot; |
@@ -188,6 +190,7 @@ title: AuditLogMessage
 | CONVERSATIONPHONENUMBER | &quot;ConversationPhoneNumber&quot; |
 | CONVERSATIONRECIPIENT | &quot;ConversationRecipient&quot; |
 | CONVERSATIONTHREADINGWINDOW | &quot;ConversationThreadingWindow&quot; |
+| CREDENTIAL | &quot;Credential&quot; |
 | DASHBOARDSETTINGS | &quot;DashboardSettings&quot; |
 | DEPENDENCYTRACKINGBUILD | &quot;DependencyTrackingBuild&quot; |
 | DEPLOYMENT | &quot;Deployment&quot; |
@@ -266,6 +269,7 @@ title: AuditLogMessage
 | RECORDINGANNOTATION | &quot;RecordingAnnotation&quot; |
 | RECORDINGSETTINGS | &quot;RecordingSettings&quot; |
 | RESPONSE | &quot;Response&quot; |
+| RESPONSEASSET | &quot;ResponseAsset&quot; |
 | ROLE | &quot;Role&quot; |
 | ROW | &quot;Row&quot; |
 | ROUTINGTRANSCRIPTIONSETTINGS | &quot;RoutingTranscriptionSettings&quot; |
@@ -292,6 +296,8 @@ title: AuditLogMessage
 | SURVEY | &quot;Survey&quot; |
 | SURVEYFORM | &quot;SurveyForm&quot; |
 | TEAM | &quot;Team&quot; |
+| TIMEOFFLIMIT | &quot;TimeOffLimit&quot; |
+| TIMEOFFPLAN | &quot;TimeOffPlan&quot; |
 | TIMEOFFREQUEST | &quot;TimeOffRequest&quot; |
 | TOPIC | &quot;Topic&quot; |
 | TRANSCRIPTIONSETTINGS | &quot;TranscriptionSettings&quot; |

@@ -48,6 +48,7 @@ title: FlowAggregateQueryPredicate
 | ASSIGNERID | &quot;assignerId&quot; |
 | AUTHENTICATED | &quot;authenticated&quot; |
 | CONVERSATIONID | &quot;conversationId&quot; |
+| CONVERSATIONINITIATOR | &quot;conversationInitiator&quot; |
 | CONVERTEDFROM | &quot;convertedFrom&quot; |
 | CONVERTEDTO | &quot;convertedTo&quot; |
 | DELIVERYSTATUS | &quot;deliveryStatus&quot; |
@@ -62,6 +63,7 @@ title: FlowAggregateQueryPredicate
 | ENTRYREASON | &quot;entryReason&quot; |
 | ENTRYTYPE | &quot;entryType&quot; |
 | EXITREASON | &quot;exitReason&quot; |
+| EXTENDEDDELIVERYSTATUS | &quot;extendedDeliveryStatus&quot; |
 | EXTERNALCONTACTID | &quot;externalContactId&quot; |
 | EXTERNALMEDIACOUNT | &quot;externalMediaCount&quot; |
 | EXTERNALORGANIZATIONID | &quot;externalOrganizationId&quot; |

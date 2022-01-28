@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.WfmUserScheduleAdherenceUpdatedTopicActivityCodeReference;
 import com.mypurecloud.sdk.v2.model.WfmUserScheduleAdherenceUpdatedTopicQueueReference;
 import com.mypurecloud.sdk.v2.model.WfmUserScheduleAdherenceUpdatedTopicUriReference;
 import com.mypurecloud.sdk.v2.model.WfmUserScheduleAdherenceUpdatedTopicUserReference;
@@ -31,6 +32,7 @@ public class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate  im
   private String managementUnitId = null;
   private WfmUserScheduleAdherenceUpdatedTopicUriReference team = null;
   private String scheduledActivityCategory = null;
+  private WfmUserScheduleAdherenceUpdatedTopicActivityCodeReference scheduledActivityCode = null;
   private String systemPresence = null;
   private String organizationSecondaryPresenceId = null;
 
@@ -212,6 +214,23 @@ public class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate  im
   }
   public void setScheduledActivityCategory(String scheduledActivityCategory) {
     this.scheduledActivityCategory = scheduledActivityCategory;
+  }
+
+  
+  /**
+   **/
+  public WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate scheduledActivityCode(WfmUserScheduleAdherenceUpdatedTopicActivityCodeReference scheduledActivityCode) {
+    this.scheduledActivityCode = scheduledActivityCode;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("scheduledActivityCode")
+  public WfmUserScheduleAdherenceUpdatedTopicActivityCodeReference getScheduledActivityCode() {
+    return scheduledActivityCode;
+  }
+  public void setScheduledActivityCode(WfmUserScheduleAdherenceUpdatedTopicActivityCodeReference scheduledActivityCode) {
+    this.scheduledActivityCode = scheduledActivityCode;
   }
 
   
@@ -433,6 +452,7 @@ public class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate  im
         Objects.equals(this.managementUnitId, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.managementUnitId) &&
         Objects.equals(this.team, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.team) &&
         Objects.equals(this.scheduledActivityCategory, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.scheduledActivityCategory) &&
+        Objects.equals(this.scheduledActivityCode, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.scheduledActivityCode) &&
         Objects.equals(this.systemPresence, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.systemPresence) &&
         Objects.equals(this.organizationSecondaryPresenceId, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.organizationSecondaryPresenceId) &&
         Objects.equals(this.routingStatus, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.routingStatus) &&
@@ -449,7 +469,7 @@ public class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate  im
 
   @Override
   public int hashCode() {
-    return Objects.hash(user, managementUnitId, team, scheduledActivityCategory, systemPresence, organizationSecondaryPresenceId, routingStatus, actualActivityCategory, isOutOfOffice, adherenceState, impact, adherenceChangeTime, presenceUpdateTime, activeQueues, activeQueuesModifiedTime, removedFromManagementUnit);
+    return Objects.hash(user, managementUnitId, team, scheduledActivityCategory, scheduledActivityCode, systemPresence, organizationSecondaryPresenceId, routingStatus, actualActivityCategory, isOutOfOffice, adherenceState, impact, adherenceChangeTime, presenceUpdateTime, activeQueues, activeQueuesModifiedTime, removedFromManagementUnit);
   }
 
   @Override
@@ -461,6 +481,7 @@ public class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate  im
     sb.append("    managementUnitId: ").append(toIndentedString(managementUnitId)).append("\n");
     sb.append("    team: ").append(toIndentedString(team)).append("\n");
     sb.append("    scheduledActivityCategory: ").append(toIndentedString(scheduledActivityCategory)).append("\n");
+    sb.append("    scheduledActivityCode: ").append(toIndentedString(scheduledActivityCode)).append("\n");
     sb.append("    systemPresence: ").append(toIndentedString(systemPresence)).append("\n");
     sb.append("    organizationSecondaryPresenceId: ").append(toIndentedString(organizationSecondaryPresenceId)).append("\n");
     sb.append("    routingStatus: ").append(toIndentedString(routingStatus)).append("\n");

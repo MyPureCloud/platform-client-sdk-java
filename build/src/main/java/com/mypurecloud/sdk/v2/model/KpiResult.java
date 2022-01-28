@@ -21,10 +21,10 @@ import java.io.Serializable;
 
 public class KpiResult  implements Serializable {
   
-  private Integer kpiTotalOn = null;
-  private Integer kpiTotalOff = null;
-  private Integer interactionCountOn = null;
-  private Integer interactionCountOff = null;
+  private Long kpiTotalOn = null;
+  private Long kpiTotalOff = null;
+  private Long interactionCountOn = null;
+  private Long interactionCountOff = null;
 
   private static class MediaTypeEnumDeserializer extends StdDeserializer<MediaTypeEnum> {
     public MediaTypeEnumDeserializer() {
@@ -44,9 +44,9 @@ public class KpiResult  implements Serializable {
  @JsonDeserialize(using = MediaTypeEnumDeserializer.class)
   public enum MediaTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    VOICE("Voice"),
-    EMAIL("Email"),
-    MESSAGE("Message");
+    VOICE("voice"),
+    EMAIL("email"),
+    MESSAGE("message");
 
     private String value;
 
@@ -78,28 +78,28 @@ public class KpiResult  implements Serializable {
   
   @ApiModelProperty(example = "null", value = "Absolute metric (in which the KPI is based) total for the interactions handled by predictive routing (GPR was on)")
   @JsonProperty("kpiTotalOn")
-  public Integer getKpiTotalOn() {
+  public Long getKpiTotalOn() {
     return kpiTotalOn;
   }
 
   
   @ApiModelProperty(example = "null", value = "Absolute metric (in which the KPI is based) total for the interactions not routed by predictive routing (GPR was off)")
   @JsonProperty("kpiTotalOff")
-  public Integer getKpiTotalOff() {
+  public Long getKpiTotalOff() {
     return kpiTotalOff;
   }
 
   
   @ApiModelProperty(example = "null", value = "Total interactions handled by predictive routing (GPR was on)")
   @JsonProperty("interactionCountOn")
-  public Integer getInteractionCountOn() {
+  public Long getInteractionCountOn() {
     return interactionCountOn;
   }
 
   
   @ApiModelProperty(example = "null", value = "Total interactions not routed by predictive routing (GPR was off)")
   @JsonProperty("interactionCountOff")
-  public Integer getInteractionCountOff() {
+  public Long getInteractionCountOff() {
     return interactionCountOff;
   }
 

@@ -13,9 +13,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.FlowVersion;
 import com.mypurecloud.sdk.v2.model.JsonSchemaDocument;
+import com.mypurecloud.sdk.v2.model.SupportedLanguage;
 import com.mypurecloud.sdk.v2.model.WritableDivision;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -89,8 +92,10 @@ public class FlowDivisionView  implements Serializable {
     }
   }
   private TypeEnum type = null;
+  private String description = null;
   private JsonSchemaDocument inputSchema = null;
   private JsonSchemaDocument outputSchema = null;
+  private List<SupportedLanguage> supportedLanguages = new ArrayList<SupportedLanguage>();
   private FlowVersion publishedVersion = null;
   private FlowVersion debugVersion = null;
   private String selfUri = null;
@@ -168,6 +173,24 @@ public class FlowDivisionView  implements Serializable {
 
   
   /**
+   * the flow description
+   **/
+  public FlowDivisionView description(String description) {
+    this.description = description;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "the flow description")
+  @JsonProperty("description")
+  public String getDescription() {
+    return description;
+  }
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+  
+  /**
    * json schema describing the inputs for the flow
    **/
   public FlowDivisionView inputSchema(JsonSchemaDocument inputSchema) {
@@ -200,6 +223,13 @@ public class FlowDivisionView  implements Serializable {
   }
   public void setOutputSchema(JsonSchemaDocument outputSchema) {
     this.outputSchema = outputSchema;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "List of supported languages for the published version of the flow.")
+  @JsonProperty("supportedLanguages")
+  public List<SupportedLanguage> getSupportedLanguages() {
+    return supportedLanguages;
   }
 
   
@@ -260,8 +290,10 @@ public class FlowDivisionView  implements Serializable {
         Objects.equals(this.name, flowDivisionView.name) &&
         Objects.equals(this.division, flowDivisionView.division) &&
         Objects.equals(this.type, flowDivisionView.type) &&
+        Objects.equals(this.description, flowDivisionView.description) &&
         Objects.equals(this.inputSchema, flowDivisionView.inputSchema) &&
         Objects.equals(this.outputSchema, flowDivisionView.outputSchema) &&
+        Objects.equals(this.supportedLanguages, flowDivisionView.supportedLanguages) &&
         Objects.equals(this.publishedVersion, flowDivisionView.publishedVersion) &&
         Objects.equals(this.debugVersion, flowDivisionView.debugVersion) &&
         Objects.equals(this.selfUri, flowDivisionView.selfUri);
@@ -269,7 +301,7 @@ public class FlowDivisionView  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, type, inputSchema, outputSchema, publishedVersion, debugVersion, selfUri);
+    return Objects.hash(id, name, division, type, description, inputSchema, outputSchema, supportedLanguages, publishedVersion, debugVersion, selfUri);
   }
 
   @Override
@@ -281,8 +313,10 @@ public class FlowDivisionView  implements Serializable {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    inputSchema: ").append(toIndentedString(inputSchema)).append("\n");
     sb.append("    outputSchema: ").append(toIndentedString(outputSchema)).append("\n");
+    sb.append("    supportedLanguages: ").append(toIndentedString(supportedLanguages)).append("\n");
     sb.append("    publishedVersion: ").append(toIndentedString(publishedVersion)).append("\n");
     sb.append("    debugVersion: ").append(toIndentedString(debugVersion)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

@@ -50,7 +50,8 @@ public class DevelopmentActivityAggregateParam  implements Serializable {
     NINVALIDSCHEDULEACTIVITIES("nInvalidScheduleActivities"),
     NPASSEDACTIVITIES("nPassedActivities"),
     NFAILEDACTIVITIES("nFailedActivities"),
-    OACTIVITYSCORE("oActivityScore");
+    OACTIVITYSCORE("oActivityScore"),
+    NNOTCOMPLETEDACTIVITIES("nNotCompletedActivities");
 
     private String value;
 

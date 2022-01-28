@@ -3575,7 +3575,7 @@ try {
 
 
 
-> [SmsPhoneNumberEntityListing](SmsPhoneNumberEntityListing.html) getRoutingSmsPhonenumbers(phoneNumber, phoneNumberType, phoneNumberStatus, pageSize, pageNumber)
+> [SmsPhoneNumberEntityListing](SmsPhoneNumberEntityListing.html) getRoutingSmsPhonenumbers(phoneNumber, phoneNumberType, phoneNumberStatus, countryCode, pageSize, pageNumber, sortBy, sortOrder, language)
 
 Get a list of provisioned phone numbers.
 
@@ -3610,12 +3610,16 @@ Configuration.setDefaultApiClient(apiClient);
 
 RoutingApi apiInstance = new RoutingApi();
 String phoneNumber = "phoneNumber_example"; // String | Filter on phone number address. Allowable characters are the digits '0-9' and the wild card character '\\*'. If just digits are present, a contains search is done on the address pattern. For example, '317' could be matched anywhere in the address. An '\\*' will match multiple digits. For example, to match a specific area code within the US a pattern like '1317*' could be used.
-String phoneNumberType = "phoneNumberType_example"; // String | Filter on phone number type
-String phoneNumberStatus = "phoneNumberStatus_example"; // String | Filter on phone number status
+List<String> phoneNumberType = Arrays.asList("phoneNumberType_example"); // List<String> | Filter on phone number type
+List<String> phoneNumberStatus = Arrays.asList("phoneNumberStatus_example"); // List<String> | Filter on phone number status
+List<String> countryCode = Arrays.asList("countryCode_example"); // List<String> | Filter on country code
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
+String sortBy = "sortBy_example"; // String | Optional field to sort results
+String sortOrder = "sortOrder_example"; // String | Sort order
+String language = "en-US"; // String | A language tag (which is sometimes referred to as a \"locale identifier\") to use to localize country field and sort operations
 try {
-    SmsPhoneNumberEntityListing result = apiInstance.getRoutingSmsPhonenumbers(phoneNumber, phoneNumberType, phoneNumberStatus, pageSize, pageNumber);
+    SmsPhoneNumberEntityListing result = apiInstance.getRoutingSmsPhonenumbers(phoneNumber, phoneNumberType, phoneNumberStatus, countryCode, pageSize, pageNumber, sortBy, sortOrder, language);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingSmsPhonenumbers");
@@ -3629,10 +3633,14 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **phoneNumber** | **String**| Filter on phone number address. Allowable characters are the digits &#39;0-9&#39; and the wild card character &#39;\\*&#39;. If just digits are present, a contains search is done on the address pattern. For example, &#39;317&#39; could be matched anywhere in the address. An &#39;\\*&#39; will match multiple digits. For example, to match a specific area code within the US a pattern like &#39;1317*&#39; could be used. | [optional] 
-| **phoneNumberType** | **String**| Filter on phone number type | [optional]<br />**Values**: local, mobile, tollfree, shortcode 
-| **phoneNumberStatus** | **String**| Filter on phone number status | [optional]<br />**Values**: active, invalid, porting 
+| **phoneNumberType** | [**List&lt;String&gt;**](String.html)| Filter on phone number type | [optional]<br />**Values**: local, mobile, tollfree, shortcode 
+| **phoneNumberStatus** | [**List&lt;String&gt;**](String.html)| Filter on phone number status | [optional]<br />**Values**: active, invalid, initiated, porting, pending, pending-cancellation 
+| **countryCode** | [**List&lt;String&gt;**](String.html)| Filter on country code | [optional] 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **sortBy** | **String**| Optional field to sort results | [optional]<br />**Values**: phoneNumber, countryCode, country, phoneNumberStatus, phoneNumberType, purchaseDate, supportsMms, supportsSms, supportsVoice 
+| **sortOrder** | **String**| Sort order | [optional]<br />**Values**: ascending, descending 
+| **language** | **String**| A language tag (which is sometimes referred to as a \&quot;locale identifier\&quot;) to use to localize country field and sort operations | [optional] [default to en-US] 
 {: class="table-striped"}
 
 

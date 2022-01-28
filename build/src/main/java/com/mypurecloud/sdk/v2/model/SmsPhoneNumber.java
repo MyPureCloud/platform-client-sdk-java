@@ -287,6 +287,10 @@ public class SmsPhoneNumber  implements Serializable {
   }
   private ShortCodeBillingTypeEnum shortCodeBillingType = null;
   private SmsProvisioningStatus provisioningStatus = null;
+  private String country = null;
+  private Boolean supportsSms = null;
+  private Boolean supportsMms = null;
+  private Boolean supportsVoice = null;
   private String selfUri = null;
 
   
@@ -616,6 +620,78 @@ public class SmsPhoneNumber  implements Serializable {
   }
 
   
+  /**
+   * Localized country name for the country code this phone number belongs too
+   **/
+  public SmsPhoneNumber country(String country) {
+    this.country = country;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Localized country name for the country code this phone number belongs too")
+  @JsonProperty("country")
+  public String getCountry() {
+    return country;
+  }
+  public void setCountry(String country) {
+    this.country = country;
+  }
+
+  
+  /**
+   * Set to true if this phone number has the capability to support SMS
+   **/
+  public SmsPhoneNumber supportsSms(Boolean supportsSms) {
+    this.supportsSms = supportsSms;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Set to true if this phone number has the capability to support SMS")
+  @JsonProperty("supportsSms")
+  public Boolean getSupportsSms() {
+    return supportsSms;
+  }
+  public void setSupportsSms(Boolean supportsSms) {
+    this.supportsSms = supportsSms;
+  }
+
+  
+  /**
+   * Set to true if this phone number has the capability to support MMS
+   **/
+  public SmsPhoneNumber supportsMms(Boolean supportsMms) {
+    this.supportsMms = supportsMms;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Set to true if this phone number has the capability to support MMS")
+  @JsonProperty("supportsMms")
+  public Boolean getSupportsMms() {
+    return supportsMms;
+  }
+  public void setSupportsMms(Boolean supportsMms) {
+    this.supportsMms = supportsMms;
+  }
+
+  
+  /**
+   * Set to true if this phone number has the capability to support voice
+   **/
+  public SmsPhoneNumber supportsVoice(Boolean supportsVoice) {
+    this.supportsVoice = supportsVoice;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Set to true if this phone number has the capability to support voice")
+  @JsonProperty("supportsVoice")
+  public Boolean getSupportsVoice() {
+    return supportsVoice;
+  }
+  public void setSupportsVoice(Boolean supportsVoice) {
+    this.supportsVoice = supportsVoice;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -653,12 +729,16 @@ public class SmsPhoneNumber  implements Serializable {
         Objects.equals(this.addressId, smsPhoneNumber.addressId) &&
         Objects.equals(this.shortCodeBillingType, smsPhoneNumber.shortCodeBillingType) &&
         Objects.equals(this.provisioningStatus, smsPhoneNumber.provisioningStatus) &&
+        Objects.equals(this.country, smsPhoneNumber.country) &&
+        Objects.equals(this.supportsSms, smsPhoneNumber.supportsSms) &&
+        Objects.equals(this.supportsMms, smsPhoneNumber.supportsMms) &&
+        Objects.equals(this.supportsVoice, smsPhoneNumber.supportsVoice) &&
         Objects.equals(this.selfUri, smsPhoneNumber.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, phoneNumber, phoneNumberType, provisionedThroughPureCloud, phoneNumberStatus, capabilities, countryCode, dateCreated, dateModified, createdBy, modifiedBy, version, purchaseDate, cancellationDate, renewalDate, autoRenewable, addressId, shortCodeBillingType, provisioningStatus, selfUri);
+    return Objects.hash(id, name, phoneNumber, phoneNumberType, provisionedThroughPureCloud, phoneNumberStatus, capabilities, countryCode, dateCreated, dateModified, createdBy, modifiedBy, version, purchaseDate, cancellationDate, renewalDate, autoRenewable, addressId, shortCodeBillingType, provisioningStatus, country, supportsSms, supportsMms, supportsVoice, selfUri);
   }
 
   @Override
@@ -686,6 +766,10 @@ public class SmsPhoneNumber  implements Serializable {
     sb.append("    addressId: ").append(toIndentedString(addressId)).append("\n");
     sb.append("    shortCodeBillingType: ").append(toIndentedString(shortCodeBillingType)).append("\n");
     sb.append("    provisioningStatus: ").append(toIndentedString(provisioningStatus)).append("\n");
+    sb.append("    country: ").append(toIndentedString(country)).append("\n");
+    sb.append("    supportsSms: ").append(toIndentedString(supportsSms)).append("\n");
+    sb.append("    supportsMms: ").append(toIndentedString(supportsMms)).append("\n");
+    sb.append("    supportsVoice: ").append(toIndentedString(supportsVoice)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -30,6 +30,70 @@ public class AnalyticsConversation  implements Serializable {
   
   private Date conversationEnd = null;
   private String conversationId = null;
+
+  private static class ConversationInitiatorEnumDeserializer extends StdDeserializer<ConversationInitiatorEnum> {
+    public ConversationInitiatorEnumDeserializer() {
+      super(ConversationInitiatorEnumDeserializer.class);
+    }
+
+    @Override
+    public ConversationInitiatorEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ConversationInitiatorEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Indicates the participant purpose of the participant initiating a message conversation
+   */
+ @JsonDeserialize(using = ConversationInitiatorEnumDeserializer.class)
+  public enum ConversationInitiatorEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ACD("acd"),
+    AGENT("agent"),
+    API("api"),
+    BOTFLOW("botflow"),
+    CAMPAIGN("campaign"),
+    CUSTOMER("customer"),
+    DIALER("dialer"),
+    EXTERNAL("external"),
+    FAX("fax"),
+    GROUP("group"),
+    INBOUND("inbound"),
+    IVR("ivr"),
+    MANUAL("manual"),
+    OUTBOUND("outbound"),
+    STATION("station"),
+    USER("user"),
+    VOICEMAIL("voicemail"),
+    WORKFLOW("workflow");
+
+    private String value;
+
+    ConversationInitiatorEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ConversationInitiatorEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ConversationInitiatorEnum value : ConversationInitiatorEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ConversationInitiatorEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private ConversationInitiatorEnum conversationInitiator = null;
   private Date conversationStart = null;
   private List<String> divisionIds = new ArrayList<String>();
   private String externalTag = null;
@@ -124,6 +188,24 @@ public class AnalyticsConversation  implements Serializable {
   }
   public void setConversationId(String conversationId) {
     this.conversationId = conversationId;
+  }
+
+  
+  /**
+   * Indicates the participant purpose of the participant initiating a message conversation
+   **/
+  public AnalyticsConversation conversationInitiator(ConversationInitiatorEnum conversationInitiator) {
+    this.conversationInitiator = conversationInitiator;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates the participant purpose of the participant initiating a message conversation")
+  @JsonProperty("conversationInitiator")
+  public ConversationInitiatorEnum getConversationInitiator() {
+    return conversationInitiator;
+  }
+  public void setConversationInitiator(ConversationInitiatorEnum conversationInitiator) {
+    this.conversationInitiator = conversationInitiator;
   }
 
   
@@ -355,6 +437,7 @@ public class AnalyticsConversation  implements Serializable {
     AnalyticsConversation analyticsConversation = (AnalyticsConversation) o;
     return Objects.equals(this.conversationEnd, analyticsConversation.conversationEnd) &&
         Objects.equals(this.conversationId, analyticsConversation.conversationId) &&
+        Objects.equals(this.conversationInitiator, analyticsConversation.conversationInitiator) &&
         Objects.equals(this.conversationStart, analyticsConversation.conversationStart) &&
         Objects.equals(this.divisionIds, analyticsConversation.divisionIds) &&
         Objects.equals(this.externalTag, analyticsConversation.externalTag) &&
@@ -371,7 +454,7 @@ public class AnalyticsConversation  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(conversationEnd, conversationId, conversationStart, divisionIds, externalTag, knowledgeBaseIds, mediaStatsMinConversationMos, mediaStatsMinConversationRFactor, originatingDirection, selfServed, evaluations, surveys, resolutions, participants);
+    return Objects.hash(conversationEnd, conversationId, conversationInitiator, conversationStart, divisionIds, externalTag, knowledgeBaseIds, mediaStatsMinConversationMos, mediaStatsMinConversationRFactor, originatingDirection, selfServed, evaluations, surveys, resolutions, participants);
   }
 
   @Override
@@ -381,6 +464,7 @@ public class AnalyticsConversation  implements Serializable {
     
     sb.append("    conversationEnd: ").append(toIndentedString(conversationEnd)).append("\n");
     sb.append("    conversationId: ").append(toIndentedString(conversationId)).append("\n");
+    sb.append("    conversationInitiator: ").append(toIndentedString(conversationInitiator)).append("\n");
     sb.append("    conversationStart: ").append(toIndentedString(conversationStart)).append("\n");
     sb.append("    divisionIds: ").append(toIndentedString(divisionIds)).append("\n");
     sb.append("    externalTag: ").append(toIndentedString(externalTag)).append("\n");

@@ -173,6 +173,7 @@ public class GetWorkforcemanagementBusinessunitsRequest {
 		BUACTIVITYCODES("BuActivityCodes"), 
 		BUSINESSUNITS("BusinessUnits"), 
 		HISTORICALADHERENCE("HistoricalAdherence"), 
+		HISTORICALSHRINKAGE("HistoricalShrinkage"), 
 		INTRADAYMONITORING("IntradayMonitoring"), 
 		BUINTRADAYMONITORING("BuIntradayMonitoring"), 
 		MANAGEMENTUNITS("ManagementUnits"), 

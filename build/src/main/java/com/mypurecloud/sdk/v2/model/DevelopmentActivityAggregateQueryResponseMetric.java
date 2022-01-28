@@ -49,7 +49,8 @@ public class DevelopmentActivityAggregateQueryResponseMetric  implements Seriali
     NINVALIDSCHEDULEACTIVITIES("nInvalidScheduleActivities"),
     NPASSEDACTIVITIES("nPassedActivities"),
     NFAILEDACTIVITIES("nFailedActivities"),
-    OACTIVITYSCORE("oActivityScore");
+    OACTIVITYSCORE("oActivityScore"),
+    NNOTCOMPLETEDACTIVITIES("nNotCompletedActivities");
 
     private String value;
 

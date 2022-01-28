@@ -58,6 +58,7 @@ title: SegmentDetailQueryPredicate
 | EDGEID | &quot;edgeId&quot; |
 | ERRORCODE | &quot;errorCode&quot; |
 | EXITREASON | &quot;exitReason&quot; |
+| EXTENDEDDELIVERYSTATUS | &quot;extendedDeliveryStatus&quot; |
 | EXTERNALCONTACTID | &quot;externalContactId&quot; |
 | EXTERNALORGANIZATIONID | &quot;externalOrganizationId&quot; |
 | FLAGGEDREASON | &quot;flaggedReason&quot; |

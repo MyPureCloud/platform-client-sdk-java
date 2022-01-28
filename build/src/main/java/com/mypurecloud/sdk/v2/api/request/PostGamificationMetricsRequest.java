@@ -43,6 +43,7 @@ import com.mypurecloud.sdk.v2.model.SingleWorkdayAverageValues;
 import com.mypurecloud.sdk.v2.model.GamificationStatus;
 import com.mypurecloud.sdk.v2.model.ObjectiveTemplate;
 import com.mypurecloud.sdk.v2.model.GetTemplatesResponse;
+import com.mypurecloud.sdk.v2.model.CreateMetric;
 import com.mypurecloud.sdk.v2.model.Assignment;
 import com.mypurecloud.sdk.v2.model.AssignUsers;
 import com.mypurecloud.sdk.v2.model.AssignmentValidation;
@@ -52,16 +53,16 @@ import com.mypurecloud.sdk.v2.model.CreatePerformanceProfile;
 
 public class PostGamificationMetricsRequest {
     
-	private Metric body;
-	public Metric getBody() {
+	private CreateMetric body;
+	public CreateMetric getBody() {
 		return this.body;
 	}
 
-	public void setBody(Metric body) {
+	public void setBody(CreateMetric body) {
 		this.body = body;
 	}
 
-	public PostGamificationMetricsRequest withBody(Metric body) {
+	public PostGamificationMetricsRequest withBody(CreateMetric body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -85,7 +86,7 @@ public class PostGamificationMetricsRequest {
         return this;
     }
 
-    public ApiRequest<Metric> withHttpInfo() {
+    public ApiRequest<CreateMetric> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
@@ -108,7 +109,7 @@ public class PostGamificationMetricsRequest {
 	}
 
 	
-	public static Builder builder(Metric body) {
+	public static Builder builder(CreateMetric body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
@@ -122,14 +123,14 @@ public class PostGamificationMetricsRequest {
 		}
 
 		
-		public Builder withBody(Metric body) {
+		public Builder withBody(CreateMetric body) {
 			request.setBody(body);
 			return this;
 		}
 		
 
 		
-		public Builder withRequiredParams(Metric body) {
+		public Builder withRequiredParams(CreateMetric body) {
 			request.setBody(body);
 			
 			return this;

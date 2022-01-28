@@ -23,6 +23,8 @@ public class OrphanUpdateRequest  implements Serializable {
   
   private Date archiveDate = null;
   private Date deleteDate = null;
+  private Date exportDate = null;
+  private String integrationId = null;
   private String conversationId = null;
 
   
@@ -45,20 +47,56 @@ public class OrphanUpdateRequest  implements Serializable {
 
   
   /**
-   * The orphan recording's delete date. Must be greater than archiveDate if set, otherwise one day from now. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   * The orphan recording's delete date. Must be greater than archiveDate and exportDate if set, otherwise one day from now. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public OrphanUpdateRequest deleteDate(Date deleteDate) {
     this.deleteDate = deleteDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The orphan recording's delete date. Must be greater than archiveDate if set, otherwise one day from now. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @ApiModelProperty(example = "null", value = "The orphan recording's delete date. Must be greater than archiveDate and exportDate if set, otherwise one day from now. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("deleteDate")
   public Date getDeleteDate() {
     return deleteDate;
   }
   public void setDeleteDate(Date deleteDate) {
     this.deleteDate = deleteDate;
+  }
+
+  
+  /**
+   * The orphan recording's export date. Must be greater than 1 day from now if set. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public OrphanUpdateRequest exportDate(Date exportDate) {
+    this.exportDate = exportDate;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The orphan recording's export date. Must be greater than 1 day from now if set. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("exportDate")
+  public Date getExportDate() {
+    return exportDate;
+  }
+  public void setExportDate(Date exportDate) {
+    this.exportDate = exportDate;
+  }
+
+  
+  /**
+   * IntegrationId to access AWS S3 bucket for export. This field is required if exportDate is set.
+   **/
+  public OrphanUpdateRequest integrationId(String integrationId) {
+    this.integrationId = integrationId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "IntegrationId to access AWS S3 bucket for export. This field is required if exportDate is set.")
+  @JsonProperty("integrationId")
+  public String getIntegrationId() {
+    return integrationId;
+  }
+  public void setIntegrationId(String integrationId) {
+    this.integrationId = integrationId;
   }
 
   
@@ -92,12 +130,14 @@ public class OrphanUpdateRequest  implements Serializable {
     OrphanUpdateRequest orphanUpdateRequest = (OrphanUpdateRequest) o;
     return Objects.equals(this.archiveDate, orphanUpdateRequest.archiveDate) &&
         Objects.equals(this.deleteDate, orphanUpdateRequest.deleteDate) &&
+        Objects.equals(this.exportDate, orphanUpdateRequest.exportDate) &&
+        Objects.equals(this.integrationId, orphanUpdateRequest.integrationId) &&
         Objects.equals(this.conversationId, orphanUpdateRequest.conversationId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(archiveDate, deleteDate, conversationId);
+    return Objects.hash(archiveDate, deleteDate, exportDate, integrationId, conversationId);
   }
 
   @Override
@@ -107,6 +147,8 @@ public class OrphanUpdateRequest  implements Serializable {
     
     sb.append("    archiveDate: ").append(toIndentedString(archiveDate)).append("\n");
     sb.append("    deleteDate: ").append(toIndentedString(deleteDate)).append("\n");
+    sb.append("    exportDate: ").append(toIndentedString(exportDate)).append("\n");
+    sb.append("    integrationId: ").append(toIndentedString(integrationId)).append("\n");
     sb.append("    conversationId: ").append(toIndentedString(conversationId)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -12,6 +12,7 @@ title: WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate
 | **managementUnitId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **team** | <!----><!---->[**WfmUserScheduleAdherenceUpdatedMuTopicUriReference**](WfmUserScheduleAdherenceUpdatedMuTopicUriReference.html)<!----> |  |  [optional] |
 | **scheduledActivityCategory** | <!----><!---->**String**<!----> |  |  [optional] |
+| **scheduledActivityCode** | <!----><!---->[**WfmUserScheduleAdherenceUpdatedMuTopicActivityCodeReference**](WfmUserScheduleAdherenceUpdatedMuTopicActivityCodeReference.html)<!----> |  |  [optional] |
 | **systemPresence** | <!----><!---->**String**<!----> |  |  [optional] |
 | **organizationSecondaryPresenceId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **routingStatus** | [**RoutingStatusEnum**](#RoutingStatusEnum)<!----> |  |  [optional] |

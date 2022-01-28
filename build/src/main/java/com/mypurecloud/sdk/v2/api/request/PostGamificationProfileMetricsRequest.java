@@ -43,6 +43,7 @@ import com.mypurecloud.sdk.v2.model.SingleWorkdayAverageValues;
 import com.mypurecloud.sdk.v2.model.GamificationStatus;
 import com.mypurecloud.sdk.v2.model.ObjectiveTemplate;
 import com.mypurecloud.sdk.v2.model.GetTemplatesResponse;
+import com.mypurecloud.sdk.v2.model.CreateMetric;
 import com.mypurecloud.sdk.v2.model.Assignment;
 import com.mypurecloud.sdk.v2.model.AssignUsers;
 import com.mypurecloud.sdk.v2.model.AssignmentValidation;
@@ -66,16 +67,16 @@ public class PostGamificationProfileMetricsRequest {
 	    return this;
 	} 
 	
-	private Metric body;
-	public Metric getBody() {
+	private CreateMetric body;
+	public CreateMetric getBody() {
 		return this.body;
 	}
 
-	public void setBody(Metric body) {
+	public void setBody(CreateMetric body) {
 		this.body = body;
 	}
 
-	public PostGamificationProfileMetricsRequest withBody(Metric body) {
+	public PostGamificationProfileMetricsRequest withBody(CreateMetric body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -99,7 +100,7 @@ public class PostGamificationProfileMetricsRequest {
         return this;
     }
 
-    public ApiRequest<Metric> withHttpInfo() {
+    public ApiRequest<CreateMetric> withHttpInfo() {
         
         // verify the required parameter 'profileId' is set
         if (this.profileId == null) {
@@ -129,7 +130,7 @@ public class PostGamificationProfileMetricsRequest {
 	}
 
 	
-	public static Builder builder(String profileId, Metric body) {
+	public static Builder builder(String profileId, CreateMetric body) {
 	    return new Builder()
 	            .withRequiredParams(profileId, body);
 	}
@@ -148,14 +149,14 @@ public class PostGamificationProfileMetricsRequest {
 			return this;
 		}
 		
-		public Builder withBody(Metric body) {
+		public Builder withBody(CreateMetric body) {
 			request.setBody(body);
 			return this;
 		}
 		
 
 		
-		public Builder withRequiredParams(String profileId, Metric body) {
+		public Builder withRequiredParams(String profileId, CreateMetric body) {
 			request.setProfileId(profileId);
 						request.setBody(body);
 			

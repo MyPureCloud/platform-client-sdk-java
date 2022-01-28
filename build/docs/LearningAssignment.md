@@ -40,6 +40,7 @@ title: LearningAssignment
 | INPROGRESS | &quot;InProgress&quot; |
 | COMPLETED | &quot;Completed&quot; |
 | DELETED | &quot;Deleted&quot; |
+| NOTCOMPLETED | &quot;NotCompleted&quot; |
 {: class="table table-striped"}
 
 

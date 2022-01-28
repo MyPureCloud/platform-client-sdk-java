@@ -48,6 +48,7 @@ title: DevelopmentActivity
 | INPROGRESS | &quot;InProgress&quot; |
 | COMPLETED | &quot;Completed&quot; |
 | INVALIDSCHEDULE | &quot;InvalidSchedule&quot; |
+| NOTCOMPLETED | &quot;NotCompleted&quot; |
 {: class="table table-striped"}
 
 

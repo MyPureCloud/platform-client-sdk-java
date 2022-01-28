@@ -50,7 +50,8 @@ public class LearningAssignmentTopicLearningAssignmentNotification  implements S
     ASSIGNED("Assigned"),
     INPROGRESS("InProgress"),
     COMPLETED("Completed"),
-    DELETED("Deleted");
+    DELETED("Deleted"),
+    NOTCOMPLETED("NotCompleted");
 
     private String value;
 

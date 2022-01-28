@@ -47,7 +47,8 @@ public class MinerExecuteRequest  implements Serializable {
   public enum MediaTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CHAT("Chat"),
-    CALL("Call");
+    CALL("Call"),
+    MESSAGE("Message");
 
     private String value;
 

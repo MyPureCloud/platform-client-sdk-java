@@ -38,6 +38,7 @@ title: ConversationAggregationQuery
 | ASSIGNERID | &quot;assignerId&quot; |
 | AUTHENTICATED | &quot;authenticated&quot; |
 | CONVERSATIONID | &quot;conversationId&quot; |
+| CONVERSATIONINITIATOR | &quot;conversationInitiator&quot; |
 | CONVERTEDFROM | &quot;convertedFrom&quot; |
 | CONVERTEDTO | &quot;convertedTo&quot; |
 | DELIVERYSTATUS | &quot;deliveryStatus&quot; |
@@ -48,6 +49,7 @@ title: ConversationAggregationQuery
 | DNIS | &quot;dnis&quot; |
 | EDGEID | &quot;edgeId&quot; |
 | ELIGIBLEAGENTCOUNT | &quot;eligibleAgentCount&quot; |
+| EXTENDEDDELIVERYSTATUS | &quot;extendedDeliveryStatus&quot; |
 | EXTERNALCONTACTID | &quot;externalContactId&quot; |
 | EXTERNALMEDIACOUNT | &quot;externalMediaCount&quot; |
 | EXTERNALORGANIZATIONID | &quot;externalOrganizationId&quot; |

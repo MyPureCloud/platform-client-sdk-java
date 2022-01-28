@@ -88,7 +88,8 @@ public class AuditLogMessage  implements Serializable {
     MESSAGING("Messaging"),
     SUPPORTABILITY("Supportability"),
     CALLBACK("Callback"),
-    WORKITEMS("Workitems");
+    WORKITEMS("Workitems"),
+    SCIM("SCIM");
 
     private String value;
 
@@ -258,6 +259,7 @@ public class AuditLogMessage  implements Serializable {
     ACTIONTEMPLATE("ActionTemplate"),
     ACTIVITYCODE("ActivityCode"),
     AGENTROUTINGINFO("AgentRoutingInfo"),
+    ANALYTICSREPORTINGSETTINGS("AnalyticsReportingSettings"),
     ANNOTATION("Annotation"),
     APPOINTMENT("Appointment"),
     ASSIGNMENT("Assignment"),
@@ -286,6 +288,7 @@ public class AuditLogMessage  implements Serializable {
     CONVERSATIONPHONENUMBER("ConversationPhoneNumber"),
     CONVERSATIONRECIPIENT("ConversationRecipient"),
     CONVERSATIONTHREADINGWINDOW("ConversationThreadingWindow"),
+    CREDENTIAL("Credential"),
     DASHBOARDSETTINGS("DashboardSettings"),
     DEPENDENCYTRACKINGBUILD("DependencyTrackingBuild"),
     DEPLOYMENT("Deployment"),
@@ -364,6 +367,7 @@ public class AuditLogMessage  implements Serializable {
     RECORDINGANNOTATION("RecordingAnnotation"),
     RECORDINGSETTINGS("RecordingSettings"),
     RESPONSE("Response"),
+    RESPONSEASSET("ResponseAsset"),
     ROLE("Role"),
     ROW("Row"),
     ROUTINGTRANSCRIPTIONSETTINGS("RoutingTranscriptionSettings"),
@@ -390,6 +394,8 @@ public class AuditLogMessage  implements Serializable {
     SURVEY("Survey"),
     SURVEYFORM("SurveyForm"),
     TEAM("Team"),
+    TIMEOFFLIMIT("TimeOffLimit"),
+    TIMEOFFPLAN("TimeOffPlan"),
     TIMEOFFREQUEST("TimeOffRequest"),
     TOPIC("Topic"),
     TRANSCRIPTIONSETTINGS("TranscriptionSettings"),

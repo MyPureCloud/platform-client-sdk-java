@@ -121,6 +121,7 @@ title: AuditTopicAuditLogMessage
 | ACTIONTEMPLATE | &quot;ActionTemplate&quot; |
 | ACTIVITYCODE | &quot;ActivityCode&quot; |
 | AGENTROUTINGINFO | &quot;AgentRoutingInfo&quot; |
+| ANALYTICSREPORTINGSETTINGS | &quot;AnalyticsReportingSettings&quot; |
 | ASSIGNMENT | &quot;Assignment&quot; |
 | ATTEMPTLIMITS | &quot;AttemptLimits&quot; |
 | AUTHORGANIZATION | &quot;AuthOrganization&quot; |
@@ -207,6 +208,8 @@ title: AuditTopicAuditLogMessage
 | SPEECHTEXTANALYTICSSETTINGS | &quot;SpeechTextAnalyticsSettings&quot; |
 | STATUS | &quot;Status&quot; |
 | TEAM | &quot;Team&quot; |
+| TIMEOFFLIMIT | &quot;TimeOffLimit&quot; |
+| TIMEOFFPLAN | &quot;TimeOffPlan&quot; |
 | TIMEOFFREQUEST | &quot;TimeOffRequest&quot; |
 | TOPIC | &quot;Topic&quot; |
 | TRANSCRIPTIONSETTINGS | &quot;TranscriptionSettings&quot; |

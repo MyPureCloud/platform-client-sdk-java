@@ -282,14 +282,14 @@ public class HistoricalAdherenceExceptionInfo  implements Serializable {
 
   
   /**
-   * The ID of the scheduled activity for this user
+   * The ID of the scheduled activity code for this user
    **/
   public HistoricalAdherenceExceptionInfo scheduledActivityCodeId(String scheduledActivityCodeId) {
     this.scheduledActivityCodeId = scheduledActivityCodeId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The ID of the scheduled activity for this user")
+  @ApiModelProperty(example = "null", value = "The ID of the scheduled activity code for this user")
   @JsonProperty("scheduledActivityCodeId")
   public String getScheduledActivityCodeId() {
     return scheduledActivityCodeId;
@@ -390,14 +390,14 @@ public class HistoricalAdherenceExceptionInfo  implements Serializable {
 
   
   /**
-   * The lookup ID used to retrieve secondary status from map of lookup ID to corresponding secondary presence ID
+   * The lookup ID used to retrieve the actual secondary status from map of lookup ID to corresponding secondary presence ID
    **/
   public HistoricalAdherenceExceptionInfo secondaryPresenceLookupId(String secondaryPresenceLookupId) {
     this.secondaryPresenceLookupId = secondaryPresenceLookupId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The lookup ID used to retrieve secondary status from map of lookup ID to corresponding secondary presence ID")
+  @ApiModelProperty(example = "null", value = "The lookup ID used to retrieve the actual secondary status from map of lookup ID to corresponding secondary presence ID")
   @JsonProperty("secondaryPresenceLookupId")
   public String getSecondaryPresenceLookupId() {
     return secondaryPresenceLookupId;

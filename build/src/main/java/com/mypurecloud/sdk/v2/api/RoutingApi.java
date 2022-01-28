@@ -4628,14 +4628,18 @@ public class RoutingApi {
    * @param phoneNumber Filter on phone number address. Allowable characters are the digits &#39;0-9&#39; and the wild card character &#39;\\*&#39;. If just digits are present, a contains search is done on the address pattern. For example, &#39;317&#39; could be matched anywhere in the address. An &#39;\\*&#39; will match multiple digits. For example, to match a specific area code within the US a pattern like &#39;1317*&#39; could be used. (optional)
    * @param phoneNumberType Filter on phone number type (optional)
    * @param phoneNumberStatus Filter on phone number status (optional)
+   * @param countryCode Filter on country code (optional)
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param sortBy Optional field to sort results (optional)
+   * @param sortOrder Sort order (optional)
+   * @param language A language tag (which is sometimes referred to as a \&quot;locale identifier\&quot;) to use to localize country field and sort operations (optional, default to en-US)
    * @return SmsPhoneNumberEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public SmsPhoneNumberEntityListing getRoutingSmsPhonenumbers(String phoneNumber, String phoneNumberType, String phoneNumberStatus, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    return  getRoutingSmsPhonenumbers(createGetRoutingSmsPhonenumbersRequest(phoneNumber, phoneNumberType, phoneNumberStatus, pageSize, pageNumber));
+  public SmsPhoneNumberEntityListing getRoutingSmsPhonenumbers(String phoneNumber, List<String> phoneNumberType, List<String> phoneNumberStatus, List<String> countryCode, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String language) throws IOException, ApiException {
+    return  getRoutingSmsPhonenumbers(createGetRoutingSmsPhonenumbersRequest(phoneNumber, phoneNumberType, phoneNumberStatus, countryCode, pageSize, pageNumber, sortBy, sortOrder, language));
   }
 
   /**
@@ -4644,16 +4648,20 @@ public class RoutingApi {
    * @param phoneNumber Filter on phone number address. Allowable characters are the digits &#39;0-9&#39; and the wild card character &#39;\\*&#39;. If just digits are present, a contains search is done on the address pattern. For example, &#39;317&#39; could be matched anywhere in the address. An &#39;\\*&#39; will match multiple digits. For example, to match a specific area code within the US a pattern like &#39;1317*&#39; could be used. (optional)
    * @param phoneNumberType Filter on phone number type (optional)
    * @param phoneNumberStatus Filter on phone number status (optional)
+   * @param countryCode Filter on country code (optional)
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param sortBy Optional field to sort results (optional)
+   * @param sortOrder Sort order (optional)
+   * @param language A language tag (which is sometimes referred to as a \&quot;locale identifier\&quot;) to use to localize country field and sort operations (optional, default to en-US)
    * @return SmsPhoneNumberEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SmsPhoneNumberEntityListing> getRoutingSmsPhonenumbersWithHttpInfo(String phoneNumber, String phoneNumberType, String phoneNumberStatus, Integer pageSize, Integer pageNumber) throws IOException {
-    return getRoutingSmsPhonenumbers(createGetRoutingSmsPhonenumbersRequest(phoneNumber, phoneNumberType, phoneNumberStatus, pageSize, pageNumber).withHttpInfo());
+  public ApiResponse<SmsPhoneNumberEntityListing> getRoutingSmsPhonenumbersWithHttpInfo(String phoneNumber, List<String> phoneNumberType, List<String> phoneNumberStatus, List<String> countryCode, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String language) throws IOException {
+    return getRoutingSmsPhonenumbers(createGetRoutingSmsPhonenumbersRequest(phoneNumber, phoneNumberType, phoneNumberStatus, countryCode, pageSize, pageNumber, sortBy, sortOrder, language).withHttpInfo());
   }
 
-  private GetRoutingSmsPhonenumbersRequest createGetRoutingSmsPhonenumbersRequest(String phoneNumber, String phoneNumberType, String phoneNumberStatus, Integer pageSize, Integer pageNumber) {
+  private GetRoutingSmsPhonenumbersRequest createGetRoutingSmsPhonenumbersRequest(String phoneNumber, List<String> phoneNumberType, List<String> phoneNumberStatus, List<String> countryCode, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String language) {
     return GetRoutingSmsPhonenumbersRequest.builder()
             .withPhoneNumber(phoneNumber)
     
@@ -4661,9 +4669,17 @@ public class RoutingApi {
     
             .withPhoneNumberStatus(phoneNumberStatus)
     
+            .withCountryCode(countryCode)
+    
             .withPageSize(pageSize)
     
             .withPageNumber(pageNumber)
+    
+            .withSortBy(sortBy)
+    
+            .withSortOrder(sortOrder)
+    
+            .withLanguage(language)
     
             .build();
   }

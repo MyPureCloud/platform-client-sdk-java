@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.WfmScheduleReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -32,6 +33,8 @@ public class CreateCoachingAppointmentRequest  implements Serializable {
   private List<String> attendeeIds = new ArrayList<String>();
   private List<String> conversationIds = new ArrayList<String>();
   private List<String> documentIds = new ArrayList<String>();
+  private WfmScheduleReference wfmSchedule = null;
+  private List<String> externalLinks = new ArrayList<String>();
 
   
   /**
@@ -150,7 +153,7 @@ public class CreateCoachingAppointmentRequest  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "IDs of conversations associated with this coaching appointment.")
+  @ApiModelProperty(example = "null", value = "IDs of conversations associated with this coaching appointment.")
   @JsonProperty("conversationIds")
   public List<String> getConversationIds() {
     return conversationIds;
@@ -168,13 +171,49 @@ public class CreateCoachingAppointmentRequest  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "IDs of documents associated with this coaching appointment.")
+  @ApiModelProperty(example = "null", value = "IDs of documents associated with this coaching appointment.")
   @JsonProperty("documentIds")
   public List<String> getDocumentIds() {
     return documentIds;
   }
   public void setDocumentIds(List<String> documentIds) {
     this.documentIds = documentIds;
+  }
+
+  
+  /**
+   * The Workforce Management schedule the appointment is associated with.
+   **/
+  public CreateCoachingAppointmentRequest wfmSchedule(WfmScheduleReference wfmSchedule) {
+    this.wfmSchedule = wfmSchedule;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The Workforce Management schedule the appointment is associated with.")
+  @JsonProperty("wfmSchedule")
+  public WfmScheduleReference getWfmSchedule() {
+    return wfmSchedule;
+  }
+  public void setWfmSchedule(WfmScheduleReference wfmSchedule) {
+    this.wfmSchedule = wfmSchedule;
+  }
+
+  
+  /**
+   * The list of external links related to the appointment
+   **/
+  public CreateCoachingAppointmentRequest externalLinks(List<String> externalLinks) {
+    this.externalLinks = externalLinks;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of external links related to the appointment")
+  @JsonProperty("externalLinks")
+  public List<String> getExternalLinks() {
+    return externalLinks;
+  }
+  public void setExternalLinks(List<String> externalLinks) {
+    this.externalLinks = externalLinks;
   }
 
   
@@ -195,12 +234,14 @@ public class CreateCoachingAppointmentRequest  implements Serializable {
         Objects.equals(this.facilitatorId, createCoachingAppointmentRequest.facilitatorId) &&
         Objects.equals(this.attendeeIds, createCoachingAppointmentRequest.attendeeIds) &&
         Objects.equals(this.conversationIds, createCoachingAppointmentRequest.conversationIds) &&
-        Objects.equals(this.documentIds, createCoachingAppointmentRequest.documentIds);
+        Objects.equals(this.documentIds, createCoachingAppointmentRequest.documentIds) &&
+        Objects.equals(this.wfmSchedule, createCoachingAppointmentRequest.wfmSchedule) &&
+        Objects.equals(this.externalLinks, createCoachingAppointmentRequest.externalLinks);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, dateStart, lengthInMinutes, facilitatorId, attendeeIds, conversationIds, documentIds);
+    return Objects.hash(name, description, dateStart, lengthInMinutes, facilitatorId, attendeeIds, conversationIds, documentIds, wfmSchedule, externalLinks);
   }
 
   @Override
@@ -216,6 +257,8 @@ public class CreateCoachingAppointmentRequest  implements Serializable {
     sb.append("    attendeeIds: ").append(toIndentedString(attendeeIds)).append("\n");
     sb.append("    conversationIds: ").append(toIndentedString(conversationIds)).append("\n");
     sb.append("    documentIds: ").append(toIndentedString(documentIds)).append("\n");
+    sb.append("    wfmSchedule: ").append(toIndentedString(wfmSchedule)).append("\n");
+    sb.append("    externalLinks: ").append(toIndentedString(externalLinks)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -36,6 +36,7 @@ import com.mypurecloud.sdk.v2.model.SingleWorkdayAverageValues;
 import com.mypurecloud.sdk.v2.model.GamificationStatus;
 import com.mypurecloud.sdk.v2.model.ObjectiveTemplate;
 import com.mypurecloud.sdk.v2.model.GetTemplatesResponse;
+import com.mypurecloud.sdk.v2.model.CreateMetric;
 import com.mypurecloud.sdk.v2.model.Assignment;
 import com.mypurecloud.sdk.v2.model.AssignUsers;
 import com.mypurecloud.sdk.v2.model.AssignmentValidation;
@@ -2890,7 +2891,7 @@ public class GamificationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Metric>> postGamificationMetricsAsync(ApiRequest<Metric> request, final AsyncApiCallback<ApiResponse<Metric>> callback) {
+  public Future<ApiResponse<Metric>> postGamificationMetricsAsync(ApiRequest<CreateMetric> request, final AsyncApiCallback<ApiResponse<Metric>> callback) {
     try {
       final SettableFuture<ApiResponse<Metric>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -3346,7 +3347,7 @@ public class GamificationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Metric>> postGamificationProfileMetricsAsync(ApiRequest<Metric> request, final AsyncApiCallback<ApiResponse<Metric>> callback) {
+  public Future<ApiResponse<Metric>> postGamificationProfileMetricsAsync(ApiRequest<CreateMetric> request, final AsyncApiCallback<ApiResponse<Metric>> callback) {
     try {
       final SettableFuture<ApiResponse<Metric>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -3498,7 +3499,7 @@ public class GamificationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Metric>> putGamificationMetricAsync(ApiRequest<Metric> request, final AsyncApiCallback<ApiResponse<Metric>> callback) {
+  public Future<ApiResponse<Metric>> putGamificationMetricAsync(ApiRequest<CreateMetric> request, final AsyncApiCallback<ApiResponse<Metric>> callback) {
     try {
       final SettableFuture<ApiResponse<Metric>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -3650,7 +3651,7 @@ public class GamificationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Metric>> putGamificationProfileMetricAsync(ApiRequest<Metric> request, final AsyncApiCallback<ApiResponse<Metric>> callback) {
+  public Future<ApiResponse<Metric>> putGamificationProfileMetricAsync(ApiRequest<CreateMetric> request, final AsyncApiCallback<ApiResponse<Metric>> callback) {
     try {
       final SettableFuture<ApiResponse<Metric>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

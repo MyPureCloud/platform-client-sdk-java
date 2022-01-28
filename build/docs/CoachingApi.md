@@ -426,7 +426,7 @@ try {
 
 
 
-> [CoachingAppointmentResponseList](CoachingAppointmentResponseList.html) getCoachingAppointments(userIds, interval, pageNumber, pageSize, statuses, facilitatorIds, sortOrder, relationships, completionInterval, overdue)
+> [CoachingAppointmentResponseList](CoachingAppointmentResponseList.html) getCoachingAppointments(userIds, interval, pageNumber, pageSize, statuses, facilitatorIds, sortOrder, relationships, completionInterval, overdue, intervalCondition)
 
 Get appointments for users and optional date range
 
@@ -470,8 +470,9 @@ String sortOrder = "sortOrder_example"; // String | Sort (by due date) either As
 List<String> relationships = Arrays.asList("relationships_example"); // List<String> | Relationships to filter by
 String completionInterval = "completionInterval_example"; // String | Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
 String overdue = "overdue_example"; // String | Overdue status to filter by
+String intervalCondition = "intervalCondition_example"; // String | Filter condition for interval
 try {
-    CoachingAppointmentResponseList result = apiInstance.getCoachingAppointments(userIds, interval, pageNumber, pageSize, statuses, facilitatorIds, sortOrder, relationships, completionInterval, overdue);
+    CoachingAppointmentResponseList result = apiInstance.getCoachingAppointments(userIds, interval, pageNumber, pageSize, statuses, facilitatorIds, sortOrder, relationships, completionInterval, overdue, intervalCondition);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CoachingApi#getCoachingAppointments");
@@ -494,6 +495,7 @@ try {
 | **relationships** | [**List&lt;String&gt;**](String.html)| Relationships to filter by | [optional]<br />**Values**: Creator, Facilitator, Attendee 
 | **completionInterval** | **String**| Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional] 
 | **overdue** | **String**| Overdue status to filter by | [optional]<br />**Values**: True, False, Any 
+| **intervalCondition** | **String**| Filter condition for interval | [optional]<br />**Values**: StartsIn, Overlaps 
 {: class="table-striped"}
 
 
@@ -507,7 +509,7 @@ try {
 
 
 
-> [CoachingAppointmentResponseList](CoachingAppointmentResponseList.html) getCoachingAppointmentsMe(interval, pageNumber, pageSize, statuses, facilitatorIds, sortOrder, relationships, completionInterval, overdue)
+> [CoachingAppointmentResponseList](CoachingAppointmentResponseList.html) getCoachingAppointmentsMe(interval, pageNumber, pageSize, statuses, facilitatorIds, sortOrder, relationships, completionInterval, overdue, intervalCondition)
 
 Get my appointments for a given date range
 
@@ -549,8 +551,9 @@ String sortOrder = "sortOrder_example"; // String | Sort (by due date) either As
 List<String> relationships = Arrays.asList("relationships_example"); // List<String> | Relationships to filter by
 String completionInterval = "completionInterval_example"; // String | Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
 String overdue = "overdue_example"; // String | Overdue status to filter by
+String intervalCondition = "intervalCondition_example"; // String | Filter condition for interval
 try {
-    CoachingAppointmentResponseList result = apiInstance.getCoachingAppointmentsMe(interval, pageNumber, pageSize, statuses, facilitatorIds, sortOrder, relationships, completionInterval, overdue);
+    CoachingAppointmentResponseList result = apiInstance.getCoachingAppointmentsMe(interval, pageNumber, pageSize, statuses, facilitatorIds, sortOrder, relationships, completionInterval, overdue, intervalCondition);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CoachingApi#getCoachingAppointmentsMe");
@@ -572,6 +575,7 @@ try {
 | **relationships** | [**List&lt;String&gt;**](String.html)| Relationships to filter by | [optional]<br />**Values**: Creator, Facilitator, Attendee 
 | **completionInterval** | **String**| Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional] 
 | **overdue** | **String**| Overdue status to filter by | [optional]<br />**Values**: True, False, Any 
+| **intervalCondition** | **String**| Filter condition for interval | [optional]<br />**Values**: StartsIn, Overlaps 
 {: class="table-striped"}
 
 

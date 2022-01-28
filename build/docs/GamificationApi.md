@@ -2448,7 +2448,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 GamificationApi apiInstance = new GamificationApi();
-Metric body = new Metric(); // Metric | Metric
+CreateMetric body = new CreateMetric(); // CreateMetric | Metric
 try {
     Metric result = apiInstance.postGamificationMetrics(body);
     System.out.println(result);
@@ -2463,7 +2463,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**Metric**](Metric.html)| Metric | 
+| **body** | [**CreateMetric**](CreateMetric.html)| Metric | 
 {: class="table-striped"}
 
 
@@ -2835,7 +2835,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 GamificationApi apiInstance = new GamificationApi();
 String profileId = "profileId_example"; // String | Performance Profile Id
-Metric body = new Metric(); // Metric | Metric
+CreateMetric body = new CreateMetric(); // CreateMetric | Metric
 try {
     Metric result = apiInstance.postGamificationProfileMetrics(profileId, body);
     System.out.println(result);
@@ -2851,7 +2851,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **profileId** | **String**| Performance Profile Id | 
-| **body** | [**Metric**](Metric.html)| Metric | 
+| **body** | [**CreateMetric**](CreateMetric.html)| Metric | 
 {: class="table-striped"}
 
 
@@ -2963,7 +2963,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 GamificationApi apiInstance = new GamificationApi();
 String metricId = "metricId_example"; // String | metric Id
-Metric body = new Metric(); // Metric | Metric
+CreateMetric body = new CreateMetric(); // CreateMetric | Metric
 String performanceProfileId = "performanceProfileId_example"; // String | The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given.
 try {
     Metric result = apiInstance.putGamificationMetric(metricId, body, performanceProfileId);
@@ -2980,7 +2980,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **metricId** | **String**| metric Id | 
-| **body** | [**Metric**](Metric.html)| Metric | 
+| **body** | [**CreateMetric**](CreateMetric.html)| Metric | 
 | **performanceProfileId** | **String**| The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given. | [optional] 
 {: class="table-striped"}
 
@@ -3096,7 +3096,7 @@ Configuration.setDefaultApiClient(apiClient);
 GamificationApi apiInstance = new GamificationApi();
 String profileId = "profileId_example"; // String | Performance Profile Id
 String metricId = "metricId_example"; // String | Metric Id
-Metric body = new Metric(); // Metric | Metric
+CreateMetric body = new CreateMetric(); // CreateMetric | Metric
 try {
     Metric result = apiInstance.putGamificationProfileMetric(profileId, metricId, body);
     System.out.println(result);
@@ -3113,7 +3113,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **profileId** | **String**| Performance Profile Id | 
 | **metricId** | **String**| Metric Id | 
-| **body** | [**Metric**](Metric.html)| Metric | 
+| **body** | [**CreateMetric**](CreateMetric.html)| Metric | 
 {: class="table-striped"}
 
 

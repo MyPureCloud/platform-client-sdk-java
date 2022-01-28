@@ -33,6 +33,7 @@ import com.mypurecloud.sdk.v2.model.SingleWorkdayAverageValues;
 import com.mypurecloud.sdk.v2.model.GamificationStatus;
 import com.mypurecloud.sdk.v2.model.ObjectiveTemplate;
 import com.mypurecloud.sdk.v2.model.GetTemplatesResponse;
+import com.mypurecloud.sdk.v2.model.CreateMetric;
 import com.mypurecloud.sdk.v2.model.Assignment;
 import com.mypurecloud.sdk.v2.model.AssignUsers;
 import com.mypurecloud.sdk.v2.model.AssignmentValidation;
@@ -3117,7 +3118,7 @@ public class GamificationApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Metric postGamificationMetrics(Metric body) throws IOException, ApiException {
+  public Metric postGamificationMetrics(CreateMetric body) throws IOException, ApiException {
     return  postGamificationMetrics(createPostGamificationMetricsRequest(body));
   }
 
@@ -3128,11 +3129,11 @@ public class GamificationApi {
    * @return Metric
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Metric> postGamificationMetricsWithHttpInfo(Metric body) throws IOException {
+  public ApiResponse<Metric> postGamificationMetricsWithHttpInfo(CreateMetric body) throws IOException {
     return postGamificationMetrics(createPostGamificationMetricsRequest(body).withHttpInfo());
   }
 
-  private PostGamificationMetricsRequest createPostGamificationMetricsRequest(Metric body) {
+  private PostGamificationMetricsRequest createPostGamificationMetricsRequest(CreateMetric body) {
     return PostGamificationMetricsRequest.builder()
             .withBody(body)
     
@@ -3165,7 +3166,7 @@ public class GamificationApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Metric> postGamificationMetrics(ApiRequest<Metric> request) throws IOException {
+  public ApiResponse<Metric> postGamificationMetrics(ApiRequest<CreateMetric> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<Metric>() {});
     }
@@ -3608,7 +3609,7 @@ public class GamificationApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Metric postGamificationProfileMetrics(String profileId, Metric body) throws IOException, ApiException {
+  public Metric postGamificationProfileMetrics(String profileId, CreateMetric body) throws IOException, ApiException {
     return  postGamificationProfileMetrics(createPostGamificationProfileMetricsRequest(profileId, body));
   }
 
@@ -3620,11 +3621,11 @@ public class GamificationApi {
    * @return Metric
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Metric> postGamificationProfileMetricsWithHttpInfo(String profileId, Metric body) throws IOException {
+  public ApiResponse<Metric> postGamificationProfileMetricsWithHttpInfo(String profileId, CreateMetric body) throws IOException {
     return postGamificationProfileMetrics(createPostGamificationProfileMetricsRequest(profileId, body).withHttpInfo());
   }
 
-  private PostGamificationProfileMetricsRequest createPostGamificationProfileMetricsRequest(String profileId, Metric body) {
+  private PostGamificationProfileMetricsRequest createPostGamificationProfileMetricsRequest(String profileId, CreateMetric body) {
     return PostGamificationProfileMetricsRequest.builder()
             .withProfileId(profileId)
     
@@ -3659,7 +3660,7 @@ public class GamificationApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Metric> postGamificationProfileMetrics(ApiRequest<Metric> request) throws IOException {
+  public ApiResponse<Metric> postGamificationProfileMetrics(ApiRequest<CreateMetric> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<Metric>() {});
     }
@@ -3771,7 +3772,7 @@ public class GamificationApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Metric putGamificationMetric(String metricId, Metric body, String performanceProfileId) throws IOException, ApiException {
+  public Metric putGamificationMetric(String metricId, CreateMetric body, String performanceProfileId) throws IOException, ApiException {
     return  putGamificationMetric(createPutGamificationMetricRequest(metricId, body, performanceProfileId));
   }
 
@@ -3784,11 +3785,11 @@ public class GamificationApi {
    * @return Metric
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Metric> putGamificationMetricWithHttpInfo(String metricId, Metric body, String performanceProfileId) throws IOException {
+  public ApiResponse<Metric> putGamificationMetricWithHttpInfo(String metricId, CreateMetric body, String performanceProfileId) throws IOException {
     return putGamificationMetric(createPutGamificationMetricRequest(metricId, body, performanceProfileId).withHttpInfo());
   }
 
-  private PutGamificationMetricRequest createPutGamificationMetricRequest(String metricId, Metric body, String performanceProfileId) {
+  private PutGamificationMetricRequest createPutGamificationMetricRequest(String metricId, CreateMetric body, String performanceProfileId) {
     return PutGamificationMetricRequest.builder()
             .withMetricId(metricId)
     
@@ -3825,7 +3826,7 @@ public class GamificationApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Metric> putGamificationMetric(ApiRequest<Metric> request) throws IOException {
+  public ApiResponse<Metric> putGamificationMetric(ApiRequest<CreateMetric> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<Metric>() {});
     }
@@ -3941,7 +3942,7 @@ public class GamificationApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Metric putGamificationProfileMetric(String profileId, String metricId, Metric body) throws IOException, ApiException {
+  public Metric putGamificationProfileMetric(String profileId, String metricId, CreateMetric body) throws IOException, ApiException {
     return  putGamificationProfileMetric(createPutGamificationProfileMetricRequest(profileId, metricId, body));
   }
 
@@ -3954,11 +3955,11 @@ public class GamificationApi {
    * @return Metric
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Metric> putGamificationProfileMetricWithHttpInfo(String profileId, String metricId, Metric body) throws IOException {
+  public ApiResponse<Metric> putGamificationProfileMetricWithHttpInfo(String profileId, String metricId, CreateMetric body) throws IOException {
     return putGamificationProfileMetric(createPutGamificationProfileMetricRequest(profileId, metricId, body).withHttpInfo());
   }
 
-  private PutGamificationProfileMetricRequest createPutGamificationProfileMetricRequest(String profileId, String metricId, Metric body) {
+  private PutGamificationProfileMetricRequest createPutGamificationProfileMetricRequest(String profileId, String metricId, CreateMetric body) {
     return PutGamificationProfileMetricRequest.builder()
             .withProfileId(profileId)
     
@@ -3995,7 +3996,7 @@ public class GamificationApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Metric> putGamificationProfileMetric(ApiRequest<Metric> request) throws IOException {
+  public ApiResponse<Metric> putGamificationProfileMetric(ApiRequest<CreateMetric> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<Metric>() {});
     }

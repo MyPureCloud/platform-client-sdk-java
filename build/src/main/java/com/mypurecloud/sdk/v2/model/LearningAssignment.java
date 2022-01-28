@@ -61,7 +61,8 @@ public class LearningAssignment  implements Serializable {
     ASSIGNED("Assigned"),
     INPROGRESS("InProgress"),
     COMPLETED("Completed"),
-    DELETED("Deleted");
+    DELETED("Deleted"),
+    NOTCOMPLETED("NotCompleted");
 
     private String value;
 

@@ -23,10 +23,10 @@ title: HistoryListing
 | **system** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **started** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **completed** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **entities** | <!----><!---->[**List&lt;HistoryEntry&gt;**](HistoryEntry.html)<!----> |  |  [optional] |
-| **pageNumber** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **pageSize** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **pageNumber** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **total** | <!----><!---->**Long**<!----> |  |  [optional] |
+| **entities** | <!----><!---->[**List&lt;HistoryEntry&gt;**](HistoryEntry.html)<!----> |  |  [optional] |
 | **pageCount** | <!----><!---->**Integer**<!----> |  |  [optional] |
 {: class="table table-striped"}
 

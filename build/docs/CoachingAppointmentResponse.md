@@ -23,6 +23,9 @@ title: CoachingAppointmentResponse
 | **conversations** | <!----><!---->[**List&lt;ConversationReference&gt;**](ConversationReference.html)<!----> | The list of conversations associated with coaching appointment. |  [optional] |
 | **documents** | <!----><!---->[**List&lt;DocumentReference&gt;**](DocumentReference.html)<!----> | The list of documents associated with coaching appointment. |  [optional] |
 | **isOverdue** | <!----><!---->**Boolean**<!----> | Whether the appointment is overdue. |  [optional] |
+| **wfmSchedule** | <!----><!---->[**WfmScheduleReference**](WfmScheduleReference.html)<!----> | The Workforce Management schedule the appointment is associated with. |  [optional] |
+| **dateCompleted** | <!----><!---->[**Date**](Date.html)<!----> | The date/time the coaching appointment was set to completed status. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **externalLinks** | <!----><!---->**List&lt;String&gt;**<!----> | The list of external links related to the appointment |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 

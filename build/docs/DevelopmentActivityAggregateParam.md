@@ -30,6 +30,7 @@ title: DevelopmentActivityAggregateParam
 | NPASSEDACTIVITIES | &quot;nPassedActivities&quot; |
 | NFAILEDACTIVITIES | &quot;nFailedActivities&quot; |
 | OACTIVITYSCORE | &quot;oActivityScore&quot; |
+| NNOTCOMPLETEDACTIVITIES | &quot;nNotCompletedActivities&quot; |
 {: class="table table-striped"}
 
 

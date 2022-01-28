@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationReference;
 import com.mypurecloud.sdk.v2.model.DocumentReference;
 import com.mypurecloud.sdk.v2.model.UserReference;
+import com.mypurecloud.sdk.v2.model.WfmScheduleReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -92,6 +93,9 @@ public class CoachingAppointmentResponse  implements Serializable {
   private List<ConversationReference> conversations = new ArrayList<ConversationReference>();
   private List<DocumentReference> documents = new ArrayList<DocumentReference>();
   private Boolean isOverdue = null;
+  private WfmScheduleReference wfmSchedule = null;
+  private Date dateCompleted = null;
+  private List<String> externalLinks = new ArrayList<String>();
   private String selfUri = null;
 
   
@@ -200,6 +204,27 @@ public class CoachingAppointmentResponse  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "The Workforce Management schedule the appointment is associated with.")
+  @JsonProperty("wfmSchedule")
+  public WfmScheduleReference getWfmSchedule() {
+    return wfmSchedule;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "The date/time the coaching appointment was set to completed status. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateCompleted")
+  public Date getDateCompleted() {
+    return dateCompleted;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "The list of external links related to the appointment")
+  @JsonProperty("externalLinks")
+  public List<String> getExternalLinks() {
+    return externalLinks;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -232,12 +257,15 @@ public class CoachingAppointmentResponse  implements Serializable {
         Objects.equals(this.conversations, coachingAppointmentResponse.conversations) &&
         Objects.equals(this.documents, coachingAppointmentResponse.documents) &&
         Objects.equals(this.isOverdue, coachingAppointmentResponse.isOverdue) &&
+        Objects.equals(this.wfmSchedule, coachingAppointmentResponse.wfmSchedule) &&
+        Objects.equals(this.dateCompleted, coachingAppointmentResponse.dateCompleted) &&
+        Objects.equals(this.externalLinks, coachingAppointmentResponse.externalLinks) &&
         Objects.equals(this.selfUri, coachingAppointmentResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, dateStart, lengthInMinutes, status, facilitator, attendees, createdBy, dateCreated, modifiedBy, dateModified, conversations, documents, isOverdue, selfUri);
+    return Objects.hash(id, name, description, dateStart, lengthInMinutes, status, facilitator, attendees, createdBy, dateCreated, modifiedBy, dateModified, conversations, documents, isOverdue, wfmSchedule, dateCompleted, externalLinks, selfUri);
   }
 
   @Override
@@ -260,6 +288,9 @@ public class CoachingAppointmentResponse  implements Serializable {
     sb.append("    conversations: ").append(toIndentedString(conversations)).append("\n");
     sb.append("    documents: ").append(toIndentedString(documents)).append("\n");
     sb.append("    isOverdue: ").append(toIndentedString(isOverdue)).append("\n");
+    sb.append("    wfmSchedule: ").append(toIndentedString(wfmSchedule)).append("\n");
+    sb.append("    dateCompleted: ").append(toIndentedString(dateCompleted)).append("\n");
+    sb.append("    externalLinks: ").append(toIndentedString(externalLinks)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

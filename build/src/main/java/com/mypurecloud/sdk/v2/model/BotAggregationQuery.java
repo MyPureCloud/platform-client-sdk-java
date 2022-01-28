@@ -112,6 +112,7 @@ public class BotAggregationQuery  implements Serializable {
   public enum MetricsEnum {
     NBOTSESSIONS("nBotSessions"),
     OBOTINTENT("oBotIntent"),
+    OBOTSESSIONQUERY("oBotSessionQuery"),
     OBOTSESSIONTURN("oBotSessionTurn"),
     OBOTSLOT("oBotSlot"),
     TBOTDISCONNECT("tBotDisconnect"),

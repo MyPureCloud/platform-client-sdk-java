@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.RequestScoredAgent;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -25,6 +26,7 @@ public class RoutingConversationAttributesRequest  implements Serializable {
   private Integer priority = null;
   private List<String> skillIds = new ArrayList<String>();
   private String languageId = null;
+  private List<RequestScoredAgent> requestScoredAgents = new ArrayList<RequestScoredAgent>();
 
   
   /**
@@ -83,6 +85,23 @@ public class RoutingConversationAttributesRequest  implements Serializable {
   }
 
   
+  /**
+   **/
+  public RoutingConversationAttributesRequest requestScoredAgents(List<RequestScoredAgent> requestScoredAgents) {
+    this.requestScoredAgents = requestScoredAgents;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("requestScoredAgents")
+  public List<RequestScoredAgent> getRequestScoredAgents() {
+    return requestScoredAgents;
+  }
+  public void setRequestScoredAgents(List<RequestScoredAgent> requestScoredAgents) {
+    this.requestScoredAgents = requestScoredAgents;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -95,12 +114,13 @@ public class RoutingConversationAttributesRequest  implements Serializable {
     RoutingConversationAttributesRequest routingConversationAttributesRequest = (RoutingConversationAttributesRequest) o;
     return Objects.equals(this.priority, routingConversationAttributesRequest.priority) &&
         Objects.equals(this.skillIds, routingConversationAttributesRequest.skillIds) &&
-        Objects.equals(this.languageId, routingConversationAttributesRequest.languageId);
+        Objects.equals(this.languageId, routingConversationAttributesRequest.languageId) &&
+        Objects.equals(this.requestScoredAgents, routingConversationAttributesRequest.requestScoredAgents);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(priority, skillIds, languageId);
+    return Objects.hash(priority, skillIds, languageId, requestScoredAgents);
   }
 
   @Override
@@ -111,6 +131,7 @@ public class RoutingConversationAttributesRequest  implements Serializable {
     sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
     sb.append("    skillIds: ").append(toIndentedString(skillIds)).append("\n");
     sb.append("    languageId: ").append(toIndentedString(languageId)).append("\n");
+    sb.append("    requestScoredAgents: ").append(toIndentedString(requestScoredAgents)).append("\n");
     sb.append("}");
     return sb.toString();
   }

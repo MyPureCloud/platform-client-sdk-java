@@ -10,6 +10,8 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.ObjectiveZone;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -28,6 +30,55 @@ public class Objective  implements Serializable {
   private String templateId = null;
   private List<ObjectiveZone> zones = new ArrayList<ObjectiveZone>();
   private Boolean enabled = null;
+  private List<AddressableEntityRef> topics = new ArrayList<AddressableEntityRef>();
+
+  private static class TopicIdsFilterTypeEnumDeserializer extends StdDeserializer<TopicIdsFilterTypeEnum> {
+    public TopicIdsFilterTypeEnumDeserializer() {
+      super(TopicIdsFilterTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public TopicIdsFilterTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return TopicIdsFilterTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * A filter type for topic Ids. It's only used for objectives with topicIds. Default filter behavior is \"or\".
+   */
+ @JsonDeserialize(using = TopicIdsFilterTypeEnumDeserializer.class)
+  public enum TopicIdsFilterTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    AND("and"),
+    OR("or");
+
+    private String value;
+
+    TopicIdsFilterTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static TopicIdsFilterTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (TopicIdsFilterTypeEnum value : TopicIdsFilterTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return TopicIdsFilterTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private TopicIdsFilterTypeEnum topicIdsFilterType = null;
   private LocalDate dateStart = null;
 
   
@@ -93,6 +144,42 @@ public class Objective  implements Serializable {
 
   
   /**
+   * A list of topic ids for detected topic metrics
+   **/
+  public Objective topics(List<AddressableEntityRef> topics) {
+    this.topics = topics;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A list of topic ids for detected topic metrics")
+  @JsonProperty("topics")
+  public List<AddressableEntityRef> getTopics() {
+    return topics;
+  }
+  public void setTopics(List<AddressableEntityRef> topics) {
+    this.topics = topics;
+  }
+
+  
+  /**
+   * A filter type for topic Ids. It's only used for objectives with topicIds. Default filter behavior is \"or\".
+   **/
+  public Objective topicIdsFilterType(TopicIdsFilterTypeEnum topicIdsFilterType) {
+    this.topicIdsFilterType = topicIdsFilterType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A filter type for topic Ids. It's only used for objectives with topicIds. Default filter behavior is \"or\".")
+  @JsonProperty("topicIdsFilterType")
+  public TopicIdsFilterTypeEnum getTopicIdsFilterType() {
+    return topicIdsFilterType;
+  }
+  public void setTopicIdsFilterType(TopicIdsFilterTypeEnum topicIdsFilterType) {
+    this.topicIdsFilterType = topicIdsFilterType;
+  }
+
+  
+  /**
    * start date of the objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
    **/
   public Objective dateStart(LocalDate dateStart) {
@@ -124,12 +211,14 @@ public class Objective  implements Serializable {
         Objects.equals(this.templateId, objective.templateId) &&
         Objects.equals(this.zones, objective.zones) &&
         Objects.equals(this.enabled, objective.enabled) &&
+        Objects.equals(this.topics, objective.topics) &&
+        Objects.equals(this.topicIdsFilterType, objective.topicIdsFilterType) &&
         Objects.equals(this.dateStart, objective.dateStart);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, templateId, zones, enabled, dateStart);
+    return Objects.hash(id, templateId, zones, enabled, topics, topicIdsFilterType, dateStart);
   }
 
   @Override
@@ -141,6 +230,8 @@ public class Objective  implements Serializable {
     sb.append("    templateId: ").append(toIndentedString(templateId)).append("\n");
     sb.append("    zones: ").append(toIndentedString(zones)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+    sb.append("    topics: ").append(toIndentedString(topics)).append("\n");
+    sb.append("    topicIdsFilterType: ").append(toIndentedString(topicIdsFilterType)).append("\n");
     sb.append("    dateStart: ").append(toIndentedString(dateStart)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -109,6 +109,7 @@ public class SegmentDetailQueryPredicate  implements Serializable {
     EDGEID("edgeId"),
     ERRORCODE("errorCode"),
     EXITREASON("exitReason"),
+    EXTENDEDDELIVERYSTATUS("extendedDeliveryStatus"),
     EXTERNALCONTACTID("externalContactId"),
     EXTERNALORGANIZATIONID("externalOrganizationId"),
     FLAGGEDREASON("flaggedReason"),

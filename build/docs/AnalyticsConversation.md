@@ -10,6 +10,7 @@ title: AnalyticsConversation
 | ------------ | ------------- | ------------- | ------------- |
 | **conversationEnd** | <!----><!---->[**Date**](Date.html)<!----> | The end time of a conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **conversationId** | <!----><!---->**String**<!----> | Unique identifier for the conversation |  [optional] |
+| **conversationInitiator** | [**ConversationInitiatorEnum**](#ConversationInitiatorEnum)<!----> | Indicates the participant purpose of the participant initiating a message conversation |  [optional] |
 | **conversationStart** | <!----><!---->[**Date**](Date.html)<!----> | The start time of a conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **divisionIds** | <!----><!---->**List&lt;String&gt;**<!----> | Identifier(s) of division(s) associated with a conversation |  [optional] |
 | **externalTag** | <!----><!---->**String**<!----> | External tag for the conversation |  [optional] |
@@ -22,6 +23,34 @@ title: AnalyticsConversation
 | **surveys** | <!----><!---->[**List&lt;AnalyticsSurvey&gt;**](AnalyticsSurvey.html)<!----> | Surveys associated with this conversation |  [optional] |
 | **resolutions** | <!----><!---->[**List&lt;AnalyticsResolution&gt;**](AnalyticsResolution.html)<!----> | Resolutions associated with this conversation |  [optional] |
 | **participants** | <!----><!---->[**List&lt;AnalyticsParticipant&gt;**](AnalyticsParticipant.html)<!----> | Participants in the conversation |  [optional] |
+{: class="table table-striped"}
+
+
+<a name="ConversationInitiatorEnum"></a>
+
+## Enum: ConversationInitiatorEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| ACD | &quot;acd&quot; |
+| AGENT | &quot;agent&quot; |
+| API | &quot;api&quot; |
+| BOTFLOW | &quot;botflow&quot; |
+| CAMPAIGN | &quot;campaign&quot; |
+| CUSTOMER | &quot;customer&quot; |
+| DIALER | &quot;dialer&quot; |
+| EXTERNAL | &quot;external&quot; |
+| FAX | &quot;fax&quot; |
+| GROUP | &quot;group&quot; |
+| INBOUND | &quot;inbound&quot; |
+| IVR | &quot;ivr&quot; |
+| MANUAL | &quot;manual&quot; |
+| OUTBOUND | &quot;outbound&quot; |
+| STATION | &quot;station&quot; |
+| USER | &quot;user&quot; |
+| VOICEMAIL | &quot;voicemail&quot; |
+| WORKFLOW | &quot;workflow&quot; |
 {: class="table table-striped"}
 
 

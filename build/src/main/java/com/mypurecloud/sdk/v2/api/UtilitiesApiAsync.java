@@ -123,7 +123,7 @@ public class UtilitiesApiAsync {
 
   
   /**
-   * Get public ip address ranges for PureCloud
+   * Get public ip address ranges for Genesys Cloud
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -157,7 +157,7 @@ public class UtilitiesApiAsync {
   }
 
   /**
-   * Get public ip address ranges for PureCloud
+   * Get public ip address ranges for Genesys Cloud
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
