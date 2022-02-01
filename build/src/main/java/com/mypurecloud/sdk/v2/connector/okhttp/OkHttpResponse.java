@@ -1,9 +1,9 @@
 package com.mypurecloud.sdk.v2.connector.okhttp;
 
 import com.mypurecloud.sdk.v2.connector.ApiClientConnectorResponse;
-import com.squareup.okhttp.Headers;
-import com.squareup.okhttp.Response;
-import com.squareup.okhttp.ResponseBody;
+import okhttp3.Headers;
+import okhttp3.Response;
+import okhttp3.ResponseBody;
 
 import java.io.IOException;
 import java.io.InputStream;

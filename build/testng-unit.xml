@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="SDK tests" verbose="1" parallel="tests" thread-count="3">
+    <listeners>
+        <listener class-name="com.mypurecloud.sdk.v2.InvokedMethodListener" />
+    </listeners>
+    <test name="Unit Tests">
+        <classes>
+            <class name="com.mypurecloud.sdk.v2.ApiClientRetryTest" />
+            <class name="com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest" />
+        </classes>
+    </test>
+</suite>

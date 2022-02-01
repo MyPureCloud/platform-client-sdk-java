@@ -11,10 +11,6 @@ import org.asynchttpclient.DefaultAsyncHttpClientConfig;
 import org.asynchttpclient.proxy.ProxyServerSelector;
 import org.asynchttpclient.util.ProxyUtils;
 
-import java.io.IOException;
-import java.net.*;
-import java.util.Collections;
-import java.util.List;
 import java.util.Properties;
 
 public class AsyncHttpClientConnectorProvider implements ApiClientConnectorProvider {
@@ -28,7 +24,8 @@ public class AsyncHttpClientConnectorProvider implements ApiClientConnectorProvi
             builder.setReadTimeout(connectionTimeout);
             builder.setRequestTimeout(connectionTimeout);
         }
-        ProxyServerSelector proxyServerSelector = ProxyUtils.createProxyServerSelector((Properties) properties);
+
+        ProxyServerSelector proxyServerSelector = ProxyUtils.createProxyServerSelector(new Properties());
         builder.setProxyServerSelector(proxyServerSelector);
         builder.setUseProxySelector(true);
         AsyncHttpClientConfig config = builder.build();

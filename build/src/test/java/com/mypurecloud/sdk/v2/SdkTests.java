@@ -2,19 +2,24 @@ package com.mypurecloud.sdk.v2;
 
 import com.mypurecloud.sdk.v2.api.PresenceApi;
 import com.mypurecloud.sdk.v2.api.UsersApi;
+import com.mypurecloud.sdk.v2.connector.ApiClientConnectorProperty;
+import com.mypurecloud.sdk.v2.connector.ning.AsyncHttpClientConnectorProvider;
+import com.mypurecloud.sdk.v2.connector.okhttp.OkHttpClientConnectorProvider;
 import com.mypurecloud.sdk.v2.extensions.AuthResponse;
 import com.mypurecloud.sdk.v2.extensions.notifications.NotificationHandler;
 import com.mypurecloud.sdk.v2.model.*;
-import com.mypurecloud.sdk.v2.PureCloudRegionHosts;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
 public class SdkTests {
+    private String connector;
+
     private ApiClient apiClient;
     UsersApi usersApi;
     PresenceApi presenceApi;
@@ -30,13 +35,12 @@ public class SdkTests {
     private PureCloudRegionHosts region;
     private boolean useenum = true;
 
-
     @BeforeTest
-    public void beforeTest() {
+    @Parameters({ "connector" })
+    public void beforeTest(String connector) {
+        this.connector = connector;
         System.out.println("Before test");
     }
-
-
 
     @Test(priority = 1)
     public void traceBasicInformation() {
@@ -65,6 +69,17 @@ public class SdkTests {
             }
             else {
                 builder = builder.withBasePath("https://api." + environment);
+            }
+
+            switch (this.connector) {
+                case "OkHTTP":
+                    builder.withProperty(ApiClientConnectorProperty.CONNECTOR_PROVIDER, new OkHttpClientConnectorProvider());
+                    break;
+                case "Ning":
+                    builder.withProperty(ApiClientConnectorProperty.CONNECTOR_PROVIDER, new AsyncHttpClientConnectorProvider());
+                    break;
+                default:
+                    // The APIClient will use the apache connector by default
             }
 
             apiClient = builder.build();

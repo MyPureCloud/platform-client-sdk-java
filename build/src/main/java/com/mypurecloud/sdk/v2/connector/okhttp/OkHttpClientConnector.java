@@ -5,7 +5,8 @@ import com.mypurecloud.sdk.v2.AsyncApiCallback;
 import com.mypurecloud.sdk.v2.connector.ApiClientConnector;
 import com.mypurecloud.sdk.v2.connector.ApiClientConnectorRequest;
 import com.mypurecloud.sdk.v2.connector.ApiClientConnectorResponse;
-import com.squareup.okhttp.*;
+import okhttp3.*;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
 import java.util.Map;
@@ -31,13 +32,13 @@ public class OkHttpClientConnector implements ApiClientConnector {
             Call call = client.newCall(buildRequest(request));
             call.enqueue(new Callback() {
                 @Override
-                public void onFailure(Request request, IOException e) {
+                public void onFailure(@NotNull Call call, @NotNull IOException e) {
                     callback.onFailed(e);
                     future.setException(e);
                 }
 
                 @Override
-                public void onResponse(Response response) throws IOException {
+                public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
                     OkHttpResponse okHttpResponse = new OkHttpResponse(response);
                     callback.onCompleted(okHttpResponse);
                     future.set(new OkHttpResponse(response));
