@@ -12,6 +12,8 @@ title: DevelopmentActivity
 | **dateCompleted** | <!----><!---->[**Date**](Date.html)<!----> | Date that activity was completed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **createdBy** | <!----><!---->[**UserReference**](UserReference.html)<!----> | User that created activity |  [optional] |
 | **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | Date activity was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **percentageScore** | <!----><!---->**Float**<!----> | The user&#39;s percentage score for this activity |  [optional] |
+| **isPassed** | <!----><!---->**Boolean**<!----> | True if the activity was passed |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 | **name** | <!----><!---->**String**<!----> | The name of the activity |  [optional] |
 | **type** | [**TypeEnum**](#TypeEnum)<!----> | The type of activity |  [optional] |

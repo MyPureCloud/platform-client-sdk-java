@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ConversationNormalizedMessage;
 import com.mypurecloud.sdk.v2.model.MessageMedia;
 import com.mypurecloud.sdk.v2.model.MessageSticker;
 import com.mypurecloud.sdk.v2.model.User;
@@ -191,6 +192,8 @@ public class MessageData  implements Serializable {
   private StatusEnum status = null;
   private List<MessageMedia> media = new ArrayList<MessageMedia>();
   private List<MessageSticker> stickers = new ArrayList<MessageSticker>();
+  private ConversationNormalizedMessage normalizedMessage = null;
+  private List<ConversationNormalizedMessage> normalizedReceipts = new ArrayList<ConversationNormalizedMessage>();
   private User createdBy = null;
   private String conversationId = null;
   private String selfUri = null;
@@ -400,6 +403,20 @@ public class MessageData  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "The message into normalized format")
+  @JsonProperty("normalizedMessage")
+  public ConversationNormalizedMessage getNormalizedMessage() {
+    return normalizedMessage;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "The delivery event associated with this message in normalized format, if the message direction was outbound")
+  @JsonProperty("normalizedReceipts")
+  public List<ConversationNormalizedMessage> getNormalizedReceipts() {
+    return normalizedReceipts;
+  }
+
+  
   /**
    * User who sent this message.
    **/
@@ -465,6 +482,8 @@ public class MessageData  implements Serializable {
         Objects.equals(this.status, messageData.status) &&
         Objects.equals(this.media, messageData.media) &&
         Objects.equals(this.stickers, messageData.stickers) &&
+        Objects.equals(this.normalizedMessage, messageData.normalizedMessage) &&
+        Objects.equals(this.normalizedReceipts, messageData.normalizedReceipts) &&
         Objects.equals(this.createdBy, messageData.createdBy) &&
         Objects.equals(this.conversationId, messageData.conversationId) &&
         Objects.equals(this.selfUri, messageData.selfUri);
@@ -472,7 +491,7 @@ public class MessageData  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, providerMessageId, timestamp, fromAddress, toAddress, direction, messengerType, textBody, status, media, stickers, createdBy, conversationId, selfUri);
+    return Objects.hash(id, name, providerMessageId, timestamp, fromAddress, toAddress, direction, messengerType, textBody, status, media, stickers, normalizedMessage, normalizedReceipts, createdBy, conversationId, selfUri);
   }
 
   @Override
@@ -492,6 +511,8 @@ public class MessageData  implements Serializable {
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    media: ").append(toIndentedString(media)).append("\n");
     sb.append("    stickers: ").append(toIndentedString(stickers)).append("\n");
+    sb.append("    normalizedMessage: ").append(toIndentedString(normalizedMessage)).append("\n");
+    sb.append("    normalizedReceipts: ").append(toIndentedString(normalizedReceipts)).append("\n");
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
     sb.append("    conversationId: ").append(toIndentedString(conversationId)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

@@ -45,7 +45,6 @@ import com.mypurecloud.sdk.v2.api.request.DeleteSpeechandtextanalyticsSentimentf
 import com.mypurecloud.sdk.v2.api.request.DeleteSpeechandtextanalyticsTopicRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationCommunicationTranscripturlRequest;
-import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsDialectsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramMappingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsRequest;
@@ -554,81 +553,6 @@ public class SpeechTextAnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<TranscriptUrl> response = (ApiResponse<TranscriptUrl>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  
-  /**
-   * Get list of supported Speech &amp; Text Analytics dialects
-   * This api has been deprecated. Use api/v2/topics/dialects instead
-   * @return List<Object>
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public List<Object> getSpeechandtextanalyticsDialects() throws IOException, ApiException {
-    return  getSpeechandtextanalyticsDialects(createGetSpeechandtextanalyticsDialectsRequest());
-  }
-
-  /**
-   * Get list of supported Speech &amp; Text Analytics dialects
-   * This api has been deprecated. Use api/v2/topics/dialects instead
-   * @return List<Object>
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<List<Object>> getSpeechandtextanalyticsDialectsWithHttpInfo() throws IOException {
-    return getSpeechandtextanalyticsDialects(createGetSpeechandtextanalyticsDialectsRequest().withHttpInfo());
-  }
-
-  private GetSpeechandtextanalyticsDialectsRequest createGetSpeechandtextanalyticsDialectsRequest() {
-    return GetSpeechandtextanalyticsDialectsRequest.builder()
-            .build();
-  }
-
-  /**
-   * Get list of supported Speech &amp; Text Analytics dialects
-   * This api has been deprecated. Use api/v2/topics/dialects instead
-   * @param request The request object
-   * @return List<Object>
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public List<Object> getSpeechandtextanalyticsDialects(GetSpeechandtextanalyticsDialectsRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<List<Object>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<Object>>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Get list of supported Speech &amp; Text Analytics dialects
-   * This api has been deprecated. Use api/v2/topics/dialects instead
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<List<Object>> getSpeechandtextanalyticsDialects(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<List<Object>>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<List<Object>> response = (ApiResponse<List<Object>>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<List<Object>> response = (ApiResponse<List<Object>>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

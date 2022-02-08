@@ -22,6 +22,7 @@ title: ViewFilter
 | **filterQueuesByUserIds** | <!----><!---->**List&lt;String&gt;**<!----> | The user ids are used to fetch associated queues for the view |  [optional] |
 | **filterUsersByQueueIds** | <!----><!---->**List&lt;String&gt;**<!----> | The queue ids are used to fetch associated users for the view |  [optional] |
 | **userIds** | <!----><!---->**List&lt;String&gt;**<!----> | The user ids are used to filter the view |  [optional] |
+| **managementUnitIds** | <!----><!---->**List&lt;String&gt;**<!----> | The management unit ids are used to filter the view |  [optional] |
 | **addressTos** | <!----><!---->**List&lt;String&gt;**<!----> | The address To values are used to filter the view |  [optional] |
 | **addressFroms** | <!----><!---->**List&lt;String&gt;**<!----> | The address from values are used to filter the view |  [optional] |
 | **outboundCampaignIds** | <!----><!---->**List&lt;String&gt;**<!----> | The outbound campaign ids are used to filter the view |  [optional] |

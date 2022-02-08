@@ -55,6 +55,8 @@ import com.mypurecloud.sdk.v2.model.TwitterIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.TwitterIntegration;
 import com.mypurecloud.sdk.v2.model.WhatsAppIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.MessagingStickerEntityListing;
+import com.mypurecloud.sdk.v2.model.SupportedContentListing;
+import com.mypurecloud.sdk.v2.model.SupportedContent;
 import com.mypurecloud.sdk.v2.model.ConversationThreadingWindow;
 import com.mypurecloud.sdk.v2.model.MediaParticipantRequest;
 import com.mypurecloud.sdk.v2.model.ParticipantAttributes;
@@ -103,6 +105,7 @@ import com.mypurecloud.sdk.v2.model.OpenIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.WhatsAppIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.ConversationTagsUpdate;
 import com.mypurecloud.sdk.v2.model.SetUuiDataRequest;
+import com.mypurecloud.sdk.v2.model.SupportedContentReference;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsConversationsDetailsJobRequest;
@@ -115,6 +118,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegratio
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsOpenIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsTwitterIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsWhatsappIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingSupportedcontentSupportedContentIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationDetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobRequest;
@@ -173,6 +177,9 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsT
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsWhatsappRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsWhatsappIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingStickerRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingSupportedcontentRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingSupportedcontentDefaultRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingSupportedcontentSupportedContentIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingThreadingtimelineRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationParticipantAttributesRequest;
@@ -205,6 +212,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegration
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsOpenIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsTwitterIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsWhatsappIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingSupportedcontentSupportedContentIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationDetailsPropertiesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsDetailsJobsRequest;
@@ -247,11 +255,13 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrations
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsOpenRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsTwitterRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsWhatsappRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingSupportedcontentRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationParticipantFlaggedreasonRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationTagsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsCallParticipantCommunicationUuidataRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsEmailMessagesDraftRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingIntegrationsLineIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingSupportedcontentDefaultRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingThreadingtimelineRequest;
 
 import java.io.IOException;
@@ -1051,6 +1061,82 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<WhatsAppIntegration> response = (ApiResponse<WhatsAppIntegration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Delete a supported content profile
+   * 
+   * @param supportedContentId Supported Content ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteConversationsMessagingSupportedcontentSupportedContentId(String supportedContentId) throws IOException, ApiException {
+     deleteConversationsMessagingSupportedcontentSupportedContentId(createDeleteConversationsMessagingSupportedcontentSupportedContentIdRequest(supportedContentId));
+  }
+
+  /**
+   * Delete a supported content profile
+   * 
+   * @param supportedContentId Supported Content ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteConversationsMessagingSupportedcontentSupportedContentIdWithHttpInfo(String supportedContentId) throws IOException {
+    return deleteConversationsMessagingSupportedcontentSupportedContentId(createDeleteConversationsMessagingSupportedcontentSupportedContentIdRequest(supportedContentId).withHttpInfo());
+  }
+
+  private DeleteConversationsMessagingSupportedcontentSupportedContentIdRequest createDeleteConversationsMessagingSupportedcontentSupportedContentIdRequest(String supportedContentId) {
+    return DeleteConversationsMessagingSupportedcontentSupportedContentIdRequest.builder()
+            .withSupportedContentId(supportedContentId)
+    
+            .build();
+  }
+
+  /**
+   * Delete a supported content profile
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteConversationsMessagingSupportedcontentSupportedContentId(DeleteConversationsMessagingSupportedcontentSupportedContentIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a supported content profile
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteConversationsMessagingSupportedcontentSupportedContentId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -5855,6 +5941,243 @@ public class ConversationsApi {
 
   
   /**
+   * Get a list of Supported Content profiles
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return SupportedContentListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SupportedContentListing getConversationsMessagingSupportedcontent(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
+    return  getConversationsMessagingSupportedcontent(createGetConversationsMessagingSupportedcontentRequest(pageSize, pageNumber));
+  }
+
+  /**
+   * Get a list of Supported Content profiles
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return SupportedContentListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SupportedContentListing> getConversationsMessagingSupportedcontentWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException {
+    return getConversationsMessagingSupportedcontent(createGetConversationsMessagingSupportedcontentRequest(pageSize, pageNumber).withHttpInfo());
+  }
+
+  private GetConversationsMessagingSupportedcontentRequest createGetConversationsMessagingSupportedcontentRequest(Integer pageSize, Integer pageNumber) {
+    return GetConversationsMessagingSupportedcontentRequest.builder()
+            .withPageSize(pageSize)
+    
+            .withPageNumber(pageNumber)
+    
+            .build();
+  }
+
+  /**
+   * Get a list of Supported Content profiles
+   * 
+   * @param request The request object
+   * @return SupportedContentListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SupportedContentListing getConversationsMessagingSupportedcontent(GetConversationsMessagingSupportedcontentRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SupportedContentListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SupportedContentListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of Supported Content profiles
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SupportedContentListing> getConversationsMessagingSupportedcontent(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SupportedContentListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SupportedContentListing> response = (ApiResponse<SupportedContentListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SupportedContentListing> response = (ApiResponse<SupportedContentListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get the organization&#39;s default supported content profile that will be used as the default when creating an integration.
+   * When an integration is created a supported content ID may be assigned to it. If the supported content ID is not supplied, the default supported content profile will be assigned to it.
+   * @return SupportedContent
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SupportedContent getConversationsMessagingSupportedcontentDefault() throws IOException, ApiException {
+    return  getConversationsMessagingSupportedcontentDefault(createGetConversationsMessagingSupportedcontentDefaultRequest());
+  }
+
+  /**
+   * Get the organization&#39;s default supported content profile that will be used as the default when creating an integration.
+   * When an integration is created a supported content ID may be assigned to it. If the supported content ID is not supplied, the default supported content profile will be assigned to it.
+   * @return SupportedContent
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SupportedContent> getConversationsMessagingSupportedcontentDefaultWithHttpInfo() throws IOException {
+    return getConversationsMessagingSupportedcontentDefault(createGetConversationsMessagingSupportedcontentDefaultRequest().withHttpInfo());
+  }
+
+  private GetConversationsMessagingSupportedcontentDefaultRequest createGetConversationsMessagingSupportedcontentDefaultRequest() {
+    return GetConversationsMessagingSupportedcontentDefaultRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get the organization&#39;s default supported content profile that will be used as the default when creating an integration.
+   * When an integration is created a supported content ID may be assigned to it. If the supported content ID is not supplied, the default supported content profile will be assigned to it.
+   * @param request The request object
+   * @return SupportedContent
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SupportedContent getConversationsMessagingSupportedcontentDefault(GetConversationsMessagingSupportedcontentDefaultRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SupportedContent> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SupportedContent>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the organization&#39;s default supported content profile that will be used as the default when creating an integration.
+   * When an integration is created a supported content ID may be assigned to it. If the supported content ID is not supplied, the default supported content profile will be assigned to it.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SupportedContent> getConversationsMessagingSupportedcontentDefault(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SupportedContent>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SupportedContent> response = (ApiResponse<SupportedContent>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SupportedContent> response = (ApiResponse<SupportedContent>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a supported content profile
+   * 
+   * @param supportedContentId Supported Content ID (required)
+   * @return SupportedContent
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SupportedContent getConversationsMessagingSupportedcontentSupportedContentId(String supportedContentId) throws IOException, ApiException {
+    return  getConversationsMessagingSupportedcontentSupportedContentId(createGetConversationsMessagingSupportedcontentSupportedContentIdRequest(supportedContentId));
+  }
+
+  /**
+   * Get a supported content profile
+   * 
+   * @param supportedContentId Supported Content ID (required)
+   * @return SupportedContent
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SupportedContent> getConversationsMessagingSupportedcontentSupportedContentIdWithHttpInfo(String supportedContentId) throws IOException {
+    return getConversationsMessagingSupportedcontentSupportedContentId(createGetConversationsMessagingSupportedcontentSupportedContentIdRequest(supportedContentId).withHttpInfo());
+  }
+
+  private GetConversationsMessagingSupportedcontentSupportedContentIdRequest createGetConversationsMessagingSupportedcontentSupportedContentIdRequest(String supportedContentId) {
+    return GetConversationsMessagingSupportedcontentSupportedContentIdRequest.builder()
+            .withSupportedContentId(supportedContentId)
+    
+            .build();
+  }
+
+  /**
+   * Get a supported content profile
+   * 
+   * @param request The request object
+   * @return SupportedContent
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SupportedContent getConversationsMessagingSupportedcontentSupportedContentId(GetConversationsMessagingSupportedcontentSupportedContentIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SupportedContent> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SupportedContent>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a supported content profile
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SupportedContent> getConversationsMessagingSupportedcontentSupportedContentId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SupportedContent>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SupportedContent> response = (ApiResponse<SupportedContent>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SupportedContent> response = (ApiResponse<SupportedContent>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get conversation threading window timeline for each messaging type
    * Conversation messaging threading timeline is a setting defined for each messenger type in your organization. This setting will dictate whether a new message is added to the most recent existing conversation, or creates a new Conversation. If the existing Conversation is still in a connected state the threading timeline setting will never play a role. After the conversation is disconnected, if an inbound message is received or an outbound message is sent after the setting for threading timeline expires, a new conversation is created.
    * @return ConversationThreadingWindow
@@ -8563,6 +8886,89 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<WhatsAppIntegration> response = (ApiResponse<WhatsAppIntegration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update a supported content profile
+   * 
+   * @param supportedContentId Supported Content ID (required)
+   * @param body SupportedContent (required)
+   * @return SupportedContent
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SupportedContent patchConversationsMessagingSupportedcontentSupportedContentId(String supportedContentId, SupportedContent body) throws IOException, ApiException {
+    return  patchConversationsMessagingSupportedcontentSupportedContentId(createPatchConversationsMessagingSupportedcontentSupportedContentIdRequest(supportedContentId, body));
+  }
+
+  /**
+   * Update a supported content profile
+   * 
+   * @param supportedContentId Supported Content ID (required)
+   * @param body SupportedContent (required)
+   * @return SupportedContent
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SupportedContent> patchConversationsMessagingSupportedcontentSupportedContentIdWithHttpInfo(String supportedContentId, SupportedContent body) throws IOException {
+    return patchConversationsMessagingSupportedcontentSupportedContentId(createPatchConversationsMessagingSupportedcontentSupportedContentIdRequest(supportedContentId, body).withHttpInfo());
+  }
+
+  private PatchConversationsMessagingSupportedcontentSupportedContentIdRequest createPatchConversationsMessagingSupportedcontentSupportedContentIdRequest(String supportedContentId, SupportedContent body) {
+    return PatchConversationsMessagingSupportedcontentSupportedContentIdRequest.builder()
+            .withSupportedContentId(supportedContentId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update a supported content profile
+   * 
+   * @param request The request object
+   * @return SupportedContent
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SupportedContent patchConversationsMessagingSupportedcontentSupportedContentId(PatchConversationsMessagingSupportedcontentSupportedContentIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SupportedContent> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SupportedContent>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a supported content profile
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SupportedContent> patchConversationsMessagingSupportedcontentSupportedContentId(ApiRequest<SupportedContent> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SupportedContent>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SupportedContent> response = (ApiResponse<SupportedContent>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SupportedContent> response = (ApiResponse<SupportedContent>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -12006,6 +12412,85 @@ public class ConversationsApi {
 
   
   /**
+   * Create a Supported Content profile
+   * 
+   * @param body SupportedContent (required)
+   * @return SupportedContent
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SupportedContent postConversationsMessagingSupportedcontent(SupportedContent body) throws IOException, ApiException {
+    return  postConversationsMessagingSupportedcontent(createPostConversationsMessagingSupportedcontentRequest(body));
+  }
+
+  /**
+   * Create a Supported Content profile
+   * 
+   * @param body SupportedContent (required)
+   * @return SupportedContent
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SupportedContent> postConversationsMessagingSupportedcontentWithHttpInfo(SupportedContent body) throws IOException {
+    return postConversationsMessagingSupportedcontent(createPostConversationsMessagingSupportedcontentRequest(body).withHttpInfo());
+  }
+
+  private PostConversationsMessagingSupportedcontentRequest createPostConversationsMessagingSupportedcontentRequest(SupportedContent body) {
+    return PostConversationsMessagingSupportedcontentRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Create a Supported Content profile
+   * 
+   * @param request The request object
+   * @return SupportedContent
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SupportedContent postConversationsMessagingSupportedcontent(PostConversationsMessagingSupportedcontentRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SupportedContent> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SupportedContent>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a Supported Content profile
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SupportedContent> postConversationsMessagingSupportedcontent(ApiRequest<SupportedContent> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SupportedContent>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SupportedContent> response = (ApiResponse<SupportedContent>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SupportedContent> response = (ApiResponse<SupportedContent>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Set flagged reason on conversation participant to indicate bad conversation quality.
    * 
    * @param conversationId conversation ID (required)
@@ -12420,6 +12905,85 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<LineIntegration> response = (ApiResponse<LineIntegration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Set the organization&#39;s default supported content profile that may be assigned to an integration when it is created.
+   * When an integration is created a supported content ID may be assigned to it. If the supported content ID is not supplied, the default supported content profile will be assigned to it.
+   * @param body SupportedContent (required)
+   * @return SupportedContent
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SupportedContent putConversationsMessagingSupportedcontentDefault(SupportedContentReference body) throws IOException, ApiException {
+    return  putConversationsMessagingSupportedcontentDefault(createPutConversationsMessagingSupportedcontentDefaultRequest(body));
+  }
+
+  /**
+   * Set the organization&#39;s default supported content profile that may be assigned to an integration when it is created.
+   * When an integration is created a supported content ID may be assigned to it. If the supported content ID is not supplied, the default supported content profile will be assigned to it.
+   * @param body SupportedContent (required)
+   * @return SupportedContent
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SupportedContent> putConversationsMessagingSupportedcontentDefaultWithHttpInfo(SupportedContentReference body) throws IOException {
+    return putConversationsMessagingSupportedcontentDefault(createPutConversationsMessagingSupportedcontentDefaultRequest(body).withHttpInfo());
+  }
+
+  private PutConversationsMessagingSupportedcontentDefaultRequest createPutConversationsMessagingSupportedcontentDefaultRequest(SupportedContentReference body) {
+    return PutConversationsMessagingSupportedcontentDefaultRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Set the organization&#39;s default supported content profile that may be assigned to an integration when it is created.
+   * When an integration is created a supported content ID may be assigned to it. If the supported content ID is not supplied, the default supported content profile will be assigned to it.
+   * @param request The request object
+   * @return SupportedContent
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SupportedContent putConversationsMessagingSupportedcontentDefault(PutConversationsMessagingSupportedcontentDefaultRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SupportedContent> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SupportedContent>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Set the organization&#39;s default supported content profile that may be assigned to an integration when it is created.
+   * When an integration is created a supported content ID may be assigned to it. If the supported content ID is not supplied, the default supported content profile will be assigned to it.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SupportedContent> putConversationsMessagingSupportedcontentDefault(ApiRequest<SupportedContentReference> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SupportedContent>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SupportedContent> response = (ApiResponse<SupportedContent>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SupportedContent> response = (ApiResponse<SupportedContent>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

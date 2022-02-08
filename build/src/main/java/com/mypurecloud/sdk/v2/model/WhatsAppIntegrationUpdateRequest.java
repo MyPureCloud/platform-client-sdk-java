@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.SupportedContentReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -23,6 +24,7 @@ public class WhatsAppIntegrationUpdateRequest  implements Serializable {
   
   private String id = null;
   private String name = null;
+  private SupportedContentReference supportedContent = null;
 
   private static class ActionEnumDeserializer extends StdDeserializer<ActionEnum> {
     public ActionEnumDeserializer() {
@@ -138,6 +140,24 @@ public class WhatsAppIntegrationUpdateRequest  implements Serializable {
 
   
   /**
+   * Defines the SupportedContent profile configured for an integration
+   **/
+  public WhatsAppIntegrationUpdateRequest supportedContent(SupportedContentReference supportedContent) {
+    this.supportedContent = supportedContent;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Defines the SupportedContent profile configured for an integration")
+  @JsonProperty("supportedContent")
+  public SupportedContentReference getSupportedContent() {
+    return supportedContent;
+  }
+  public void setSupportedContent(SupportedContentReference supportedContent) {
+    this.supportedContent = supportedContent;
+  }
+
+  
+  /**
    * The action used to activate and then confirm a WhatsApp Integration.
    **/
   public WhatsAppIntegrationUpdateRequest action(ActionEnum action) {
@@ -210,6 +230,7 @@ public class WhatsAppIntegrationUpdateRequest  implements Serializable {
     WhatsAppIntegrationUpdateRequest whatsAppIntegrationUpdateRequest = (WhatsAppIntegrationUpdateRequest) o;
     return Objects.equals(this.id, whatsAppIntegrationUpdateRequest.id) &&
         Objects.equals(this.name, whatsAppIntegrationUpdateRequest.name) &&
+        Objects.equals(this.supportedContent, whatsAppIntegrationUpdateRequest.supportedContent) &&
         Objects.equals(this.action, whatsAppIntegrationUpdateRequest.action) &&
         Objects.equals(this.authenticationMethod, whatsAppIntegrationUpdateRequest.authenticationMethod) &&
         Objects.equals(this.confirmationCode, whatsAppIntegrationUpdateRequest.confirmationCode) &&
@@ -218,7 +239,7 @@ public class WhatsAppIntegrationUpdateRequest  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, action, authenticationMethod, confirmationCode, selfUri);
+    return Objects.hash(id, name, supportedContent, action, authenticationMethod, confirmationCode, selfUri);
   }
 
   @Override
@@ -228,6 +249,7 @@ public class WhatsAppIntegrationUpdateRequest  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    supportedContent: ").append(toIndentedString(supportedContent)).append("\n");
     sb.append("    action: ").append(toIndentedString(action)).append("\n");
     sb.append("    authenticationMethod: ").append(toIndentedString(authenticationMethod)).append("\n");
     sb.append("    confirmationCode: ").append(toIndentedString(confirmationCode)).append("\n");

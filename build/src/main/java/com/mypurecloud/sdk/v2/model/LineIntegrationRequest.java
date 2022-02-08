@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.SupportedContentReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -22,6 +23,7 @@ public class LineIntegrationRequest  implements Serializable {
   
   private String id = null;
   private String name = null;
+  private SupportedContentReference supportedContent = null;
   private String channelId = null;
   private String channelSecret = null;
   private String switcherSecret = null;
@@ -51,6 +53,24 @@ public class LineIntegrationRequest  implements Serializable {
   }
   public void setName(String name) {
     this.name = name;
+  }
+
+  
+  /**
+   * Defines the SupportedContent profile configured for an integration
+   **/
+  public LineIntegrationRequest supportedContent(SupportedContentReference supportedContent) {
+    this.supportedContent = supportedContent;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Defines the SupportedContent profile configured for an integration")
+  @JsonProperty("supportedContent")
+  public SupportedContentReference getSupportedContent() {
+    return supportedContent;
+  }
+  public void setSupportedContent(SupportedContentReference supportedContent) {
+    this.supportedContent = supportedContent;
   }
 
   
@@ -145,6 +165,7 @@ public class LineIntegrationRequest  implements Serializable {
     LineIntegrationRequest lineIntegrationRequest = (LineIntegrationRequest) o;
     return Objects.equals(this.id, lineIntegrationRequest.id) &&
         Objects.equals(this.name, lineIntegrationRequest.name) &&
+        Objects.equals(this.supportedContent, lineIntegrationRequest.supportedContent) &&
         Objects.equals(this.channelId, lineIntegrationRequest.channelId) &&
         Objects.equals(this.channelSecret, lineIntegrationRequest.channelSecret) &&
         Objects.equals(this.switcherSecret, lineIntegrationRequest.switcherSecret) &&
@@ -154,7 +175,7 @@ public class LineIntegrationRequest  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, channelId, channelSecret, switcherSecret, serviceCode, selfUri);
+    return Objects.hash(id, name, supportedContent, channelId, channelSecret, switcherSecret, serviceCode, selfUri);
   }
 
   @Override
@@ -164,6 +185,7 @@ public class LineIntegrationRequest  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    supportedContent: ").append(toIndentedString(supportedContent)).append("\n");
     sb.append("    channelId: ").append(toIndentedString(channelId)).append("\n");
     sb.append("    channelSecret: ").append(toIndentedString(channelSecret)).append("\n");
     sb.append("    switcherSecret: ").append(toIndentedString(switcherSecret)).append("\n");

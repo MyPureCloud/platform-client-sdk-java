@@ -13,7 +13,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteSpeechandtextanalyticsTopic**](SpeechTextAnalyticsApi.html#deleteSpeechandtextanalyticsTopic) | Delete a Speech &amp; Text Analytics topic by id |
 | [**getSpeechandtextanalyticsConversation**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsConversation) | Get Speech and Text Analytics for a specific conversation |
 | [**getSpeechandtextanalyticsConversationCommunicationTranscripturl**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsConversationCommunicationTranscripturl) | Get the pre-signed S3 URL for the transcript of a specific communication of a conversation |
-| [**getSpeechandtextanalyticsDialects**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsDialects) | Get list of supported Speech &amp; Text Analytics dialects |
 | [**getSpeechandtextanalyticsProgram**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsProgram) | Get a Speech &amp; Text Analytics program by id |
 | [**getSpeechandtextanalyticsProgramMappings**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsProgramMappings) | Get Speech &amp; Text Analytics program mappings to queues and flows by id |
 | [**getSpeechandtextanalyticsPrograms**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsPrograms) | Get the list of Speech &amp; Text Analytics programs |
@@ -416,64 +415,6 @@ try {
 ### Return type
 
 [**TranscriptUrl**](TranscriptUrl.html)
-
-<a name="getSpeechandtextanalyticsDialects"></a>
-
-# **getSpeechandtextanalyticsDialects**
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-> List&lt;Object&gt; getSpeechandtextanalyticsDialects()
-
-Get list of supported Speech &amp; Text Analytics dialects
-
-This api has been deprecated. Use api/v2/topics/dialects instead
-
-Wraps GET /api/v2/speechandtextanalytics/dialects  
-
-Requires NO permissions: 
-
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
-try {
-    List<Object> result = apiInstance.getSpeechandtextanalyticsDialects();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling SpeechTextAnalyticsApi#getSpeechandtextanalyticsDialects");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-This endpoint does not require any parameters.
-
-
-
-### Return type
-
-**List&lt;Object&gt;**
 
 <a name="getSpeechandtextanalyticsProgram"></a>
 

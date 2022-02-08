@@ -74,7 +74,9 @@ public class PostAuthorizationDivisionObjectRequest {
 		DATATABLES("DATATABLES"), 
 		TEAM("TEAM"), 
 		WORKBIN("WORKBIN"), 
-		WORKTYPE("WORKTYPE");
+		WORKTYPE("WORKTYPE"), 
+		EXTENSIONPOOL("EXTENSIONPOOL"), 
+		SKILLGROUP("SKILLGROUP");
 
 		private String value;
 
