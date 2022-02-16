@@ -91,6 +91,7 @@ public class MessagingCampaign  implements Serializable {
   private Boolean alwaysRunning = null;
   private List<ContactSort> contactSorts = new ArrayList<ContactSort>();
   private Integer messagesPerMinute = null;
+  private List<DomainEntityRef> contactListFilters = new ArrayList<DomainEntityRef>();
   private List<RestErrorDetail> errors = new ArrayList<RestErrorDetail>();
   private SmsConfig smsConfig = null;
   private String selfUri = null;
@@ -297,6 +298,24 @@ public class MessagingCampaign  implements Serializable {
 
   
   /**
+   * The contact list filter to check before sending a message for this messaging campaign.
+   **/
+  public MessagingCampaign contactListFilters(List<DomainEntityRef> contactListFilters) {
+    this.contactListFilters = contactListFilters;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The contact list filter to check before sending a message for this messaging campaign.")
+  @JsonProperty("contactListFilters")
+  public List<DomainEntityRef> getContactListFilters() {
+    return contactListFilters;
+  }
+  public void setContactListFilters(List<DomainEntityRef> contactListFilters) {
+    this.contactListFilters = contactListFilters;
+  }
+
+  
+  /**
    * A list of current error conditions associated with this messaging campaign.
    **/
   public MessagingCampaign errors(List<RestErrorDetail> errors) {
@@ -362,6 +381,7 @@ public class MessagingCampaign  implements Serializable {
         Objects.equals(this.alwaysRunning, messagingCampaign.alwaysRunning) &&
         Objects.equals(this.contactSorts, messagingCampaign.contactSorts) &&
         Objects.equals(this.messagesPerMinute, messagingCampaign.messagesPerMinute) &&
+        Objects.equals(this.contactListFilters, messagingCampaign.contactListFilters) &&
         Objects.equals(this.errors, messagingCampaign.errors) &&
         Objects.equals(this.smsConfig, messagingCampaign.smsConfig) &&
         Objects.equals(this.selfUri, messagingCampaign.selfUri);
@@ -369,7 +389,7 @@ public class MessagingCampaign  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, division, campaignStatus, callableTimeSet, contactList, dncLists, alwaysRunning, contactSorts, messagesPerMinute, errors, smsConfig, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, version, division, campaignStatus, callableTimeSet, contactList, dncLists, alwaysRunning, contactSorts, messagesPerMinute, contactListFilters, errors, smsConfig, selfUri);
   }
 
   @Override
@@ -390,6 +410,7 @@ public class MessagingCampaign  implements Serializable {
     sb.append("    alwaysRunning: ").append(toIndentedString(alwaysRunning)).append("\n");
     sb.append("    contactSorts: ").append(toIndentedString(contactSorts)).append("\n");
     sb.append("    messagesPerMinute: ").append(toIndentedString(messagesPerMinute)).append("\n");
+    sb.append("    contactListFilters: ").append(toIndentedString(contactListFilters)).append("\n");
     sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
     sb.append("    smsConfig: ").append(toIndentedString(smsConfig)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

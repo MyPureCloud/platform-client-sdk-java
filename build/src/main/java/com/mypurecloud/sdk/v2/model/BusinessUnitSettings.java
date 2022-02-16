@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.BuSchedulingSettings;
 import com.mypurecloud.sdk.v2.model.BuShortTermForecastingSettings;
 import com.mypurecloud.sdk.v2.model.WfmVersionedEntityMetadata;
 import io.swagger.annotations.ApiModel;
@@ -78,6 +79,7 @@ public class BusinessUnitSettings  implements Serializable {
   private StartDayOfWeekEnum startDayOfWeek = null;
   private String timeZone = null;
   private BuShortTermForecastingSettings shortTermForecasting = null;
+  private BuSchedulingSettings scheduling = null;
   private WfmVersionedEntityMetadata metadata = null;
 
   
@@ -136,6 +138,24 @@ public class BusinessUnitSettings  implements Serializable {
 
   
   /**
+   * Scheduling settings
+   **/
+  public BusinessUnitSettings scheduling(BuSchedulingSettings scheduling) {
+    this.scheduling = scheduling;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Scheduling settings")
+  @JsonProperty("scheduling")
+  public BuSchedulingSettings getScheduling() {
+    return scheduling;
+  }
+  public void setScheduling(BuSchedulingSettings scheduling) {
+    this.scheduling = scheduling;
+  }
+
+  
+  /**
    * Version metadata for this business unit
    **/
   public BusinessUnitSettings metadata(WfmVersionedEntityMetadata metadata) {
@@ -166,12 +186,13 @@ public class BusinessUnitSettings  implements Serializable {
     return Objects.equals(this.startDayOfWeek, businessUnitSettings.startDayOfWeek) &&
         Objects.equals(this.timeZone, businessUnitSettings.timeZone) &&
         Objects.equals(this.shortTermForecasting, businessUnitSettings.shortTermForecasting) &&
+        Objects.equals(this.scheduling, businessUnitSettings.scheduling) &&
         Objects.equals(this.metadata, businessUnitSettings.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(startDayOfWeek, timeZone, shortTermForecasting, metadata);
+    return Objects.hash(startDayOfWeek, timeZone, shortTermForecasting, scheduling, metadata);
   }
 
   @Override
@@ -182,6 +203,7 @@ public class BusinessUnitSettings  implements Serializable {
     sb.append("    startDayOfWeek: ").append(toIndentedString(startDayOfWeek)).append("\n");
     sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
     sb.append("    shortTermForecasting: ").append(toIndentedString(shortTermForecasting)).append("\n");
+    sb.append("    scheduling: ").append(toIndentedString(scheduling)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();

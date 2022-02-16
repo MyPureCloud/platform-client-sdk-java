@@ -9,7 +9,7 @@ title: StatEventQueueTopicStatsNotification
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **group** | <!----><!---->**Map&lt;String, String&gt;**<!----> |  |  [optional] |
-| **data** | <!----><!---->[**List&lt;StatEventQueueTopicDatum&gt;**](StatEventQueueTopicDatum.html)<!----> |  |  [optional] |
+| **data** | <!----><!---->[**List&lt;StatEventQueueTopicIntervalMetrics&gt;**](StatEventQueueTopicIntervalMetrics.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

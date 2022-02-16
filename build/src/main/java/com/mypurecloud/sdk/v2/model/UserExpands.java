@@ -29,6 +29,7 @@ public class UserExpands  implements Serializable {
   
   private RoutingStatus routingStatus = null;
   private UserPresence presence = null;
+  private UserPresence integrationPresence = null;
   private UserConversationSummary conversationSummary = null;
   private OutOfOffice outOfOffice = null;
   private Geolocation geolocation = null;
@@ -47,6 +48,13 @@ public class UserExpands  implements Serializable {
   @JsonProperty("presence")
   public UserPresence getPresence() {
     return presence;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "Active 3rd party presence")
+  @JsonProperty("integrationPresence")
+  public UserPresence getIntegrationPresence() {
+    return integrationPresence;
   }
 
   
@@ -97,6 +105,7 @@ public class UserExpands  implements Serializable {
     UserExpands userExpands = (UserExpands) o;
     return Objects.equals(this.routingStatus, userExpands.routingStatus) &&
         Objects.equals(this.presence, userExpands.presence) &&
+        Objects.equals(this.integrationPresence, userExpands.integrationPresence) &&
         Objects.equals(this.conversationSummary, userExpands.conversationSummary) &&
         Objects.equals(this.outOfOffice, userExpands.outOfOffice) &&
         Objects.equals(this.geolocation, userExpands.geolocation) &&
@@ -106,7 +115,7 @@ public class UserExpands  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization);
+    return Objects.hash(routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization);
   }
 
   @Override
@@ -116,6 +125,7 @@ public class UserExpands  implements Serializable {
     
     sb.append("    routingStatus: ").append(toIndentedString(routingStatus)).append("\n");
     sb.append("    presence: ").append(toIndentedString(presence)).append("\n");
+    sb.append("    integrationPresence: ").append(toIndentedString(integrationPresence)).append("\n");
     sb.append("    conversationSummary: ").append(toIndentedString(conversationSummary)).append("\n");
     sb.append("    outOfOffice: ").append(toIndentedString(outOfOffice)).append("\n");
     sb.append("    geolocation: ").append(toIndentedString(geolocation)).append("\n");

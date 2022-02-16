@@ -48,6 +48,7 @@ title: JourneyAggregationQuery
 | JOURNEYOUTCOMEID | &quot;journeyOutcomeId&quot; |
 | JOURNEYSEGMENTID | &quot;journeySegmentId&quot; |
 | JOURNEYSEGMENTSCOPE | &quot;journeySegmentScope&quot; |
+| JOURNEYSESSIONID | &quot;journeySessionId&quot; |
 | JOURNEYSESSIONSEGMENTID | &quot;journeySessionSegmentId&quot; |
 | JOURNEYSESSIONTYPE | &quot;journeySessionType&quot; |
 | NOTCONTAINSALLCONDITION | &quot;notContainsAllCondition&quot; |

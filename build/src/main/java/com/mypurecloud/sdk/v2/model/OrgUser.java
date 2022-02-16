@@ -112,6 +112,7 @@ public class OrgUser  implements Serializable {
   private EmployerInfo employerInfo = null;
   private RoutingStatus routingStatus = null;
   private UserPresence presence = null;
+  private UserPresence integrationPresence = null;
   private UserConversationSummary conversationSummary = null;
   private OutOfOffice outOfOffice = null;
   private Geolocation geolocation = null;
@@ -406,6 +407,13 @@ public class OrgUser  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "Integration presence")
+  @JsonProperty("integrationPresence")
+  public UserPresence getIntegrationPresence() {
+    return integrationPresence;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "Summary of conversion statistics for conversation types.")
   @JsonProperty("conversationSummary")
   public UserConversationSummary getConversationSummary() {
@@ -578,6 +586,7 @@ public class OrgUser  implements Serializable {
         Objects.equals(this.employerInfo, orgUser.employerInfo) &&
         Objects.equals(this.routingStatus, orgUser.routingStatus) &&
         Objects.equals(this.presence, orgUser.presence) &&
+        Objects.equals(this.integrationPresence, orgUser.integrationPresence) &&
         Objects.equals(this.conversationSummary, orgUser.conversationSummary) &&
         Objects.equals(this.outOfOffice, orgUser.outOfOffice) &&
         Objects.equals(this.geolocation, orgUser.geolocation) &&
@@ -598,7 +607,7 @@ public class OrgUser  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, certifications, biography, employerInfo, routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, team, skills, languages, acdAutoAnswer, languagePreference, lastTokenIssued, dateLastLogin, organization);
+    return Objects.hash(id, name, division, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, certifications, biography, employerInfo, routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, team, skills, languages, acdAutoAnswer, languagePreference, lastTokenIssued, dateLastLogin, organization);
   }
 
   @Override
@@ -625,6 +634,7 @@ public class OrgUser  implements Serializable {
     sb.append("    employerInfo: ").append(toIndentedString(employerInfo)).append("\n");
     sb.append("    routingStatus: ").append(toIndentedString(routingStatus)).append("\n");
     sb.append("    presence: ").append(toIndentedString(presence)).append("\n");
+    sb.append("    integrationPresence: ").append(toIndentedString(integrationPresence)).append("\n");
     sb.append("    conversationSummary: ").append(toIndentedString(conversationSummary)).append("\n");
     sb.append("    outOfOffice: ").append(toIndentedString(outOfOffice)).append("\n");
     sb.append("    geolocation: ").append(toIndentedString(geolocation)).append("\n");

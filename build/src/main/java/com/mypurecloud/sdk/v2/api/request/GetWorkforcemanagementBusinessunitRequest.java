@@ -181,7 +181,8 @@ public class GetWorkforcemanagementBusinessunitRequest {
 		SETTINGS("settings"), 
 		SETTINGS_TIMEZONE("settings.timeZone"), 
 		SETTINGS_STARTDAYOFWEEK("settings.startDayOfWeek"), 
-		SETTINGS_SHORTTERMFORECASTING("settings.shortTermForecasting");
+		SETTINGS_SHORTTERMFORECASTING("settings.shortTermForecasting"), 
+		SETTINGS_SCHEDULING("settings.scheduling");
 
 		private String value;
 

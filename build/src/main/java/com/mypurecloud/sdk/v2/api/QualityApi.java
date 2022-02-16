@@ -32,6 +32,7 @@ import com.mypurecloud.sdk.v2.model.SurveyAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.SurveyAggregationQuery;
 import com.mypurecloud.sdk.v2.model.CalibrationCreate;
 import com.mypurecloud.sdk.v2.model.QMAuditQueryRequest;
+import com.mypurecloud.sdk.v2.model.EvaluationAggregationQueryMe;
 import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
 import com.mypurecloud.sdk.v2.model.PublishForm;
@@ -59,6 +60,7 @@ import com.mypurecloud.sdk.v2.api.request.GetQualityFormsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormsEvaluationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormsEvaluationVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormsEvaluationsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetQualityFormsEvaluationsBulkContextsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormsSurveyRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormsSurveyVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormsSurveysRequest;
@@ -78,6 +80,7 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsSurveysAggregatesQueryReq
 import com.mypurecloud.sdk.v2.api.request.PostQualityCalibrationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityConversationEvaluationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityConversationsAuditsQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostQualityEvaluationsAggregatesQueryMeRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityEvaluationsScoringRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityFormsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityFormsEvaluationsRequest;
@@ -1988,6 +1991,85 @@ public class QualityApi {
 
   
   /**
+   * Retrieve a list of the latest published evaluation form versions by context ids
+   * 
+   * @param contextId A comma-delimited list of valid evaluation form context ids (required)
+   * @return List<EvaluationForm>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<EvaluationForm> getQualityFormsEvaluationsBulkContexts(List<String> contextId) throws IOException, ApiException {
+    return  getQualityFormsEvaluationsBulkContexts(createGetQualityFormsEvaluationsBulkContextsRequest(contextId));
+  }
+
+  /**
+   * Retrieve a list of the latest published evaluation form versions by context ids
+   * 
+   * @param contextId A comma-delimited list of valid evaluation form context ids (required)
+   * @return List<EvaluationForm>
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<EvaluationForm>> getQualityFormsEvaluationsBulkContextsWithHttpInfo(List<String> contextId) throws IOException {
+    return getQualityFormsEvaluationsBulkContexts(createGetQualityFormsEvaluationsBulkContextsRequest(contextId).withHttpInfo());
+  }
+
+  private GetQualityFormsEvaluationsBulkContextsRequest createGetQualityFormsEvaluationsBulkContextsRequest(List<String> contextId) {
+    return GetQualityFormsEvaluationsBulkContextsRequest.builder()
+            .withContextId(contextId)
+    
+            .build();
+  }
+
+  /**
+   * Retrieve a list of the latest published evaluation form versions by context ids
+   * 
+   * @param request The request object
+   * @return List<EvaluationForm>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<EvaluationForm> getQualityFormsEvaluationsBulkContexts(GetQualityFormsEvaluationsBulkContextsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<List<EvaluationForm>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<EvaluationForm>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieve a list of the latest published evaluation form versions by context ids
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<EvaluationForm>> getQualityFormsEvaluationsBulkContexts(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<EvaluationForm>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<EvaluationForm>> response = (ApiResponse<List<EvaluationForm>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<EvaluationForm>> response = (ApiResponse<List<EvaluationForm>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get a survey form
    * 
    * @param formId Form ID (required)
@@ -3575,6 +3657,85 @@ public class QualityApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<QualityAuditQueryExecutionStatusResponse> response = (ApiResponse<QualityAuditQueryExecutionStatusResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Query for evaluation aggregates for the current user
+   * 
+   * @param body query (required)
+   * @return EvaluationAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EvaluationAggregateQueryResponse postQualityEvaluationsAggregatesQueryMe(EvaluationAggregationQueryMe body) throws IOException, ApiException {
+    return  postQualityEvaluationsAggregatesQueryMe(createPostQualityEvaluationsAggregatesQueryMeRequest(body));
+  }
+
+  /**
+   * Query for evaluation aggregates for the current user
+   * 
+   * @param body query (required)
+   * @return EvaluationAggregateQueryResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EvaluationAggregateQueryResponse> postQualityEvaluationsAggregatesQueryMeWithHttpInfo(EvaluationAggregationQueryMe body) throws IOException {
+    return postQualityEvaluationsAggregatesQueryMe(createPostQualityEvaluationsAggregatesQueryMeRequest(body).withHttpInfo());
+  }
+
+  private PostQualityEvaluationsAggregatesQueryMeRequest createPostQualityEvaluationsAggregatesQueryMeRequest(EvaluationAggregationQueryMe body) {
+    return PostQualityEvaluationsAggregatesQueryMeRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Query for evaluation aggregates for the current user
+   * 
+   * @param request The request object
+   * @return EvaluationAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EvaluationAggregateQueryResponse postQualityEvaluationsAggregatesQueryMe(PostQualityEvaluationsAggregatesQueryMeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EvaluationAggregateQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EvaluationAggregateQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for evaluation aggregates for the current user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EvaluationAggregateQueryResponse> postQualityEvaluationsAggregatesQueryMe(ApiRequest<EvaluationAggregationQueryMe> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EvaluationAggregateQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EvaluationAggregateQueryResponse> response = (ApiResponse<EvaluationAggregateQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EvaluationAggregateQueryResponse> response = (ApiResponse<EvaluationAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

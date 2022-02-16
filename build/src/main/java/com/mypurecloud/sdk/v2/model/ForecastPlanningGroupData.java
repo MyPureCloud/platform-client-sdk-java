@@ -46,14 +46,14 @@ public class ForecastPlanningGroupData  implements Serializable {
 
   
   /**
-   * Forecast offered counts per interval for this week of the forecast
+   * Forecast offered counts per 15 minute interval for this week of the forecast
    **/
   public ForecastPlanningGroupData offeredPerInterval(List<Double> offeredPerInterval) {
     this.offeredPerInterval = offeredPerInterval;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Forecast offered counts per interval for this week of the forecast")
+  @ApiModelProperty(example = "null", required = true, value = "Forecast offered counts per 15 minute interval for this week of the forecast")
   @JsonProperty("offeredPerInterval")
   public List<Double> getOfferedPerInterval() {
     return offeredPerInterval;
@@ -64,14 +64,14 @@ public class ForecastPlanningGroupData  implements Serializable {
 
   
   /**
-   * Forecast average handle time per interval in seconds
+   * Forecast average handle time per 15 minute interval in seconds
    **/
   public ForecastPlanningGroupData averageHandleTimeSecondsPerInterval(List<Double> averageHandleTimeSecondsPerInterval) {
     this.averageHandleTimeSecondsPerInterval = averageHandleTimeSecondsPerInterval;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Forecast average handle time per interval in seconds")
+  @ApiModelProperty(example = "null", required = true, value = "Forecast average handle time per 15 minute interval in seconds")
   @JsonProperty("averageHandleTimeSecondsPerInterval")
   public List<Double> getAverageHandleTimeSecondsPerInterval() {
     return averageHandleTimeSecondsPerInterval;

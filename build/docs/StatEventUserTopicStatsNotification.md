@@ -9,7 +9,7 @@ title: StatEventUserTopicStatsNotification
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **group** | <!----><!---->**Map&lt;String, String&gt;**<!----> |  |  [optional] |
-| **data** | <!----><!---->[**List&lt;StatEventUserTopicDatum&gt;**](StatEventUserTopicDatum.html)<!----> |  |  [optional] |
+| **data** | <!----><!---->[**List&lt;StatEventUserTopicIntervalMetrics&gt;**](StatEventUserTopicIntervalMetrics.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

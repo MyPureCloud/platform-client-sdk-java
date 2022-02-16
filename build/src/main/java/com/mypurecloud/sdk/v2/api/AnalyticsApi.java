@@ -25,6 +25,7 @@ import com.mypurecloud.sdk.v2.model.ReportSchedule;
 import com.mypurecloud.sdk.v2.model.ReportRunEntryEntityDomainListing;
 import com.mypurecloud.sdk.v2.model.ReportRunEntry;
 import com.mypurecloud.sdk.v2.model.ReportScheduleEntityListing;
+import com.mypurecloud.sdk.v2.model.AnalyticsReportingSettings;
 import com.mypurecloud.sdk.v2.model.AnalyticsUserDetailsAsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.BotAggregationQuery;
 import com.mypurecloud.sdk.v2.model.BotAggregateQueryResponse;
@@ -81,10 +82,12 @@ import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingScheduleHistoryRe
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingScheduleHistoryLatestRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingScheduleHistoryRunIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingSchedulesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingTimeperiodsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersDetailsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersDetailsJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersDetailsJobsAvailabilityRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchAnalyticsReportingSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsBotsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationDetailsPropertiesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsAggregatesQueryRequest;
@@ -1663,6 +1666,81 @@ public class AnalyticsApi {
 
   
   /**
+   * Get AnalyticsReportingSettings for an organization
+   * 
+   * @return AnalyticsReportingSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AnalyticsReportingSettings getAnalyticsReportingSettings() throws IOException, ApiException {
+    return  getAnalyticsReportingSettings(createGetAnalyticsReportingSettingsRequest());
+  }
+
+  /**
+   * Get AnalyticsReportingSettings for an organization
+   * 
+   * @return AnalyticsReportingSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AnalyticsReportingSettings> getAnalyticsReportingSettingsWithHttpInfo() throws IOException {
+    return getAnalyticsReportingSettings(createGetAnalyticsReportingSettingsRequest().withHttpInfo());
+  }
+
+  private GetAnalyticsReportingSettingsRequest createGetAnalyticsReportingSettingsRequest() {
+    return GetAnalyticsReportingSettingsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get AnalyticsReportingSettings for an organization
+   * 
+   * @param request The request object
+   * @return AnalyticsReportingSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AnalyticsReportingSettings getAnalyticsReportingSettings(GetAnalyticsReportingSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AnalyticsReportingSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AnalyticsReportingSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get AnalyticsReportingSettings for an organization
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AnalyticsReportingSettings> getAnalyticsReportingSettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AnalyticsReportingSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AnalyticsReportingSettings> response = (ApiResponse<AnalyticsReportingSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AnalyticsReportingSettings> response = (ApiResponse<AnalyticsReportingSettings>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get a list of report time periods.
    * 
    * @return List<String>
@@ -1973,6 +2051,85 @@ public class AnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DataAvailabilityResponse> response = (ApiResponse<DataAvailabilityResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Patch AnalyticsReportingSettings values for an organization
+   * 
+   * @param body AnalyticsReportingSettingsRequest (required)
+   * @return AnalyticsReportingSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AnalyticsReportingSettings patchAnalyticsReportingSettings(AnalyticsReportingSettings body) throws IOException, ApiException {
+    return  patchAnalyticsReportingSettings(createPatchAnalyticsReportingSettingsRequest(body));
+  }
+
+  /**
+   * Patch AnalyticsReportingSettings values for an organization
+   * 
+   * @param body AnalyticsReportingSettingsRequest (required)
+   * @return AnalyticsReportingSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AnalyticsReportingSettings> patchAnalyticsReportingSettingsWithHttpInfo(AnalyticsReportingSettings body) throws IOException {
+    return patchAnalyticsReportingSettings(createPatchAnalyticsReportingSettingsRequest(body).withHttpInfo());
+  }
+
+  private PatchAnalyticsReportingSettingsRequest createPatchAnalyticsReportingSettingsRequest(AnalyticsReportingSettings body) {
+    return PatchAnalyticsReportingSettingsRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Patch AnalyticsReportingSettings values for an organization
+   * 
+   * @param request The request object
+   * @return AnalyticsReportingSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AnalyticsReportingSettings patchAnalyticsReportingSettings(PatchAnalyticsReportingSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AnalyticsReportingSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AnalyticsReportingSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Patch AnalyticsReportingSettings values for an organization
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AnalyticsReportingSettings> patchAnalyticsReportingSettings(ApiRequest<AnalyticsReportingSettings> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AnalyticsReportingSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AnalyticsReportingSettings> response = (ApiResponse<AnalyticsReportingSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AnalyticsReportingSettings> response = (ApiResponse<AnalyticsReportingSettings>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

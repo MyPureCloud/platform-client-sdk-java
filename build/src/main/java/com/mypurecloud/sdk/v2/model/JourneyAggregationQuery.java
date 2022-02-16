@@ -68,6 +68,7 @@ public class JourneyAggregationQuery  implements Serializable {
     JOURNEYOUTCOMEID("journeyOutcomeId"),
     JOURNEYSEGMENTID("journeySegmentId"),
     JOURNEYSEGMENTSCOPE("journeySegmentScope"),
+    JOURNEYSESSIONID("journeySessionId"),
     JOURNEYSESSIONSEGMENTID("journeySessionSegmentId"),
     JOURNEYSESSIONTYPE("journeySessionType"),
     NOTCONTAINSALLCONDITION("notContainsAllCondition"),

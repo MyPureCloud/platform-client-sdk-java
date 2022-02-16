@@ -4438,7 +4438,7 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
-   * @param sortBy Sort by (optional, default to startNumber)
+   * @param sortBy Sort by (optional)
    * @param number Number (optional)
    * @return ExtensionPoolEntityListing
    * @throws ApiException if the request fails on the server
@@ -4453,7 +4453,7 @@ public class TelephonyProvidersEdgeApi {
    * 
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
-   * @param sortBy Sort by (optional, default to startNumber)
+   * @param sortBy Sort by (optional)
    * @param number Number (optional)
    * @return ExtensionPoolEntityListing
    * @throws IOException if the request fails to be processed

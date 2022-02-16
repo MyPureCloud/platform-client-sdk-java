@@ -317,7 +317,8 @@ public class AuditQueryEntity  implements Serializable {
     RESCHEDULE("Reschedule"),
     CANCEL("Cancel"),
     SOFTDELETE("SoftDelete"),
-    HARDDELETE("HardDelete");
+    HARDDELETE("HardDelete"),
+    RESET("Reset");
 
     private String value;
 

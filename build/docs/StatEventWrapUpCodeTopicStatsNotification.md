@@ -9,7 +9,7 @@ title: StatEventWrapUpCodeTopicStatsNotification
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **group** | <!----><!---->**Map&lt;String, String&gt;**<!----> |  |  [optional] |
-| **data** | <!----><!---->[**List&lt;StatEventWrapUpCodeTopicDatum&gt;**](StatEventWrapUpCodeTopicDatum.html)<!----> |  |  [optional] |
+| **data** | <!----><!---->[**List&lt;StatEventWrapUpCodeTopicIntervalMetrics&gt;**](StatEventWrapUpCodeTopicIntervalMetrics.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

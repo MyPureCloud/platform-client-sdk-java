@@ -1229,7 +1229,7 @@ try {
 | **id** | [**List&lt;String&gt;**](String.html)| id | [optional] 
 | **jid** | [**List&lt;String&gt;**](String.html)| jid | [optional] 
 | **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending 
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization 
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization 
 | **integrationPresenceSource** | **String**| Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. | [optional]<br />**Values**: MicrosoftTeams, ZoomPhone, RingCentral 
 {: class="table-striped"}
 

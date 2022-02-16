@@ -10,7 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.StatEventWrapUpCodeTopicDatum;
+import com.mypurecloud.sdk.v2.model.StatEventWrapUpCodeTopicIntervalMetrics;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -26,7 +26,7 @@ import java.io.Serializable;
 public class StatEventWrapUpCodeTopicStatsNotification  implements Serializable {
   
   private Map<String, String> group = null;
-  private List<StatEventWrapUpCodeTopicDatum> data = new ArrayList<StatEventWrapUpCodeTopicDatum>();
+  private List<StatEventWrapUpCodeTopicIntervalMetrics> data = new ArrayList<StatEventWrapUpCodeTopicIntervalMetrics>();
 
   
   /**
@@ -48,17 +48,17 @@ public class StatEventWrapUpCodeTopicStatsNotification  implements Serializable 
   
   /**
    **/
-  public StatEventWrapUpCodeTopicStatsNotification data(List<StatEventWrapUpCodeTopicDatum> data) {
+  public StatEventWrapUpCodeTopicStatsNotification data(List<StatEventWrapUpCodeTopicIntervalMetrics> data) {
     this.data = data;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("data")
-  public List<StatEventWrapUpCodeTopicDatum> getData() {
+  public List<StatEventWrapUpCodeTopicIntervalMetrics> getData() {
     return data;
   }
-  public void setData(List<StatEventWrapUpCodeTopicDatum> data) {
+  public void setData(List<StatEventWrapUpCodeTopicIntervalMetrics> data) {
     this.data = data;
   }
 

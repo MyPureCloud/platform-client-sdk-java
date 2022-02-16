@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.WorkdayValuesTrendItem;
 import io.swagger.annotations.ApiModel;
@@ -25,6 +26,7 @@ import java.io.Serializable;
 
 public class WorkdayValuesMetricItem  implements Serializable {
   
+  private AddressableEntityRef metric = null;
   private DomainEntityRef metricDefinition = null;
   private Double average = null;
 
@@ -84,6 +86,13 @@ public class WorkdayValuesMetricItem  implements Serializable {
 
   
   @ApiModelProperty(example = "null", value = "Gamification metric for the average and the trend")
+  @JsonProperty("metric")
+  public AddressableEntityRef getMetric() {
+    return metric;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "Gamification metric definition for the average and the trend")
   @JsonProperty("metricDefinition")
   public DomainEntityRef getMetricDefinition() {
     return metricDefinition;
@@ -121,7 +130,8 @@ public class WorkdayValuesMetricItem  implements Serializable {
       return false;
     }
     WorkdayValuesMetricItem workdayValuesMetricItem = (WorkdayValuesMetricItem) o;
-    return Objects.equals(this.metricDefinition, workdayValuesMetricItem.metricDefinition) &&
+    return Objects.equals(this.metric, workdayValuesMetricItem.metric) &&
+        Objects.equals(this.metricDefinition, workdayValuesMetricItem.metricDefinition) &&
         Objects.equals(this.average, workdayValuesMetricItem.average) &&
         Objects.equals(this.unitType, workdayValuesMetricItem.unitType) &&
         Objects.equals(this.trend, workdayValuesMetricItem.trend);
@@ -129,7 +139,7 @@ public class WorkdayValuesMetricItem  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(metricDefinition, average, unitType, trend);
+    return Objects.hash(metric, metricDefinition, average, unitType, trend);
   }
 
   @Override
@@ -137,6 +147,7 @@ public class WorkdayValuesMetricItem  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class WorkdayValuesMetricItem {\n");
     
+    sb.append("    metric: ").append(toIndentedString(metric)).append("\n");
     sb.append("    metricDefinition: ").append(toIndentedString(metricDefinition)).append("\n");
     sb.append("    average: ").append(toIndentedString(average)).append("\n");
     sb.append("    unitType: ").append(toIndentedString(unitType)).append("\n");

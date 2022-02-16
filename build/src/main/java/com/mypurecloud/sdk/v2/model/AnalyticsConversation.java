@@ -95,6 +95,7 @@ public class AnalyticsConversation  implements Serializable {
   }
   private ConversationInitiatorEnum conversationInitiator = null;
   private Date conversationStart = null;
+  private Boolean customerParticipation = null;
   private List<String> divisionIds = new ArrayList<String>();
   private String externalTag = null;
   private List<String> knowledgeBaseIds = new ArrayList<String>();
@@ -224,6 +225,24 @@ public class AnalyticsConversation  implements Serializable {
   }
   public void setConversationStart(Date conversationStart) {
     this.conversationStart = conversationStart;
+  }
+
+  
+  /**
+   * Indicates a messaging conversation in which the customer participated by sending at least one message
+   **/
+  public AnalyticsConversation customerParticipation(Boolean customerParticipation) {
+    this.customerParticipation = customerParticipation;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates a messaging conversation in which the customer participated by sending at least one message")
+  @JsonProperty("customerParticipation")
+  public Boolean getCustomerParticipation() {
+    return customerParticipation;
+  }
+  public void setCustomerParticipation(Boolean customerParticipation) {
+    this.customerParticipation = customerParticipation;
   }
 
   
@@ -439,6 +458,7 @@ public class AnalyticsConversation  implements Serializable {
         Objects.equals(this.conversationId, analyticsConversation.conversationId) &&
         Objects.equals(this.conversationInitiator, analyticsConversation.conversationInitiator) &&
         Objects.equals(this.conversationStart, analyticsConversation.conversationStart) &&
+        Objects.equals(this.customerParticipation, analyticsConversation.customerParticipation) &&
         Objects.equals(this.divisionIds, analyticsConversation.divisionIds) &&
         Objects.equals(this.externalTag, analyticsConversation.externalTag) &&
         Objects.equals(this.knowledgeBaseIds, analyticsConversation.knowledgeBaseIds) &&
@@ -454,7 +474,7 @@ public class AnalyticsConversation  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(conversationEnd, conversationId, conversationInitiator, conversationStart, divisionIds, externalTag, knowledgeBaseIds, mediaStatsMinConversationMos, mediaStatsMinConversationRFactor, originatingDirection, selfServed, evaluations, surveys, resolutions, participants);
+    return Objects.hash(conversationEnd, conversationId, conversationInitiator, conversationStart, customerParticipation, divisionIds, externalTag, knowledgeBaseIds, mediaStatsMinConversationMos, mediaStatsMinConversationRFactor, originatingDirection, selfServed, evaluations, surveys, resolutions, participants);
   }
 
   @Override
@@ -466,6 +486,7 @@ public class AnalyticsConversation  implements Serializable {
     sb.append("    conversationId: ").append(toIndentedString(conversationId)).append("\n");
     sb.append("    conversationInitiator: ").append(toIndentedString(conversationInitiator)).append("\n");
     sb.append("    conversationStart: ").append(toIndentedString(conversationStart)).append("\n");
+    sb.append("    customerParticipation: ").append(toIndentedString(customerParticipation)).append("\n");
     sb.append("    divisionIds: ").append(toIndentedString(divisionIds)).append("\n");
     sb.append("    externalTag: ").append(toIndentedString(externalTag)).append("\n");
     sb.append("    knowledgeBaseIds: ").append(toIndentedString(knowledgeBaseIds)).append("\n");

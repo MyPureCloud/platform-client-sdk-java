@@ -9,7 +9,7 @@ title: StatEventFlowTopicStatsNotification
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **group** | <!----><!---->**Map&lt;String, String&gt;**<!----> |  |  [optional] |
-| **data** | <!----><!---->[**List&lt;StatEventFlowTopicDatum&gt;**](StatEventFlowTopicDatum.html)<!----> |  |  [optional] |
+| **data** | <!----><!---->[**List&lt;StatEventFlowTopicIntervalMetrics&gt;**](StatEventFlowTopicIntervalMetrics.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

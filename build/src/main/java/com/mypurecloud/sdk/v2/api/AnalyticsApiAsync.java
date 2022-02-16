@@ -28,6 +28,7 @@ import com.mypurecloud.sdk.v2.model.ReportSchedule;
 import com.mypurecloud.sdk.v2.model.ReportRunEntryEntityDomainListing;
 import com.mypurecloud.sdk.v2.model.ReportRunEntry;
 import com.mypurecloud.sdk.v2.model.ReportScheduleEntityListing;
+import com.mypurecloud.sdk.v2.model.AnalyticsReportingSettings;
 import com.mypurecloud.sdk.v2.model.AnalyticsUserDetailsAsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.BotAggregationQuery;
 import com.mypurecloud.sdk.v2.model.BotAggregateQueryResponse;
@@ -84,10 +85,12 @@ import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingScheduleHistoryRe
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingScheduleHistoryLatestRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingScheduleHistoryRunIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingSchedulesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingTimeperiodsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersDetailsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersDetailsJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersDetailsJobsAvailabilityRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchAnalyticsReportingSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsBotsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationDetailsPropertiesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsAggregatesQueryRequest;
@@ -1575,6 +1578,82 @@ public class AnalyticsApiAsync {
 
   
   /**
+   * Get AnalyticsReportingSettings for an organization
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AnalyticsReportingSettings> getAnalyticsReportingSettingsAsync(GetAnalyticsReportingSettingsRequest request, final AsyncApiCallback<AnalyticsReportingSettings> callback) {
+    try {
+      final SettableFuture<AnalyticsReportingSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AnalyticsReportingSettings>() {}, new AsyncApiCallback<ApiResponse<AnalyticsReportingSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<AnalyticsReportingSettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get AnalyticsReportingSettings for an organization
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AnalyticsReportingSettings>> getAnalyticsReportingSettingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AnalyticsReportingSettings>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AnalyticsReportingSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AnalyticsReportingSettings>() {}, new AsyncApiCallback<ApiResponse<AnalyticsReportingSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<AnalyticsReportingSettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AnalyticsReportingSettings> response = (ApiResponse<AnalyticsReportingSettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AnalyticsReportingSettings> response = (ApiResponse<AnalyticsReportingSettings>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Get a list of report time periods.
    * 
    * @param request the request object
@@ -1866,6 +1945,82 @@ public class AnalyticsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<DataAvailabilityResponse> response = (ApiResponse<DataAvailabilityResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Patch AnalyticsReportingSettings values for an organization
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AnalyticsReportingSettings> patchAnalyticsReportingSettingsAsync(PatchAnalyticsReportingSettingsRequest request, final AsyncApiCallback<AnalyticsReportingSettings> callback) {
+    try {
+      final SettableFuture<AnalyticsReportingSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AnalyticsReportingSettings>() {}, new AsyncApiCallback<ApiResponse<AnalyticsReportingSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<AnalyticsReportingSettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Patch AnalyticsReportingSettings values for an organization
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AnalyticsReportingSettings>> patchAnalyticsReportingSettingsAsync(ApiRequest<AnalyticsReportingSettings> request, final AsyncApiCallback<ApiResponse<AnalyticsReportingSettings>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AnalyticsReportingSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AnalyticsReportingSettings>() {}, new AsyncApiCallback<ApiResponse<AnalyticsReportingSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<AnalyticsReportingSettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AnalyticsReportingSettings> response = (ApiResponse<AnalyticsReportingSettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AnalyticsReportingSettings> response = (ApiResponse<AnalyticsReportingSettings>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -13,11 +13,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.BuScheduleReference;
 import com.mypurecloud.sdk.v2.model.ReschedulingOptionsRunResponse;
+import com.mypurecloud.sdk.v2.model.SchedulerMessageSeverityCount;
 import com.mypurecloud.sdk.v2.model.UserReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -91,6 +94,7 @@ public class BuScheduleRun  implements Serializable {
   private UserReference schedulingCanceledBy = null;
   private Date schedulingCompletedTime = null;
   private Integer messageCount = null;
+  private List<SchedulerMessageSeverityCount> messageSeverityCounts = new ArrayList<SchedulerMessageSeverityCount>();
   private ReschedulingOptionsRunResponse reschedulingOptions = null;
   private Date reschedulingResultExpiration = null;
   private String selfUri = null;
@@ -338,6 +342,24 @@ public class BuScheduleRun  implements Serializable {
 
   
   /**
+   * The list of schedule generation message counts by severity for this schedule generation run
+   **/
+  public BuScheduleRun messageSeverityCounts(List<SchedulerMessageSeverityCount> messageSeverityCounts) {
+    this.messageSeverityCounts = messageSeverityCounts;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of schedule generation message counts by severity for this schedule generation run")
+  @JsonProperty("messageSeverityCounts")
+  public List<SchedulerMessageSeverityCount> getMessageSeverityCounts() {
+    return messageSeverityCounts;
+  }
+  public void setMessageSeverityCounts(List<SchedulerMessageSeverityCount> messageSeverityCounts) {
+    this.messageSeverityCounts = messageSeverityCounts;
+  }
+
+  
+  /**
    * Rescheduling options for this run.  Null unless intradayRescheduling is true
    **/
   public BuScheduleRun reschedulingOptions(ReschedulingOptionsRunResponse reschedulingOptions) {
@@ -404,6 +426,7 @@ public class BuScheduleRun  implements Serializable {
         Objects.equals(this.schedulingCanceledBy, buScheduleRun.schedulingCanceledBy) &&
         Objects.equals(this.schedulingCompletedTime, buScheduleRun.schedulingCompletedTime) &&
         Objects.equals(this.messageCount, buScheduleRun.messageCount) &&
+        Objects.equals(this.messageSeverityCounts, buScheduleRun.messageSeverityCounts) &&
         Objects.equals(this.reschedulingOptions, buScheduleRun.reschedulingOptions) &&
         Objects.equals(this.reschedulingResultExpiration, buScheduleRun.reschedulingResultExpiration) &&
         Objects.equals(this.selfUri, buScheduleRun.selfUri);
@@ -411,7 +434,7 @@ public class BuScheduleRun  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, schedulerRunId, intradayRescheduling, state, weekCount, percentComplete, targetWeek, schedule, scheduleDescription, schedulingStartTime, schedulingStartedBy, schedulingCanceledBy, schedulingCompletedTime, messageCount, reschedulingOptions, reschedulingResultExpiration, selfUri);
+    return Objects.hash(id, schedulerRunId, intradayRescheduling, state, weekCount, percentComplete, targetWeek, schedule, scheduleDescription, schedulingStartTime, schedulingStartedBy, schedulingCanceledBy, schedulingCompletedTime, messageCount, messageSeverityCounts, reschedulingOptions, reschedulingResultExpiration, selfUri);
   }
 
   @Override
@@ -433,6 +456,7 @@ public class BuScheduleRun  implements Serializable {
     sb.append("    schedulingCanceledBy: ").append(toIndentedString(schedulingCanceledBy)).append("\n");
     sb.append("    schedulingCompletedTime: ").append(toIndentedString(schedulingCompletedTime)).append("\n");
     sb.append("    messageCount: ").append(toIndentedString(messageCount)).append("\n");
+    sb.append("    messageSeverityCounts: ").append(toIndentedString(messageSeverityCounts)).append("\n");
     sb.append("    reschedulingOptions: ").append(toIndentedString(reschedulingOptions)).append("\n");
     sb.append("    reschedulingResultExpiration: ").append(toIndentedString(reschedulingResultExpiration)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

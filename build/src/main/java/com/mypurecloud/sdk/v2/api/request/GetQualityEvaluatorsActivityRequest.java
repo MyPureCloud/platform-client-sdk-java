@@ -42,6 +42,7 @@ import com.mypurecloud.sdk.v2.model.SurveyAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.SurveyAggregationQuery;
 import com.mypurecloud.sdk.v2.model.CalibrationCreate;
 import com.mypurecloud.sdk.v2.model.QMAuditQueryRequest;
+import com.mypurecloud.sdk.v2.model.EvaluationAggregationQueryMe;
 import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
 import com.mypurecloud.sdk.v2.model.PublishForm;

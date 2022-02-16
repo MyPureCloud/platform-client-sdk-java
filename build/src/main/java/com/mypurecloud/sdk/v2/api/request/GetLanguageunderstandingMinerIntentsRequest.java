@@ -71,6 +71,36 @@ public class GetLanguageunderstandingMinerIntentsRequest {
 	    this.setExpand(expand);
 	    return this;
 	} 
+
+	public enum expandValues { 
+		PHRASES("phrases"), 
+		UTTERANCES("utterances");
+
+		private String value;
+
+		expandValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static expandValues fromString(String key) {
+			if (key == null) return null;
+
+			for (expandValues value : expandValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return expandValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -138,6 +168,11 @@ public class GetLanguageunderstandingMinerIntentsRequest {
 		public Builder withExpand(String expand) {
 			request.setExpand(expand);
 			return this;
+		}
+
+		public Builder withExpand(expandValues expand) {
+		    request.setExpand(expand.toString());
+		    return this;
 		}
 		
 

@@ -3470,7 +3470,7 @@ Configuration.setDefaultApiClient(apiClient);
 TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
-String sortBy = "startNumber"; // String | Sort by
+String sortBy = "sortBy_example"; // String | Sort by
 String number = "number_example"; // String | Number
 try {
     ExtensionPoolEntityListing result = apiInstance.getTelephonyProvidersEdgesExtensionpools(pageSize, pageNumber, sortBy, number);
@@ -3488,7 +3488,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
-| **sortBy** | **String**| Sort by | [optional] [default to startNumber] 
+| **sortBy** | **String**| Sort by | [optional] 
 | **number** | **String**| Number | [optional] 
 {: class="table-striped"}
 

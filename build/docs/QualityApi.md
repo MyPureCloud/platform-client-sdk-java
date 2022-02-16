@@ -27,6 +27,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getQualityFormsEvaluation**](QualityApi.html#getQualityFormsEvaluation) | Get an evaluation form |
 | [**getQualityFormsEvaluationVersions**](QualityApi.html#getQualityFormsEvaluationVersions) | Gets all the revisions for a specific evaluation. |
 | [**getQualityFormsEvaluations**](QualityApi.html#getQualityFormsEvaluations) | Get the list of evaluation forms |
+| [**getQualityFormsEvaluationsBulkContexts**](QualityApi.html#getQualityFormsEvaluationsBulkContexts) | Retrieve a list of the latest published evaluation form versions by context ids |
 | [**getQualityFormsSurvey**](QualityApi.html#getQualityFormsSurvey) | Get a survey form |
 | [**getQualityFormsSurveyVersions**](QualityApi.html#getQualityFormsSurveyVersions) | Gets all the revisions for a specific survey. |
 | [**getQualityFormsSurveys**](QualityApi.html#getQualityFormsSurveys) | Get the list of survey forms |
@@ -46,6 +47,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postQualityCalibrations**](QualityApi.html#postQualityCalibrations) | Create a calibration |
 | [**postQualityConversationEvaluations**](QualityApi.html#postQualityConversationEvaluations) | Create an evaluation |
 | [**postQualityConversationsAuditsQuery**](QualityApi.html#postQualityConversationsAuditsQuery) | Create audit query execution |
+| [**postQualityEvaluationsAggregatesQueryMe**](QualityApi.html#postQualityEvaluationsAggregatesQueryMe) | Query for evaluation aggregates for the current user |
 | [**postQualityEvaluationsScoring**](QualityApi.html#postQualityEvaluationsScoring) | Score evaluation |
 | [**postQualityForms**](QualityApi.html#postQualityForms) | Create an evaluation form. |
 | [**postQualityFormsEvaluations**](QualityApi.html#postQualityFormsEvaluations) | Create an evaluation form. |
@@ -1471,6 +1473,69 @@ try {
 
 [**EvaluationFormEntityListing**](EvaluationFormEntityListing.html)
 
+<a name="getQualityFormsEvaluationsBulkContexts"></a>
+
+# **getQualityFormsEvaluationsBulkContexts**
+
+
+
+> [List&lt;EvaluationForm&gt;](EvaluationForm.html) getQualityFormsEvaluationsBulkContexts(contextId)
+
+Retrieve a list of the latest published evaluation form versions by context ids
+
+
+
+Wraps GET /api/v2/quality/forms/evaluations/bulk/contexts  
+
+Requires ALL permissions: 
+
+* quality:evaluationForm:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+QualityApi apiInstance = new QualityApi();
+List<String> contextId = Arrays.asList("contextId_example"); // List<String> | A comma-delimited list of valid evaluation form context ids
+try {
+    List<EvaluationForm> result = apiInstance.getQualityFormsEvaluationsBulkContexts(contextId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#getQualityFormsEvaluationsBulkContexts");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **contextId** | [**List&lt;String&gt;**](String.html)| A comma-delimited list of valid evaluation form context ids | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**List&lt;EvaluationForm&gt;**](EvaluationForm.html)
+
 <a name="getQualityFormsSurvey"></a>
 
 # **getQualityFormsSurvey**
@@ -2699,6 +2764,68 @@ try {
 ### Return type
 
 [**QualityAuditQueryExecutionStatusResponse**](QualityAuditQueryExecutionStatusResponse.html)
+
+<a name="postQualityEvaluationsAggregatesQueryMe"></a>
+
+# **postQualityEvaluationsAggregatesQueryMe**
+
+
+
+> [EvaluationAggregateQueryResponse](EvaluationAggregateQueryResponse.html) postQualityEvaluationsAggregatesQueryMe(body)
+
+Query for evaluation aggregates for the current user
+
+
+
+Wraps POST /api/v2/quality/evaluations/aggregates/query/me  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+QualityApi apiInstance = new QualityApi();
+EvaluationAggregationQueryMe body = new EvaluationAggregationQueryMe(); // EvaluationAggregationQueryMe | query
+try {
+    EvaluationAggregateQueryResponse result = apiInstance.postQualityEvaluationsAggregatesQueryMe(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#postQualityEvaluationsAggregatesQueryMe");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**EvaluationAggregationQueryMe**](EvaluationAggregationQueryMe.html)| query | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**EvaluationAggregateQueryResponse**](EvaluationAggregateQueryResponse.html)
 
 <a name="postQualityEvaluationsScoring"></a>
 

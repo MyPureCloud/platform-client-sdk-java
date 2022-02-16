@@ -27,6 +27,7 @@ title: User
 | **employerInfo** | <!----><!---->[**EmployerInfo**](EmployerInfo.html)<!----> |  |  [optional] |
 | **routingStatus** | <!----><!---->[**RoutingStatus**](RoutingStatus.html)<!----> | ACD routing status |  [optional] |
 | **presence** | <!----><!---->[**UserPresence**](UserPresence.html)<!----> | Active presence |  [optional] |
+| **integrationPresence** | <!----><!---->[**UserPresence**](UserPresence.html)<!----> | Integration presence |  [optional] |
 | **conversationSummary** | <!----><!---->[**UserConversationSummary**](UserConversationSummary.html)<!----> | Summary of conversion statistics for conversation types. |  [optional] |
 | **outOfOffice** | <!----><!---->[**OutOfOffice**](OutOfOffice.html)<!----> | Determine if out of office is enabled |  [optional] |
 | **geolocation** | <!----><!---->[**Geolocation**](Geolocation.html)<!----> | Current geolocation position |  [optional] |

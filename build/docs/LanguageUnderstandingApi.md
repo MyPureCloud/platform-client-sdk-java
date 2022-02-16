@@ -1094,7 +1094,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **minerId** | **String**| Miner ID | 
 | **intentId** | **String**| The ID of the intent to be retrieved. | 
-| **expand** | **String**| Option to fetch utterances | [optional] 
+| **expand** | **String**| Option to fetch utterances | [optional]<br />**Values**: phrases, utterances 
 {: class="table-striped"}
 
 
@@ -1159,7 +1159,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **minerId** | **String**| Miner ID | 
-| **expand** | **String**| Option to fetch utterances. | [optional] 
+| **expand** | **String**| Option to fetch utterances. | [optional]<br />**Values**: phrases, utterances 
 {: class="table-striped"}
 
 

@@ -30,6 +30,61 @@ public class Objective  implements Serializable {
   private String templateId = null;
   private List<ObjectiveZone> zones = new ArrayList<ObjectiveZone>();
   private Boolean enabled = null;
+
+  private static class MediaTypesEnumDeserializer extends StdDeserializer<MediaTypesEnum> {
+    public MediaTypesEnumDeserializer() {
+      super(MediaTypesEnumDeserializer.class);
+    }
+
+    @Override
+    public MediaTypesEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return MediaTypesEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets mediaTypes
+   */
+ @JsonDeserialize(using = MediaTypesEnumDeserializer.class)
+  public enum MediaTypesEnum {
+    CALLBACK("callback"),
+    CHAT("chat"),
+    COBROWSE("cobrowse"),
+    EMAIL("email"),
+    MESSAGE("message"),
+    SCREENSHARE("screenshare"),
+    UNKNOWN("unknown"),
+    VIDEO("video"),
+    VOICE("voice");
+
+    private String value;
+
+    MediaTypesEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static MediaTypesEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (MediaTypesEnum value : MediaTypesEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return MediaTypesEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<MediaTypesEnum> mediaTypes = new ArrayList<MediaTypesEnum>();
+  private List<AddressableEntityRef> queues = new ArrayList<AddressableEntityRef>();
   private List<AddressableEntityRef> topics = new ArrayList<AddressableEntityRef>();
 
   private static class TopicIdsFilterTypeEnumDeserializer extends StdDeserializer<TopicIdsFilterTypeEnum> {
@@ -144,6 +199,42 @@ public class Objective  implements Serializable {
 
   
   /**
+   * A list of media types for the metric
+   **/
+  public Objective mediaTypes(List<MediaTypesEnum> mediaTypes) {
+    this.mediaTypes = mediaTypes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A list of media types for the metric")
+  @JsonProperty("mediaTypes")
+  public List<MediaTypesEnum> getMediaTypes() {
+    return mediaTypes;
+  }
+  public void setMediaTypes(List<MediaTypesEnum> mediaTypes) {
+    this.mediaTypes = mediaTypes;
+  }
+
+  
+  /**
+   * A list of queues for the metric
+   **/
+  public Objective queues(List<AddressableEntityRef> queues) {
+    this.queues = queues;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A list of queues for the metric")
+  @JsonProperty("queues")
+  public List<AddressableEntityRef> getQueues() {
+    return queues;
+  }
+  public void setQueues(List<AddressableEntityRef> queues) {
+    this.queues = queues;
+  }
+
+  
+  /**
    * A list of topic ids for detected topic metrics
    **/
   public Objective topics(List<AddressableEntityRef> topics) {
@@ -211,6 +302,8 @@ public class Objective  implements Serializable {
         Objects.equals(this.templateId, objective.templateId) &&
         Objects.equals(this.zones, objective.zones) &&
         Objects.equals(this.enabled, objective.enabled) &&
+        Objects.equals(this.mediaTypes, objective.mediaTypes) &&
+        Objects.equals(this.queues, objective.queues) &&
         Objects.equals(this.topics, objective.topics) &&
         Objects.equals(this.topicIdsFilterType, objective.topicIdsFilterType) &&
         Objects.equals(this.dateStart, objective.dateStart);
@@ -218,7 +311,7 @@ public class Objective  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, templateId, zones, enabled, topics, topicIdsFilterType, dateStart);
+    return Objects.hash(id, templateId, zones, enabled, mediaTypes, queues, topics, topicIdsFilterType, dateStart);
   }
 
   @Override
@@ -230,6 +323,8 @@ public class Objective  implements Serializable {
     sb.append("    templateId: ").append(toIndentedString(templateId)).append("\n");
     sb.append("    zones: ").append(toIndentedString(zones)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+    sb.append("    mediaTypes: ").append(toIndentedString(mediaTypes)).append("\n");
+    sb.append("    queues: ").append(toIndentedString(queues)).append("\n");
     sb.append("    topics: ").append(toIndentedString(topics)).append("\n");
     sb.append("    topicIdsFilterType: ").append(toIndentedString(topicIdsFilterType)).append("\n");
     sb.append("    dateStart: ").append(toIndentedString(dateStart)).append("\n");

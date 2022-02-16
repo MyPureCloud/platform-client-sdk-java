@@ -47,7 +47,13 @@ public class ConversationChannel  implements Serializable {
     GENERICOBJECT("GenericObject"),
     MESSAGING("Messaging"),
     SOCIAL("Social"),
-    WEBCHAT("Webchat");
+    WEBCHAT("Webchat"),
+    VOICE("Voice"),
+    CHAT("Chat"),
+    COBROWSE("Cobrowse"),
+    VIDEO("Video"),
+    SCREENSHARE("Screenshare"),
+    MESSAGE("Message");
 
     private String value;
 
@@ -75,6 +81,61 @@ public class ConversationChannel  implements Serializable {
     }
   }
   private TypeEnum type = null;
+
+  private static class MessageTypeEnumDeserializer extends StdDeserializer<MessageTypeEnum> {
+    public MessageTypeEnumDeserializer() {
+      super(MessageTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public MessageTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return MessageTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Message type for messaging conversations.
+   */
+ @JsonDeserialize(using = MessageTypeEnumDeserializer.class)
+  public enum MessageTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    UNKNOWN("Unknown"),
+    SMS("Sms"),
+    TWITTER("Twitter"),
+    FACEBOOK("Facebook"),
+    LINE("Line"),
+    WHATSAPP("WhatsApp"),
+    WEBMESSAGING("WebMessaging"),
+    OPEN("Open"),
+    INSTAGRAM("Instagram");
+
+    private String value;
+
+    MessageTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static MessageTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (MessageTypeEnum value : MessageTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return MessageTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private MessageTypeEnum messageType = null;
   private String platform = null;
 
   
@@ -97,14 +158,32 @@ public class ConversationChannel  implements Serializable {
 
   
   /**
-   * The platform used to deliver media for the conversation for a given channel (e.g. Twitter, Messenger, PureCloud Edge).
+   * Message type for messaging conversations.
+   **/
+  public ConversationChannel messageType(MessageTypeEnum messageType) {
+    this.messageType = messageType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Message type for messaging conversations.")
+  @JsonProperty("messageType")
+  public MessageTypeEnum getMessageType() {
+    return messageType;
+  }
+  public void setMessageType(MessageTypeEnum messageType) {
+    this.messageType = messageType;
+  }
+
+  
+  /**
+   * The source provider for the conversation (e.g. Edge, PureCloud Messaging, PureCloud Email).
    **/
   public ConversationChannel platform(String platform) {
     this.platform = platform;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The platform used to deliver media for the conversation for a given channel (e.g. Twitter, Messenger, PureCloud Edge).")
+  @ApiModelProperty(example = "null", value = "The source provider for the conversation (e.g. Edge, PureCloud Messaging, PureCloud Email).")
   @JsonProperty("platform")
   public String getPlatform() {
     return platform;
@@ -125,12 +204,13 @@ public class ConversationChannel  implements Serializable {
     }
     ConversationChannel conversationChannel = (ConversationChannel) o;
     return Objects.equals(this.type, conversationChannel.type) &&
+        Objects.equals(this.messageType, conversationChannel.messageType) &&
         Objects.equals(this.platform, conversationChannel.platform);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, platform);
+    return Objects.hash(type, messageType, platform);
   }
 
   @Override
@@ -139,6 +219,7 @@ public class ConversationChannel  implements Serializable {
     sb.append("class ConversationChannel {\n");
     
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    messageType: ").append(toIndentedString(messageType)).append("\n");
     sb.append("    platform: ").append(toIndentedString(platform)).append("\n");
     sb.append("}");
     return sb.toString();

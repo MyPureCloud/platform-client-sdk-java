@@ -9,7 +9,7 @@ title: StatEventCampaignTopicStatsNotification
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **group** | <!----><!---->**Map&lt;String, String&gt;**<!----> |  |  [optional] |
-| **data** | <!----><!---->[**List&lt;StatEventCampaignTopicDatum&gt;**](StatEventCampaignTopicDatum.html)<!----> |  |  [optional] |
+| **data** | <!----><!---->[**List&lt;StatEventCampaignTopicIntervalMetrics&gt;**](StatEventCampaignTopicIntervalMetrics.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

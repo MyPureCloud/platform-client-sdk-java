@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -23,6 +24,54 @@ public class ConversationAppSettings  implements Serializable {
   
   private Boolean showAgentTypingIndicator = null;
   private Boolean showUserTypingIndicator = null;
+
+  private static class AutoStartTypeEnumDeserializer extends StdDeserializer<AutoStartTypeEnum> {
+    public AutoStartTypeEnumDeserializer() {
+      super(AutoStartTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public AutoStartTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return AutoStartTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The auto start type for the messenger conversation
+   */
+ @JsonDeserialize(using = AutoStartTypeEnumDeserializer.class)
+  public enum AutoStartTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    STANDARD("Standard"),
+    AUTOMATIC("Automatic");
+
+    private String value;
+
+    AutoStartTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static AutoStartTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (AutoStartTypeEnum value : AutoStartTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return AutoStartTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private AutoStartTypeEnum autoStartType = null;
 
   
   /**
@@ -61,6 +110,24 @@ public class ConversationAppSettings  implements Serializable {
   }
 
   
+  /**
+   * The auto start type for the messenger conversation
+   **/
+  public ConversationAppSettings autoStartType(AutoStartTypeEnum autoStartType) {
+    this.autoStartType = autoStartType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The auto start type for the messenger conversation")
+  @JsonProperty("autoStartType")
+  public AutoStartTypeEnum getAutoStartType() {
+    return autoStartType;
+  }
+  public void setAutoStartType(AutoStartTypeEnum autoStartType) {
+    this.autoStartType = autoStartType;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -72,12 +139,13 @@ public class ConversationAppSettings  implements Serializable {
     }
     ConversationAppSettings conversationAppSettings = (ConversationAppSettings) o;
     return Objects.equals(this.showAgentTypingIndicator, conversationAppSettings.showAgentTypingIndicator) &&
-        Objects.equals(this.showUserTypingIndicator, conversationAppSettings.showUserTypingIndicator);
+        Objects.equals(this.showUserTypingIndicator, conversationAppSettings.showUserTypingIndicator) &&
+        Objects.equals(this.autoStartType, conversationAppSettings.autoStartType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(showAgentTypingIndicator, showUserTypingIndicator);
+    return Objects.hash(showAgentTypingIndicator, showUserTypingIndicator, autoStartType);
   }
 
   @Override
@@ -87,6 +155,7 @@ public class ConversationAppSettings  implements Serializable {
     
     sb.append("    showAgentTypingIndicator: ").append(toIndentedString(showAgentTypingIndicator)).append("\n");
     sb.append("    showUserTypingIndicator: ").append(toIndentedString(showUserTypingIndicator)).append("\n");
+    sb.append("    autoStartType: ").append(toIndentedString(autoStartType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -26,10 +26,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getAnalyticsReportingScheduleHistoryLatest**](AnalyticsApi.html#getAnalyticsReportingScheduleHistoryLatest) | Get most recently completed scheduled report job. |
 | [**getAnalyticsReportingScheduleHistoryRunId**](AnalyticsApi.html#getAnalyticsReportingScheduleHistoryRunId) | A completed scheduled report job |
 | [**getAnalyticsReportingSchedules**](AnalyticsApi.html#getAnalyticsReportingSchedules) | Get a list of scheduled report jobs |
+| [**getAnalyticsReportingSettings**](AnalyticsApi.html#getAnalyticsReportingSettings) | Get AnalyticsReportingSettings for an organization |
 | [**getAnalyticsReportingTimeperiods**](AnalyticsApi.html#getAnalyticsReportingTimeperiods) | Get a list of report time periods. |
 | [**getAnalyticsUsersDetailsJob**](AnalyticsApi.html#getAnalyticsUsersDetailsJob) | Get status for async query for user details |
 | [**getAnalyticsUsersDetailsJobResults**](AnalyticsApi.html#getAnalyticsUsersDetailsJobResults) | Fetch a page of results for an async query |
 | [**getAnalyticsUsersDetailsJobsAvailability**](AnalyticsApi.html#getAnalyticsUsersDetailsJobsAvailability) | Lookup the datalake availability date and time |
+| [**patchAnalyticsReportingSettings**](AnalyticsApi.html#patchAnalyticsReportingSettings) | Patch AnalyticsReportingSettings values for an organization |
 | [**postAnalyticsBotsAggregatesQuery**](AnalyticsApi.html#postAnalyticsBotsAggregatesQuery) | Query for bot aggregates |
 | [**postAnalyticsConversationDetailsProperties**](AnalyticsApi.html#postAnalyticsConversationDetailsProperties) | Index conversation properties |
 | [**postAnalyticsConversationsAggregatesQuery**](AnalyticsApi.html#postAnalyticsConversationsAggregatesQuery) | Query for conversation aggregates |
@@ -1262,6 +1264,64 @@ try {
 
 [**ReportScheduleEntityListing**](ReportScheduleEntityListing.html)
 
+<a name="getAnalyticsReportingSettings"></a>
+
+# **getAnalyticsReportingSettings**
+
+
+
+> [AnalyticsReportingSettings](AnalyticsReportingSettings.html) getAnalyticsReportingSettings()
+
+Get AnalyticsReportingSettings for an organization
+
+
+
+Wraps GET /api/v2/analytics/reporting/settings  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+try {
+    AnalyticsReportingSettings result = apiInstance.getAnalyticsReportingSettings();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#getAnalyticsReportingSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**AnalyticsReportingSettings**](AnalyticsReportingSettings.html)
+
 <a name="getAnalyticsReportingTimeperiods"></a>
 
 # **getAnalyticsReportingTimeperiods**
@@ -1508,6 +1568,72 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**DataAvailabilityResponse**](DataAvailabilityResponse.html)
+
+<a name="patchAnalyticsReportingSettings"></a>
+
+# **patchAnalyticsReportingSettings**
+
+
+
+> [AnalyticsReportingSettings](AnalyticsReportingSettings.html) patchAnalyticsReportingSettings(body)
+
+Patch AnalyticsReportingSettings values for an organization
+
+
+
+Wraps PATCH /api/v2/analytics/reporting/settings  
+
+Requires ANY permissions: 
+
+* recording:recordingSegment:view
+* analytics:conversationDetail:view
+* analytics:conversationAggregate:view
+* analytics:dashboardConfigurations:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+AnalyticsReportingSettings body = new AnalyticsReportingSettings(); // AnalyticsReportingSettings | AnalyticsReportingSettingsRequest
+try {
+    AnalyticsReportingSettings result = apiInstance.patchAnalyticsReportingSettings(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#patchAnalyticsReportingSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**AnalyticsReportingSettings**](AnalyticsReportingSettings.html)| AnalyticsReportingSettingsRequest | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AnalyticsReportingSettings**](AnalyticsReportingSettings.html)
 
 <a name="postAnalyticsBotsAggregatesQuery"></a>
 

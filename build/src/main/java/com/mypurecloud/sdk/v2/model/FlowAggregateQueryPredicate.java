@@ -105,6 +105,7 @@ public class FlowAggregateQueryPredicate  implements Serializable {
     CONVERSATIONINITIATOR("conversationInitiator"),
     CONVERTEDFROM("convertedFrom"),
     CONVERTEDTO("convertedTo"),
+    CUSTOMERPARTICIPATION("customerParticipation"),
     DELIVERYSTATUS("deliveryStatus"),
     DESTINATIONADDRESS("destinationAddress"),
     DIRECTION("direction"),

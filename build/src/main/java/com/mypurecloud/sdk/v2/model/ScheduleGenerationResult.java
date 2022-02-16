@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ScheduleGenerationMessage;
+import com.mypurecloud.sdk.v2.model.SchedulerMessageTypeSeverity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -27,6 +28,7 @@ public class ScheduleGenerationResult  implements Serializable {
   private String runId = null;
   private Integer messageCount = null;
   private List<ScheduleGenerationMessage> messages = new ArrayList<ScheduleGenerationMessage>();
+  private List<SchedulerMessageTypeSeverity> messageSeverities = new ArrayList<SchedulerMessageTypeSeverity>();
 
   
   /**
@@ -101,6 +103,24 @@ public class ScheduleGenerationResult  implements Serializable {
   }
 
   
+  /**
+   * The list of messages by severity in this schedule generation run
+   **/
+  public ScheduleGenerationResult messageSeverities(List<SchedulerMessageTypeSeverity> messageSeverities) {
+    this.messageSeverities = messageSeverities;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of messages by severity in this schedule generation run")
+  @JsonProperty("messageSeverities")
+  public List<SchedulerMessageTypeSeverity> getMessageSeverities() {
+    return messageSeverities;
+  }
+  public void setMessageSeverities(List<SchedulerMessageTypeSeverity> messageSeverities) {
+    this.messageSeverities = messageSeverities;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -114,12 +134,13 @@ public class ScheduleGenerationResult  implements Serializable {
     return Objects.equals(this.failed, scheduleGenerationResult.failed) &&
         Objects.equals(this.runId, scheduleGenerationResult.runId) &&
         Objects.equals(this.messageCount, scheduleGenerationResult.messageCount) &&
-        Objects.equals(this.messages, scheduleGenerationResult.messages);
+        Objects.equals(this.messages, scheduleGenerationResult.messages) &&
+        Objects.equals(this.messageSeverities, scheduleGenerationResult.messageSeverities);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(failed, runId, messageCount, messages);
+    return Objects.hash(failed, runId, messageCount, messages, messageSeverities);
   }
 
   @Override
@@ -131,6 +152,7 @@ public class ScheduleGenerationResult  implements Serializable {
     sb.append("    runId: ").append(toIndentedString(runId)).append("\n");
     sb.append("    messageCount: ").append(toIndentedString(messageCount)).append("\n");
     sb.append("    messages: ").append(toIndentedString(messages)).append("\n");
+    sb.append("    messageSeverities: ").append(toIndentedString(messageSeverities)).append("\n");
     sb.append("}");
     return sb.toString();
   }

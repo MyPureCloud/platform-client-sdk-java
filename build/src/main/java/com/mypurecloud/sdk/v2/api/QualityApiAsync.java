@@ -35,6 +35,7 @@ import com.mypurecloud.sdk.v2.model.SurveyAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.SurveyAggregationQuery;
 import com.mypurecloud.sdk.v2.model.CalibrationCreate;
 import com.mypurecloud.sdk.v2.model.QMAuditQueryRequest;
+import com.mypurecloud.sdk.v2.model.EvaluationAggregationQueryMe;
 import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
 import com.mypurecloud.sdk.v2.model.PublishForm;
@@ -62,6 +63,7 @@ import com.mypurecloud.sdk.v2.api.request.GetQualityFormsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormsEvaluationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormsEvaluationVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormsEvaluationsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetQualityFormsEvaluationsBulkContextsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormsSurveyRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormsSurveyVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormsSurveysRequest;
@@ -81,6 +83,7 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsSurveysAggregatesQueryReq
 import com.mypurecloud.sdk.v2.api.request.PostQualityCalibrationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityConversationEvaluationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityConversationsAuditsQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostQualityEvaluationsAggregatesQueryMeRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityEvaluationsScoringRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityFormsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityFormsEvaluationsRequest;
@@ -1637,6 +1640,82 @@ public class QualityApiAsync {
 
   
   /**
+   * Retrieve a list of the latest published evaluation form versions by context ids
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<List<EvaluationForm>> getQualityFormsEvaluationsBulkContextsAsync(GetQualityFormsEvaluationsBulkContextsRequest request, final AsyncApiCallback<List<EvaluationForm>> callback) {
+    try {
+      final SettableFuture<List<EvaluationForm>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<EvaluationForm>>() {}, new AsyncApiCallback<ApiResponse<List<EvaluationForm>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<EvaluationForm>> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieve a list of the latest published evaluation form versions by context ids
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<List<EvaluationForm>>> getQualityFormsEvaluationsBulkContextsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<EvaluationForm>>> callback) {
+    try {
+      final SettableFuture<ApiResponse<List<EvaluationForm>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<List<EvaluationForm>>() {}, new AsyncApiCallback<ApiResponse<List<EvaluationForm>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<EvaluationForm>> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<EvaluationForm>> response = (ApiResponse<List<EvaluationForm>>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<EvaluationForm>> response = (ApiResponse<List<EvaluationForm>>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Get a survey form
    * 
    * @param request the request object
@@ -3068,6 +3147,82 @@ public class QualityApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<QualityAuditQueryExecutionStatusResponse> response = (ApiResponse<QualityAuditQueryExecutionStatusResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Query for evaluation aggregates for the current user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<EvaluationAggregateQueryResponse> postQualityEvaluationsAggregatesQueryMeAsync(PostQualityEvaluationsAggregatesQueryMeRequest request, final AsyncApiCallback<EvaluationAggregateQueryResponse> callback) {
+    try {
+      final SettableFuture<EvaluationAggregateQueryResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EvaluationAggregateQueryResponse>() {}, new AsyncApiCallback<ApiResponse<EvaluationAggregateQueryResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<EvaluationAggregateQueryResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query for evaluation aggregates for the current user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<EvaluationAggregateQueryResponse>> postQualityEvaluationsAggregatesQueryMeAsync(ApiRequest<EvaluationAggregationQueryMe> request, final AsyncApiCallback<ApiResponse<EvaluationAggregateQueryResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<EvaluationAggregateQueryResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EvaluationAggregateQueryResponse>() {}, new AsyncApiCallback<ApiResponse<EvaluationAggregateQueryResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<EvaluationAggregateQueryResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EvaluationAggregateQueryResponse> response = (ApiResponse<EvaluationAggregateQueryResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EvaluationAggregateQueryResponse> response = (ApiResponse<EvaluationAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

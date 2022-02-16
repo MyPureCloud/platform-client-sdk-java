@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.SmsPhoneNumberRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -24,6 +25,7 @@ public class SmsConfig  implements Serializable {
   private String messageColumn = null;
   private String phoneColumn = null;
   private SmsPhoneNumberRef senderSmsPhoneNumber = null;
+  private DomainEntityRef contentTemplate = null;
 
   
   /**
@@ -80,6 +82,24 @@ public class SmsConfig  implements Serializable {
   }
 
   
+  /**
+   * The content template used to formulate the message to send to the contact.
+   **/
+  public SmsConfig contentTemplate(DomainEntityRef contentTemplate) {
+    this.contentTemplate = contentTemplate;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The content template used to formulate the message to send to the contact.")
+  @JsonProperty("contentTemplate")
+  public DomainEntityRef getContentTemplate() {
+    return contentTemplate;
+  }
+  public void setContentTemplate(DomainEntityRef contentTemplate) {
+    this.contentTemplate = contentTemplate;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -92,12 +112,13 @@ public class SmsConfig  implements Serializable {
     SmsConfig smsConfig = (SmsConfig) o;
     return Objects.equals(this.messageColumn, smsConfig.messageColumn) &&
         Objects.equals(this.phoneColumn, smsConfig.phoneColumn) &&
-        Objects.equals(this.senderSmsPhoneNumber, smsConfig.senderSmsPhoneNumber);
+        Objects.equals(this.senderSmsPhoneNumber, smsConfig.senderSmsPhoneNumber) &&
+        Objects.equals(this.contentTemplate, smsConfig.contentTemplate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(messageColumn, phoneColumn, senderSmsPhoneNumber);
+    return Objects.hash(messageColumn, phoneColumn, senderSmsPhoneNumber, contentTemplate);
   }
 
   @Override
@@ -108,6 +129,7 @@ public class SmsConfig  implements Serializable {
     sb.append("    messageColumn: ").append(toIndentedString(messageColumn)).append("\n");
     sb.append("    phoneColumn: ").append(toIndentedString(phoneColumn)).append("\n");
     sb.append("    senderSmsPhoneNumber: ").append(toIndentedString(senderSmsPhoneNumber)).append("\n");
+    sb.append("    contentTemplate: ").append(toIndentedString(contentTemplate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

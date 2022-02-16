@@ -91,6 +91,7 @@ public class Session  implements Serializable {
  @JsonDeserialize(using = OriginatingDirectionEnumDeserializer.class)
   public enum OriginatingDirectionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    UNKNOWN("Unknown"),
     INBOUND("Inbound"),
     OUTBOUND("Outbound");
 
@@ -121,6 +122,119 @@ public class Session  implements Serializable {
   }
   private OriginatingDirectionEnum originatingDirection = null;
   private String conversationSubject = null;
+
+  private static class LastUserDisconnectTypeEnumDeserializer extends StdDeserializer<LastUserDisconnectTypeEnum> {
+    public LastUserDisconnectTypeEnumDeserializer() {
+      super(LastUserDisconnectTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public LastUserDisconnectTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return LastUserDisconnectTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Disconnect reason for the last user connected to the conversation.
+   */
+ @JsonDeserialize(using = LastUserDisconnectTypeEnumDeserializer.class)
+  public enum LastUserDisconnectTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    UNKNOWN("Unknown"),
+    ENDPOINT("Endpoint"),
+    CLIENT("Client"),
+    SYSTEM("System"),
+    TRANSFER("Transfer"),
+    ERROR("Error"),
+    PEER("Peer"),
+    OTHER("Other"),
+    SPAM("Spam"),
+    TIMEOUT("Timeout"),
+    TRANSPORTFAILURE("TransportFailure"),
+    CONFERENCETRANSFER("ConferenceTransfer"),
+    CONSULTTRANSFER("ConsultTransfer"),
+    FORWARDTRANSFER("ForwardTransfer"),
+    NOANSWERTRANSFER("NoAnswerTransfer"),
+    NOTAVAILABLETRANSFER("NotAvailableTransfer"),
+    UNCALLABLE("Uncallable");
+
+    private String value;
+
+    LastUserDisconnectTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static LastUserDisconnectTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (LastUserDisconnectTypeEnum value : LastUserDisconnectTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return LastUserDisconnectTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private LastUserDisconnectTypeEnum lastUserDisconnectType = null;
+
+  private static class LastAcdOutcomeEnumDeserializer extends StdDeserializer<LastAcdOutcomeEnum> {
+    public LastAcdOutcomeEnumDeserializer() {
+      super(LastAcdOutcomeEnumDeserializer.class);
+    }
+
+    @Override
+    public LastAcdOutcomeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return LastAcdOutcomeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Last ACD outcome for the conversation.
+   */
+ @JsonDeserialize(using = LastAcdOutcomeEnumDeserializer.class)
+  public enum LastAcdOutcomeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    UNKNOWN("Unknown"),
+    ABANDON("Abandon"),
+    ANSWERED("Answered"),
+    FLOWOUT("FlowOut");
+
+    private String value;
+
+    LastAcdOutcomeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static LastAcdOutcomeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (LastAcdOutcomeEnum value : LastAcdOutcomeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return LastAcdOutcomeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private LastAcdOutcomeEnum lastAcdOutcome = null;
   private Boolean authenticated = null;
   private String selfUri = null;
   private Date createdDate = null;
@@ -697,6 +811,42 @@ public class Session  implements Serializable {
 
   
   /**
+   * Disconnect reason for the last user connected to the conversation.
+   **/
+  public Session lastUserDisconnectType(LastUserDisconnectTypeEnum lastUserDisconnectType) {
+    this.lastUserDisconnectType = lastUserDisconnectType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Disconnect reason for the last user connected to the conversation.")
+  @JsonProperty("lastUserDisconnectType")
+  public LastUserDisconnectTypeEnum getLastUserDisconnectType() {
+    return lastUserDisconnectType;
+  }
+  public void setLastUserDisconnectType(LastUserDisconnectTypeEnum lastUserDisconnectType) {
+    this.lastUserDisconnectType = lastUserDisconnectType;
+  }
+
+  
+  /**
+   * Last ACD outcome for the conversation.
+   **/
+  public Session lastAcdOutcome(LastAcdOutcomeEnum lastAcdOutcome) {
+    this.lastAcdOutcome = lastAcdOutcome;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Last ACD outcome for the conversation.")
+  @JsonProperty("lastAcdOutcome")
+  public LastAcdOutcomeEnum getLastAcdOutcome() {
+    return lastAcdOutcome;
+  }
+  public void setLastAcdOutcome(LastAcdOutcomeEnum lastAcdOutcome) {
+    this.lastAcdOutcome = lastAcdOutcome;
+  }
+
+  
+  /**
    * Indicates whether or not the session is authenticated.
    **/
   public Session authenticated(Boolean authenticated) {
@@ -849,6 +999,8 @@ public class Session  implements Serializable {
         Objects.equals(this.conversationChannels, session.conversationChannels) &&
         Objects.equals(this.originatingDirection, session.originatingDirection) &&
         Objects.equals(this.conversationSubject, session.conversationSubject) &&
+        Objects.equals(this.lastUserDisconnectType, session.lastUserDisconnectType) &&
+        Objects.equals(this.lastAcdOutcome, session.lastAcdOutcome) &&
         Objects.equals(this.authenticated, session.authenticated) &&
         Objects.equals(this.selfUri, session.selfUri) &&
         Objects.equals(this.createdDate, session.createdDate) &&
@@ -861,7 +1013,7 @@ public class Session  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, customerId, customerIdType, type, externalId, externalUrl, shortId, outcomeAchievements, segmentAssignments, attributes, attributeLists, browser, device, geolocation, ipAddress, ipOrganization, lastPage, mktCampaign, referrer, searchTerms, userAgentString, durationInSeconds, eventCount, pageviewCount, screenviewCount, lastEvent, lastConnectedQueue, lastConnectedUser, lastUserDisposition, conversationChannels, originatingDirection, conversationSubject, authenticated, selfUri, createdDate, endedDate, externalContact, awayDate, idleDate, conversation);
+    return Objects.hash(id, customerId, customerIdType, type, externalId, externalUrl, shortId, outcomeAchievements, segmentAssignments, attributes, attributeLists, browser, device, geolocation, ipAddress, ipOrganization, lastPage, mktCampaign, referrer, searchTerms, userAgentString, durationInSeconds, eventCount, pageviewCount, screenviewCount, lastEvent, lastConnectedQueue, lastConnectedUser, lastUserDisposition, conversationChannels, originatingDirection, conversationSubject, lastUserDisconnectType, lastAcdOutcome, authenticated, selfUri, createdDate, endedDate, externalContact, awayDate, idleDate, conversation);
   }
 
   @Override
@@ -901,6 +1053,8 @@ public class Session  implements Serializable {
     sb.append("    conversationChannels: ").append(toIndentedString(conversationChannels)).append("\n");
     sb.append("    originatingDirection: ").append(toIndentedString(originatingDirection)).append("\n");
     sb.append("    conversationSubject: ").append(toIndentedString(conversationSubject)).append("\n");
+    sb.append("    lastUserDisconnectType: ").append(toIndentedString(lastUserDisconnectType)).append("\n");
+    sb.append("    lastAcdOutcome: ").append(toIndentedString(lastAcdOutcome)).append("\n");
     sb.append("    authenticated: ").append(toIndentedString(authenticated)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    createdDate: ").append(toIndentedString(createdDate)).append("\n");

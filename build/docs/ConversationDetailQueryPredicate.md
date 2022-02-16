@@ -39,7 +39,9 @@ title: ConversationDetailQueryPredicate
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | CONVERSATIONEND | &quot;conversationEnd&quot; |
 | CONVERSATIONID | &quot;conversationId&quot; |
+| CONVERSATIONINITIATOR | &quot;conversationInitiator&quot; |
 | CONVERSATIONSTART | &quot;conversationStart&quot; |
+| CUSTOMERPARTICIPATION | &quot;customerParticipation&quot; |
 | DIVISIONID | &quot;divisionId&quot; |
 | EXTERNALTAG | &quot;externalTag&quot; |
 | MEDIASTATSMINCONVERSATIONMOS | &quot;mediaStatsMinConversationMos&quot; |

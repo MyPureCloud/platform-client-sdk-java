@@ -260,6 +260,7 @@ title: AuditQueryEntity
 | CANCEL | &quot;Cancel&quot; |
 | SOFTDELETE | &quot;SoftDelete&quot; |
 | HARDDELETE | &quot;HardDelete&quot; |
+| RESET | &quot;Reset&quot; |
 {: class="table table-striped"}
 
 

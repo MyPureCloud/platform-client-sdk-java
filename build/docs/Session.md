@@ -40,6 +40,8 @@ title: Session
 | **conversationChannels** | <!----><!---->[**List&lt;ConversationChannel&gt;**](ConversationChannel.html)<!----> | Represents the channels used for this conversation. |  [optional] |
 | **originatingDirection** | [**OriginatingDirectionEnum**](#OriginatingDirectionEnum)<!----> | The original direction of the conversation. |  [optional] |
 | **conversationSubject** | <!----><!---->**String**<!----> | The subject for the conversation, for example an email subject. |  [optional] |
+| **lastUserDisconnectType** | [**LastUserDisconnectTypeEnum**](#LastUserDisconnectTypeEnum)<!----> | Disconnect reason for the last user connected to the conversation. |  [optional] |
+| **lastAcdOutcome** | [**LastAcdOutcomeEnum**](#LastAcdOutcomeEnum)<!----> | Last ACD outcome for the conversation. |  [optional] |
 | **authenticated** | <!----><!---->**Boolean**<!----> | Indicates whether or not the session is authenticated. |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 | **createdDate** | <!----><!---->[**Date**](Date.html)<!----> | Timestamp indicating when the session was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
@@ -58,8 +60,50 @@ title: Session
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| UNKNOWN | &quot;Unknown&quot; |
 | INBOUND | &quot;Inbound&quot; |
 | OUTBOUND | &quot;Outbound&quot; |
+{: class="table table-striped"}
+
+
+<a name="LastUserDisconnectTypeEnum"></a>
+
+## Enum: LastUserDisconnectTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| UNKNOWN | &quot;Unknown&quot; |
+| ENDPOINT | &quot;Endpoint&quot; |
+| CLIENT | &quot;Client&quot; |
+| SYSTEM | &quot;System&quot; |
+| TRANSFER | &quot;Transfer&quot; |
+| ERROR | &quot;Error&quot; |
+| PEER | &quot;Peer&quot; |
+| OTHER | &quot;Other&quot; |
+| SPAM | &quot;Spam&quot; |
+| TIMEOUT | &quot;Timeout&quot; |
+| TRANSPORTFAILURE | &quot;TransportFailure&quot; |
+| CONFERENCETRANSFER | &quot;ConferenceTransfer&quot; |
+| CONSULTTRANSFER | &quot;ConsultTransfer&quot; |
+| FORWARDTRANSFER | &quot;ForwardTransfer&quot; |
+| NOANSWERTRANSFER | &quot;NoAnswerTransfer&quot; |
+| NOTAVAILABLETRANSFER | &quot;NotAvailableTransfer&quot; |
+| UNCALLABLE | &quot;Uncallable&quot; |
+{: class="table table-striped"}
+
+
+<a name="LastAcdOutcomeEnum"></a>
+
+## Enum: LastAcdOutcomeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| UNKNOWN | &quot;Unknown&quot; |
+| ABANDON | &quot;Abandon&quot; |
+| ANSWERED | &quot;Answered&quot; |
+| FLOWOUT | &quot;FlowOut&quot; |
 {: class="table table-striped"}
 
 

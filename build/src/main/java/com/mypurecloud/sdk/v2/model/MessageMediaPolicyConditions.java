@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Language;
 import com.mypurecloud.sdk.v2.model.Queue;
 import com.mypurecloud.sdk.v2.model.TimeAllowed;
@@ -33,6 +34,54 @@ public class MessageMediaPolicyConditions  implements Serializable {
   private List<WrapupCode> wrapupCodes = new ArrayList<WrapupCode>();
   private List<Language> languages = new ArrayList<Language>();
   private TimeAllowed timeAllowed = null;
+
+  private static class CustomerParticipationEnumDeserializer extends StdDeserializer<CustomerParticipationEnum> {
+    public CustomerParticipationEnumDeserializer() {
+      super(CustomerParticipationEnumDeserializer.class);
+    }
+
+    @Override
+    public CustomerParticipationEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return CustomerParticipationEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets customerParticipation
+   */
+ @JsonDeserialize(using = CustomerParticipationEnumDeserializer.class)
+  public enum CustomerParticipationEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    YES("YES"),
+    NO("NO");
+
+    private String value;
+
+    CustomerParticipationEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static CustomerParticipationEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (CustomerParticipationEnum value : CustomerParticipationEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return CustomerParticipationEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private CustomerParticipationEnum customerParticipation = null;
 
   
   /**
@@ -137,6 +186,23 @@ public class MessageMediaPolicyConditions  implements Serializable {
   }
 
   
+  /**
+   **/
+  public MessageMediaPolicyConditions customerParticipation(CustomerParticipationEnum customerParticipation) {
+    this.customerParticipation = customerParticipation;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("customerParticipation")
+  public CustomerParticipationEnum getCustomerParticipation() {
+    return customerParticipation;
+  }
+  public void setCustomerParticipation(CustomerParticipationEnum customerParticipation) {
+    this.customerParticipation = customerParticipation;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -152,12 +218,13 @@ public class MessageMediaPolicyConditions  implements Serializable {
         Objects.equals(this.forQueues, messageMediaPolicyConditions.forQueues) &&
         Objects.equals(this.wrapupCodes, messageMediaPolicyConditions.wrapupCodes) &&
         Objects.equals(this.languages, messageMediaPolicyConditions.languages) &&
-        Objects.equals(this.timeAllowed, messageMediaPolicyConditions.timeAllowed);
+        Objects.equals(this.timeAllowed, messageMediaPolicyConditions.timeAllowed) &&
+        Objects.equals(this.customerParticipation, messageMediaPolicyConditions.customerParticipation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(forUsers, dateRanges, forQueues, wrapupCodes, languages, timeAllowed);
+    return Objects.hash(forUsers, dateRanges, forQueues, wrapupCodes, languages, timeAllowed, customerParticipation);
   }
 
   @Override
@@ -171,6 +238,7 @@ public class MessageMediaPolicyConditions  implements Serializable {
     sb.append("    wrapupCodes: ").append(toIndentedString(wrapupCodes)).append("\n");
     sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
     sb.append("    timeAllowed: ").append(toIndentedString(timeAllowed)).append("\n");
+    sb.append("    customerParticipation: ").append(toIndentedString(customerParticipation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

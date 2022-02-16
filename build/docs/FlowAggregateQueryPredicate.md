@@ -51,6 +51,7 @@ title: FlowAggregateQueryPredicate
 | CONVERSATIONINITIATOR | &quot;conversationInitiator&quot; |
 | CONVERTEDFROM | &quot;convertedFrom&quot; |
 | CONVERTEDTO | &quot;convertedTo&quot; |
+| CUSTOMERPARTICIPATION | &quot;customerParticipation&quot; |
 | DELIVERYSTATUS | &quot;deliveryStatus&quot; |
 | DESTINATIONADDRESS | &quot;destinationAddress&quot; |
 | DIRECTION | &quot;direction&quot; |

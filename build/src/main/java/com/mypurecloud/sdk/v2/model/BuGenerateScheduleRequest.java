@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BuShortTermForecastReference;
+import com.mypurecloud.sdk.v2.model.SchedulingOptionsRequest;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -24,6 +25,7 @@ public class BuGenerateScheduleRequest  implements Serializable {
   private String description = null;
   private BuShortTermForecastReference shortTermForecast = null;
   private Integer weekCount = null;
+  private SchedulingOptionsRequest options = null;
 
   
   /**
@@ -52,7 +54,7 @@ public class BuGenerateScheduleRequest  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The forecast to use when generating the schedule.  Note that the forecast must fully encompass the schedule's start week + week count")
+  @ApiModelProperty(example = "null", value = "The forecast to use when generating the schedule.  Note that the forecast must fully encompass the schedule's start week + week count")
   @JsonProperty("shortTermForecast")
   public BuShortTermForecastReference getShortTermForecast() {
     return shortTermForecast;
@@ -80,6 +82,24 @@ public class BuGenerateScheduleRequest  implements Serializable {
   }
 
   
+  /**
+   * Additional scheduling options
+   **/
+  public BuGenerateScheduleRequest options(SchedulingOptionsRequest options) {
+    this.options = options;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Additional scheduling options")
+  @JsonProperty("options")
+  public SchedulingOptionsRequest getOptions() {
+    return options;
+  }
+  public void setOptions(SchedulingOptionsRequest options) {
+    this.options = options;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -92,12 +112,13 @@ public class BuGenerateScheduleRequest  implements Serializable {
     BuGenerateScheduleRequest buGenerateScheduleRequest = (BuGenerateScheduleRequest) o;
     return Objects.equals(this.description, buGenerateScheduleRequest.description) &&
         Objects.equals(this.shortTermForecast, buGenerateScheduleRequest.shortTermForecast) &&
-        Objects.equals(this.weekCount, buGenerateScheduleRequest.weekCount);
+        Objects.equals(this.weekCount, buGenerateScheduleRequest.weekCount) &&
+        Objects.equals(this.options, buGenerateScheduleRequest.options);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(description, shortTermForecast, weekCount);
+    return Objects.hash(description, shortTermForecast, weekCount, options);
   }
 
   @Override
@@ -108,6 +129,7 @@ public class BuGenerateScheduleRequest  implements Serializable {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    shortTermForecast: ").append(toIndentedString(shortTermForecast)).append("\n");
     sb.append("    weekCount: ").append(toIndentedString(weekCount)).append("\n");
+    sb.append("    options: ").append(toIndentedString(options)).append("\n");
     sb.append("}");
     return sb.toString();
   }
