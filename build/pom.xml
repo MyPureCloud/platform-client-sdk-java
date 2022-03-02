@@ -3,10 +3,10 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.mypurecloud</groupId>
   <artifactId>platform-client-v2</artifactId>
-  <name>${props.name}</name>
-  <version>${props.version}</version>
-  <description>${props.description}</description>
-  <url>${props.url}</url>
+  <name>${name}</name>
+  <version>${version}</version>
+  <description>${description}</description>
+  <url>${url}</url>
 
   <repositories>
     <repository>
@@ -358,5 +358,9 @@
     <guava-version>31.1-jre</guava-version>
     <mockito.version>4.3.1</mockito.version>
     <ini4j-version>0.5.4</ini4j-version>
+    <name>${props.name}</name>
+    <version>${props.version}</version>
+    <description>${props.description}</description>
+    <url>${props.url}</url>
   </properties>
 </project>
