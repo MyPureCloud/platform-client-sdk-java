@@ -155,14 +155,14 @@ public class WebDeploymentConfigurationVersion  implements Serializable {
 
   
   /**
-   * A list of languages supported on the configuration
+   * A list of languages supported on the configuration required if the messenger is enabled
    **/
   public WebDeploymentConfigurationVersion languages(List<String> languages) {
     this.languages = languages;
     return this;
   }
   
-  @ApiModelProperty(example = "en-us, de-de", value = "A list of languages supported on the configuration")
+  @ApiModelProperty(example = "en-us, de-de", value = "A list of languages supported on the configuration required if the messenger is enabled")
   @JsonProperty("languages")
   public List<String> getLanguages() {
     return languages;
@@ -173,14 +173,14 @@ public class WebDeploymentConfigurationVersion  implements Serializable {
 
   
   /**
-   * The default language to use for the configuration
+   * The default language to use for the configuration required if the messenger is enabled
    **/
   public WebDeploymentConfigurationVersion defaultLanguage(String defaultLanguage) {
     this.defaultLanguage = defaultLanguage;
     return this;
   }
   
-  @ApiModelProperty(example = "en-us, de-de", value = "The default language to use for the configuration")
+  @ApiModelProperty(example = "en-us, de-de", value = "The default language to use for the configuration required if the messenger is enabled")
   @JsonProperty("defaultLanguage")
   public String getDefaultLanguage() {
     return defaultLanguage;

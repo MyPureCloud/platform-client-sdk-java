@@ -508,7 +508,7 @@ null (empty response body)
 
 
 
-> [Recording](Recording.html) getConversationRecording(conversationId, recordingId, formatId, emailFormatId, chatFormatId, messageFormatId, download, fileName, locale)
+> [Recording](Recording.html) getConversationRecording(conversationId, recordingId, formatId, emailFormatId, chatFormatId, messageFormatId, download, fileName, locale, mediaFormats)
 
 Gets a specific recording.
 
@@ -552,8 +552,9 @@ String messageFormatId = "ZIP"; // String | The desired media format when downlo
 Boolean download = false; // Boolean | requesting a download format of the recording. Valid values:true,false
 String fileName = "fileName_example"; // String | the name of the downloaded fileName
 String locale = "locale_example"; // String | The locale for the requested file when downloading, as an ISO 639-1 code
+List<String> mediaFormats = Arrays.asList("mediaFormats_example"); // List<String> | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3
 try {
-    Recording result = apiInstance.getConversationRecording(conversationId, recordingId, formatId, emailFormatId, chatFormatId, messageFormatId, download, fileName, locale);
+    Recording result = apiInstance.getConversationRecording(conversationId, recordingId, formatId, emailFormatId, chatFormatId, messageFormatId, download, fileName, locale, mediaFormats);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RecordingApi#getConversationRecording");
@@ -575,6 +576,7 @@ try {
 | **download** | **Boolean**| requesting a download format of the recording. Valid values:true,false | [optional] [default to false] 
 | **fileName** | **String**| the name of the downloaded fileName | [optional] 
 | **locale** | **String**| The locale for the requested file when downloading, as an ISO 639-1 code | [optional] 
+| **mediaFormats** | [**List&lt;String&gt;**](String.html)| All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3 | [optional] 
 {: class="table-striped"}
 
 
@@ -850,7 +852,7 @@ try {
 
 
 
-> [List&lt;Recording&gt;](Recording.html) getConversationRecordings(conversationId, maxWaitMs, formatId)
+> [List&lt;Recording&gt;](Recording.html) getConversationRecordings(conversationId, maxWaitMs, formatId, mediaFormats)
 
 Get all of a Conversation&#39;s Recordings.
 
@@ -887,9 +889,10 @@ Configuration.setDefaultApiClient(apiClient);
 RecordingApi apiInstance = new RecordingApi();
 String conversationId = "conversationId_example"; // String | Conversation ID
 Integer maxWaitMs = 5000; // Integer | The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value.
-String formatId = "WEBM"; // String | The desired media format . Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE.
+String formatId = "WEBM"; // String | The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE.
+List<String> mediaFormats = Arrays.asList("mediaFormats_example"); // List<String> | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3.
 try {
-    List<Recording> result = apiInstance.getConversationRecordings(conversationId, maxWaitMs, formatId);
+    List<Recording> result = apiInstance.getConversationRecordings(conversationId, maxWaitMs, formatId, mediaFormats);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RecordingApi#getConversationRecordings");
@@ -904,7 +907,8 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **conversationId** | **String**| Conversation ID | 
 | **maxWaitMs** | **Integer**| The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. | [optional] [default to 5000] 
-| **formatId** | **String**| The desired media format . Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE 
+| **formatId** | **String**| The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE 
+| **mediaFormats** | [**List&lt;String&gt;**](String.html)| All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3. | [optional] 
 {: class="table-striped"}
 
 
@@ -981,7 +985,7 @@ try {
 
 
 
-> [Recording](Recording.html) getOrphanrecordingMedia(orphanId, formatId, emailFormatId, chatFormatId, messageFormatId, download, fileName, locale)
+> [Recording](Recording.html) getOrphanrecordingMedia(orphanId, formatId, emailFormatId, chatFormatId, messageFormatId, download, fileName, locale, mediaFormats)
 
 Gets the media of a single orphan recording
 
@@ -1023,8 +1027,9 @@ String messageFormatId = "ZIP"; // String | The desired media format when downlo
 Boolean download = false; // Boolean | requesting a download format of the recording
 String fileName = "fileName_example"; // String | the name of the downloaded fileName
 String locale = "locale_example"; // String | The locale for the requested file when downloading, as an ISO 639-1 code
+List<String> mediaFormats = Arrays.asList("mediaFormats_example"); // List<String> | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3
 try {
-    Recording result = apiInstance.getOrphanrecordingMedia(orphanId, formatId, emailFormatId, chatFormatId, messageFormatId, download, fileName, locale);
+    Recording result = apiInstance.getOrphanrecordingMedia(orphanId, formatId, emailFormatId, chatFormatId, messageFormatId, download, fileName, locale, mediaFormats);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RecordingApi#getOrphanrecordingMedia");
@@ -1045,6 +1050,7 @@ try {
 | **download** | **Boolean**| requesting a download format of the recording | [optional] [default to false] 
 | **fileName** | **String**| the name of the downloaded fileName | [optional] 
 | **locale** | **String**| The locale for the requested file when downloading, as an ISO 639-1 code | [optional] 
+| **mediaFormats** | [**List&lt;String&gt;**](String.html)| All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3 | [optional] 
 {: class="table-striped"}
 
 

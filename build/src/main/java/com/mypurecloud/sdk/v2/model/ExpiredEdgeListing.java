@@ -10,7 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.EdgeIdNamePair;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -23,22 +23,22 @@ import java.io.Serializable;
 
 public class ExpiredEdgeListing  implements Serializable {
   
-  private List<EdgeIdNamePair> entities = new ArrayList<EdgeIdNamePair>();
+  private List<DomainEntityRef> entities = new ArrayList<DomainEntityRef>();
 
   
   /**
    **/
-  public ExpiredEdgeListing entities(List<EdgeIdNamePair> entities) {
+  public ExpiredEdgeListing entities(List<DomainEntityRef> entities) {
     this.entities = entities;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("entities")
-  public List<EdgeIdNamePair> getEntities() {
+  public List<DomainEntityRef> getEntities() {
     return entities;
   }
-  public void setEntities(List<EdgeIdNamePair> entities) {
+  public void setEntities(List<DomainEntityRef> entities) {
     this.entities = entities;
   }
 

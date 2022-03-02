@@ -135,6 +135,20 @@ public class GetConversationRecordingsRequest {
 		}
 	}
 	
+	private List<String> mediaFormats;
+	public List<String> getMediaFormats() {
+		return this.mediaFormats;
+	}
+
+	public void setMediaFormats(List<String> mediaFormats) {
+		this.mediaFormats = mediaFormats;
+	}
+
+	public GetConversationRecordingsRequest withMediaFormats(List<String> mediaFormats) {
+	    this.setMediaFormats(mediaFormats);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -168,6 +182,8 @@ public class GetConversationRecordingsRequest {
                 .withQueryParameters("maxWaitMs", "", maxWaitMs)
         
                 .withQueryParameters("formatId", "", formatId)
+        
+                .withQueryParameters("mediaFormats", "multi", mediaFormats)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -213,6 +229,11 @@ public class GetConversationRecordingsRequest {
 		public Builder withFormatId(formatIdValues formatId) {
 		    request.setFormatId(formatId.toString());
 		    return this;
+		}
+		
+		public Builder withMediaFormats(List<String> mediaFormats) {
+			request.setMediaFormats(mediaFormats);
+			return this;
 		}
 		
 

@@ -10,8 +10,11 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.AssistanceCondition;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -23,6 +26,7 @@ public class AnswerOption  implements Serializable {
   private String id = null;
   private String text = null;
   private Integer value = null;
+  private List<AssistanceCondition> assistanceConditions = new ArrayList<AssistanceCondition>();
 
   
   /**
@@ -76,6 +80,23 @@ public class AnswerOption  implements Serializable {
   }
 
   
+  /**
+   **/
+  public AnswerOption assistanceConditions(List<AssistanceCondition> assistanceConditions) {
+    this.assistanceConditions = assistanceConditions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("assistanceConditions")
+  public List<AssistanceCondition> getAssistanceConditions() {
+    return assistanceConditions;
+  }
+  public void setAssistanceConditions(List<AssistanceCondition> assistanceConditions) {
+    this.assistanceConditions = assistanceConditions;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -88,12 +109,13 @@ public class AnswerOption  implements Serializable {
     AnswerOption answerOption = (AnswerOption) o;
     return Objects.equals(this.id, answerOption.id) &&
         Objects.equals(this.text, answerOption.text) &&
-        Objects.equals(this.value, answerOption.value);
+        Objects.equals(this.value, answerOption.value) &&
+        Objects.equals(this.assistanceConditions, answerOption.assistanceConditions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, text, value);
+    return Objects.hash(id, text, value, assistanceConditions);
   }
 
   @Override
@@ -104,6 +126,7 @@ public class AnswerOption  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
+    sb.append("    assistanceConditions: ").append(toIndentedString(assistanceConditions)).append("\n");
     sb.append("}");
     return sb.toString();
   }

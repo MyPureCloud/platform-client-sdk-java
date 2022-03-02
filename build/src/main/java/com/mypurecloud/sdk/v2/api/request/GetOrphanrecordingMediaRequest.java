@@ -295,6 +295,20 @@ public class GetOrphanrecordingMediaRequest {
 	    return this;
 	} 
 	
+	private List<String> mediaFormats;
+	public List<String> getMediaFormats() {
+		return this.mediaFormats;
+	}
+
+	public void setMediaFormats(List<String> mediaFormats) {
+		this.mediaFormats = mediaFormats;
+	}
+
+	public GetOrphanrecordingMediaRequest withMediaFormats(List<String> mediaFormats) {
+	    this.setMediaFormats(mediaFormats);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -338,6 +352,8 @@ public class GetOrphanrecordingMediaRequest {
                 .withQueryParameters("fileName", "", fileName)
         
                 .withQueryParameters("locale", "", locale)
+        
+                .withQueryParameters("mediaFormats", "multi", mediaFormats)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -422,6 +438,11 @@ public class GetOrphanrecordingMediaRequest {
 		
 		public Builder withLocale(String locale) {
 			request.setLocale(locale);
+			return this;
+		}
+		
+		public Builder withMediaFormats(List<String> mediaFormats) {
+			request.setMediaFormats(mediaFormats);
 			return this;
 		}
 		

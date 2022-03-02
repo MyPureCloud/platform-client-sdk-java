@@ -10,7 +10,6 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.PagedResource;
 import com.mypurecloud.sdk.v2.model.QueueMember;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -22,18 +21,15 @@ import java.io.Serializable;
  * QueueMemberEntityListing
  */
 
-public class QueueMemberEntityListing  implements Serializable, PagedResource<QueueMember> {
+public class QueueMemberEntityListing  implements Serializable {
   
   private List<QueueMember> entities = new ArrayList<QueueMember>();
-  private Integer pageSize = null;
   private Integer pageNumber = null;
-  private Long total = null;
+  private Integer pageSize = null;
   private String firstUri = null;
   private String selfUri = null;
   private String nextUri = null;
   private String previousUri = null;
-  private String lastUri = null;
-  private Integer pageCount = null;
 
   
   /**
@@ -50,23 +46,6 @@ public class QueueMemberEntityListing  implements Serializable, PagedResource<Qu
   }
   public void setEntities(List<QueueMember> entities) {
     this.entities = entities;
-  }
-
-  
-  /**
-   **/
-  public QueueMemberEntityListing pageSize(Integer pageSize) {
-    this.pageSize = pageSize;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("pageSize")
-  public Integer getPageSize() {
-    return pageSize;
-  }
-  public void setPageSize(Integer pageSize) {
-    this.pageSize = pageSize;
   }
 
   
@@ -89,18 +68,18 @@ public class QueueMemberEntityListing  implements Serializable, PagedResource<Qu
   
   /**
    **/
-  public QueueMemberEntityListing total(Long total) {
-    this.total = total;
+  public QueueMemberEntityListing pageSize(Integer pageSize) {
+    this.pageSize = pageSize;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("total")
-  public Long getTotal() {
-    return total;
+  @JsonProperty("pageSize")
+  public Integer getPageSize() {
+    return pageSize;
   }
-  public void setTotal(Long total) {
-    this.total = total;
+  public void setPageSize(Integer pageSize) {
+    this.pageSize = pageSize;
   }
 
   
@@ -172,40 +151,6 @@ public class QueueMemberEntityListing  implements Serializable, PagedResource<Qu
   }
 
   
-  /**
-   **/
-  public QueueMemberEntityListing lastUri(String lastUri) {
-    this.lastUri = lastUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("lastUri")
-  public String getLastUri() {
-    return lastUri;
-  }
-  public void setLastUri(String lastUri) {
-    this.lastUri = lastUri;
-  }
-
-  
-  /**
-   **/
-  public QueueMemberEntityListing pageCount(Integer pageCount) {
-    this.pageCount = pageCount;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("pageCount")
-  public Integer getPageCount() {
-    return pageCount;
-  }
-  public void setPageCount(Integer pageCount) {
-    this.pageCount = pageCount;
-  }
-
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -217,20 +162,17 @@ public class QueueMemberEntityListing  implements Serializable, PagedResource<Qu
     }
     QueueMemberEntityListing queueMemberEntityListing = (QueueMemberEntityListing) o;
     return Objects.equals(this.entities, queueMemberEntityListing.entities) &&
-        Objects.equals(this.pageSize, queueMemberEntityListing.pageSize) &&
         Objects.equals(this.pageNumber, queueMemberEntityListing.pageNumber) &&
-        Objects.equals(this.total, queueMemberEntityListing.total) &&
+        Objects.equals(this.pageSize, queueMemberEntityListing.pageSize) &&
         Objects.equals(this.firstUri, queueMemberEntityListing.firstUri) &&
         Objects.equals(this.selfUri, queueMemberEntityListing.selfUri) &&
         Objects.equals(this.nextUri, queueMemberEntityListing.nextUri) &&
-        Objects.equals(this.previousUri, queueMemberEntityListing.previousUri) &&
-        Objects.equals(this.lastUri, queueMemberEntityListing.lastUri) &&
-        Objects.equals(this.pageCount, queueMemberEntityListing.pageCount);
+        Objects.equals(this.previousUri, queueMemberEntityListing.previousUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, nextUri, previousUri, lastUri, pageCount);
+    return Objects.hash(entities, pageNumber, pageSize, firstUri, selfUri, nextUri, previousUri);
   }
 
   @Override
@@ -239,15 +181,12 @@ public class QueueMemberEntityListing  implements Serializable, PagedResource<Qu
     sb.append("class QueueMemberEntityListing {\n");
     
     sb.append("    entities: ").append(toIndentedString(entities)).append("\n");
-    sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
-    sb.append("    total: ").append(toIndentedString(total)).append("\n");
+    sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
-    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
-    sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();
   }

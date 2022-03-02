@@ -108,6 +108,20 @@ public class PostOutboundDnclistPhonenumbersRequest {
 	    return this;
 	} 
 	
+	private String expirationDateTime;
+	public String getExpirationDateTime() {
+		return this.expirationDateTime;
+	}
+
+	public void setExpirationDateTime(String expirationDateTime) {
+		this.expirationDateTime = expirationDateTime;
+	}
+
+	public PostOutboundDnclistPhonenumbersRequest withExpirationDateTime(String expirationDateTime) {
+	    this.setExpirationDateTime(expirationDateTime);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -142,6 +156,8 @@ public class PostOutboundDnclistPhonenumbersRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/outbound/dnclists/{dncListId}/phonenumbers")
                 .withPathParameter("dncListId", dncListId)
+        
+                .withQueryParameters("expirationDateTime", "", expirationDateTime)
         
                 .withBody(body)
         
@@ -178,6 +194,11 @@ public class PostOutboundDnclistPhonenumbersRequest {
 		
 		public Builder withBody(List<String> body) {
 			request.setBody(body);
+			return this;
+		}
+		
+		public Builder withExpirationDateTime(String expirationDateTime) {
+			request.setExpirationDateTime(expirationDateTime);
 			return this;
 		}
 		

@@ -10,6 +10,7 @@ title: ConversationMessageEvent
 | ------------ | ------------- | ------------- | ------------- |
 | **eventType** | [**EventTypeEnum**](#EventTypeEnum)<!----> | Type of this event element |  |
 | **coBrowse** | <!----><!---->[**ConversationEventCoBrowse**](ConversationEventCoBrowse.html)<!----> | CoBrowse event. |  [optional] |
+| **typing** | <!----><!---->[**ConversationEventTyping**](ConversationEventTyping.html)<!----> | Typing event. |  [optional] |
 {: class="table table-striped"}
 
 
@@ -21,6 +22,7 @@ title: ConversationMessageEvent
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | COBROWSE | &quot;CoBrowse&quot; |
+| TYPING | &quot;Typing&quot; |
 {: class="table table-striped"}
 
 

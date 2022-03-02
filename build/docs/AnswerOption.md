@@ -11,6 +11,7 @@ title: AnswerOption
 | **id** | <!----><!---->**String**<!----> |  |  [optional] |
 | **text** | <!----><!---->**String**<!----> |  |  [optional] |
 | **value** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **assistanceConditions** | <!----><!---->[**List&lt;AssistanceCondition&gt;**](AssistanceCondition.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

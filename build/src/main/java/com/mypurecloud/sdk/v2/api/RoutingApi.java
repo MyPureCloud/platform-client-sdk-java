@@ -31,6 +31,7 @@ import com.mypurecloud.sdk.v2.model.ComparisonPeriod;
 import com.mypurecloud.sdk.v2.model.ComparisonPeriodListing;
 import com.mypurecloud.sdk.v2.model.EstimatedWaitTimePredictions;
 import com.mypurecloud.sdk.v2.model.QueueMemberEntityListing;
+import com.mypurecloud.sdk.v2.model.QueueMemberEntityListingV1;
 import com.mypurecloud.sdk.v2.model.WrapupCodeEntityListing;
 import com.mypurecloud.sdk.v2.model.QueueEntityListing;
 import com.mypurecloud.sdk.v2.model.UserQueueEntityListing;
@@ -3308,11 +3309,11 @@ public class RoutingApi {
    * @param languages Filter by language (optional)
    * @param routingStatus Filter by routing status (optional)
    * @param presence Filter by presence (optional)
-   * @return QueueMemberEntityListing
+   * @return QueueMemberEntityListingV1
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public QueueMemberEntityListing getRoutingQueueUsers(String queueId, Integer pageNumber, Integer pageSize, String sortOrder, List<String> expand, Boolean joined, String name, List<String> profileSkills, List<String> skills, List<String> languages, List<String> routingStatus, List<String> presence) throws IOException, ApiException {
+  public QueueMemberEntityListingV1 getRoutingQueueUsers(String queueId, Integer pageNumber, Integer pageSize, String sortOrder, List<String> expand, Boolean joined, String name, List<String> profileSkills, List<String> skills, List<String> languages, List<String> routingStatus, List<String> presence) throws IOException, ApiException {
     return  getRoutingQueueUsers(createGetRoutingQueueUsersRequest(queueId, pageNumber, pageSize, sortOrder, expand, joined, name, profileSkills, skills, languages, routingStatus, presence));
   }
 
@@ -3331,10 +3332,10 @@ public class RoutingApi {
    * @param languages Filter by language (optional)
    * @param routingStatus Filter by routing status (optional)
    * @param presence Filter by presence (optional)
-   * @return QueueMemberEntityListing
+   * @return QueueMemberEntityListingV1
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<QueueMemberEntityListing> getRoutingQueueUsersWithHttpInfo(String queueId, Integer pageNumber, Integer pageSize, String sortOrder, List<String> expand, Boolean joined, String name, List<String> profileSkills, List<String> skills, List<String> languages, List<String> routingStatus, List<String> presence) throws IOException {
+  public ApiResponse<QueueMemberEntityListingV1> getRoutingQueueUsersWithHttpInfo(String queueId, Integer pageNumber, Integer pageSize, String sortOrder, List<String> expand, Boolean joined, String name, List<String> profileSkills, List<String> skills, List<String> languages, List<String> routingStatus, List<String> presence) throws IOException {
     return getRoutingQueueUsers(createGetRoutingQueueUsersRequest(queueId, pageNumber, pageSize, sortOrder, expand, joined, name, profileSkills, skills, languages, routingStatus, presence).withHttpInfo());
   }
 
@@ -3371,13 +3372,13 @@ public class RoutingApi {
    * DEPRECATED: use GET /routing/queues/{queueId}/members.  Get the members of this queue.
    * 
    * @param request The request object
-   * @return QueueMemberEntityListing
+   * @return QueueMemberEntityListingV1
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public QueueMemberEntityListing getRoutingQueueUsers(GetRoutingQueueUsersRequest request) throws IOException, ApiException {
+  public QueueMemberEntityListingV1 getRoutingQueueUsers(GetRoutingQueueUsersRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<QueueMemberEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<QueueMemberEntityListing>() {});
+      ApiResponse<QueueMemberEntityListingV1> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<QueueMemberEntityListingV1>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -3393,13 +3394,13 @@ public class RoutingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<QueueMemberEntityListing> getRoutingQueueUsers(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<QueueMemberEntityListingV1> getRoutingQueueUsers(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<QueueMemberEntityListing>() {});
+      return pcapiClient.invoke(request, new TypeReference<QueueMemberEntityListingV1>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<QueueMemberEntityListing> response = (ApiResponse<QueueMemberEntityListing>)(ApiResponse<?>)exception;
+      ApiResponse<QueueMemberEntityListingV1> response = (ApiResponse<QueueMemberEntityListingV1>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -3410,7 +3411,7 @@ public class RoutingApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<QueueMemberEntityListing> response = (ApiResponse<QueueMemberEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<QueueMemberEntityListingV1> response = (ApiResponse<QueueMemberEntityListingV1>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -5926,11 +5927,11 @@ public class RoutingApi {
    * 
    * @param queueId Queue ID (required)
    * @param body Queue Members (required)
-   * @return QueueMemberEntityListing
+   * @return QueueMemberEntityListingV1
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public QueueMemberEntityListing patchRoutingQueueUsers(String queueId, List<QueueMember> body) throws IOException, ApiException {
+  public QueueMemberEntityListingV1 patchRoutingQueueUsers(String queueId, List<QueueMember> body) throws IOException, ApiException {
     return  patchRoutingQueueUsers(createPatchRoutingQueueUsersRequest(queueId, body));
   }
 
@@ -5939,10 +5940,10 @@ public class RoutingApi {
    * 
    * @param queueId Queue ID (required)
    * @param body Queue Members (required)
-   * @return QueueMemberEntityListing
+   * @return QueueMemberEntityListingV1
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<QueueMemberEntityListing> patchRoutingQueueUsersWithHttpInfo(String queueId, List<QueueMember> body) throws IOException {
+  public ApiResponse<QueueMemberEntityListingV1> patchRoutingQueueUsersWithHttpInfo(String queueId, List<QueueMember> body) throws IOException {
     return patchRoutingQueueUsers(createPatchRoutingQueueUsersRequest(queueId, body).withHttpInfo());
   }
 
@@ -5959,13 +5960,13 @@ public class RoutingApi {
    * DEPRECATED: use PATCH /routing/queues/{queueId}/members.  Join or unjoin a set of users for a queue.
    * 
    * @param request The request object
-   * @return QueueMemberEntityListing
+   * @return QueueMemberEntityListingV1
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public QueueMemberEntityListing patchRoutingQueueUsers(PatchRoutingQueueUsersRequest request) throws IOException, ApiException {
+  public QueueMemberEntityListingV1 patchRoutingQueueUsers(PatchRoutingQueueUsersRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<QueueMemberEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<QueueMemberEntityListing>() {});
+      ApiResponse<QueueMemberEntityListingV1> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<QueueMemberEntityListingV1>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -5981,13 +5982,13 @@ public class RoutingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<QueueMemberEntityListing> patchRoutingQueueUsers(ApiRequest<List<QueueMember>> request) throws IOException {
+  public ApiResponse<QueueMemberEntityListingV1> patchRoutingQueueUsers(ApiRequest<List<QueueMember>> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<QueueMemberEntityListing>() {});
+      return pcapiClient.invoke(request, new TypeReference<QueueMemberEntityListingV1>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<QueueMemberEntityListing> response = (ApiResponse<QueueMemberEntityListing>)(ApiResponse<?>)exception;
+      ApiResponse<QueueMemberEntityListingV1> response = (ApiResponse<QueueMemberEntityListingV1>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -5998,7 +5999,7 @@ public class RoutingApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<QueueMemberEntityListing> response = (ApiResponse<QueueMemberEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<QueueMemberEntityListingV1> response = (ApiResponse<QueueMemberEntityListingV1>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

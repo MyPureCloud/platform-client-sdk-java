@@ -7706,11 +7706,12 @@ public class OutboundApi {
    * Only Internal DNC lists may be appended to
    * @param dncListId DncList ID (required)
    * @param body DNC Phone Numbers (required)
+   * @param expirationDateTime Expiration date for DNC phone numbers in yyyy-MM-ddTHH:mmZ format (optional)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void postOutboundDnclistPhonenumbers(String dncListId, List<String> body) throws IOException, ApiException {
-     postOutboundDnclistPhonenumbers(createPostOutboundDnclistPhonenumbersRequest(dncListId, body));
+  public void postOutboundDnclistPhonenumbers(String dncListId, List<String> body, String expirationDateTime) throws IOException, ApiException {
+     postOutboundDnclistPhonenumbers(createPostOutboundDnclistPhonenumbersRequest(dncListId, body, expirationDateTime));
   }
 
   /**
@@ -7718,17 +7719,20 @@ public class OutboundApi {
    * Only Internal DNC lists may be appended to
    * @param dncListId DncList ID (required)
    * @param body DNC Phone Numbers (required)
+   * @param expirationDateTime Expiration date for DNC phone numbers in yyyy-MM-ddTHH:mmZ format (optional)
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postOutboundDnclistPhonenumbersWithHttpInfo(String dncListId, List<String> body) throws IOException {
-    return postOutboundDnclistPhonenumbers(createPostOutboundDnclistPhonenumbersRequest(dncListId, body).withHttpInfo());
+  public ApiResponse<Void> postOutboundDnclistPhonenumbersWithHttpInfo(String dncListId, List<String> body, String expirationDateTime) throws IOException {
+    return postOutboundDnclistPhonenumbers(createPostOutboundDnclistPhonenumbersRequest(dncListId, body, expirationDateTime).withHttpInfo());
   }
 
-  private PostOutboundDnclistPhonenumbersRequest createPostOutboundDnclistPhonenumbersRequest(String dncListId, List<String> body) {
+  private PostOutboundDnclistPhonenumbersRequest createPostOutboundDnclistPhonenumbersRequest(String dncListId, List<String> body, String expirationDateTime) {
     return PostOutboundDnclistPhonenumbersRequest.builder()
             .withDncListId(dncListId)
     
             .withBody(body)
+    
+            .withExpirationDateTime(expirationDateTime)
     
             .build();
   }

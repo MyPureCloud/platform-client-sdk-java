@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.EvaluationQuestionGroupScore;
+import com.mypurecloud.sdk.v2.model.TranscriptTopic;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -30,6 +31,7 @@ public class EvaluationScoringSet  implements Serializable {
   private Boolean anyFailedKillQuestions = null;
   private String comments = null;
   private String agentComments = null;
+  private List<TranscriptTopic> transcriptTopics = new ArrayList<TranscriptTopic>();
 
   
   /**
@@ -157,6 +159,24 @@ public class EvaluationScoringSet  implements Serializable {
   }
 
   
+  /**
+   * List of topics found within the conversation's transcripts
+   **/
+  public EvaluationScoringSet transcriptTopics(List<TranscriptTopic> transcriptTopics) {
+    this.transcriptTopics = transcriptTopics;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "List of topics found within the conversation's transcripts")
+  @JsonProperty("transcriptTopics")
+  public List<TranscriptTopic> getTranscriptTopics() {
+    return transcriptTopics;
+  }
+  public void setTranscriptTopics(List<TranscriptTopic> transcriptTopics) {
+    this.transcriptTopics = transcriptTopics;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -173,12 +193,13 @@ public class EvaluationScoringSet  implements Serializable {
         Objects.equals(this.questionGroupScores, evaluationScoringSet.questionGroupScores) &&
         Objects.equals(this.anyFailedKillQuestions, evaluationScoringSet.anyFailedKillQuestions) &&
         Objects.equals(this.comments, evaluationScoringSet.comments) &&
-        Objects.equals(this.agentComments, evaluationScoringSet.agentComments);
+        Objects.equals(this.agentComments, evaluationScoringSet.agentComments) &&
+        Objects.equals(this.transcriptTopics, evaluationScoringSet.transcriptTopics);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(totalScore, totalCriticalScore, totalNonCriticalScore, questionGroupScores, anyFailedKillQuestions, comments, agentComments);
+    return Objects.hash(totalScore, totalCriticalScore, totalNonCriticalScore, questionGroupScores, anyFailedKillQuestions, comments, agentComments, transcriptTopics);
   }
 
   @Override
@@ -193,6 +214,7 @@ public class EvaluationScoringSet  implements Serializable {
     sb.append("    anyFailedKillQuestions: ").append(toIndentedString(anyFailedKillQuestions)).append("\n");
     sb.append("    comments: ").append(toIndentedString(comments)).append("\n");
     sb.append("    agentComments: ").append(toIndentedString(agentComments)).append("\n");
+    sb.append("    transcriptTopics: ").append(toIndentedString(transcriptTopics)).append("\n");
     sb.append("}");
     return sb.toString();
   }

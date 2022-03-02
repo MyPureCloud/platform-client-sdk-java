@@ -5962,7 +5962,7 @@ try {
 
 
 
-> Void postOutboundDnclistPhonenumbers(dncListId, body)
+> Void postOutboundDnclistPhonenumbers(dncListId, body, expirationDateTime)
 
 Add phone numbers to a DNC list.
 
@@ -5998,8 +5998,9 @@ Configuration.setDefaultApiClient(apiClient);
 OutboundApi apiInstance = new OutboundApi();
 String dncListId = "dncListId_example"; // String | DncList ID
 List<String> body = Arrays.asList(new List<String>()); // List<String> | DNC Phone Numbers
+String expirationDateTime = "expirationDateTime_example"; // String | Expiration date for DNC phone numbers in yyyy-MM-ddTHH:mmZ format
 try {
-    apiInstance.postOutboundDnclistPhonenumbers(dncListId, body);
+    apiInstance.postOutboundDnclistPhonenumbers(dncListId, body, expirationDateTime);
 } catch (ApiException e) {
     System.err.println("Exception when calling OutboundApi#postOutboundDnclistPhonenumbers");
     e.printStackTrace();
@@ -6013,6 +6014,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **dncListId** | **String**| DncList ID | 
 | **body** | **List&lt;String&gt;**| DNC Phone Numbers | 
+| **expirationDateTime** | **String**| Expiration date for DNC phone numbers in yyyy-MM-ddTHH:mmZ format | [optional] 
 {: class="table-striped"}
 
 

@@ -42,14 +42,7 @@ public class CreateOutboundMessagingConversationRequest  implements Serializable
  @JsonDeserialize(using = ToAddressMessengerTypeEnumDeserializer.class)
   public enum ToAddressMessengerTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    SMS("sms"),
-    FACEBOOK("facebook"),
-    TWITTER("twitter"),
-    LINE("line"),
-    WHATSAPP("whatsapp"),
-    WEBMESSAGING("webmessaging"),
-    INSTAGRAM("instagram"),
-    OPEN("open");
+    SMS("sms");
 
     private String value;
 

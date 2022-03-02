@@ -41,6 +41,7 @@ import com.mypurecloud.sdk.v2.model.ComparisonPeriod;
 import com.mypurecloud.sdk.v2.model.ComparisonPeriodListing;
 import com.mypurecloud.sdk.v2.model.EstimatedWaitTimePredictions;
 import com.mypurecloud.sdk.v2.model.QueueMemberEntityListing;
+import com.mypurecloud.sdk.v2.model.QueueMemberEntityListingV1;
 import com.mypurecloud.sdk.v2.model.WrapupCodeEntityListing;
 import com.mypurecloud.sdk.v2.model.QueueEntityListing;
 import com.mypurecloud.sdk.v2.model.UserQueueEntityListing;

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Division;
 import com.mypurecloud.sdk.v2.model.ImportStatus;
 import io.swagger.annotations.ApiModel;
@@ -27,6 +28,55 @@ public class DncListDivisionView  implements Serializable {
   private Division division = null;
   private ImportStatus importStatus = null;
   private Long size = null;
+
+  private static class DncSourceTypeEnumDeserializer extends StdDeserializer<DncSourceTypeEnum> {
+    public DncSourceTypeEnumDeserializer() {
+      super(DncSourceTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public DncSourceTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return DncSourceTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The type of the DncList.
+   */
+ @JsonDeserialize(using = DncSourceTypeEnumDeserializer.class)
+  public enum DncSourceTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    RDS("rds"),
+    DNC_COM("dnc.com"),
+    GRYPHON("gryphon");
+
+    private String value;
+
+    DncSourceTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static DncSourceTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (DncSourceTypeEnum value : DncSourceTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return DncSourceTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private DncSourceTypeEnum dncSourceType = null;
   private String selfUri = null;
 
   
@@ -86,6 +136,13 @@ public class DncListDivisionView  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "The type of the DncList.")
+  @JsonProperty("dncSourceType")
+  public DncSourceTypeEnum getDncSourceType() {
+    return dncSourceType;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -108,12 +165,13 @@ public class DncListDivisionView  implements Serializable {
         Objects.equals(this.division, dncListDivisionView.division) &&
         Objects.equals(this.importStatus, dncListDivisionView.importStatus) &&
         Objects.equals(this.size, dncListDivisionView.size) &&
+        Objects.equals(this.dncSourceType, dncListDivisionView.dncSourceType) &&
         Objects.equals(this.selfUri, dncListDivisionView.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, importStatus, size, selfUri);
+    return Objects.hash(id, name, division, importStatus, size, dncSourceType, selfUri);
   }
 
   @Override
@@ -126,6 +184,7 @@ public class DncListDivisionView  implements Serializable {
     sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    importStatus: ").append(toIndentedString(importStatus)).append("\n");
     sb.append("    size: ").append(toIndentedString(size)).append("\n");
+    sb.append("    dncSourceType: ").append(toIndentedString(dncSourceType)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

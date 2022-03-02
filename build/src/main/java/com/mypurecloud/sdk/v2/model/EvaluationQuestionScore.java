@@ -24,6 +24,7 @@ public class EvaluationQuestionScore  implements Serializable {
   private String answerId = null;
   private Integer score = null;
   private Boolean markedNA = null;
+  private String assistedAnswerId = null;
   private Boolean failedKillQuestion = null;
   private String comments = null;
 
@@ -98,6 +99,24 @@ public class EvaluationQuestionScore  implements Serializable {
 
   
   /**
+   * AnswerId found with evaluation assistance conditions
+   **/
+  public EvaluationQuestionScore assistedAnswerId(String assistedAnswerId) {
+    this.assistedAnswerId = assistedAnswerId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "AnswerId found with evaluation assistance conditions")
+  @JsonProperty("assistedAnswerId")
+  public String getAssistedAnswerId() {
+    return assistedAnswerId;
+  }
+  public void setAssistedAnswerId(String assistedAnswerId) {
+    this.assistedAnswerId = assistedAnswerId;
+  }
+
+  
+  /**
    * Applicable only on fatal questions. Indicates that the answer selected was not the highest score available for the question
    **/
   public EvaluationQuestionScore failedKillQuestion(Boolean failedKillQuestion) {
@@ -147,13 +166,14 @@ public class EvaluationQuestionScore  implements Serializable {
         Objects.equals(this.answerId, evaluationQuestionScore.answerId) &&
         Objects.equals(this.score, evaluationQuestionScore.score) &&
         Objects.equals(this.markedNA, evaluationQuestionScore.markedNA) &&
+        Objects.equals(this.assistedAnswerId, evaluationQuestionScore.assistedAnswerId) &&
         Objects.equals(this.failedKillQuestion, evaluationQuestionScore.failedKillQuestion) &&
         Objects.equals(this.comments, evaluationQuestionScore.comments);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(questionId, answerId, score, markedNA, failedKillQuestion, comments);
+    return Objects.hash(questionId, answerId, score, markedNA, assistedAnswerId, failedKillQuestion, comments);
   }
 
   @Override
@@ -165,6 +185,7 @@ public class EvaluationQuestionScore  implements Serializable {
     sb.append("    answerId: ").append(toIndentedString(answerId)).append("\n");
     sb.append("    score: ").append(toIndentedString(score)).append("\n");
     sb.append("    markedNA: ").append(toIndentedString(markedNA)).append("\n");
+    sb.append("    assistedAnswerId: ").append(toIndentedString(assistedAnswerId)).append("\n");
     sb.append("    failedKillQuestion: ").append(toIndentedString(failedKillQuestion)).append("\n");
     sb.append("    comments: ").append(toIndentedString(comments)).append("\n");
     sb.append("}");

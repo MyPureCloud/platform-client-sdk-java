@@ -11860,7 +11860,7 @@ public class ConversationsApi {
   
   /**
    * Send an agentless outbound message
-   * Send an agentlesss (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will generate a new Conversation, if there is an existing active Conversation between the fromAddress and toAddress already, then this POST will fail.
+   * Send an agentless (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will generate a new Conversation, if there is an existing active Conversation between the fromAddress and toAddress already, then this POST will fail.
    * @param body Create agentless outbound messaging request (required)
    * @return SendAgentlessOutboundMessageResponse
    * @throws ApiException if the request fails on the server
@@ -11872,7 +11872,7 @@ public class ConversationsApi {
 
   /**
    * Send an agentless outbound message
-   * Send an agentlesss (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will generate a new Conversation, if there is an existing active Conversation between the fromAddress and toAddress already, then this POST will fail.
+   * Send an agentless (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will generate a new Conversation, if there is an existing active Conversation between the fromAddress and toAddress already, then this POST will fail.
    * @param body Create agentless outbound messaging request (required)
    * @return SendAgentlessOutboundMessageResponse
    * @throws IOException if the request fails to be processed
@@ -11890,7 +11890,7 @@ public class ConversationsApi {
 
   /**
    * Send an agentless outbound message
-   * Send an agentlesss (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will generate a new Conversation, if there is an existing active Conversation between the fromAddress and toAddress already, then this POST will fail.
+   * Send an agentless (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will generate a new Conversation, if there is an existing active Conversation between the fromAddress and toAddress already, then this POST will fail.
    * @param request The request object
    * @return SendAgentlessOutboundMessageResponse
    * @throws ApiException if the request fails on the server
@@ -11909,7 +11909,7 @@ public class ConversationsApi {
 
   /**
    * Send an agentless outbound message
-   * Send an agentlesss (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will generate a new Conversation, if there is an existing active Conversation between the fromAddress and toAddress already, then this POST will fail.
+   * Send an agentless (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will generate a new Conversation, if there is an existing active Conversation between the fromAddress and toAddress already, then this POST will fail.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

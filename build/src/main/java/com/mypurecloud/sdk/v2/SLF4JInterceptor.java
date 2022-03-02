@@ -23,14 +23,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * <p>A filter that logs both requests and responses to SLF4J.
+ * A filter that logs both requests and responses to SLF4J.
  * 
- * <h1>Available detail levels</h2>
- * <ul>
- * <li>NONE - don't log anything
- * <li>MINIMAL - only log the verb, url, and response code
- * <li>HEADERS - as above, but also log all the headers for both the request and response
- * <li>FULL - as above, but also log the full body for both the request and response
+ * Available detail levels
+ * 
+ * NONE - don't log anything
+ * MINIMAL - only log the verb, url, and response code
+ * HEADERS - as above, but also log all the headers for both the request and response
+ * FULL - as above, but also log the full body for both the request and response
  */
 public class SLF4JInterceptor implements HttpRequestInterceptor, HttpResponseInterceptor {
 
@@ -52,11 +52,11 @@ public class SLF4JInterceptor implements HttpRequestInterceptor, HttpResponseInt
     /**
      * The level of detail to log
      * 
-     * <ul>
-     * <li>NONE - don't log anything
-     * <li>MINIMAL - only log the verb, url, and response code
-     * <li>HEADERS - as above, but also log all the headers for both the request and response
-     * <li>FULL - as above, but also log the full body for both the request and response
+     * 
+     * NONE - don't log anything
+     * MINIMAL - only log the verb, url, and response code
+     * HEADERS - as above, but also log all the headers for both the request and response
+     * FULL - as above, but also log the full body for both the request and response
      */
     public static enum DetailLevel {
         NONE, MINIMAL, HEADERS, FULL
@@ -125,7 +125,7 @@ public class SLF4JInterceptor implements HttpRequestInterceptor, HttpResponseInt
     /**
      * Builds the log message for requests
      * 
-     * <pre>
+     * 
      * >>>> GET http://api.example.com/endpoint >>>>
      * ---- HEADERS ----
      * Header-1: Value1
@@ -133,7 +133,7 @@ public class SLF4JInterceptor implements HttpRequestInterceptor, HttpResponseInt
      * ---- BODY (24-bytes) ----
      * Body body body body body
      * >>>> END >>>>
-     * </pre>
+     * 
      * 
      * @param request - the request to build a message for
      */
@@ -174,7 +174,7 @@ public class SLF4JInterceptor implements HttpRequestInterceptor, HttpResponseInt
     /**
      * Builds the log message for responses
      * 
-     * <pre>
+     * 
      * <<<< GET http://api.example.com/endpoint <<<<
      * 404 Not Found  (219 ms)
      * ---- HEADERS ----
@@ -182,7 +182,7 @@ public class SLF4JInterceptor implements HttpRequestInterceptor, HttpResponseInt
      * Header-4: Value4
      * ---- NO BODY ----
      * <<<< END <<<<
-     * </pre>
+     * 
      * 
      * @param response - the response to build a message for
      * @param request - the request line of the initial request for the response

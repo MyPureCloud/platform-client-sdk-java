@@ -24,6 +24,7 @@ public class SurveyQuestionScore  implements Serializable {
   private String answerId = null;
   private Integer score = null;
   private Boolean markedNA = null;
+  private String assistedAnswerId = null;
   private Integer npsScore = null;
   private String npsTextAnswer = null;
   private String freeTextAnswer = null;
@@ -99,6 +100,24 @@ public class SurveyQuestionScore  implements Serializable {
 
   
   /**
+   * AnswerId found with evaluation assistance conditions
+   **/
+  public SurveyQuestionScore assistedAnswerId(String assistedAnswerId) {
+    this.assistedAnswerId = assistedAnswerId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "AnswerId found with evaluation assistance conditions")
+  @JsonProperty("assistedAnswerId")
+  public String getAssistedAnswerId() {
+    return assistedAnswerId;
+  }
+  public void setAssistedAnswerId(String assistedAnswerId) {
+    this.assistedAnswerId = assistedAnswerId;
+  }
+
+  
+  /**
    **/
   public SurveyQuestionScore npsScore(Integer npsScore) {
     this.npsScore = npsScore;
@@ -163,6 +182,7 @@ public class SurveyQuestionScore  implements Serializable {
         Objects.equals(this.answerId, surveyQuestionScore.answerId) &&
         Objects.equals(this.score, surveyQuestionScore.score) &&
         Objects.equals(this.markedNA, surveyQuestionScore.markedNA) &&
+        Objects.equals(this.assistedAnswerId, surveyQuestionScore.assistedAnswerId) &&
         Objects.equals(this.npsScore, surveyQuestionScore.npsScore) &&
         Objects.equals(this.npsTextAnswer, surveyQuestionScore.npsTextAnswer) &&
         Objects.equals(this.freeTextAnswer, surveyQuestionScore.freeTextAnswer);
@@ -170,7 +190,7 @@ public class SurveyQuestionScore  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(questionId, answerId, score, markedNA, npsScore, npsTextAnswer, freeTextAnswer);
+    return Objects.hash(questionId, answerId, score, markedNA, assistedAnswerId, npsScore, npsTextAnswer, freeTextAnswer);
   }
 
   @Override
@@ -182,6 +202,7 @@ public class SurveyQuestionScore  implements Serializable {
     sb.append("    answerId: ").append(toIndentedString(answerId)).append("\n");
     sb.append("    score: ").append(toIndentedString(score)).append("\n");
     sb.append("    markedNA: ").append(toIndentedString(markedNA)).append("\n");
+    sb.append("    assistedAnswerId: ").append(toIndentedString(assistedAnswerId)).append("\n");
     sb.append("    npsScore: ").append(toIndentedString(npsScore)).append("\n");
     sb.append("    npsTextAnswer: ").append(toIndentedString(npsTextAnswer)).append("\n");
     sb.append("    freeTextAnswer: ").append(toIndentedString(freeTextAnswer)).append("\n");

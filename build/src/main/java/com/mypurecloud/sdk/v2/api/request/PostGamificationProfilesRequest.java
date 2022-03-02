@@ -67,6 +67,20 @@ public class PostGamificationProfilesRequest {
 	    return this;
 	} 
 	
+	private Boolean copyMetrics;
+	public Boolean getCopyMetrics() {
+		return this.copyMetrics;
+	}
+
+	public void setCopyMetrics(Boolean copyMetrics) {
+		this.copyMetrics = copyMetrics;
+	}
+
+	public PostGamificationProfilesRequest withCopyMetrics(Boolean copyMetrics) {
+	    this.setCopyMetrics(copyMetrics);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -95,6 +109,8 @@ public class PostGamificationProfilesRequest {
         
 
         return ApiRequestBuilder.create("POST", "/api/v2/gamification/profiles")
+                .withQueryParameters("copyMetrics", "", copyMetrics)
+        
                 .withBody(body)
         
                 .withCustomHeaders(customHeaders)
@@ -125,6 +141,11 @@ public class PostGamificationProfilesRequest {
 		
 		public Builder withBody(CreatePerformanceProfile body) {
 			request.setBody(body);
+			return this;
+		}
+		
+		public Builder withCopyMetrics(Boolean copyMetrics) {
+			request.setCopyMetrics(copyMetrics);
 			return this;
 		}
 		

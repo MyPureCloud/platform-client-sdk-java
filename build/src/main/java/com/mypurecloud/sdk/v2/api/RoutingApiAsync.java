@@ -34,6 +34,7 @@ import com.mypurecloud.sdk.v2.model.ComparisonPeriod;
 import com.mypurecloud.sdk.v2.model.ComparisonPeriodListing;
 import com.mypurecloud.sdk.v2.model.EstimatedWaitTimePredictions;
 import com.mypurecloud.sdk.v2.model.QueueMemberEntityListing;
+import com.mypurecloud.sdk.v2.model.QueueMemberEntityListingV1;
 import com.mypurecloud.sdk.v2.model.WrapupCodeEntityListing;
 import com.mypurecloud.sdk.v2.model.QueueEntityListing;
 import com.mypurecloud.sdk.v2.model.UserQueueEntityListing;
@@ -3097,13 +3098,13 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<QueueMemberEntityListing> getRoutingQueueUsersAsync(GetRoutingQueueUsersRequest request, final AsyncApiCallback<QueueMemberEntityListing> callback) {
+  public Future<QueueMemberEntityListingV1> getRoutingQueueUsersAsync(GetRoutingQueueUsersRequest request, final AsyncApiCallback<QueueMemberEntityListingV1> callback) {
     try {
-      final SettableFuture<QueueMemberEntityListing> future = SettableFuture.create();
+      final SettableFuture<QueueMemberEntityListingV1> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<QueueMemberEntityListing>() {}, new AsyncApiCallback<ApiResponse<QueueMemberEntityListing>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<QueueMemberEntityListingV1>() {}, new AsyncApiCallback<ApiResponse<QueueMemberEntityListingV1>>() {
         @Override
-        public void onCompleted(ApiResponse<QueueMemberEntityListing> response) {
+        public void onCompleted(ApiResponse<QueueMemberEntityListingV1> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -3131,13 +3132,13 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<QueueMemberEntityListing>> getRoutingQueueUsersAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<QueueMemberEntityListing>> callback) {
+  public Future<ApiResponse<QueueMemberEntityListingV1>> getRoutingQueueUsersAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<QueueMemberEntityListingV1>> callback) {
     try {
-      final SettableFuture<ApiResponse<QueueMemberEntityListing>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<QueueMemberEntityListingV1>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<QueueMemberEntityListing>() {}, new AsyncApiCallback<ApiResponse<QueueMemberEntityListing>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<QueueMemberEntityListingV1>() {}, new AsyncApiCallback<ApiResponse<QueueMemberEntityListingV1>>() {
         @Override
-        public void onCompleted(ApiResponse<QueueMemberEntityListing> response) {
+        public void onCompleted(ApiResponse<QueueMemberEntityListingV1> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -3145,7 +3146,7 @@ public class RoutingApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<QueueMemberEntityListing> response = (ApiResponse<QueueMemberEntityListing>)(ApiResponse<?>)exception;
+            ApiResponse<QueueMemberEntityListingV1> response = (ApiResponse<QueueMemberEntityListingV1>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -3153,7 +3154,7 @@ public class RoutingApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<QueueMemberEntityListing> response = (ApiResponse<QueueMemberEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<QueueMemberEntityListingV1> response = (ApiResponse<QueueMemberEntityListingV1>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -5377,13 +5378,13 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<QueueMemberEntityListing> patchRoutingQueueUsersAsync(PatchRoutingQueueUsersRequest request, final AsyncApiCallback<QueueMemberEntityListing> callback) {
+  public Future<QueueMemberEntityListingV1> patchRoutingQueueUsersAsync(PatchRoutingQueueUsersRequest request, final AsyncApiCallback<QueueMemberEntityListingV1> callback) {
     try {
-      final SettableFuture<QueueMemberEntityListing> future = SettableFuture.create();
+      final SettableFuture<QueueMemberEntityListingV1> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<QueueMemberEntityListing>() {}, new AsyncApiCallback<ApiResponse<QueueMemberEntityListing>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<QueueMemberEntityListingV1>() {}, new AsyncApiCallback<ApiResponse<QueueMemberEntityListingV1>>() {
         @Override
-        public void onCompleted(ApiResponse<QueueMemberEntityListing> response) {
+        public void onCompleted(ApiResponse<QueueMemberEntityListingV1> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -5411,13 +5412,13 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<QueueMemberEntityListing>> patchRoutingQueueUsersAsync(ApiRequest<List<QueueMember>> request, final AsyncApiCallback<ApiResponse<QueueMemberEntityListing>> callback) {
+  public Future<ApiResponse<QueueMemberEntityListingV1>> patchRoutingQueueUsersAsync(ApiRequest<List<QueueMember>> request, final AsyncApiCallback<ApiResponse<QueueMemberEntityListingV1>> callback) {
     try {
-      final SettableFuture<ApiResponse<QueueMemberEntityListing>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<QueueMemberEntityListingV1>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<QueueMemberEntityListing>() {}, new AsyncApiCallback<ApiResponse<QueueMemberEntityListing>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<QueueMemberEntityListingV1>() {}, new AsyncApiCallback<ApiResponse<QueueMemberEntityListingV1>>() {
         @Override
-        public void onCompleted(ApiResponse<QueueMemberEntityListing> response) {
+        public void onCompleted(ApiResponse<QueueMemberEntityListingV1> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -5425,7 +5426,7 @@ public class RoutingApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<QueueMemberEntityListing> response = (ApiResponse<QueueMemberEntityListing>)(ApiResponse<?>)exception;
+            ApiResponse<QueueMemberEntityListingV1> response = (ApiResponse<QueueMemberEntityListingV1>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -5433,7 +5434,7 @@ public class RoutingApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<QueueMemberEntityListing> response = (ApiResponse<QueueMemberEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<QueueMemberEntityListingV1> response = (ApiResponse<QueueMemberEntityListingV1>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

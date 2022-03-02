@@ -9,6 +9,9 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
@@ -17,6 +20,25 @@ import java.io.Serializable;
 
 public class PredictiveRouting  implements Serializable {
   
+  private Boolean respectSkills = null;
+
+  
+  /**
+   * A switch used to determine if agent skills will be considered.
+   **/
+  public PredictiveRouting respectSkills(Boolean respectSkills) {
+    this.respectSkills = respectSkills;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A switch used to determine if agent skills will be considered.")
+  @JsonProperty("respectSkills")
+  public Boolean getRespectSkills() {
+    return respectSkills;
+  }
+  public void setRespectSkills(Boolean respectSkills) {
+    this.respectSkills = respectSkills;
+  }
 
   
 
@@ -28,12 +50,13 @@ public class PredictiveRouting  implements Serializable {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    return true;
+    PredictiveRouting predictiveRouting = (PredictiveRouting) o;
+    return Objects.equals(this.respectSkills, predictiveRouting.respectSkills);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash();
+    return Objects.hash(respectSkills);
   }
 
   @Override
@@ -41,6 +64,7 @@ public class PredictiveRouting  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class PredictiveRouting {\n");
     
+    sb.append("    respectSkills: ").append(toIndentedString(respectSkills)).append("\n");
     sb.append("}");
     return sb.toString();
   }

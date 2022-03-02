@@ -3687,28 +3687,32 @@ public class GamificationApi {
    * Create a new custom performance profile
    * 
    * @param body performanceProfile (required)
+   * @param copyMetrics Flag to copy metrics. If set to false, there will be no metrics associated with the new profile. If set to true or is absent (the default behavior), all metrics from the default profile will be copied over into the new profile. (optional, default to true)
    * @return GetProfilesResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public GetProfilesResponse postGamificationProfiles(CreatePerformanceProfile body) throws IOException, ApiException {
-    return  postGamificationProfiles(createPostGamificationProfilesRequest(body));
+  public GetProfilesResponse postGamificationProfiles(CreatePerformanceProfile body, Boolean copyMetrics) throws IOException, ApiException {
+    return  postGamificationProfiles(createPostGamificationProfilesRequest(body, copyMetrics));
   }
 
   /**
    * Create a new custom performance profile
    * 
    * @param body performanceProfile (required)
+   * @param copyMetrics Flag to copy metrics. If set to false, there will be no metrics associated with the new profile. If set to true or is absent (the default behavior), all metrics from the default profile will be copied over into the new profile. (optional, default to true)
    * @return GetProfilesResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<GetProfilesResponse> postGamificationProfilesWithHttpInfo(CreatePerformanceProfile body) throws IOException {
-    return postGamificationProfiles(createPostGamificationProfilesRequest(body).withHttpInfo());
+  public ApiResponse<GetProfilesResponse> postGamificationProfilesWithHttpInfo(CreatePerformanceProfile body, Boolean copyMetrics) throws IOException {
+    return postGamificationProfiles(createPostGamificationProfilesRequest(body, copyMetrics).withHttpInfo());
   }
 
-  private PostGamificationProfilesRequest createPostGamificationProfilesRequest(CreatePerformanceProfile body) {
+  private PostGamificationProfilesRequest createPostGamificationProfilesRequest(CreatePerformanceProfile body, Boolean copyMetrics) {
     return PostGamificationProfilesRequest.builder()
             .withBody(body)
+    
+            .withCopyMetrics(copyMetrics)
     
             .build();
   }

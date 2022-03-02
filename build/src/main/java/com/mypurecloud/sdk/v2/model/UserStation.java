@@ -32,6 +32,7 @@ public class UserStation  implements Serializable {
   private Date associatedDate = null;
   private User defaultUser = null;
   private Map<String, String> providerInfo = null;
+  private Integer webRtcCallAppearances = null;
 
   
   @ApiModelProperty(example = "null", value = "A globally unique identifier for this station")
@@ -145,6 +146,13 @@ public class UserStation  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "The number of call appearances on the station.")
+  @JsonProperty("webRtcCallAppearances")
+  public Integer getWebRtcCallAppearances() {
+    return webRtcCallAppearances;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -161,12 +169,13 @@ public class UserStation  implements Serializable {
         Objects.equals(this.associatedUser, userStation.associatedUser) &&
         Objects.equals(this.associatedDate, userStation.associatedDate) &&
         Objects.equals(this.defaultUser, userStation.defaultUser) &&
-        Objects.equals(this.providerInfo, userStation.providerInfo);
+        Objects.equals(this.providerInfo, userStation.providerInfo) &&
+        Objects.equals(this.webRtcCallAppearances, userStation.webRtcCallAppearances);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, type, associatedUser, associatedDate, defaultUser, providerInfo);
+    return Objects.hash(id, name, type, associatedUser, associatedDate, defaultUser, providerInfo, webRtcCallAppearances);
   }
 
   @Override
@@ -181,6 +190,7 @@ public class UserStation  implements Serializable {
     sb.append("    associatedDate: ").append(toIndentedString(associatedDate)).append("\n");
     sb.append("    defaultUser: ").append(toIndentedString(defaultUser)).append("\n");
     sb.append("    providerInfo: ").append(toIndentedString(providerInfo)).append("\n");
+    sb.append("    webRtcCallAppearances: ").append(toIndentedString(webRtcCallAppearances)).append("\n");
     sb.append("}");
     return sb.toString();
   }

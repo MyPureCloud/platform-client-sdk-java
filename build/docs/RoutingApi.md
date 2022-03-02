@@ -2568,7 +2568,7 @@ try {
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
-> [QueueMemberEntityListing](QueueMemberEntityListing.html) getRoutingQueueUsers(queueId, pageNumber, pageSize, sortOrder, expand, joined, name, profileSkills, skills, languages, routingStatus, presence)
+> [QueueMemberEntityListingV1](QueueMemberEntityListingV1.html) getRoutingQueueUsers(queueId, pageNumber, pageSize, sortOrder, expand, joined, name, profileSkills, skills, languages, routingStatus, presence)
 
 DEPRECATED: use GET /routing/queues/{queueId}/members.  Get the members of this queue.
 
@@ -2616,7 +2616,7 @@ List<String> languages = Arrays.asList("languages_example"); // List<String> | F
 List<String> routingStatus = Arrays.asList("routingStatus_example"); // List<String> | Filter by routing status
 List<String> presence = Arrays.asList("presence_example"); // List<String> | Filter by presence
 try {
-    QueueMemberEntityListing result = apiInstance.getRoutingQueueUsers(queueId, pageNumber, pageSize, sortOrder, expand, joined, name, profileSkills, skills, languages, routingStatus, presence);
+    QueueMemberEntityListingV1 result = apiInstance.getRoutingQueueUsers(queueId, pageNumber, pageSize, sortOrder, expand, joined, name, profileSkills, skills, languages, routingStatus, presence);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingQueueUsers");
@@ -2646,7 +2646,7 @@ try {
 
 ### Return type
 
-[**QueueMemberEntityListing**](QueueMemberEntityListing.html)
+[**QueueMemberEntityListingV1**](QueueMemberEntityListingV1.html)
 
 <a name="getRoutingQueueWrapupcodes"></a>
 
@@ -4582,7 +4582,7 @@ null (empty response body)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
-> [QueueMemberEntityListing](QueueMemberEntityListing.html) patchRoutingQueueUsers(queueId, body)
+> [QueueMemberEntityListingV1](QueueMemberEntityListingV1.html) patchRoutingQueueUsers(queueId, body)
 
 DEPRECATED: use PATCH /routing/queues/{queueId}/members.  Join or unjoin a set of users for a queue.
 
@@ -4620,7 +4620,7 @@ RoutingApi apiInstance = new RoutingApi();
 String queueId = "queueId_example"; // String | Queue ID
 List<QueueMember> body = Arrays.asList(new QueueMember()); // List<QueueMember> | Queue Members
 try {
-    QueueMemberEntityListing result = apiInstance.patchRoutingQueueUsers(queueId, body);
+    QueueMemberEntityListingV1 result = apiInstance.patchRoutingQueueUsers(queueId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#patchRoutingQueueUsers");
@@ -4640,7 +4640,7 @@ try {
 
 ### Return type
 
-[**QueueMemberEntityListing**](QueueMemberEntityListing.html)
+[**QueueMemberEntityListingV1**](QueueMemberEntityListingV1.html)
 
 <a name="patchRoutingSettingsContactcenter"></a>
 

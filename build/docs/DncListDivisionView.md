@@ -13,7 +13,21 @@ title: DncListDivisionView
 | **division** | <!----><!---->[**Division**](Division.html)<!----> | The division to which this entity belongs. |  [optional] |
 | **importStatus** | <!----><!---->[**ImportStatus**](ImportStatus.html)<!----> | The status of the import process. |  [optional] |
 | **size** | <!----><!---->**Long**<!----> | The number of contacts in the DncList. |  [optional] |
+| **dncSourceType** | [**DncSourceTypeEnum**](#DncSourceTypeEnum)<!----> | The type of the DncList. |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
+{: class="table table-striped"}
+
+
+<a name="DncSourceTypeEnum"></a>
+
+## Enum: DncSourceTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| RDS | &quot;rds&quot; |
+| DNC_COM | &quot;dnc.com&quot; |
+| GRYPHON | &quot;gryphon&quot; |
 {: class="table table-striped"}
 
 

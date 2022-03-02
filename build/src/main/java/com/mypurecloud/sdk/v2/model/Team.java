@@ -26,6 +26,7 @@ public class Team  implements Serializable {
   private String name = null;
   private WritableDivision division = null;
   private String description = null;
+  private Date dateCreated = null;
   private Date dateModified = null;
   private Long memberCount = null;
   private String selfUri = null;
@@ -93,6 +94,13 @@ public class Team  implements Serializable {
 
   
   @ApiModelProperty(example = "null", value = "Last modified datetime. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateCreated")
+  public Date getDateCreated() {
+    return dateCreated;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "Last modified datetime. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
@@ -127,6 +135,7 @@ public class Team  implements Serializable {
         Objects.equals(this.name, team.name) &&
         Objects.equals(this.division, team.division) &&
         Objects.equals(this.description, team.description) &&
+        Objects.equals(this.dateCreated, team.dateCreated) &&
         Objects.equals(this.dateModified, team.dateModified) &&
         Objects.equals(this.memberCount, team.memberCount) &&
         Objects.equals(this.selfUri, team.selfUri);
@@ -134,7 +143,7 @@ public class Team  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, dateModified, memberCount, selfUri);
+    return Objects.hash(id, name, division, description, dateCreated, dateModified, memberCount, selfUri);
   }
 
   @Override
@@ -146,6 +155,7 @@ public class Team  implements Serializable {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    memberCount: ").append(toIndentedString(memberCount)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
