@@ -42,6 +42,7 @@ title: Flow
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | BOT | &quot;BOT&quot; |
 | COMMONMODULE | &quot;COMMONMODULE&quot; |
+| DIGITALBOT | &quot;DIGITALBOT&quot; |
 | INBOUNDCALL | &quot;INBOUNDCALL&quot; |
 | INBOUNDCHAT | &quot;INBOUNDCHAT&quot; |
 | INBOUNDEMAIL | &quot;INBOUNDEMAIL&quot; |
@@ -67,6 +68,7 @@ title: Flow
 | ---- | ----- |
 | BOT | &quot;BOT&quot; |
 | COMMONMODULE | &quot;COMMONMODULE&quot; |
+| DIGITALBOT | &quot;DIGITALBOT&quot; |
 | INBOUNDCALL | &quot;INBOUNDCALL&quot; |
 | INBOUNDCHAT | &quot;INBOUNDCHAT&quot; |
 | INBOUNDEMAIL | &quot;INBOUNDEMAIL&quot; |

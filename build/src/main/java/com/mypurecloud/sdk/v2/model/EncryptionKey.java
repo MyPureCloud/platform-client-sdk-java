@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.LocalEncryptionConfiguration;
 import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
@@ -29,6 +30,56 @@ public class EncryptionKey  implements Serializable {
   private String keydataSummary = null;
   private User user = null;
   private LocalEncryptionConfiguration localEncryptionConfiguration = null;
+
+  private static class KeyConfigurationTypeEnumDeserializer extends StdDeserializer<KeyConfigurationTypeEnum> {
+    public KeyConfigurationTypeEnumDeserializer() {
+      super(KeyConfigurationTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public KeyConfigurationTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return KeyConfigurationTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Key type used in this configuration
+   */
+ @JsonDeserialize(using = KeyConfigurationTypeEnumDeserializer.class)
+  public enum KeyConfigurationTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    KMSSYMMETRIC("KmsSymmetric"),
+    LOCALKEYMANAGER("LocalKeyManager"),
+    NATIVE("Native"),
+    NONE("None");
+
+    private String value;
+
+    KeyConfigurationTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static KeyConfigurationTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (KeyConfigurationTypeEnum value : KeyConfigurationTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return KeyConfigurationTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private KeyConfigurationTypeEnum keyConfigurationType = null;
   private String selfUri = null;
 
   
@@ -128,6 +179,24 @@ public class EncryptionKey  implements Serializable {
   }
 
   
+  /**
+   * Key type used in this configuration
+   **/
+  public EncryptionKey keyConfigurationType(KeyConfigurationTypeEnum keyConfigurationType) {
+    this.keyConfigurationType = keyConfigurationType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Key type used in this configuration")
+  @JsonProperty("keyConfigurationType")
+  public KeyConfigurationTypeEnum getKeyConfigurationType() {
+    return keyConfigurationType;
+  }
+  public void setKeyConfigurationType(KeyConfigurationTypeEnum keyConfigurationType) {
+    this.keyConfigurationType = keyConfigurationType;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -151,12 +220,13 @@ public class EncryptionKey  implements Serializable {
         Objects.equals(this.keydataSummary, encryptionKey.keydataSummary) &&
         Objects.equals(this.user, encryptionKey.user) &&
         Objects.equals(this.localEncryptionConfiguration, encryptionKey.localEncryptionConfiguration) &&
+        Objects.equals(this.keyConfigurationType, encryptionKey.keyConfigurationType) &&
         Objects.equals(this.selfUri, encryptionKey.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, createDate, keydataSummary, user, localEncryptionConfiguration, selfUri);
+    return Objects.hash(id, name, createDate, keydataSummary, user, localEncryptionConfiguration, keyConfigurationType, selfUri);
   }
 
   @Override
@@ -170,6 +240,7 @@ public class EncryptionKey  implements Serializable {
     sb.append("    keydataSummary: ").append(toIndentedString(keydataSummary)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    localEncryptionConfiguration: ").append(toIndentedString(localEncryptionConfiguration)).append("\n");
+    sb.append("    keyConfigurationType: ").append(toIndentedString(keyConfigurationType)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

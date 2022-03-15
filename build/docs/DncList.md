@@ -16,6 +16,7 @@ title: DncList
 | **importStatus** | <!----><!---->[**ImportStatus**](ImportStatus.html)<!----> | The status of the import process |  [optional] |
 | **size** | <!----><!---->**Long**<!----> | The total number of phone numbers in the DncList. |  [optional] |
 | **dncSourceType** | [**DncSourceTypeEnum**](#DncSourceTypeEnum)<!----> | The type of the DncList. |  |
+| **contactMethod** | [**ContactMethodEnum**](#ContactMethodEnum)<!----> | The contact method. Required if dncSourceType is rds. |  [optional] |
 | **loginId** | <!----><!---->**String**<!----> | A dnc.com loginId. Required if the dncSourceType is dnc.com. |  [optional] |
 | **dncCodes** | <!----><!---->**List&lt;String&gt;**<!----> | The list of dnc.com codes to be treated as DNC. Required if the dncSourceType is dnc.com. |  [optional] |
 | **licenseId** | <!----><!---->**String**<!----> | A gryphon license number. Required if the dncSourceType is gryphon. |  [optional] |
@@ -34,6 +35,18 @@ title: DncList
 | RDS | &quot;rds&quot; |
 | DNC_COM | &quot;dnc.com&quot; |
 | GRYPHON | &quot;gryphon&quot; |
+{: class="table table-striped"}
+
+
+<a name="ContactMethodEnum"></a>
+
+## Enum: ContactMethodEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| EMAIL | &quot;Email&quot; |
+| PHONE | &quot;Phone&quot; |
 {: class="table table-striped"}
 
 

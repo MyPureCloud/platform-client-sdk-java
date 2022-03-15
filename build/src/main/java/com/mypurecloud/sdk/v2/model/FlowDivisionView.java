@@ -51,6 +51,7 @@ public class FlowDivisionView  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     BOT("BOT"),
     COMMONMODULE("COMMONMODULE"),
+    DIGITALBOT("DIGITALBOT"),
     INBOUNDCALL("INBOUNDCALL"),
     INBOUNDCHAT("INBOUNDCHAT"),
     INBOUNDEMAIL("INBOUNDEMAIL"),

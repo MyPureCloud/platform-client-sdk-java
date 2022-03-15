@@ -39,7 +39,7 @@ public class KnowledgeBase  implements Serializable {
     }
   }
   /**
-   * Core language for knowledge base in which initial content must be created first
+   * Core language for knowledge base in which initial content must be created, language codes [en-US, en-UK, en-AU, de-DE] are supported currently, however the new DX knowledge will support all these language codes
    */
  @JsonDeserialize(using = CoreLanguageEnumDeserializer.class)
   public enum CoreLanguageEnum {
@@ -47,7 +47,13 @@ public class KnowledgeBase  implements Serializable {
     EN_US("en-US"),
     EN_UK("en-UK"),
     EN_AU("en-AU"),
-    DE_DE("de-DE");
+    DE_DE("de-DE"),
+    ES_US("es-US"),
+    ES_ES("es-ES"),
+    FR_FR("fr-FR"),
+    PT_BR("pt-BR"),
+    NL_NL("nl-NL"),
+    IT_IT("it-IT");
 
     private String value;
 
@@ -127,14 +133,14 @@ public class KnowledgeBase  implements Serializable {
 
   
   /**
-   * Core language for knowledge base in which initial content must be created first
+   * Core language for knowledge base in which initial content must be created, language codes [en-US, en-UK, en-AU, de-DE] are supported currently, however the new DX knowledge will support all these language codes
    **/
   public KnowledgeBase coreLanguage(CoreLanguageEnum coreLanguage) {
     this.coreLanguage = coreLanguage;
     return this;
   }
   
-  @ApiModelProperty(example = "en-us", required = true, value = "Core language for knowledge base in which initial content must be created first")
+  @ApiModelProperty(example = "en-US", required = true, value = "Core language for knowledge base in which initial content must be created, language codes [en-US, en-UK, en-AU, de-DE] are supported currently, however the new DX knowledge will support all these language codes")
   @JsonProperty("coreLanguage")
   public CoreLanguageEnum getCoreLanguage() {
     return coreLanguage;

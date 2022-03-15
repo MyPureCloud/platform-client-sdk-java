@@ -158,6 +158,8 @@ title: AuditLogMessage
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | ACCESSTOKEN | &quot;AccessToken&quot; |
+| ACTION | &quot;Action&quot; |
+| ACTIONDRAFT | &quot;ActionDraft&quot; |
 | ACTIONMAP | &quot;ActionMap&quot; |
 | ACTIONTEMPLATE | &quot;ActionTemplate&quot; |
 | ACTIVITYCODE | &quot;ActivityCode&quot; |

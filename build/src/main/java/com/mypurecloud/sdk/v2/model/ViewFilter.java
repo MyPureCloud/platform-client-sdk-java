@@ -578,6 +578,7 @@ public class ViewFilter  implements Serializable {
  @JsonDeserialize(using = UsedRoutingTypesEnumDeserializer.class)
   public enum UsedRoutingTypesEnum {
     BULLSEYE("Bullseye"),
+    CONDITIONAL("Conditional"),
     LAST("Last"),
     MANUAL("Manual"),
     PREDICTIVE("Predictive"),
@@ -629,6 +630,7 @@ public class ViewFilter  implements Serializable {
  @JsonDeserialize(using = RequestedRoutingTypesEnumDeserializer.class)
   public enum RequestedRoutingTypesEnum {
     BULLSEYE("Bullseye"),
+    CONDITIONAL("Conditional"),
     LAST("Last"),
     MANUAL("Manual"),
     PREDICTIVE("Predictive"),
@@ -1326,6 +1328,9 @@ public class ViewFilter  implements Serializable {
   private List<String> journeyUrlNotContainsAllConditions = new ArrayList<String>();
   private List<String> flowMilestoneIds = new ArrayList<String>();
   private Boolean isAssessmentPassed = null;
+  private String conversationInitiator = null;
+  private Boolean hasCustomerParticipated = null;
+  private Boolean isAcdInteraction = null;
 
   
   /**
@@ -3848,6 +3853,60 @@ public class ViewFilter  implements Serializable {
   }
 
   
+  /**
+   * Indicates the Brand (Bot/User/Agent) or End User who initiated the first message in the conversation
+   **/
+  public ViewFilter conversationInitiator(String conversationInitiator) {
+    this.conversationInitiator = conversationInitiator;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates the Brand (Bot/User/Agent) or End User who initiated the first message in the conversation")
+  @JsonProperty("conversationInitiator")
+  public String getConversationInitiator() {
+    return conversationInitiator;
+  }
+  public void setConversationInitiator(String conversationInitiator) {
+    this.conversationInitiator = conversationInitiator;
+  }
+
+  
+  /**
+   * Indicates if the customer has participated in an initiated conversation
+   **/
+  public ViewFilter hasCustomerParticipated(Boolean hasCustomerParticipated) {
+    this.hasCustomerParticipated = hasCustomerParticipated;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates if the customer has participated in an initiated conversation")
+  @JsonProperty("hasCustomerParticipated")
+  public Boolean getHasCustomerParticipated() {
+    return hasCustomerParticipated;
+  }
+  public void setHasCustomerParticipated(Boolean hasCustomerParticipated) {
+    this.hasCustomerParticipated = hasCustomerParticipated;
+  }
+
+  
+  /**
+   * Filter to indicate if interaction was ACD or non-ACD
+   **/
+  public ViewFilter isAcdInteraction(Boolean isAcdInteraction) {
+    this.isAcdInteraction = isAcdInteraction;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Filter to indicate if interaction was ACD or non-ACD")
+  @JsonProperty("isAcdInteraction")
+  public Boolean getIsAcdInteraction() {
+    return isAcdInteraction;
+  }
+  public void setIsAcdInteraction(Boolean isAcdInteraction) {
+    this.isAcdInteraction = isAcdInteraction;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -3997,12 +4056,15 @@ public class ViewFilter  implements Serializable {
         Objects.equals(this.journeyUrlContainsAllConditions, viewFilter.journeyUrlContainsAllConditions) &&
         Objects.equals(this.journeyUrlNotContainsAllConditions, viewFilter.journeyUrlNotContainsAllConditions) &&
         Objects.equals(this.flowMilestoneIds, viewFilter.flowMilestoneIds) &&
-        Objects.equals(this.isAssessmentPassed, viewFilter.isAssessmentPassed);
+        Objects.equals(this.isAssessmentPassed, viewFilter.isAssessmentPassed) &&
+        Objects.equals(this.conversationInitiator, viewFilter.conversationInitiator) &&
+        Objects.equals(this.hasCustomerParticipated, viewFilter.hasCustomerParticipated) &&
+        Objects.equals(this.isAcdInteraction, viewFilter.isAcdInteraction);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, managementUnitIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes, hasAgentAssistId, transcripts, transcriptLanguages, participantPurposes, showFirstQueue, teamIds, filterUsersByTeamIds, journeyActionMapIds, journeyOutcomeIds, journeySegmentIds, journeyActionMapTypes, developmentRoleList, developmentTypeList, developmentStatusList, developmentModuleIds, developmentActivityOverdue, customerSentimentScore, customerSentimentTrend, flowTransferTargets, developmentName, topicIds, externalTags, isNotResponding, isAuthenticated, botIds, botVersions, botMessageTypes, botProviderList, botProductList, botRecognitionFailureReasonList, botIntentList, botFinalIntentList, botSlotList, botResultList, blockedReasons, isRecorded, hasEvaluation, hasScoredEvaluation, emailDeliveryStatusList, isAgentOwnedCallback, agentCallbackOwnerIds, transcriptTopics, journeyFrequencyCapReasons, journeyBlockingActionMapIds, journeyActionTargetIds, journeyBlockingScheduleGroupIds, journeyBlockingEmergencyScheduleGroupIds, journeyUrlEqualConditions, journeyUrlNotEqualConditions, journeyUrlStartsWithConditions, journeyUrlEndsWithConditions, journeyUrlContainsAnyConditions, journeyUrlNotContainsAnyConditions, journeyUrlContainsAllConditions, journeyUrlNotContainsAllConditions, flowMilestoneIds, isAssessmentPassed);
+    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, managementUnitIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes, hasAgentAssistId, transcripts, transcriptLanguages, participantPurposes, showFirstQueue, teamIds, filterUsersByTeamIds, journeyActionMapIds, journeyOutcomeIds, journeySegmentIds, journeyActionMapTypes, developmentRoleList, developmentTypeList, developmentStatusList, developmentModuleIds, developmentActivityOverdue, customerSentimentScore, customerSentimentTrend, flowTransferTargets, developmentName, topicIds, externalTags, isNotResponding, isAuthenticated, botIds, botVersions, botMessageTypes, botProviderList, botProductList, botRecognitionFailureReasonList, botIntentList, botFinalIntentList, botSlotList, botResultList, blockedReasons, isRecorded, hasEvaluation, hasScoredEvaluation, emailDeliveryStatusList, isAgentOwnedCallback, agentCallbackOwnerIds, transcriptTopics, journeyFrequencyCapReasons, journeyBlockingActionMapIds, journeyActionTargetIds, journeyBlockingScheduleGroupIds, journeyBlockingEmergencyScheduleGroupIds, journeyUrlEqualConditions, journeyUrlNotEqualConditions, journeyUrlStartsWithConditions, journeyUrlEndsWithConditions, journeyUrlContainsAnyConditions, journeyUrlNotContainsAnyConditions, journeyUrlContainsAllConditions, journeyUrlNotContainsAllConditions, flowMilestoneIds, isAssessmentPassed, conversationInitiator, hasCustomerParticipated, isAcdInteraction);
   }
 
   @Override
@@ -4150,6 +4212,9 @@ public class ViewFilter  implements Serializable {
     sb.append("    journeyUrlNotContainsAllConditions: ").append(toIndentedString(journeyUrlNotContainsAllConditions)).append("\n");
     sb.append("    flowMilestoneIds: ").append(toIndentedString(flowMilestoneIds)).append("\n");
     sb.append("    isAssessmentPassed: ").append(toIndentedString(isAssessmentPassed)).append("\n");
+    sb.append("    conversationInitiator: ").append(toIndentedString(conversationInitiator)).append("\n");
+    sb.append("    hasCustomerParticipated: ").append(toIndentedString(hasCustomerParticipated)).append("\n");
+    sb.append("    isAcdInteraction: ").append(toIndentedString(isAcdInteraction)).append("\n");
     sb.append("}");
     return sb.toString();
   }

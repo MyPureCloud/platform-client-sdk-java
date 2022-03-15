@@ -95,14 +95,14 @@ public class OpenIntegrationRequest  implements Serializable {
 
   
   /**
-   * The outbound notification webhook signature secret token.
+   * The outbound notification webhook signature secret token. This token must be longer than 15 characters.
    **/
   public OpenIntegrationRequest outboundNotificationWebhookSignatureSecretToken(String outboundNotificationWebhookSignatureSecretToken) {
     this.outboundNotificationWebhookSignatureSecretToken = outboundNotificationWebhookSignatureSecretToken;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The outbound notification webhook signature secret token.")
+  @ApiModelProperty(example = "null", required = true, value = "The outbound notification webhook signature secret token. This token must be longer than 15 characters.")
   @JsonProperty("outboundNotificationWebhookSignatureSecretToken")
   public String getOutboundNotificationWebhookSignatureSecretToken() {
     return outboundNotificationWebhookSignatureSecretToken;

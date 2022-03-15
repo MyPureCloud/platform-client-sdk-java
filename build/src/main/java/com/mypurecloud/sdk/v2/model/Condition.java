@@ -11,6 +11,9 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ContactColumnToDataActionFieldMapping;
+import com.mypurecloud.sdk.v2.model.DataActionConditionPredicate;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -238,6 +241,13 @@ public class Condition  implements Serializable {
     }
   }
   private PropertyTypeEnum propertyType = null;
+  private DomainEntityRef dataAction = null;
+  private Boolean dataNotFoundResolution = null;
+  private String contactIdField = null;
+  private String callAnalysisResultField = null;
+  private String agentWrapupField = null;
+  private List<ContactColumnToDataActionFieldMapping> contactColumnToDataActionFieldMappings = new ArrayList<ContactColumnToDataActionFieldMapping>();
+  private List<DataActionConditionPredicate> predicates = new ArrayList<DataActionConditionPredicate>();
 
   
   /**
@@ -402,6 +412,132 @@ public class Condition  implements Serializable {
   }
 
   
+  /**
+   * The Data Action to use for this condition. Required for a dataActionCondition.
+   **/
+  public Condition dataAction(DomainEntityRef dataAction) {
+    this.dataAction = dataAction;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The Data Action to use for this condition. Required for a dataActionCondition.")
+  @JsonProperty("dataAction")
+  public DomainEntityRef getDataAction() {
+    return dataAction;
+  }
+  public void setDataAction(DomainEntityRef dataAction) {
+    this.dataAction = dataAction;
+  }
+
+  
+  /**
+   * The result of this condition if the data action returns a result indicating there was no data. Required for a DataActionCondition.
+   **/
+  public Condition dataNotFoundResolution(Boolean dataNotFoundResolution) {
+    this.dataNotFoundResolution = dataNotFoundResolution;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The result of this condition if the data action returns a result indicating there was no data. Required for a DataActionCondition.")
+  @JsonProperty("dataNotFoundResolution")
+  public Boolean getDataNotFoundResolution() {
+    return dataNotFoundResolution;
+  }
+  public void setDataNotFoundResolution(Boolean dataNotFoundResolution) {
+    this.dataNotFoundResolution = dataNotFoundResolution;
+  }
+
+  
+  /**
+   * The input field from the data action that the contactId will be passed to for this condition. Valid for a dataActionCondition.
+   **/
+  public Condition contactIdField(String contactIdField) {
+    this.contactIdField = contactIdField;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The input field from the data action that the contactId will be passed to for this condition. Valid for a dataActionCondition.")
+  @JsonProperty("contactIdField")
+  public String getContactIdField() {
+    return contactIdField;
+  }
+  public void setContactIdField(String contactIdField) {
+    this.contactIdField = contactIdField;
+  }
+
+  
+  /**
+   * The input field from the data action that the callAnalysisResult will be passed to for this condition. Valid for a wrapup dataActionCondition.
+   **/
+  public Condition callAnalysisResultField(String callAnalysisResultField) {
+    this.callAnalysisResultField = callAnalysisResultField;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The input field from the data action that the callAnalysisResult will be passed to for this condition. Valid for a wrapup dataActionCondition.")
+  @JsonProperty("callAnalysisResultField")
+  public String getCallAnalysisResultField() {
+    return callAnalysisResultField;
+  }
+  public void setCallAnalysisResultField(String callAnalysisResultField) {
+    this.callAnalysisResultField = callAnalysisResultField;
+  }
+
+  
+  /**
+   * The input field from the data action that the agentWrapup will be passed to for this condition. Valid for a wrapup dataActionCondition.
+   **/
+  public Condition agentWrapupField(String agentWrapupField) {
+    this.agentWrapupField = agentWrapupField;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The input field from the data action that the agentWrapup will be passed to for this condition. Valid for a wrapup dataActionCondition.")
+  @JsonProperty("agentWrapupField")
+  public String getAgentWrapupField() {
+    return agentWrapupField;
+  }
+  public void setAgentWrapupField(String agentWrapupField) {
+    this.agentWrapupField = agentWrapupField;
+  }
+
+  
+  /**
+   * A list of mappings defining which contact data fields will be passed to which data action input fields for this condition. Valid for a dataActionCondition.
+   **/
+  public Condition contactColumnToDataActionFieldMappings(List<ContactColumnToDataActionFieldMapping> contactColumnToDataActionFieldMappings) {
+    this.contactColumnToDataActionFieldMappings = contactColumnToDataActionFieldMappings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A list of mappings defining which contact data fields will be passed to which data action input fields for this condition. Valid for a dataActionCondition.")
+  @JsonProperty("contactColumnToDataActionFieldMappings")
+  public List<ContactColumnToDataActionFieldMapping> getContactColumnToDataActionFieldMappings() {
+    return contactColumnToDataActionFieldMappings;
+  }
+  public void setContactColumnToDataActionFieldMappings(List<ContactColumnToDataActionFieldMapping> contactColumnToDataActionFieldMappings) {
+    this.contactColumnToDataActionFieldMappings = contactColumnToDataActionFieldMappings;
+  }
+
+  
+  /**
+   * A list of predicates defining the comparisons to use for this condition. Required for a dataActionCondition.
+   **/
+  public Condition predicates(List<DataActionConditionPredicate> predicates) {
+    this.predicates = predicates;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A list of predicates defining the comparisons to use for this condition. Required for a dataActionCondition.")
+  @JsonProperty("predicates")
+  public List<DataActionConditionPredicate> getPredicates() {
+    return predicates;
+  }
+  public void setPredicates(List<DataActionConditionPredicate> predicates) {
+    this.predicates = predicates;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -420,12 +556,19 @@ public class Condition  implements Serializable {
         Objects.equals(this.operator, condition.operator) &&
         Objects.equals(this.codes, condition.codes) &&
         Objects.equals(this.property, condition.property) &&
-        Objects.equals(this.propertyType, condition.propertyType);
+        Objects.equals(this.propertyType, condition.propertyType) &&
+        Objects.equals(this.dataAction, condition.dataAction) &&
+        Objects.equals(this.dataNotFoundResolution, condition.dataNotFoundResolution) &&
+        Objects.equals(this.contactIdField, condition.contactIdField) &&
+        Objects.equals(this.callAnalysisResultField, condition.callAnalysisResultField) &&
+        Objects.equals(this.agentWrapupField, condition.agentWrapupField) &&
+        Objects.equals(this.contactColumnToDataActionFieldMappings, condition.contactColumnToDataActionFieldMappings) &&
+        Objects.equals(this.predicates, condition.predicates);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, inverted, attributeName, value, valueType, operator, codes, property, propertyType);
+    return Objects.hash(type, inverted, attributeName, value, valueType, operator, codes, property, propertyType, dataAction, dataNotFoundResolution, contactIdField, callAnalysisResultField, agentWrapupField, contactColumnToDataActionFieldMappings, predicates);
   }
 
   @Override
@@ -442,6 +585,13 @@ public class Condition  implements Serializable {
     sb.append("    codes: ").append(toIndentedString(codes)).append("\n");
     sb.append("    property: ").append(toIndentedString(property)).append("\n");
     sb.append("    propertyType: ").append(toIndentedString(propertyType)).append("\n");
+    sb.append("    dataAction: ").append(toIndentedString(dataAction)).append("\n");
+    sb.append("    dataNotFoundResolution: ").append(toIndentedString(dataNotFoundResolution)).append("\n");
+    sb.append("    contactIdField: ").append(toIndentedString(contactIdField)).append("\n");
+    sb.append("    callAnalysisResultField: ").append(toIndentedString(callAnalysisResultField)).append("\n");
+    sb.append("    agentWrapupField: ").append(toIndentedString(agentWrapupField)).append("\n");
+    sb.append("    contactColumnToDataActionFieldMappings: ").append(toIndentedString(contactColumnToDataActionFieldMappings)).append("\n");
+    sb.append("    predicates: ").append(toIndentedString(predicates)).append("\n");
     sb.append("}");
     return sb.toString();
   }

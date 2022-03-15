@@ -9,6 +9,9 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
@@ -17,6 +20,44 @@ import java.io.Serializable;
 
 public class ContactColumnToDataActionFieldMapping  implements Serializable {
   
+  private String contactColumnName = null;
+  private String dataActionField = null;
+
+  
+  /**
+   * The name of a contact column whose data will be passed to the data action
+   **/
+  public ContactColumnToDataActionFieldMapping contactColumnName(String contactColumnName) {
+    this.contactColumnName = contactColumnName;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "The name of a contact column whose data will be passed to the data action")
+  @JsonProperty("contactColumnName")
+  public String getContactColumnName() {
+    return contactColumnName;
+  }
+  public void setContactColumnName(String contactColumnName) {
+    this.contactColumnName = contactColumnName;
+  }
+
+  
+  /**
+   * The name of an input field from the data action that the contact column data will be passed to
+   **/
+  public ContactColumnToDataActionFieldMapping dataActionField(String dataActionField) {
+    this.dataActionField = dataActionField;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "The name of an input field from the data action that the contact column data will be passed to")
+  @JsonProperty("dataActionField")
+  public String getDataActionField() {
+    return dataActionField;
+  }
+  public void setDataActionField(String dataActionField) {
+    this.dataActionField = dataActionField;
+  }
 
   
 
@@ -28,12 +69,14 @@ public class ContactColumnToDataActionFieldMapping  implements Serializable {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    return true;
+    ContactColumnToDataActionFieldMapping contactColumnToDataActionFieldMapping = (ContactColumnToDataActionFieldMapping) o;
+    return Objects.equals(this.contactColumnName, contactColumnToDataActionFieldMapping.contactColumnName) &&
+        Objects.equals(this.dataActionField, contactColumnToDataActionFieldMapping.dataActionField);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash();
+    return Objects.hash(contactColumnName, dataActionField);
   }
 
   @Override
@@ -41,6 +84,8 @@ public class ContactColumnToDataActionFieldMapping  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class ContactColumnToDataActionFieldMapping {\n");
     
+    sb.append("    contactColumnName: ").append(toIndentedString(contactColumnName)).append("\n");
+    sb.append("    dataActionField: ").append(toIndentedString(dataActionField)).append("\n");
     sb.append("}");
     return sb.toString();
   }

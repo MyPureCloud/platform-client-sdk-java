@@ -27,6 +27,7 @@ title: AcwDetailEventTopicAfterCallWorkEvent
 | **userId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **queueId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **wrapupCode** | <!----><!---->**String**<!----> |  |  [optional] |
+| **wrapupNotes** | <!----><!---->**String**<!----> |  |  [optional] |
 | **wrapupDurationMs** | <!----><!---->**Integer**<!----> |  |  [optional] |
 {: class="table table-striped"}
 

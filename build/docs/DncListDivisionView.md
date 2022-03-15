@@ -14,6 +14,7 @@ title: DncListDivisionView
 | **importStatus** | <!----><!---->[**ImportStatus**](ImportStatus.html)<!----> | The status of the import process. |  [optional] |
 | **size** | <!----><!---->**Long**<!----> | The number of contacts in the DncList. |  [optional] |
 | **dncSourceType** | [**DncSourceTypeEnum**](#DncSourceTypeEnum)<!----> | The type of the DncList. |  [optional] |
+| **contactMethod** | [**ContactMethodEnum**](#ContactMethodEnum)<!----> | The contact method. Required if dncSourceType is rds. |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 
@@ -28,6 +29,18 @@ title: DncListDivisionView
 | RDS | &quot;rds&quot; |
 | DNC_COM | &quot;dnc.com&quot; |
 | GRYPHON | &quot;gryphon&quot; |
+{: class="table table-striped"}
+
+
+<a name="ContactMethodEnum"></a>
+
+## Enum: ContactMethodEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| EMAIL | &quot;Email&quot; |
+| PHONE | &quot;Phone&quot; |
 {: class="table table-striped"}
 
 

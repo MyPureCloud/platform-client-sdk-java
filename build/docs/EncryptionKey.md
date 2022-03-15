@@ -14,7 +14,22 @@ title: EncryptionKey
 | **keydataSummary** | <!----><!---->**String**<!----> | key data summary (base 64 encoded public key) |  [optional] |
 | **user** | <!----><!---->[**User**](User.html)<!----> | user that requested generation of public key |  [optional] |
 | **localEncryptionConfiguration** | <!----><!---->[**LocalEncryptionConfiguration**](LocalEncryptionConfiguration.html)<!----> | Local configuration |  [optional] |
+| **keyConfigurationType** | [**KeyConfigurationTypeEnum**](#KeyConfigurationTypeEnum)<!----> | Key type used in this configuration |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
+{: class="table table-striped"}
+
+
+<a name="KeyConfigurationTypeEnum"></a>
+
+## Enum: KeyConfigurationTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| KMSSYMMETRIC | &quot;KmsSymmetric&quot; |
+| LOCALKEYMANAGER | &quot;LocalKeyManager&quot; |
+| NATIVE | &quot;Native&quot; |
+| NONE | &quot;None&quot; |
 {: class="table table-striped"}
 
 

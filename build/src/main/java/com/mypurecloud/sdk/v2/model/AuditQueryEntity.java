@@ -43,6 +43,8 @@ public class AuditQueryEntity  implements Serializable {
   public enum NameEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ACCESSTOKEN("AccessToken"),
+    ACTION("Action"),
+    ACTIONDRAFT("ActionDraft"),
     ACTIONMAP("ActionMap"),
     ACTIONTEMPLATE("ActionTemplate"),
     ACTIVITYCODE("ActivityCode"),

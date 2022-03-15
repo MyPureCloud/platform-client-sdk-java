@@ -394,7 +394,8 @@ public class GetLearningAssignmentsRequest {
 	public enum statesValues { 
 		ASSIGNED("Assigned"), 
 		INPROGRESS("InProgress"), 
-		COMPLETED("Completed");
+		COMPLETED("Completed"), 
+		NOTCOMPLETED("NotCompleted");
 
 		private String value;
 

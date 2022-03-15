@@ -203,7 +203,7 @@ public class QualityApi {
    * 
    * @param conversationId conversationId (required)
    * @param evaluationId evaluationId (required)
-   * @param expand evaluatorId (optional)
+   * @param expand evaluatorId, evaluationForm (optional)
    * @return Evaluation
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -217,7 +217,7 @@ public class QualityApi {
    * 
    * @param conversationId conversationId (required)
    * @param evaluationId evaluationId (required)
-   * @param expand evaluatorId (optional)
+   * @param expand evaluatorId, evaluationForm (optional)
    * @return Evaluation
    * @throws IOException if the request fails to be processed
    */
@@ -4462,7 +4462,7 @@ public class QualityApi {
    * @param conversationId conversationId (required)
    * @param evaluationId evaluationId (required)
    * @param body evaluation (required)
-   * @param expand evaluatorId (optional)
+   * @param expand evaluatorId, evaluationForm (optional)
    * @return Evaluation
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -4477,7 +4477,7 @@ public class QualityApi {
    * @param conversationId conversationId (required)
    * @param evaluationId evaluationId (required)
    * @param body evaluation (required)
-   * @param expand evaluatorId (optional)
+   * @param expand evaluatorId, evaluationForm (optional)
    * @return Evaluation
    * @throws IOException if the request fails to be processed
    */

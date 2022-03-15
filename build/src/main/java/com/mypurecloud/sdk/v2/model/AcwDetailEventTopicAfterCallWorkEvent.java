@@ -198,6 +198,7 @@ public class AcwDetailEventTopicAfterCallWorkEvent  implements Serializable {
   private String userId = null;
   private String queueId = null;
   private String wrapupCode = null;
+  private String wrapupNotes = null;
   private Integer wrapupDurationMs = null;
 
   
@@ -526,6 +527,23 @@ public class AcwDetailEventTopicAfterCallWorkEvent  implements Serializable {
   
   /**
    **/
+  public AcwDetailEventTopicAfterCallWorkEvent wrapupNotes(String wrapupNotes) {
+    this.wrapupNotes = wrapupNotes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("wrapupNotes")
+  public String getWrapupNotes() {
+    return wrapupNotes;
+  }
+  public void setWrapupNotes(String wrapupNotes) {
+    this.wrapupNotes = wrapupNotes;
+  }
+
+  
+  /**
+   **/
   public AcwDetailEventTopicAfterCallWorkEvent wrapupDurationMs(Integer wrapupDurationMs) {
     this.wrapupDurationMs = wrapupDurationMs;
     return this;
@@ -570,12 +588,13 @@ public class AcwDetailEventTopicAfterCallWorkEvent  implements Serializable {
         Objects.equals(this.userId, acwDetailEventTopicAfterCallWorkEvent.userId) &&
         Objects.equals(this.queueId, acwDetailEventTopicAfterCallWorkEvent.queueId) &&
         Objects.equals(this.wrapupCode, acwDetailEventTopicAfterCallWorkEvent.wrapupCode) &&
+        Objects.equals(this.wrapupNotes, acwDetailEventTopicAfterCallWorkEvent.wrapupNotes) &&
         Objects.equals(this.wrapupDurationMs, acwDetailEventTopicAfterCallWorkEvent.wrapupDurationMs);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventTime, conversationId, participantId, sessionId, mediaType, provider, direction, ani, dnis, addressTo, addressFrom, callbackUserName, callbackNumbers, callbackScheduledTime, subject, messageType, userId, queueId, wrapupCode, wrapupDurationMs);
+    return Objects.hash(eventTime, conversationId, participantId, sessionId, mediaType, provider, direction, ani, dnis, addressTo, addressFrom, callbackUserName, callbackNumbers, callbackScheduledTime, subject, messageType, userId, queueId, wrapupCode, wrapupNotes, wrapupDurationMs);
   }
 
   @Override
@@ -602,6 +621,7 @@ public class AcwDetailEventTopicAfterCallWorkEvent  implements Serializable {
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    queueId: ").append(toIndentedString(queueId)).append("\n");
     sb.append("    wrapupCode: ").append(toIndentedString(wrapupCode)).append("\n");
+    sb.append("    wrapupNotes: ").append(toIndentedString(wrapupNotes)).append("\n");
     sb.append("    wrapupDurationMs: ").append(toIndentedString(wrapupDurationMs)).append("\n");
     sb.append("}");
     return sb.toString();

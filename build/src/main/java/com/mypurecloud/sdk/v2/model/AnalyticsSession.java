@@ -253,6 +253,7 @@ public class AnalyticsSession  implements Serializable {
  @JsonDeserialize(using = RequestedRoutingsEnumDeserializer.class)
   public enum RequestedRoutingsEnum {
     BULLSEYE("Bullseye"),
+    CONDITIONAL("Conditional"),
     LAST("Last"),
     MANUAL("Manual"),
     PREDICTIVE("Predictive"),
@@ -317,6 +318,7 @@ public class AnalyticsSession  implements Serializable {
   public enum UsedRoutingEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     BULLSEYE("Bullseye"),
+    CONDITIONAL("Conditional"),
     LAST("Last"),
     MANUAL("Manual"),
     PREDICTIVE("Predictive"),

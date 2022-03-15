@@ -171,7 +171,7 @@ Configuration.setDefaultApiClient(apiClient);
 QualityApi apiInstance = new QualityApi();
 String conversationId = "conversationId_example"; // String | conversationId
 String evaluationId = "evaluationId_example"; // String | evaluationId
-String expand = "expand_example"; // String | evaluatorId
+String expand = "expand_example"; // String | evaluatorId, evaluationForm
 try {
     Evaluation result = apiInstance.deleteQualityConversationEvaluation(conversationId, evaluationId, expand);
     System.out.println(result);
@@ -188,7 +188,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **conversationId** | **String**| conversationId | 
 | **evaluationId** | **String**| evaluationId | 
-| **expand** | **String**| evaluatorId | [optional] 
+| **expand** | **String**| evaluatorId, evaluationForm | [optional] 
 {: class="table-striped"}
 
 
@@ -3439,7 +3439,7 @@ QualityApi apiInstance = new QualityApi();
 String conversationId = "conversationId_example"; // String | conversationId
 String evaluationId = "evaluationId_example"; // String | evaluationId
 Evaluation body = new Evaluation(); // Evaluation | evaluation
-String expand = "expand_example"; // String | evaluatorId
+String expand = "expand_example"; // String | evaluatorId, evaluationForm
 try {
     Evaluation result = apiInstance.putQualityConversationEvaluation(conversationId, evaluationId, body, expand);
     System.out.println(result);
@@ -3457,7 +3457,7 @@ try {
 | **conversationId** | **String**| conversationId | 
 | **evaluationId** | **String**| evaluationId | 
 | **body** | [**Evaluation**](Evaluation.html)| evaluation | 
-| **expand** | **String**| evaluatorId | [optional] 
+| **expand** | **String**| evaluatorId, evaluationForm | [optional] 
 {: class="table-striped"}
 
 

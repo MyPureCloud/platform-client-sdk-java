@@ -11,8 +11,11 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ContactColumnToDataActionFieldMapping;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -180,6 +183,11 @@ public class DialerAction  implements Serializable {
   }
   private UpdateOptionEnum updateOption = null;
   private Map<String, String> properties = null;
+  private DomainEntityRef dataAction = null;
+  private List<ContactColumnToDataActionFieldMapping> contactColumnToDataActionFieldMappings = new ArrayList<ContactColumnToDataActionFieldMapping>();
+  private String contactIdField = null;
+  private String callAnalysisResultField = null;
+  private String agentWrapupField = null;
 
   
   /**
@@ -254,6 +262,96 @@ public class DialerAction  implements Serializable {
   }
 
   
+  /**
+   * The Data Action to use for this action. Required for a dataActionBehavior.
+   **/
+  public DialerAction dataAction(DomainEntityRef dataAction) {
+    this.dataAction = dataAction;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The Data Action to use for this action. Required for a dataActionBehavior.")
+  @JsonProperty("dataAction")
+  public DomainEntityRef getDataAction() {
+    return dataAction;
+  }
+  public void setDataAction(DomainEntityRef dataAction) {
+    this.dataAction = dataAction;
+  }
+
+  
+  /**
+   * A list of mappings defining which contact data fields will be passed to which data action input fields for this condition. Valid for a dataActionBehavior.
+   **/
+  public DialerAction contactColumnToDataActionFieldMappings(List<ContactColumnToDataActionFieldMapping> contactColumnToDataActionFieldMappings) {
+    this.contactColumnToDataActionFieldMappings = contactColumnToDataActionFieldMappings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A list of mappings defining which contact data fields will be passed to which data action input fields for this condition. Valid for a dataActionBehavior.")
+  @JsonProperty("contactColumnToDataActionFieldMappings")
+  public List<ContactColumnToDataActionFieldMapping> getContactColumnToDataActionFieldMappings() {
+    return contactColumnToDataActionFieldMappings;
+  }
+  public void setContactColumnToDataActionFieldMappings(List<ContactColumnToDataActionFieldMapping> contactColumnToDataActionFieldMappings) {
+    this.contactColumnToDataActionFieldMappings = contactColumnToDataActionFieldMappings;
+  }
+
+  
+  /**
+   * The input field from the data action that the contactId will be passed to for this condition. Valid for a dataActionBehavior.
+   **/
+  public DialerAction contactIdField(String contactIdField) {
+    this.contactIdField = contactIdField;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The input field from the data action that the contactId will be passed to for this condition. Valid for a dataActionBehavior.")
+  @JsonProperty("contactIdField")
+  public String getContactIdField() {
+    return contactIdField;
+  }
+  public void setContactIdField(String contactIdField) {
+    this.contactIdField = contactIdField;
+  }
+
+  
+  /**
+   * The input field from the data action that the callAnalysisResult will be passed to for this condition. Valid for a wrapup dataActionBehavior.
+   **/
+  public DialerAction callAnalysisResultField(String callAnalysisResultField) {
+    this.callAnalysisResultField = callAnalysisResultField;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The input field from the data action that the callAnalysisResult will be passed to for this condition. Valid for a wrapup dataActionBehavior.")
+  @JsonProperty("callAnalysisResultField")
+  public String getCallAnalysisResultField() {
+    return callAnalysisResultField;
+  }
+  public void setCallAnalysisResultField(String callAnalysisResultField) {
+    this.callAnalysisResultField = callAnalysisResultField;
+  }
+
+  
+  /**
+   * The input field from the data action that the agentWrapup will be passed to for this condition. Valid for a wrapup dataActionBehavior.
+   **/
+  public DialerAction agentWrapupField(String agentWrapupField) {
+    this.agentWrapupField = agentWrapupField;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The input field from the data action that the agentWrapup will be passed to for this condition. Valid for a wrapup dataActionBehavior.")
+  @JsonProperty("agentWrapupField")
+  public String getAgentWrapupField() {
+    return agentWrapupField;
+  }
+  public void setAgentWrapupField(String agentWrapupField) {
+    this.agentWrapupField = agentWrapupField;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -267,12 +365,17 @@ public class DialerAction  implements Serializable {
     return Objects.equals(this.type, dialerAction.type) &&
         Objects.equals(this.actionTypeName, dialerAction.actionTypeName) &&
         Objects.equals(this.updateOption, dialerAction.updateOption) &&
-        Objects.equals(this.properties, dialerAction.properties);
+        Objects.equals(this.properties, dialerAction.properties) &&
+        Objects.equals(this.dataAction, dialerAction.dataAction) &&
+        Objects.equals(this.contactColumnToDataActionFieldMappings, dialerAction.contactColumnToDataActionFieldMappings) &&
+        Objects.equals(this.contactIdField, dialerAction.contactIdField) &&
+        Objects.equals(this.callAnalysisResultField, dialerAction.callAnalysisResultField) &&
+        Objects.equals(this.agentWrapupField, dialerAction.agentWrapupField);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, actionTypeName, updateOption, properties);
+    return Objects.hash(type, actionTypeName, updateOption, properties, dataAction, contactColumnToDataActionFieldMappings, contactIdField, callAnalysisResultField, agentWrapupField);
   }
 
   @Override
@@ -284,6 +387,11 @@ public class DialerAction  implements Serializable {
     sb.append("    actionTypeName: ").append(toIndentedString(actionTypeName)).append("\n");
     sb.append("    updateOption: ").append(toIndentedString(updateOption)).append("\n");
     sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
+    sb.append("    dataAction: ").append(toIndentedString(dataAction)).append("\n");
+    sb.append("    contactColumnToDataActionFieldMappings: ").append(toIndentedString(contactColumnToDataActionFieldMappings)).append("\n");
+    sb.append("    contactIdField: ").append(toIndentedString(contactIdField)).append("\n");
+    sb.append("    callAnalysisResultField: ").append(toIndentedString(callAnalysisResultField)).append("\n");
+    sb.append("    agentWrapupField: ").append(toIndentedString(agentWrapupField)).append("\n");
     sb.append("}");
     return sb.toString();
   }

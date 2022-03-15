@@ -3389,13 +3389,13 @@ public class GamificationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<GetProfilesResponse> postGamificationProfilesAsync(PostGamificationProfilesRequest request, final AsyncApiCallback<GetProfilesResponse> callback) {
+  public Future<PerformanceProfile> postGamificationProfilesAsync(PostGamificationProfilesRequest request, final AsyncApiCallback<PerformanceProfile> callback) {
     try {
-      final SettableFuture<GetProfilesResponse> future = SettableFuture.create();
+      final SettableFuture<PerformanceProfile> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GetProfilesResponse>() {}, new AsyncApiCallback<ApiResponse<GetProfilesResponse>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PerformanceProfile>() {}, new AsyncApiCallback<ApiResponse<PerformanceProfile>>() {
         @Override
-        public void onCompleted(ApiResponse<GetProfilesResponse> response) {
+        public void onCompleted(ApiResponse<PerformanceProfile> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -3423,13 +3423,13 @@ public class GamificationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<GetProfilesResponse>> postGamificationProfilesAsync(ApiRequest<CreatePerformanceProfile> request, final AsyncApiCallback<ApiResponse<GetProfilesResponse>> callback) {
+  public Future<ApiResponse<PerformanceProfile>> postGamificationProfilesAsync(ApiRequest<CreatePerformanceProfile> request, final AsyncApiCallback<ApiResponse<PerformanceProfile>> callback) {
     try {
-      final SettableFuture<ApiResponse<GetProfilesResponse>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<PerformanceProfile>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<GetProfilesResponse>() {}, new AsyncApiCallback<ApiResponse<GetProfilesResponse>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<PerformanceProfile>() {}, new AsyncApiCallback<ApiResponse<PerformanceProfile>>() {
         @Override
-        public void onCompleted(ApiResponse<GetProfilesResponse> response) {
+        public void onCompleted(ApiResponse<PerformanceProfile> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -3437,7 +3437,7 @@ public class GamificationApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<GetProfilesResponse> response = (ApiResponse<GetProfilesResponse>)(ApiResponse<?>)exception;
+            ApiResponse<PerformanceProfile> response = (ApiResponse<PerformanceProfile>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -3445,7 +3445,7 @@ public class GamificationApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<GetProfilesResponse> response = (ApiResponse<GetProfilesResponse>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<PerformanceProfile> response = (ApiResponse<PerformanceProfile>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -126,13 +126,237 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
   private String assignerId = null;
   private Boolean authenticated = null;
   private String conversationId = null;
-  private String conversationInitiator = null;
+
+  private static class ConversationInitiatorEnumDeserializer extends StdDeserializer<ConversationInitiatorEnum> {
+    public ConversationInitiatorEnumDeserializer() {
+      super(ConversationInitiatorEnumDeserializer.class);
+    }
+
+    @Override
+    public ConversationInitiatorEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ConversationInitiatorEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Indicates the participant purpose of the participant initiating a message conversation
+   */
+ @JsonDeserialize(using = ConversationInitiatorEnumDeserializer.class)
+  public enum ConversationInitiatorEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ACD("acd"),
+    AGENT("agent"),
+    API("api"),
+    BOTFLOW("botflow"),
+    CAMPAIGN("campaign"),
+    CUSTOMER("customer"),
+    DIALER("dialer"),
+    EXTERNAL("external"),
+    FAX("fax"),
+    GROUP("group"),
+    INBOUND("inbound"),
+    IVR("ivr"),
+    MANUAL("manual"),
+    OUTBOUND("outbound"),
+    STATION("station"),
+    USER("user"),
+    VOICEMAIL("voicemail"),
+    WORKFLOW("workflow");
+
+    private String value;
+
+    ConversationInitiatorEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ConversationInitiatorEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ConversationInitiatorEnum value : ConversationInitiatorEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ConversationInitiatorEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private ConversationInitiatorEnum conversationInitiator = null;
   private String convertedFrom = null;
   private String convertedTo = null;
-  private String deliveryStatus = null;
+  private Boolean customerParticipation = null;
+
+  private static class DeliveryStatusEnumDeserializer extends StdDeserializer<DeliveryStatusEnum> {
+    public DeliveryStatusEnumDeserializer() {
+      super(DeliveryStatusEnumDeserializer.class);
+    }
+
+    @Override
+    public DeliveryStatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return DeliveryStatusEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The email or SMS delivery status
+   */
+ @JsonDeserialize(using = DeliveryStatusEnumDeserializer.class)
+  public enum DeliveryStatusEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    DELIVERYFAILED("DeliveryFailed"),
+    DELIVERYSUCCESS("DeliverySuccess"),
+    FAILED("Failed"),
+    QUEUED("Queued"),
+    READ("Read"),
+    RECEIVED("Received"),
+    SENT("Sent");
+
+    private String value;
+
+    DeliveryStatusEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static DeliveryStatusEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (DeliveryStatusEnum value : DeliveryStatusEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return DeliveryStatusEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private DeliveryStatusEnum deliveryStatus = null;
   private List<String> destinationAddresses = new ArrayList<String>();
-  private String direction = null;
-  private String disconnectType = null;
+
+  private static class DirectionEnumDeserializer extends StdDeserializer<DirectionEnum> {
+    public DirectionEnumDeserializer() {
+      super(DirectionEnumDeserializer.class);
+    }
+
+    @Override
+    public DirectionEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return DirectionEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The direction of the communication
+   */
+ @JsonDeserialize(using = DirectionEnumDeserializer.class)
+  public enum DirectionEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    INBOUND("inbound"),
+    OUTBOUND("outbound");
+
+    private String value;
+
+    DirectionEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static DirectionEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (DirectionEnum value : DirectionEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return DirectionEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private DirectionEnum direction = null;
+
+  private static class DisconnectTypeEnumDeserializer extends StdDeserializer<DisconnectTypeEnum> {
+    public DisconnectTypeEnumDeserializer() {
+      super(DisconnectTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public DisconnectTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return DisconnectTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The session disconnect type
+   */
+ @JsonDeserialize(using = DisconnectTypeEnumDeserializer.class)
+  public enum DisconnectTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    CLIENT("client"),
+    CONFERENCETRANSFER("conferenceTransfer"),
+    CONSULTTRANSFER("consultTransfer"),
+    ENDPOINT("endpoint"),
+    ERROR("error"),
+    FORWARDTRANSFER("forwardTransfer"),
+    NOANSWERTRANSFER("noAnswerTransfer"),
+    NOTAVAILABLETRANSFER("notAvailableTransfer"),
+    OTHER("other"),
+    PEER("peer"),
+    SPAM("spam"),
+    SYSTEM("system"),
+    TIMEOUT("timeout"),
+    TRANSFER("transfer"),
+    TRANSPORTFAILURE("transportFailure"),
+    UNCALLABLE("uncallable");
+
+    private String value;
+
+    DisconnectTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static DisconnectTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (DisconnectTypeEnum value : DisconnectTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return DisconnectTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private DisconnectTypeEnum disconnectType = null;
   private List<String> divisionIds = new ArrayList<String>();
   private String dnis = null;
   private String edgeId = null;
@@ -143,7 +367,53 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
   private String externalOrganizationId = null;
   private String externalTag = null;
   private Boolean firstQueue = null;
-  private String flaggedReason = null;
+
+  private static class FlaggedReasonEnumDeserializer extends StdDeserializer<FlaggedReasonEnum> {
+    public FlaggedReasonEnumDeserializer() {
+      super(FlaggedReasonEnumDeserializer.class);
+    }
+
+    @Override
+    public FlaggedReasonEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return FlaggedReasonEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Reason for which participant flagged conversation
+   */
+ @JsonDeserialize(using = FlaggedReasonEnumDeserializer.class)
+  public enum FlaggedReasonEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    GENERAL("general");
+
+    private String value;
+
+    FlaggedReasonEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static FlaggedReasonEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (FlaggedReasonEnum value : FlaggedReasonEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return FlaggedReasonEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private FlaggedReasonEnum flaggedReason = null;
   private String flowInType = null;
   private String flowOutType = null;
   private String groupId = null;
@@ -157,16 +427,180 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
   private String journeyCustomerSessionIdType = null;
   private List<String> knowledgeBaseIds = new ArrayList<String>();
   private Integer mediaCount = null;
-  private String mediaType = null;
+
+  private static class MediaTypeEnumDeserializer extends StdDeserializer<MediaTypeEnum> {
+    public MediaTypeEnumDeserializer() {
+      super(MediaTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public MediaTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return MediaTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The session media type
+   */
+ @JsonDeserialize(using = MediaTypeEnumDeserializer.class)
+  public enum MediaTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    CALLBACK("callback"),
+    CHAT("chat"),
+    COBROWSE("cobrowse"),
+    EMAIL("email"),
+    MESSAGE("message"),
+    SCREENSHARE("screenshare"),
+    UNKNOWN("unknown"),
+    VIDEO("video"),
+    VOICE("voice");
+
+    private String value;
+
+    MediaTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static MediaTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (MediaTypeEnum value : MediaTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return MediaTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private MediaTypeEnum mediaType = null;
   private String messageType = null;
-  private String originatingDirection = null;
+
+  private static class OriginatingDirectionEnumDeserializer extends StdDeserializer<OriginatingDirectionEnum> {
+    public OriginatingDirectionEnumDeserializer() {
+      super(OriginatingDirectionEnumDeserializer.class);
+    }
+
+    @Override
+    public OriginatingDirectionEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return OriginatingDirectionEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The original direction of the conversation
+   */
+ @JsonDeserialize(using = OriginatingDirectionEnumDeserializer.class)
+  public enum OriginatingDirectionEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    INBOUND("inbound"),
+    OUTBOUND("outbound");
+
+    private String value;
+
+    OriginatingDirectionEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static OriginatingDirectionEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (OriginatingDirectionEnum value : OriginatingDirectionEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return OriginatingDirectionEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private OriginatingDirectionEnum originatingDirection = null;
   private String outboundCampaignId = null;
   private String outboundContactId = null;
   private String outboundContactListId = null;
   private String participantName = null;
   private String peerId = null;
   private String provider = null;
-  private String purpose = null;
+
+  private static class PurposeEnumDeserializer extends StdDeserializer<PurposeEnum> {
+    public PurposeEnumDeserializer() {
+      super(PurposeEnumDeserializer.class);
+    }
+
+    @Override
+    public PurposeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return PurposeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The participant's purpose
+   */
+ @JsonDeserialize(using = PurposeEnumDeserializer.class)
+  public enum PurposeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ACD("acd"),
+    AGENT("agent"),
+    API("api"),
+    BOTFLOW("botflow"),
+    CAMPAIGN("campaign"),
+    CUSTOMER("customer"),
+    DIALER("dialer"),
+    EXTERNAL("external"),
+    FAX("fax"),
+    GROUP("group"),
+    INBOUND("inbound"),
+    IVR("ivr"),
+    MANUAL("manual"),
+    OUTBOUND("outbound"),
+    STATION("station"),
+    USER("user"),
+    VOICEMAIL("voicemail"),
+    WORKFLOW("workflow");
+
+    private String value;
+
+    PurposeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static PurposeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (PurposeEnum value : PurposeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return PurposeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private PurposeEnum purpose = null;
   private String queueId = null;
   private String remote = null;
   private List<String> removedSkillIds = new ArrayList<String>();
@@ -192,6 +626,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
  @JsonDeserialize(using = RequestedRoutingsEnumDeserializer.class)
   public enum RequestedRoutingsEnum {
     BULLSEYE("Bullseye"),
+    CONDITIONAL("Conditional"),
     LAST("Last"),
     MANUAL("Manual"),
     PREDICTIVE("Predictive"),
@@ -254,6 +689,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
   public enum UsedRoutingEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     BULLSEYE("Bullseye"),
+    CONDITIONAL("Conditional"),
     LAST("Last"),
     MANUAL("Manual"),
     PREDICTIVE("Predictive"),
@@ -548,17 +984,17 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
   /**
    * Indicates the participant purpose of the participant initiating a message conversation
    **/
-  public ConversationMetricsTopicConversationMetricRecord conversationInitiator(String conversationInitiator) {
+  public ConversationMetricsTopicConversationMetricRecord conversationInitiator(ConversationInitiatorEnum conversationInitiator) {
     this.conversationInitiator = conversationInitiator;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Indicates the participant purpose of the participant initiating a message conversation")
   @JsonProperty("conversationInitiator")
-  public String getConversationInitiator() {
+  public ConversationInitiatorEnum getConversationInitiator() {
     return conversationInitiator;
   }
-  public void setConversationInitiator(String conversationInitiator) {
+  public void setConversationInitiator(ConversationInitiatorEnum conversationInitiator) {
     this.conversationInitiator = conversationInitiator;
   }
 
@@ -600,19 +1036,37 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
 
   
   /**
+   * Indicates a messaging conversation in which the customer participated by sending at least one message
+   **/
+  public ConversationMetricsTopicConversationMetricRecord customerParticipation(Boolean customerParticipation) {
+    this.customerParticipation = customerParticipation;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates a messaging conversation in which the customer participated by sending at least one message")
+  @JsonProperty("customerParticipation")
+  public Boolean getCustomerParticipation() {
+    return customerParticipation;
+  }
+  public void setCustomerParticipation(Boolean customerParticipation) {
+    this.customerParticipation = customerParticipation;
+  }
+
+  
+  /**
    * The email or SMS delivery status
    **/
-  public ConversationMetricsTopicConversationMetricRecord deliveryStatus(String deliveryStatus) {
+  public ConversationMetricsTopicConversationMetricRecord deliveryStatus(DeliveryStatusEnum deliveryStatus) {
     this.deliveryStatus = deliveryStatus;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The email or SMS delivery status")
   @JsonProperty("deliveryStatus")
-  public String getDeliveryStatus() {
+  public DeliveryStatusEnum getDeliveryStatus() {
     return deliveryStatus;
   }
-  public void setDeliveryStatus(String deliveryStatus) {
+  public void setDeliveryStatus(DeliveryStatusEnum deliveryStatus) {
     this.deliveryStatus = deliveryStatus;
   }
 
@@ -638,17 +1092,17 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
   /**
    * The direction of the communication
    **/
-  public ConversationMetricsTopicConversationMetricRecord direction(String direction) {
+  public ConversationMetricsTopicConversationMetricRecord direction(DirectionEnum direction) {
     this.direction = direction;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The direction of the communication")
   @JsonProperty("direction")
-  public String getDirection() {
+  public DirectionEnum getDirection() {
     return direction;
   }
-  public void setDirection(String direction) {
+  public void setDirection(DirectionEnum direction) {
     this.direction = direction;
   }
 
@@ -656,17 +1110,17 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
   /**
    * The session disconnect type
    **/
-  public ConversationMetricsTopicConversationMetricRecord disconnectType(String disconnectType) {
+  public ConversationMetricsTopicConversationMetricRecord disconnectType(DisconnectTypeEnum disconnectType) {
     this.disconnectType = disconnectType;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The session disconnect type")
   @JsonProperty("disconnectType")
-  public String getDisconnectType() {
+  public DisconnectTypeEnum getDisconnectType() {
     return disconnectType;
   }
-  public void setDisconnectType(String disconnectType) {
+  public void setDisconnectType(DisconnectTypeEnum disconnectType) {
     this.disconnectType = disconnectType;
   }
 
@@ -854,17 +1308,17 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
   /**
    * Reason for which participant flagged conversation
    **/
-  public ConversationMetricsTopicConversationMetricRecord flaggedReason(String flaggedReason) {
+  public ConversationMetricsTopicConversationMetricRecord flaggedReason(FlaggedReasonEnum flaggedReason) {
     this.flaggedReason = flaggedReason;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Reason for which participant flagged conversation")
   @JsonProperty("flaggedReason")
-  public String getFlaggedReason() {
+  public FlaggedReasonEnum getFlaggedReason() {
     return flaggedReason;
   }
-  public void setFlaggedReason(String flaggedReason) {
+  public void setFlaggedReason(FlaggedReasonEnum flaggedReason) {
     this.flaggedReason = flaggedReason;
   }
 
@@ -1106,17 +1560,17 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
   /**
    * The session media type
    **/
-  public ConversationMetricsTopicConversationMetricRecord mediaType(String mediaType) {
+  public ConversationMetricsTopicConversationMetricRecord mediaType(MediaTypeEnum mediaType) {
     this.mediaType = mediaType;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The session media type")
   @JsonProperty("mediaType")
-  public String getMediaType() {
+  public MediaTypeEnum getMediaType() {
     return mediaType;
   }
-  public void setMediaType(String mediaType) {
+  public void setMediaType(MediaTypeEnum mediaType) {
     this.mediaType = mediaType;
   }
 
@@ -1142,17 +1596,17 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
   /**
    * The original direction of the conversation
    **/
-  public ConversationMetricsTopicConversationMetricRecord originatingDirection(String originatingDirection) {
+  public ConversationMetricsTopicConversationMetricRecord originatingDirection(OriginatingDirectionEnum originatingDirection) {
     this.originatingDirection = originatingDirection;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The original direction of the conversation")
   @JsonProperty("originatingDirection")
-  public String getOriginatingDirection() {
+  public OriginatingDirectionEnum getOriginatingDirection() {
     return originatingDirection;
   }
-  public void setOriginatingDirection(String originatingDirection) {
+  public void setOriginatingDirection(OriginatingDirectionEnum originatingDirection) {
     this.originatingDirection = originatingDirection;
   }
 
@@ -1268,17 +1722,17 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
   /**
    * The participant's purpose
    **/
-  public ConversationMetricsTopicConversationMetricRecord purpose(String purpose) {
+  public ConversationMetricsTopicConversationMetricRecord purpose(PurposeEnum purpose) {
     this.purpose = purpose;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The participant's purpose")
   @JsonProperty("purpose")
-  public String getPurpose() {
+  public PurposeEnum getPurpose() {
     return purpose;
   }
-  public void setPurpose(String purpose) {
+  public void setPurpose(PurposeEnum purpose) {
     this.purpose = purpose;
   }
 
@@ -1724,6 +2178,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
         Objects.equals(this.conversationInitiator, conversationMetricsTopicConversationMetricRecord.conversationInitiator) &&
         Objects.equals(this.convertedFrom, conversationMetricsTopicConversationMetricRecord.convertedFrom) &&
         Objects.equals(this.convertedTo, conversationMetricsTopicConversationMetricRecord.convertedTo) &&
+        Objects.equals(this.customerParticipation, conversationMetricsTopicConversationMetricRecord.customerParticipation) &&
         Objects.equals(this.deliveryStatus, conversationMetricsTopicConversationMetricRecord.deliveryStatus) &&
         Objects.equals(this.destinationAddresses, conversationMetricsTopicConversationMetricRecord.destinationAddresses) &&
         Objects.equals(this.direction, conversationMetricsTopicConversationMetricRecord.direction) &&
@@ -1789,7 +2244,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
 
   @Override
   public int hashCode() {
-    return Objects.hash(metric, metricDate, value, recordId, activeSkillIds, addressFrom, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, conversationId, conversationInitiator, convertedFrom, convertedTo, deliveryStatus, destinationAddresses, direction, disconnectType, divisionIds, dnis, edgeId, eligibleAgentCounts, extendedDeliveryStatus, externalContactId, externalMediaCount, externalOrganizationId, externalTag, firstQueue, flaggedReason, flowInType, flowOutType, groupId, interactionType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, knowledgeBaseIds, mediaCount, mediaType, messageType, originatingDirection, outboundCampaignId, outboundContactId, outboundContactListId, participantName, peerId, provider, purpose, queueId, remote, removedSkillIds, reoffered, requestedLanguageId, requestedRoutingSkillIds, requestedRoutings, roomId, routingPriority, routingRing, selectedAgentId, selectedAgentRank, selfServed, sessionDnis, sessionId, stationId, teamId, usedRouting, userId, waitingInteractionCounts, wrapUpCode, proposedAgents, scoredAgents);
+    return Objects.hash(metric, metricDate, value, recordId, activeSkillIds, addressFrom, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, conversationId, conversationInitiator, convertedFrom, convertedTo, customerParticipation, deliveryStatus, destinationAddresses, direction, disconnectType, divisionIds, dnis, edgeId, eligibleAgentCounts, extendedDeliveryStatus, externalContactId, externalMediaCount, externalOrganizationId, externalTag, firstQueue, flaggedReason, flowInType, flowOutType, groupId, interactionType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, knowledgeBaseIds, mediaCount, mediaType, messageType, originatingDirection, outboundCampaignId, outboundContactId, outboundContactListId, participantName, peerId, provider, purpose, queueId, remote, removedSkillIds, reoffered, requestedLanguageId, requestedRoutingSkillIds, requestedRoutings, roomId, routingPriority, routingRing, selectedAgentId, selectedAgentRank, selfServed, sessionDnis, sessionId, stationId, teamId, usedRouting, userId, waitingInteractionCounts, wrapUpCode, proposedAgents, scoredAgents);
   }
 
   @Override
@@ -1814,6 +2269,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     sb.append("    conversationInitiator: ").append(toIndentedString(conversationInitiator)).append("\n");
     sb.append("    convertedFrom: ").append(toIndentedString(convertedFrom)).append("\n");
     sb.append("    convertedTo: ").append(toIndentedString(convertedTo)).append("\n");
+    sb.append("    customerParticipation: ").append(toIndentedString(customerParticipation)).append("\n");
     sb.append("    deliveryStatus: ").append(toIndentedString(deliveryStatus)).append("\n");
     sb.append("    destinationAddresses: ").append(toIndentedString(destinationAddresses)).append("\n");
     sb.append("    direction: ").append(toIndentedString(direction)).append("\n");

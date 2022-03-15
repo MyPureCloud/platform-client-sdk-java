@@ -38,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.CobrowseConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.EmailConversation;
 import com.mypurecloud.sdk.v2.model.EmailMessage;
 import com.mypurecloud.sdk.v2.model.EmailMessageListing;
+import com.mypurecloud.sdk.v2.model.EmailsSettings;
 import com.mypurecloud.sdk.v2.model.EmailConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.MessageConversation;
 import com.mypurecloud.sdk.v2.model.MessageMediaData;
@@ -156,6 +157,7 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsEmailMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsEmailMessagesDraftRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsEmailParticipantWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsEmailParticipantWrapupcodesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsEmailSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsEmailsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageCommunicationMessagesMediaMediaIdRequest;
@@ -4164,6 +4166,85 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<List<WrapupCode>> response = (ApiResponse<List<WrapupCode>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get emails settings for a given conversation
+   * 
+   * @param conversationId conversationId (required)
+   * @return EmailsSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EmailsSettings getConversationsEmailSettings(String conversationId) throws IOException, ApiException {
+    return  getConversationsEmailSettings(createGetConversationsEmailSettingsRequest(conversationId));
+  }
+
+  /**
+   * Get emails settings for a given conversation
+   * 
+   * @param conversationId conversationId (required)
+   * @return EmailsSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EmailsSettings> getConversationsEmailSettingsWithHttpInfo(String conversationId) throws IOException {
+    return getConversationsEmailSettings(createGetConversationsEmailSettingsRequest(conversationId).withHttpInfo());
+  }
+
+  private GetConversationsEmailSettingsRequest createGetConversationsEmailSettingsRequest(String conversationId) {
+    return GetConversationsEmailSettingsRequest.builder()
+            .withConversationId(conversationId)
+    
+            .build();
+  }
+
+  /**
+   * Get emails settings for a given conversation
+   * 
+   * @param request The request object
+   * @return EmailsSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EmailsSettings getConversationsEmailSettings(GetConversationsEmailSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EmailsSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EmailsSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get emails settings for a given conversation
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EmailsSettings> getConversationsEmailSettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EmailsSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmailsSettings> response = (ApiResponse<EmailsSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmailsSettings> response = (ApiResponse<EmailsSettings>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

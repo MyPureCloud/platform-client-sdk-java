@@ -230,6 +230,7 @@ public class Participant  implements Serializable {
   private FlaggedReasonEnum flaggedReason = null;
   private Date startAcwTime = null;
   private Date endAcwTime = null;
+  private String bargedParticipantId = null;
 
   
   /**
@@ -1032,6 +1033,24 @@ public class Participant  implements Serializable {
   }
 
   
+  /**
+   * If this participant barged in a participant's call, then this will be the id of the targeted participant.
+   **/
+  public Participant bargedParticipantId(String bargedParticipantId) {
+    this.bargedParticipantId = bargedParticipantId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "If this participant barged in a participant's call, then this will be the id of the targeted participant.")
+  @JsonProperty("bargedParticipantId")
+  public String getBargedParticipantId() {
+    return bargedParticipantId;
+  }
+  public void setBargedParticipantId(String bargedParticipantId) {
+    this.bargedParticipantId = bargedParticipantId;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -1086,12 +1105,13 @@ public class Participant  implements Serializable {
         Objects.equals(this.screenRecordingState, participant.screenRecordingState) &&
         Objects.equals(this.flaggedReason, participant.flaggedReason) &&
         Objects.equals(this.startAcwTime, participant.startAcwTime) &&
-        Objects.equals(this.endAcwTime, participant.endAcwTime);
+        Objects.equals(this.endAcwTime, participant.endAcwTime) &&
+        Objects.equals(this.bargedParticipantId, participant.bargedParticipantId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, startTime, endTime, connectedTime, name, userUri, userId, externalContactId, externalOrganizationId, queueId, groupId, teamId, queueName, purpose, participantType, consultParticipantId, address, ani, aniName, dnis, locale, wrapupRequired, wrapupPrompt, wrapupTimeoutMs, wrapupSkipped, wrapup, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, coachedParticipantId, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos, evaluations, screenRecordingState, flaggedReason, startAcwTime, endAcwTime);
+    return Objects.hash(id, startTime, endTime, connectedTime, name, userUri, userId, externalContactId, externalOrganizationId, queueId, groupId, teamId, queueName, purpose, participantType, consultParticipantId, address, ani, aniName, dnis, locale, wrapupRequired, wrapupPrompt, wrapupTimeoutMs, wrapupSkipped, wrapup, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, coachedParticipantId, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos, evaluations, screenRecordingState, flaggedReason, startAcwTime, endAcwTime, bargedParticipantId);
   }
 
   @Override
@@ -1144,6 +1164,7 @@ public class Participant  implements Serializable {
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
     sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
     sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
+    sb.append("    bargedParticipantId: ").append(toIndentedString(bargedParticipantId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

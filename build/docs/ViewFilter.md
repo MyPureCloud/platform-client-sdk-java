@@ -148,6 +148,9 @@ title: ViewFilter
 | **journeyUrlNotContainsAllConditions** | <!----><!---->**List&lt;String&gt;**<!----> | The list of url not contains all conditions to filter offer constraints |  [optional] |
 | **flowMilestoneIds** | <!----><!---->**List&lt;String&gt;**<!----> | The list of flow milestones to filter exports |  [optional] |
 | **isAssessmentPassed** | <!----><!---->**Boolean**<!----> | Filter to indicate if Agent passed assessment or not |  [optional] |
+| **conversationInitiator** | <!----><!---->**String**<!----> | Indicates the Brand (Bot/User/Agent) or End User who initiated the first message in the conversation |  [optional] |
+| **hasCustomerParticipated** | <!----><!---->**Boolean**<!----> | Indicates if the customer has participated in an initiated conversation |  [optional] |
+| **isAcdInteraction** | <!----><!---->**Boolean**<!----> | Filter to indicate if interaction was ACD or non-ACD |  [optional] |
 {: class="table table-striped"}
 
 
@@ -295,6 +298,7 @@ title: ViewFilter
 | Name | Value |
 | ---- | ----- |
 | BULLSEYE | &quot;Bullseye&quot; |
+| CONDITIONAL | &quot;Conditional&quot; |
 | LAST | &quot;Last&quot; |
 | MANUAL | &quot;Manual&quot; |
 | PREDICTIVE | &quot;Predictive&quot; |
@@ -310,6 +314,7 @@ title: ViewFilter
 | Name | Value |
 | ---- | ----- |
 | BULLSEYE | &quot;Bullseye&quot; |
+| CONDITIONAL | &quot;Conditional&quot; |
 | LAST | &quot;Last&quot; |
 | MANUAL | &quot;Manual&quot; |
 | PREDICTIVE | &quot;Predictive&quot; |

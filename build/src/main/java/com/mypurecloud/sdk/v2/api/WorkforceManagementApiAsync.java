@@ -5616,7 +5616,7 @@ public class WorkforceManagementApiAsync {
   
   /**
    * Get a list of notifications for the current user
-   * 
+   * Notifications are only initially sent if you have the relevant Notify and Edit permissions
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5650,7 +5650,7 @@ public class WorkforceManagementApiAsync {
 
   /**
    * Get a list of notifications for the current user
-   * 
+   * Notifications are only initially sent if you have the relevant Notify and Edit permissions
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

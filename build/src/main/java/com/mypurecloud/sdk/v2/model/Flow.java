@@ -55,6 +55,7 @@ public class Flow  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     BOT("BOT"),
     COMMONMODULE("COMMONMODULE"),
+    DIGITALBOT("DIGITALBOT"),
     INBOUNDCALL("INBOUNDCALL"),
     INBOUNDCHAT("INBOUNDCHAT"),
     INBOUNDEMAIL("INBOUNDEMAIL"),
@@ -131,6 +132,7 @@ public class Flow  implements Serializable {
   public enum CompatibleFlowTypesEnum {
     BOT("BOT"),
     COMMONMODULE("COMMONMODULE"),
+    DIGITALBOT("DIGITALBOT"),
     INBOUNDCALL("INBOUNDCALL"),
     INBOUNDCHAT("INBOUNDCHAT"),
     INBOUNDEMAIL("INBOUNDEMAIL"),

@@ -6106,7 +6106,7 @@ public class WorkforceManagementApi {
   
   /**
    * Get a list of notifications for the current user
-   * 
+   * Notifications are only initially sent if you have the relevant Notify and Edit permissions
    * @return NotificationsResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -6117,7 +6117,7 @@ public class WorkforceManagementApi {
 
   /**
    * Get a list of notifications for the current user
-   * 
+   * Notifications are only initially sent if you have the relevant Notify and Edit permissions
    * @return NotificationsResponse
    * @throws IOException if the request fails to be processed
    */
@@ -6132,7 +6132,7 @@ public class WorkforceManagementApi {
 
   /**
    * Get a list of notifications for the current user
-   * 
+   * Notifications are only initially sent if you have the relevant Notify and Edit permissions
    * @param request The request object
    * @return NotificationsResponse
    * @throws ApiException if the request fails on the server
@@ -6151,7 +6151,7 @@ public class WorkforceManagementApi {
 
   /**
    * Get a list of notifications for the current user
-   * 
+   * Notifications are only initially sent if you have the relevant Notify and Edit permissions
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

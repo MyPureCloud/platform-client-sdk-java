@@ -331,8 +331,10 @@ public class CallMediaParticipant  implements Serializable {
   private FaxStatus faxStatus = null;
   private String monitoredParticipantId = null;
   private String coachedParticipantId = null;
+  private String bargedParticipantId = null;
   private String consultParticipantId = null;
   private String uuiData = null;
+  private Date bargedTime = null;
 
   
   /**
@@ -1128,6 +1130,24 @@ public class CallMediaParticipant  implements Serializable {
 
   
   /**
+   * If this participant barged in a participant's call, then this will be the id of the targeted participant.
+   **/
+  public CallMediaParticipant bargedParticipantId(String bargedParticipantId) {
+    this.bargedParticipantId = bargedParticipantId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "If this participant barged in a participant's call, then this will be the id of the targeted participant.")
+  @JsonProperty("bargedParticipantId")
+  public String getBargedParticipantId() {
+    return bargedParticipantId;
+  }
+  public void setBargedParticipantId(String bargedParticipantId) {
+    this.bargedParticipantId = bargedParticipantId;
+  }
+
+  
+  /**
    * The ID of the consult transfer target participant when performing a consult transfer.
    **/
   public CallMediaParticipant consultParticipantId(String consultParticipantId) {
@@ -1160,6 +1180,24 @@ public class CallMediaParticipant  implements Serializable {
   }
   public void setUuiData(String uuiData) {
     this.uuiData = uuiData;
+  }
+
+  
+  /**
+   * The timestamp when this participant was connected to the barge conference in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public CallMediaParticipant bargedTime(Date bargedTime) {
+    this.bargedTime = bargedTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The timestamp when this participant was connected to the barge conference in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("bargedTime")
+  public Date getBargedTime() {
+    return bargedTime;
+  }
+  public void setBargedTime(Date bargedTime) {
+    this.bargedTime = bargedTime;
   }
 
   
@@ -1217,13 +1255,15 @@ public class CallMediaParticipant  implements Serializable {
         Objects.equals(this.faxStatus, callMediaParticipant.faxStatus) &&
         Objects.equals(this.monitoredParticipantId, callMediaParticipant.monitoredParticipantId) &&
         Objects.equals(this.coachedParticipantId, callMediaParticipant.coachedParticipantId) &&
+        Objects.equals(this.bargedParticipantId, callMediaParticipant.bargedParticipantId) &&
         Objects.equals(this.consultParticipantId, callMediaParticipant.consultParticipantId) &&
-        Objects.equals(this.uuiData, callMediaParticipant.uuiData);
+        Objects.equals(this.uuiData, callMediaParticipant.uuiData) &&
+        Objects.equals(this.bargedTime, callMediaParticipant.bargedTime);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, muted, confined, recording, recordingState, group, ani, dnis, documentId, faxStatus, monitoredParticipantId, coachedParticipantId, consultParticipantId, uuiData);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, muted, confined, recording, recordingState, group, ani, dnis, documentId, faxStatus, monitoredParticipantId, coachedParticipantId, bargedParticipantId, consultParticipantId, uuiData, bargedTime);
   }
 
   @Override
@@ -1275,8 +1315,10 @@ public class CallMediaParticipant  implements Serializable {
     sb.append("    faxStatus: ").append(toIndentedString(faxStatus)).append("\n");
     sb.append("    monitoredParticipantId: ").append(toIndentedString(monitoredParticipantId)).append("\n");
     sb.append("    coachedParticipantId: ").append(toIndentedString(coachedParticipantId)).append("\n");
+    sb.append("    bargedParticipantId: ").append(toIndentedString(bargedParticipantId)).append("\n");
     sb.append("    consultParticipantId: ").append(toIndentedString(consultParticipantId)).append("\n");
     sb.append("    uuiData: ").append(toIndentedString(uuiData)).append("\n");
+    sb.append("    bargedTime: ").append(toIndentedString(bargedTime)).append("\n");
     sb.append("}");
     return sb.toString();
   }

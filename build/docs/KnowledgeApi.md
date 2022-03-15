@@ -157,7 +157,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **categoryId** | **String**| Category ID | 
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
 {: class="table-striped"}
 
 
@@ -224,7 +224,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **documentId** | **String**| Document ID | 
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
 {: class="table-striped"}
 
 
@@ -289,7 +289,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
 | **importId** | **String**| Import ID | 
 {: class="table-striped"}
 
@@ -423,7 +423,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
 | **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
 | **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
 | **limit** | **String**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. | [optional] 
@@ -495,7 +495,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **categoryId** | **String**| Category ID | 
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
 {: class="table-striped"}
 
 
@@ -562,7 +562,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **documentId** | **String**| Document ID | 
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
 {: class="table-striped"}
 
 
@@ -636,7 +636,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
 | **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
 | **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
 | **limit** | **String**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. | [optional] 
@@ -711,7 +711,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
 | **importId** | **String**| Import ID | 
 {: class="table-striped"}
 
@@ -778,7 +778,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
 | **trainingId** | **String**| Training ID | 
 {: class="table-striped"}
 
@@ -849,7 +849,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
 | **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
 | **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
 | **limit** | **String**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. | [optional] 
@@ -930,7 +930,7 @@ try {
 | **limit** | **String**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. | [optional] 
 | **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
 | **name** | **String**| Filter by Name. | [optional] 
-| **coreLanguage** | **String**| Filter by core language. | [optional]<br />**Values**: en-US, en-UK, en-AU, de-DE 
+| **coreLanguage** | **String**| Filter by core language. | [optional]<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
 | **published** | **Boolean**| Filter by published status. | [optional] 
 | **sortBy** | **String**| Sort by. | [optional]<br />**Values**: Name, Date 
 | **sortOrder** | **String**| Sort Order. | [optional]<br />**Values**: ASC, ascending, DESC, descending 
@@ -1066,7 +1066,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **categoryId** | **String**| Category ID | 
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
 | **body** | [**KnowledgeCategoryRequest**](KnowledgeCategoryRequest.html)|  | 
 {: class="table-striped"}
 
@@ -1135,7 +1135,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **documentId** | **String**| Document ID | 
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
 | **body** | [**KnowledgeDocumentRequest**](KnowledgeDocumentRequest.html)|  | 
 {: class="table-striped"}
 
@@ -1202,7 +1202,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
 | **body** | [**List&lt;KnowledgeDocumentBulkRequest&gt;**](KnowledgeDocumentBulkRequest.html)|  | 
 {: class="table-striped"}
 
@@ -1271,7 +1271,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
 | **importId** | **String**| Import ID | 
 | **body** | [**ImportStatusRequest**](ImportStatusRequest.html)|  | 
 {: class="table-striped"}
@@ -1402,7 +1402,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
 | **body** | [**KnowledgeCategoryRequest**](KnowledgeCategoryRequest.html)|  | 
 {: class="table-striped"}
 
@@ -1469,7 +1469,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
 | **body** | [**KnowledgeDocumentRequest**](KnowledgeDocumentRequest.html)|  | 
 {: class="table-striped"}
 
@@ -1536,7 +1536,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
 | **body** | [**KnowledgeImport**](KnowledgeImport.html)|  | 
 {: class="table-striped"}
 
@@ -1603,7 +1603,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
 | **trainingId** | **String**| Training ID | 
 {: class="table-striped"}
 
@@ -1669,7 +1669,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT 
 {: class="table-striped"}
 
 

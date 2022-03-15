@@ -31,6 +31,7 @@ public class ResponseSet  implements Serializable {
   private Date dateModified = null;
   private Integer version = null;
   private Map<String, Reaction> responses = null;
+  private Boolean beepDetectionEnabled = null;
   private String selfUri = null;
 
   
@@ -109,6 +110,24 @@ public class ResponseSet  implements Serializable {
   }
 
   
+  /**
+   * Whether to enable answering machine beep detection
+   **/
+  public ResponseSet beepDetectionEnabled(Boolean beepDetectionEnabled) {
+    this.beepDetectionEnabled = beepDetectionEnabled;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether to enable answering machine beep detection")
+  @JsonProperty("beepDetectionEnabled")
+  public Boolean getBeepDetectionEnabled() {
+    return beepDetectionEnabled;
+  }
+  public void setBeepDetectionEnabled(Boolean beepDetectionEnabled) {
+    this.beepDetectionEnabled = beepDetectionEnabled;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -132,12 +151,13 @@ public class ResponseSet  implements Serializable {
         Objects.equals(this.dateModified, responseSet.dateModified) &&
         Objects.equals(this.version, responseSet.version) &&
         Objects.equals(this.responses, responseSet.responses) &&
+        Objects.equals(this.beepDetectionEnabled, responseSet.beepDetectionEnabled) &&
         Objects.equals(this.selfUri, responseSet.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, responses, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, version, responses, beepDetectionEnabled, selfUri);
   }
 
   @Override
@@ -151,6 +171,7 @@ public class ResponseSet  implements Serializable {
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    responses: ").append(toIndentedString(responses)).append("\n");
+    sb.append("    beepDetectionEnabled: ").append(toIndentedString(beepDetectionEnabled)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

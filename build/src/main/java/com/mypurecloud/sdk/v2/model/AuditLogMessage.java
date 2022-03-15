@@ -256,6 +256,8 @@ public class AuditLogMessage  implements Serializable {
   public enum EntityTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ACCESSTOKEN("AccessToken"),
+    ACTION("Action"),
+    ACTIONDRAFT("ActionDraft"),
     ACTIONMAP("ActionMap"),
     ACTIONTEMPLATE("ActionTemplate"),
     ACTIVITYCODE("ActivityCode"),

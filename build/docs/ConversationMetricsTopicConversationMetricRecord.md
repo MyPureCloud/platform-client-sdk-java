@@ -22,13 +22,14 @@ title: ConversationMetricsTopicConversationMetricRecord
 | **assignerId** | <!----><!---->**String**<!----> | ID of the user that manually assigned a conversation |  [optional] |
 | **authenticated** | <!----><!---->**Boolean**<!----> | Flag that indicates that the identity of the customer has been asserted as verified by the provider. |  [optional] |
 | **conversationId** | <!----><!---->**String**<!----> | Unique identifier for the conversation |  [optional] |
-| **conversationInitiator** | <!----><!---->**String**<!----> | Indicates the participant purpose of the participant initiating a message conversation |  [optional] |
+| **conversationInitiator** | [**ConversationInitiatorEnum**](#ConversationInitiatorEnum)<!----> | Indicates the participant purpose of the participant initiating a message conversation |  [optional] |
 | **convertedFrom** | <!----><!---->**String**<!----> | Session media type that was converted from in case of a media type conversion |  [optional] |
 | **convertedTo** | <!----><!---->**String**<!----> | Session media type that was converted to in case of a media type conversion |  [optional] |
-| **deliveryStatus** | <!----><!---->**String**<!----> | The email or SMS delivery status |  [optional] |
+| **customerParticipation** | <!----><!---->**Boolean**<!----> | Indicates a messaging conversation in which the customer participated by sending at least one message |  [optional] |
+| **deliveryStatus** | [**DeliveryStatusEnum**](#DeliveryStatusEnum)<!----> | The email or SMS delivery status |  [optional] |
 | **destinationAddresses** | <!----><!---->**List&lt;String&gt;**<!----> | Destination address(es) of transfers or consults |  [optional] |
-| **direction** | <!----><!---->**String**<!----> | The direction of the communication |  [optional] |
-| **disconnectType** | <!----><!---->**String**<!----> | The session disconnect type |  [optional] |
+| **direction** | [**DirectionEnum**](#DirectionEnum)<!----> | The direction of the communication |  [optional] |
+| **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum)<!----> | The session disconnect type |  [optional] |
 | **divisionIds** | <!----><!---->**List&lt;String&gt;**<!----> | Identifier(s) of division(s) associated with a conversation |  [optional] |
 | **dnis** | <!----><!---->**String**<!----> | Dialed number identification service (number dialed by the calling party) |  [optional] |
 | **edgeId** | <!----><!---->**String**<!----> | Unique identifier of the edge device |  [optional] |
@@ -39,7 +40,7 @@ title: ConversationMetricsTopicConversationMetricRecord
 | **externalOrganizationId** | <!----><!---->**String**<!----> | External organization identifier |  [optional] |
 | **externalTag** | <!----><!---->**String**<!----> | External tag for the conversation |  [optional] |
 | **firstQueue** | <!----><!---->**Boolean**<!----> | Marker that is set if the current queue is the first queue in a conversation |  [optional] |
-| **flaggedReason** | <!----><!---->**String**<!----> | Reason for which participant flagged conversation |  [optional] |
+| **flaggedReason** | [**FlaggedReasonEnum**](#FlaggedReasonEnum)<!----> | Reason for which participant flagged conversation |  [optional] |
 | **flowInType** | <!----><!---->**String**<!----> | Type of flow in that occurred when entering ACD. |  [optional] |
 | **flowOutType** | <!----><!---->**String**<!----> | Type of flow out that occurred when emitting tFlowOut. |  [optional] |
 | **groupId** | <!----><!---->**String**<!----> | Unique identifier for a PureCloud group |  [optional] |
@@ -53,16 +54,16 @@ title: ConversationMetricsTopicConversationMetricRecord
 | **journeyCustomerSessionIdType** | <!----><!---->**String**<!----> | Type or category of journey sessions (e.g. web, ticket, delivery, atm). |  [optional] |
 | **knowledgeBaseIds** | <!----><!---->**List&lt;String&gt;**<!----> | The unique identifier(s) of the knowledge base(s) used |  [optional] |
 | **mediaCount** | <!----><!---->**Integer**<!----> | Count of any media (images, files, etc) included in this session |  [optional] |
-| **mediaType** | <!----><!---->**String**<!----> | The session media type |  [optional] |
+| **mediaType** | [**MediaTypeEnum**](#MediaTypeEnum)<!----> | The session media type |  [optional] |
 | **messageType** | <!----><!---->**String**<!----> | Message type for messaging services. E.g.: sms, facebook, twitter, line |  [optional] |
-| **originatingDirection** | <!----><!---->**String**<!----> | The original direction of the conversation |  [optional] |
+| **originatingDirection** | [**OriginatingDirectionEnum**](#OriginatingDirectionEnum)<!----> | The original direction of the conversation |  [optional] |
 | **outboundCampaignId** | <!----><!---->**String**<!----> | (Dialer) Unique identifier of the outbound campaign |  [optional] |
 | **outboundContactId** | <!----><!---->**String**<!----> | (Dialer) Unique identifier of the contact |  [optional] |
 | **outboundContactListId** | <!----><!---->**String**<!----> | (Dialer) Unique identifier of the contact list that this contact belongs to |  [optional] |
 | **participantName** | <!----><!---->**String**<!----> | A human readable name identifying the participant |  [optional] |
 | **peerId** | <!----><!---->**String**<!----> | This identifies pairs of related sessions on a conversation. E.g. an external session’s peerId will be the session that the call originally connected to, e.g. if an IVR was dialed, the IVR session, which will also have the external session’s ID as its peer. After that point, any transfers of that session to other internal components (acd, agent, etc.) will all spawn new sessions whose peerIds point back to that original external session. |  [optional] |
 | **provider** | <!----><!---->**String**<!----> | The source provider for the communication. |  [optional] |
-| **purpose** | <!----><!---->**String**<!----> | The participant&#39;s purpose |  [optional] |
+| **purpose** | [**PurposeEnum**](#PurposeEnum)<!----> | The participant&#39;s purpose |  [optional] |
 | **queueId** | <!----><!---->**String**<!----> | Queue identifier |  [optional] |
 | **remote** | <!----><!---->**String**<!----> | Name, phone number, or email address of the remote party. |  [optional] |
 | **removedSkillIds** | <!----><!---->**List&lt;String&gt;**<!----> | ID(s) of Skill(s) that have been removed by bullseye routing |  [optional] |
@@ -140,6 +141,159 @@ title: ConversationMetricsTopicConversationMetricRecord
 {: class="table table-striped"}
 
 
+<a name="ConversationInitiatorEnum"></a>
+
+## Enum: ConversationInitiatorEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| ACD | &quot;acd&quot; |
+| AGENT | &quot;agent&quot; |
+| API | &quot;api&quot; |
+| BOTFLOW | &quot;botflow&quot; |
+| CAMPAIGN | &quot;campaign&quot; |
+| CUSTOMER | &quot;customer&quot; |
+| DIALER | &quot;dialer&quot; |
+| EXTERNAL | &quot;external&quot; |
+| FAX | &quot;fax&quot; |
+| GROUP | &quot;group&quot; |
+| INBOUND | &quot;inbound&quot; |
+| IVR | &quot;ivr&quot; |
+| MANUAL | &quot;manual&quot; |
+| OUTBOUND | &quot;outbound&quot; |
+| STATION | &quot;station&quot; |
+| USER | &quot;user&quot; |
+| VOICEMAIL | &quot;voicemail&quot; |
+| WORKFLOW | &quot;workflow&quot; |
+{: class="table table-striped"}
+
+
+<a name="DeliveryStatusEnum"></a>
+
+## Enum: DeliveryStatusEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| DELIVERYFAILED | &quot;DeliveryFailed&quot; |
+| DELIVERYSUCCESS | &quot;DeliverySuccess&quot; |
+| FAILED | &quot;Failed&quot; |
+| QUEUED | &quot;Queued&quot; |
+| READ | &quot;Read&quot; |
+| RECEIVED | &quot;Received&quot; |
+| SENT | &quot;Sent&quot; |
+{: class="table table-striped"}
+
+
+<a name="DirectionEnum"></a>
+
+## Enum: DirectionEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| INBOUND | &quot;inbound&quot; |
+| OUTBOUND | &quot;outbound&quot; |
+{: class="table table-striped"}
+
+
+<a name="DisconnectTypeEnum"></a>
+
+## Enum: DisconnectTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| CLIENT | &quot;client&quot; |
+| CONFERENCETRANSFER | &quot;conferenceTransfer&quot; |
+| CONSULTTRANSFER | &quot;consultTransfer&quot; |
+| ENDPOINT | &quot;endpoint&quot; |
+| ERROR | &quot;error&quot; |
+| FORWARDTRANSFER | &quot;forwardTransfer&quot; |
+| NOANSWERTRANSFER | &quot;noAnswerTransfer&quot; |
+| NOTAVAILABLETRANSFER | &quot;notAvailableTransfer&quot; |
+| OTHER | &quot;other&quot; |
+| PEER | &quot;peer&quot; |
+| SPAM | &quot;spam&quot; |
+| SYSTEM | &quot;system&quot; |
+| TIMEOUT | &quot;timeout&quot; |
+| TRANSFER | &quot;transfer&quot; |
+| TRANSPORTFAILURE | &quot;transportFailure&quot; |
+| UNCALLABLE | &quot;uncallable&quot; |
+{: class="table table-striped"}
+
+
+<a name="FlaggedReasonEnum"></a>
+
+## Enum: FlaggedReasonEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| GENERAL | &quot;general&quot; |
+{: class="table table-striped"}
+
+
+<a name="MediaTypeEnum"></a>
+
+## Enum: MediaTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| CALLBACK | &quot;callback&quot; |
+| CHAT | &quot;chat&quot; |
+| COBROWSE | &quot;cobrowse&quot; |
+| EMAIL | &quot;email&quot; |
+| MESSAGE | &quot;message&quot; |
+| SCREENSHARE | &quot;screenshare&quot; |
+| UNKNOWN | &quot;unknown&quot; |
+| VIDEO | &quot;video&quot; |
+| VOICE | &quot;voice&quot; |
+{: class="table table-striped"}
+
+
+<a name="OriginatingDirectionEnum"></a>
+
+## Enum: OriginatingDirectionEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| INBOUND | &quot;inbound&quot; |
+| OUTBOUND | &quot;outbound&quot; |
+{: class="table table-striped"}
+
+
+<a name="PurposeEnum"></a>
+
+## Enum: PurposeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| ACD | &quot;acd&quot; |
+| AGENT | &quot;agent&quot; |
+| API | &quot;api&quot; |
+| BOTFLOW | &quot;botflow&quot; |
+| CAMPAIGN | &quot;campaign&quot; |
+| CUSTOMER | &quot;customer&quot; |
+| DIALER | &quot;dialer&quot; |
+| EXTERNAL | &quot;external&quot; |
+| FAX | &quot;fax&quot; |
+| GROUP | &quot;group&quot; |
+| INBOUND | &quot;inbound&quot; |
+| IVR | &quot;ivr&quot; |
+| MANUAL | &quot;manual&quot; |
+| OUTBOUND | &quot;outbound&quot; |
+| STATION | &quot;station&quot; |
+| USER | &quot;user&quot; |
+| VOICEMAIL | &quot;voicemail&quot; |
+| WORKFLOW | &quot;workflow&quot; |
+{: class="table table-striped"}
+
+
 <a name="RequestedRoutingsEnum"></a>
 
 ## Enum: RequestedRoutingsEnum
@@ -147,6 +301,7 @@ title: ConversationMetricsTopicConversationMetricRecord
 | Name | Value |
 | ---- | ----- |
 | BULLSEYE | &quot;Bullseye&quot; |
+| CONDITIONAL | &quot;Conditional&quot; |
 | LAST | &quot;Last&quot; |
 | MANUAL | &quot;Manual&quot; |
 | PREDICTIVE | &quot;Predictive&quot; |
@@ -163,6 +318,7 @@ title: ConversationMetricsTopicConversationMetricRecord
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | BULLSEYE | &quot;Bullseye&quot; |
+| CONDITIONAL | &quot;Conditional&quot; |
 | LAST | &quot;Last&quot; |
 | MANUAL | &quot;Manual&quot; |
 | PREDICTIVE | &quot;Predictive&quot; |

@@ -82,6 +82,54 @@ public class DncListCreate  implements Serializable {
     }
   }
   private DncSourceTypeEnum dncSourceType = null;
+
+  private static class ContactMethodEnumDeserializer extends StdDeserializer<ContactMethodEnum> {
+    public ContactMethodEnumDeserializer() {
+      super(ContactMethodEnumDeserializer.class);
+    }
+
+    @Override
+    public ContactMethodEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ContactMethodEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The contact method. Required if dncSourceType is rds.
+   */
+ @JsonDeserialize(using = ContactMethodEnumDeserializer.class)
+  public enum ContactMethodEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    EMAIL("Email"),
+    PHONE("Phone");
+
+    private String value;
+
+    ContactMethodEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ContactMethodEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ContactMethodEnum value : ContactMethodEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ContactMethodEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private ContactMethodEnum contactMethod = null;
   private String loginId = null;
   private List<String> dncCodes = new ArrayList<String>();
   private String licenseId = null;
@@ -175,6 +223,24 @@ public class DncListCreate  implements Serializable {
   }
   public void setDncSourceType(DncSourceTypeEnum dncSourceType) {
     this.dncSourceType = dncSourceType;
+  }
+
+  
+  /**
+   * The contact method. Required if dncSourceType is rds.
+   **/
+  public DncListCreate contactMethod(ContactMethodEnum contactMethod) {
+    this.contactMethod = contactMethod;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The contact method. Required if dncSourceType is rds.")
+  @JsonProperty("contactMethod")
+  public ContactMethodEnum getContactMethod() {
+    return contactMethod;
+  }
+  public void setContactMethod(ContactMethodEnum contactMethod) {
+    this.contactMethod = contactMethod;
   }
 
   
@@ -275,6 +341,7 @@ public class DncListCreate  implements Serializable {
         Objects.equals(this.importStatus, dncListCreate.importStatus) &&
         Objects.equals(this.size, dncListCreate.size) &&
         Objects.equals(this.dncSourceType, dncListCreate.dncSourceType) &&
+        Objects.equals(this.contactMethod, dncListCreate.contactMethod) &&
         Objects.equals(this.loginId, dncListCreate.loginId) &&
         Objects.equals(this.dncCodes, dncListCreate.dncCodes) &&
         Objects.equals(this.licenseId, dncListCreate.licenseId) &&
@@ -284,7 +351,7 @@ public class DncListCreate  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, importStatus, size, dncSourceType, loginId, dncCodes, licenseId, division, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, version, importStatus, size, dncSourceType, contactMethod, loginId, dncCodes, licenseId, division, selfUri);
   }
 
   @Override
@@ -300,6 +367,7 @@ public class DncListCreate  implements Serializable {
     sb.append("    importStatus: ").append(toIndentedString(importStatus)).append("\n");
     sb.append("    size: ").append(toIndentedString(size)).append("\n");
     sb.append("    dncSourceType: ").append(toIndentedString(dncSourceType)).append("\n");
+    sb.append("    contactMethod: ").append(toIndentedString(contactMethod)).append("\n");
     sb.append("    loginId: ").append(toIndentedString(loginId)).append("\n");
     sb.append("    dncCodes: ").append(toIndentedString(dncCodes)).append("\n");
     sb.append("    licenseId: ").append(toIndentedString(licenseId)).append("\n");

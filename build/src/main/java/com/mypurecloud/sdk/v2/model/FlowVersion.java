@@ -113,6 +113,7 @@ public class FlowVersion  implements Serializable {
   public enum CompatibleFlowTypesEnum {
     BOT("BOT"),
     COMMONMODULE("COMMONMODULE"),
+    DIGITALBOT("DIGITALBOT"),
     INBOUNDCALL("INBOUNDCALL"),
     INBOUNDCHAT("INBOUNDCHAT"),
     INBOUNDEMAIL("INBOUNDEMAIL"),

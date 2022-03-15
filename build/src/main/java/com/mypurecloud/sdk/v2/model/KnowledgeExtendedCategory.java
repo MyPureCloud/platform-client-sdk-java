@@ -52,7 +52,13 @@ public class KnowledgeExtendedCategory  implements Serializable {
     EN_US("en-US"),
     EN_UK("en-UK"),
     EN_AU("en-AU"),
-    DE_DE("de-DE");
+    DE_DE("de-DE"),
+    ES_US("es-US"),
+    ES_ES("es-ES"),
+    FR_FR("fr-FR"),
+    PT_BR("pt-BR"),
+    NL_NL("nl-NL"),
+    IT_IT("it-IT");
 
     private String value;
 

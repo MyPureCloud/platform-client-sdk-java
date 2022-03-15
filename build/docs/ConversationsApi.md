@@ -55,6 +55,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getConversationsEmailMessagesDraft**](ConversationsApi.html#getConversationsEmailMessagesDraft) | Get conversation draft reply |
 | [**getConversationsEmailParticipantWrapup**](ConversationsApi.html#getConversationsEmailParticipantWrapup) | Get the wrap-up for this conversation participant.  |
 | [**getConversationsEmailParticipantWrapupcodes**](ConversationsApi.html#getConversationsEmailParticipantWrapupcodes) | Get list of wrapup codes for this conversation participant |
+| [**getConversationsEmailSettings**](ConversationsApi.html#getConversationsEmailSettings) | Get emails settings for a given conversation |
 | [**getConversationsEmails**](ConversationsApi.html#getConversationsEmails) | Get active email conversations for the logged in user |
 | [**getConversationsMessage**](ConversationsApi.html#getConversationsMessage) | Get message conversation |
 | [**getConversationsMessageCommunicationMessagesMediaMediaId**](ConversationsApi.html#getConversationsMessageCommunicationMessagesMediaMediaId) | Get media |
@@ -3197,6 +3198,68 @@ try {
 ### Return type
 
 [**List&lt;WrapupCode&gt;**](WrapupCode.html)
+
+<a name="getConversationsEmailSettings"></a>
+
+# **getConversationsEmailSettings**
+
+
+
+> [EmailsSettings](EmailsSettings.html) getConversationsEmailSettings(conversationId)
+
+Get emails settings for a given conversation
+
+
+
+Wraps GET /api/v2/conversations/emails/{conversationId}/settings  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+try {
+    EmailsSettings result = apiInstance.getConversationsEmailSettings(conversationId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsEmailSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**EmailsSettings**](EmailsSettings.html)
 
 <a name="getConversationsEmails"></a>
 
