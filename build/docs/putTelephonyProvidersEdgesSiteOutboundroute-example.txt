@@ -1,0 +1,29 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesSiteOutboundrouteRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PutTelephonyProvidersEdgesSiteOutboundrouteRequest apiInstance = new PutTelephonyProvidersEdgesSiteOutboundrouteRequest();
+String siteId = "siteId_example"; // String | Site ID
+String outboundRouteId = "outboundRouteId_example"; // String | Outbound route ID
+OutboundRouteBase body = new OutboundRouteBase(); // OutboundRouteBase | OutboundRoute
+try {
+    OutboundRouteBase result = apiInstance.putTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PutTelephonyProvidersEdgesSiteOutboundrouteRequest#putTelephonyProvidersEdgesSiteOutboundroute");
+    e.printStackTrace();
+}

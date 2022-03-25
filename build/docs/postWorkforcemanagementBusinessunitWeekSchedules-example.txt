@@ -1,0 +1,29 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekSchedulesRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PostWorkforcemanagementBusinessunitWeekSchedulesRequest apiInstance = new PostWorkforcemanagementBusinessunitWeekSchedulesRequest();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+LocalDate weekId = new LocalDate(); // LocalDate | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+BuCreateBlankScheduleRequest body = new BuCreateBlankScheduleRequest(); // BuCreateBlankScheduleRequest | body
+try {
+    BuScheduleMetadata result = apiInstance.postWorkforcemanagementBusinessunitWeekSchedules(businessUnitId, weekId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PostWorkforcemanagementBusinessunitWeekSchedulesRequest#postWorkforcemanagementBusinessunitWeekSchedules");
+    e.printStackTrace();
+}

@@ -1,0 +1,28 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetNotificationsAvailabletopicsRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetNotificationsAvailabletopicsRequest apiInstance = new GetNotificationsAvailabletopicsRequest();
+List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand
+Boolean includePreview = true; // Boolean | Whether or not to include Preview topics
+try {
+    AvailableTopicEntityListing result = apiInstance.getNotificationsAvailabletopics(expand, includePreview);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetNotificationsAvailabletopicsRequest#getNotificationsAvailabletopics");
+    e.printStackTrace();
+}

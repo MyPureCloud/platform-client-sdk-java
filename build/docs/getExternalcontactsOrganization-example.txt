@@ -1,0 +1,29 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetExternalcontactsOrganizationRequest apiInstance = new GetExternalcontactsOrganizationRequest();
+String externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
+String expand = "expand_example"; // String | which fields, if any, to expand (externalDataSources)
+Boolean includeTrustors = true; // Boolean | (true or false) whether or not to include trustor information embedded in the externalOrganization
+try {
+    ExternalOrganization result = apiInstance.getExternalcontactsOrganization(externalOrganizationId, expand, includeTrustors);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetExternalcontactsOrganizationRequest#getExternalcontactsOrganization");
+    e.printStackTrace();
+}

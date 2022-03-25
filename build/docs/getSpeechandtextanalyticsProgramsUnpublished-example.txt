@@ -1,0 +1,28 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsUnpublishedRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetSpeechandtextanalyticsProgramsUnpublishedRequest apiInstance = new GetSpeechandtextanalyticsProgramsUnpublishedRequest();
+String nextPage = "nextPage_example"; // String | The key for listing the next page
+Integer pageSize = 20; // Integer | The page size for the listing
+try {
+    UnpublishedProgramsEntityListing result = apiInstance.getSpeechandtextanalyticsProgramsUnpublished(nextPage, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetSpeechandtextanalyticsProgramsUnpublishedRequest#getSpeechandtextanalyticsProgramsUnpublished");
+    e.printStackTrace();
+}

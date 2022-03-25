@@ -1,0 +1,28 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeDiagnosticRouteRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PostTelephonyProvidersEdgeDiagnosticRouteRequest apiInstance = new PostTelephonyProvidersEdgeDiagnosticRouteRequest();
+String edgeId = "edgeId_example"; // String | Edge Id
+EdgeNetworkDiagnosticRequest body = new EdgeNetworkDiagnosticRequest(); // EdgeNetworkDiagnosticRequest | request payload to get network diagnostic
+try {
+    EdgeNetworkDiagnostic result = apiInstance.postTelephonyProvidersEdgeDiagnosticRoute(edgeId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PostTelephonyProvidersEdgeDiagnosticRouteRequest#postTelephonyProvidersEdgeDiagnosticRoute");
+    e.printStackTrace();
+}

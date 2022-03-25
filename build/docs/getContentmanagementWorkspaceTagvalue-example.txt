@@ -1,0 +1,29 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetContentmanagementWorkspaceTagvalueRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetContentmanagementWorkspaceTagvalueRequest apiInstance = new GetContentmanagementWorkspaceTagvalueRequest();
+String workspaceId = "workspaceId_example"; // String | Workspace ID
+String tagId = "tagId_example"; // String | Tag ID
+List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand.
+try {
+    TagValue result = apiInstance.getContentmanagementWorkspaceTagvalue(workspaceId, tagId, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetContentmanagementWorkspaceTagvalueRequest#getContentmanagementWorkspaceTagvalue");
+    e.printStackTrace();
+}

@@ -1,0 +1,26 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.DeleteOutboundContactlistsRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+DeleteOutboundContactlistsRequest apiInstance = new DeleteOutboundContactlistsRequest();
+List<String> id = Arrays.asList("id_example"); // List<String> | contact list id(s) to delete
+try {
+    apiInstance.deleteOutboundContactlists(id);
+} catch (ApiException e) {
+    System.err.println("Exception when calling DeleteOutboundContactlistsRequest#deleteOutboundContactlists");
+    e.printStackTrace();
+}

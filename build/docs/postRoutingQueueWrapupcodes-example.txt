@@ -1,0 +1,28 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.PostRoutingQueueWrapupcodesRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PostRoutingQueueWrapupcodesRequest apiInstance = new PostRoutingQueueWrapupcodesRequest();
+String queueId = "queueId_example"; // String | Queue ID
+List<WrapUpCodeReference> body = Arrays.asList(new WrapUpCodeReference()); // List<WrapUpCodeReference> | List of wrapup codes
+try {
+    List<WrapupCode> result = apiInstance.postRoutingQueueWrapupcodes(queueId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PostRoutingQueueWrapupcodesRequest#postRoutingQueueWrapupcodes");
+    e.printStackTrace();
+}

@@ -1,0 +1,29 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWeekShifttradesSearchRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PostWorkforcemanagementManagementunitWeekShifttradesSearchRequest apiInstance = new PostWorkforcemanagementManagementunitWeekShifttradesSearchRequest();
+String managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+LocalDate weekDateId = new LocalDate(); // LocalDate | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+SearchShiftTradesRequest body = new SearchShiftTradesRequest(); // SearchShiftTradesRequest | body
+try {
+    SearchShiftTradesResponse result = apiInstance.postWorkforcemanagementManagementunitWeekShifttradesSearch(managementUnitId, weekDateId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PostWorkforcemanagementManagementunitWeekShifttradesSearchRequest#postWorkforcemanagementManagementunitWeekShifttradesSearch");
+    e.printStackTrace();
+}

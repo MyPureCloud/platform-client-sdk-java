@@ -1,0 +1,33 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignsAllRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetOutboundCampaignsAllRequest apiInstance = new GetOutboundCampaignsAllRequest();
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+List<String> id = Arrays.asList("id_example"); // List<String> | Campaign ID(s)
+String name = "name_example"; // String | Campaign name(s)
+List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | Division ID(s)
+List<String> mediaType = Arrays.asList("mediaType_example"); // List<String> | Media type(s)
+String sortOrder = "a"; // String | Sort order
+try {
+    CommonCampaignEntityListing result = apiInstance.getOutboundCampaignsAll(pageSize, pageNumber, id, name, divisionId, mediaType, sortOrder);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetOutboundCampaignsAllRequest#getOutboundCampaignsAll");
+    e.printStackTrace();
+}

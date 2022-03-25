@@ -1,0 +1,28 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.PatchRecordingCrossplatformMediaretentionpolicyRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PatchRecordingCrossplatformMediaretentionpolicyRequest apiInstance = new PatchRecordingCrossplatformMediaretentionpolicyRequest();
+String policyId = "policyId_example"; // String | Policy ID
+CrossPlatformPolicyUpdate body = new CrossPlatformPolicyUpdate(); // CrossPlatformPolicyUpdate | Policy
+try {
+    CrossPlatformPolicy result = apiInstance.patchRecordingCrossplatformMediaretentionpolicy(policyId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PatchRecordingCrossplatformMediaretentionpolicyRequest#patchRecordingCrossplatformMediaretentionpolicy");
+    e.printStackTrace();
+}

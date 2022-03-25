@@ -1,0 +1,44 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetQualityEvaluationsQueryRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetQualityEvaluationsQueryRequest apiInstance = new GetQualityEvaluationsQueryRequest();
+Integer pageSize = 25; // Integer | The total page size requested
+Integer pageNumber = 1; // Integer | The page number requested
+String sortBy = "sortBy_example"; // String | variable name requested to sort by
+List<String> expand = Arrays.asList("expand_example"); // List<String> | variable name requested by expand list
+String nextPage = "nextPage_example"; // String | next page token
+String previousPage = "previousPage_example"; // String | Previous page token
+String conversationId = "conversationId_example"; // String | conversationId specified
+String agentUserId = "agentUserId_example"; // String | user id of the agent
+String evaluatorUserId = "evaluatorUserId_example"; // String | evaluator user id
+String queueId = "queueId_example"; // String | queue id
+String startTime = "startTime_example"; // String | start time of the evaluation query
+String endTime = "endTime_example"; // String | end time of the evaluation query
+List<String> evaluationState = Arrays.asList("evaluationState_example"); // List<String> | 
+Boolean isReleased = true; // Boolean | the evaluation has been released
+Boolean agentHasRead = true; // Boolean | agent has the evaluation
+Boolean expandAnswerTotalScores = true; // Boolean | get the total scores for evaluations
+Integer maximum = 56; // Integer | maximum
+String sortOrder = "sortOrder_example"; // String | sort order options for agentUserId or evaluatorUserId query. Valid options are 'a', 'asc', 'ascending', 'd', 'desc', 'descending'
+try {
+    EvaluationEntityListing result = apiInstance.getQualityEvaluationsQuery(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, agentUserId, evaluatorUserId, queueId, startTime, endTime, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetQualityEvaluationsQueryRequest#getQualityEvaluationsQuery");
+    e.printStackTrace();
+}

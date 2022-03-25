@@ -1,0 +1,27 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.PutRecordingsDeletionprotectionRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PutRecordingsDeletionprotectionRequest apiInstance = new PutRecordingsDeletionprotectionRequest();
+Boolean protect = true; // Boolean | Check for apply, uncheck for revoke (each action requires the respective permission)
+ConversationDeletionProtectionQuery body = new ConversationDeletionProtectionQuery(); // ConversationDeletionProtectionQuery | 
+try {
+    apiInstance.putRecordingsDeletionprotection(protect, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PutRecordingsDeletionprotectionRequest#putRecordingsDeletionprotection");
+    e.printStackTrace();
+}

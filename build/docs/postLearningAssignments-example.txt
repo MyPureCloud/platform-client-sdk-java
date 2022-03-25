@@ -1,0 +1,27 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.PostLearningAssignmentsRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PostLearningAssignmentsRequest apiInstance = new PostLearningAssignmentsRequest();
+LearningAssignmentCreate body = new LearningAssignmentCreate(); // LearningAssignmentCreate | The Learning Assignment to be created
+try {
+    LearningAssignment result = apiInstance.postLearningAssignments(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PostLearningAssignmentsRequest#postLearningAssignments");
+    e.printStackTrace();
+}

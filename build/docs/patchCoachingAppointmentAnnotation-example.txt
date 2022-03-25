@@ -1,0 +1,29 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.PatchCoachingAppointmentAnnotationRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PatchCoachingAppointmentAnnotationRequest apiInstance = new PatchCoachingAppointmentAnnotationRequest();
+String appointmentId = "appointmentId_example"; // String | The ID of the coaching appointment.
+String annotationId = "annotationId_example"; // String | The ID of the annotation.
+CoachingAnnotation body = new CoachingAnnotation(); // CoachingAnnotation | The new version of the annotation
+try {
+    CoachingAnnotation result = apiInstance.patchCoachingAppointmentAnnotation(appointmentId, annotationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PatchCoachingAppointmentAnnotationRequest#patchCoachingAppointmentAnnotation");
+    e.printStackTrace();
+}

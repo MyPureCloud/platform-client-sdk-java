@@ -1,0 +1,30 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetQualityPublishedformsEvaluationsRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetQualityPublishedformsEvaluationsRequest apiInstance = new GetQualityPublishedformsEvaluationsRequest();
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+String name = "name_example"; // String | Name
+Boolean onlyLatestPerContext = false; // Boolean | onlyLatestPerContext
+try {
+    EvaluationFormEntityListing result = apiInstance.getQualityPublishedformsEvaluations(pageSize, pageNumber, name, onlyLatestPerContext);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetQualityPublishedformsEvaluationsRequest#getQualityPublishedformsEvaluations");
+    e.printStackTrace();
+}

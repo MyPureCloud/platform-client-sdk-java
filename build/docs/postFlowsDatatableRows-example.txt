@@ -1,0 +1,28 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatableRowsRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PostFlowsDatatableRowsRequest apiInstance = new PostFlowsDatatableRowsRequest();
+String datatableId = "datatableId_example"; // String | id of datatable
+Object dataTableRow = null; // Object | 
+try {
+    Map<String, Object> result = apiInstance.postFlowsDatatableRows(datatableId, dataTableRow);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PostFlowsDatatableRowsRequest#postFlowsDatatableRows");
+    e.printStackTrace();
+}

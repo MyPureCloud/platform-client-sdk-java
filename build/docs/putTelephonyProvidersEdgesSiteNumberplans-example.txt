@@ -1,0 +1,28 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesSiteNumberplansRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PutTelephonyProvidersEdgesSiteNumberplansRequest apiInstance = new PutTelephonyProvidersEdgesSiteNumberplansRequest();
+String siteId = "siteId_example"; // String | Site ID
+List<NumberPlan> body = Arrays.asList(new NumberPlan()); // List<NumberPlan> | List of number plans
+try {
+    List<NumberPlan> result = apiInstance.putTelephonyProvidersEdgesSiteNumberplans(siteId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PutTelephonyProvidersEdgesSiteNumberplansRequest#putTelephonyProvidersEdgesSiteNumberplans");
+    e.printStackTrace();
+}

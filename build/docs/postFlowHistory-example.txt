@@ -1,0 +1,27 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.PostFlowHistoryRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PostFlowHistoryRequest apiInstance = new PostFlowHistoryRequest();
+String flowId = "flowId_example"; // String | Flow ID
+try {
+    Operation result = apiInstance.postFlowHistory(flowId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PostFlowHistoryRequest#postFlowHistory");
+    e.printStackTrace();
+}

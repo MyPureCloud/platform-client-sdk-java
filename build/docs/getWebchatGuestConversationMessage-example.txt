@@ -1,0 +1,25 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetWebchatGuestConversationMessageRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Guest Chat JWT
+ApiKeyAuth Guest Chat JWT = (ApiKeyAuth) defaultClient.getAuthentication("Guest Chat JWT");
+Guest Chat JWT.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Guest Chat JWT.setApiKeyPrefix("Token");
+
+GetWebchatGuestConversationMessageRequest apiInstance = new GetWebchatGuestConversationMessageRequest();
+String conversationId = "conversationId_example"; // String | conversationId
+String messageId = "messageId_example"; // String | messageId
+try {
+    WebChatMessage result = apiInstance.getWebchatGuestConversationMessage(conversationId, messageId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetWebchatGuestConversationMessageRequest#getWebchatGuestConversationMessage");
+    e.printStackTrace();
+}

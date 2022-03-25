@@ -1,0 +1,30 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsCallsHistoryRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetConversationsCallsHistoryRequest apiInstance = new GetConversationsCallsHistoryRequest();
+Integer pageSize = 25; // Integer | Page size, maximum 50
+Integer pageNumber = 1; // Integer | Page number
+String interval = "interval_example"; // String | Interval string; format is ISO-8601. Separate start and end times with forward slash '/'
+List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand.
+try {
+    CallHistoryConversationEntityListing result = apiInstance.getConversationsCallsHistory(pageSize, pageNumber, interval, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetConversationsCallsHistoryRequest#getConversationsCallsHistory");
+    e.printStackTrace();
+}

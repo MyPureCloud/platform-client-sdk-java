@@ -1,0 +1,26 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.DeleteRecordingCrossplatformMediaretentionpoliciesRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+DeleteRecordingCrossplatformMediaretentionpoliciesRequest apiInstance = new DeleteRecordingCrossplatformMediaretentionpoliciesRequest();
+String ids = "ids_example"; // String | 
+try {
+    apiInstance.deleteRecordingCrossplatformMediaretentionpolicies(ids);
+} catch (ApiException e) {
+    System.err.println("Exception when calling DeleteRecordingCrossplatformMediaretentionpoliciesRequest#deleteRecordingCrossplatformMediaretentionpolicies");
+    e.printStackTrace();
+}

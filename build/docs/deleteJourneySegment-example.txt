@@ -1,0 +1,26 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.DeleteJourneySegmentRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+DeleteJourneySegmentRequest apiInstance = new DeleteJourneySegmentRequest();
+String segmentId = "segmentId_example"; // String | ID of the segment.
+try {
+    apiInstance.deleteJourneySegment(segmentId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling DeleteJourneySegmentRequest#deleteJourneySegment");
+    e.printStackTrace();
+}

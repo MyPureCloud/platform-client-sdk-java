@@ -1,0 +1,27 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsAddressRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetRoutingSmsAddressRequest apiInstance = new GetRoutingSmsAddressRequest();
+String addressId = "addressId_example"; // String | Address ID
+try {
+    SmsAddress result = apiInstance.getRoutingSmsAddress(addressId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetRoutingSmsAddressRequest#getRoutingSmsAddress");
+    e.printStackTrace();
+}

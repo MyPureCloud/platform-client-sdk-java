@@ -1,0 +1,28 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeLogicalinterfacesRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetTelephonyProvidersEdgeLogicalinterfacesRequest apiInstance = new GetTelephonyProvidersEdgeLogicalinterfacesRequest();
+String edgeId = "edgeId_example"; // String | Edge ID
+List<String> expand = Arrays.asList("expand_example"); // List<String> | Field to expand in the response
+try {
+    LogicalInterfaceEntityListing result = apiInstance.getTelephonyProvidersEdgeLogicalinterfaces(edgeId, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetTelephonyProvidersEdgeLogicalinterfacesRequest#getTelephonyProvidersEdgeLogicalinterfaces");
+    e.printStackTrace();
+}

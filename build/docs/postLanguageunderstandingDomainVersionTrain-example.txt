@@ -1,0 +1,28 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingDomainVersionTrainRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PostLanguageunderstandingDomainVersionTrainRequest apiInstance = new PostLanguageunderstandingDomainVersionTrainRequest();
+String domainId = "domainId_example"; // String | ID of the NLU domain.
+String domainVersionId = "domainVersionId_example"; // String | ID of the NLU domain version.
+try {
+    NluDomainVersionTrainingResponse result = apiInstance.postLanguageunderstandingDomainVersionTrain(domainId, domainVersionId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PostLanguageunderstandingDomainVersionTrainRequest#postLanguageunderstandingDomainVersionTrain");
+    e.printStackTrace();
+}

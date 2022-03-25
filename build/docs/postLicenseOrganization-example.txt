@@ -1,0 +1,27 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.PostLicenseOrganizationRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PostLicenseOrganizationRequest apiInstance = new PostLicenseOrganizationRequest();
+LicenseBatchAssignmentRequest body = new LicenseBatchAssignmentRequest(); // LicenseBatchAssignmentRequest | The license assignments to update.
+try {
+    List<LicenseUpdateStatus> result = apiInstance.postLicenseOrganization(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PostLicenseOrganizationRequest#postLicenseOrganization");
+    e.printStackTrace();
+}

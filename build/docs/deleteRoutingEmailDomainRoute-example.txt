@@ -1,0 +1,27 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.DeleteRoutingEmailDomainRouteRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+DeleteRoutingEmailDomainRouteRequest apiInstance = new DeleteRoutingEmailDomainRouteRequest();
+String domainName = "domainName_example"; // String | email domain
+String routeId = "routeId_example"; // String | route ID
+try {
+    apiInstance.deleteRoutingEmailDomainRoute(domainName, routeId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling DeleteRoutingEmailDomainRouteRequest#deleteRoutingEmailDomainRoute");
+    e.printStackTrace();
+}

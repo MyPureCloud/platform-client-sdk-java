@@ -1,0 +1,31 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitWeekSchedulesRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetWorkforcemanagementManagementunitWeekSchedulesRequest apiInstance = new GetWorkforcemanagementManagementunitWeekSchedulesRequest();
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+String weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format.
+Boolean includeOnlyPublished = true; // Boolean | Return only published schedules
+String earliestWeekDate = "earliestWeekDate_example"; // String | The start date of the earliest week to query in yyyy-MM-dd format
+String latestWeekDate = "latestWeekDate_example"; // String | The start date of the latest week to query in yyyy-MM-dd format
+try {
+    WeekScheduleListResponse result = apiInstance.getWorkforcemanagementManagementunitWeekSchedules(managementUnitId, weekId, includeOnlyPublished, earliestWeekDate, latestWeekDate);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetWorkforcemanagementManagementunitWeekSchedulesRequest#getWorkforcemanagementManagementunitWeekSchedules");
+    e.printStackTrace();
+}

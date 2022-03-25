@@ -1,0 +1,37 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetAuthorizationRolesRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetAuthorizationRolesRequest apiInstance = new GetAuthorizationRolesRequest();
+Integer pageSize = 25; // Integer | The total page size requested
+Integer pageNumber = 1; // Integer | The page number requested
+String sortBy = "sortBy_example"; // String | variable name requested to sort by
+List<String> expand = Arrays.asList("expand_example"); // List<String> | variable name requested by expand list
+String nextPage = "nextPage_example"; // String | next page token
+String previousPage = "previousPage_example"; // String | Previous page token
+String name = "name_example"; // String | 
+List<String> permission = Arrays.asList("permission_example"); // List<String> | 
+List<String> defaultRoleId = Arrays.asList("defaultRoleId_example"); // List<String> | 
+Boolean userCount = true; // Boolean | 
+List<String> id = Arrays.asList("id_example"); // List<String> | id
+try {
+    OrganizationRoleEntityListing result = apiInstance.getAuthorizationRoles(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, permission, defaultRoleId, userCount, id);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetAuthorizationRolesRequest#getAuthorizationRoles");
+    e.printStackTrace();
+}

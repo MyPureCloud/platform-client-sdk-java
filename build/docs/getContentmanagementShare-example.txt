@@ -1,0 +1,28 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetContentmanagementShareRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetContentmanagementShareRequest apiInstance = new GetContentmanagementShareRequest();
+String shareId = "shareId_example"; // String | Share ID
+List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand.
+try {
+    Share result = apiInstance.getContentmanagementShare(shareId, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetContentmanagementShareRequest#getContentmanagementShare");
+    e.printStackTrace();
+}

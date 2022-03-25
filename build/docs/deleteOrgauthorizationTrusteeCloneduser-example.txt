@@ -1,0 +1,27 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.DeleteOrgauthorizationTrusteeCloneduserRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+DeleteOrgauthorizationTrusteeCloneduserRequest apiInstance = new DeleteOrgauthorizationTrusteeCloneduserRequest();
+String trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
+String trusteeUserId = "trusteeUserId_example"; // String | Id of the cloned user to delete
+try {
+    apiInstance.deleteOrgauthorizationTrusteeCloneduser(trusteeOrgId, trusteeUserId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling DeleteOrgauthorizationTrusteeCloneduserRequest#deleteOrgauthorizationTrusteeCloneduser");
+    e.printStackTrace();
+}

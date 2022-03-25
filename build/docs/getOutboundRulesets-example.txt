@@ -1,0 +1,33 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundRulesetsRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetOutboundRulesetsRequest apiInstance = new GetOutboundRulesetsRequest();
+Integer pageSize = 25; // Integer | Page size. The max that will be returned is 100.
+Integer pageNumber = 1; // Integer | Page number
+Boolean allowEmptyResult = false; // Boolean | Whether to return an empty page when there are no results for that page
+String filterType = "Prefix"; // String | Filter type
+String name = "name_example"; // String | Name
+String sortBy = "sortBy_example"; // String | Sort by
+String sortOrder = "a"; // String | Sort order
+try {
+    RuleSetEntityListing result = apiInstance.getOutboundRulesets(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetOutboundRulesetsRequest#getOutboundRulesets");
+    e.printStackTrace();
+}

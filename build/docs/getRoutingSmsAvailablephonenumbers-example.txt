@@ -1,0 +1,33 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsAvailablephonenumbersRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetRoutingSmsAvailablephonenumbersRequest apiInstance = new GetRoutingSmsAvailablephonenumbersRequest();
+String countryCode = "countryCode_example"; // String | The ISO 3166-1 alpha-2 country code of the county for which available phone numbers should be returned
+String phoneNumberType = "phoneNumberType_example"; // String | Type of available phone numbers searched
+String region = "region_example"; // String | Region/province/state that can be used to restrict the numbers returned
+String city = "city_example"; // String | City that can be used to restrict the numbers returned
+String areaCode = "areaCode_example"; // String | Area code that can be used to restrict the numbers returned
+String pattern = "pattern_example"; // String | A pattern to match phone numbers. Valid characters are '*' and [0-9a-zA-Z]. The '*' character will match any single digit.
+String addressRequirement = "addressRequirement_example"; // String | This indicates whether the phone number requires to have an Address registered.
+try {
+    SMSAvailablePhoneNumberEntityListing result = apiInstance.getRoutingSmsAvailablephonenumbers(countryCode, phoneNumberType, region, city, areaCode, pattern, addressRequirement);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetRoutingSmsAvailablephonenumbersRequest#getRoutingSmsAvailablephonenumbers");
+    e.printStackTrace();
+}

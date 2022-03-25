@@ -1,0 +1,29 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobResultsRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetAnalyticsConversationsDetailsJobResultsRequest apiInstance = new GetAnalyticsConversationsDetailsJobResultsRequest();
+String jobId = "jobId_example"; // String | jobId
+String cursor = "cursor_example"; // String | Indicates where to resume query results (not required for first page)
+Integer pageSize = 56; // Integer | The desired maximum number of results
+try {
+    AnalyticsConversationAsyncQueryResponse result = apiInstance.getAnalyticsConversationsDetailsJobResults(jobId, cursor, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetAnalyticsConversationsDetailsJobResultsRequest#getAnalyticsConversationsDetailsJobResults");
+    e.printStackTrace();
+}

@@ -1,0 +1,30 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationScorecardsUsersValuesAverageRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetGamificationScorecardsUsersValuesAverageRequest apiInstance = new GetGamificationScorecardsUsersValuesAverageRequest();
+String filterType = "filterType_example"; // String | Filter type for the query request.
+String filterId = "filterId_example"; // String | ID for the filter type. For example, division Id
+LocalDate workday = new LocalDate(); // LocalDate | The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+String timeZone = "UTC"; // String | Timezone for the workday. Defaults to UTC
+try {
+    SingleWorkdayAverageValues result = apiInstance.getGamificationScorecardsUsersValuesAverage(filterType, filterId, workday, timeZone);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetGamificationScorecardsUsersValuesAverageRequest#getGamificationScorecardsUsersValuesAverage");
+    e.printStackTrace();
+}

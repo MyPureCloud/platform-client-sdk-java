@@ -1,0 +1,27 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationsSchemaVersionsRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetExternalcontactsOrganizationsSchemaVersionsRequest apiInstance = new GetExternalcontactsOrganizationsSchemaVersionsRequest();
+String schemaId = "schemaId_example"; // String | Schema ID
+try {
+    DataSchema result = apiInstance.getExternalcontactsOrganizationsSchemaVersions(schemaId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetExternalcontactsOrganizationsSchemaVersionsRequest#getExternalcontactsOrganizationsSchemaVersions");
+    e.printStackTrace();
+}

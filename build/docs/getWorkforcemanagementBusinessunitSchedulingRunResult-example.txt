@@ -1,0 +1,30 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitSchedulingRunResultRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetWorkforcemanagementBusinessunitSchedulingRunResultRequest apiInstance = new GetWorkforcemanagementBusinessunitSchedulingRunResultRequest();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String runId = "runId_example"; // String | The ID of the schedule run
+List<String> managementUnitIds = Arrays.asList("managementUnitIds_example"); // List<String> | The IDs of the management units for which to fetch the reschedule results
+List<String> expand = Arrays.asList("expand_example"); // List<String> | The fields to expand. Omitting will return an empty response
+try {
+    BuRescheduleResult result = apiInstance.getWorkforcemanagementBusinessunitSchedulingRunResult(businessUnitId, runId, managementUnitIds, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetWorkforcemanagementBusinessunitSchedulingRunResultRequest#getWorkforcemanagementBusinessunitSchedulingRunResult");
+    e.printStackTrace();
+}

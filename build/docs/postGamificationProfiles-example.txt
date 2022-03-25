@@ -1,0 +1,28 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.PostGamificationProfilesRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PostGamificationProfilesRequest apiInstance = new PostGamificationProfilesRequest();
+CreatePerformanceProfile body = new CreatePerformanceProfile(); // CreatePerformanceProfile | performanceProfile
+Boolean copyMetrics = true; // Boolean | Flag to copy metrics. If set to false, there will be no metrics associated with the new profile. If set to true or is absent (the default behavior), all metrics from the default profile will be copied over into the new profile.
+try {
+    PerformanceProfile result = apiInstance.postGamificationProfiles(body, copyMetrics);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PostGamificationProfilesRequest#postGamificationProfiles");
+    e.printStackTrace();
+}

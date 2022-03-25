@@ -1,0 +1,28 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.PutAuthorizationRoleRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PutAuthorizationRoleRequest apiInstance = new PutAuthorizationRoleRequest();
+String roleId = "roleId_example"; // String | Role ID
+DomainOrganizationRoleUpdate body = new DomainOrganizationRoleUpdate(); // DomainOrganizationRoleUpdate | Organization role
+try {
+    DomainOrganizationRole result = apiInstance.putAuthorizationRole(roleId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PutAuthorizationRoleRequest#putAuthorizationRole");
+    e.printStackTrace();
+}

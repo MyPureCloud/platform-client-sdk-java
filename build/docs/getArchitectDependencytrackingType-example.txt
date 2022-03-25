@@ -1,0 +1,27 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetArchitectDependencytrackingTypeRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetArchitectDependencytrackingTypeRequest apiInstance = new GetArchitectDependencytrackingTypeRequest();
+String typeId = "typeId_example"; // String | Type ID
+try {
+    DependencyType result = apiInstance.getArchitectDependencytrackingType(typeId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetArchitectDependencytrackingTypeRequest#getArchitectDependencytrackingType");
+    e.printStackTrace();
+}

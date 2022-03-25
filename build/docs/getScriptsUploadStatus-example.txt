@@ -1,0 +1,28 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetScriptsUploadStatusRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetScriptsUploadStatusRequest apiInstance = new GetScriptsUploadStatusRequest();
+String uploadId = "uploadId_example"; // String | Upload ID
+Boolean longPoll = false; // Boolean | Enable longPolling endpoint
+try {
+    ImportScriptStatusResponse result = apiInstance.getScriptsUploadStatus(uploadId, longPoll);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetScriptsUploadStatusRequest#getScriptsUploadStatus");
+    e.printStackTrace();
+}

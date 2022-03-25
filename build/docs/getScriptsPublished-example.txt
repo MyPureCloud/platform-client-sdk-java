@@ -1,0 +1,33 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetScriptsPublishedRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetScriptsPublishedRequest apiInstance = new GetScriptsPublishedRequest();
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+String expand = "expand_example"; // String | Expand
+String name = "name_example"; // String | Name filter
+String feature = "feature_example"; // String | Feature filter
+String flowId = "flowId_example"; // String | Secure flow id filter
+String scriptDataVersion = "scriptDataVersion_example"; // String | Advanced usage - controls the data version of the script
+try {
+    ScriptEntityListing result = apiInstance.getScriptsPublished(pageSize, pageNumber, expand, name, feature, flowId, scriptDataVersion);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetScriptsPublishedRequest#getScriptsPublished");
+    e.printStackTrace();
+}

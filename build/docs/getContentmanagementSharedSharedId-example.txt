@@ -1,0 +1,31 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetContentmanagementSharedSharedIdRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetContentmanagementSharedSharedIdRequest apiInstance = new GetContentmanagementSharedSharedIdRequest();
+String sharedId = "sharedId_example"; // String | Shared ID
+Boolean redirect = true; // Boolean | Turn on or off redirect
+String disposition = "attachment"; // String | Request how the share content will be downloaded: attached as a file or inline. Default is attachment.
+String contentType = "contentType_example"; // String | The requested format for the specified document. If supported, the document will be returned in that format. Example contentType=audio/wav
+String expand = "expand_example"; // String | Expand some document fields
+try {
+    SharedResponse result = apiInstance.getContentmanagementSharedSharedId(sharedId, redirect, disposition, contentType, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetContentmanagementSharedSharedIdRequest#getContentmanagementSharedSharedId");
+    e.printStackTrace();
+}

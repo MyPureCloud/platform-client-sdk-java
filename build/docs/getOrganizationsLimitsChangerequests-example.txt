@@ -1,0 +1,31 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsChangerequestsRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetOrganizationsLimitsChangerequestsRequest apiInstance = new GetOrganizationsLimitsChangerequestsRequest();
+Long after = 789L; // Long | Timestamp indicating the date to begin after when searching for requests.
+Long before = 789L; // Long | Timestamp indicating the date to end before when searching for requests.
+String status = "status_example"; // String | Status of the request to be filtered by
+Integer pageSize = 25; // Integer | Page Size
+List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand.
+try {
+    LimitChangeRequestsEntityListing result = apiInstance.getOrganizationsLimitsChangerequests(after, before, status, pageSize, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetOrganizationsLimitsChangerequestsRequest#getOrganizationsLimitsChangerequests");
+    e.printStackTrace();
+}

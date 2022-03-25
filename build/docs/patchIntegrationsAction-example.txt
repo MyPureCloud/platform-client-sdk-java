@@ -1,0 +1,28 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.PatchIntegrationsActionRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PatchIntegrationsActionRequest apiInstance = new PatchIntegrationsActionRequest();
+String actionId = "actionId_example"; // String | actionId
+UpdateActionInput body = new UpdateActionInput(); // UpdateActionInput | Input used to patch the Action.
+try {
+    Action result = apiInstance.patchIntegrationsAction(actionId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PatchIntegrationsActionRequest#patchIntegrationsAction");
+    e.printStackTrace();
+}

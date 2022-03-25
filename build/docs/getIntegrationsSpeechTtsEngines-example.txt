@@ -1,0 +1,31 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechTtsEnginesRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetIntegrationsSpeechTtsEnginesRequest apiInstance = new GetIntegrationsSpeechTtsEnginesRequest();
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+Boolean includeVoices = false; // Boolean | Include voices for the engine
+String name = "name_example"; // String | Filter on engine name
+String language = "language_example"; // String | Filter on supported language. If includeVoices=true then the voices are also filtered.
+try {
+    TtsEngineEntityListing result = apiInstance.getIntegrationsSpeechTtsEngines(pageNumber, pageSize, includeVoices, name, language);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetIntegrationsSpeechTtsEnginesRequest#getIntegrationsSpeechTtsEngines");
+    e.printStackTrace();
+}

@@ -1,0 +1,27 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyActiontemplateRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetJourneyActiontemplateRequest apiInstance = new GetJourneyActiontemplateRequest();
+String actionTemplateId = "actionTemplateId_example"; // String | ID of the action template.
+try {
+    ActionTemplate result = apiInstance.getJourneyActiontemplate(actionTemplateId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetJourneyActiontemplateRequest#getJourneyActiontemplate");
+    e.printStackTrace();
+}

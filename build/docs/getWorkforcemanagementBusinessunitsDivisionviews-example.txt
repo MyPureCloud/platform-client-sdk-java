@@ -1,0 +1,27 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitsDivisionviewsRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetWorkforcemanagementBusinessunitsDivisionviewsRequest apiInstance = new GetWorkforcemanagementBusinessunitsDivisionviewsRequest();
+List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | The divisionIds to filter by. If omitted, will return business units in all divisions
+try {
+    BusinessUnitListing result = apiInstance.getWorkforcemanagementBusinessunitsDivisionviews(divisionId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetWorkforcemanagementBusinessunitsDivisionviewsRequest#getWorkforcemanagementBusinessunitsDivisionviews");
+    e.printStackTrace();
+}

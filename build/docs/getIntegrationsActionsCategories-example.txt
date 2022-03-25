@@ -1,0 +1,33 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionsCategoriesRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetIntegrationsActionsCategoriesRequest apiInstance = new GetIntegrationsActionsCategoriesRequest();
+Integer pageSize = 25; // Integer | The total page size requested
+Integer pageNumber = 1; // Integer | The page number requested
+String nextPage = "nextPage_example"; // String | next page token
+String previousPage = "previousPage_example"; // String | Previous page token
+String sortBy = "sortBy_example"; // String | Root level field name to sort on.  Only 'name' is supported on this endpoint.
+String sortOrder = "asc"; // String | Direction to sort 'sortBy' field.
+String secure = "secure_example"; // String | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
+try {
+    CategoryEntityListing result = apiInstance.getIntegrationsActionsCategories(pageSize, pageNumber, nextPage, previousPage, sortBy, sortOrder, secure);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetIntegrationsActionsCategoriesRequest#getIntegrationsActionsCategories");
+    e.printStackTrace();
+}

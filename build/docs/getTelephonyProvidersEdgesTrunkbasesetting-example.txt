@@ -1,0 +1,28 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkbasesettingRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetTelephonyProvidersEdgesTrunkbasesettingRequest apiInstance = new GetTelephonyProvidersEdgesTrunkbasesettingRequest();
+String trunkBaseSettingsId = "trunkBaseSettingsId_example"; // String | Trunk Base ID
+Boolean ignoreHidden = true; // Boolean | Set this to true to not receive trunk properties that are meant to be hidden or for internal system usage only.
+try {
+    TrunkBase result = apiInstance.getTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId, ignoreHidden);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetTelephonyProvidersEdgesTrunkbasesettingRequest#getTelephonyProvidersEdgesTrunkbasesetting");
+    e.printStackTrace();
+}

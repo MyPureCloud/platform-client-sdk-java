@@ -1,0 +1,27 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementManagementunitWorkplanRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+DeleteWorkforcemanagementManagementunitWorkplanRequest apiInstance = new DeleteWorkforcemanagementManagementunitWorkplanRequest();
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+String workPlanId = "workPlanId_example"; // String | The ID of the work plan to delete
+try {
+    apiInstance.deleteWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling DeleteWorkforcemanagementManagementunitWorkplanRequest#deleteWorkforcemanagementManagementunitWorkplan");
+    e.printStackTrace();
+}

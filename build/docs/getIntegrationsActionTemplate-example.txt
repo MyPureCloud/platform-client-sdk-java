@@ -1,0 +1,28 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionTemplateRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetIntegrationsActionTemplateRequest apiInstance = new GetIntegrationsActionTemplateRequest();
+String actionId = "actionId_example"; // String | actionId
+String fileName = "fileName_example"; // String | Name of template file to be retrieved for this action.
+try {
+    String result = apiInstance.getIntegrationsActionTemplate(actionId, fileName);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetIntegrationsActionTemplateRequest#getIntegrationsActionTemplate");
+    e.printStackTrace();
+}

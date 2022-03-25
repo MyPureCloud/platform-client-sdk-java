@@ -1,0 +1,29 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitUserTimeoffrequestRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetWorkforcemanagementManagementunitUserTimeoffrequestRequest apiInstance = new GetWorkforcemanagementManagementunitUserTimeoffrequestRequest();
+String managementUnitId = "managementUnitId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+String userId = "userId_example"; // String | The userId to whom the Time Off Request applies.
+String timeOffRequestId = "timeOffRequestId_example"; // String | Time Off Request Id
+try {
+    TimeOffRequestResponse result = apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetWorkforcemanagementManagementunitUserTimeoffrequestRequest#getWorkforcemanagementManagementunitUserTimeoffrequest");
+    e.printStackTrace();
+}

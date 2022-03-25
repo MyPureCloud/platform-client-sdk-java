@@ -1,0 +1,29 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.PutScimV2UserRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PutScimV2UserRequest apiInstance = new PutScimV2UserRequest();
+String userId = "userId_example"; // String | The ID of a user. Returned with GET /api/v2/scim/v2/users.
+ScimV2User body = new ScimV2User(); // ScimV2User | The information used to replace a user.
+String ifMatch = "ifMatch_example"; // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \"42\". If the ETag is different from the version on the server, returns 400 with a \"scimType\" of \"invalidVers\".
+try {
+    ScimV2User result = apiInstance.putScimV2User(userId, body, ifMatch);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PutScimV2UserRequest#putScimV2User");
+    e.printStackTrace();
+}

@@ -1,0 +1,41 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetLearningAssignmentsRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetLearningAssignmentsRequest apiInstance = new GetLearningAssignmentsRequest();
+String moduleId = "moduleId_example"; // String | Specifies the ID of the learning module. Fetch assignments for learning module ID
+String interval = "interval_example"; // String | Specifies the range of dueDates to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+String completionInterval = "completionInterval_example"; // String | Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+String overdue = "Any"; // String | Specifies if only the non-overdue (overdue is \"False\") or overdue (overdue is \"True\") assignments are returned. If overdue is \"Any\" or if the overdue parameter is not supplied, all assignments are returned
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+String pass = "Any"; // String | Specifies if only the failed (pass is \"False\") or passed (pass is \"True\") assignments (completed with assessment)are returned. If pass is \"Any\" or if the pass parameter is not supplied, all assignments are returned
+Float minPercentageScore = 3.4F; // Float | The minimum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)
+Float maxPercentageScore = 3.4F; // Float | The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)
+String sortOrder = "Desc"; // String | Specifies result set sort order; if not specified, default sort order is descending (Desc)
+String sortBy = "sortBy_example"; // String | Specifies which field to sort the results by, default sort is by recommendedCompletionDate
+List<String> userId = Arrays.asList("userId_example"); // List<String> | Specifies the list of user IDs to be queried, up to 100 user IDs.
+List<String> types = Arrays.asList("types_example"); // List<String> | Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned
+List<String> states = Arrays.asList("states_example"); // List<String> | Specifies the assignment states to filter by
+List<String> expand = Arrays.asList("expand_example"); // List<String> | Specifies the expand option for returning additional information
+try {
+    LearningAssignmentsDomainEntity result = apiInstance.getLearningAssignments(moduleId, interval, completionInterval, overdue, pageSize, pageNumber, pass, minPercentageScore, maxPercentageScore, sortOrder, sortBy, userId, types, states, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetLearningAssignmentsRequest#getLearningAssignments");
+    e.printStackTrace();
+}

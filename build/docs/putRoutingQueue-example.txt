@@ -1,0 +1,28 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.PutRoutingQueueRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PutRoutingQueueRequest apiInstance = new PutRoutingQueueRequest();
+String queueId = "queueId_example"; // String | Queue ID
+QueueRequest body = new QueueRequest(); // QueueRequest | Queue
+try {
+    Queue result = apiInstance.putRoutingQueue(queueId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PutRoutingQueueRequest#putRoutingQueue");
+    e.printStackTrace();
+}

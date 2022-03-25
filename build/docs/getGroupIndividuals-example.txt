@@ -1,0 +1,27 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetGroupIndividualsRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetGroupIndividualsRequest apiInstance = new GetGroupIndividualsRequest();
+String groupId = "groupId_example"; // String | Group ID
+try {
+    UserEntityListing result = apiInstance.getGroupIndividuals(groupId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetGroupIndividualsRequest#getGroupIndividuals");
+    e.printStackTrace();
+}

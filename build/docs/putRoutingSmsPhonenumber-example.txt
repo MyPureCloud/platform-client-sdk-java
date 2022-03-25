@@ -1,0 +1,29 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.PutRoutingSmsPhonenumberRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PutRoutingSmsPhonenumberRequest apiInstance = new PutRoutingSmsPhonenumberRequest();
+String addressId = "addressId_example"; // String | Address ID
+SmsPhoneNumber body = new SmsPhoneNumber(); // SmsPhoneNumber | SmsPhoneNumber
+Boolean async = false; // Boolean | Update an existing phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the update of a provisioned phone number. Check the phoneNumber's provisioningStatus for the progress of this request.
+try {
+    SmsPhoneNumber result = apiInstance.putRoutingSmsPhonenumber(addressId, body, async);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PutRoutingSmsPhonenumberRequest#putRoutingSmsPhonenumber");
+    e.printStackTrace();
+}

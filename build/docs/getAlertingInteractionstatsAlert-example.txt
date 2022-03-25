@@ -1,0 +1,28 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetAlertingInteractionstatsAlertRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetAlertingInteractionstatsAlertRequest apiInstance = new GetAlertingInteractionstatsAlertRequest();
+String alertId = "alertId_example"; // String | Alert ID
+List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand
+try {
+    InteractionStatsAlert result = apiInstance.getAlertingInteractionstatsAlert(alertId, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetAlertingInteractionstatsAlertRequest#getAlertingInteractionstatsAlert");
+    e.printStackTrace();
+}

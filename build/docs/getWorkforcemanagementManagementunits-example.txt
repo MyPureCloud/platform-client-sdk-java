@@ -1,0 +1,31 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitsRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetWorkforcemanagementManagementunitsRequest apiInstance = new GetWorkforcemanagementManagementunitsRequest();
+Integer pageSize = 56; // Integer | Deprecated, paging is not supported
+Integer pageNumber = 56; // Integer | Deprecated, paging is not supported
+String expand = "expand_example"; // String | Deprecated, expand settings on the single MU route
+String feature = "feature_example"; // String | 
+String divisionId = "divisionId_example"; // String | 
+try {
+    ManagementUnitListing result = apiInstance.getWorkforcemanagementManagementunits(pageSize, pageNumber, expand, feature, divisionId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetWorkforcemanagementManagementunitsRequest#getWorkforcemanagementManagementunits");
+    e.printStackTrace();
+}

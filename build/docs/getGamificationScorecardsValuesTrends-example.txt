@@ -1,0 +1,31 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationScorecardsValuesTrendsRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetGamificationScorecardsValuesTrendsRequest apiInstance = new GetGamificationScorecardsValuesTrendsRequest();
+LocalDate startWorkday = new LocalDate(); // LocalDate | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+LocalDate endWorkday = new LocalDate(); // LocalDate | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+String filterType = "filterType_example"; // String | Filter type for the query request. If not set, then the request is for the requesting user.
+LocalDate referenceWorkday = new LocalDate(); // LocalDate | Reference workday for the trend. Used to determine the profile of the user as of this date. If not set, then the user's current profile will be used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+String timeZone = "UTC"; // String | Timezone for the workday. Defaults to UTC
+try {
+    WorkdayValuesTrend result = apiInstance.getGamificationScorecardsValuesTrends(startWorkday, endWorkday, filterType, referenceWorkday, timeZone);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetGamificationScorecardsValuesTrendsRequest#getGamificationScorecardsValuesTrends");
+    e.printStackTrace();
+}

@@ -1,0 +1,28 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.PostTextbotsBotflowsSessionTurnsRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PostTextbotsBotflowsSessionTurnsRequest apiInstance = new PostTextbotsBotflowsSessionTurnsRequest();
+String sessionId = "sessionId_example"; // String | The bot flow session ID, typically obtained from 'POST /api/v2/textbots/botflows/sessions'
+TextBotFlowTurnRequest turnRequest = new TextBotFlowTurnRequest(); // TextBotFlowTurnRequest | 
+try {
+    TextBotFlowTurnResponse result = apiInstance.postTextbotsBotflowsSessionTurns(sessionId, turnRequest);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PostTextbotsBotflowsSessionTurnsRequest#postTextbotsBotflowsSessionTurns");
+    e.printStackTrace();
+}

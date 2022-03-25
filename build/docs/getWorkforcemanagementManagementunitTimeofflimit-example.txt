@@ -1,0 +1,28 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitTimeofflimitRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetWorkforcemanagementManagementunitTimeofflimitRequest apiInstance = new GetWorkforcemanagementManagementunitTimeofflimitRequest();
+String managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit.
+String timeOffLimitId = "timeOffLimitId_example"; // String | The ID of the time off limit to fetch
+try {
+    TimeOffLimit result = apiInstance.getWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetWorkforcemanagementManagementunitTimeofflimitRequest#getWorkforcemanagementManagementunitTimeofflimit");
+    e.printStackTrace();
+}

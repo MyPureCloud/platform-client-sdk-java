@@ -1,0 +1,28 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.PostFlowsRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PostFlowsRequest apiInstance = new PostFlowsRequest();
+Flow body = new Flow(); // Flow | 
+String language = "language_example"; // String | Language
+try {
+    Flow result = apiInstance.postFlows(body, language);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PostFlowsRequest#postFlows");
+    e.printStackTrace();
+}

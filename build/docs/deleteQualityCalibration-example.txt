@@ -1,0 +1,28 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.DeleteQualityCalibrationRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+DeleteQualityCalibrationRequest apiInstance = new DeleteQualityCalibrationRequest();
+String calibrationId = "calibrationId_example"; // String | Calibration ID
+String calibratorId = "calibratorId_example"; // String | calibratorId
+try {
+    Calibration result = apiInstance.deleteQualityCalibration(calibrationId, calibratorId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling DeleteQualityCalibrationRequest#deleteQualityCalibration");
+    e.printStackTrace();
+}

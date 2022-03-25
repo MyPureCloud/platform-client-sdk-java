@@ -1,0 +1,28 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitAdherenceRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetWorkforcemanagementManagementunitAdherenceRequest apiInstance = new GetWorkforcemanagementManagementunitAdherenceRequest();
+String managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit.
+Boolean forceDownloadService = true; // Boolean | Force the result of this operation to be sent via download service.  For testing/app development purposes
+try {
+    UserScheduleAdherenceListing result = apiInstance.getWorkforcemanagementManagementunitAdherence(managementUnitId, forceDownloadService);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetWorkforcemanagementManagementunitAdherenceRequest#getWorkforcemanagementManagementunitAdherence");
+    e.printStackTrace();
+}

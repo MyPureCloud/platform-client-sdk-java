@@ -1,0 +1,28 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.PostAuditsQueryRealtimeRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PostAuditsQueryRealtimeRequest apiInstance = new PostAuditsQueryRealtimeRequest();
+AuditRealtimeQueryRequest body = new AuditRealtimeQueryRequest(); // AuditRealtimeQueryRequest | query
+List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand
+try {
+    AuditRealtimeQueryResultsResponse result = apiInstance.postAuditsQueryRealtime(body, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PostAuditsQueryRealtimeRequest#postAuditsQueryRealtime");
+    e.printStackTrace();
+}

@@ -1,0 +1,29 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetQualityCalibrationRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetQualityCalibrationRequest apiInstance = new GetQualityCalibrationRequest();
+String calibrationId = "calibrationId_example"; // String | Calibration ID
+String calibratorId = "calibratorId_example"; // String | calibratorId
+String conversationId = "conversationId_example"; // String | conversationId
+try {
+    Calibration result = apiInstance.getQualityCalibration(calibrationId, calibratorId, conversationId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetQualityCalibrationRequest#getQualityCalibration");
+    e.printStackTrace();
+}

@@ -1,0 +1,28 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetAuthorizationDivisionRequest apiInstance = new GetAuthorizationDivisionRequest();
+String divisionId = "divisionId_example"; // String | Division ID
+Boolean objectCount = false; // Boolean | Get count of objects in this division, grouped by type
+try {
+    AuthzDivision result = apiInstance.getAuthorizationDivision(divisionId, objectCount);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetAuthorizationDivisionRequest#getAuthorizationDivision");
+    e.printStackTrace();
+}

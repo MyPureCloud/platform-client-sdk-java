@@ -1,0 +1,29 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetLearningModuleVersionRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetLearningModuleVersionRequest apiInstance = new GetLearningModuleVersionRequest();
+String moduleId = "moduleId_example"; // String | The ID of the learning module
+String versionId = "versionId_example"; // String | The version of learning module
+List<String> expand = Arrays.asList("expand_example"); // List<String> | Fields to expand in response(case insensitive)
+try {
+    LearningModule result = apiInstance.getLearningModuleVersion(moduleId, versionId, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetLearningModuleVersionRequest#getLearningModuleVersion");
+    e.printStackTrace();
+}

@@ -1,0 +1,27 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesPhonesTemplateRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetTelephonyProvidersEdgesPhonesTemplateRequest apiInstance = new GetTelephonyProvidersEdgesPhonesTemplateRequest();
+String phoneBaseSettingsId = "phoneBaseSettingsId_example"; // String | The id of a Phone Base Settings object upon which to base this Phone
+try {
+    Phone result = apiInstance.getTelephonyProvidersEdgesPhonesTemplate(phoneBaseSettingsId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetTelephonyProvidersEdgesPhonesTemplateRequest#getTelephonyProvidersEdgesPhonesTemplate");
+    e.printStackTrace();
+}

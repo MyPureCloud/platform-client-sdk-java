@@ -1,0 +1,27 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingAssessmentsJobRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetRoutingAssessmentsJobRequest apiInstance = new GetRoutingAssessmentsJobRequest();
+String jobId = "jobId_example"; // String | Benefit Assessment Job ID
+try {
+    BenefitAssessmentJob result = apiInstance.getRoutingAssessmentsJob(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetRoutingAssessmentsJobRequest#getRoutingAssessmentsJob");
+    e.printStackTrace();
+}

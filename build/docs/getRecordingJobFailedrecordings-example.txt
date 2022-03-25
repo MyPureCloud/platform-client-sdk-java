@@ -1,0 +1,31 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetRecordingJobFailedrecordingsRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetRecordingJobFailedrecordingsRequest apiInstance = new GetRecordingJobFailedrecordingsRequest();
+String jobId = "jobId_example"; // String | jobId
+Integer pageSize = 25; // Integer | Page size. Maximum is 100.
+Integer pageNumber = 1; // Integer | Page number
+Boolean includeTotal = true; // Boolean | If false, cursor will be used to locate the page instead of pageNumber.
+String cursor = "cursor_example"; // String | Indicates where to resume query results (not required for first page)
+try {
+    FailedRecordingEntityListing result = apiInstance.getRecordingJobFailedrecordings(jobId, pageSize, pageNumber, includeTotal, cursor);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetRecordingJobFailedrecordingsRequest#getRecordingJobFailedrecordings");
+    e.printStackTrace();
+}

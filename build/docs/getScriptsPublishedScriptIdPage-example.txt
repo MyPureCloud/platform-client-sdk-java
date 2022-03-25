@@ -1,0 +1,29 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetScriptsPublishedScriptIdPageRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetScriptsPublishedScriptIdPageRequest apiInstance = new GetScriptsPublishedScriptIdPageRequest();
+String scriptId = "scriptId_example"; // String | Script ID
+String pageId = "pageId_example"; // String | Page ID
+String scriptDataVersion = "scriptDataVersion_example"; // String | Advanced usage - controls the data version of the script
+try {
+    Page result = apiInstance.getScriptsPublishedScriptIdPage(scriptId, pageId, scriptDataVersion);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetScriptsPublishedScriptIdPageRequest#getScriptsPublishedScriptIdPage");
+    e.printStackTrace();
+}

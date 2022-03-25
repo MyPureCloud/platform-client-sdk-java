@@ -1,0 +1,14 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.api.request.PostDocumentationGknSearchRequest;
+
+
+PostDocumentationGknSearchRequest apiInstance = new PostDocumentationGknSearchRequest();
+GKNDocumentationSearchRequest body = new GKNDocumentationSearchRequest(); // GKNDocumentationSearchRequest | Search request options
+try {
+    GKNDocumentationSearchResponse result = apiInstance.postDocumentationGknSearch(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PostDocumentationGknSearchRequest#postDocumentationGknSearch");
+    e.printStackTrace();
+}

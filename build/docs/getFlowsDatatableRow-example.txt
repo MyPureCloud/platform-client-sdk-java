@@ -1,0 +1,29 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatableRowRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetFlowsDatatableRowRequest apiInstance = new GetFlowsDatatableRowRequest();
+String datatableId = "datatableId_example"; // String | id of datatable
+String rowId = "rowId_example"; // String | The key for the row
+Boolean showbrief = true; // Boolean | if true returns just the key field for the row
+try {
+    Map<String, Object> result = apiInstance.getFlowsDatatableRow(datatableId, rowId, showbrief);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetFlowsDatatableRowRequest#getFlowsDatatableRow");
+    e.printStackTrace();
+}

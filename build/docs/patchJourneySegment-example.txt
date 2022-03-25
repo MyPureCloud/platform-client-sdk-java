@@ -1,0 +1,28 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.PatchJourneySegmentRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PatchJourneySegmentRequest apiInstance = new PatchJourneySegmentRequest();
+String segmentId = "segmentId_example"; // String | ID of the segment.
+PatchSegment body = new PatchSegment(); // PatchSegment | 
+try {
+    JourneySegment result = apiInstance.patchJourneySegment(segmentId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PatchJourneySegmentRequest#patchJourneySegment");
+    e.printStackTrace();
+}

@@ -1,0 +1,28 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivitycodeRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetWorkforcemanagementBusinessunitActivitycodeRequest apiInstance = new GetWorkforcemanagementBusinessunitActivitycodeRequest();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+String activityCodeId = "activityCodeId_example"; // String | The ID of the activity code to fetch
+try {
+    BusinessUnitActivityCode result = apiInstance.getWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetWorkforcemanagementBusinessunitActivitycodeRequest#getWorkforcemanagementBusinessunitActivitycode");
+    e.printStackTrace();
+}

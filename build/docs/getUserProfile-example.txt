@@ -1,0 +1,29 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetUserProfileRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetUserProfileRequest apiInstance = new GetUserProfileRequest();
+String userId = "userId_example"; // String | userId
+List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand
+String integrationPresenceSource = "integrationPresenceSource_example"; // String | Gets an integration presence for a user instead of their default.
+try {
+    UserProfile result = apiInstance.getUserProfile(userId, expand, integrationPresenceSource);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetUserProfileRequest#getUserProfile");
+    e.printStackTrace();
+}

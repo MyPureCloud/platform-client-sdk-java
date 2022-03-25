@@ -1,0 +1,32 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationContactsRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetExternalcontactsOrganizationContactsRequest apiInstance = new GetExternalcontactsOrganizationContactsRequest();
+String externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
+Integer pageSize = 20; // Integer | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
+Integer pageNumber = 1; // Integer | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
+String q = "q_example"; // String | User supplied search keywords (no special syntax is currently supported)
+String sortOrder = "sortOrder_example"; // String | Sort order
+List<String> expand = Arrays.asList("expand_example"); // List<String> | which fields, if any, to expand
+try {
+    ContactListing result = apiInstance.getExternalcontactsOrganizationContacts(externalOrganizationId, pageSize, pageNumber, q, sortOrder, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetExternalcontactsOrganizationContactsRequest#getExternalcontactsOrganizationContacts");
+    e.printStackTrace();
+}

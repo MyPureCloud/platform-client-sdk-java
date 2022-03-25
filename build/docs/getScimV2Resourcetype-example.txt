@@ -1,0 +1,27 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetScimV2ResourcetypeRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetScimV2ResourcetypeRequest apiInstance = new GetScimV2ResourcetypeRequest();
+String resourceType = "resourceType_example"; // String | The type of resource. Returned with GET /api/v2/scim/v2/resourcetypes.
+try {
+    ScimConfigResourceType result = apiInstance.getScimV2Resourcetype(resourceType);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetScimV2ResourcetypeRequest#getScimV2Resourcetype");
+    e.printStackTrace();
+}

@@ -1,0 +1,29 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.PutGamificationProfileMetricRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PutGamificationProfileMetricRequest apiInstance = new PutGamificationProfileMetricRequest();
+String profileId = "profileId_example"; // String | Performance Profile Id
+String metricId = "metricId_example"; // String | Metric Id
+CreateMetric body = new CreateMetric(); // CreateMetric | Metric
+try {
+    Metric result = apiInstance.putGamificationProfileMetric(profileId, metricId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PutGamificationProfileMetricRequest#putGamificationProfileMetric");
+    e.printStackTrace();
+}

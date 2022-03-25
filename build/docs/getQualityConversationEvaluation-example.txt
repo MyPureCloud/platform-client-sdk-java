@@ -1,0 +1,29 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetQualityConversationEvaluationRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetQualityConversationEvaluationRequest apiInstance = new GetQualityConversationEvaluationRequest();
+String conversationId = "conversationId_example"; // String | conversationId
+String evaluationId = "evaluationId_example"; // String | evaluationId
+String expand = "expand_example"; // String | agent, evaluator, evaluationForm
+try {
+    Evaluation result = apiInstance.getQualityConversationEvaluation(conversationId, evaluationId, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetQualityConversationEvaluationRequest#getQualityConversationEvaluation");
+    e.printStackTrace();
+}

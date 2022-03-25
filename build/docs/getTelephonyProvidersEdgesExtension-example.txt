@@ -1,0 +1,27 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesExtensionRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetTelephonyProvidersEdgesExtensionRequest apiInstance = new GetTelephonyProvidersEdgesExtensionRequest();
+String extensionId = "extensionId_example"; // String | Extension ID
+try {
+    Extension result = apiInstance.getTelephonyProvidersEdgesExtension(extensionId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetTelephonyProvidersEdgesExtensionRequest#getTelephonyProvidersEdgesExtension");
+    e.printStackTrace();
+}

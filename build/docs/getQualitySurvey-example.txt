@@ -1,0 +1,27 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetQualitySurveyRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetQualitySurveyRequest apiInstance = new GetQualitySurveyRequest();
+String surveyId = "surveyId_example"; // String | surveyId
+try {
+    Survey result = apiInstance.getQualitySurvey(surveyId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetQualitySurveyRequest#getQualitySurvey");
+    e.printStackTrace();
+}

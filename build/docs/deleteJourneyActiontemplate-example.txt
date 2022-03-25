@@ -1,0 +1,27 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.DeleteJourneyActiontemplateRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+DeleteJourneyActiontemplateRequest apiInstance = new DeleteJourneyActiontemplateRequest();
+String actionTemplateId = "actionTemplateId_example"; // String | ID of the action template.
+Boolean hardDelete = true; // Boolean | Determines whether Action Template should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default.
+try {
+    apiInstance.deleteJourneyActiontemplate(actionTemplateId, hardDelete);
+} catch (ApiException e) {
+    System.err.println("Exception when calling DeleteJourneyActiontemplateRequest#deleteJourneyActiontemplate");
+    e.printStackTrace();
+}

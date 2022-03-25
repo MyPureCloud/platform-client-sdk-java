@@ -1,0 +1,28 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionspermittedMeRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetAuthorizationDivisionspermittedMeRequest apiInstance = new GetAuthorizationDivisionspermittedMeRequest();
+String permission = "permission_example"; // String | The permission string, including the object to access, e.g. routing:queue:view
+String name = "name_example"; // String | Search term to filter by division name
+try {
+    List<AuthzDivision> result = apiInstance.getAuthorizationDivisionspermittedMe(permission, name);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetAuthorizationDivisionspermittedMeRequest#getAuthorizationDivisionspermittedMe");
+    e.printStackTrace();
+}

@@ -1,0 +1,35 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkbasesettingsRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetTelephonyProvidersEdgesTrunkbasesettingsRequest apiInstance = new GetTelephonyProvidersEdgesTrunkbasesettingsRequest();
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+String sortBy = "name"; // String | Value by which to sort
+String sortOrder = "ASC"; // String | Sort order
+Boolean recordingEnabled = true; // Boolean | Filter trunks by recording enabled
+Boolean ignoreHidden = true; // Boolean | Set this to true to not receive trunk properties that are meant to be hidden or for internal system usage only.
+Boolean managed = true; // Boolean | Filter by managed
+List<String> expand = Arrays.asList("expand_example"); // List<String> | Fields to expand in the response, comma-separated
+String name = "name_example"; // String | Name of the TrunkBase to filter by
+try {
+    TrunkBaseEntityListing result = apiInstance.getTelephonyProvidersEdgesTrunkbasesettings(pageNumber, pageSize, sortBy, sortOrder, recordingEnabled, ignoreHidden, managed, expand, name);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetTelephonyProvidersEdgesTrunkbasesettingsRequest#getTelephonyProvidersEdgesTrunkbasesettings");
+    e.printStackTrace();
+}

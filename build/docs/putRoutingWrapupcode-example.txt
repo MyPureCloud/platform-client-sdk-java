@@ -1,0 +1,28 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.PutRoutingWrapupcodeRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PutRoutingWrapupcodeRequest apiInstance = new PutRoutingWrapupcodeRequest();
+String codeId = "codeId_example"; // String | Wrapup Code ID
+WrapupCode body = new WrapupCode(); // WrapupCode | WrapupCode
+try {
+    WrapupCode result = apiInstance.putRoutingWrapupcode(codeId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PutRoutingWrapupcodeRequest#putRoutingWrapupcode");
+    e.printStackTrace();
+}

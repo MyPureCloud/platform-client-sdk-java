@@ -1,0 +1,29 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechLexBotsRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetIntegrationsSpeechLexBotsRequest apiInstance = new GetIntegrationsSpeechLexBotsRequest();
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+String name = "name_example"; // String | Filter on bot name
+try {
+    LexBotEntityListing result = apiInstance.getIntegrationsSpeechLexBots(pageNumber, pageSize, name);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetIntegrationsSpeechLexBotsRequest#getIntegrationsSpeechLexBots");
+    e.printStackTrace();
+}

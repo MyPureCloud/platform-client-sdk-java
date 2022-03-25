@@ -1,0 +1,28 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingMinerDraftsRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PostLanguageunderstandingMinerDraftsRequest apiInstance = new PostLanguageunderstandingMinerDraftsRequest();
+String minerId = "minerId_example"; // String | Miner ID
+Draft body = new Draft(); // Draft | Details for creating draft resource
+try {
+    Draft result = apiInstance.postLanguageunderstandingMinerDrafts(minerId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PostLanguageunderstandingMinerDraftsRequest#postLanguageunderstandingMinerDrafts");
+    e.printStackTrace();
+}

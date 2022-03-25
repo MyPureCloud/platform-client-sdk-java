@@ -1,0 +1,30 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingQueuesMeRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GetRoutingQueuesMeRequest apiInstance = new GetRoutingQueuesMeRequest();
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+Boolean joined = true; // Boolean | Filter by joined status.
+String sortOrder = "asc"; // String | Note: results are sorted by name.
+try {
+    UserQueueEntityListing result = apiInstance.getRoutingQueuesMe(pageNumber, pageSize, joined, sortOrder);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GetRoutingQueuesMeRequest#getRoutingQueuesMe");
+    e.printStackTrace();
+}

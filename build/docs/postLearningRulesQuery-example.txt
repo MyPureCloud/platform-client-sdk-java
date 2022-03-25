@@ -1,0 +1,29 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.PostLearningRulesQueryRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PostLearningRulesQueryRequest apiInstance = new PostLearningRulesQueryRequest();
+Integer pageSize = 50; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+LearningAssignmentUserQuery body = new LearningAssignmentUserQuery(); // LearningAssignmentUserQuery | The learning module rule to fetch users
+try {
+    LearningAssignmentUserListing result = apiInstance.postLearningRulesQuery(pageSize, pageNumber, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PostLearningRulesQueryRequest#postLearningRulesQuery");
+    e.printStackTrace();
+}

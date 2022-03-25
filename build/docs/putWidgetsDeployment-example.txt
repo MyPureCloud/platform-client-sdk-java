@@ -1,0 +1,28 @@
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.request.PutWidgetsDeploymentRequest;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PutWidgetsDeploymentRequest apiInstance = new PutWidgetsDeploymentRequest();
+String deploymentId = "deploymentId_example"; // String | Widget Config Id
+WidgetDeployment body = new WidgetDeployment(); // WidgetDeployment | Deployment
+try {
+    WidgetDeployment result = apiInstance.putWidgetsDeployment(deploymentId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PutWidgetsDeploymentRequest#putWidgetsDeployment");
+    e.printStackTrace();
+}
