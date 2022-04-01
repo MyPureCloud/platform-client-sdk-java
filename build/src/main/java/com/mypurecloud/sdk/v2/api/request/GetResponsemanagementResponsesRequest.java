@@ -24,9 +24,16 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.LibraryEntityListing;
 import com.mypurecloud.sdk.v2.model.Library;
 import com.mypurecloud.sdk.v2.model.Response;
+import com.mypurecloud.sdk.v2.model.ResponseAsset;
+import com.mypurecloud.sdk.v2.model.ResponseAssetStatus;
 import com.mypurecloud.sdk.v2.model.ResponseEntityListing;
+import com.mypurecloud.sdk.v2.model.ResponseAssetSearchRequest;
+import com.mypurecloud.sdk.v2.model.ResponseAssetSearchResults;
+import com.mypurecloud.sdk.v2.model.CreateResponseAssetResponse;
+import com.mypurecloud.sdk.v2.model.CreateResponseAssetRequest;
 import com.mypurecloud.sdk.v2.model.ResponseQueryResults;
 import com.mypurecloud.sdk.v2.model.ResponseQueryRequest;
+import com.mypurecloud.sdk.v2.model.ResponseAssetRequest;
 
 public class GetResponsemanagementResponsesRequest {
     

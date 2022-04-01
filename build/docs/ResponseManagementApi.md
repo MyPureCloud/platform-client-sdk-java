@@ -9,15 +9,21 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- |
 | [**deleteResponsemanagementLibrary**](ResponseManagementApi.html#deleteResponsemanagementLibrary) | Delete an existing response library. |
 | [**deleteResponsemanagementResponse**](ResponseManagementApi.html#deleteResponsemanagementResponse) | Delete an existing response. |
+| [**deleteResponsemanagementResponseasset**](ResponseManagementApi.html#deleteResponsemanagementResponseasset) | Delete response asset |
 | [**getResponsemanagementLibraries**](ResponseManagementApi.html#getResponsemanagementLibraries) | Gets a list of existing response libraries. |
 | [**getResponsemanagementLibrary**](ResponseManagementApi.html#getResponsemanagementLibrary) | Get details about an existing response library. |
 | [**getResponsemanagementResponse**](ResponseManagementApi.html#getResponsemanagementResponse) | Get details about an existing response. |
+| [**getResponsemanagementResponseasset**](ResponseManagementApi.html#getResponsemanagementResponseasset) | Get response asset information |
+| [**getResponsemanagementResponseassetsStatusStatusId**](ResponseManagementApi.html#getResponsemanagementResponseassetsStatusStatusId) | Get response asset upload status |
 | [**getResponsemanagementResponses**](ResponseManagementApi.html#getResponsemanagementResponses) | Gets a list of existing responses. |
 | [**postResponsemanagementLibraries**](ResponseManagementApi.html#postResponsemanagementLibraries) | Create a response library. |
+| [**postResponsemanagementResponseassetsSearch**](ResponseManagementApi.html#postResponsemanagementResponseassetsSearch) | Search response assets |
+| [**postResponsemanagementResponseassetsUploads**](ResponseManagementApi.html#postResponsemanagementResponseassetsUploads) | Creates pre-signed url for uploading response asset |
 | [**postResponsemanagementResponses**](ResponseManagementApi.html#postResponsemanagementResponses) | Create a response. |
 | [**postResponsemanagementResponsesQuery**](ResponseManagementApi.html#postResponsemanagementResponsesQuery) | Query responses |
 | [**putResponsemanagementLibrary**](ResponseManagementApi.html#putResponsemanagementLibrary) | Update an existing response library. |
 | [**putResponsemanagementResponse**](ResponseManagementApi.html#putResponsemanagementResponse) | Update an existing response. |
+| [**putResponsemanagementResponseasset**](ResponseManagementApi.html#putResponsemanagementResponseasset) | Update response asset |
 {: class="table-striped"}
 
 <a name="deleteResponsemanagementLibrary"></a>
@@ -135,6 +141,68 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **responseId** | **String**| Response ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteResponsemanagementResponseasset"></a>
+
+# **deleteResponsemanagementResponseasset**
+
+
+
+> Void deleteResponsemanagementResponseasset(responseAssetId)
+
+Delete response asset
+
+
+
+Wraps DELETE /api/v2/responsemanagement/responseassets/{responseAssetId}  
+
+Requires ANY permissions: 
+
+* responseAssets:asset:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ResponseManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ResponseManagementApi apiInstance = new ResponseManagementApi();
+String responseAssetId = "responseAssetId_example"; // String | Asset Id
+try {
+    apiInstance.deleteResponsemanagementResponseasset(responseAssetId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ResponseManagementApi#deleteResponsemanagementResponseasset");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **responseAssetId** | **String**| Asset Id | 
 {: class="table-striped"}
 
 
@@ -334,6 +402,132 @@ try {
 
 [**Response**](Response.html)
 
+<a name="getResponsemanagementResponseasset"></a>
+
+# **getResponsemanagementResponseasset**
+
+
+
+> [ResponseAsset](ResponseAsset.html) getResponsemanagementResponseasset(responseAssetId)
+
+Get response asset information
+
+
+
+Wraps GET /api/v2/responsemanagement/responseassets/{responseAssetId}  
+
+Requires ANY permissions: 
+
+* responseAssets:asset:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ResponseManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ResponseManagementApi apiInstance = new ResponseManagementApi();
+String responseAssetId = "responseAssetId_example"; // String | Asset Id
+try {
+    ResponseAsset result = apiInstance.getResponsemanagementResponseasset(responseAssetId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ResponseManagementApi#getResponsemanagementResponseasset");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **responseAssetId** | **String**| Asset Id | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ResponseAsset**](ResponseAsset.html)
+
+<a name="getResponsemanagementResponseassetsStatusStatusId"></a>
+
+# **getResponsemanagementResponseassetsStatusStatusId**
+
+
+
+> [ResponseAssetStatus](ResponseAssetStatus.html) getResponsemanagementResponseassetsStatusStatusId(statusId)
+
+Get response asset upload status
+
+
+
+Wraps GET /api/v2/responsemanagement/responseassets/status/{statusId}  
+
+Requires ANY permissions: 
+
+* responseAssets:asset:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ResponseManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ResponseManagementApi apiInstance = new ResponseManagementApi();
+String statusId = "statusId_example"; // String | Status Id
+try {
+    ResponseAssetStatus result = apiInstance.getResponsemanagementResponseassetsStatusStatusId(statusId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ResponseManagementApi#getResponsemanagementResponseassetsStatusStatusId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **statusId** | **String**| Status Id | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ResponseAssetStatus**](ResponseAssetStatus.html)
+
 <a name="getResponsemanagementResponses"></a>
 
 # **getResponsemanagementResponses**
@@ -463,6 +657,134 @@ try {
 ### Return type
 
 [**Library**](Library.html)
+
+<a name="postResponsemanagementResponseassetsSearch"></a>
+
+# **postResponsemanagementResponseassetsSearch**
+
+
+
+> [ResponseAssetSearchResults](ResponseAssetSearchResults.html) postResponsemanagementResponseassetsSearch(body, expand)
+
+Search response assets
+
+
+
+Wraps POST /api/v2/responsemanagement/responseassets/search  
+
+Requires ALL permissions: 
+
+* responseAssets:asset:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ResponseManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ResponseManagementApi apiInstance = new ResponseManagementApi();
+ResponseAssetSearchRequest body = new ResponseAssetSearchRequest(); // ResponseAssetSearchRequest | request
+List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand
+try {
+    ResponseAssetSearchResults result = apiInstance.postResponsemanagementResponseassetsSearch(body, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ResponseManagementApi#postResponsemanagementResponseassetsSearch");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ResponseAssetSearchRequest**](ResponseAssetSearchRequest.html)| request | 
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: user, division 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ResponseAssetSearchResults**](ResponseAssetSearchResults.html)
+
+<a name="postResponsemanagementResponseassetsUploads"></a>
+
+# **postResponsemanagementResponseassetsUploads**
+
+
+
+> [CreateResponseAssetResponse](CreateResponseAssetResponse.html) postResponsemanagementResponseassetsUploads(body)
+
+Creates pre-signed url for uploading response asset
+
+
+
+Wraps POST /api/v2/responsemanagement/responseassets/uploads  
+
+Requires ANY permissions: 
+
+* responseAssets:asset:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ResponseManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ResponseManagementApi apiInstance = new ResponseManagementApi();
+CreateResponseAssetRequest body = new CreateResponseAssetRequest(); // CreateResponseAssetRequest | request
+try {
+    CreateResponseAssetResponse result = apiInstance.postResponsemanagementResponseassetsUploads(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ResponseManagementApi#postResponsemanagementResponseassetsUploads");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**CreateResponseAssetRequest**](CreateResponseAssetRequest.html)| request | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CreateResponseAssetResponse**](CreateResponseAssetResponse.html)
 
 <a name="postResponsemanagementResponses"></a>
 
@@ -719,4 +1041,69 @@ try {
 ### Return type
 
 [**Response**](Response.html)
+
+<a name="putResponsemanagementResponseasset"></a>
+
+# **putResponsemanagementResponseasset**
+
+
+
+> [ResponseAsset](ResponseAsset.html) putResponsemanagementResponseasset(responseAssetId, body)
+
+Update response asset
+
+
+
+Wraps PUT /api/v2/responsemanagement/responseassets/{responseAssetId}  
+
+Requires ALL permissions: 
+
+* responseAssets:asset:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ResponseManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ResponseManagementApi apiInstance = new ResponseManagementApi();
+String responseAssetId = "responseAssetId_example"; // String | Asset Id
+ResponseAssetRequest body = new ResponseAssetRequest(); // ResponseAssetRequest | request
+try {
+    ResponseAsset result = apiInstance.putResponsemanagementResponseasset(responseAssetId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ResponseManagementApi#putResponsemanagementResponseasset");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **responseAssetId** | **String**| Asset Id | 
+| **body** | [**ResponseAssetRequest**](ResponseAssetRequest.html)| request | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ResponseAsset**](ResponseAsset.html)
 

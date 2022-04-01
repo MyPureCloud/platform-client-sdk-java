@@ -14,22 +14,35 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.LibraryEntityListing;
 import com.mypurecloud.sdk.v2.model.Library;
 import com.mypurecloud.sdk.v2.model.Response;
+import com.mypurecloud.sdk.v2.model.ResponseAsset;
+import com.mypurecloud.sdk.v2.model.ResponseAssetStatus;
 import com.mypurecloud.sdk.v2.model.ResponseEntityListing;
+import com.mypurecloud.sdk.v2.model.ResponseAssetSearchRequest;
+import com.mypurecloud.sdk.v2.model.ResponseAssetSearchResults;
+import com.mypurecloud.sdk.v2.model.CreateResponseAssetResponse;
+import com.mypurecloud.sdk.v2.model.CreateResponseAssetRequest;
 import com.mypurecloud.sdk.v2.model.ResponseQueryResults;
 import com.mypurecloud.sdk.v2.model.ResponseQueryRequest;
+import com.mypurecloud.sdk.v2.model.ResponseAssetRequest;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteResponsemanagementLibraryRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteResponsemanagementResponseRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteResponsemanagementResponseassetRequest;
 import com.mypurecloud.sdk.v2.api.request.GetResponsemanagementLibrariesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetResponsemanagementLibraryRequest;
 import com.mypurecloud.sdk.v2.api.request.GetResponsemanagementResponseRequest;
+import com.mypurecloud.sdk.v2.api.request.GetResponsemanagementResponseassetRequest;
+import com.mypurecloud.sdk.v2.api.request.GetResponsemanagementResponseassetsStatusStatusIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetResponsemanagementResponsesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementLibrariesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementResponseassetsSearchRequest;
+import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementResponseassetsUploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementResponsesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementResponsesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PutResponsemanagementLibraryRequest;
 import com.mypurecloud.sdk.v2.api.request.PutResponsemanagementResponseRequest;
+import com.mypurecloud.sdk.v2.api.request.PutResponsemanagementResponseassetRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -180,6 +193,82 @@ public class ResponseManagementApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteResponsemanagementResponse(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Delete response asset
+   * 
+   * @param responseAssetId Asset Id (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteResponsemanagementResponseasset(String responseAssetId) throws IOException, ApiException {
+     deleteResponsemanagementResponseasset(createDeleteResponsemanagementResponseassetRequest(responseAssetId));
+  }
+
+  /**
+   * Delete response asset
+   * 
+   * @param responseAssetId Asset Id (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteResponsemanagementResponseassetWithHttpInfo(String responseAssetId) throws IOException {
+    return deleteResponsemanagementResponseasset(createDeleteResponsemanagementResponseassetRequest(responseAssetId).withHttpInfo());
+  }
+
+  private DeleteResponsemanagementResponseassetRequest createDeleteResponsemanagementResponseassetRequest(String responseAssetId) {
+    return DeleteResponsemanagementResponseassetRequest.builder()
+            .withResponseAssetId(responseAssetId)
+    
+            .build();
+  }
+
+  /**
+   * Delete response asset
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteResponsemanagementResponseasset(DeleteResponsemanagementResponseassetRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete response asset
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteResponsemanagementResponseasset(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -452,6 +541,164 @@ public class ResponseManagementApi {
 
   
   /**
+   * Get response asset information
+   * 
+   * @param responseAssetId Asset Id (required)
+   * @return ResponseAsset
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ResponseAsset getResponsemanagementResponseasset(String responseAssetId) throws IOException, ApiException {
+    return  getResponsemanagementResponseasset(createGetResponsemanagementResponseassetRequest(responseAssetId));
+  }
+
+  /**
+   * Get response asset information
+   * 
+   * @param responseAssetId Asset Id (required)
+   * @return ResponseAsset
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ResponseAsset> getResponsemanagementResponseassetWithHttpInfo(String responseAssetId) throws IOException {
+    return getResponsemanagementResponseasset(createGetResponsemanagementResponseassetRequest(responseAssetId).withHttpInfo());
+  }
+
+  private GetResponsemanagementResponseassetRequest createGetResponsemanagementResponseassetRequest(String responseAssetId) {
+    return GetResponsemanagementResponseassetRequest.builder()
+            .withResponseAssetId(responseAssetId)
+    
+            .build();
+  }
+
+  /**
+   * Get response asset information
+   * 
+   * @param request The request object
+   * @return ResponseAsset
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ResponseAsset getResponsemanagementResponseasset(GetResponsemanagementResponseassetRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ResponseAsset> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ResponseAsset>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get response asset information
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ResponseAsset> getResponsemanagementResponseasset(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ResponseAsset>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ResponseAsset> response = (ApiResponse<ResponseAsset>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ResponseAsset> response = (ApiResponse<ResponseAsset>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get response asset upload status
+   * 
+   * @param statusId Status Id (required)
+   * @return ResponseAssetStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ResponseAssetStatus getResponsemanagementResponseassetsStatusStatusId(String statusId) throws IOException, ApiException {
+    return  getResponsemanagementResponseassetsStatusStatusId(createGetResponsemanagementResponseassetsStatusStatusIdRequest(statusId));
+  }
+
+  /**
+   * Get response asset upload status
+   * 
+   * @param statusId Status Id (required)
+   * @return ResponseAssetStatus
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ResponseAssetStatus> getResponsemanagementResponseassetsStatusStatusIdWithHttpInfo(String statusId) throws IOException {
+    return getResponsemanagementResponseassetsStatusStatusId(createGetResponsemanagementResponseassetsStatusStatusIdRequest(statusId).withHttpInfo());
+  }
+
+  private GetResponsemanagementResponseassetsStatusStatusIdRequest createGetResponsemanagementResponseassetsStatusStatusIdRequest(String statusId) {
+    return GetResponsemanagementResponseassetsStatusStatusIdRequest.builder()
+            .withStatusId(statusId)
+    
+            .build();
+  }
+
+  /**
+   * Get response asset upload status
+   * 
+   * @param request The request object
+   * @return ResponseAssetStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ResponseAssetStatus getResponsemanagementResponseassetsStatusStatusId(GetResponsemanagementResponseassetsStatusStatusIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ResponseAssetStatus> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ResponseAssetStatus>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get response asset upload status
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ResponseAssetStatus> getResponsemanagementResponseassetsStatusStatusId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ResponseAssetStatus>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ResponseAssetStatus> response = (ApiResponse<ResponseAssetStatus>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ResponseAssetStatus> response = (ApiResponse<ResponseAssetStatus>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Gets a list of existing responses.
    * 
    * @param libraryId Library ID (required)
@@ -616,6 +863,168 @@ public class ResponseManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Library> response = (ApiResponse<Library>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Search response assets
+   * 
+   * @param body request (required)
+   * @param expand Which fields, if any, to expand (optional)
+   * @return ResponseAssetSearchResults
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ResponseAssetSearchResults postResponsemanagementResponseassetsSearch(ResponseAssetSearchRequest body, List<String> expand) throws IOException, ApiException {
+    return  postResponsemanagementResponseassetsSearch(createPostResponsemanagementResponseassetsSearchRequest(body, expand));
+  }
+
+  /**
+   * Search response assets
+   * 
+   * @param body request (required)
+   * @param expand Which fields, if any, to expand (optional)
+   * @return ResponseAssetSearchResults
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ResponseAssetSearchResults> postResponsemanagementResponseassetsSearchWithHttpInfo(ResponseAssetSearchRequest body, List<String> expand) throws IOException {
+    return postResponsemanagementResponseassetsSearch(createPostResponsemanagementResponseassetsSearchRequest(body, expand).withHttpInfo());
+  }
+
+  private PostResponsemanagementResponseassetsSearchRequest createPostResponsemanagementResponseassetsSearchRequest(ResponseAssetSearchRequest body, List<String> expand) {
+    return PostResponsemanagementResponseassetsSearchRequest.builder()
+            .withBody(body)
+    
+            .withExpand(expand)
+    
+            .build();
+  }
+
+  /**
+   * Search response assets
+   * 
+   * @param request The request object
+   * @return ResponseAssetSearchResults
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ResponseAssetSearchResults postResponsemanagementResponseassetsSearch(PostResponsemanagementResponseassetsSearchRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ResponseAssetSearchResults> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ResponseAssetSearchResults>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Search response assets
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ResponseAssetSearchResults> postResponsemanagementResponseassetsSearch(ApiRequest<ResponseAssetSearchRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ResponseAssetSearchResults>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ResponseAssetSearchResults> response = (ApiResponse<ResponseAssetSearchResults>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ResponseAssetSearchResults> response = (ApiResponse<ResponseAssetSearchResults>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Creates pre-signed url for uploading response asset
+   * 
+   * @param body request (required)
+   * @return CreateResponseAssetResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CreateResponseAssetResponse postResponsemanagementResponseassetsUploads(CreateResponseAssetRequest body) throws IOException, ApiException {
+    return  postResponsemanagementResponseassetsUploads(createPostResponsemanagementResponseassetsUploadsRequest(body));
+  }
+
+  /**
+   * Creates pre-signed url for uploading response asset
+   * 
+   * @param body request (required)
+   * @return CreateResponseAssetResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CreateResponseAssetResponse> postResponsemanagementResponseassetsUploadsWithHttpInfo(CreateResponseAssetRequest body) throws IOException {
+    return postResponsemanagementResponseassetsUploads(createPostResponsemanagementResponseassetsUploadsRequest(body).withHttpInfo());
+  }
+
+  private PostResponsemanagementResponseassetsUploadsRequest createPostResponsemanagementResponseassetsUploadsRequest(CreateResponseAssetRequest body) {
+    return PostResponsemanagementResponseassetsUploadsRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Creates pre-signed url for uploading response asset
+   * 
+   * @param request The request object
+   * @return CreateResponseAssetResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CreateResponseAssetResponse postResponsemanagementResponseassetsUploads(PostResponsemanagementResponseassetsUploadsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CreateResponseAssetResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CreateResponseAssetResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Creates pre-signed url for uploading response asset
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CreateResponseAssetResponse> postResponsemanagementResponseassetsUploads(ApiRequest<CreateResponseAssetRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CreateResponseAssetResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CreateResponseAssetResponse> response = (ApiResponse<CreateResponseAssetResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CreateResponseAssetResponse> response = (ApiResponse<CreateResponseAssetResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -948,6 +1357,89 @@ public class ResponseManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Response> response = (ApiResponse<Response>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update response asset
+   * 
+   * @param responseAssetId Asset Id (required)
+   * @param body request (required)
+   * @return ResponseAsset
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ResponseAsset putResponsemanagementResponseasset(String responseAssetId, ResponseAssetRequest body) throws IOException, ApiException {
+    return  putResponsemanagementResponseasset(createPutResponsemanagementResponseassetRequest(responseAssetId, body));
+  }
+
+  /**
+   * Update response asset
+   * 
+   * @param responseAssetId Asset Id (required)
+   * @param body request (required)
+   * @return ResponseAsset
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ResponseAsset> putResponsemanagementResponseassetWithHttpInfo(String responseAssetId, ResponseAssetRequest body) throws IOException {
+    return putResponsemanagementResponseasset(createPutResponsemanagementResponseassetRequest(responseAssetId, body).withHttpInfo());
+  }
+
+  private PutResponsemanagementResponseassetRequest createPutResponsemanagementResponseassetRequest(String responseAssetId, ResponseAssetRequest body) {
+    return PutResponsemanagementResponseassetRequest.builder()
+            .withResponseAssetId(responseAssetId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update response asset
+   * 
+   * @param request The request object
+   * @return ResponseAsset
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ResponseAsset putResponsemanagementResponseasset(PutResponsemanagementResponseassetRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ResponseAsset> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ResponseAsset>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update response asset
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ResponseAsset> putResponsemanagementResponseasset(ApiRequest<ResponseAssetRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ResponseAsset>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ResponseAsset> response = (ApiResponse<ResponseAsset>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ResponseAsset> response = (ApiResponse<ResponseAsset>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

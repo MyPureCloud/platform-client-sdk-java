@@ -3,10 +3,10 @@
   <groupId>com.mypurecloud</groupId>
   <artifactId>platform-client-v2</artifactId>
   <versioning>
-    <release>146.0.2</release>
+    <release>147.0.0</release>
     <versions>
-      <version>146.0.2</version>
+      <version>147.0.0</version>
     </versions>
-    <lastUpdated>20220325192702</lastUpdated>
+    <lastUpdated>20220401063311</lastUpdated>
   </versioning>
 </metadata>

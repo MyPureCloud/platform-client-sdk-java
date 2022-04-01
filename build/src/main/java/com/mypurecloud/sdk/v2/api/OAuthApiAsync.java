@@ -213,7 +213,7 @@ public class OAuthApiAsync {
 
   
   /**
-   * List clients that are authorized by the resource owner
+   * List clients that have been authorized, requested, or revoked by the resource owner
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -247,7 +247,7 @@ public class OAuthApiAsync {
   }
 
   /**
-   * List clients that are authorized by the resource owner
+   * List clients that have been authorized, requested, or revoked by the resource owner
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed

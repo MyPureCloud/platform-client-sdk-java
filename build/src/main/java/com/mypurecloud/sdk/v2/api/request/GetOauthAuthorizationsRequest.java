@@ -34,6 +34,20 @@ import com.mypurecloud.sdk.v2.model.OAuthClientRequest;
 
 public class GetOauthAuthorizationsRequest {
     
+	private String acceptLanguage;
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+	}
+
+	public GetOauthAuthorizationsRequest withAcceptLanguage(String acceptLanguage) {
+	    this.setAcceptLanguage(acceptLanguage);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -57,6 +71,8 @@ public class GetOauthAuthorizationsRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/oauth/authorizations")
+                .withHeaderParameter("Accept-Language", acceptLanguage)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -77,6 +93,11 @@ public class GetOauthAuthorizationsRequest {
 			request = new GetOauthAuthorizationsRequest();
 		}
 
+		
+		public Builder withAcceptLanguage(String acceptLanguage) {
+			request.setAcceptLanguage(acceptLanguage);
+			return this;
+		}
 		
 
 		

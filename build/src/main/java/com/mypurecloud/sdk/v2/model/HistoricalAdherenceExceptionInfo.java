@@ -11,7 +11,6 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.RoutingStatus;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -191,7 +190,57 @@ public class HistoricalAdherenceExceptionInfo  implements Serializable {
     }
   }
   private SystemPresenceEnum systemPresence = null;
-  private RoutingStatus routingStatus = null;
+
+  private static class RoutingStatusEnumDeserializer extends StdDeserializer<RoutingStatusEnum> {
+    public RoutingStatusEnumDeserializer() {
+      super(RoutingStatusEnumDeserializer.class);
+    }
+
+    @Override
+    public RoutingStatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return RoutingStatusEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Actual underlying routing status, used to determine whether a user is actually in adherence when OnQueue
+   */
+ @JsonDeserialize(using = RoutingStatusEnumDeserializer.class)
+  public enum RoutingStatusEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    OFF_QUEUE("OFF_QUEUE"),
+    IDLE("IDLE"),
+    INTERACTING("INTERACTING"),
+    NOT_RESPONDING("NOT_RESPONDING"),
+    COMMUNICATING("COMMUNICATING");
+
+    private String value;
+
+    RoutingStatusEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static RoutingStatusEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (RoutingStatusEnum value : RoutingStatusEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return RoutingStatusEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private RoutingStatusEnum routingStatus = null;
 
   private static class ImpactEnumDeserializer extends StdDeserializer<ImpactEnum> {
     public ImpactEnumDeserializer() {
@@ -356,17 +405,17 @@ public class HistoricalAdherenceExceptionInfo  implements Serializable {
   /**
    * Actual underlying routing status, used to determine whether a user is actually in adherence when OnQueue
    **/
-  public HistoricalAdherenceExceptionInfo routingStatus(RoutingStatus routingStatus) {
+  public HistoricalAdherenceExceptionInfo routingStatus(RoutingStatusEnum routingStatus) {
     this.routingStatus = routingStatus;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Actual underlying routing status, used to determine whether a user is actually in adherence when OnQueue")
   @JsonProperty("routingStatus")
-  public RoutingStatus getRoutingStatus() {
+  public RoutingStatusEnum getRoutingStatus() {
     return routingStatus;
   }
-  public void setRoutingStatus(RoutingStatus routingStatus) {
+  public void setRoutingStatus(RoutingStatusEnum routingStatus) {
     this.routingStatus = routingStatus;
   }
 

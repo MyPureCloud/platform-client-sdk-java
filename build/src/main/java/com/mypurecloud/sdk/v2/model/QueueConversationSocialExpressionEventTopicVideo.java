@@ -13,6 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicAddress;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicAfterCallWork;
+import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicObject;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -87,6 +88,7 @@ public class QueueConversationSocialExpressionEventTopicVideo  implements Serial
   private Boolean audioMuted = null;
   private Boolean videoMuted = null;
   private Boolean sharingScreen = null;
+  private QueueConversationSocialExpressionEventTopicObject peerCount = null;
   private String provider = null;
   private String scriptId = null;
   private String peerId = null;
@@ -287,6 +289,24 @@ public class QueueConversationSocialExpressionEventTopicVideo  implements Serial
 
   
   /**
+   * The number of peer participants from the perspective of the participant in the conference.
+   **/
+  public QueueConversationSocialExpressionEventTopicVideo peerCount(QueueConversationSocialExpressionEventTopicObject peerCount) {
+    this.peerCount = peerCount;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The number of peer participants from the perspective of the participant in the conference.")
+  @JsonProperty("peerCount")
+  public QueueConversationSocialExpressionEventTopicObject getPeerCount() {
+    return peerCount;
+  }
+  public void setPeerCount(QueueConversationSocialExpressionEventTopicObject peerCount) {
+    this.peerCount = peerCount;
+  }
+
+  
+  /**
    * The media provider controlling the video.
    **/
   public QueueConversationSocialExpressionEventTopicVideo provider(String provider) {
@@ -483,6 +503,7 @@ public class QueueConversationSocialExpressionEventTopicVideo  implements Serial
         Objects.equals(this.audioMuted, queueConversationSocialExpressionEventTopicVideo.audioMuted) &&
         Objects.equals(this.videoMuted, queueConversationSocialExpressionEventTopicVideo.videoMuted) &&
         Objects.equals(this.sharingScreen, queueConversationSocialExpressionEventTopicVideo.sharingScreen) &&
+        Objects.equals(this.peerCount, queueConversationSocialExpressionEventTopicVideo.peerCount) &&
         Objects.equals(this.provider, queueConversationSocialExpressionEventTopicVideo.provider) &&
         Objects.equals(this.scriptId, queueConversationSocialExpressionEventTopicVideo.scriptId) &&
         Objects.equals(this.peerId, queueConversationSocialExpressionEventTopicVideo.peerId) &&
@@ -497,7 +518,7 @@ public class QueueConversationSocialExpressionEventTopicVideo  implements Serial
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, self, id, context, audioMuted, videoMuted, sharingScreen, provider, scriptId, peerId, disconnectType, connectedTime, disconnectedTime, msids, wrapup, afterCallWork, afterCallWorkRequired);
+    return Objects.hash(state, self, id, context, audioMuted, videoMuted, sharingScreen, peerCount, provider, scriptId, peerId, disconnectType, connectedTime, disconnectedTime, msids, wrapup, afterCallWork, afterCallWorkRequired);
   }
 
   @Override
@@ -512,6 +533,7 @@ public class QueueConversationSocialExpressionEventTopicVideo  implements Serial
     sb.append("    audioMuted: ").append(toIndentedString(audioMuted)).append("\n");
     sb.append("    videoMuted: ").append(toIndentedString(videoMuted)).append("\n");
     sb.append("    sharingScreen: ").append(toIndentedString(sharingScreen)).append("\n");
+    sb.append("    peerCount: ").append(toIndentedString(peerCount)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");
     sb.append("    peerId: ").append(toIndentedString(peerId)).append("\n");

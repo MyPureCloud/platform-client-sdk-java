@@ -51,6 +51,7 @@ title: ReportingTurnAction
 | ASKFORSTRINGACTION | &quot;AskForStringAction&quot; |
 | SENDRESPONSEACTION | &quot;SendResponseAction&quot; |
 | GETRESPONSEACTION | &quot;GetResponseAction&quot; |
+| JUMPTOTASKACTION | &quot;JumpToTaskAction&quot; |
 | UNKNOWN | &quot;Unknown&quot; |
 {: class="table table-striped"}
 

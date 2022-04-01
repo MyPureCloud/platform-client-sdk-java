@@ -48,6 +48,20 @@ public class GetOauthAuthorizationRequest {
 	    return this;
 	} 
 	
+	private String acceptLanguage;
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+	}
+
+	public GetOauthAuthorizationRequest withAcceptLanguage(String acceptLanguage) {
+	    this.setAcceptLanguage(acceptLanguage);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -78,6 +92,8 @@ public class GetOauthAuthorizationRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/oauth/authorizations/{clientId}")
                 .withPathParameter("clientId", clientId)
         
+                .withHeaderParameter("Accept-Language", acceptLanguage)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -106,6 +122,11 @@ public class GetOauthAuthorizationRequest {
 		
 		public Builder withClientId(String clientId) {
 			request.setClientId(clientId);
+			return this;
+		}
+		
+		public Builder withAcceptLanguage(String acceptLanguage) {
+			request.setAcceptLanguage(acceptLanguage);
 			return this;
 		}
 		

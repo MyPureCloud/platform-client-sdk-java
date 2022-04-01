@@ -148,7 +148,7 @@ title: ViewFilter
 | **journeyUrlNotContainsAllConditions** | <!----><!---->**List&lt;String&gt;**<!----> | The list of url not contains all conditions to filter offer constraints |  [optional] |
 | **flowMilestoneIds** | <!----><!---->**List&lt;String&gt;**<!----> | The list of flow milestones to filter exports |  [optional] |
 | **isAssessmentPassed** | <!----><!---->**Boolean**<!----> | Filter to indicate if Agent passed assessment or not |  [optional] |
-| **conversationInitiator** | <!----><!---->**String**<!----> | Indicates the Brand (Bot/User/Agent) or End User who initiated the first message in the conversation |  [optional] |
+| **conversationInitiators** | <!----><!---->**List&lt;String&gt;**<!----> | The list to filter based on Brands (Bot/User/Agent) or End User who initiated the first message in the conversation |  [optional] |
 | **hasCustomerParticipated** | <!----><!---->**Boolean**<!----> | Indicates if the customer has participated in an initiated conversation |  [optional] |
 | **isAcdInteraction** | <!----><!---->**Boolean**<!----> | Filter to indicate if interaction was ACD or non-ACD |  [optional] |
 {: class="table table-striped"}
@@ -261,6 +261,7 @@ title: ViewFilter
 | ---- | ----- |
 | BOT | &quot;bot&quot; |
 | COMMONMODULE | &quot;commonmodule&quot; |
+| DIGITALBOT | &quot;digitalbot&quot; |
 | INBOUNDCALL | &quot;inboundcall&quot; |
 | INBOUNDCHAT | &quot;inboundchat&quot; |
 | INBOUNDEMAIL | &quot;inboundemail&quot; |

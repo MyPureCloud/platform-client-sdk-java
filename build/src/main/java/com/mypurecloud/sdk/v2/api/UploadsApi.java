@@ -21,7 +21,6 @@ import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingMinerUploadsR
 import com.mypurecloud.sdk.v2.api.request.PostUploadsPublicassetsImagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUploadsRecordingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUploadsWorkforcemanagementHistoricaldataCsvRequest;
-import com.mypurecloud.sdk.v2.api.request.PostUploadsWorkforcemanagementHistoricaldataJsonRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -419,85 +418,6 @@ public class UploadsApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<UploadUrlResponse> postUploadsWorkforcemanagementHistoricaldataCsv(ApiRequest<UploadUrlRequest> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<UploadUrlResponse>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<UploadUrlResponse> response = (ApiResponse<UploadUrlResponse>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<UploadUrlResponse> response = (ApiResponse<UploadUrlResponse>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  
-  /**
-   * Creates presigned url for uploading WFM historical data file. Requires data in json format.
-   * 
-   * @param body query (required)
-   * @return UploadUrlResponse
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public UploadUrlResponse postUploadsWorkforcemanagementHistoricaldataJson(UploadUrlRequest body) throws IOException, ApiException {
-    return  postUploadsWorkforcemanagementHistoricaldataJson(createPostUploadsWorkforcemanagementHistoricaldataJsonRequest(body));
-  }
-
-  /**
-   * Creates presigned url for uploading WFM historical data file. Requires data in json format.
-   * 
-   * @param body query (required)
-   * @return UploadUrlResponse
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<UploadUrlResponse> postUploadsWorkforcemanagementHistoricaldataJsonWithHttpInfo(UploadUrlRequest body) throws IOException {
-    return postUploadsWorkforcemanagementHistoricaldataJson(createPostUploadsWorkforcemanagementHistoricaldataJsonRequest(body).withHttpInfo());
-  }
-
-  private PostUploadsWorkforcemanagementHistoricaldataJsonRequest createPostUploadsWorkforcemanagementHistoricaldataJsonRequest(UploadUrlRequest body) {
-    return PostUploadsWorkforcemanagementHistoricaldataJsonRequest.builder()
-            .withBody(body)
-    
-            .build();
-  }
-
-  /**
-   * Creates presigned url for uploading WFM historical data file. Requires data in json format.
-   * 
-   * @param request The request object
-   * @return UploadUrlResponse
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public UploadUrlResponse postUploadsWorkforcemanagementHistoricaldataJson(PostUploadsWorkforcemanagementHistoricaldataJsonRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<UploadUrlResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UploadUrlResponse>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Creates presigned url for uploading WFM historical data file. Requires data in json format.
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<UploadUrlResponse> postUploadsWorkforcemanagementHistoricaldataJson(ApiRequest<UploadUrlRequest> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<UploadUrlResponse>() {});
     }

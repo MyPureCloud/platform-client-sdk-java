@@ -9,7 +9,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- |
 | [**deleteOauthClient**](OAuthApi.html#deleteOauthClient) | Delete OAuth Client |
 | [**getOauthAuthorization**](OAuthApi.html#getOauthAuthorization) | Get a client that is authorized by the resource owner |
-| [**getOauthAuthorizations**](OAuthApi.html#getOauthAuthorizations) | List clients that are authorized by the resource owner |
+| [**getOauthAuthorizations**](OAuthApi.html#getOauthAuthorizations) | List clients that have been authorized, requested, or revoked by the resource owner |
 | [**getOauthClient**](OAuthApi.html#getOauthClient) | Get OAuth Client |
 | [**getOauthClientUsageQueryResult**](OAuthApi.html#getOauthClientUsageQueryResult) | Get the results of a usage query |
 | [**getOauthClientUsageSummary**](OAuthApi.html#getOauthClientUsageSummary) | Get a summary of OAuth client API usage |
@@ -90,7 +90,7 @@ null (empty response body)
 
 
 
-> [OAuthAuthorization](OAuthAuthorization.html) getOauthAuthorization(clientId)
+> [OAuthAuthorization](OAuthAuthorization.html) getOauthAuthorization(clientId, acceptLanguage)
 
 Get a client that is authorized by the resource owner
 
@@ -125,8 +125,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 OAuthApi apiInstance = new OAuthApi();
 String clientId = "clientId_example"; // String | The ID of client
+String acceptLanguage = "en-us"; // String | The language in which to display the client descriptions.
 try {
-    OAuthAuthorization result = apiInstance.getOauthAuthorization(clientId);
+    OAuthAuthorization result = apiInstance.getOauthAuthorization(clientId, acceptLanguage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OAuthApi#getOauthAuthorization");
@@ -140,6 +141,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **clientId** | **String**| The ID of client | 
+| **acceptLanguage** | **String**| The language in which to display the client descriptions. | [optional] [default to en-us] 
 {: class="table-striped"}
 
 
@@ -153,9 +155,9 @@ try {
 
 
 
-> [OAuthAuthorizationListing](OAuthAuthorizationListing.html) getOauthAuthorizations()
+> [OAuthAuthorizationListing](OAuthAuthorizationListing.html) getOauthAuthorizations(acceptLanguage)
 
-List clients that are authorized by the resource owner
+List clients that have been authorized, requested, or revoked by the resource owner
 
 
 
@@ -187,8 +189,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 OAuthApi apiInstance = new OAuthApi();
+String acceptLanguage = "en-us"; // String | The language in which to display the client descriptions.
 try {
-    OAuthAuthorizationListing result = apiInstance.getOauthAuthorizations();
+    OAuthAuthorizationListing result = apiInstance.getOauthAuthorizations(acceptLanguage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OAuthApi#getOauthAuthorizations");
@@ -198,8 +201,11 @@ try {
 
 ### Parameters
 
-This endpoint does not require any parameters.
 
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **acceptLanguage** | **String**| The language in which to display the client descriptions. | [optional] [default to en-us] 
+{: class="table-striped"}
 
 
 ### Return type

@@ -106,10 +106,16 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery) | Loads agent schedule data from the schedule. Used in combination with the metadata route |
 | [**postWorkforcemanagementBusinessunitWeekScheduleCopy**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekScheduleCopy) | Copy a schedule |
 | [**postWorkforcemanagementBusinessunitWeekScheduleReschedule**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekScheduleReschedule) | Start a rescheduling run |
+| [**postWorkforcemanagementBusinessunitWeekScheduleUpdate**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekScheduleUpdate) | Starts processing a schedule update |
+| [**postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl) | Creates a signed upload URL for updating a schedule |
 | [**postWorkforcemanagementBusinessunitWeekSchedules**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekSchedules) | Create a blank schedule |
 | [**postWorkforcemanagementBusinessunitWeekSchedulesGenerate**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekSchedulesGenerate) | Generate a schedule |
+| [**postWorkforcemanagementBusinessunitWeekSchedulesImport**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekSchedulesImport) | Starts processing a schedule import |
+| [**postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl) | Creates a signed upload URL for importing a schedule |
 | [**postWorkforcemanagementBusinessunitWeekShorttermforecastCopy**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekShorttermforecastCopy) | Copy a short term forecast |
 | [**postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate) | Generate a short term forecast |
+| [**postWorkforcemanagementBusinessunitWeekShorttermforecastsImport**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekShorttermforecastsImport) | Starts importing the uploaded short term forecast |
+| [**postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl) | Creates a signed upload URL for importing a short term forecast |
 | [**postWorkforcemanagementBusinessunits**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunits) | Add a new business unit |
 | [**postWorkforcemanagementCalendarUrlIcs**](WorkforceManagementApi.html#postWorkforcemanagementCalendarUrlIcs) | Create a newly generated calendar link for the current user; if the current user has previously generated one, the generated link will be returned |
 | [**postWorkforcemanagementHistoricaldataDeletejob**](WorkforceManagementApi.html#postWorkforcemanagementHistoricaldataDeletejob) | Delete the entries of the historical data imports in the organization |
@@ -6903,6 +6909,144 @@ try {
 
 [**BuAsyncScheduleRunResponse**](BuAsyncScheduleRunResponse.html)
 
+<a name="postWorkforcemanagementBusinessunitWeekScheduleUpdate"></a>
+
+# **postWorkforcemanagementBusinessunitWeekScheduleUpdate**
+
+
+
+> [BuAsyncScheduleResponse](BuAsyncScheduleResponse.html) postWorkforcemanagementBusinessunitWeekScheduleUpdate(businessUnitId, weekId, scheduleId, body)
+
+Starts processing a schedule update
+
+Call after uploading the schedule data to the url supplied by the /update/uploadurl route
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/update  
+
+Requires ANY permissions: 
+
+* wfm:schedule:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+LocalDate weekId = new LocalDate(); // LocalDate | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+String scheduleId = "scheduleId_example"; // String | The ID of the schedule
+ProcessScheduleUpdateUploadRequest body = new ProcessScheduleUpdateUploadRequest(); // ProcessScheduleUpdateUploadRequest | body
+try {
+    BuAsyncScheduleResponse result = apiInstance.postWorkforcemanagementBusinessunitWeekScheduleUpdate(businessUnitId, weekId, scheduleId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitWeekScheduleUpdate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **weekId** | **LocalDate**| First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
+| **scheduleId** | **String**| The ID of the schedule | 
+| **body** | [**ProcessScheduleUpdateUploadRequest**](ProcessScheduleUpdateUploadRequest.html)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BuAsyncScheduleResponse**](BuAsyncScheduleResponse.html)
+
+<a name="postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl"></a>
+
+# **postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl**
+
+
+
+> [UpdateScheduleUploadResponse](UpdateScheduleUploadResponse.html) postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl(businessUnitId, weekId, scheduleId, body)
+
+Creates a signed upload URL for updating a schedule
+
+Once the upload is complete, call the /{scheduleId}/update route to start the schedule update process
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/update/uploadurl  
+
+Requires ANY permissions: 
+
+* wfm:schedule:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+LocalDate weekId = new LocalDate(); // LocalDate | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+String scheduleId = "scheduleId_example"; // String | The ID of the schedule
+UploadUrlRequestBody body = new UploadUrlRequestBody(); // UploadUrlRequestBody | body
+try {
+    UpdateScheduleUploadResponse result = apiInstance.postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl(businessUnitId, weekId, scheduleId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **weekId** | **LocalDate**| First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
+| **scheduleId** | **String**| The ID of the schedule | 
+| **body** | [**UploadUrlRequestBody**](UploadUrlRequestBody.html)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UpdateScheduleUploadResponse**](UpdateScheduleUploadResponse.html)
+
 <a name="postWorkforcemanagementBusinessunitWeekSchedules"></a>
 
 # **postWorkforcemanagementBusinessunitWeekSchedules**
@@ -7036,6 +7180,140 @@ try {
 ### Return type
 
 [**BuAsyncScheduleRunResponse**](BuAsyncScheduleRunResponse.html)
+
+<a name="postWorkforcemanagementBusinessunitWeekSchedulesImport"></a>
+
+# **postWorkforcemanagementBusinessunitWeekSchedulesImport**
+
+
+
+> [ScheduleUploadProcessingResponse](ScheduleUploadProcessingResponse.html) postWorkforcemanagementBusinessunitWeekSchedulesImport(businessUnitId, weekId, body)
+
+Starts processing a schedule import
+
+Call after uploading the schedule data to the url supplied by the /import/uploadurl route
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/import  
+
+Requires ANY permissions: 
+
+* wfm:schedule:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+LocalDate weekId = new LocalDate(); // LocalDate | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+WfmProcessUploadRequest body = new WfmProcessUploadRequest(); // WfmProcessUploadRequest | 
+try {
+    ScheduleUploadProcessingResponse result = apiInstance.postWorkforcemanagementBusinessunitWeekSchedulesImport(businessUnitId, weekId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitWeekSchedulesImport");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **weekId** | **LocalDate**| First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
+| **body** | [**WfmProcessUploadRequest**](WfmProcessUploadRequest.html)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ScheduleUploadProcessingResponse**](ScheduleUploadProcessingResponse.html)
+
+<a name="postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl"></a>
+
+# **postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl**
+
+
+
+> [ImportScheduleUploadResponse](ImportScheduleUploadResponse.html) postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl(businessUnitId, weekId, body)
+
+Creates a signed upload URL for importing a schedule
+
+Once the upload is complete, call the /import route to start the schedule import process
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/import/uploadurl  
+
+Requires ANY permissions: 
+
+* wfm:schedule:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+LocalDate weekId = new LocalDate(); // LocalDate | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+UploadUrlRequestBody body = new UploadUrlRequestBody(); // UploadUrlRequestBody | body
+try {
+    ImportScheduleUploadResponse result = apiInstance.postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl(businessUnitId, weekId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **weekId** | **LocalDate**| First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
+| **body** | [**UploadUrlRequestBody**](UploadUrlRequestBody.html)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ImportScheduleUploadResponse**](ImportScheduleUploadResponse.html)
 
 <a name="postWorkforcemanagementBusinessunitWeekShorttermforecastCopy"></a>
 
@@ -7176,6 +7454,140 @@ try {
 ### Return type
 
 [**AsyncForecastOperationResult**](AsyncForecastOperationResult.html)
+
+<a name="postWorkforcemanagementBusinessunitWeekShorttermforecastsImport"></a>
+
+# **postWorkforcemanagementBusinessunitWeekShorttermforecastsImport**
+
+
+
+> [ImportForecastResponse](ImportForecastResponse.html) postWorkforcemanagementBusinessunitWeekShorttermforecastsImport(businessUnitId, weekDateId, body)
+
+Starts importing the uploaded short term forecast
+
+Call after uploading the forecast data to the url supplied by the /import/uploadurl route
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/import  
+
+Requires ANY permissions: 
+
+* wfm:shortTermForecast:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The business unit ID of the business unit to which the forecast belongs
+LocalDate weekDateId = new LocalDate(); // LocalDate | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+WfmProcessUploadRequest body = new WfmProcessUploadRequest(); // WfmProcessUploadRequest | 
+try {
+    ImportForecastResponse result = apiInstance.postWorkforcemanagementBusinessunitWeekShorttermforecastsImport(businessUnitId, weekDateId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitWeekShorttermforecastsImport");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The business unit ID of the business unit to which the forecast belongs | 
+| **weekDateId** | **LocalDate**| First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
+| **body** | [**WfmProcessUploadRequest**](WfmProcessUploadRequest.html)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ImportForecastResponse**](ImportForecastResponse.html)
+
+<a name="postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl"></a>
+
+# **postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl**
+
+
+
+> [ImportForecastUploadResponse](ImportForecastUploadResponse.html) postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl(businessUnitId, weekDateId, body)
+
+Creates a signed upload URL for importing a short term forecast
+
+Once the upload is complete, call the /import route to start the short term forecast import process
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/import/uploadurl  
+
+Requires ANY permissions: 
+
+* wfm:shortTermForecast:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The business unit ID of the business unit to which the forecast belongs
+LocalDate weekDateId = new LocalDate(); // LocalDate | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+UploadUrlRequestBody body = new UploadUrlRequestBody(); // UploadUrlRequestBody | body
+try {
+    ImportForecastUploadResponse result = apiInstance.postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl(businessUnitId, weekDateId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The business unit ID of the business unit to which the forecast belongs | 
+| **weekDateId** | **LocalDate**| First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
+| **body** | [**UploadUrlRequestBody**](UploadUrlRequestBody.html)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ImportForecastUploadResponse**](ImportForecastUploadResponse.html)
 
 <a name="postWorkforcemanagementBusinessunits"></a>
 

@@ -67,6 +67,8 @@ import com.mypurecloud.sdk.v2.model.ParticipantAttributes;
 import com.mypurecloud.sdk.v2.model.Empty;
 import com.mypurecloud.sdk.v2.model.ConsultTransferUpdate;
 import com.mypurecloud.sdk.v2.model.ConsultTransferResponse;
+import com.mypurecloud.sdk.v2.model.PatchCallbackRequest;
+import com.mypurecloud.sdk.v2.model.PatchCallbackResponse;
 import com.mypurecloud.sdk.v2.model.FacebookIntegrationUpdateRequest;
 import com.mypurecloud.sdk.v2.model.OpenIntegrationUpdateRequest;
 import com.mypurecloud.sdk.v2.model.TwitterIntegrationRequest;
@@ -87,6 +89,9 @@ import com.mypurecloud.sdk.v2.model.CallCommand;
 import com.mypurecloud.sdk.v2.model.ConsultTransfer;
 import com.mypurecloud.sdk.v2.model.CreateCallbackResponse;
 import com.mypurecloud.sdk.v2.model.CreateCallbackCommand;
+import com.mypurecloud.sdk.v2.model.BulkCallbackDisconnectRequest;
+import com.mypurecloud.sdk.v2.model.BulkCallbackPatchResponse;
+import com.mypurecloud.sdk.v2.model.BulkCallbackPatchRequest;
 import com.mypurecloud.sdk.v2.model.CreateCallRequest;
 import com.mypurecloud.sdk.v2.model.CreateCallResponse;
 import com.mypurecloud.sdk.v2.model.CreateWebChatMessageRequest;
@@ -197,6 +202,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallbackRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallbackParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallbackParticipantAttributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallbackParticipantCommunicationRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallbacksRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsChatRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsChatParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsChatParticipantAttributesRequest;
@@ -236,6 +242,8 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantReplac
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallbackParticipantReplaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallbacksRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsCallbacksBulkDisconnectRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsCallbacksBulkUpdateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsChatCommunicationMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsChatCommunicationTypingRequest;
@@ -6750,6 +6758,82 @@ public class ConversationsApiAsync {
 
   
   /**
+   * Update a scheduled callback
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<PatchCallbackResponse> patchConversationsCallbacksAsync(PatchConversationsCallbacksRequest request, final AsyncApiCallback<PatchCallbackResponse> callback) {
+    try {
+      final SettableFuture<PatchCallbackResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PatchCallbackResponse>() {}, new AsyncApiCallback<ApiResponse<PatchCallbackResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<PatchCallbackResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a scheduled callback
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<PatchCallbackResponse>> patchConversationsCallbacksAsync(ApiRequest<PatchCallbackRequest> request, final AsyncApiCallback<ApiResponse<PatchCallbackResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<PatchCallbackResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<PatchCallbackResponse>() {}, new AsyncApiCallback<ApiResponse<PatchCallbackResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<PatchCallbackResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PatchCallbackResponse> response = (ApiResponse<PatchCallbackResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PatchCallbackResponse> response = (ApiResponse<PatchCallbackResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Update a conversation by disconnecting all of the participants
    * 
    * @param request the request object
@@ -9701,6 +9785,158 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<CreateCallbackResponse> response = (ApiResponse<CreateCallbackResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Disconnect multiple scheduled callbacks
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> postConversationsCallbacksBulkDisconnectAsync(PostConversationsCallbacksBulkDisconnectRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Disconnect multiple scheduled callbacks
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> postConversationsCallbacksBulkDisconnectAsync(ApiRequest<BulkCallbackDisconnectRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Update multiple scheduled callbacks
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BulkCallbackPatchResponse> postConversationsCallbacksBulkUpdateAsync(PostConversationsCallbacksBulkUpdateRequest request, final AsyncApiCallback<BulkCallbackPatchResponse> callback) {
+    try {
+      final SettableFuture<BulkCallbackPatchResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BulkCallbackPatchResponse>() {}, new AsyncApiCallback<ApiResponse<BulkCallbackPatchResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkCallbackPatchResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update multiple scheduled callbacks
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BulkCallbackPatchResponse>> postConversationsCallbacksBulkUpdateAsync(ApiRequest<BulkCallbackPatchRequest> request, final AsyncApiCallback<ApiResponse<BulkCallbackPatchResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BulkCallbackPatchResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BulkCallbackPatchResponse>() {}, new AsyncApiCallback<ApiResponse<BulkCallbackPatchResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkCallbackPatchResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkCallbackPatchResponse> response = (ApiResponse<BulkCallbackPatchResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkCallbackPatchResponse> response = (ApiResponse<BulkCallbackPatchResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

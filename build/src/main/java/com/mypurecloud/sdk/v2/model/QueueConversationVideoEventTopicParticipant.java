@@ -61,6 +61,7 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
   private Integer alertingTimeoutMs = null;
   private String monitoredParticipantId = null;
   private String coachedParticipantId = null;
+  private String bargedParticipantId = null;
 
   private static class ScreenRecordingStateEnumDeserializer extends StdDeserializer<ScreenRecordingStateEnum> {
     public ScreenRecordingStateEnumDeserializer() {
@@ -557,6 +558,24 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
 
   
   /**
+   * If this participant created a barge in conference, then this will be the id of the participant that is barged in.
+   **/
+  public QueueConversationVideoEventTopicParticipant bargedParticipantId(String bargedParticipantId) {
+    this.bargedParticipantId = bargedParticipantId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "If this participant created a barge in conference, then this will be the id of the participant that is barged in.")
+  @JsonProperty("bargedParticipantId")
+  public String getBargedParticipantId() {
+    return bargedParticipantId;
+  }
+  public void setBargedParticipantId(String bargedParticipantId) {
+    this.bargedParticipantId = bargedParticipantId;
+  }
+
+  
+  /**
    * The current screen recording state for this participant.
    **/
   public QueueConversationVideoEventTopicParticipant screenRecordingState(ScreenRecordingStateEnum screenRecordingState) {
@@ -797,6 +816,7 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
         Objects.equals(this.alertingTimeoutMs, queueConversationVideoEventTopicParticipant.alertingTimeoutMs) &&
         Objects.equals(this.monitoredParticipantId, queueConversationVideoEventTopicParticipant.monitoredParticipantId) &&
         Objects.equals(this.coachedParticipantId, queueConversationVideoEventTopicParticipant.coachedParticipantId) &&
+        Objects.equals(this.bargedParticipantId, queueConversationVideoEventTopicParticipant.bargedParticipantId) &&
         Objects.equals(this.screenRecordingState, queueConversationVideoEventTopicParticipant.screenRecordingState) &&
         Objects.equals(this.flaggedReason, queueConversationVideoEventTopicParticipant.flaggedReason) &&
         Objects.equals(this.attributes, queueConversationVideoEventTopicParticipant.attributes) &&
@@ -813,7 +833,7 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, connectedTime, endTime, userId, externalContactId, externalOrganizationId, name, queueId, groupId, teamId, purpose, consultParticipantId, address, wrapupRequired, wrapupExpected, wrapupPrompt, wrapupTimeoutMs, wrapup, startAcwTime, endAcwTime, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, coachedParticipantId, screenRecordingState, flaggedReason, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos);
+    return Objects.hash(id, connectedTime, endTime, userId, externalContactId, externalOrganizationId, name, queueId, groupId, teamId, purpose, consultParticipantId, address, wrapupRequired, wrapupExpected, wrapupPrompt, wrapupTimeoutMs, wrapup, startAcwTime, endAcwTime, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, coachedParticipantId, bargedParticipantId, screenRecordingState, flaggedReason, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos);
   }
 
   @Override
@@ -845,6 +865,7 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
     sb.append("    alertingTimeoutMs: ").append(toIndentedString(alertingTimeoutMs)).append("\n");
     sb.append("    monitoredParticipantId: ").append(toIndentedString(monitoredParticipantId)).append("\n");
     sb.append("    coachedParticipantId: ").append(toIndentedString(coachedParticipantId)).append("\n");
+    sb.append("    bargedParticipantId: ").append(toIndentedString(bargedParticipantId)).append("\n");
     sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");

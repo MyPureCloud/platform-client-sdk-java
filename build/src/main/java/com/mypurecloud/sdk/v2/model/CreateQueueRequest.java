@@ -594,14 +594,14 @@ public class CreateQueueRequest  implements Serializable {
 
   
   /**
-   * The id of an existing queue to copy the settings from when creating a new queue.
+   * The id of an existing queue to copy the settings (does not include GPR settings) from when creating a new queue.
    **/
   public CreateQueueRequest sourceQueueId(String sourceQueueId) {
     this.sourceQueueId = sourceQueueId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The id of an existing queue to copy the settings from when creating a new queue.")
+  @ApiModelProperty(example = "null", value = "The id of an existing queue to copy the settings (does not include GPR settings) from when creating a new queue.")
   @JsonProperty("sourceQueueId")
   public String getSourceQueueId() {
     return sourceQueueId;

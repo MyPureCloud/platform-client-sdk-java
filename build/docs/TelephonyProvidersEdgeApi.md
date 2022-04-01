@@ -526,7 +526,7 @@ Delete an extension pool by ID
 
 Wraps DELETE /api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * telephony:plugin:all
 
@@ -3379,7 +3379,7 @@ Get an extension pool by ID
 
 Wraps GET /api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * telephony:plugin:all
 
@@ -3442,7 +3442,7 @@ Get a listing of extension pools
 
 Wraps GET /api/v2/telephony/providers/edges/extensionpools  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * telephony:plugin:all
 
@@ -6887,7 +6887,7 @@ Create a new extension pool
 
 Wraps POST /api/v2/telephony/providers/edges/extensionpools  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * telephony:plugin:all
 
@@ -8107,7 +8107,7 @@ Update an extension pool by ID
 
 Wraps PUT /api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * telephony:plugin:all
 

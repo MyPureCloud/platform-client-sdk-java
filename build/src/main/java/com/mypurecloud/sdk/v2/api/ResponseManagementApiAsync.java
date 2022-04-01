@@ -17,22 +17,35 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.LibraryEntityListing;
 import com.mypurecloud.sdk.v2.model.Library;
 import com.mypurecloud.sdk.v2.model.Response;
+import com.mypurecloud.sdk.v2.model.ResponseAsset;
+import com.mypurecloud.sdk.v2.model.ResponseAssetStatus;
 import com.mypurecloud.sdk.v2.model.ResponseEntityListing;
+import com.mypurecloud.sdk.v2.model.ResponseAssetSearchRequest;
+import com.mypurecloud.sdk.v2.model.ResponseAssetSearchResults;
+import com.mypurecloud.sdk.v2.model.CreateResponseAssetResponse;
+import com.mypurecloud.sdk.v2.model.CreateResponseAssetRequest;
 import com.mypurecloud.sdk.v2.model.ResponseQueryResults;
 import com.mypurecloud.sdk.v2.model.ResponseQueryRequest;
+import com.mypurecloud.sdk.v2.model.ResponseAssetRequest;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteResponsemanagementLibraryRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteResponsemanagementResponseRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteResponsemanagementResponseassetRequest;
 import com.mypurecloud.sdk.v2.api.request.GetResponsemanagementLibrariesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetResponsemanagementLibraryRequest;
 import com.mypurecloud.sdk.v2.api.request.GetResponsemanagementResponseRequest;
+import com.mypurecloud.sdk.v2.api.request.GetResponsemanagementResponseassetRequest;
+import com.mypurecloud.sdk.v2.api.request.GetResponsemanagementResponseassetsStatusStatusIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetResponsemanagementResponsesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementLibrariesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementResponseassetsSearchRequest;
+import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementResponseassetsUploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementResponsesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementResponsesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PutResponsemanagementLibraryRequest;
 import com.mypurecloud.sdk.v2.api.request.PutResponsemanagementResponseRequest;
+import com.mypurecloud.sdk.v2.api.request.PutResponsemanagementResponseassetRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -172,6 +185,82 @@ public class ResponseManagementApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteResponsemanagementResponseAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Delete response asset
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteResponsemanagementResponseassetAsync(DeleteResponsemanagementResponseassetRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete response asset
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteResponsemanagementResponseassetAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -435,6 +524,158 @@ public class ResponseManagementApiAsync {
 
   
   /**
+   * Get response asset information
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ResponseAsset> getResponsemanagementResponseassetAsync(GetResponsemanagementResponseassetRequest request, final AsyncApiCallback<ResponseAsset> callback) {
+    try {
+      final SettableFuture<ResponseAsset> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ResponseAsset>() {}, new AsyncApiCallback<ApiResponse<ResponseAsset>>() {
+        @Override
+        public void onCompleted(ApiResponse<ResponseAsset> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get response asset information
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ResponseAsset>> getResponsemanagementResponseassetAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ResponseAsset>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ResponseAsset>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ResponseAsset>() {}, new AsyncApiCallback<ApiResponse<ResponseAsset>>() {
+        @Override
+        public void onCompleted(ApiResponse<ResponseAsset> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ResponseAsset> response = (ApiResponse<ResponseAsset>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ResponseAsset> response = (ApiResponse<ResponseAsset>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get response asset upload status
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ResponseAssetStatus> getResponsemanagementResponseassetsStatusStatusIdAsync(GetResponsemanagementResponseassetsStatusStatusIdRequest request, final AsyncApiCallback<ResponseAssetStatus> callback) {
+    try {
+      final SettableFuture<ResponseAssetStatus> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ResponseAssetStatus>() {}, new AsyncApiCallback<ApiResponse<ResponseAssetStatus>>() {
+        @Override
+        public void onCompleted(ApiResponse<ResponseAssetStatus> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get response asset upload status
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ResponseAssetStatus>> getResponsemanagementResponseassetsStatusStatusIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ResponseAssetStatus>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ResponseAssetStatus>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ResponseAssetStatus>() {}, new AsyncApiCallback<ApiResponse<ResponseAssetStatus>>() {
+        @Override
+        public void onCompleted(ApiResponse<ResponseAssetStatus> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ResponseAssetStatus> response = (ApiResponse<ResponseAssetStatus>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ResponseAssetStatus> response = (ApiResponse<ResponseAssetStatus>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Gets a list of existing responses.
    * 
    * @param request the request object
@@ -574,6 +815,158 @@ public class ResponseManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Library> response = (ApiResponse<Library>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Search response assets
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ResponseAssetSearchResults> postResponsemanagementResponseassetsSearchAsync(PostResponsemanagementResponseassetsSearchRequest request, final AsyncApiCallback<ResponseAssetSearchResults> callback) {
+    try {
+      final SettableFuture<ResponseAssetSearchResults> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ResponseAssetSearchResults>() {}, new AsyncApiCallback<ApiResponse<ResponseAssetSearchResults>>() {
+        @Override
+        public void onCompleted(ApiResponse<ResponseAssetSearchResults> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Search response assets
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ResponseAssetSearchResults>> postResponsemanagementResponseassetsSearchAsync(ApiRequest<ResponseAssetSearchRequest> request, final AsyncApiCallback<ApiResponse<ResponseAssetSearchResults>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ResponseAssetSearchResults>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ResponseAssetSearchResults>() {}, new AsyncApiCallback<ApiResponse<ResponseAssetSearchResults>>() {
+        @Override
+        public void onCompleted(ApiResponse<ResponseAssetSearchResults> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ResponseAssetSearchResults> response = (ApiResponse<ResponseAssetSearchResults>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ResponseAssetSearchResults> response = (ApiResponse<ResponseAssetSearchResults>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Creates pre-signed url for uploading response asset
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CreateResponseAssetResponse> postResponsemanagementResponseassetsUploadsAsync(PostResponsemanagementResponseassetsUploadsRequest request, final AsyncApiCallback<CreateResponseAssetResponse> callback) {
+    try {
+      final SettableFuture<CreateResponseAssetResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CreateResponseAssetResponse>() {}, new AsyncApiCallback<ApiResponse<CreateResponseAssetResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<CreateResponseAssetResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Creates pre-signed url for uploading response asset
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CreateResponseAssetResponse>> postResponsemanagementResponseassetsUploadsAsync(ApiRequest<CreateResponseAssetRequest> request, final AsyncApiCallback<ApiResponse<CreateResponseAssetResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CreateResponseAssetResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CreateResponseAssetResponse>() {}, new AsyncApiCallback<ApiResponse<CreateResponseAssetResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<CreateResponseAssetResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CreateResponseAssetResponse> response = (ApiResponse<CreateResponseAssetResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CreateResponseAssetResponse> response = (ApiResponse<CreateResponseAssetResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -878,6 +1271,82 @@ public class ResponseManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Response> response = (ApiResponse<Response>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Update response asset
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ResponseAsset> putResponsemanagementResponseassetAsync(PutResponsemanagementResponseassetRequest request, final AsyncApiCallback<ResponseAsset> callback) {
+    try {
+      final SettableFuture<ResponseAsset> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ResponseAsset>() {}, new AsyncApiCallback<ApiResponse<ResponseAsset>>() {
+        @Override
+        public void onCompleted(ApiResponse<ResponseAsset> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update response asset
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ResponseAsset>> putResponsemanagementResponseassetAsync(ApiRequest<ResponseAssetRequest> request, final AsyncApiCallback<ApiResponse<ResponseAsset>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ResponseAsset>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ResponseAsset>() {}, new AsyncApiCallback<ApiResponse<ResponseAsset>>() {
+        @Override
+        public void onCompleted(ApiResponse<ResponseAsset> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ResponseAsset> response = (ApiResponse<ResponseAsset>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ResponseAsset> response = (ApiResponse<ResponseAsset>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

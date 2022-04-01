@@ -13,6 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicAddress;
 import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicAfterCallWork;
+import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicObject;
 import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -87,6 +88,7 @@ public class QueueConversationVideoEventTopicVideo  implements Serializable {
   private Boolean audioMuted = null;
   private Boolean videoMuted = null;
   private Boolean sharingScreen = null;
+  private QueueConversationVideoEventTopicObject peerCount = null;
   private String provider = null;
   private String scriptId = null;
   private String peerId = null;
@@ -287,6 +289,24 @@ public class QueueConversationVideoEventTopicVideo  implements Serializable {
 
   
   /**
+   * The number of peer participants from the perspective of the participant in the conference.
+   **/
+  public QueueConversationVideoEventTopicVideo peerCount(QueueConversationVideoEventTopicObject peerCount) {
+    this.peerCount = peerCount;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The number of peer participants from the perspective of the participant in the conference.")
+  @JsonProperty("peerCount")
+  public QueueConversationVideoEventTopicObject getPeerCount() {
+    return peerCount;
+  }
+  public void setPeerCount(QueueConversationVideoEventTopicObject peerCount) {
+    this.peerCount = peerCount;
+  }
+
+  
+  /**
    * The media provider controlling the video.
    **/
   public QueueConversationVideoEventTopicVideo provider(String provider) {
@@ -483,6 +503,7 @@ public class QueueConversationVideoEventTopicVideo  implements Serializable {
         Objects.equals(this.audioMuted, queueConversationVideoEventTopicVideo.audioMuted) &&
         Objects.equals(this.videoMuted, queueConversationVideoEventTopicVideo.videoMuted) &&
         Objects.equals(this.sharingScreen, queueConversationVideoEventTopicVideo.sharingScreen) &&
+        Objects.equals(this.peerCount, queueConversationVideoEventTopicVideo.peerCount) &&
         Objects.equals(this.provider, queueConversationVideoEventTopicVideo.provider) &&
         Objects.equals(this.scriptId, queueConversationVideoEventTopicVideo.scriptId) &&
         Objects.equals(this.peerId, queueConversationVideoEventTopicVideo.peerId) &&
@@ -497,7 +518,7 @@ public class QueueConversationVideoEventTopicVideo  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, self, id, context, audioMuted, videoMuted, sharingScreen, provider, scriptId, peerId, disconnectType, connectedTime, disconnectedTime, msids, wrapup, afterCallWork, afterCallWorkRequired);
+    return Objects.hash(state, self, id, context, audioMuted, videoMuted, sharingScreen, peerCount, provider, scriptId, peerId, disconnectType, connectedTime, disconnectedTime, msids, wrapup, afterCallWork, afterCallWorkRequired);
   }
 
   @Override
@@ -512,6 +533,7 @@ public class QueueConversationVideoEventTopicVideo  implements Serializable {
     sb.append("    audioMuted: ").append(toIndentedString(audioMuted)).append("\n");
     sb.append("    videoMuted: ").append(toIndentedString(videoMuted)).append("\n");
     sb.append("    sharingScreen: ").append(toIndentedString(sharingScreen)).append("\n");
+    sb.append("    peerCount: ").append(toIndentedString(peerCount)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");
     sb.append("    peerId: ").append(toIndentedString(peerId)).append("\n");

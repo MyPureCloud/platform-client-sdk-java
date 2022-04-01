@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UserRoutingStatusErrorInfo;
+import com.mypurecloud.sdk.v2.model.UserRoutingStatusObject;
 import com.mypurecloud.sdk.v2.model.UserRoutingStatusRoutingStatus;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -22,8 +23,26 @@ import java.io.Serializable;
 
 public class UserRoutingStatusUserRoutingStatus  implements Serializable {
   
+  private UserRoutingStatusObject id = null;
   private UserRoutingStatusRoutingStatus routingStatus = null;
   private UserRoutingStatusErrorInfo errorInfo = null;
+
+  
+  /**
+   **/
+  public UserRoutingStatusUserRoutingStatus id(UserRoutingStatusObject id) {
+    this.id = id;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("id")
+  public UserRoutingStatusObject getId() {
+    return id;
+  }
+  public void setId(UserRoutingStatusObject id) {
+    this.id = id;
+  }
 
   
   /**
@@ -70,13 +89,14 @@ public class UserRoutingStatusUserRoutingStatus  implements Serializable {
       return false;
     }
     UserRoutingStatusUserRoutingStatus userRoutingStatusUserRoutingStatus = (UserRoutingStatusUserRoutingStatus) o;
-    return Objects.equals(this.routingStatus, userRoutingStatusUserRoutingStatus.routingStatus) &&
+    return Objects.equals(this.id, userRoutingStatusUserRoutingStatus.id) &&
+        Objects.equals(this.routingStatus, userRoutingStatusUserRoutingStatus.routingStatus) &&
         Objects.equals(this.errorInfo, userRoutingStatusUserRoutingStatus.errorInfo);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(routingStatus, errorInfo);
+    return Objects.hash(id, routingStatus, errorInfo);
   }
 
   @Override
@@ -84,6 +104,7 @@ public class UserRoutingStatusUserRoutingStatus  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class UserRoutingStatusUserRoutingStatus {\n");
     
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    routingStatus: ").append(toIndentedString(routingStatus)).append("\n");
     sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
     sb.append("}");

@@ -80,6 +80,7 @@ public class EncryptionKey  implements Serializable {
     }
   }
   private KeyConfigurationTypeEnum keyConfigurationType = null;
+  private String kmsKeyArn = null;
   private String selfUri = null;
 
   
@@ -197,6 +198,24 @@ public class EncryptionKey  implements Serializable {
   }
 
   
+  /**
+   * ARN of internal key to be wrapped by AWS KMS Symmetric key
+   **/
+  public EncryptionKey kmsKeyArn(String kmsKeyArn) {
+    this.kmsKeyArn = kmsKeyArn;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "ARN of internal key to be wrapped by AWS KMS Symmetric key")
+  @JsonProperty("kmsKeyArn")
+  public String getKmsKeyArn() {
+    return kmsKeyArn;
+  }
+  public void setKmsKeyArn(String kmsKeyArn) {
+    this.kmsKeyArn = kmsKeyArn;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -221,12 +240,13 @@ public class EncryptionKey  implements Serializable {
         Objects.equals(this.user, encryptionKey.user) &&
         Objects.equals(this.localEncryptionConfiguration, encryptionKey.localEncryptionConfiguration) &&
         Objects.equals(this.keyConfigurationType, encryptionKey.keyConfigurationType) &&
+        Objects.equals(this.kmsKeyArn, encryptionKey.kmsKeyArn) &&
         Objects.equals(this.selfUri, encryptionKey.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, createDate, keydataSummary, user, localEncryptionConfiguration, keyConfigurationType, selfUri);
+    return Objects.hash(id, name, createDate, keydataSummary, user, localEncryptionConfiguration, keyConfigurationType, kmsKeyArn, selfUri);
   }
 
   @Override
@@ -241,6 +261,7 @@ public class EncryptionKey  implements Serializable {
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    localEncryptionConfiguration: ").append(toIndentedString(localEncryptionConfiguration)).append("\n");
     sb.append("    keyConfigurationType: ").append(toIndentedString(keyConfigurationType)).append("\n");
+    sb.append("    kmsKeyArn: ").append(toIndentedString(kmsKeyArn)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

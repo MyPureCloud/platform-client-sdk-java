@@ -10,8 +10,11 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.RecipientAdditionalIdentifier;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -24,6 +27,7 @@ public class WebMessagingRecipient  implements Serializable {
   private String firstName = null;
   private String lastName = null;
   private String nickname = null;
+  private List<RecipientAdditionalIdentifier> additionalIds = new ArrayList<RecipientAdditionalIdentifier>();
 
   
   @ApiModelProperty(example = "null", value = "First name of the recipient.")
@@ -47,6 +51,13 @@ public class WebMessagingRecipient  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "List of recipient additional identifiers")
+  @JsonProperty("additionalIds")
+  public List<RecipientAdditionalIdentifier> getAdditionalIds() {
+    return additionalIds;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -59,12 +70,13 @@ public class WebMessagingRecipient  implements Serializable {
     WebMessagingRecipient webMessagingRecipient = (WebMessagingRecipient) o;
     return Objects.equals(this.firstName, webMessagingRecipient.firstName) &&
         Objects.equals(this.lastName, webMessagingRecipient.lastName) &&
-        Objects.equals(this.nickname, webMessagingRecipient.nickname);
+        Objects.equals(this.nickname, webMessagingRecipient.nickname) &&
+        Objects.equals(this.additionalIds, webMessagingRecipient.additionalIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(firstName, lastName, nickname);
+    return Objects.hash(firstName, lastName, nickname, additionalIds);
   }
 
   @Override
@@ -75,6 +87,7 @@ public class WebMessagingRecipient  implements Serializable {
     sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
     sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
     sb.append("    nickname: ").append(toIndentedString(nickname)).append("\n");
+    sb.append("    additionalIds: ").append(toIndentedString(additionalIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

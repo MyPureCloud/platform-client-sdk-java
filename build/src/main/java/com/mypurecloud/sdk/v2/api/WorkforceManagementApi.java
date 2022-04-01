@@ -96,11 +96,19 @@ import com.mypurecloud.sdk.v2.model.BuQueryAgentSchedulesRequest;
 import com.mypurecloud.sdk.v2.model.BuCopyScheduleRequest;
 import com.mypurecloud.sdk.v2.model.BuAsyncScheduleRunResponse;
 import com.mypurecloud.sdk.v2.model.BuRescheduleRequest;
+import com.mypurecloud.sdk.v2.model.ProcessScheduleUpdateUploadRequest;
+import com.mypurecloud.sdk.v2.model.UploadUrlRequestBody;
+import com.mypurecloud.sdk.v2.model.UpdateScheduleUploadResponse;
 import com.mypurecloud.sdk.v2.model.BuCreateBlankScheduleRequest;
 import com.mypurecloud.sdk.v2.model.BuGenerateScheduleRequest;
+import com.mypurecloud.sdk.v2.model.WfmProcessUploadRequest;
+import com.mypurecloud.sdk.v2.model.ScheduleUploadProcessingResponse;
+import com.mypurecloud.sdk.v2.model.ImportScheduleUploadResponse;
 import com.mypurecloud.sdk.v2.model.AsyncForecastOperationResult;
 import com.mypurecloud.sdk.v2.model.CopyBuForecastRequest;
 import com.mypurecloud.sdk.v2.model.GenerateBuForecastRequest;
+import com.mypurecloud.sdk.v2.model.ImportForecastResponse;
+import com.mypurecloud.sdk.v2.model.ImportForecastUploadResponse;
 import com.mypurecloud.sdk.v2.model.CreateBusinessUnitRequest;
 import com.mypurecloud.sdk.v2.model.ValidationServiceRequest;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQuery;
@@ -237,10 +245,16 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitSer
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekScheduleCopyRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekScheduleRescheduleRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekScheduleUpdateRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurlRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekSchedulesGenerateRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekSchedulesImportRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekSchedulesImportUploadurlRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekShorttermforecastCopyRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekShorttermforecastsGenerateRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekShorttermforecastsImportRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurlRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementCalendarUrlIcsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementHistoricaldataDeletejobRequest;
@@ -8565,6 +8579,188 @@ public class WorkforceManagementApi {
 
   
   /**
+   * Starts processing a schedule update
+   * Call after uploading the schedule data to the url supplied by the /update/uploadurl route
+   * @param businessUnitId The ID of the business unit (required)
+   * @param weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param scheduleId The ID of the schedule (required)
+   * @param body body (required)
+   * @return BuAsyncScheduleResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuAsyncScheduleResponse postWorkforcemanagementBusinessunitWeekScheduleUpdate(String businessUnitId, LocalDate weekId, String scheduleId, ProcessScheduleUpdateUploadRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitWeekScheduleUpdate(createPostWorkforcemanagementBusinessunitWeekScheduleUpdateRequest(businessUnitId, weekId, scheduleId, body));
+  }
+
+  /**
+   * Starts processing a schedule update
+   * Call after uploading the schedule data to the url supplied by the /update/uploadurl route
+   * @param businessUnitId The ID of the business unit (required)
+   * @param weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param scheduleId The ID of the schedule (required)
+   * @param body body (required)
+   * @return BuAsyncScheduleResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuAsyncScheduleResponse> postWorkforcemanagementBusinessunitWeekScheduleUpdateWithHttpInfo(String businessUnitId, LocalDate weekId, String scheduleId, ProcessScheduleUpdateUploadRequest body) throws IOException {
+    return postWorkforcemanagementBusinessunitWeekScheduleUpdate(createPostWorkforcemanagementBusinessunitWeekScheduleUpdateRequest(businessUnitId, weekId, scheduleId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitWeekScheduleUpdateRequest createPostWorkforcemanagementBusinessunitWeekScheduleUpdateRequest(String businessUnitId, LocalDate weekId, String scheduleId, ProcessScheduleUpdateUploadRequest body) {
+    return PostWorkforcemanagementBusinessunitWeekScheduleUpdateRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .withWeekId(weekId)
+    
+            .withScheduleId(scheduleId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Starts processing a schedule update
+   * Call after uploading the schedule data to the url supplied by the /update/uploadurl route
+   * @param request The request object
+   * @return BuAsyncScheduleResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuAsyncScheduleResponse postWorkforcemanagementBusinessunitWeekScheduleUpdate(PostWorkforcemanagementBusinessunitWeekScheduleUpdateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuAsyncScheduleResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuAsyncScheduleResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Starts processing a schedule update
+   * Call after uploading the schedule data to the url supplied by the /update/uploadurl route
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuAsyncScheduleResponse> postWorkforcemanagementBusinessunitWeekScheduleUpdate(ApiRequest<ProcessScheduleUpdateUploadRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuAsyncScheduleResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuAsyncScheduleResponse> response = (ApiResponse<BuAsyncScheduleResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuAsyncScheduleResponse> response = (ApiResponse<BuAsyncScheduleResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Creates a signed upload URL for updating a schedule
+   * Once the upload is complete, call the /{scheduleId}/update route to start the schedule update process
+   * @param businessUnitId The ID of the business unit (required)
+   * @param weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param scheduleId The ID of the schedule (required)
+   * @param body body (required)
+   * @return UpdateScheduleUploadResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UpdateScheduleUploadResponse postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl(String businessUnitId, LocalDate weekId, String scheduleId, UploadUrlRequestBody body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl(createPostWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurlRequest(businessUnitId, weekId, scheduleId, body));
+  }
+
+  /**
+   * Creates a signed upload URL for updating a schedule
+   * Once the upload is complete, call the /{scheduleId}/update route to start the schedule update process
+   * @param businessUnitId The ID of the business unit (required)
+   * @param weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param scheduleId The ID of the schedule (required)
+   * @param body body (required)
+   * @return UpdateScheduleUploadResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UpdateScheduleUploadResponse> postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurlWithHttpInfo(String businessUnitId, LocalDate weekId, String scheduleId, UploadUrlRequestBody body) throws IOException {
+    return postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl(createPostWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurlRequest(businessUnitId, weekId, scheduleId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurlRequest createPostWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurlRequest(String businessUnitId, LocalDate weekId, String scheduleId, UploadUrlRequestBody body) {
+    return PostWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurlRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .withWeekId(weekId)
+    
+            .withScheduleId(scheduleId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Creates a signed upload URL for updating a schedule
+   * Once the upload is complete, call the /{scheduleId}/update route to start the schedule update process
+   * @param request The request object
+   * @return UpdateScheduleUploadResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UpdateScheduleUploadResponse postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl(PostWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurlRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UpdateScheduleUploadResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UpdateScheduleUploadResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Creates a signed upload URL for updating a schedule
+   * Once the upload is complete, call the /{scheduleId}/update route to start the schedule update process
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UpdateScheduleUploadResponse> postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl(ApiRequest<UploadUrlRequestBody> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UpdateScheduleUploadResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UpdateScheduleUploadResponse> response = (ApiResponse<UpdateScheduleUploadResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UpdateScheduleUploadResponse> response = (ApiResponse<UpdateScheduleUploadResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Create a blank schedule
    * 
    * @param businessUnitId The ID of the business unit (required)
@@ -8733,6 +8929,180 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<BuAsyncScheduleRunResponse> response = (ApiResponse<BuAsyncScheduleRunResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Starts processing a schedule import
+   * Call after uploading the schedule data to the url supplied by the /import/uploadurl route
+   * @param businessUnitId The ID of the business unit (required)
+   * @param weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param body  (required)
+   * @return ScheduleUploadProcessingResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScheduleUploadProcessingResponse postWorkforcemanagementBusinessunitWeekSchedulesImport(String businessUnitId, LocalDate weekId, WfmProcessUploadRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitWeekSchedulesImport(createPostWorkforcemanagementBusinessunitWeekSchedulesImportRequest(businessUnitId, weekId, body));
+  }
+
+  /**
+   * Starts processing a schedule import
+   * Call after uploading the schedule data to the url supplied by the /import/uploadurl route
+   * @param businessUnitId The ID of the business unit (required)
+   * @param weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param body  (required)
+   * @return ScheduleUploadProcessingResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScheduleUploadProcessingResponse> postWorkforcemanagementBusinessunitWeekSchedulesImportWithHttpInfo(String businessUnitId, LocalDate weekId, WfmProcessUploadRequest body) throws IOException {
+    return postWorkforcemanagementBusinessunitWeekSchedulesImport(createPostWorkforcemanagementBusinessunitWeekSchedulesImportRequest(businessUnitId, weekId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitWeekSchedulesImportRequest createPostWorkforcemanagementBusinessunitWeekSchedulesImportRequest(String businessUnitId, LocalDate weekId, WfmProcessUploadRequest body) {
+    return PostWorkforcemanagementBusinessunitWeekSchedulesImportRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .withWeekId(weekId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Starts processing a schedule import
+   * Call after uploading the schedule data to the url supplied by the /import/uploadurl route
+   * @param request The request object
+   * @return ScheduleUploadProcessingResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScheduleUploadProcessingResponse postWorkforcemanagementBusinessunitWeekSchedulesImport(PostWorkforcemanagementBusinessunitWeekSchedulesImportRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ScheduleUploadProcessingResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ScheduleUploadProcessingResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Starts processing a schedule import
+   * Call after uploading the schedule data to the url supplied by the /import/uploadurl route
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScheduleUploadProcessingResponse> postWorkforcemanagementBusinessunitWeekSchedulesImport(ApiRequest<WfmProcessUploadRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ScheduleUploadProcessingResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScheduleUploadProcessingResponse> response = (ApiResponse<ScheduleUploadProcessingResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScheduleUploadProcessingResponse> response = (ApiResponse<ScheduleUploadProcessingResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Creates a signed upload URL for importing a schedule
+   * Once the upload is complete, call the /import route to start the schedule import process
+   * @param businessUnitId The ID of the business unit (required)
+   * @param weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param body body (required)
+   * @return ImportScheduleUploadResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ImportScheduleUploadResponse postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl(String businessUnitId, LocalDate weekId, UploadUrlRequestBody body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl(createPostWorkforcemanagementBusinessunitWeekSchedulesImportUploadurlRequest(businessUnitId, weekId, body));
+  }
+
+  /**
+   * Creates a signed upload URL for importing a schedule
+   * Once the upload is complete, call the /import route to start the schedule import process
+   * @param businessUnitId The ID of the business unit (required)
+   * @param weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param body body (required)
+   * @return ImportScheduleUploadResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ImportScheduleUploadResponse> postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurlWithHttpInfo(String businessUnitId, LocalDate weekId, UploadUrlRequestBody body) throws IOException {
+    return postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl(createPostWorkforcemanagementBusinessunitWeekSchedulesImportUploadurlRequest(businessUnitId, weekId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitWeekSchedulesImportUploadurlRequest createPostWorkforcemanagementBusinessunitWeekSchedulesImportUploadurlRequest(String businessUnitId, LocalDate weekId, UploadUrlRequestBody body) {
+    return PostWorkforcemanagementBusinessunitWeekSchedulesImportUploadurlRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .withWeekId(weekId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Creates a signed upload URL for importing a schedule
+   * Once the upload is complete, call the /import route to start the schedule import process
+   * @param request The request object
+   * @return ImportScheduleUploadResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ImportScheduleUploadResponse postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl(PostWorkforcemanagementBusinessunitWeekSchedulesImportUploadurlRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ImportScheduleUploadResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ImportScheduleUploadResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Creates a signed upload URL for importing a schedule
+   * Once the upload is complete, call the /import route to start the schedule import process
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ImportScheduleUploadResponse> postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl(ApiRequest<UploadUrlRequestBody> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ImportScheduleUploadResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ImportScheduleUploadResponse> response = (ApiResponse<ImportScheduleUploadResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ImportScheduleUploadResponse> response = (ApiResponse<ImportScheduleUploadResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -8919,6 +9289,180 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AsyncForecastOperationResult> response = (ApiResponse<AsyncForecastOperationResult>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Starts importing the uploaded short term forecast
+   * Call after uploading the forecast data to the url supplied by the /import/uploadurl route
+   * @param businessUnitId The business unit ID of the business unit to which the forecast belongs (required)
+   * @param weekDateId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param body  (required)
+   * @return ImportForecastResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ImportForecastResponse postWorkforcemanagementBusinessunitWeekShorttermforecastsImport(String businessUnitId, LocalDate weekDateId, WfmProcessUploadRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitWeekShorttermforecastsImport(createPostWorkforcemanagementBusinessunitWeekShorttermforecastsImportRequest(businessUnitId, weekDateId, body));
+  }
+
+  /**
+   * Starts importing the uploaded short term forecast
+   * Call after uploading the forecast data to the url supplied by the /import/uploadurl route
+   * @param businessUnitId The business unit ID of the business unit to which the forecast belongs (required)
+   * @param weekDateId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param body  (required)
+   * @return ImportForecastResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ImportForecastResponse> postWorkforcemanagementBusinessunitWeekShorttermforecastsImportWithHttpInfo(String businessUnitId, LocalDate weekDateId, WfmProcessUploadRequest body) throws IOException {
+    return postWorkforcemanagementBusinessunitWeekShorttermforecastsImport(createPostWorkforcemanagementBusinessunitWeekShorttermforecastsImportRequest(businessUnitId, weekDateId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitWeekShorttermforecastsImportRequest createPostWorkforcemanagementBusinessunitWeekShorttermforecastsImportRequest(String businessUnitId, LocalDate weekDateId, WfmProcessUploadRequest body) {
+    return PostWorkforcemanagementBusinessunitWeekShorttermforecastsImportRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .withWeekDateId(weekDateId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Starts importing the uploaded short term forecast
+   * Call after uploading the forecast data to the url supplied by the /import/uploadurl route
+   * @param request The request object
+   * @return ImportForecastResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ImportForecastResponse postWorkforcemanagementBusinessunitWeekShorttermforecastsImport(PostWorkforcemanagementBusinessunitWeekShorttermforecastsImportRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ImportForecastResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ImportForecastResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Starts importing the uploaded short term forecast
+   * Call after uploading the forecast data to the url supplied by the /import/uploadurl route
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ImportForecastResponse> postWorkforcemanagementBusinessunitWeekShorttermforecastsImport(ApiRequest<WfmProcessUploadRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ImportForecastResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ImportForecastResponse> response = (ApiResponse<ImportForecastResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ImportForecastResponse> response = (ApiResponse<ImportForecastResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Creates a signed upload URL for importing a short term forecast
+   * Once the upload is complete, call the /import route to start the short term forecast import process
+   * @param businessUnitId The business unit ID of the business unit to which the forecast belongs (required)
+   * @param weekDateId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param body body (required)
+   * @return ImportForecastUploadResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ImportForecastUploadResponse postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl(String businessUnitId, LocalDate weekDateId, UploadUrlRequestBody body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl(createPostWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurlRequest(businessUnitId, weekDateId, body));
+  }
+
+  /**
+   * Creates a signed upload URL for importing a short term forecast
+   * Once the upload is complete, call the /import route to start the short term forecast import process
+   * @param businessUnitId The business unit ID of the business unit to which the forecast belongs (required)
+   * @param weekDateId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param body body (required)
+   * @return ImportForecastUploadResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ImportForecastUploadResponse> postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurlWithHttpInfo(String businessUnitId, LocalDate weekDateId, UploadUrlRequestBody body) throws IOException {
+    return postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl(createPostWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurlRequest(businessUnitId, weekDateId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurlRequest createPostWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurlRequest(String businessUnitId, LocalDate weekDateId, UploadUrlRequestBody body) {
+    return PostWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurlRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .withWeekDateId(weekDateId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Creates a signed upload URL for importing a short term forecast
+   * Once the upload is complete, call the /import route to start the short term forecast import process
+   * @param request The request object
+   * @return ImportForecastUploadResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ImportForecastUploadResponse postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl(PostWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurlRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ImportForecastUploadResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ImportForecastUploadResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Creates a signed upload URL for importing a short term forecast
+   * Once the upload is complete, call the /import route to start the short term forecast import process
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ImportForecastUploadResponse> postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl(ApiRequest<UploadUrlRequestBody> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ImportForecastUploadResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ImportForecastUploadResponse> response = (ApiResponse<ImportForecastUploadResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ImportForecastUploadResponse> response = (ApiResponse<ImportForecastUploadResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

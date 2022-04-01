@@ -166,7 +166,9 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     PURGE("Purge"),
     PROCESSED("Processed"),
     ASSIGN("Assign"),
-    UNASSIGN("Unassign");
+    UNASSIGN("Unassign"),
+    RESET("Reset"),
+    REASSIGN("Reassign");
 
     private String value;
 

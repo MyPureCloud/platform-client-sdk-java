@@ -334,6 +334,8 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
   private String documentId = null;
   private String monitoredParticipantId = null;
   private String coachedParticipantId = null;
+  private String bargedParticipantId = null;
+  private Date bargedTime = null;
   private String consultParticipantId = null;
   private ConversationCallEventTopicFaxStatus faxStatus = null;
 
@@ -1088,6 +1090,40 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
   
   /**
    **/
+  public ConversationCallEventTopicCallMediaParticipant bargedParticipantId(String bargedParticipantId) {
+    this.bargedParticipantId = bargedParticipantId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("bargedParticipantId")
+  public String getBargedParticipantId() {
+    return bargedParticipantId;
+  }
+  public void setBargedParticipantId(String bargedParticipantId) {
+    this.bargedParticipantId = bargedParticipantId;
+  }
+
+  
+  /**
+   **/
+  public ConversationCallEventTopicCallMediaParticipant bargedTime(Date bargedTime) {
+    this.bargedTime = bargedTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("bargedTime")
+  public Date getBargedTime() {
+    return bargedTime;
+  }
+  public void setBargedTime(Date bargedTime) {
+    this.bargedTime = bargedTime;
+  }
+
+  
+  /**
+   **/
   public ConversationCallEventTopicCallMediaParticipant consultParticipantId(String consultParticipantId) {
     this.consultParticipantId = consultParticipantId;
     return this;
@@ -1174,13 +1210,15 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
         Objects.equals(this.documentId, conversationCallEventTopicCallMediaParticipant.documentId) &&
         Objects.equals(this.monitoredParticipantId, conversationCallEventTopicCallMediaParticipant.monitoredParticipantId) &&
         Objects.equals(this.coachedParticipantId, conversationCallEventTopicCallMediaParticipant.coachedParticipantId) &&
+        Objects.equals(this.bargedParticipantId, conversationCallEventTopicCallMediaParticipant.bargedParticipantId) &&
+        Objects.equals(this.bargedTime, conversationCallEventTopicCallMediaParticipant.bargedTime) &&
         Objects.equals(this.consultParticipantId, conversationCallEventTopicCallMediaParticipant.consultParticipantId) &&
         Objects.equals(this.faxStatus, conversationCallEventTopicCallMediaParticipant.faxStatus);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, muted, confined, recording, recordingState, group, ani, dnis, documentId, monitoredParticipantId, coachedParticipantId, consultParticipantId, faxStatus);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, muted, confined, recording, recordingState, group, ani, dnis, documentId, monitoredParticipantId, coachedParticipantId, bargedParticipantId, bargedTime, consultParticipantId, faxStatus);
   }
 
   @Override
@@ -1232,6 +1270,8 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     sb.append("    documentId: ").append(toIndentedString(documentId)).append("\n");
     sb.append("    monitoredParticipantId: ").append(toIndentedString(monitoredParticipantId)).append("\n");
     sb.append("    coachedParticipantId: ").append(toIndentedString(coachedParticipantId)).append("\n");
+    sb.append("    bargedParticipantId: ").append(toIndentedString(bargedParticipantId)).append("\n");
+    sb.append("    bargedTime: ").append(toIndentedString(bargedTime)).append("\n");
     sb.append("    consultParticipantId: ").append(toIndentedString(consultParticipantId)).append("\n");
     sb.append("    faxStatus: ").append(toIndentedString(faxStatus)).append("\n");
     sb.append("}");

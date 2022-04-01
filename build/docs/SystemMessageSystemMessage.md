@@ -16,7 +16,7 @@ title: SystemMessageSystemMessage
 | **oauthClientId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **reason** | [**ReasonEnum**](#ReasonEnum)<!----> |  |  [optional] |
 | **message** | <!----><!---->**String**<!----> |  |  [optional] |
-| **data** | <!----><!---->**Object**<!----> |  |  [optional] |
+| **data** | <!----><!---->[**Map&lt;String, SystemMessageObject&gt;**](SystemMessageObject.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

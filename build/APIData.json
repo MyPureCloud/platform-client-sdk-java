@@ -7111,6 +7111,20 @@
     "return": "Empty",
     "example": "//Import classes:\nimport com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.auth.*;\nimport com.mypurecloud.sdk.v2.api.request.PatchConversationsCallbackParticipantCommunicationRequest;\n\nApiClient defaultClient = Configuration.getDefaultApiClient();\n\n// Create ApiClient instance\nApiClient apiClient = ApiClient.Builder.standard()\n\t\t.withAccessToken(accessToken)\n\t\t.withBasePath(\"https://api.mypurecloud.com\")\n\t\t.build();\n\n// Use the ApiClient instance\nConfiguration.setDefaultApiClient(apiClient);\n\nPatchConversationsCallbackParticipantCommunicationRequest apiInstance = new PatchConversationsCallbackParticipantCommunicationRequest();\nString conversationId = \"conversationId_example\"; // String | conversationId\nString participantId = \"participantId_example\"; // String | participantId\nString communicationId = \"communicationId_example\"; // String | communicationId\nMediaParticipantRequest body = new MediaParticipantRequest(); // MediaParticipantRequest | Participant\ntry {\n    Empty result = apiInstance.patchConversationsCallbackParticipantCommunication(conversationId, participantId, communicationId, body);\n    System.out.println(result);\n} catch (ApiException e) {\n    System.err.println(\"Exception when calling PatchConversationsCallbackParticipantCommunicationRequest#patchConversationsCallbackParticipantCommunication\");\n    e.printStackTrace();\n}"
   },
+  "patchconversationscallbacks": {
+    "operationId": "patchconversationscallbacks",
+    "functionName": "patchConversationsCallbacks",
+    "signature": "patchConversationsCallbacks(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "PatchCallbackRequest",
+        "required": "true"
+      }
+    ],
+    "return": "PatchCallbackResponse",
+    "example": "//Import classes:\nimport com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.auth.*;\nimport com.mypurecloud.sdk.v2.api.request.PatchConversationsCallbacksRequest;\n\nApiClient defaultClient = Configuration.getDefaultApiClient();\n\n// Create ApiClient instance\nApiClient apiClient = ApiClient.Builder.standard()\n\t\t.withAccessToken(accessToken)\n\t\t.withBasePath(\"https://api.mypurecloud.com\")\n\t\t.build();\n\n// Use the ApiClient instance\nConfiguration.setDefaultApiClient(apiClient);\n\nPatchConversationsCallbacksRequest apiInstance = new PatchConversationsCallbacksRequest();\nPatchCallbackRequest body = new PatchCallbackRequest(); // PatchCallbackRequest | PatchCallbackRequest\ntry {\n    PatchCallbackResponse result = apiInstance.patchConversationsCallbacks(body);\n    System.out.println(result);\n} catch (ApiException e) {\n    System.err.println(\"Exception when calling PatchConversationsCallbacksRequest#patchConversationsCallbacks\");\n    e.printStackTrace();\n}"
+  },
   "patchconversationschat": {
     "operationId": "patchconversationschat",
     "functionName": "patchConversationsChat",
@@ -7865,6 +7879,33 @@
     ],
     "return": "CreateCallbackResponse",
     "example": "//Import classes:\nimport com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.auth.*;\nimport com.mypurecloud.sdk.v2.api.request.PostConversationsCallbacksRequest;\n\nApiClient defaultClient = Configuration.getDefaultApiClient();\n\n// Create ApiClient instance\nApiClient apiClient = ApiClient.Builder.standard()\n\t\t.withAccessToken(accessToken)\n\t\t.withBasePath(\"https://api.mypurecloud.com\")\n\t\t.build();\n\n// Use the ApiClient instance\nConfiguration.setDefaultApiClient(apiClient);\n\nPostConversationsCallbacksRequest apiInstance = new PostConversationsCallbacksRequest();\nCreateCallbackCommand body = new CreateCallbackCommand(); // CreateCallbackCommand | Callback\ntry {\n    CreateCallbackResponse result = apiInstance.postConversationsCallbacks(body);\n    System.out.println(result);\n} catch (ApiException e) {\n    System.err.println(\"Exception when calling PostConversationsCallbacksRequest#postConversationsCallbacks\");\n    e.printStackTrace();\n}"
+  },
+  "postconversationscallbacksbulkdisconnect": {
+    "operationId": "postconversationscallbacksbulkdisconnect",
+    "functionName": "postConversationsCallbacksBulkDisconnect",
+    "signature": "postConversationsCallbacksBulkDisconnect(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "BulkCallbackDisconnectRequest",
+        "required": "true"
+      }
+    ],
+    "example": "//Import classes:\nimport com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.auth.*;\nimport com.mypurecloud.sdk.v2.api.request.PostConversationsCallbacksBulkDisconnectRequest;\n\nApiClient defaultClient = Configuration.getDefaultApiClient();\n\n// Create ApiClient instance\nApiClient apiClient = ApiClient.Builder.standard()\n\t\t.withAccessToken(accessToken)\n\t\t.withBasePath(\"https://api.mypurecloud.com\")\n\t\t.build();\n\n// Use the ApiClient instance\nConfiguration.setDefaultApiClient(apiClient);\n\nPostConversationsCallbacksBulkDisconnectRequest apiInstance = new PostConversationsCallbacksBulkDisconnectRequest();\nBulkCallbackDisconnectRequest body = new BulkCallbackDisconnectRequest(); // BulkCallbackDisconnectRequest | BulkCallbackDisconnectRequest\ntry {\n    apiInstance.postConversationsCallbacksBulkDisconnect(body);\n} catch (ApiException e) {\n    System.err.println(\"Exception when calling PostConversationsCallbacksBulkDisconnectRequest#postConversationsCallbacksBulkDisconnect\");\n    e.printStackTrace();\n}"
+  },
+  "postconversationscallbacksbulkupdate": {
+    "operationId": "postconversationscallbacksbulkupdate",
+    "functionName": "postConversationsCallbacksBulkUpdate",
+    "signature": "postConversationsCallbacksBulkUpdate(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "BulkCallbackPatchRequest",
+        "required": "true"
+      }
+    ],
+    "return": "BulkCallbackPatchResponse",
+    "example": "//Import classes:\nimport com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.auth.*;\nimport com.mypurecloud.sdk.v2.api.request.PostConversationsCallbacksBulkUpdateRequest;\n\nApiClient defaultClient = Configuration.getDefaultApiClient();\n\n// Create ApiClient instance\nApiClient apiClient = ApiClient.Builder.standard()\n\t\t.withAccessToken(accessToken)\n\t\t.withBasePath(\"https://api.mypurecloud.com\")\n\t\t.build();\n\n// Use the ApiClient instance\nConfiguration.setDefaultApiClient(apiClient);\n\nPostConversationsCallbacksBulkUpdateRequest apiInstance = new PostConversationsCallbacksBulkUpdateRequest();\nBulkCallbackPatchRequest body = new BulkCallbackPatchRequest(); // BulkCallbackPatchRequest | BulkCallbackPatchRequest\ntry {\n    BulkCallbackPatchResponse result = apiInstance.postConversationsCallbacksBulkUpdate(body);\n    System.out.println(result);\n} catch (ApiException e) {\n    System.err.println(\"Exception when calling PostConversationsCallbacksBulkUpdateRequest#postConversationsCallbacksBulkUpdate\");\n    e.printStackTrace();\n}"
   },
   "postconversationscalls": {
     "operationId": "postconversationscalls",
@@ -15960,23 +16001,35 @@
   "getoauthauthorization": {
     "operationId": "getoauthauthorization",
     "functionName": "getOauthAuthorization",
-    "signature": "getOauthAuthorization(clientId)",
+    "signature": "getOauthAuthorization(clientId, acceptLanguage)",
     "parameters": [
       {
         "name": "clientId",
         "type": "String",
         "required": "true"
+      },
+      {
+        "name": "acceptLanguage",
+        "type": "String",
+        "required": "false"
       }
     ],
     "return": "OAuthAuthorization",
-    "example": "//Import classes:\nimport com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.auth.*;\nimport com.mypurecloud.sdk.v2.api.request.GetOauthAuthorizationRequest;\n\nApiClient defaultClient = Configuration.getDefaultApiClient();\n\n// Create ApiClient instance\nApiClient apiClient = ApiClient.Builder.standard()\n\t\t.withAccessToken(accessToken)\n\t\t.withBasePath(\"https://api.mypurecloud.com\")\n\t\t.build();\n\n// Use the ApiClient instance\nConfiguration.setDefaultApiClient(apiClient);\n\nGetOauthAuthorizationRequest apiInstance = new GetOauthAuthorizationRequest();\nString clientId = \"clientId_example\"; // String | The ID of client\ntry {\n    OAuthAuthorization result = apiInstance.getOauthAuthorization(clientId);\n    System.out.println(result);\n} catch (ApiException e) {\n    System.err.println(\"Exception when calling GetOauthAuthorizationRequest#getOauthAuthorization\");\n    e.printStackTrace();\n}"
+    "example": "//Import classes:\nimport com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.auth.*;\nimport com.mypurecloud.sdk.v2.api.request.GetOauthAuthorizationRequest;\n\nApiClient defaultClient = Configuration.getDefaultApiClient();\n\n// Create ApiClient instance\nApiClient apiClient = ApiClient.Builder.standard()\n\t\t.withAccessToken(accessToken)\n\t\t.withBasePath(\"https://api.mypurecloud.com\")\n\t\t.build();\n\n// Use the ApiClient instance\nConfiguration.setDefaultApiClient(apiClient);\n\nGetOauthAuthorizationRequest apiInstance = new GetOauthAuthorizationRequest();\nString clientId = \"clientId_example\"; // String | The ID of client\nString acceptLanguage = \"en-us\"; // String | The language in which to display the client descriptions.\ntry {\n    OAuthAuthorization result = apiInstance.getOauthAuthorization(clientId, acceptLanguage);\n    System.out.println(result);\n} catch (ApiException e) {\n    System.err.println(\"Exception when calling GetOauthAuthorizationRequest#getOauthAuthorization\");\n    e.printStackTrace();\n}"
   },
   "getoauthauthorizations": {
     "operationId": "getoauthauthorizations",
     "functionName": "getOauthAuthorizations",
-    "signature": "getOauthAuthorizations()",
+    "signature": "getOauthAuthorizations(acceptLanguage)",
+    "parameters": [
+      {
+        "name": "acceptLanguage",
+        "type": "String",
+        "required": "false"
+      }
+    ],
     "return": "OAuthAuthorizationListing",
-    "example": "//Import classes:\nimport com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.auth.*;\nimport com.mypurecloud.sdk.v2.api.request.GetOauthAuthorizationsRequest;\n\nApiClient defaultClient = Configuration.getDefaultApiClient();\n\n// Create ApiClient instance\nApiClient apiClient = ApiClient.Builder.standard()\n\t\t.withAccessToken(accessToken)\n\t\t.withBasePath(\"https://api.mypurecloud.com\")\n\t\t.build();\n\n// Use the ApiClient instance\nConfiguration.setDefaultApiClient(apiClient);\n\nGetOauthAuthorizationsRequest apiInstance = new GetOauthAuthorizationsRequest();\ntry {\n    OAuthAuthorizationListing result = apiInstance.getOauthAuthorizations();\n    System.out.println(result);\n} catch (ApiException e) {\n    System.err.println(\"Exception when calling GetOauthAuthorizationsRequest#getOauthAuthorizations\");\n    e.printStackTrace();\n}"
+    "example": "//Import classes:\nimport com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.auth.*;\nimport com.mypurecloud.sdk.v2.api.request.GetOauthAuthorizationsRequest;\n\nApiClient defaultClient = Configuration.getDefaultApiClient();\n\n// Create ApiClient instance\nApiClient apiClient = ApiClient.Builder.standard()\n\t\t.withAccessToken(accessToken)\n\t\t.withBasePath(\"https://api.mypurecloud.com\")\n\t\t.build();\n\n// Use the ApiClient instance\nConfiguration.setDefaultApiClient(apiClient);\n\nGetOauthAuthorizationsRequest apiInstance = new GetOauthAuthorizationsRequest();\nString acceptLanguage = \"en-us\"; // String | The language in which to display the client descriptions.\ntry {\n    OAuthAuthorizationListing result = apiInstance.getOauthAuthorizations(acceptLanguage);\n    System.out.println(result);\n} catch (ApiException e) {\n    System.err.println(\"Exception when calling GetOauthAuthorizationsRequest#getOauthAuthorizations\");\n    e.printStackTrace();\n}"
   },
   "getoauthclient": {
     "operationId": "getoauthclient",
@@ -21942,6 +21995,19 @@
     ],
     "example": "//Import classes:\nimport com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.auth.*;\nimport com.mypurecloud.sdk.v2.api.request.DeleteResponsemanagementResponseRequest;\n\nApiClient defaultClient = Configuration.getDefaultApiClient();\n\n// Create ApiClient instance\nApiClient apiClient = ApiClient.Builder.standard()\n\t\t.withAccessToken(accessToken)\n\t\t.withBasePath(\"https://api.mypurecloud.com\")\n\t\t.build();\n\n// Use the ApiClient instance\nConfiguration.setDefaultApiClient(apiClient);\n\nDeleteResponsemanagementResponseRequest apiInstance = new DeleteResponsemanagementResponseRequest();\nString responseId = \"responseId_example\"; // String | Response ID\ntry {\n    apiInstance.deleteResponsemanagementResponse(responseId);\n} catch (ApiException e) {\n    System.err.println(\"Exception when calling DeleteResponsemanagementResponseRequest#deleteResponsemanagementResponse\");\n    e.printStackTrace();\n}"
   },
+  "deleteresponsemanagementresponseasset": {
+    "operationId": "deleteresponsemanagementresponseasset",
+    "functionName": "deleteResponsemanagementResponseasset",
+    "signature": "deleteResponsemanagementResponseasset(responseAssetId)",
+    "parameters": [
+      {
+        "name": "responseAssetId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "example": "//Import classes:\nimport com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.auth.*;\nimport com.mypurecloud.sdk.v2.api.request.DeleteResponsemanagementResponseassetRequest;\n\nApiClient defaultClient = Configuration.getDefaultApiClient();\n\n// Create ApiClient instance\nApiClient apiClient = ApiClient.Builder.standard()\n\t\t.withAccessToken(accessToken)\n\t\t.withBasePath(\"https://api.mypurecloud.com\")\n\t\t.build();\n\n// Use the ApiClient instance\nConfiguration.setDefaultApiClient(apiClient);\n\nDeleteResponsemanagementResponseassetRequest apiInstance = new DeleteResponsemanagementResponseassetRequest();\nString responseAssetId = \"responseAssetId_example\"; // String | Asset Id\ntry {\n    apiInstance.deleteResponsemanagementResponseasset(responseAssetId);\n} catch (ApiException e) {\n    System.err.println(\"Exception when calling DeleteResponsemanagementResponseassetRequest#deleteResponsemanagementResponseasset\");\n    e.printStackTrace();\n}"
+  },
   "getresponsemanagementlibraries": {
     "operationId": "getresponsemanagementlibraries",
     "functionName": "getResponsemanagementLibraries",
@@ -21999,6 +22065,34 @@
     "return": "Response",
     "example": "//Import classes:\nimport com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.auth.*;\nimport com.mypurecloud.sdk.v2.api.request.GetResponsemanagementResponseRequest;\n\nApiClient defaultClient = Configuration.getDefaultApiClient();\n\n// Create ApiClient instance\nApiClient apiClient = ApiClient.Builder.standard()\n\t\t.withAccessToken(accessToken)\n\t\t.withBasePath(\"https://api.mypurecloud.com\")\n\t\t.build();\n\n// Use the ApiClient instance\nConfiguration.setDefaultApiClient(apiClient);\n\nGetResponsemanagementResponseRequest apiInstance = new GetResponsemanagementResponseRequest();\nString responseId = \"responseId_example\"; // String | Response ID\nString expand = \"expand_example\"; // String | Expand instructions for the return value.\ntry {\n    Response result = apiInstance.getResponsemanagementResponse(responseId, expand);\n    System.out.println(result);\n} catch (ApiException e) {\n    System.err.println(\"Exception when calling GetResponsemanagementResponseRequest#getResponsemanagementResponse\");\n    e.printStackTrace();\n}"
   },
+  "getresponsemanagementresponseasset": {
+    "operationId": "getresponsemanagementresponseasset",
+    "functionName": "getResponsemanagementResponseasset",
+    "signature": "getResponsemanagementResponseasset(responseAssetId)",
+    "parameters": [
+      {
+        "name": "responseAssetId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "ResponseAsset",
+    "example": "//Import classes:\nimport com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.auth.*;\nimport com.mypurecloud.sdk.v2.api.request.GetResponsemanagementResponseassetRequest;\n\nApiClient defaultClient = Configuration.getDefaultApiClient();\n\n// Create ApiClient instance\nApiClient apiClient = ApiClient.Builder.standard()\n\t\t.withAccessToken(accessToken)\n\t\t.withBasePath(\"https://api.mypurecloud.com\")\n\t\t.build();\n\n// Use the ApiClient instance\nConfiguration.setDefaultApiClient(apiClient);\n\nGetResponsemanagementResponseassetRequest apiInstance = new GetResponsemanagementResponseassetRequest();\nString responseAssetId = \"responseAssetId_example\"; // String | Asset Id\ntry {\n    ResponseAsset result = apiInstance.getResponsemanagementResponseasset(responseAssetId);\n    System.out.println(result);\n} catch (ApiException e) {\n    System.err.println(\"Exception when calling GetResponsemanagementResponseassetRequest#getResponsemanagementResponseasset\");\n    e.printStackTrace();\n}"
+  },
+  "getresponsemanagementresponseassetsstatusstatusid": {
+    "operationId": "getresponsemanagementresponseassetsstatusstatusid",
+    "functionName": "getResponsemanagementResponseassetsStatusStatusId",
+    "signature": "getResponsemanagementResponseassetsStatusStatusId(statusId)",
+    "parameters": [
+      {
+        "name": "statusId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "ResponseAssetStatus",
+    "example": "//Import classes:\nimport com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.auth.*;\nimport com.mypurecloud.sdk.v2.api.request.GetResponsemanagementResponseassetsStatusStatusIdRequest;\n\nApiClient defaultClient = Configuration.getDefaultApiClient();\n\n// Create ApiClient instance\nApiClient apiClient = ApiClient.Builder.standard()\n\t\t.withAccessToken(accessToken)\n\t\t.withBasePath(\"https://api.mypurecloud.com\")\n\t\t.build();\n\n// Use the ApiClient instance\nConfiguration.setDefaultApiClient(apiClient);\n\nGetResponsemanagementResponseassetsStatusStatusIdRequest apiInstance = new GetResponsemanagementResponseassetsStatusStatusIdRequest();\nString statusId = \"statusId_example\"; // String | Status Id\ntry {\n    ResponseAssetStatus result = apiInstance.getResponsemanagementResponseassetsStatusStatusId(statusId);\n    System.out.println(result);\n} catch (ApiException e) {\n    System.err.println(\"Exception when calling GetResponsemanagementResponseassetsStatusStatusIdRequest#getResponsemanagementResponseassetsStatusStatusId\");\n    e.printStackTrace();\n}"
+  },
   "getresponsemanagementresponses": {
     "operationId": "getresponsemanagementresponses",
     "functionName": "getResponsemanagementResponses",
@@ -22041,6 +22135,39 @@
     ],
     "return": "Library",
     "example": "//Import classes:\nimport com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.auth.*;\nimport com.mypurecloud.sdk.v2.api.request.PostResponsemanagementLibrariesRequest;\n\nApiClient defaultClient = Configuration.getDefaultApiClient();\n\n// Create ApiClient instance\nApiClient apiClient = ApiClient.Builder.standard()\n\t\t.withAccessToken(accessToken)\n\t\t.withBasePath(\"https://api.mypurecloud.com\")\n\t\t.build();\n\n// Use the ApiClient instance\nConfiguration.setDefaultApiClient(apiClient);\n\nPostResponsemanagementLibrariesRequest apiInstance = new PostResponsemanagementLibrariesRequest();\nLibrary body = new Library(); // Library | Library\ntry {\n    Library result = apiInstance.postResponsemanagementLibraries(body);\n    System.out.println(result);\n} catch (ApiException e) {\n    System.err.println(\"Exception when calling PostResponsemanagementLibrariesRequest#postResponsemanagementLibraries\");\n    e.printStackTrace();\n}"
+  },
+  "postresponsemanagementresponseassetssearch": {
+    "operationId": "postresponsemanagementresponseassetssearch",
+    "functionName": "postResponsemanagementResponseassetsSearch",
+    "signature": "postResponsemanagementResponseassetsSearch(body, expand)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "ResponseAssetSearchRequest",
+        "required": "true"
+      },
+      {
+        "name": "expand",
+        "type": "List<String>",
+        "required": "false"
+      }
+    ],
+    "return": "ResponseAssetSearchResults",
+    "example": "//Import classes:\nimport com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.auth.*;\nimport com.mypurecloud.sdk.v2.api.request.PostResponsemanagementResponseassetsSearchRequest;\n\nApiClient defaultClient = Configuration.getDefaultApiClient();\n\n// Create ApiClient instance\nApiClient apiClient = ApiClient.Builder.standard()\n\t\t.withAccessToken(accessToken)\n\t\t.withBasePath(\"https://api.mypurecloud.com\")\n\t\t.build();\n\n// Use the ApiClient instance\nConfiguration.setDefaultApiClient(apiClient);\n\nPostResponsemanagementResponseassetsSearchRequest apiInstance = new PostResponsemanagementResponseassetsSearchRequest();\nResponseAssetSearchRequest body = new ResponseAssetSearchRequest(); // ResponseAssetSearchRequest | request\nList<String> expand = Arrays.asList(\"expand_example\"); // List<String> | Which fields, if any, to expand\ntry {\n    ResponseAssetSearchResults result = apiInstance.postResponsemanagementResponseassetsSearch(body, expand);\n    System.out.println(result);\n} catch (ApiException e) {\n    System.err.println(\"Exception when calling PostResponsemanagementResponseassetsSearchRequest#postResponsemanagementResponseassetsSearch\");\n    e.printStackTrace();\n}"
+  },
+  "postresponsemanagementresponseassetsuploads": {
+    "operationId": "postresponsemanagementresponseassetsuploads",
+    "functionName": "postResponsemanagementResponseassetsUploads",
+    "signature": "postResponsemanagementResponseassetsUploads(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "CreateResponseAssetRequest",
+        "required": "true"
+      }
+    ],
+    "return": "CreateResponseAssetResponse",
+    "example": "//Import classes:\nimport com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.auth.*;\nimport com.mypurecloud.sdk.v2.api.request.PostResponsemanagementResponseassetsUploadsRequest;\n\nApiClient defaultClient = Configuration.getDefaultApiClient();\n\n// Create ApiClient instance\nApiClient apiClient = ApiClient.Builder.standard()\n\t\t.withAccessToken(accessToken)\n\t\t.withBasePath(\"https://api.mypurecloud.com\")\n\t\t.build();\n\n// Use the ApiClient instance\nConfiguration.setDefaultApiClient(apiClient);\n\nPostResponsemanagementResponseassetsUploadsRequest apiInstance = new PostResponsemanagementResponseassetsUploadsRequest();\nCreateResponseAssetRequest body = new CreateResponseAssetRequest(); // CreateResponseAssetRequest | request\ntry {\n    CreateResponseAssetResponse result = apiInstance.postResponsemanagementResponseassetsUploads(body);\n    System.out.println(result);\n} catch (ApiException e) {\n    System.err.println(\"Exception when calling PostResponsemanagementResponseassetsUploadsRequest#postResponsemanagementResponseassetsUploads\");\n    e.printStackTrace();\n}"
   },
   "postresponsemanagementresponses": {
     "operationId": "postresponsemanagementresponses",
@@ -22117,6 +22244,25 @@
     ],
     "return": "Response",
     "example": "//Import classes:\nimport com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.auth.*;\nimport com.mypurecloud.sdk.v2.api.request.PutResponsemanagementResponseRequest;\n\nApiClient defaultClient = Configuration.getDefaultApiClient();\n\n// Create ApiClient instance\nApiClient apiClient = ApiClient.Builder.standard()\n\t\t.withAccessToken(accessToken)\n\t\t.withBasePath(\"https://api.mypurecloud.com\")\n\t\t.build();\n\n// Use the ApiClient instance\nConfiguration.setDefaultApiClient(apiClient);\n\nPutResponsemanagementResponseRequest apiInstance = new PutResponsemanagementResponseRequest();\nString responseId = \"responseId_example\"; // String | Response ID\nResponse body = new Response(); // Response | Response\nString expand = \"expand_example\"; // String | Expand instructions for the return value.\ntry {\n    Response result = apiInstance.putResponsemanagementResponse(responseId, body, expand);\n    System.out.println(result);\n} catch (ApiException e) {\n    System.err.println(\"Exception when calling PutResponsemanagementResponseRequest#putResponsemanagementResponse\");\n    e.printStackTrace();\n}"
+  },
+  "putresponsemanagementresponseasset": {
+    "operationId": "putresponsemanagementresponseasset",
+    "functionName": "putResponsemanagementResponseasset",
+    "signature": "putResponsemanagementResponseasset(responseAssetId, body)",
+    "parameters": [
+      {
+        "name": "responseAssetId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "ResponseAssetRequest",
+        "required": "true"
+      }
+    ],
+    "return": "ResponseAsset",
+    "example": "//Import classes:\nimport com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.auth.*;\nimport com.mypurecloud.sdk.v2.api.request.PutResponsemanagementResponseassetRequest;\n\nApiClient defaultClient = Configuration.getDefaultApiClient();\n\n// Create ApiClient instance\nApiClient apiClient = ApiClient.Builder.standard()\n\t\t.withAccessToken(accessToken)\n\t\t.withBasePath(\"https://api.mypurecloud.com\")\n\t\t.build();\n\n// Use the ApiClient instance\nConfiguration.setDefaultApiClient(apiClient);\n\nPutResponsemanagementResponseassetRequest apiInstance = new PutResponsemanagementResponseassetRequest();\nString responseAssetId = \"responseAssetId_example\"; // String | Asset Id\nResponseAssetRequest body = new ResponseAssetRequest(); // ResponseAssetRequest | request\ntry {\n    ResponseAsset result = apiInstance.putResponsemanagementResponseasset(responseAssetId, body);\n    System.out.println(result);\n} catch (ApiException e) {\n    System.err.println(\"Exception when calling PutResponsemanagementResponseassetRequest#putResponsemanagementResponseasset\");\n    e.printStackTrace();\n}"
   },
   "deleteroutingassessment": {
     "operationId": "deleteroutingassessment",
@@ -28751,20 +28897,6 @@
     "return": "UploadUrlResponse",
     "example": "//Import classes:\nimport com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.auth.*;\nimport com.mypurecloud.sdk.v2.api.request.PostUploadsWorkforcemanagementHistoricaldataCsvRequest;\n\nApiClient defaultClient = Configuration.getDefaultApiClient();\n\n// Create ApiClient instance\nApiClient apiClient = ApiClient.Builder.standard()\n\t\t.withAccessToken(accessToken)\n\t\t.withBasePath(\"https://api.mypurecloud.com\")\n\t\t.build();\n\n// Use the ApiClient instance\nConfiguration.setDefaultApiClient(apiClient);\n\nPostUploadsWorkforcemanagementHistoricaldataCsvRequest apiInstance = new PostUploadsWorkforcemanagementHistoricaldataCsvRequest();\nUploadUrlRequest body = new UploadUrlRequest(); // UploadUrlRequest | query\ntry {\n    UploadUrlResponse result = apiInstance.postUploadsWorkforcemanagementHistoricaldataCsv(body);\n    System.out.println(result);\n} catch (ApiException e) {\n    System.err.println(\"Exception when calling PostUploadsWorkforcemanagementHistoricaldataCsvRequest#postUploadsWorkforcemanagementHistoricaldataCsv\");\n    e.printStackTrace();\n}"
   },
-  "postuploadsworkforcemanagementhistoricaldatajson": {
-    "operationId": "postuploadsworkforcemanagementhistoricaldatajson",
-    "functionName": "postUploadsWorkforcemanagementHistoricaldataJson",
-    "signature": "postUploadsWorkforcemanagementHistoricaldataJson(body)",
-    "parameters": [
-      {
-        "name": "body",
-        "type": "UploadUrlRequest",
-        "required": "true"
-      }
-    ],
-    "return": "UploadUrlResponse",
-    "example": "//Import classes:\nimport com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.auth.*;\nimport com.mypurecloud.sdk.v2.api.request.PostUploadsWorkforcemanagementHistoricaldataJsonRequest;\n\nApiClient defaultClient = Configuration.getDefaultApiClient();\n\n// Create ApiClient instance\nApiClient apiClient = ApiClient.Builder.standard()\n\t\t.withAccessToken(accessToken)\n\t\t.withBasePath(\"https://api.mypurecloud.com\")\n\t\t.build();\n\n// Use the ApiClient instance\nConfiguration.setDefaultApiClient(apiClient);\n\nPostUploadsWorkforcemanagementHistoricaldataJsonRequest apiInstance = new PostUploadsWorkforcemanagementHistoricaldataJsonRequest();\nUploadUrlRequest body = new UploadUrlRequest(); // UploadUrlRequest | query\ntry {\n    UploadUrlResponse result = apiInstance.postUploadsWorkforcemanagementHistoricaldataJson(body);\n    System.out.println(result);\n} catch (ApiException e) {\n    System.err.println(\"Exception when calling PostUploadsWorkforcemanagementHistoricaldataJsonRequest#postUploadsWorkforcemanagementHistoricaldataJson\");\n    e.printStackTrace();\n}"
-  },
   "getusagequeryexecutionidresults": {
     "operationId": "getusagequeryexecutionidresults",
     "functionName": "getUsageQueryExecutionIdResults",
@@ -32677,6 +32809,64 @@
     "return": "BuAsyncScheduleRunResponse",
     "example": "//Import classes:\nimport com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.auth.*;\nimport com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekScheduleRescheduleRequest;\n\nApiClient defaultClient = Configuration.getDefaultApiClient();\n\n// Create ApiClient instance\nApiClient apiClient = ApiClient.Builder.standard()\n\t\t.withAccessToken(accessToken)\n\t\t.withBasePath(\"https://api.mypurecloud.com\")\n\t\t.build();\n\n// Use the ApiClient instance\nConfiguration.setDefaultApiClient(apiClient);\n\nPostWorkforcemanagementBusinessunitWeekScheduleRescheduleRequest apiInstance = new PostWorkforcemanagementBusinessunitWeekScheduleRescheduleRequest();\nString businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nLocalDate weekId = new LocalDate(); // LocalDate | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nString scheduleId = \"scheduleId_example\"; // String | The ID of the schedule\nBuRescheduleRequest body = new BuRescheduleRequest(); // BuRescheduleRequest | body\ntry {\n    BuAsyncScheduleRunResponse result = apiInstance.postWorkforcemanagementBusinessunitWeekScheduleReschedule(businessUnitId, weekId, scheduleId, body);\n    System.out.println(result);\n} catch (ApiException e) {\n    System.err.println(\"Exception when calling PostWorkforcemanagementBusinessunitWeekScheduleRescheduleRequest#postWorkforcemanagementBusinessunitWeekScheduleReschedule\");\n    e.printStackTrace();\n}"
   },
+  "postworkforcemanagementbusinessunitweekscheduleupdate": {
+    "operationId": "postworkforcemanagementbusinessunitweekscheduleupdate",
+    "functionName": "postWorkforcemanagementBusinessunitWeekScheduleUpdate",
+    "signature": "postWorkforcemanagementBusinessunitWeekScheduleUpdate(businessUnitId, weekId, scheduleId, body)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "weekId",
+        "type": "LocalDate",
+        "required": "true"
+      },
+      {
+        "name": "scheduleId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "ProcessScheduleUpdateUploadRequest",
+        "required": "true"
+      }
+    ],
+    "return": "BuAsyncScheduleResponse",
+    "example": "//Import classes:\nimport com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.auth.*;\nimport com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekScheduleUpdateRequest;\n\nApiClient defaultClient = Configuration.getDefaultApiClient();\n\n// Create ApiClient instance\nApiClient apiClient = ApiClient.Builder.standard()\n\t\t.withAccessToken(accessToken)\n\t\t.withBasePath(\"https://api.mypurecloud.com\")\n\t\t.build();\n\n// Use the ApiClient instance\nConfiguration.setDefaultApiClient(apiClient);\n\nPostWorkforcemanagementBusinessunitWeekScheduleUpdateRequest apiInstance = new PostWorkforcemanagementBusinessunitWeekScheduleUpdateRequest();\nString businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nLocalDate weekId = new LocalDate(); // LocalDate | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nString scheduleId = \"scheduleId_example\"; // String | The ID of the schedule\nProcessScheduleUpdateUploadRequest body = new ProcessScheduleUpdateUploadRequest(); // ProcessScheduleUpdateUploadRequest | body\ntry {\n    BuAsyncScheduleResponse result = apiInstance.postWorkforcemanagementBusinessunitWeekScheduleUpdate(businessUnitId, weekId, scheduleId, body);\n    System.out.println(result);\n} catch (ApiException e) {\n    System.err.println(\"Exception when calling PostWorkforcemanagementBusinessunitWeekScheduleUpdateRequest#postWorkforcemanagementBusinessunitWeekScheduleUpdate\");\n    e.printStackTrace();\n}"
+  },
+  "postworkforcemanagementbusinessunitweekscheduleupdateuploadurl": {
+    "operationId": "postworkforcemanagementbusinessunitweekscheduleupdateuploadurl",
+    "functionName": "postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl",
+    "signature": "postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl(businessUnitId, weekId, scheduleId, body)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "weekId",
+        "type": "LocalDate",
+        "required": "true"
+      },
+      {
+        "name": "scheduleId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "UploadUrlRequestBody",
+        "required": "true"
+      }
+    ],
+    "return": "UpdateScheduleUploadResponse",
+    "example": "//Import classes:\nimport com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.auth.*;\nimport com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurlRequest;\n\nApiClient defaultClient = Configuration.getDefaultApiClient();\n\n// Create ApiClient instance\nApiClient apiClient = ApiClient.Builder.standard()\n\t\t.withAccessToken(accessToken)\n\t\t.withBasePath(\"https://api.mypurecloud.com\")\n\t\t.build();\n\n// Use the ApiClient instance\nConfiguration.setDefaultApiClient(apiClient);\n\nPostWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurlRequest apiInstance = new PostWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurlRequest();\nString businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nLocalDate weekId = new LocalDate(); // LocalDate | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nString scheduleId = \"scheduleId_example\"; // String | The ID of the schedule\nUploadUrlRequestBody body = new UploadUrlRequestBody(); // UploadUrlRequestBody | body\ntry {\n    UpdateScheduleUploadResponse result = apiInstance.postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl(businessUnitId, weekId, scheduleId, body);\n    System.out.println(result);\n} catch (ApiException e) {\n    System.err.println(\"Exception when calling PostWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurlRequest#postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl\");\n    e.printStackTrace();\n}"
+  },
   "postworkforcemanagementbusinessunitweekschedules": {
     "operationId": "postworkforcemanagementbusinessunitweekschedules",
     "functionName": "postWorkforcemanagementBusinessunitWeekSchedules",
@@ -32724,6 +32914,54 @@
     ],
     "return": "BuAsyncScheduleRunResponse",
     "example": "//Import classes:\nimport com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.auth.*;\nimport com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekSchedulesGenerateRequest;\n\nApiClient defaultClient = Configuration.getDefaultApiClient();\n\n// Create ApiClient instance\nApiClient apiClient = ApiClient.Builder.standard()\n\t\t.withAccessToken(accessToken)\n\t\t.withBasePath(\"https://api.mypurecloud.com\")\n\t\t.build();\n\n// Use the ApiClient instance\nConfiguration.setDefaultApiClient(apiClient);\n\nPostWorkforcemanagementBusinessunitWeekSchedulesGenerateRequest apiInstance = new PostWorkforcemanagementBusinessunitWeekSchedulesGenerateRequest();\nString businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nLocalDate weekId = new LocalDate(); // LocalDate | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nBuGenerateScheduleRequest body = new BuGenerateScheduleRequest(); // BuGenerateScheduleRequest | body\ntry {\n    BuAsyncScheduleRunResponse result = apiInstance.postWorkforcemanagementBusinessunitWeekSchedulesGenerate(businessUnitId, weekId, body);\n    System.out.println(result);\n} catch (ApiException e) {\n    System.err.println(\"Exception when calling PostWorkforcemanagementBusinessunitWeekSchedulesGenerateRequest#postWorkforcemanagementBusinessunitWeekSchedulesGenerate\");\n    e.printStackTrace();\n}"
+  },
+  "postworkforcemanagementbusinessunitweekschedulesimport": {
+    "operationId": "postworkforcemanagementbusinessunitweekschedulesimport",
+    "functionName": "postWorkforcemanagementBusinessunitWeekSchedulesImport",
+    "signature": "postWorkforcemanagementBusinessunitWeekSchedulesImport(businessUnitId, weekId, body)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "weekId",
+        "type": "LocalDate",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "WfmProcessUploadRequest",
+        "required": "true"
+      }
+    ],
+    "return": "ScheduleUploadProcessingResponse",
+    "example": "//Import classes:\nimport com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.auth.*;\nimport com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekSchedulesImportRequest;\n\nApiClient defaultClient = Configuration.getDefaultApiClient();\n\n// Create ApiClient instance\nApiClient apiClient = ApiClient.Builder.standard()\n\t\t.withAccessToken(accessToken)\n\t\t.withBasePath(\"https://api.mypurecloud.com\")\n\t\t.build();\n\n// Use the ApiClient instance\nConfiguration.setDefaultApiClient(apiClient);\n\nPostWorkforcemanagementBusinessunitWeekSchedulesImportRequest apiInstance = new PostWorkforcemanagementBusinessunitWeekSchedulesImportRequest();\nString businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nLocalDate weekId = new LocalDate(); // LocalDate | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nWfmProcessUploadRequest body = new WfmProcessUploadRequest(); // WfmProcessUploadRequest | \ntry {\n    ScheduleUploadProcessingResponse result = apiInstance.postWorkforcemanagementBusinessunitWeekSchedulesImport(businessUnitId, weekId, body);\n    System.out.println(result);\n} catch (ApiException e) {\n    System.err.println(\"Exception when calling PostWorkforcemanagementBusinessunitWeekSchedulesImportRequest#postWorkforcemanagementBusinessunitWeekSchedulesImport\");\n    e.printStackTrace();\n}"
+  },
+  "postworkforcemanagementbusinessunitweekschedulesimportuploadurl": {
+    "operationId": "postworkforcemanagementbusinessunitweekschedulesimportuploadurl",
+    "functionName": "postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl",
+    "signature": "postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl(businessUnitId, weekId, body)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "weekId",
+        "type": "LocalDate",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "UploadUrlRequestBody",
+        "required": "true"
+      }
+    ],
+    "return": "ImportScheduleUploadResponse",
+    "example": "//Import classes:\nimport com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.auth.*;\nimport com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekSchedulesImportUploadurlRequest;\n\nApiClient defaultClient = Configuration.getDefaultApiClient();\n\n// Create ApiClient instance\nApiClient apiClient = ApiClient.Builder.standard()\n\t\t.withAccessToken(accessToken)\n\t\t.withBasePath(\"https://api.mypurecloud.com\")\n\t\t.build();\n\n// Use the ApiClient instance\nConfiguration.setDefaultApiClient(apiClient);\n\nPostWorkforcemanagementBusinessunitWeekSchedulesImportUploadurlRequest apiInstance = new PostWorkforcemanagementBusinessunitWeekSchedulesImportUploadurlRequest();\nString businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nLocalDate weekId = new LocalDate(); // LocalDate | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nUploadUrlRequestBody body = new UploadUrlRequestBody(); // UploadUrlRequestBody | body\ntry {\n    ImportScheduleUploadResponse result = apiInstance.postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl(businessUnitId, weekId, body);\n    System.out.println(result);\n} catch (ApiException e) {\n    System.err.println(\"Exception when calling PostWorkforcemanagementBusinessunitWeekSchedulesImportUploadurlRequest#postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl\");\n    e.printStackTrace();\n}"
   },
   "postworkforcemanagementbusinessunitweekshorttermforecastcopy": {
     "operationId": "postworkforcemanagementbusinessunitweekshorttermforecastcopy",
@@ -32787,6 +33025,54 @@
     ],
     "return": "AsyncForecastOperationResult",
     "example": "//Import classes:\nimport com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.auth.*;\nimport com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekShorttermforecastsGenerateRequest;\n\nApiClient defaultClient = Configuration.getDefaultApiClient();\n\n// Create ApiClient instance\nApiClient apiClient = ApiClient.Builder.standard()\n\t\t.withAccessToken(accessToken)\n\t\t.withBasePath(\"https://api.mypurecloud.com\")\n\t\t.build();\n\n// Use the ApiClient instance\nConfiguration.setDefaultApiClient(apiClient);\n\nPostWorkforcemanagementBusinessunitWeekShorttermforecastsGenerateRequest apiInstance = new PostWorkforcemanagementBusinessunitWeekShorttermforecastsGenerateRequest();\nString businessUnitId = \"businessUnitId_example\"; // String | The business unit ID of the business unit to which the forecast belongs\nLocalDate weekDateId = new LocalDate(); // LocalDate | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nGenerateBuForecastRequest body = new GenerateBuForecastRequest(); // GenerateBuForecastRequest | \nBoolean forceAsync = true; // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes\ntry {\n    AsyncForecastOperationResult result = apiInstance.postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate(businessUnitId, weekDateId, body, forceAsync);\n    System.out.println(result);\n} catch (ApiException e) {\n    System.err.println(\"Exception when calling PostWorkforcemanagementBusinessunitWeekShorttermforecastsGenerateRequest#postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate\");\n    e.printStackTrace();\n}"
+  },
+  "postworkforcemanagementbusinessunitweekshorttermforecastsimport": {
+    "operationId": "postworkforcemanagementbusinessunitweekshorttermforecastsimport",
+    "functionName": "postWorkforcemanagementBusinessunitWeekShorttermforecastsImport",
+    "signature": "postWorkforcemanagementBusinessunitWeekShorttermforecastsImport(businessUnitId, weekDateId, body)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "weekDateId",
+        "type": "LocalDate",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "WfmProcessUploadRequest",
+        "required": "true"
+      }
+    ],
+    "return": "ImportForecastResponse",
+    "example": "//Import classes:\nimport com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.auth.*;\nimport com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekShorttermforecastsImportRequest;\n\nApiClient defaultClient = Configuration.getDefaultApiClient();\n\n// Create ApiClient instance\nApiClient apiClient = ApiClient.Builder.standard()\n\t\t.withAccessToken(accessToken)\n\t\t.withBasePath(\"https://api.mypurecloud.com\")\n\t\t.build();\n\n// Use the ApiClient instance\nConfiguration.setDefaultApiClient(apiClient);\n\nPostWorkforcemanagementBusinessunitWeekShorttermforecastsImportRequest apiInstance = new PostWorkforcemanagementBusinessunitWeekShorttermforecastsImportRequest();\nString businessUnitId = \"businessUnitId_example\"; // String | The business unit ID of the business unit to which the forecast belongs\nLocalDate weekDateId = new LocalDate(); // LocalDate | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nWfmProcessUploadRequest body = new WfmProcessUploadRequest(); // WfmProcessUploadRequest | \ntry {\n    ImportForecastResponse result = apiInstance.postWorkforcemanagementBusinessunitWeekShorttermforecastsImport(businessUnitId, weekDateId, body);\n    System.out.println(result);\n} catch (ApiException e) {\n    System.err.println(\"Exception when calling PostWorkforcemanagementBusinessunitWeekShorttermforecastsImportRequest#postWorkforcemanagementBusinessunitWeekShorttermforecastsImport\");\n    e.printStackTrace();\n}"
+  },
+  "postworkforcemanagementbusinessunitweekshorttermforecastsimportuploadurl": {
+    "operationId": "postworkforcemanagementbusinessunitweekshorttermforecastsimportuploadurl",
+    "functionName": "postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl",
+    "signature": "postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl(businessUnitId, weekDateId, body)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "weekDateId",
+        "type": "LocalDate",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "UploadUrlRequestBody",
+        "required": "true"
+      }
+    ],
+    "return": "ImportForecastUploadResponse",
+    "example": "//Import classes:\nimport com.mypurecloud.sdk.v2.ApiClient;\nimport com.mypurecloud.sdk.v2.ApiException;\nimport com.mypurecloud.sdk.v2.Configuration;\nimport com.mypurecloud.sdk.v2.auth.*;\nimport com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurlRequest;\n\nApiClient defaultClient = Configuration.getDefaultApiClient();\n\n// Create ApiClient instance\nApiClient apiClient = ApiClient.Builder.standard()\n\t\t.withAccessToken(accessToken)\n\t\t.withBasePath(\"https://api.mypurecloud.com\")\n\t\t.build();\n\n// Use the ApiClient instance\nConfiguration.setDefaultApiClient(apiClient);\n\nPostWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurlRequest apiInstance = new PostWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurlRequest();\nString businessUnitId = \"businessUnitId_example\"; // String | The business unit ID of the business unit to which the forecast belongs\nLocalDate weekDateId = new LocalDate(); // LocalDate | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nUploadUrlRequestBody body = new UploadUrlRequestBody(); // UploadUrlRequestBody | body\ntry {\n    ImportForecastUploadResponse result = apiInstance.postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl(businessUnitId, weekDateId, body);\n    System.out.println(result);\n} catch (ApiException e) {\n    System.err.println(\"Exception when calling PostWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurlRequest#postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl\");\n    e.printStackTrace();\n}"
   },
   "postworkforcemanagementbusinessunits": {
     "operationId": "postworkforcemanagementbusinessunits",

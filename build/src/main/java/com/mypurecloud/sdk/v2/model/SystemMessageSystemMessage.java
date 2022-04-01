@@ -11,8 +11,12 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.SystemMessageObject;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -124,7 +128,7 @@ public class SystemMessageSystemMessage  implements Serializable {
   }
   private ReasonEnum reason = null;
   private String message = null;
-  private Object data = null;
+  private Map<String, SystemMessageObject> data = null;
 
   
   /**
@@ -265,17 +269,17 @@ public class SystemMessageSystemMessage  implements Serializable {
   
   /**
    **/
-  public SystemMessageSystemMessage data(Object data) {
+  public SystemMessageSystemMessage data(Map<String, SystemMessageObject> data) {
     this.data = data;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("data")
-  public Object getData() {
+  public Map<String, SystemMessageObject> getData() {
     return data;
   }
-  public void setData(Object data) {
+  public void setData(Map<String, SystemMessageObject> data) {
     this.data = data;
   }
 

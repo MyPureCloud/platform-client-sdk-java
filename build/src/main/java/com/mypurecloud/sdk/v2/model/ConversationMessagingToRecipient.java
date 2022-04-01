@@ -11,8 +11,11 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ConversationRecipientAdditionalIdentifier;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -77,6 +80,7 @@ public class ConversationMessagingToRecipient  implements Serializable {
   private String firstName = null;
   private String lastName = null;
   private String email = null;
+  private List<ConversationRecipientAdditionalIdentifier> additionalIds = new ArrayList<ConversationRecipientAdditionalIdentifier>();
 
   
   @ApiModelProperty(example = "null", value = "Nickname or display name of the recipient.")
@@ -139,6 +143,13 @@ public class ConversationMessagingToRecipient  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "List of recipient additional identifiers")
+  @JsonProperty("additionalIds")
+  public List<ConversationRecipientAdditionalIdentifier> getAdditionalIds() {
+    return additionalIds;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -155,12 +166,13 @@ public class ConversationMessagingToRecipient  implements Serializable {
         Objects.equals(this.image, conversationMessagingToRecipient.image) &&
         Objects.equals(this.firstName, conversationMessagingToRecipient.firstName) &&
         Objects.equals(this.lastName, conversationMessagingToRecipient.lastName) &&
-        Objects.equals(this.email, conversationMessagingToRecipient.email);
+        Objects.equals(this.email, conversationMessagingToRecipient.email) &&
+        Objects.equals(this.additionalIds, conversationMessagingToRecipient.additionalIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(nickname, id, idType, image, firstName, lastName, email);
+    return Objects.hash(nickname, id, idType, image, firstName, lastName, email, additionalIds);
   }
 
   @Override
@@ -175,6 +187,7 @@ public class ConversationMessagingToRecipient  implements Serializable {
     sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
     sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
+    sb.append("    additionalIds: ").append(toIndentedString(additionalIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

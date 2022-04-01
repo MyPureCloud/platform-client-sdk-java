@@ -136,28 +136,32 @@ public class OAuthApi {
    * Get a client that is authorized by the resource owner
    * 
    * @param clientId The ID of client (required)
+   * @param acceptLanguage The language in which to display the client descriptions. (optional, default to en-us)
    * @return OAuthAuthorization
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OAuthAuthorization getOauthAuthorization(String clientId) throws IOException, ApiException {
-    return  getOauthAuthorization(createGetOauthAuthorizationRequest(clientId));
+  public OAuthAuthorization getOauthAuthorization(String clientId, String acceptLanguage) throws IOException, ApiException {
+    return  getOauthAuthorization(createGetOauthAuthorizationRequest(clientId, acceptLanguage));
   }
 
   /**
    * Get a client that is authorized by the resource owner
    * 
    * @param clientId The ID of client (required)
+   * @param acceptLanguage The language in which to display the client descriptions. (optional, default to en-us)
    * @return OAuthAuthorization
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthAuthorization> getOauthAuthorizationWithHttpInfo(String clientId) throws IOException {
-    return getOauthAuthorization(createGetOauthAuthorizationRequest(clientId).withHttpInfo());
+  public ApiResponse<OAuthAuthorization> getOauthAuthorizationWithHttpInfo(String clientId, String acceptLanguage) throws IOException {
+    return getOauthAuthorization(createGetOauthAuthorizationRequest(clientId, acceptLanguage).withHttpInfo());
   }
 
-  private GetOauthAuthorizationRequest createGetOauthAuthorizationRequest(String clientId) {
+  private GetOauthAuthorizationRequest createGetOauthAuthorizationRequest(String clientId, String acceptLanguage) {
     return GetOauthAuthorizationRequest.builder()
             .withClientId(clientId)
+    
+            .withAcceptLanguage(acceptLanguage)
     
             .build();
   }
@@ -212,33 +216,37 @@ public class OAuthApi {
 
   
   /**
-   * List clients that are authorized by the resource owner
+   * List clients that have been authorized, requested, or revoked by the resource owner
    * 
+   * @param acceptLanguage The language in which to display the client descriptions. (optional, default to en-us)
    * @return OAuthAuthorizationListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OAuthAuthorizationListing getOauthAuthorizations() throws IOException, ApiException {
-    return  getOauthAuthorizations(createGetOauthAuthorizationsRequest());
+  public OAuthAuthorizationListing getOauthAuthorizations(String acceptLanguage) throws IOException, ApiException {
+    return  getOauthAuthorizations(createGetOauthAuthorizationsRequest(acceptLanguage));
   }
 
   /**
-   * List clients that are authorized by the resource owner
+   * List clients that have been authorized, requested, or revoked by the resource owner
    * 
+   * @param acceptLanguage The language in which to display the client descriptions. (optional, default to en-us)
    * @return OAuthAuthorizationListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthAuthorizationListing> getOauthAuthorizationsWithHttpInfo() throws IOException {
-    return getOauthAuthorizations(createGetOauthAuthorizationsRequest().withHttpInfo());
+  public ApiResponse<OAuthAuthorizationListing> getOauthAuthorizationsWithHttpInfo(String acceptLanguage) throws IOException {
+    return getOauthAuthorizations(createGetOauthAuthorizationsRequest(acceptLanguage).withHttpInfo());
   }
 
-  private GetOauthAuthorizationsRequest createGetOauthAuthorizationsRequest() {
+  private GetOauthAuthorizationsRequest createGetOauthAuthorizationsRequest(String acceptLanguage) {
     return GetOauthAuthorizationsRequest.builder()
+            .withAcceptLanguage(acceptLanguage)
+    
             .build();
   }
 
   /**
-   * List clients that are authorized by the resource owner
+   * List clients that have been authorized, requested, or revoked by the resource owner
    * 
    * @param request The request object
    * @return OAuthAuthorizationListing
@@ -257,7 +265,7 @@ public class OAuthApi {
   }
 
   /**
-   * List clients that are authorized by the resource owner
+   * List clients that have been authorized, requested, or revoked by the resource owner
    * 
    * @param request The request object
    * @return the response

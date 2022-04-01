@@ -24,7 +24,6 @@ import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingMinerUploadsR
 import com.mypurecloud.sdk.v2.api.request.PostUploadsPublicassetsImagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUploadsRecordingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUploadsWorkforcemanagementHistoricaldataCsvRequest;
-import com.mypurecloud.sdk.v2.api.request.PostUploadsWorkforcemanagementHistoricaldataJsonRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -392,82 +391,6 @@ public class UploadsApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<UploadUrlResponse>> postUploadsWorkforcemanagementHistoricaldataCsvAsync(ApiRequest<UploadUrlRequest> request, final AsyncApiCallback<ApiResponse<UploadUrlResponse>> callback) {
-    try {
-      final SettableFuture<ApiResponse<UploadUrlResponse>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<UploadUrlResponse>() {}, new AsyncApiCallback<ApiResponse<UploadUrlResponse>>() {
-        @Override
-        public void onCompleted(ApiResponse<UploadUrlResponse> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<UploadUrlResponse> response = (ApiResponse<UploadUrlResponse>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<UploadUrlResponse> response = (ApiResponse<UploadUrlResponse>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  
-  /**
-   * Creates presigned url for uploading WFM historical data file. Requires data in json format.
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<UploadUrlResponse> postUploadsWorkforcemanagementHistoricaldataJsonAsync(PostUploadsWorkforcemanagementHistoricaldataJsonRequest request, final AsyncApiCallback<UploadUrlResponse> callback) {
-    try {
-      final SettableFuture<UploadUrlResponse> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UploadUrlResponse>() {}, new AsyncApiCallback<ApiResponse<UploadUrlResponse>>() {
-        @Override
-        public void onCompleted(ApiResponse<UploadUrlResponse> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Creates presigned url for uploading WFM historical data file. Requires data in json format.
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<UploadUrlResponse>> postUploadsWorkforcemanagementHistoricaldataJsonAsync(ApiRequest<UploadUrlRequest> request, final AsyncApiCallback<ApiResponse<UploadUrlResponse>> callback) {
     try {
       final SettableFuture<ApiResponse<UploadUrlResponse>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

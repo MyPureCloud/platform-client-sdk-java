@@ -99,11 +99,19 @@ import com.mypurecloud.sdk.v2.model.BuQueryAgentSchedulesRequest;
 import com.mypurecloud.sdk.v2.model.BuCopyScheduleRequest;
 import com.mypurecloud.sdk.v2.model.BuAsyncScheduleRunResponse;
 import com.mypurecloud.sdk.v2.model.BuRescheduleRequest;
+import com.mypurecloud.sdk.v2.model.ProcessScheduleUpdateUploadRequest;
+import com.mypurecloud.sdk.v2.model.UploadUrlRequestBody;
+import com.mypurecloud.sdk.v2.model.UpdateScheduleUploadResponse;
 import com.mypurecloud.sdk.v2.model.BuCreateBlankScheduleRequest;
 import com.mypurecloud.sdk.v2.model.BuGenerateScheduleRequest;
+import com.mypurecloud.sdk.v2.model.WfmProcessUploadRequest;
+import com.mypurecloud.sdk.v2.model.ScheduleUploadProcessingResponse;
+import com.mypurecloud.sdk.v2.model.ImportScheduleUploadResponse;
 import com.mypurecloud.sdk.v2.model.AsyncForecastOperationResult;
 import com.mypurecloud.sdk.v2.model.CopyBuForecastRequest;
 import com.mypurecloud.sdk.v2.model.GenerateBuForecastRequest;
+import com.mypurecloud.sdk.v2.model.ImportForecastResponse;
+import com.mypurecloud.sdk.v2.model.ImportForecastUploadResponse;
 import com.mypurecloud.sdk.v2.model.CreateBusinessUnitRequest;
 import com.mypurecloud.sdk.v2.model.ValidationServiceRequest;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQuery;
@@ -240,10 +248,16 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitSer
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekScheduleCopyRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekScheduleRescheduleRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekScheduleUpdateRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurlRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekSchedulesGenerateRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekSchedulesImportRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekSchedulesImportUploadurlRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekShorttermforecastCopyRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekShorttermforecastsGenerateRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekShorttermforecastsImportRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurlRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementCalendarUrlIcsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementHistoricaldataDeletejobRequest;
@@ -7819,6 +7833,158 @@ public class WorkforceManagementApiAsync {
 
   
   /**
+   * Starts processing a schedule update
+   * Call after uploading the schedule data to the url supplied by the /update/uploadurl route
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BuAsyncScheduleResponse> postWorkforcemanagementBusinessunitWeekScheduleUpdateAsync(PostWorkforcemanagementBusinessunitWeekScheduleUpdateRequest request, final AsyncApiCallback<BuAsyncScheduleResponse> callback) {
+    try {
+      final SettableFuture<BuAsyncScheduleResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BuAsyncScheduleResponse>() {}, new AsyncApiCallback<ApiResponse<BuAsyncScheduleResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BuAsyncScheduleResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Starts processing a schedule update
+   * Call after uploading the schedule data to the url supplied by the /update/uploadurl route
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BuAsyncScheduleResponse>> postWorkforcemanagementBusinessunitWeekScheduleUpdateAsync(ApiRequest<ProcessScheduleUpdateUploadRequest> request, final AsyncApiCallback<ApiResponse<BuAsyncScheduleResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BuAsyncScheduleResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BuAsyncScheduleResponse>() {}, new AsyncApiCallback<ApiResponse<BuAsyncScheduleResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BuAsyncScheduleResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BuAsyncScheduleResponse> response = (ApiResponse<BuAsyncScheduleResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BuAsyncScheduleResponse> response = (ApiResponse<BuAsyncScheduleResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Creates a signed upload URL for updating a schedule
+   * Once the upload is complete, call the /{scheduleId}/update route to start the schedule update process
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UpdateScheduleUploadResponse> postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurlAsync(PostWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurlRequest request, final AsyncApiCallback<UpdateScheduleUploadResponse> callback) {
+    try {
+      final SettableFuture<UpdateScheduleUploadResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UpdateScheduleUploadResponse>() {}, new AsyncApiCallback<ApiResponse<UpdateScheduleUploadResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<UpdateScheduleUploadResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Creates a signed upload URL for updating a schedule
+   * Once the upload is complete, call the /{scheduleId}/update route to start the schedule update process
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UpdateScheduleUploadResponse>> postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurlAsync(ApiRequest<UploadUrlRequestBody> request, final AsyncApiCallback<ApiResponse<UpdateScheduleUploadResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UpdateScheduleUploadResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UpdateScheduleUploadResponse>() {}, new AsyncApiCallback<ApiResponse<UpdateScheduleUploadResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<UpdateScheduleUploadResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UpdateScheduleUploadResponse> response = (ApiResponse<UpdateScheduleUploadResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UpdateScheduleUploadResponse> response = (ApiResponse<UpdateScheduleUploadResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Create a blank schedule
    * 
    * @param request the request object
@@ -7971,6 +8137,158 @@ public class WorkforceManagementApiAsync {
 
   
   /**
+   * Starts processing a schedule import
+   * Call after uploading the schedule data to the url supplied by the /import/uploadurl route
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ScheduleUploadProcessingResponse> postWorkforcemanagementBusinessunitWeekSchedulesImportAsync(PostWorkforcemanagementBusinessunitWeekSchedulesImportRequest request, final AsyncApiCallback<ScheduleUploadProcessingResponse> callback) {
+    try {
+      final SettableFuture<ScheduleUploadProcessingResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ScheduleUploadProcessingResponse>() {}, new AsyncApiCallback<ApiResponse<ScheduleUploadProcessingResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScheduleUploadProcessingResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Starts processing a schedule import
+   * Call after uploading the schedule data to the url supplied by the /import/uploadurl route
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ScheduleUploadProcessingResponse>> postWorkforcemanagementBusinessunitWeekSchedulesImportAsync(ApiRequest<WfmProcessUploadRequest> request, final AsyncApiCallback<ApiResponse<ScheduleUploadProcessingResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ScheduleUploadProcessingResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ScheduleUploadProcessingResponse>() {}, new AsyncApiCallback<ApiResponse<ScheduleUploadProcessingResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScheduleUploadProcessingResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScheduleUploadProcessingResponse> response = (ApiResponse<ScheduleUploadProcessingResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScheduleUploadProcessingResponse> response = (ApiResponse<ScheduleUploadProcessingResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Creates a signed upload URL for importing a schedule
+   * Once the upload is complete, call the /import route to start the schedule import process
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ImportScheduleUploadResponse> postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurlAsync(PostWorkforcemanagementBusinessunitWeekSchedulesImportUploadurlRequest request, final AsyncApiCallback<ImportScheduleUploadResponse> callback) {
+    try {
+      final SettableFuture<ImportScheduleUploadResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ImportScheduleUploadResponse>() {}, new AsyncApiCallback<ApiResponse<ImportScheduleUploadResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ImportScheduleUploadResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Creates a signed upload URL for importing a schedule
+   * Once the upload is complete, call the /import route to start the schedule import process
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ImportScheduleUploadResponse>> postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurlAsync(ApiRequest<UploadUrlRequestBody> request, final AsyncApiCallback<ApiResponse<ImportScheduleUploadResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ImportScheduleUploadResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ImportScheduleUploadResponse>() {}, new AsyncApiCallback<ApiResponse<ImportScheduleUploadResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ImportScheduleUploadResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ImportScheduleUploadResponse> response = (ApiResponse<ImportScheduleUploadResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ImportScheduleUploadResponse> response = (ApiResponse<ImportScheduleUploadResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Copy a short term forecast
    * 
    * @param request the request object
@@ -8110,6 +8428,158 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<AsyncForecastOperationResult> response = (ApiResponse<AsyncForecastOperationResult>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Starts importing the uploaded short term forecast
+   * Call after uploading the forecast data to the url supplied by the /import/uploadurl route
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ImportForecastResponse> postWorkforcemanagementBusinessunitWeekShorttermforecastsImportAsync(PostWorkforcemanagementBusinessunitWeekShorttermforecastsImportRequest request, final AsyncApiCallback<ImportForecastResponse> callback) {
+    try {
+      final SettableFuture<ImportForecastResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ImportForecastResponse>() {}, new AsyncApiCallback<ApiResponse<ImportForecastResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ImportForecastResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Starts importing the uploaded short term forecast
+   * Call after uploading the forecast data to the url supplied by the /import/uploadurl route
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ImportForecastResponse>> postWorkforcemanagementBusinessunitWeekShorttermforecastsImportAsync(ApiRequest<WfmProcessUploadRequest> request, final AsyncApiCallback<ApiResponse<ImportForecastResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ImportForecastResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ImportForecastResponse>() {}, new AsyncApiCallback<ApiResponse<ImportForecastResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ImportForecastResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ImportForecastResponse> response = (ApiResponse<ImportForecastResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ImportForecastResponse> response = (ApiResponse<ImportForecastResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Creates a signed upload URL for importing a short term forecast
+   * Once the upload is complete, call the /import route to start the short term forecast import process
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ImportForecastUploadResponse> postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurlAsync(PostWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurlRequest request, final AsyncApiCallback<ImportForecastUploadResponse> callback) {
+    try {
+      final SettableFuture<ImportForecastUploadResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ImportForecastUploadResponse>() {}, new AsyncApiCallback<ApiResponse<ImportForecastUploadResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ImportForecastUploadResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Creates a signed upload URL for importing a short term forecast
+   * Once the upload is complete, call the /import route to start the short term forecast import process
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ImportForecastUploadResponse>> postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurlAsync(ApiRequest<UploadUrlRequestBody> request, final AsyncApiCallback<ApiResponse<ImportForecastUploadResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ImportForecastUploadResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ImportForecastUploadResponse>() {}, new AsyncApiCallback<ApiResponse<ImportForecastUploadResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ImportForecastUploadResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ImportForecastUploadResponse> response = (ApiResponse<ImportForecastUploadResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ImportForecastUploadResponse> response = (ApiResponse<ImportForecastUploadResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

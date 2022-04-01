@@ -106,6 +106,8 @@ title: AuditTopicAuditLogMessage
 | PROCESSED | &quot;Processed&quot; |
 | ASSIGN | &quot;Assign&quot; |
 | UNASSIGN | &quot;Unassign&quot; |
+| RESET | &quot;Reset&quot; |
+| REASSIGN | &quot;Reassign&quot; |
 {: class="table table-striped"}
 
 

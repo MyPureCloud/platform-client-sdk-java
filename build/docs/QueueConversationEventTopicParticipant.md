@@ -32,6 +32,7 @@ title: QueueConversationEventTopicParticipant
 | **alertingTimeoutMs** | <!----><!---->**Integer**<!----> | Specifies how long the agent has to answer an interaction before being marked as not responding. |  [optional] |
 | **monitoredParticipantId** | <!----><!---->**String**<!----> | If this participant is a monitor, then this will be the id of the participant that is being monitored. |  [optional] |
 | **coachedParticipantId** | <!----><!---->**String**<!----> | If this participant is a coach, then this will be the id of the participant that is being coached. |  [optional] |
+| **bargedParticipantId** | <!----><!---->**String**<!----> | If this participant created a barge in conference, then this will be the id of the participant that is barged in. |  [optional] |
 | **screenRecordingState** | [**ScreenRecordingStateEnum**](#ScreenRecordingStateEnum)<!----> | The current screen recording state for this participant. |  [optional] |
 | **flaggedReason** | <!----><!---->**String**<!----> | If this participant has flagged the conversation, the reason code given. |  [optional] |
 | **attributes** | <!----><!---->**Map&lt;String, String&gt;**<!----> | Additional participant attributes |  [optional] |

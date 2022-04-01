@@ -10,9 +10,13 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.QueueUserEventTopicObject;
 import com.mypurecloud.sdk.v2.model.QueueUserEventTopicUserReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -25,7 +29,7 @@ public class QueueUserEventTopicQueueMember  implements Serializable {
   private QueueUserEventTopicUserReference user = null;
   private String queueId = null;
   private Boolean joined = null;
-  private Object additionalProperties = null;
+  private Map<String, QueueUserEventTopicObject> additionalProperties = null;
 
   
   /**
@@ -98,17 +102,17 @@ public class QueueUserEventTopicQueueMember  implements Serializable {
   
   /**
    **/
-  public QueueUserEventTopicQueueMember additionalProperties(Object additionalProperties) {
+  public QueueUserEventTopicQueueMember additionalProperties(Map<String, QueueUserEventTopicObject> additionalProperties) {
     this.additionalProperties = additionalProperties;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("additionalProperties")
-  public Object getAdditionalProperties() {
+  public Map<String, QueueUserEventTopicObject> getAdditionalProperties() {
     return additionalProperties;
   }
-  public void setAdditionalProperties(Object additionalProperties) {
+  public void setAdditionalProperties(Map<String, QueueUserEventTopicObject> additionalProperties) {
     this.additionalProperties = additionalProperties;
   }
 

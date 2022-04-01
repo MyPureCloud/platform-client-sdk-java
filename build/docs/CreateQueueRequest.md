@@ -37,7 +37,7 @@ title: CreateQueueRequest
 | **defaultScripts** | <!----><!---->[**Map&lt;String, Script&gt;**](Script.html)<!----> | The default script Ids for the communication types. |  [optional] |
 | **outboundMessagingAddresses** | <!----><!---->[**QueueMessagingAddresses**](QueueMessagingAddresses.html)<!----> | The messaging addresses for the queue. |  [optional] |
 | **outboundEmailAddress** | <!----><!---->[**QueueEmailAddress**](QueueEmailAddress.html)<!----> |  |  [optional] |
-| **sourceQueueId** | <!----><!---->**String**<!----> | The id of an existing queue to copy the settings from when creating a new queue. |  [optional] |
+| **sourceQueueId** | <!----><!---->**String**<!----> | The id of an existing queue to copy the settings (does not include GPR settings) from when creating a new queue. |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 

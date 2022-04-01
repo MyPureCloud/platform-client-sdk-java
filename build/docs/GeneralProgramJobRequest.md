@@ -33,6 +33,7 @@ title: GeneralProgramJobRequest
 | DE_DE | &quot;de-DE&quot; |
 | PT_BR | &quot;pt-BR&quot; |
 | PL_PL | &quot;pl-PL&quot; |
+| PT_PT | &quot;pt-PT&quot; |
 {: class="table table-striped"}
 
 

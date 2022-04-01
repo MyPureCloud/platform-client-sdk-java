@@ -14,7 +14,7 @@ title: HistoricalAdherenceExceptionInfo
 | **scheduledActivityCategory** | [**ScheduledActivityCategoryEnum**](#ScheduledActivityCategoryEnum)<!----> | Activity for which the user is scheduled |  [optional] |
 | **actualActivityCategory** | [**ActualActivityCategoryEnum**](#ActualActivityCategoryEnum)<!----> | Activity for which the user is actually engaged |  [optional] |
 | **systemPresence** | [**SystemPresenceEnum**](#SystemPresenceEnum)<!----> | Actual underlying system presence value |  [optional] |
-| **routingStatus** | <!----><!---->[**RoutingStatus**](RoutingStatus.html)<!----> | Actual underlying routing status, used to determine whether a user is actually in adherence when OnQueue |  [optional] |
+| **routingStatus** | [**RoutingStatusEnum**](#RoutingStatusEnum)<!----> | Actual underlying routing status, used to determine whether a user is actually in adherence when OnQueue |  [optional] |
 | **impact** | [**ImpactEnum**](#ImpactEnum)<!----> | The impact of the current adherence state for this user |  [optional] |
 | **secondaryPresenceLookupId** | <!----><!---->**String**<!----> | The lookup ID used to retrieve the actual secondary status from map of lookup ID to corresponding secondary presence ID |  [optional] |
 {: class="table table-striped"}
@@ -75,6 +75,21 @@ title: HistoricalAdherenceExceptionInfo
 | TRAINING | &quot;Training&quot; |
 | MEETING | &quot;Meeting&quot; |
 | BREAK | &quot;Break&quot; |
+{: class="table table-striped"}
+
+
+<a name="RoutingStatusEnum"></a>
+
+## Enum: RoutingStatusEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| OFF_QUEUE | &quot;OFF_QUEUE&quot; |
+| IDLE | &quot;IDLE&quot; |
+| INTERACTING | &quot;INTERACTING&quot; |
+| NOT_RESPONDING | &quot;NOT_RESPONDING&quot; |
+| COMMUNICATING | &quot;COMMUNICATING&quot; |
 {: class="table table-striped"}
 
 

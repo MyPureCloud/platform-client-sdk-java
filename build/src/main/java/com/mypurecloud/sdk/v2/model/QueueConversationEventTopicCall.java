@@ -264,6 +264,7 @@ public class QueueConversationEventTopicCall  implements Serializable {
   private List<QueueConversationEventTopicDisconnectReason> disconnectReasons = new ArrayList<QueueConversationEventTopicDisconnectReason>();
   private QueueConversationEventTopicFaxStatus faxStatus = null;
   private String uuiData = null;
+  private Date bargedTime = null;
   private QueueConversationEventTopicWrapup wrapup = null;
   private QueueConversationEventTopicAfterCallWork afterCallWork = null;
   private Boolean afterCallWorkRequired = null;
@@ -664,6 +665,24 @@ public class QueueConversationEventTopicCall  implements Serializable {
 
   
   /**
+   * The timestamp when this participant was connected to the barge conference in the provider clock.
+   **/
+  public QueueConversationEventTopicCall bargedTime(Date bargedTime) {
+    this.bargedTime = bargedTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The timestamp when this participant was connected to the barge conference in the provider clock.")
+  @JsonProperty("bargedTime")
+  public Date getBargedTime() {
+    return bargedTime;
+  }
+  public void setBargedTime(Date bargedTime) {
+    this.bargedTime = bargedTime;
+  }
+
+  
+  /**
    * Call wrap up or disposition data.
    **/
   public QueueConversationEventTopicCall wrapup(QueueConversationEventTopicWrapup wrapup) {
@@ -766,6 +785,7 @@ public class QueueConversationEventTopicCall  implements Serializable {
         Objects.equals(this.disconnectReasons, queueConversationEventTopicCall.disconnectReasons) &&
         Objects.equals(this.faxStatus, queueConversationEventTopicCall.faxStatus) &&
         Objects.equals(this.uuiData, queueConversationEventTopicCall.uuiData) &&
+        Objects.equals(this.bargedTime, queueConversationEventTopicCall.bargedTime) &&
         Objects.equals(this.wrapup, queueConversationEventTopicCall.wrapup) &&
         Objects.equals(this.afterCallWork, queueConversationEventTopicCall.afterCallWork) &&
         Objects.equals(this.afterCallWorkRequired, queueConversationEventTopicCall.afterCallWorkRequired) &&
@@ -774,7 +794,7 @@ public class QueueConversationEventTopicCall  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, recording, recordingState, muted, confined, held, errorInfo, disconnectType, startHoldTime, direction, documentId, self, other, provider, scriptId, peerId, connectedTime, disconnectedTime, disconnectReasons, faxStatus, uuiData, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId);
+    return Objects.hash(id, state, recording, recordingState, muted, confined, held, errorInfo, disconnectType, startHoldTime, direction, documentId, self, other, provider, scriptId, peerId, connectedTime, disconnectedTime, disconnectReasons, faxStatus, uuiData, bargedTime, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId);
   }
 
   @Override
@@ -804,6 +824,7 @@ public class QueueConversationEventTopicCall  implements Serializable {
     sb.append("    disconnectReasons: ").append(toIndentedString(disconnectReasons)).append("\n");
     sb.append("    faxStatus: ").append(toIndentedString(faxStatus)).append("\n");
     sb.append("    uuiData: ").append(toIndentedString(uuiData)).append("\n");
+    sb.append("    bargedTime: ").append(toIndentedString(bargedTime)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");

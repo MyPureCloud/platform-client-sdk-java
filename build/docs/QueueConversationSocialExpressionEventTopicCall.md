@@ -30,6 +30,7 @@ title: QueueConversationSocialExpressionEventTopicCall
 | **disconnectReasons** | <!----><!---->[**List&lt;QueueConversationSocialExpressionEventTopicDisconnectReason&gt;**](QueueConversationSocialExpressionEventTopicDisconnectReason.html)<!----> | List of reasons that this call was disconnected. This will be set once the call disconnects. |  [optional] |
 | **faxStatus** | <!----><!---->[**QueueConversationSocialExpressionEventTopicFaxStatus**](QueueConversationSocialExpressionEventTopicFaxStatus.html)<!----> |  |  [optional] |
 | **uuiData** | <!----><!---->**String**<!----> | User to User Information (UUI) data managed by SIP session application. |  [optional] |
+| **bargedTime** | <!----><!---->[**Date**](Date.html)<!----> | The timestamp when this participant was connected to the barge conference in the provider clock. |  [optional] |
 | **wrapup** | <!----><!---->[**QueueConversationSocialExpressionEventTopicWrapup**](QueueConversationSocialExpressionEventTopicWrapup.html)<!----> | Call wrap up or disposition data. |  [optional] |
 | **afterCallWork** | <!----><!---->[**QueueConversationSocialExpressionEventTopicAfterCallWork**](QueueConversationSocialExpressionEventTopicAfterCallWork.html)<!----> |  |  [optional] |
 | **afterCallWorkRequired** | <!----><!---->**Boolean**<!----> | Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested. |  [optional] |

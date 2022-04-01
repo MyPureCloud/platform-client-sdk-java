@@ -77,7 +77,8 @@ public class GetSpeechandtextanalyticsTopicsGeneralRequest {
 		IT_IT("it-IT"), 
 		DE_DE("de-DE"), 
 		PT_BR("pt-BR"), 
-		PL_PL("pl-PL");
+		PL_PL("pl-PL"), 
+		PT_PT("pt-PT");
 
 		private String value;
 

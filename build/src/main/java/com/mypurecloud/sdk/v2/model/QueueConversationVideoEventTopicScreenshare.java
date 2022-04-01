@@ -13,6 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicAddress;
 import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicAfterCallWork;
+import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicObject;
 import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -86,6 +87,7 @@ public class QueueConversationVideoEventTopicScreenshare  implements Serializabl
   private String provider = null;
   private String scriptId = null;
   private String peerId = null;
+  private QueueConversationVideoEventTopicObject peerCount = null;
 
   private static class DisconnectTypeEnumDeserializer extends StdDeserializer<DisconnectTypeEnum> {
     public DisconnectTypeEnumDeserializer() {
@@ -300,6 +302,23 @@ public class QueueConversationVideoEventTopicScreenshare  implements Serializabl
 
   
   /**
+   **/
+  public QueueConversationVideoEventTopicScreenshare peerCount(QueueConversationVideoEventTopicObject peerCount) {
+    this.peerCount = peerCount;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("peerCount")
+  public QueueConversationVideoEventTopicObject getPeerCount() {
+    return peerCount;
+  }
+  public void setPeerCount(QueueConversationVideoEventTopicObject peerCount) {
+    this.peerCount = peerCount;
+  }
+
+  
+  /**
    * System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
    **/
   public QueueConversationVideoEventTopicScreenshare disconnectType(DisconnectTypeEnum disconnectType) {
@@ -425,6 +444,7 @@ public class QueueConversationVideoEventTopicScreenshare  implements Serializabl
         Objects.equals(this.provider, queueConversationVideoEventTopicScreenshare.provider) &&
         Objects.equals(this.scriptId, queueConversationVideoEventTopicScreenshare.scriptId) &&
         Objects.equals(this.peerId, queueConversationVideoEventTopicScreenshare.peerId) &&
+        Objects.equals(this.peerCount, queueConversationVideoEventTopicScreenshare.peerCount) &&
         Objects.equals(this.disconnectType, queueConversationVideoEventTopicScreenshare.disconnectType) &&
         Objects.equals(this.connectedTime, queueConversationVideoEventTopicScreenshare.connectedTime) &&
         Objects.equals(this.disconnectedTime, queueConversationVideoEventTopicScreenshare.disconnectedTime) &&
@@ -435,7 +455,7 @@ public class QueueConversationVideoEventTopicScreenshare  implements Serializabl
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, self, id, context, sharing, provider, scriptId, peerId, disconnectType, connectedTime, disconnectedTime, wrapup, afterCallWork, afterCallWorkRequired);
+    return Objects.hash(state, self, id, context, sharing, provider, scriptId, peerId, peerCount, disconnectType, connectedTime, disconnectedTime, wrapup, afterCallWork, afterCallWorkRequired);
   }
 
   @Override
@@ -451,6 +471,7 @@ public class QueueConversationVideoEventTopicScreenshare  implements Serializabl
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");
     sb.append("    peerId: ").append(toIndentedString(peerId)).append("\n");
+    sb.append("    peerCount: ").append(toIndentedString(peerCount)).append("\n");
     sb.append("    disconnectType: ").append(toIndentedString(disconnectType)).append("\n");
     sb.append("    connectedTime: ").append(toIndentedString(connectedTime)).append("\n");
     sb.append("    disconnectedTime: ").append(toIndentedString(disconnectedTime)).append("\n");

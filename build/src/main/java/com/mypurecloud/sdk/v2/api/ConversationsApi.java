@@ -64,6 +64,8 @@ import com.mypurecloud.sdk.v2.model.ParticipantAttributes;
 import com.mypurecloud.sdk.v2.model.Empty;
 import com.mypurecloud.sdk.v2.model.ConsultTransferUpdate;
 import com.mypurecloud.sdk.v2.model.ConsultTransferResponse;
+import com.mypurecloud.sdk.v2.model.PatchCallbackRequest;
+import com.mypurecloud.sdk.v2.model.PatchCallbackResponse;
 import com.mypurecloud.sdk.v2.model.FacebookIntegrationUpdateRequest;
 import com.mypurecloud.sdk.v2.model.OpenIntegrationUpdateRequest;
 import com.mypurecloud.sdk.v2.model.TwitterIntegrationRequest;
@@ -84,6 +86,9 @@ import com.mypurecloud.sdk.v2.model.CallCommand;
 import com.mypurecloud.sdk.v2.model.ConsultTransfer;
 import com.mypurecloud.sdk.v2.model.CreateCallbackResponse;
 import com.mypurecloud.sdk.v2.model.CreateCallbackCommand;
+import com.mypurecloud.sdk.v2.model.BulkCallbackDisconnectRequest;
+import com.mypurecloud.sdk.v2.model.BulkCallbackPatchResponse;
+import com.mypurecloud.sdk.v2.model.BulkCallbackPatchRequest;
 import com.mypurecloud.sdk.v2.model.CreateCallRequest;
 import com.mypurecloud.sdk.v2.model.CreateCallResponse;
 import com.mypurecloud.sdk.v2.model.CreateWebChatMessageRequest;
@@ -194,6 +199,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallbackRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallbackParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallbackParticipantAttributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallbackParticipantCommunicationRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallbacksRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsChatRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsChatParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsChatParticipantAttributesRequest;
@@ -233,6 +239,8 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantReplac
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallbackParticipantReplaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallbacksRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsCallbacksBulkDisconnectRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsCallbacksBulkUpdateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsChatCommunicationMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsChatCommunicationTypingRequest;
@@ -7273,6 +7281,85 @@ public class ConversationsApi {
 
   
   /**
+   * Update a scheduled callback
+   * 
+   * @param body PatchCallbackRequest (required)
+   * @return PatchCallbackResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PatchCallbackResponse patchConversationsCallbacks(PatchCallbackRequest body) throws IOException, ApiException {
+    return  patchConversationsCallbacks(createPatchConversationsCallbacksRequest(body));
+  }
+
+  /**
+   * Update a scheduled callback
+   * 
+   * @param body PatchCallbackRequest (required)
+   * @return PatchCallbackResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PatchCallbackResponse> patchConversationsCallbacksWithHttpInfo(PatchCallbackRequest body) throws IOException {
+    return patchConversationsCallbacks(createPatchConversationsCallbacksRequest(body).withHttpInfo());
+  }
+
+  private PatchConversationsCallbacksRequest createPatchConversationsCallbacksRequest(PatchCallbackRequest body) {
+    return PatchConversationsCallbacksRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update a scheduled callback
+   * 
+   * @param request The request object
+   * @return PatchCallbackResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PatchCallbackResponse patchConversationsCallbacks(PatchConversationsCallbacksRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<PatchCallbackResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PatchCallbackResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a scheduled callback
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PatchCallbackResponse> patchConversationsCallbacks(ApiRequest<PatchCallbackRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PatchCallbackResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PatchCallbackResponse> response = (ApiResponse<PatchCallbackResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PatchCallbackResponse> response = (ApiResponse<PatchCallbackResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Update a conversation by disconnecting all of the participants
    * 
    * @param conversationId conversationId (required)
@@ -10531,6 +10618,161 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<CreateCallbackResponse> response = (ApiResponse<CreateCallbackResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Disconnect multiple scheduled callbacks
+   * 
+   * @param body BulkCallbackDisconnectRequest (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postConversationsCallbacksBulkDisconnect(BulkCallbackDisconnectRequest body) throws IOException, ApiException {
+     postConversationsCallbacksBulkDisconnect(createPostConversationsCallbacksBulkDisconnectRequest(body));
+  }
+
+  /**
+   * Disconnect multiple scheduled callbacks
+   * 
+   * @param body BulkCallbackDisconnectRequest (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postConversationsCallbacksBulkDisconnectWithHttpInfo(BulkCallbackDisconnectRequest body) throws IOException {
+    return postConversationsCallbacksBulkDisconnect(createPostConversationsCallbacksBulkDisconnectRequest(body).withHttpInfo());
+  }
+
+  private PostConversationsCallbacksBulkDisconnectRequest createPostConversationsCallbacksBulkDisconnectRequest(BulkCallbackDisconnectRequest body) {
+    return PostConversationsCallbacksBulkDisconnectRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Disconnect multiple scheduled callbacks
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postConversationsCallbacksBulkDisconnect(PostConversationsCallbacksBulkDisconnectRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Disconnect multiple scheduled callbacks
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postConversationsCallbacksBulkDisconnect(ApiRequest<BulkCallbackDisconnectRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update multiple scheduled callbacks
+   * 
+   * @param body BulkCallbackPatchRequest (required)
+   * @return BulkCallbackPatchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkCallbackPatchResponse postConversationsCallbacksBulkUpdate(BulkCallbackPatchRequest body) throws IOException, ApiException {
+    return  postConversationsCallbacksBulkUpdate(createPostConversationsCallbacksBulkUpdateRequest(body));
+  }
+
+  /**
+   * Update multiple scheduled callbacks
+   * 
+   * @param body BulkCallbackPatchRequest (required)
+   * @return BulkCallbackPatchResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkCallbackPatchResponse> postConversationsCallbacksBulkUpdateWithHttpInfo(BulkCallbackPatchRequest body) throws IOException {
+    return postConversationsCallbacksBulkUpdate(createPostConversationsCallbacksBulkUpdateRequest(body).withHttpInfo());
+  }
+
+  private PostConversationsCallbacksBulkUpdateRequest createPostConversationsCallbacksBulkUpdateRequest(BulkCallbackPatchRequest body) {
+    return PostConversationsCallbacksBulkUpdateRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update multiple scheduled callbacks
+   * 
+   * @param request The request object
+   * @return BulkCallbackPatchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkCallbackPatchResponse postConversationsCallbacksBulkUpdate(PostConversationsCallbacksBulkUpdateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BulkCallbackPatchResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BulkCallbackPatchResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update multiple scheduled callbacks
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkCallbackPatchResponse> postConversationsCallbacksBulkUpdate(ApiRequest<BulkCallbackPatchRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BulkCallbackPatchResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkCallbackPatchResponse> response = (ApiResponse<BulkCallbackPatchResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkCallbackPatchResponse> response = (ApiResponse<BulkCallbackPatchResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
