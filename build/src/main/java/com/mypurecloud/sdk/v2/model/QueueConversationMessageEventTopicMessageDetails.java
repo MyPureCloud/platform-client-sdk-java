@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.QueueConversationMessageEventTopicErrorDetails;
 import com.mypurecloud.sdk.v2.model.QueueConversationMessageEventTopicMessageMedia;
 import com.mypurecloud.sdk.v2.model.QueueConversationMessageEventTopicMessageSticker;
 import com.mypurecloud.sdk.v2.model.QueueConversationMessageEventTopicUriReference;
@@ -85,6 +86,7 @@ public class QueueConversationMessageEventTopicMessageDetails  implements Serial
   private MessageStatusEnum messageStatus = null;
   private List<QueueConversationMessageEventTopicMessageMedia> media = new ArrayList<QueueConversationMessageEventTopicMessageMedia>();
   private List<QueueConversationMessageEventTopicMessageSticker> stickers = new ArrayList<QueueConversationMessageEventTopicMessageSticker>();
+  private QueueConversationMessageEventTopicErrorDetails errorInfo = null;
 
   
   /**
@@ -189,6 +191,23 @@ public class QueueConversationMessageEventTopicMessageDetails  implements Serial
   }
 
   
+  /**
+   **/
+  public QueueConversationMessageEventTopicMessageDetails errorInfo(QueueConversationMessageEventTopicErrorDetails errorInfo) {
+    this.errorInfo = errorInfo;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("errorInfo")
+  public QueueConversationMessageEventTopicErrorDetails getErrorInfo() {
+    return errorInfo;
+  }
+  public void setErrorInfo(QueueConversationMessageEventTopicErrorDetails errorInfo) {
+    this.errorInfo = errorInfo;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -204,12 +223,13 @@ public class QueueConversationMessageEventTopicMessageDetails  implements Serial
         Objects.equals(this.messageSegmentCount, queueConversationMessageEventTopicMessageDetails.messageSegmentCount) &&
         Objects.equals(this.messageStatus, queueConversationMessageEventTopicMessageDetails.messageStatus) &&
         Objects.equals(this.media, queueConversationMessageEventTopicMessageDetails.media) &&
-        Objects.equals(this.stickers, queueConversationMessageEventTopicMessageDetails.stickers);
+        Objects.equals(this.stickers, queueConversationMessageEventTopicMessageDetails.stickers) &&
+        Objects.equals(this.errorInfo, queueConversationMessageEventTopicMessageDetails.errorInfo);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(message, messageTime, messageSegmentCount, messageStatus, media, stickers);
+    return Objects.hash(message, messageTime, messageSegmentCount, messageStatus, media, stickers, errorInfo);
   }
 
   @Override
@@ -223,6 +243,7 @@ public class QueueConversationMessageEventTopicMessageDetails  implements Serial
     sb.append("    messageStatus: ").append(toIndentedString(messageStatus)).append("\n");
     sb.append("    media: ").append(toIndentedString(media)).append("\n");
     sb.append("    stickers: ").append(toIndentedString(stickers)).append("\n");
+    sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -13,7 +13,7 @@ title: ContentList
 | **title** | <!----><!---->**String**<!----> | Text to show in the title. |  [optional] |
 | **description** | <!----><!---->**String**<!----> | Text to show in the description. |  [optional] |
 | **submitLabel** | <!----><!---->**String**<!----> | Label for Submit button. |  [optional] |
-| **actions** | <!----><!---->[**ContentActions**](ContentActions.html)<!----> | The list actions. |  [optional] |
+| **actions** | <!----><!---->[**ContentActions**](ContentActions.html)<!----> | The list actions (Deprecated). |  [optional] |
 | **components** | <!----><!---->[**List&lt;ListItemComponent&gt;**](ListItemComponent.html)<!----> | An array of component objects. |  [optional] |
 {: class="table table-striped"}
 

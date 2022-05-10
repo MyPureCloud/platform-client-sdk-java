@@ -996,7 +996,7 @@ try {
 
 
 
-> [ActionEntityListing](ActionEntityListing.html) getIntegrationsActions(pageSize, pageNumber, nextPage, previousPage, sortBy, sortOrder, category, name, secure, includeAuthActions)
+> [ActionEntityListing](ActionEntityListing.html) getIntegrationsActions(pageSize, pageNumber, nextPage, previousPage, sortBy, sortOrder, category, name, ids, secure, includeAuthActions)
 
 Retrieves all actions associated with filters passed in via query param.
 
@@ -1037,12 +1037,13 @@ String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
 String sortBy = "sortBy_example"; // String | Root level field name to sort on.
 String sortOrder = "asc"; // String | Direction to sort 'sortBy' field.
-String category = "category_example"; // String | Filter by category name
-String name = "name_example"; // String | Filter by action name. Provide full or just the first part of name.
-String secure = "secure_example"; // String | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
+String category = "category_example"; // String | Filter by category name.
+String name = "name_example"; // String | Filter by partial or complete action name.
+String ids = "ids_example"; // String | Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids.
+String secure = "secure_example"; // String | Filter based on 'secure' configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions.
 String includeAuthActions = "false"; // String | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions.
 try {
-    ActionEntityListing result = apiInstance.getIntegrationsActions(pageSize, pageNumber, nextPage, previousPage, sortBy, sortOrder, category, name, secure, includeAuthActions);
+    ActionEntityListing result = apiInstance.getIntegrationsActions(pageSize, pageNumber, nextPage, previousPage, sortBy, sortOrder, category, name, ids, secure, includeAuthActions);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IntegrationsApi#getIntegrationsActions");
@@ -1061,9 +1062,10 @@ try {
 | **previousPage** | **String**| Previous page token | [optional] 
 | **sortBy** | **String**| Root level field name to sort on. | [optional] 
 | **sortOrder** | **String**| Direction to sort &#39;sortBy&#39; field. | [optional] [default to asc]<br />**Values**: ASC, DESC 
-| **category** | **String**| Filter by category name | [optional] 
-| **name** | **String**| Filter by action name. Provide full or just the first part of name. | [optional] 
-| **secure** | **String**| Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. | [optional]<br />**Values**: true, false 
+| **category** | **String**| Filter by category name. | [optional] 
+| **name** | **String**| Filter by partial or complete action name. | [optional] 
+| **ids** | **String**| Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids. | [optional] 
+| **secure** | **String**| Filter based on &#39;secure&#39; configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions. | [optional]<br />**Values**: true, false 
 | **includeAuthActions** | **String**| Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. | [optional] [default to false]<br />**Values**: true, false 
 {: class="table-striped"}
 
@@ -1154,7 +1156,7 @@ try {
 
 
 
-> [ActionEntityListing](ActionEntityListing.html) getIntegrationsActionsDrafts(pageSize, pageNumber, nextPage, previousPage, sortBy, sortOrder, category, name, secure, includeAuthActions)
+> [ActionEntityListing](ActionEntityListing.html) getIntegrationsActionsDrafts(pageSize, pageNumber, nextPage, previousPage, sortBy, sortOrder, category, name, ids, secure, includeAuthActions)
 
 Retrieves all action drafts associated with the filters passed in via query param.
 
@@ -1195,12 +1197,13 @@ String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
 String sortBy = "sortBy_example"; // String | Root level field name to sort on.
 String sortOrder = "asc"; // String | Direction to sort 'sortBy' field.
-String category = "category_example"; // String | Filter by category name
-String name = "name_example"; // String | Filter by action name. Provide full or just the first part of name.
-String secure = "secure_example"; // String | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
+String category = "category_example"; // String | Filter by category name.
+String name = "name_example"; // String | Filter by partial or complete action name.
+String ids = "ids_example"; // String | Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids.
+String secure = "secure_example"; // String | Filter based on 'secure' configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions.
 String includeAuthActions = "false"; // String | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions.
 try {
-    ActionEntityListing result = apiInstance.getIntegrationsActionsDrafts(pageSize, pageNumber, nextPage, previousPage, sortBy, sortOrder, category, name, secure, includeAuthActions);
+    ActionEntityListing result = apiInstance.getIntegrationsActionsDrafts(pageSize, pageNumber, nextPage, previousPage, sortBy, sortOrder, category, name, ids, secure, includeAuthActions);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IntegrationsApi#getIntegrationsActionsDrafts");
@@ -1219,9 +1222,10 @@ try {
 | **previousPage** | **String**| Previous page token | [optional] 
 | **sortBy** | **String**| Root level field name to sort on. | [optional] 
 | **sortOrder** | **String**| Direction to sort &#39;sortBy&#39; field. | [optional] [default to asc]<br />**Values**: ASC, DESC 
-| **category** | **String**| Filter by category name | [optional] 
-| **name** | **String**| Filter by action name. Provide full or just the first part of name. | [optional] 
-| **secure** | **String**| Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. | [optional]<br />**Values**: true, false 
+| **category** | **String**| Filter by category name. | [optional] 
+| **name** | **String**| Filter by partial or complete action name. | [optional] 
+| **ids** | **String**| Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids. | [optional] 
+| **secure** | **String**| Filter based on &#39;secure&#39; configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions. | [optional]<br />**Values**: true, false 
 | **includeAuthActions** | **String**| Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. | [optional] [default to false]<br />**Values**: true, false 
 {: class="table-striped"}
 

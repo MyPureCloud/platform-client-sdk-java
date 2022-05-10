@@ -26,7 +26,9 @@ import com.mypurecloud.sdk.v2.api.request.GetScriptRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScriptPageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScriptPagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScriptsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetScriptsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScriptsPublishedRequest;
+import com.mypurecloud.sdk.v2.api.request.GetScriptsPublishedDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScriptsPublishedScriptIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScriptsPublishedScriptIdPageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScriptsPublishedScriptIdPagesRequest;
@@ -359,6 +361,82 @@ public class ScriptsApiAsync {
 
   
   /**
+   * Get the metadata for a list of scripts
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ScriptEntityListing> getScriptsDivisionviewsAsync(GetScriptsDivisionviewsRequest request, final AsyncApiCallback<ScriptEntityListing> callback) {
+    try {
+      final SettableFuture<ScriptEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ScriptEntityListing>() {}, new AsyncApiCallback<ApiResponse<ScriptEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScriptEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the metadata for a list of scripts
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ScriptEntityListing>> getScriptsDivisionviewsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ScriptEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ScriptEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ScriptEntityListing>() {}, new AsyncApiCallback<ApiResponse<ScriptEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScriptEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScriptEntityListing> response = (ApiResponse<ScriptEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScriptEntityListing> response = (ApiResponse<ScriptEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Get the published scripts.
    * 
    * @param request the request object
@@ -400,6 +478,82 @@ public class ScriptsApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<ScriptEntityListing>> getScriptsPublishedAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ScriptEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ScriptEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ScriptEntityListing>() {}, new AsyncApiCallback<ApiResponse<ScriptEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScriptEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScriptEntityListing> response = (ApiResponse<ScriptEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScriptEntityListing> response = (ApiResponse<ScriptEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get the published scripts metadata.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ScriptEntityListing> getScriptsPublishedDivisionviewsAsync(GetScriptsPublishedDivisionviewsRequest request, final AsyncApiCallback<ScriptEntityListing> callback) {
+    try {
+      final SettableFuture<ScriptEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ScriptEntityListing>() {}, new AsyncApiCallback<ApiResponse<ScriptEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScriptEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the published scripts metadata.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ScriptEntityListing>> getScriptsPublishedDivisionviewsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ScriptEntityListing>> callback) {
     try {
       final SettableFuture<ApiResponse<ScriptEntityListing>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

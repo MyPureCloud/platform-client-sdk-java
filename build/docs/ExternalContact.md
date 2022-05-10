@@ -34,7 +34,24 @@ title: ExternalContact
 | **schema** | <!----><!---->[**DataSchema**](DataSchema.html)<!----> | The schema defining custom fields for this contact |  [optional] |
 | **customFields** | <!----><!---->**Map&lt;String, Object&gt;**<!----> | Custom fields defined in the schema referenced by schemaId and schemaVersion. |  [optional] |
 | **externalDataSources** | <!----><!---->[**List&lt;ExternalDataSource&gt;**](ExternalDataSource.html)<!----> | Links to the sources of data (e.g. one source might be a CRM) that contributed data to this record.  Read-only, and only populated when requested via expand param. |  [optional] |
+| **type** | [**TypeEnum**](#TypeEnum)<!----> | The type of contact |  [optional] |
+| **canonicalContact** | <!----><!---->[**ContactAddressableEntityRef**](ContactAddressableEntityRef.html)<!----> | The contact at the head of the merge tree. If null, this contact is not a part of any merge. |  [optional] |
+| **mergeSet** | <!----><!---->[**List&lt;ContactAddressableEntityRef&gt;**](ContactAddressableEntityRef.html)<!----> | The set of all contacts that are a part of the merge tree. If null, this contact is not a part of any merge. |  [optional] |
+| **mergeOperation** | <!----><!---->[**MergeOperation**](MergeOperation.html)<!----> | Information about the merge history of this contact. If null, this contact is not a part of any merge. |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
+{: class="table table-striped"}
+
+
+<a name="TypeEnum"></a>
+
+## Enum: TypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| EPHEMERAL | &quot;Ephemeral&quot; |
+| IDENTIFIED | &quot;Identified&quot; |
+| CURATED | &quot;Curated&quot; |
 {: class="table table-striped"}
 
 

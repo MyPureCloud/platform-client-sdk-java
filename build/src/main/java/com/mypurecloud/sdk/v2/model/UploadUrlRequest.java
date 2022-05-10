@@ -92,14 +92,14 @@ public class UploadUrlRequest  implements Serializable {
 
   
   /**
-   * Content MD-5 of the file to upload
+   * Content MD5 of the file to upload
    **/
   public UploadUrlRequest contentMd5(String contentMd5) {
     this.contentMd5 = contentMd5;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Content MD-5 of the file to upload")
+  @ApiModelProperty(example = "null", value = "Content MD5 of the file to upload")
   @JsonProperty("contentMd5")
   public String getContentMd5() {
     return contentMd5;

@@ -7,7 +7,7 @@ title: Platform API Client SDK - Java
 [![platform-client-v2](https://maven-badges.herokuapp.com/maven-central/com.mypurecloud/platform-client-v2/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.mypurecloud/platform-client-v2)
 [![Release Notes Badge](https://developer-content.genesys.cloud/images/sdk-release-notes.png)](https://github.com/MyPureCloud/platform-client-sdk-java/blob/master/releaseNotes.md)
 
-* **Documentation** https://developer.mypurecloud.com/api/rest/client-libraries/java/
+* **Documentation** https://developer.genesys.cloud/devapps/sdk/docexplorer/purecloudjava/
 * **Source** https://github.com/MyPureCloud/platform-client-sdk-java
 
 ## Install Using maven
@@ -24,7 +24,7 @@ The SDK may be used in Android as of SDK version 5.0.1. This requires Java 8 sup
 
 Import the necessary packages:
 
-```{"language":"java"}
+```java
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.api.UsersApi;
@@ -38,7 +38,7 @@ import com.mypurecloud.sdk.v2.PureCloudRegionHosts;
 
 The Java SDK contains a helper method to execute a Client Credentials OAuth flow. This is appropriate for non-user Java applications, typically when there is no UI. Invoking `authorizeClientCredentials(String clientId, String clientSecret)` will execute the client credentials OAuth grant and store the access token within the ApiClient class. 
 
-```{"language":"java"}
+```java
 String clientId = "a0bda580-cb41-4ff6-8f06-28ffb4227594";
 String clientSecret = "e4meQ53cXGq53j6uffdULVjRl8It8M3FVsupKei0nSg";
 
@@ -59,11 +59,11 @@ UsersApi apiInstance = new UsersApi();
 UserEntityListing response = apiInstance.getUsers(null, null, null, null, null, null, null);
 ```
 
-For user applications, the consuming application must complete an implicit, auth token, or SAML2 Bearer OAuth flow to get an access token outside the scope of the SDK. Once an access token is obtained, it should be set on the SDK via constructing a new ApiClient instance (use `withAccessToken(String token)`). For more information about authenticating with OAuth, see the Developer Center article [Authorization](https://developer.mypurecloud.com/api/rest/authorization/index.html). For more information about SAML2 Bearer Oauth flow view the example below 
+For user applications, the consuming application must complete an implicit, auth token, or SAML2 Bearer OAuth flow to get an access token outside the scope of the SDK. Once an access token is obtained, it should be set on the SDK via constructing a new ApiClient instance (use `withAccessToken(String token)`). For more information about authenticating with OAuth, see the Developer Center article [Authorization](https://developer.genesys.cloud/authorization/platform-auth/). For more information about SAML2 Bearer Oauth flow view the example below 
 
 #### Authentication with SAML2Bearer token
 
-```{"language":"java"}
+```java
 String clientId = "a0bda580-cb41-4ff6-8f06-28ffb4227594";
 String clientSecret = "e4meQ53cXGq53j6uffdULVjRl8It8M3FVsupKei0nSg";
 String orgName = "YourOrg"; // Your org name 
@@ -80,9 +80,9 @@ System.out.println("Authentication successful. Access token expires in " + authR
 
 #### Authentication with Authorization Code
 
-See example on how to authenticate with an authorization code below. For more information see the article on [Code Authorization](https://developer.mypurecloud.com/api/rest/authorization/use-authorization-code.html)
+See example on how to authenticate with an authorization code below. For more information see the article on [Code Authorization](https://developer.genesys.cloud/authorization/platform-auth/use-authorization-code)
 
-```{"language":"java"}
+```java
 String clientId = "a0bda580-cb41-4ff6-8f06-28ffb4227594";
 String clientSecret = "e4meQ53cXGq53j6uffdULVjRl8It8M3FVsupKei0nSg";
 String authorizationCode = "YourAuthorizationCode"; // Your authorization code 
@@ -98,7 +98,7 @@ System.out.println("Authentication successful. Access token expires in " + authR
 
 By default the SDK will transparently request a new access token when it expires. If you wish to apply the refresh logic yourself, build the ApiClient with `withShouldRefreshAccessToken(false)` and store the refresh token. The `getExpires_in()` value of the `authResponse` can be used to preemptively request a new token. Use `refreshCodeAuthorization` to request a new token when necessary
 
-```{"language":"java"}
+```java
 ApiClient apiClient = ApiClient.Builder.standard()
                         .withBasePath(region)
                         .withShouldRefreshAccessToken(false)
@@ -118,7 +118,7 @@ expiresIn = authResponse.getBody().getExpires_in();
 
 `ApiClient` implements a builder pattern to construct new instances:
 
-```{"language":"java"}
+```java
 // Create ApiClient instance
 //Set Region
 PureCloudRegionHosts region = PureCloudRegionHosts.us_east_1;
@@ -139,7 +139,7 @@ UserEntityListing response = apiInstance.getUsers(null, null, null, null, null, 
 
 If not authorizing using the authorization method helpers, provide the access token to use for API requests:
 
-```{"language":"java"}
+```java
 .withAccessToken("aisuefh89734hfkhsaldkh348jf")
 ```
 
@@ -147,7 +147,7 @@ If not authorizing using the authorization method helpers, provide the access to
 
 Provide the full base url if not using `https://api.mypurecloud.com`:
 
-```{"language":"java"}
+```java
 .withBasePath("https://api.mypurecloud.ie")
 ```
 
@@ -161,7 +161,7 @@ The SDK supports the following HTTP connectors:
 
 Specify the connector in the builder:
 
-```{"language":"java"}
+```java
 .withProperty(ApiClientConnectorProperty.CONNECTOR_PROVIDER, new OkHttpClientConnectorProvider())
 ```
 
@@ -171,20 +171,22 @@ By default, the Java SDK does not automatically retry any failed requests.
 To enable automatic retries, provide a RetryConfiguration object with the maximum number of seconds to retry requests and the max number of retries when building the ApiClient instance.
 
 Building a `RetryConfiguration` instance:  
-```{"language":"java"}
+
+```java
 ApiClient.RetryConfiguration retryConfiguration = new ApiClient.RetryConfiguration();
 retryConfiguration.setMaxRetryTimeSec(30);
 retryConfiguration.setRetryMax(5);
 ```
 
 Setting `RetryConfiguration` instance to `ApiClient`:
-```{"language":"java"}
+
+```java
         .withRetryConfiguration(retryConfiguration)
 ```
 Set the `maxRetryTimeSec` to the number of seconds to process retries before returning an error.
 Set the 'MaxRetryTimeSec' to the number of seconds to process retries before returning an error.
 When the retry time is a positive integer, the SDK will follow the recommended backoff logic using the provided configuration.
-The best practices are documented in the [Rate Limiting](https://developer.mypurecloud.com/api/rest/rate_limits.html) Developer Center article.
+The best practices are documented in the [Rate Limiting](https://developer.genesys.cloud/platform/api/rate-limits) Developer Center article.
 
 ### SDK Logging
 
@@ -196,12 +198,14 @@ Logging can be provided through SL4J, which uses HTTP request and response inter
 To use SL4J, include a relevant SL4J library in the dependencies and SL4J configuration file.  
 
 To provide a custom request interceptor, provide an object implementing `org.apache.http.HttpRequestInterceptor` to the following APIClient builder method:
-```{"language":"java"}
+
+```java
         .withHttpRequestInterceptor(requestInterceptor)
 ```
 
 Use the following method to provide a custom response interceptor implementing `org.apache.http.HttpResponseInterceptor`:
-```{"language":"java"}
+
+```java
         .withHttpResponseInterceptor(responseInterceptor)
 ```
 
@@ -210,12 +214,14 @@ Use the following method to provide a custom response interceptor implementing `
 Logging of API requests and responses can be controlled programmatically by creating an instance of `ApiClient.LoggingConfiguration` and passing it to the `withLoggingConfiguration` builder method of the `APIClient`.
 
 `LogLevel` values:
+
 1. trace (HTTP Method, URL, Request Body, HTTP Status Code, Request Headers, Response Headers)
 2. debug (HTTP Method, URL, Request Body, HTTP Status Code, Request Headers)
 3. error (HTTP Method, URL, Request Body, Response Body, HTTP Status Code, Request Headers, Response Headers)
 4. none - default
 
 `LogFormat` values:
+
 1. JSON
 2. Text - default
 
@@ -223,7 +229,8 @@ By default, the request and response bodies are not logged because these can con
 To log to a file, provide a value to `setLogFilePath`. SDK users are responsible for the rotation of the log file.
 
 Example logging configuration:
-```{"language":"java"}
+
+```java
 ApiClient.LoggingConfiguration loggingConfiguration = new ApiClient.LoggingConfiguration();
 loggingConfiguration.setLogLevel("trace");
 loggingConfiguration.setLogFormat("json");
@@ -246,19 +253,21 @@ A number of configuration parameters can be applied using a configuration file. 
 
 Example setting the configuration file:
 
-```{"language": "java"}
+```java
         .withConfigFilePath("/path/to/config")
 ```
 
 The SDK will take an event-driven approach to monitor for config file changes and will apply changes in near real-time, regardless of whether a config file was present at start-up. To disable this behavior, set `autoReloadConfig` to false like so:  
 
-```{"language": "java"}
+```java
         .withAutoReloadConfig(false)
 ```
+
 INI and JSON formats are supported. See below for examples of configuration values in both formats:
 
 INI:
-```{"language":"ini"}
+
+```ini
 [logging]
 log_level = trace
 log_format = text
@@ -279,7 +288,8 @@ host = https://api.mypurecloud.com
 ```
 
 JSON:
-```{"language":"json"}
+
+```json
 {
     "logging": {
         "log_level": "trace",
@@ -330,7 +340,7 @@ Example of getting the authenticated user's information:
 
 Request builders allow requests to be constructed by only providing values for the properties you want to set. This is useful for methods with long signatures when you only need to set some properties and will help future-proof your code if the method signature changes (i.e. new parameters added).
 
-```{"language":"java"}
+```java
 UsersApi usersApi = new UsersApi();
 GetUsersMeRequest request = GetUsersMeRequest.builder()
         .withExpand(Collections.singletonList("presence"))
@@ -343,7 +353,7 @@ System.out.println("Hello " + me.getName());
 
 This request is identical to the request above, but uses the method with explicit parameters instead of a builder. These methods construct the request builder behind the scenes.
 
-```{"language":"java"}
+```java
 UsersApi usersApi = new UsersApi();
 UserMe me = usersApi.getUsersMe(Collections.singletonList("presence"));
 System.out.println("Hello " + me.getName());
@@ -358,7 +368,7 @@ The extended responses will be of type [ApiResponse<T>](https://github.com/MyPur
 
 Examples:
 
-```{"language":"java"}
+```java
 // Using the WithHttpInfo method
 ApiResponse<UserMe> meWithHttpInfo = usersApi.getUsersMeWithHttpInfo(new ArrayList<String>());
 System.out.println(meWithHttpInfo.getHeaders());
@@ -366,7 +376,7 @@ System.out.println(meWithHttpInfo.getCorrelationId());
 System.out.println(meWithHttpInfo.getBody().getName());
 ```
 
-```{"language":"java"}
+```java
 // Using the request builder
 ApiRequest<Void> getUsersMeRequestWithHttpInfo = GetUsersMeRequest.builder()
         .withExpand(new ArrayList<String>())
@@ -391,7 +401,7 @@ The Java SDK includes a helper class, `NotificationHandler`, to assist in managi
 
 The preferred way to create a `NotificationHandler` instance is to use its builder to construct a new instance. This comes with the advantage of being able to set listeners and add subscriptions before the websocket is opened.
 
-```{"language":"java"}
+```java
 NotificationHandler notificationHandler = NotificationHandler.Builder.standard()
         .withWebSocketListener(new MyWebSocketListener())
         // Individually
@@ -408,7 +418,7 @@ NotificationHandler notificationHandler = NotificationHandler.Builder.standard()
 
 Alternatively, the `NotificationHandler` instance can be constructed with the default constructor and will connect to the websocket automatically. Listeners and subscriptions can then be managed from the instance regardless of how it was constructed. The following example is equivalent to the builder except that the socket will be connected in the constructor and the listeners and subscriptions will be added after it is connected:
 
-```{"language":"java"}
+```java
 NotificationHandler notificationHandler = new NotificationHandler();
 notificationHandler.setWebSocketListener(new MyWebSocketListener());
 // Individually
@@ -423,9 +433,9 @@ notificationHandler.addSubscriptions(new ArrayList<NotificationListener<?>>() { 
 
 **Send a ping**
 
-To test the connection, you may send a ping. For more information about this ping, see [Use the notification service](https://developer.mypurecloud.com/api/rest/v2/notifications/notification_service.html) under the _WebSocket Health Check_ heading.
+To test the connection, you may send a ping. For more information about this ping, see [Use the notification service](https://developer.genesys.cloud/notificationsalerts/notifications/) under the _WebSocket Health Check_ heading.
 
-```{"language":"java"}
+```java
 notificationHandler.sendPing();
 ```
 
@@ -433,7 +443,7 @@ notificationHandler.sendPing();
 
 To handle incoming events, implement the `NotificationListener<T>` interface to handle registered topics and the `WebSocketListener` interface for information about the websocket itself. This is a basic example of how to handle user presence events:
 
-```{"language":"java"}
+```java
 public class UserPresenceListener implements NotificationListener<PresenceEventUserPresence> {
     private String topic;
 
@@ -458,7 +468,7 @@ public class UserPresenceListener implements NotificationListener<PresenceEventU
 
 And an example of listening to the channel metadata events (periodic heartbeat and ping/pong message):
 
-```{"language":"java"}
+```java
 public class ChannelMetadataListener implements NotificationListener<ChannelMetadataNotification> {
     public String getTopic() {
         return "channel.metadata";
@@ -488,4 +498,4 @@ The SDK's version is incremented according to the [Semantic Versioning Specifica
 
 This package is intended to be forwards compatible with v2 of Genesys Cloud's Platform API. While the general policy for the API is not to introduce breaking changes, there are certain additions and changes to the API that cause breaking changes for the SDK, often due to the way the API is expressed in its swagger definition. Because of this, the SDK can have a major version bump while the API remains at major version 2. While the SDK is intended to be forward compatible, patches will only be released to the latest version. For these reasons, it is strongly recommended that all applications using this SDK are kept up to date and use the latest version of the SDK.
 
-For any issues, questions, or suggestions for the SDK, visit the [Genesys Cloud Developer Forum](https://developer.mypurecloud.com/forum/).
+For any issues, questions, or suggestions for the SDK, visit the [Genesys Cloud Developer Forum](https://developer.genesys.cloud/forum/).

@@ -23,7 +23,9 @@ import com.mypurecloud.sdk.v2.api.request.GetScriptRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScriptPageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScriptPagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScriptsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetScriptsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScriptsPublishedRequest;
+import com.mypurecloud.sdk.v2.api.request.GetScriptsPublishedDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScriptsPublishedScriptIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScriptsPublishedScriptIdPageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScriptsPublishedScriptIdPagesRequest;
@@ -311,12 +313,13 @@ public class ScriptsApi {
    * @param sortBy SortBy (optional)
    * @param sortOrder SortOrder (optional)
    * @param scriptDataVersion Advanced usage - controls the data version of the script (optional)
+   * @param divisionIds Filters scripts to requested divisionIds (optional)
    * @return ScriptEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ScriptEntityListing getScripts(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId, String sortBy, String sortOrder, String scriptDataVersion) throws IOException, ApiException {
-    return  getScripts(createGetScriptsRequest(pageSize, pageNumber, expand, name, feature, flowId, sortBy, sortOrder, scriptDataVersion));
+  public ScriptEntityListing getScripts(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId, String sortBy, String sortOrder, String scriptDataVersion, String divisionIds) throws IOException, ApiException {
+    return  getScripts(createGetScriptsRequest(pageSize, pageNumber, expand, name, feature, flowId, sortBy, sortOrder, scriptDataVersion, divisionIds));
   }
 
   /**
@@ -331,14 +334,15 @@ public class ScriptsApi {
    * @param sortBy SortBy (optional)
    * @param sortOrder SortOrder (optional)
    * @param scriptDataVersion Advanced usage - controls the data version of the script (optional)
+   * @param divisionIds Filters scripts to requested divisionIds (optional)
    * @return ScriptEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ScriptEntityListing> getScriptsWithHttpInfo(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId, String sortBy, String sortOrder, String scriptDataVersion) throws IOException {
-    return getScripts(createGetScriptsRequest(pageSize, pageNumber, expand, name, feature, flowId, sortBy, sortOrder, scriptDataVersion).withHttpInfo());
+  public ApiResponse<ScriptEntityListing> getScriptsWithHttpInfo(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId, String sortBy, String sortOrder, String scriptDataVersion, String divisionIds) throws IOException {
+    return getScripts(createGetScriptsRequest(pageSize, pageNumber, expand, name, feature, flowId, sortBy, sortOrder, scriptDataVersion, divisionIds).withHttpInfo());
   }
 
-  private GetScriptsRequest createGetScriptsRequest(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId, String sortBy, String sortOrder, String scriptDataVersion) {
+  private GetScriptsRequest createGetScriptsRequest(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId, String sortBy, String sortOrder, String scriptDataVersion, String divisionIds) {
     return GetScriptsRequest.builder()
             .withPageSize(pageSize)
     
@@ -357,6 +361,8 @@ public class ScriptsApi {
             .withSortOrder(sortOrder)
     
             .withScriptDataVersion(scriptDataVersion)
+    
+            .withDivisionIds(divisionIds)
     
             .build();
   }
@@ -411,6 +417,121 @@ public class ScriptsApi {
 
   
   /**
+   * Get the metadata for a list of scripts
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param expand Expand (optional)
+   * @param name Name filter (optional)
+   * @param feature Feature filter (optional)
+   * @param flowId Secure flow id filter (optional)
+   * @param sortBy SortBy (optional)
+   * @param sortOrder SortOrder (optional)
+   * @param scriptDataVersion Advanced usage - controls the data version of the script (optional)
+   * @param divisionIds Filters scripts to requested divisionIds (optional)
+   * @return ScriptEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScriptEntityListing getScriptsDivisionviews(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId, String sortBy, String sortOrder, String scriptDataVersion, String divisionIds) throws IOException, ApiException {
+    return  getScriptsDivisionviews(createGetScriptsDivisionviewsRequest(pageSize, pageNumber, expand, name, feature, flowId, sortBy, sortOrder, scriptDataVersion, divisionIds));
+  }
+
+  /**
+   * Get the metadata for a list of scripts
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param expand Expand (optional)
+   * @param name Name filter (optional)
+   * @param feature Feature filter (optional)
+   * @param flowId Secure flow id filter (optional)
+   * @param sortBy SortBy (optional)
+   * @param sortOrder SortOrder (optional)
+   * @param scriptDataVersion Advanced usage - controls the data version of the script (optional)
+   * @param divisionIds Filters scripts to requested divisionIds (optional)
+   * @return ScriptEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScriptEntityListing> getScriptsDivisionviewsWithHttpInfo(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId, String sortBy, String sortOrder, String scriptDataVersion, String divisionIds) throws IOException {
+    return getScriptsDivisionviews(createGetScriptsDivisionviewsRequest(pageSize, pageNumber, expand, name, feature, flowId, sortBy, sortOrder, scriptDataVersion, divisionIds).withHttpInfo());
+  }
+
+  private GetScriptsDivisionviewsRequest createGetScriptsDivisionviewsRequest(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId, String sortBy, String sortOrder, String scriptDataVersion, String divisionIds) {
+    return GetScriptsDivisionviewsRequest.builder()
+            .withPageSize(pageSize)
+    
+            .withPageNumber(pageNumber)
+    
+            .withExpand(expand)
+    
+            .withName(name)
+    
+            .withFeature(feature)
+    
+            .withFlowId(flowId)
+    
+            .withSortBy(sortBy)
+    
+            .withSortOrder(sortOrder)
+    
+            .withScriptDataVersion(scriptDataVersion)
+    
+            .withDivisionIds(divisionIds)
+    
+            .build();
+  }
+
+  /**
+   * Get the metadata for a list of scripts
+   * 
+   * @param request The request object
+   * @return ScriptEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScriptEntityListing getScriptsDivisionviews(GetScriptsDivisionviewsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ScriptEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ScriptEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the metadata for a list of scripts
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScriptEntityListing> getScriptsDivisionviews(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ScriptEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScriptEntityListing> response = (ApiResponse<ScriptEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScriptEntityListing> response = (ApiResponse<ScriptEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get the published scripts.
    * 
    * @param pageSize Page size (optional, default to 25)
@@ -420,12 +541,13 @@ public class ScriptsApi {
    * @param feature Feature filter (optional)
    * @param flowId Secure flow id filter (optional)
    * @param scriptDataVersion Advanced usage - controls the data version of the script (optional)
+   * @param divisionIds Filters scripts to requested divisionIds (optional)
    * @return ScriptEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ScriptEntityListing getScriptsPublished(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId, String scriptDataVersion) throws IOException, ApiException {
-    return  getScriptsPublished(createGetScriptsPublishedRequest(pageSize, pageNumber, expand, name, feature, flowId, scriptDataVersion));
+  public ScriptEntityListing getScriptsPublished(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId, String scriptDataVersion, String divisionIds) throws IOException, ApiException {
+    return  getScriptsPublished(createGetScriptsPublishedRequest(pageSize, pageNumber, expand, name, feature, flowId, scriptDataVersion, divisionIds));
   }
 
   /**
@@ -438,14 +560,15 @@ public class ScriptsApi {
    * @param feature Feature filter (optional)
    * @param flowId Secure flow id filter (optional)
    * @param scriptDataVersion Advanced usage - controls the data version of the script (optional)
+   * @param divisionIds Filters scripts to requested divisionIds (optional)
    * @return ScriptEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ScriptEntityListing> getScriptsPublishedWithHttpInfo(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId, String scriptDataVersion) throws IOException {
-    return getScriptsPublished(createGetScriptsPublishedRequest(pageSize, pageNumber, expand, name, feature, flowId, scriptDataVersion).withHttpInfo());
+  public ApiResponse<ScriptEntityListing> getScriptsPublishedWithHttpInfo(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId, String scriptDataVersion, String divisionIds) throws IOException {
+    return getScriptsPublished(createGetScriptsPublishedRequest(pageSize, pageNumber, expand, name, feature, flowId, scriptDataVersion, divisionIds).withHttpInfo());
   }
 
-  private GetScriptsPublishedRequest createGetScriptsPublishedRequest(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId, String scriptDataVersion) {
+  private GetScriptsPublishedRequest createGetScriptsPublishedRequest(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId, String scriptDataVersion, String divisionIds) {
     return GetScriptsPublishedRequest.builder()
             .withPageSize(pageSize)
     
@@ -460,6 +583,8 @@ public class ScriptsApi {
             .withFlowId(flowId)
     
             .withScriptDataVersion(scriptDataVersion)
+    
+            .withDivisionIds(divisionIds)
     
             .build();
   }
@@ -491,6 +616,113 @@ public class ScriptsApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<ScriptEntityListing> getScriptsPublished(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ScriptEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScriptEntityListing> response = (ApiResponse<ScriptEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScriptEntityListing> response = (ApiResponse<ScriptEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get the published scripts metadata.
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param expand Expand (optional)
+   * @param name Name filter (optional)
+   * @param feature Feature filter (optional)
+   * @param flowId Secure flow id filter (optional)
+   * @param scriptDataVersion Advanced usage - controls the data version of the script (optional)
+   * @param divisionIds Filters scripts to requested divisionIds (optional)
+   * @return ScriptEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScriptEntityListing getScriptsPublishedDivisionviews(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId, String scriptDataVersion, String divisionIds) throws IOException, ApiException {
+    return  getScriptsPublishedDivisionviews(createGetScriptsPublishedDivisionviewsRequest(pageSize, pageNumber, expand, name, feature, flowId, scriptDataVersion, divisionIds));
+  }
+
+  /**
+   * Get the published scripts metadata.
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param expand Expand (optional)
+   * @param name Name filter (optional)
+   * @param feature Feature filter (optional)
+   * @param flowId Secure flow id filter (optional)
+   * @param scriptDataVersion Advanced usage - controls the data version of the script (optional)
+   * @param divisionIds Filters scripts to requested divisionIds (optional)
+   * @return ScriptEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScriptEntityListing> getScriptsPublishedDivisionviewsWithHttpInfo(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId, String scriptDataVersion, String divisionIds) throws IOException {
+    return getScriptsPublishedDivisionviews(createGetScriptsPublishedDivisionviewsRequest(pageSize, pageNumber, expand, name, feature, flowId, scriptDataVersion, divisionIds).withHttpInfo());
+  }
+
+  private GetScriptsPublishedDivisionviewsRequest createGetScriptsPublishedDivisionviewsRequest(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId, String scriptDataVersion, String divisionIds) {
+    return GetScriptsPublishedDivisionviewsRequest.builder()
+            .withPageSize(pageSize)
+    
+            .withPageNumber(pageNumber)
+    
+            .withExpand(expand)
+    
+            .withName(name)
+    
+            .withFeature(feature)
+    
+            .withFlowId(flowId)
+    
+            .withScriptDataVersion(scriptDataVersion)
+    
+            .withDivisionIds(divisionIds)
+    
+            .build();
+  }
+
+  /**
+   * Get the published scripts metadata.
+   * 
+   * @param request The request object
+   * @return ScriptEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScriptEntityListing getScriptsPublishedDivisionviews(GetScriptsPublishedDivisionviewsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ScriptEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ScriptEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the published scripts metadata.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScriptEntityListing> getScriptsPublishedDivisionviews(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<ScriptEntityListing>() {});
     }

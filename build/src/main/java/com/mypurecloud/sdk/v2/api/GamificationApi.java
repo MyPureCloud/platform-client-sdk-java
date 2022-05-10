@@ -777,29 +777,29 @@ public class GamificationApi {
   /**
    * Performance profile by id
    * 
-   * @param performanceProfileId Performance Profile Id (required)
+   * @param profileId performanceProfileId (required)
    * @return PerformanceProfile
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public PerformanceProfile getGamificationProfile(String performanceProfileId) throws IOException, ApiException {
-    return  getGamificationProfile(createGetGamificationProfileRequest(performanceProfileId));
+  public PerformanceProfile getGamificationProfile(String profileId) throws IOException, ApiException {
+    return  getGamificationProfile(createGetGamificationProfileRequest(profileId));
   }
 
   /**
    * Performance profile by id
    * 
-   * @param performanceProfileId Performance Profile Id (required)
+   * @param profileId performanceProfileId (required)
    * @return PerformanceProfile
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PerformanceProfile> getGamificationProfileWithHttpInfo(String performanceProfileId) throws IOException {
-    return getGamificationProfile(createGetGamificationProfileRequest(performanceProfileId).withHttpInfo());
+  public ApiResponse<PerformanceProfile> getGamificationProfileWithHttpInfo(String profileId) throws IOException {
+    return getGamificationProfile(createGetGamificationProfileRequest(profileId).withHttpInfo());
   }
 
-  private GetGamificationProfileRequest createGetGamificationProfileRequest(String performanceProfileId) {
+  private GetGamificationProfileRequest createGetGamificationProfileRequest(String profileId) {
     return GetGamificationProfileRequest.builder()
-            .withPerformanceProfileId(performanceProfileId)
+            .withProfileId(profileId)
     
             .build();
   }
@@ -3192,29 +3192,29 @@ public class GamificationApi {
   /**
    * Activate a performance profile
    * 
-   * @param performanceProfileId Performance Profile Id (required)
+   * @param profileId performanceProfileId (required)
    * @return PerformanceProfile
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public PerformanceProfile postGamificationProfileActivate(String performanceProfileId) throws IOException, ApiException {
-    return  postGamificationProfileActivate(createPostGamificationProfileActivateRequest(performanceProfileId));
+  public PerformanceProfile postGamificationProfileActivate(String profileId) throws IOException, ApiException {
+    return  postGamificationProfileActivate(createPostGamificationProfileActivateRequest(profileId));
   }
 
   /**
    * Activate a performance profile
    * 
-   * @param performanceProfileId Performance Profile Id (required)
+   * @param profileId performanceProfileId (required)
    * @return PerformanceProfile
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PerformanceProfile> postGamificationProfileActivateWithHttpInfo(String performanceProfileId) throws IOException {
-    return postGamificationProfileActivate(createPostGamificationProfileActivateRequest(performanceProfileId).withHttpInfo());
+  public ApiResponse<PerformanceProfile> postGamificationProfileActivateWithHttpInfo(String profileId) throws IOException {
+    return postGamificationProfileActivate(createPostGamificationProfileActivateRequest(profileId).withHttpInfo());
   }
 
-  private PostGamificationProfileActivateRequest createPostGamificationProfileActivateRequest(String performanceProfileId) {
+  private PostGamificationProfileActivateRequest createPostGamificationProfileActivateRequest(String profileId) {
     return PostGamificationProfileActivateRequest.builder()
-            .withPerformanceProfileId(performanceProfileId)
+            .withProfileId(profileId)
     
             .build();
   }
@@ -3271,29 +3271,29 @@ public class GamificationApi {
   /**
    * Deactivate a performance profile
    * 
-   * @param performanceProfileId Performance Profile Id (required)
+   * @param profileId performanceProfileId (required)
    * @return PerformanceProfile
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public PerformanceProfile postGamificationProfileDeactivate(String performanceProfileId) throws IOException, ApiException {
-    return  postGamificationProfileDeactivate(createPostGamificationProfileDeactivateRequest(performanceProfileId));
+  public PerformanceProfile postGamificationProfileDeactivate(String profileId) throws IOException, ApiException {
+    return  postGamificationProfileDeactivate(createPostGamificationProfileDeactivateRequest(profileId));
   }
 
   /**
    * Deactivate a performance profile
    * 
-   * @param performanceProfileId Performance Profile Id (required)
+   * @param profileId performanceProfileId (required)
    * @return PerformanceProfile
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PerformanceProfile> postGamificationProfileDeactivateWithHttpInfo(String performanceProfileId) throws IOException {
-    return postGamificationProfileDeactivate(createPostGamificationProfileDeactivateRequest(performanceProfileId).withHttpInfo());
+  public ApiResponse<PerformanceProfile> postGamificationProfileDeactivateWithHttpInfo(String profileId) throws IOException {
+    return postGamificationProfileDeactivate(createPostGamificationProfileDeactivateRequest(profileId).withHttpInfo());
   }
 
-  private PostGamificationProfileDeactivateRequest createPostGamificationProfileDeactivateRequest(String performanceProfileId) {
+  private PostGamificationProfileDeactivateRequest createPostGamificationProfileDeactivateRequest(String profileId) {
     return PostGamificationProfileDeactivateRequest.builder()
-            .withPerformanceProfileId(performanceProfileId)
+            .withProfileId(profileId)
     
             .build();
   }
@@ -3856,31 +3856,31 @@ public class GamificationApi {
   /**
    * Updates a performance profile
    * 
-   * @param performanceProfileId Performance Profile Id (required)
+   * @param profileId performanceProfileId (required)
    * @param body performanceProfile (optional)
    * @return PerformanceProfile
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public PerformanceProfile putGamificationProfile(String performanceProfileId, PerformanceProfile body) throws IOException, ApiException {
-    return  putGamificationProfile(createPutGamificationProfileRequest(performanceProfileId, body));
+  public PerformanceProfile putGamificationProfile(String profileId, PerformanceProfile body) throws IOException, ApiException {
+    return  putGamificationProfile(createPutGamificationProfileRequest(profileId, body));
   }
 
   /**
    * Updates a performance profile
    * 
-   * @param performanceProfileId Performance Profile Id (required)
+   * @param profileId performanceProfileId (required)
    * @param body performanceProfile (optional)
    * @return PerformanceProfile
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PerformanceProfile> putGamificationProfileWithHttpInfo(String performanceProfileId, PerformanceProfile body) throws IOException {
-    return putGamificationProfile(createPutGamificationProfileRequest(performanceProfileId, body).withHttpInfo());
+  public ApiResponse<PerformanceProfile> putGamificationProfileWithHttpInfo(String profileId, PerformanceProfile body) throws IOException {
+    return putGamificationProfile(createPutGamificationProfileRequest(profileId, body).withHttpInfo());
   }
 
-  private PutGamificationProfileRequest createPutGamificationProfileRequest(String performanceProfileId, PerformanceProfile body) {
+  private PutGamificationProfileRequest createPutGamificationProfileRequest(String profileId, PerformanceProfile body) {
     return PutGamificationProfileRequest.builder()
-            .withPerformanceProfileId(performanceProfileId)
+            .withProfileId(profileId)
     
             .withBody(body)
     

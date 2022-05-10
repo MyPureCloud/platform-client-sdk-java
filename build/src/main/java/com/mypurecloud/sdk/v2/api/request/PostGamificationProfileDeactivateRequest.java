@@ -53,17 +53,17 @@ import com.mypurecloud.sdk.v2.model.CreatePerformanceProfile;
 
 public class PostGamificationProfileDeactivateRequest {
     
-	private String performanceProfileId;
-	public String getPerformanceProfileId() {
-		return this.performanceProfileId;
+	private String profileId;
+	public String getProfileId() {
+		return this.profileId;
 	}
 
-	public void setPerformanceProfileId(String performanceProfileId) {
-		this.performanceProfileId = performanceProfileId;
+	public void setProfileId(String profileId) {
+		this.profileId = profileId;
 	}
 
-	public PostGamificationProfileDeactivateRequest withPerformanceProfileId(String performanceProfileId) {
-	    this.setPerformanceProfileId(performanceProfileId);
+	public PostGamificationProfileDeactivateRequest withProfileId(String profileId) {
+	    this.setProfileId(profileId);
 	    return this;
 	} 
 	
@@ -88,14 +88,14 @@ public class PostGamificationProfileDeactivateRequest {
 
     public ApiRequest<Void> withHttpInfo() {
         
-        // verify the required parameter 'performanceProfileId' is set
-        if (this.performanceProfileId == null) {
-            throw new IllegalStateException("Missing the required parameter 'performanceProfileId' when building request for PostGamificationProfileDeactivateRequest.");
+        // verify the required parameter 'profileId' is set
+        if (this.profileId == null) {
+            throw new IllegalStateException("Missing the required parameter 'profileId' when building request for PostGamificationProfileDeactivateRequest.");
         }
         
 
-        return ApiRequestBuilder.create("POST", "/api/v2/gamification/profiles/{performanceProfileId}/deactivate")
-                .withPathParameter("performanceProfileId", performanceProfileId)
+        return ApiRequestBuilder.create("POST", "/api/v2/gamification/profiles/{profileId}/deactivate")
+                .withPathParameter("profileId", profileId)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -109,9 +109,9 @@ public class PostGamificationProfileDeactivateRequest {
 	}
 
 	
-	public static Builder builder(String performanceProfileId) {
+	public static Builder builder(String profileId) {
 	    return new Builder()
-	            .withRequiredParams(performanceProfileId);
+	            .withRequiredParams(profileId);
 	}
 	
 
@@ -123,15 +123,15 @@ public class PostGamificationProfileDeactivateRequest {
 		}
 
 		
-		public Builder withPerformanceProfileId(String performanceProfileId) {
-			request.setPerformanceProfileId(performanceProfileId);
+		public Builder withProfileId(String profileId) {
+			request.setProfileId(profileId);
 			return this;
 		}
 		
 
 		
-		public Builder withRequiredParams(String performanceProfileId) {
-			request.setPerformanceProfileId(performanceProfileId);
+		public Builder withRequiredParams(String profileId) {
+			request.setProfileId(profileId);
 			
 			return this;
 		}
@@ -139,9 +139,9 @@ public class PostGamificationProfileDeactivateRequest {
 
 		public PostGamificationProfileDeactivateRequest build() {
             
-            // verify the required parameter 'performanceProfileId' is set
-            if (request.performanceProfileId == null) {
-                throw new IllegalStateException("Missing the required parameter 'performanceProfileId' when building request for PostGamificationProfileDeactivateRequest.");
+            // verify the required parameter 'profileId' is set
+            if (request.profileId == null) {
+                throw new IllegalStateException("Missing the required parameter 'profileId' when building request for PostGamificationProfileDeactivateRequest.");
             }
             
 			return request;

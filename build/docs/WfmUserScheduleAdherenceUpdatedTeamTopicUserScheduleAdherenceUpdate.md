@@ -20,6 +20,7 @@ title: WfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdherenceUpdate
 | **isOutOfOffice** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **adherenceState** | [**AdherenceStateEnum**](#AdherenceStateEnum)<!----> |  |  [optional] |
 | **impact** | <!----><!---->**String**<!----> |  |  [optional] |
+| **adherenceExplanation** | <!----><!---->[**WfmUserScheduleAdherenceUpdatedTeamTopicRealTimeAdherenceExplanation**](WfmUserScheduleAdherenceUpdatedTeamTopicRealTimeAdherenceExplanation.html)<!----> |  |  [optional] |
 | **adherenceChangeTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **presenceUpdateTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **activeQueues** | <!----><!---->[**List&lt;WfmUserScheduleAdherenceUpdatedTeamTopicQueueReference&gt;**](WfmUserScheduleAdherenceUpdatedTeamTopicQueueReference.html)<!----> |  |  [optional] |
@@ -57,6 +58,7 @@ title: WfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdherenceUpdate
 | UNSCHEDULED | &quot;Unscheduled&quot; |
 | UNKNOWN | &quot;Unknown&quot; |
 | IGNORED | &quot;Ignored&quot; |
+| EXPLAINED | &quot;Explained&quot; |
 {: class="table table-striped"}
 
 

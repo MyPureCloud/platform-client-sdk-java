@@ -32,6 +32,8 @@ import com.mypurecloud.sdk.v2.model.CrossPlatformPolicy;
 import com.mypurecloud.sdk.v2.model.RecordingJob;
 import com.mypurecloud.sdk.v2.model.FailedRecordingEntityListing;
 import com.mypurecloud.sdk.v2.model.RecordingJobEntityListing;
+import com.mypurecloud.sdk.v2.model.RecordingEncryptionConfiguration;
+import com.mypurecloud.sdk.v2.model.RecordingEncryptionConfigurationListing;
 import com.mypurecloud.sdk.v2.model.LocalEncryptionConfiguration;
 import com.mypurecloud.sdk.v2.model.LocalEncryptionConfigurationListing;
 import com.mypurecloud.sdk.v2.model.Policy;
@@ -198,6 +200,20 @@ public class GetRecordingCrossplatformMediaretentionpoliciesRequest {
 	    return this;
 	} 
 	
+	private Integer deleteDaysThreshold;
+	public Integer getDeleteDaysThreshold() {
+		return this.deleteDaysThreshold;
+	}
+
+	public void setDeleteDaysThreshold(Integer deleteDaysThreshold) {
+		this.deleteDaysThreshold = deleteDaysThreshold;
+	}
+
+	public GetRecordingCrossplatformMediaretentionpoliciesRequest withDeleteDaysThreshold(Integer deleteDaysThreshold) {
+	    this.setDeleteDaysThreshold(deleteDaysThreshold);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -240,6 +256,8 @@ public class GetRecordingCrossplatformMediaretentionpoliciesRequest {
                 .withQueryParameters("summary", "", summary)
         
                 .withQueryParameters("hasErrors", "", hasErrors)
+        
+                .withQueryParameters("deleteDaysThreshold", "", deleteDaysThreshold)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -309,6 +327,11 @@ public class GetRecordingCrossplatformMediaretentionpoliciesRequest {
 		
 		public Builder withHasErrors(Boolean hasErrors) {
 			request.setHasErrors(hasErrors);
+			return this;
+		}
+		
+		public Builder withDeleteDaysThreshold(Integer deleteDaysThreshold) {
+			request.setDeleteDaysThreshold(deleteDaysThreshold);
 			return this;
 		}
 		

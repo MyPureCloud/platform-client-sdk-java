@@ -14,7 +14,7 @@ title: ListItemComponent
 | **image** | <!----><!---->**String**<!----> | URL of an image. |  [optional] |
 | **title** | <!----><!---->**String**<!----> | The main headline of the list item. |  [optional] |
 | **description** | <!----><!---->**String**<!----> | Text to show in the list item description. |  [optional] |
-| **actions** | <!----><!---->[**ContentActions**](ContentActions.html)<!----> | The list item actions. |  [optional] |
+| **actions** | <!----><!---->[**ContentActions**](ContentActions.html)<!----> | The list item actions (Deprecated). |  [optional] |
 {: class="table table-striped"}
 
 

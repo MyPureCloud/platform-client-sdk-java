@@ -100,6 +100,7 @@ public class Dependency  implements Serializable {
     TTSVOICE("TTSVOICE"),
     USER("USER"),
     USERPROMPT("USERPROMPT"),
+    VOICEFLOW("VOICEFLOW"),
     VOICEMAILFLOW("VOICEMAILFLOW"),
     WIDGET("WIDGET"),
     WORKFLOW("WORKFLOW"),

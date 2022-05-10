@@ -134,7 +134,8 @@ public class AuditQueryExecutionStatusResponse  implements Serializable {
     SUPPORTABILITY("Supportability"),
     CALLBACK("Callback"),
     WORKITEMS("Workitems"),
-    SCIM("SCIM");
+    SCIM("SCIM"),
+    NUMBERPURCHASING("NumberPurchasing");
 
     private String value;
 

@@ -10,7 +10,9 @@ title: ConversationAppSettings
 | ------------ | ------------- | ------------- | ------------- |
 | **showAgentTypingIndicator** | <!----><!---->**Boolean**<!----> | The toggle to enable or disable typing indicator for messenger |  [optional] |
 | **showUserTypingIndicator** | <!----><!---->**Boolean**<!----> | The toggle to enable or disable typing indicator for messenger |  [optional] |
-| **autoStartType** | [**AutoStartTypeEnum**](#AutoStartTypeEnum)<!----> | The auto start type for the messenger conversation |  [optional] |
+| **autoStartType** | [**AutoStartTypeEnum**](#AutoStartTypeEnum)<!----> | Deprecated. The auto start type for the messenger conversation |  [optional] |
+| **autoStart** | <!----><!---->[**AutoStart**](AutoStart.html)<!----> | The auto start for the messenger conversation |  [optional] |
+| **markdown** | <!----><!---->[**Markdown**](Markdown.html)<!----> | The markdown for the messenger app |  [optional] |
 {: class="table table-striped"}
 
 

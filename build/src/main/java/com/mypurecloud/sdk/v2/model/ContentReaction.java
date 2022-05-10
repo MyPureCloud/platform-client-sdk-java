@@ -88,7 +88,7 @@ public class ContentReaction  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Type of reaction.")
+  @ApiModelProperty(example = "null", required = true, value = "Type of reaction.")
   @JsonProperty("reactionType")
   public ReactionTypeEnum getReactionType() {
     return reactionType;
@@ -106,7 +106,7 @@ public class ContentReaction  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Number of users that reacted this way to the message.")
+  @ApiModelProperty(example = "null", required = true, value = "Number of users that reacted this way to the message.")
   @JsonProperty("count")
   public Integer getCount() {
     return count;

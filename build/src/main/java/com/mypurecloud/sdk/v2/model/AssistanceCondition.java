@@ -74,17 +74,39 @@ public class AssistanceCondition  implements Serializable {
   private List<String> topicIds = new ArrayList<String>();
 
   
+  /**
+   * The operator for the assistance condition. The operator defines whether the listed topicIds should EXIST or NOTEXIST for the condition to be evaluated as true.
+   **/
+  public AssistanceCondition operator(OperatorEnum operator) {
+    this.operator = operator;
+    return this;
+  }
+  
   @ApiModelProperty(example = "null", value = "The operator for the assistance condition. The operator defines whether the listed topicIds should EXIST or NOTEXIST for the condition to be evaluated as true.")
   @JsonProperty("operator")
   public OperatorEnum getOperator() {
     return operator;
   }
+  public void setOperator(OperatorEnum operator) {
+    this.operator = operator;
+  }
 
+  
+  /**
+   * List of topicIds within the assistance condition which would be combined together using logical OR operator. Eg ( topicId_1 || topicId_2 ) .
+   **/
+  public AssistanceCondition topicIds(List<String> topicIds) {
+    this.topicIds = topicIds;
+    return this;
+  }
   
   @ApiModelProperty(example = "null", value = "List of topicIds within the assistance condition which would be combined together using logical OR operator. Eg ( topicId_1 || topicId_2 ) .")
   @JsonProperty("topicIds")
   public List<String> getTopicIds() {
     return topicIds;
+  }
+  public void setTopicIds(List<String> topicIds) {
+    this.topicIds = topicIds;
   }
 
   

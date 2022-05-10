@@ -37,6 +37,7 @@ title: AuditTopicAuditLogMessage
 | ANALYTICSREPORTING | &quot;AnalyticsReporting&quot; |
 | CONTACTCENTER | &quot;ContactCenter&quot; |
 | CONTENTMANAGEMENT | &quot;ContentManagement&quot; |
+| DIRECTORY | &quot;Directory&quot; |
 | EMPLOYEEPERFORMANCE | &quot;EmployeePerformance&quot; |
 | GAMIFICATION | &quot;Gamification&quot; |
 | GROUPS | &quot;Groups&quot; |
@@ -218,6 +219,7 @@ title: AuditTopicAuditLogMessage
 | TRIGGER | &quot;Trigger&quot; |
 | TRUNK | &quot;Trunk&quot; |
 | TRUNKBASE | &quot;TrunkBase&quot; |
+| USER | &quot;User&quot; |
 | USERPRESENCE | &quot;UserPresence&quot; |
 | VOICEMAILPOLICY | &quot;VoicemailPolicy&quot; |
 | VOICEMAILUSERPOLICY | &quot;VoicemailUserPolicy&quot; |

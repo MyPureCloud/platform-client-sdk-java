@@ -128,6 +128,20 @@ public class GetScriptsPublishedRequest {
 	    return this;
 	} 
 	
+	private String divisionIds;
+	public String getDivisionIds() {
+		return this.divisionIds;
+	}
+
+	public void setDivisionIds(String divisionIds) {
+		this.divisionIds = divisionIds;
+	}
+
+	public GetScriptsPublishedRequest withDivisionIds(String divisionIds) {
+	    this.setDivisionIds(divisionIds);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -164,6 +178,8 @@ public class GetScriptsPublishedRequest {
                 .withQueryParameters("flowId", "", flowId)
         
                 .withQueryParameters("scriptDataVersion", "", scriptDataVersion)
+        
+                .withQueryParameters("divisionIds", "", divisionIds)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -218,6 +234,11 @@ public class GetScriptsPublishedRequest {
 		
 		public Builder withScriptDataVersion(String scriptDataVersion) {
 			request.setScriptDataVersion(scriptDataVersion);
+			return this;
+		}
+		
+		public Builder withDivisionIds(String divisionIds) {
+			request.setDivisionIds(divisionIds);
 			return this;
 		}
 		

@@ -6510,7 +6510,7 @@ public class ConversationsApi {
 
   
   /**
-   * Update a conversation by setting it&#39;s recording state, merging in other conversations to create a conference, or disconnecting all of the participants
+   * Update a conversation by setting its recording state, merging in other conversations to create a conference, or disconnecting all of the participants
    * 
    * @param conversationId conversationId (required)
    * @param body Conversation (required)
@@ -6523,7 +6523,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Update a conversation by setting it&#39;s recording state, merging in other conversations to create a conference, or disconnecting all of the participants
+   * Update a conversation by setting its recording state, merging in other conversations to create a conference, or disconnecting all of the participants
    * 
    * @param conversationId conversationId (required)
    * @param body Conversation (required)
@@ -6544,7 +6544,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Update a conversation by setting it&#39;s recording state, merging in other conversations to create a conference, or disconnecting all of the participants
+   * Update a conversation by setting its recording state, merging in other conversations to create a conference, or disconnecting all of the participants
    * 
    * @param request The request object
    * @return Conversation
@@ -6563,7 +6563,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Update a conversation by setting it&#39;s recording state, merging in other conversations to create a conference, or disconnecting all of the participants
+   * Update a conversation by setting its recording state, merging in other conversations to create a conference, or disconnecting all of the participants
    * 
    * @param request The request object
    * @return the response
@@ -8977,8 +8977,8 @@ public class ConversationsApi {
 
   
   /**
-   * Update or activate a WhatsApp messaging integration.
-   * The following steps are required in order to fully activate a Whatsapp Integration: Initially, you will need to get an activation code by sending: an action set to Activate, and an authenticationMethod choosing from Sms or Voice. Finally, once you have been informed of an activation code on selected authenticationMethod, you will need to confirm the code by sending: an action set to Confirm, and the confirmationCode you have received from Whatsapp.
+   * Update or activate a WhatsApp messaging integration
+   * The following steps are required in order to fully activate a WhatsApp Integration: Initially, you will need to get an activation code by sending: an action set to Activate, and an authenticationMethod choosing from Sms or Voice. Finally, once you have been informed of an activation code on selected authenticationMethod, you will need to confirm the code by sending: an action set to Confirm, and the confirmationCode you have received from Whatsapp.
    * @param integrationId Integration ID (required)
    * @param body WhatsAppIntegrationUpdateRequest (required)
    * @return WhatsAppIntegration
@@ -8990,8 +8990,8 @@ public class ConversationsApi {
   }
 
   /**
-   * Update or activate a WhatsApp messaging integration.
-   * The following steps are required in order to fully activate a Whatsapp Integration: Initially, you will need to get an activation code by sending: an action set to Activate, and an authenticationMethod choosing from Sms or Voice. Finally, once you have been informed of an activation code on selected authenticationMethod, you will need to confirm the code by sending: an action set to Confirm, and the confirmationCode you have received from Whatsapp.
+   * Update or activate a WhatsApp messaging integration
+   * The following steps are required in order to fully activate a WhatsApp Integration: Initially, you will need to get an activation code by sending: an action set to Activate, and an authenticationMethod choosing from Sms or Voice. Finally, once you have been informed of an activation code on selected authenticationMethod, you will need to confirm the code by sending: an action set to Confirm, and the confirmationCode you have received from Whatsapp.
    * @param integrationId Integration ID (required)
    * @param body WhatsAppIntegrationUpdateRequest (required)
    * @return WhatsAppIntegration
@@ -9011,8 +9011,8 @@ public class ConversationsApi {
   }
 
   /**
-   * Update or activate a WhatsApp messaging integration.
-   * The following steps are required in order to fully activate a Whatsapp Integration: Initially, you will need to get an activation code by sending: an action set to Activate, and an authenticationMethod choosing from Sms or Voice. Finally, once you have been informed of an activation code on selected authenticationMethod, you will need to confirm the code by sending: an action set to Confirm, and the confirmationCode you have received from Whatsapp.
+   * Update or activate a WhatsApp messaging integration
+   * The following steps are required in order to fully activate a WhatsApp Integration: Initially, you will need to get an activation code by sending: an action set to Activate, and an authenticationMethod choosing from Sms or Voice. Finally, once you have been informed of an activation code on selected authenticationMethod, you will need to confirm the code by sending: an action set to Confirm, and the confirmationCode you have received from Whatsapp.
    * @param request The request object
    * @return WhatsAppIntegration
    * @throws ApiException if the request fails on the server
@@ -9030,8 +9030,8 @@ public class ConversationsApi {
   }
 
   /**
-   * Update or activate a WhatsApp messaging integration.
-   * The following steps are required in order to fully activate a Whatsapp Integration: Initially, you will need to get an activation code by sending: an action set to Activate, and an authenticationMethod choosing from Sms or Voice. Finally, once you have been informed of an activation code on selected authenticationMethod, you will need to confirm the code by sending: an action set to Confirm, and the confirmationCode you have received from Whatsapp.
+   * Update or activate a WhatsApp messaging integration
+   * The following steps are required in order to fully activate a WhatsApp Integration: Initially, you will need to get an activation code by sending: an action set to Activate, and an authenticationMethod choosing from Sms or Voice. Finally, once you have been informed of an activation code on selected authenticationMethod, you will need to confirm the code by sending: an action set to Confirm, and the confirmationCode you have received from Whatsapp.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

@@ -113,6 +113,7 @@ public class AnalyticsFlow  implements Serializable {
     SECURECALL("SECURECALL"),
     SPEECH("SPEECH"),
     SURVEYINVITE("SURVEYINVITE"),
+    VOICE("VOICE"),
     VOICEMAIL("VOICEMAIL"),
     WORKFLOW("WORKFLOW"),
     WORKITEM("WORKITEM");

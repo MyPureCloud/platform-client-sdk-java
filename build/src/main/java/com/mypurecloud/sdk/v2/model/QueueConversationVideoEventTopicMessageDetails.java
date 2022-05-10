@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicErrorDetails;
 import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicMessageMedia;
 import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicMessageSticker;
 import io.swagger.annotations.ApiModel;
@@ -83,6 +84,7 @@ public class QueueConversationVideoEventTopicMessageDetails  implements Serializ
   private MessageStatusEnum messageStatus = null;
   private Integer messageSegmentCount = null;
   private List<QueueConversationVideoEventTopicMessageMedia> media = new ArrayList<QueueConversationVideoEventTopicMessageMedia>();
+  private QueueConversationVideoEventTopicErrorDetails errorInfo = null;
   private List<QueueConversationVideoEventTopicMessageSticker> stickers = new ArrayList<QueueConversationVideoEventTopicMessageSticker>();
 
   
@@ -177,6 +179,24 @@ public class QueueConversationVideoEventTopicMessageDetails  implements Serializ
 
   
   /**
+   * Detailed information about an error response.
+   **/
+  public QueueConversationVideoEventTopicMessageDetails errorInfo(QueueConversationVideoEventTopicErrorDetails errorInfo) {
+    this.errorInfo = errorInfo;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Detailed information about an error response.")
+  @JsonProperty("errorInfo")
+  public QueueConversationVideoEventTopicErrorDetails getErrorInfo() {
+    return errorInfo;
+  }
+  public void setErrorInfo(QueueConversationVideoEventTopicErrorDetails errorInfo) {
+    this.errorInfo = errorInfo;
+  }
+
+  
+  /**
    * A list of stickers included in the message
    **/
   public QueueConversationVideoEventTopicMessageDetails stickers(List<QueueConversationVideoEventTopicMessageSticker> stickers) {
@@ -209,12 +229,13 @@ public class QueueConversationVideoEventTopicMessageDetails  implements Serializ
         Objects.equals(this.messageStatus, queueConversationVideoEventTopicMessageDetails.messageStatus) &&
         Objects.equals(this.messageSegmentCount, queueConversationVideoEventTopicMessageDetails.messageSegmentCount) &&
         Objects.equals(this.media, queueConversationVideoEventTopicMessageDetails.media) &&
+        Objects.equals(this.errorInfo, queueConversationVideoEventTopicMessageDetails.errorInfo) &&
         Objects.equals(this.stickers, queueConversationVideoEventTopicMessageDetails.stickers);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(messageId, messageTime, messageStatus, messageSegmentCount, media, stickers);
+    return Objects.hash(messageId, messageTime, messageStatus, messageSegmentCount, media, errorInfo, stickers);
   }
 
   @Override
@@ -227,6 +248,7 @@ public class QueueConversationVideoEventTopicMessageDetails  implements Serializ
     sb.append("    messageStatus: ").append(toIndentedString(messageStatus)).append("\n");
     sb.append("    messageSegmentCount: ").append(toIndentedString(messageSegmentCount)).append("\n");
     sb.append("    media: ").append(toIndentedString(media)).append("\n");
+    sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
     sb.append("    stickers: ").append(toIndentedString(stickers)).append("\n");
     sb.append("}");
     return sb.toString();

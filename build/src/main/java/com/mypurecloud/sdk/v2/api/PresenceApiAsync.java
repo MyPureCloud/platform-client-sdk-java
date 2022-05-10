@@ -18,7 +18,6 @@ import com.mypurecloud.sdk.v2.model.OrganizationPresence;
 import com.mypurecloud.sdk.v2.model.OrganizationPresenceEntityListing;
 import com.mypurecloud.sdk.v2.model.SystemPresence;
 import com.mypurecloud.sdk.v2.model.UserPresence;
-import com.mypurecloud.sdk.v2.model.PresenceExpand;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeletePresencedefinitionRequest;
@@ -26,9 +25,7 @@ import com.mypurecloud.sdk.v2.api.request.GetPresencedefinitionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetPresencedefinitionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSystempresencesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserPresenceRequest;
-import com.mypurecloud.sdk.v2.api.request.GetUserPresencesMicrosoftteamsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserPresencesPurecloudRequest;
-import com.mypurecloud.sdk.v2.api.request.GetUserPresencesZoomphoneRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserPresenceRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserPresencesPurecloudRequest;
 import com.mypurecloud.sdk.v2.api.request.PostPresencedefinitionsRequest;
@@ -436,82 +433,6 @@ public class PresenceApiAsync {
 
   
   /**
-   * Get a user&#39;s Microsoft Teams presence.
-   * Gets the presence for a Microsoft Teams user.  This will return the Microsoft Teams presence mapped to Genesys Cloud presence with additional activity details in the message field. This presence source is read-only.
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<PresenceExpand> getUserPresencesMicrosoftteamsAsync(GetUserPresencesMicrosoftteamsRequest request, final AsyncApiCallback<PresenceExpand> callback) {
-    try {
-      final SettableFuture<PresenceExpand> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PresenceExpand>() {}, new AsyncApiCallback<ApiResponse<PresenceExpand>>() {
-        @Override
-        public void onCompleted(ApiResponse<PresenceExpand> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get a user&#39;s Microsoft Teams presence.
-   * Gets the presence for a Microsoft Teams user.  This will return the Microsoft Teams presence mapped to Genesys Cloud presence with additional activity details in the message field. This presence source is read-only.
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<PresenceExpand>> getUserPresencesMicrosoftteamsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<PresenceExpand>> callback) {
-    try {
-      final SettableFuture<ApiResponse<PresenceExpand>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<PresenceExpand>() {}, new AsyncApiCallback<ApiResponse<PresenceExpand>>() {
-        @Override
-        public void onCompleted(ApiResponse<PresenceExpand> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<PresenceExpand> response = (ApiResponse<PresenceExpand>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<PresenceExpand> response = (ApiResponse<PresenceExpand>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  
-  /**
    * Get a user&#39;s Genesys Cloud presence.
    * Get the default Genesys Cloud user presence source PURECLOUD
    * @param request the request object
@@ -575,82 +496,6 @@ public class PresenceApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<UserPresence> response = (ApiResponse<UserPresence>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  
-  /**
-   * Get a user&#39;s Zoom Phone presence.
-   * Gets the presence for a Zoom user.  This will return the Zoom Phone presence mapped to Genesys Cloud presence with additional activity details in the message field. This presence source is read-only.
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<PresenceExpand> getUserPresencesZoomphoneAsync(GetUserPresencesZoomphoneRequest request, final AsyncApiCallback<PresenceExpand> callback) {
-    try {
-      final SettableFuture<PresenceExpand> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PresenceExpand>() {}, new AsyncApiCallback<ApiResponse<PresenceExpand>>() {
-        @Override
-        public void onCompleted(ApiResponse<PresenceExpand> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get a user&#39;s Zoom Phone presence.
-   * Gets the presence for a Zoom user.  This will return the Zoom Phone presence mapped to Genesys Cloud presence with additional activity details in the message field. This presence source is read-only.
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<PresenceExpand>> getUserPresencesZoomphoneAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<PresenceExpand>> callback) {
-    try {
-      final SettableFuture<ApiResponse<PresenceExpand>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<PresenceExpand>() {}, new AsyncApiCallback<ApiResponse<PresenceExpand>>() {
-        @Override
-        public void onCompleted(ApiResponse<PresenceExpand> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<PresenceExpand> response = (ApiResponse<PresenceExpand>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<PresenceExpand> response = (ApiResponse<PresenceExpand>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

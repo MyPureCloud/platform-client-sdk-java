@@ -71,7 +71,8 @@ public class GetLearningModuleRequest {
 	} 
 
 	public enum expandValues { 
-		ASSESSMENTFORM("assessmentForm");
+		ASSESSMENTFORM("assessmentForm"), 
+		COVERART("coverArt");
 
 		private String value;
 

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.MessagingSettingReference;
 import com.mypurecloud.sdk.v2.model.SupportedContentReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -24,6 +25,7 @@ public class FacebookIntegrationRequest  implements Serializable {
   private String id = null;
   private String name = null;
   private SupportedContentReference supportedContent = null;
+  private MessagingSettingReference messagingSetting = null;
   private String pageAccessToken = null;
   private String userAccessToken = null;
   private String pageId = null;
@@ -72,6 +74,23 @@ public class FacebookIntegrationRequest  implements Serializable {
   }
   public void setSupportedContent(SupportedContentReference supportedContent) {
     this.supportedContent = supportedContent;
+  }
+
+  
+  /**
+   **/
+  public FacebookIntegrationRequest messagingSetting(MessagingSettingReference messagingSetting) {
+    this.messagingSetting = messagingSetting;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("messagingSetting")
+  public MessagingSettingReference getMessagingSetting() {
+    return messagingSetting;
+  }
+  public void setMessagingSetting(MessagingSettingReference messagingSetting) {
+    this.messagingSetting = messagingSetting;
   }
 
   
@@ -185,6 +204,7 @@ public class FacebookIntegrationRequest  implements Serializable {
     return Objects.equals(this.id, facebookIntegrationRequest.id) &&
         Objects.equals(this.name, facebookIntegrationRequest.name) &&
         Objects.equals(this.supportedContent, facebookIntegrationRequest.supportedContent) &&
+        Objects.equals(this.messagingSetting, facebookIntegrationRequest.messagingSetting) &&
         Objects.equals(this.pageAccessToken, facebookIntegrationRequest.pageAccessToken) &&
         Objects.equals(this.userAccessToken, facebookIntegrationRequest.userAccessToken) &&
         Objects.equals(this.pageId, facebookIntegrationRequest.pageId) &&
@@ -195,7 +215,7 @@ public class FacebookIntegrationRequest  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, supportedContent, pageAccessToken, userAccessToken, pageId, appId, appSecret, selfUri);
+    return Objects.hash(id, name, supportedContent, messagingSetting, pageAccessToken, userAccessToken, pageId, appId, appSecret, selfUri);
   }
 
   @Override
@@ -206,6 +226,7 @@ public class FacebookIntegrationRequest  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    supportedContent: ").append(toIndentedString(supportedContent)).append("\n");
+    sb.append("    messagingSetting: ").append(toIndentedString(messagingSetting)).append("\n");
     sb.append("    pageAccessToken: ").append(toIndentedString(pageAccessToken)).append("\n");
     sb.append("    userAccessToken: ").append(toIndentedString(userAccessToken)).append("\n");
     sb.append("    pageId: ").append(toIndentedString(pageId)).append("\n");

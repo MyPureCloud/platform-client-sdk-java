@@ -13,6 +13,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ContentAttachment;
 import com.mypurecloud.sdk.v2.model.ContentButtonResponse;
+import com.mypurecloud.sdk.v2.model.ContentCard;
+import com.mypurecloud.sdk.v2.model.ContentCarousel;
 import com.mypurecloud.sdk.v2.model.ContentGeneric;
 import com.mypurecloud.sdk.v2.model.ContentList;
 import com.mypurecloud.sdk.v2.model.ContentLocation;
@@ -20,6 +22,7 @@ import com.mypurecloud.sdk.v2.model.ContentNotificationTemplate;
 import com.mypurecloud.sdk.v2.model.ContentPostback;
 import com.mypurecloud.sdk.v2.model.ContentQuickReply;
 import com.mypurecloud.sdk.v2.model.ContentReaction;
+import com.mypurecloud.sdk.v2.model.ContentStory;
 import com.mypurecloud.sdk.v2.model.MessagingRecipient;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -28,9 +31,9 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * Message content element.
+ * Message content element. If contentType = \&quot;Attachment\&quot; only one item is allowed.
  */
-@ApiModel(description = "Message content element.")
+@ApiModel(description = "Message content element. If contentType = \"Attachment\" only one item is allowed.")
 
 public class MessageContent  implements Serializable {
   
@@ -48,7 +51,7 @@ public class MessageContent  implements Serializable {
     }
   }
   /**
-   * Type of this content element. If contentType = \"Attachment\" only one item is allowed.
+   * Type of this content element.
    */
  @JsonDeserialize(using = ContentTypeEnumDeserializer.class)
   public enum ContentTypeEnum {
@@ -62,7 +65,10 @@ public class MessageContent  implements Serializable {
     POSTBACK("Postback"),
     REACTIONS("Reactions"),
     MENTION("Mention"),
-    BUTTONRESPONSE("ButtonResponse");
+    BUTTONRESPONSE("ButtonResponse"),
+    STORY("Story"),
+    CARD("Card"),
+    CAROUSEL("Carousel");
 
     private String value;
 
@@ -100,17 +106,20 @@ public class MessageContent  implements Serializable {
   private List<ContentReaction> reactions = new ArrayList<ContentReaction>();
   private MessagingRecipient mention = null;
   private ContentPostback postback = null;
+  private ContentStory story = null;
+  private ContentCard card = null;
+  private ContentCarousel carousel = null;
 
   
   /**
-   * Type of this content element. If contentType = \"Attachment\" only one item is allowed.
+   * Type of this content element.
    **/
   public MessageContent contentType(ContentTypeEnum contentType) {
     this.contentType = contentType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Type of this content element. If contentType = \"Attachment\" only one item is allowed.")
+  @ApiModelProperty(example = "null", required = true, value = "Type of this content element.")
   @JsonProperty("contentType")
   public ContentTypeEnum getContentType() {
     return contentType;
@@ -193,14 +202,14 @@ public class MessageContent  implements Serializable {
 
   
   /**
-   * Generic content.
+   * Generic content (Deprecated).
    **/
   public MessageContent generic(ContentGeneric generic) {
     this.generic = generic;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Generic content.")
+  @ApiModelProperty(example = "null", value = "Generic content (Deprecated).")
   @JsonProperty("generic")
   public ContentGeneric getGeneric() {
     return generic;
@@ -211,14 +220,14 @@ public class MessageContent  implements Serializable {
 
   
   /**
-   * List content.
+   * List content (Deprecated).
    **/
   public MessageContent list(ContentList list) {
     this.list = list;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "List content.")
+  @ApiModelProperty(example = "null", value = "List content (Deprecated).")
   @JsonProperty("list")
   public ContentList getList() {
     return list;
@@ -300,6 +309,60 @@ public class MessageContent  implements Serializable {
   }
 
   
+  /**
+   * Ephemeral story content.
+   **/
+  public MessageContent story(ContentStory story) {
+    this.story = story;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Ephemeral story content.")
+  @JsonProperty("story")
+  public ContentStory getStory() {
+    return story;
+  }
+  public void setStory(ContentStory story) {
+    this.story = story;
+  }
+
+  
+  /**
+   * Card content
+   **/
+  public MessageContent card(ContentCard card) {
+    this.card = card;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Card content")
+  @JsonProperty("card")
+  public ContentCard getCard() {
+    return card;
+  }
+  public void setCard(ContentCard card) {
+    this.card = card;
+  }
+
+  
+  /**
+   * Carousel content
+   **/
+  public MessageContent carousel(ContentCarousel carousel) {
+    this.carousel = carousel;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Carousel content")
+  @JsonProperty("carousel")
+  public ContentCarousel getCarousel() {
+    return carousel;
+  }
+  public void setCarousel(ContentCarousel carousel) {
+    this.carousel = carousel;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -320,12 +383,15 @@ public class MessageContent  implements Serializable {
         Objects.equals(this.template, messageContent.template) &&
         Objects.equals(this.reactions, messageContent.reactions) &&
         Objects.equals(this.mention, messageContent.mention) &&
-        Objects.equals(this.postback, messageContent.postback);
+        Objects.equals(this.postback, messageContent.postback) &&
+        Objects.equals(this.story, messageContent.story) &&
+        Objects.equals(this.card, messageContent.card) &&
+        Objects.equals(this.carousel, messageContent.carousel);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(contentType, location, attachment, quickReply, buttonResponse, generic, list, template, reactions, mention, postback);
+    return Objects.hash(contentType, location, attachment, quickReply, buttonResponse, generic, list, template, reactions, mention, postback, story, card, carousel);
   }
 
   @Override
@@ -344,6 +410,9 @@ public class MessageContent  implements Serializable {
     sb.append("    reactions: ").append(toIndentedString(reactions)).append("\n");
     sb.append("    mention: ").append(toIndentedString(mention)).append("\n");
     sb.append("    postback: ").append(toIndentedString(postback)).append("\n");
+    sb.append("    story: ").append(toIndentedString(story)).append("\n");
+    sb.append("    card: ").append(toIndentedString(card)).append("\n");
+    sb.append("    carousel: ").append(toIndentedString(carousel)).append("\n");
     sb.append("}");
     return sb.toString();
   }

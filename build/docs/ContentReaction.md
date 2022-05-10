@@ -8,8 +8,8 @@ title: ContentReaction
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **reactionType** | [**ReactionTypeEnum**](#ReactionTypeEnum)<!----> | Type of reaction. |  [optional] |
-| **count** | <!----><!---->**Integer**<!----> | Number of users that reacted this way to the message. |  [optional] |
+| **reactionType** | [**ReactionTypeEnum**](#ReactionTypeEnum)<!----> | Type of reaction. |  |
+| **count** | <!----><!---->**Integer**<!----> | Number of users that reacted this way to the message. |  |
 {: class="table table-striped"}
 
 

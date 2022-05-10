@@ -13,6 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.MessagingSettingReference;
 import com.mypurecloud.sdk.v2.model.SupportedContentReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -28,6 +29,7 @@ public class LineIntegration  implements Serializable {
   private String id = null;
   private String name = null;
   private SupportedContentReference supportedContent = null;
+  private MessagingSettingReference messagingSetting = null;
   private String channelId = null;
   private String webhookUri = null;
   private String status = null;
@@ -130,6 +132,23 @@ public class LineIntegration  implements Serializable {
   }
   public void setSupportedContent(SupportedContentReference supportedContent) {
     this.supportedContent = supportedContent;
+  }
+
+  
+  /**
+   **/
+  public LineIntegration messagingSetting(MessagingSettingReference messagingSetting) {
+    this.messagingSetting = messagingSetting;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("messagingSetting")
+  public MessagingSettingReference getMessagingSetting() {
+    return messagingSetting;
+  }
+  public void setMessagingSetting(MessagingSettingReference messagingSetting) {
+    this.messagingSetting = messagingSetting;
   }
 
   
@@ -318,6 +337,7 @@ public class LineIntegration  implements Serializable {
     return Objects.equals(this.id, lineIntegration.id) &&
         Objects.equals(this.name, lineIntegration.name) &&
         Objects.equals(this.supportedContent, lineIntegration.supportedContent) &&
+        Objects.equals(this.messagingSetting, lineIntegration.messagingSetting) &&
         Objects.equals(this.channelId, lineIntegration.channelId) &&
         Objects.equals(this.webhookUri, lineIntegration.webhookUri) &&
         Objects.equals(this.status, lineIntegration.status) &&
@@ -334,7 +354,7 @@ public class LineIntegration  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, supportedContent, channelId, webhookUri, status, recipient, dateCreated, dateModified, createdBy, modifiedBy, version, createStatus, createError, selfUri);
+    return Objects.hash(id, name, supportedContent, messagingSetting, channelId, webhookUri, status, recipient, dateCreated, dateModified, createdBy, modifiedBy, version, createStatus, createError, selfUri);
   }
 
   @Override
@@ -345,6 +365,7 @@ public class LineIntegration  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    supportedContent: ").append(toIndentedString(supportedContent)).append("\n");
+    sb.append("    messagingSetting: ").append(toIndentedString(messagingSetting)).append("\n");
     sb.append("    channelId: ").append(toIndentedString(channelId)).append("\n");
     sb.append("    webhookUri: ").append(toIndentedString(webhookUri)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");

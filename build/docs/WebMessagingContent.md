@@ -13,6 +13,8 @@ title: WebMessagingContent
 | **quickReply** | <!----><!---->[**WebMessagingQuickReply**](WebMessagingQuickReply.html)<!----> | Quick reply content. |  [optional] |
 | **buttonResponse** | <!----><!---->[**WebMessagingButtonResponse**](WebMessagingButtonResponse.html)<!----> | Button response content. |  [optional] |
 | **generic** | <!----><!---->[**WebMessagingGeneric**](WebMessagingGeneric.html)<!----> | Generic content. |  [optional] |
+| **card** | <!----><!---->[**ContentCard**](ContentCard.html)<!----> | Card content |  [optional] |
+| **carousel** | <!----><!---->[**ContentCarousel**](ContentCarousel.html)<!----> | Carousel content |  [optional] |
 {: class="table table-striped"}
 
 
@@ -27,6 +29,8 @@ title: WebMessagingContent
 | QUICKREPLY | &quot;QuickReply&quot; |
 | BUTTONRESPONSE | &quot;ButtonResponse&quot; |
 | GENERICTEMPLATE | &quot;GenericTemplate&quot; |
+| CARD | &quot;Card&quot; |
+| CAROUSEL | &quot;Carousel&quot; |
 {: class="table table-striped"}
 
 

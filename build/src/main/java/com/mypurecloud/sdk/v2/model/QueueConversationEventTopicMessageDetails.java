@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicErrorDetails;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicMessageMedia;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicMessageSticker;
 import io.swagger.annotations.ApiModel;
@@ -83,6 +84,7 @@ public class QueueConversationEventTopicMessageDetails  implements Serializable 
   private MessageStatusEnum messageStatus = null;
   private Integer messageSegmentCount = null;
   private List<QueueConversationEventTopicMessageMedia> media = new ArrayList<QueueConversationEventTopicMessageMedia>();
+  private QueueConversationEventTopicErrorDetails errorInfo = null;
   private List<QueueConversationEventTopicMessageSticker> stickers = new ArrayList<QueueConversationEventTopicMessageSticker>();
 
   
@@ -177,6 +179,24 @@ public class QueueConversationEventTopicMessageDetails  implements Serializable 
 
   
   /**
+   * Detailed information about an error response.
+   **/
+  public QueueConversationEventTopicMessageDetails errorInfo(QueueConversationEventTopicErrorDetails errorInfo) {
+    this.errorInfo = errorInfo;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Detailed information about an error response.")
+  @JsonProperty("errorInfo")
+  public QueueConversationEventTopicErrorDetails getErrorInfo() {
+    return errorInfo;
+  }
+  public void setErrorInfo(QueueConversationEventTopicErrorDetails errorInfo) {
+    this.errorInfo = errorInfo;
+  }
+
+  
+  /**
    * A list of stickers included in the message
    **/
   public QueueConversationEventTopicMessageDetails stickers(List<QueueConversationEventTopicMessageSticker> stickers) {
@@ -209,12 +229,13 @@ public class QueueConversationEventTopicMessageDetails  implements Serializable 
         Objects.equals(this.messageStatus, queueConversationEventTopicMessageDetails.messageStatus) &&
         Objects.equals(this.messageSegmentCount, queueConversationEventTopicMessageDetails.messageSegmentCount) &&
         Objects.equals(this.media, queueConversationEventTopicMessageDetails.media) &&
+        Objects.equals(this.errorInfo, queueConversationEventTopicMessageDetails.errorInfo) &&
         Objects.equals(this.stickers, queueConversationEventTopicMessageDetails.stickers);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(messageId, messageTime, messageStatus, messageSegmentCount, media, stickers);
+    return Objects.hash(messageId, messageTime, messageStatus, messageSegmentCount, media, errorInfo, stickers);
   }
 
   @Override
@@ -227,6 +248,7 @@ public class QueueConversationEventTopicMessageDetails  implements Serializable 
     sb.append("    messageStatus: ").append(toIndentedString(messageStatus)).append("\n");
     sb.append("    messageSegmentCount: ").append(toIndentedString(messageSegmentCount)).append("\n");
     sb.append("    media: ").append(toIndentedString(media)).append("\n");
+    sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
     sb.append("    stickers: ").append(toIndentedString(stickers)).append("\n");
     sb.append("}");
     return sb.toString();

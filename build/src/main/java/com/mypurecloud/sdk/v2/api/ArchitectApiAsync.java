@@ -52,6 +52,7 @@ import com.mypurecloud.sdk.v2.model.DataTableRowEntityListing;
 import com.mypurecloud.sdk.v2.model.DataTablesDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowRuntimeExecution;
+import com.mypurecloud.sdk.v2.model.ArchitectJobStateResponse;
 import com.mypurecloud.sdk.v2.model.FlowMilestone;
 import com.mypurecloud.sdk.v2.model.FlowMilestoneListing;
 import com.mypurecloud.sdk.v2.model.FlowMilestoneDivisionViewEntityListing;
@@ -61,6 +62,7 @@ import com.mypurecloud.sdk.v2.model.FlowOutcomeDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 import com.mypurecloud.sdk.v2.model.FlowExecutionLaunchResponse;
 import com.mypurecloud.sdk.v2.model.FlowExecutionLaunchRequest;
+import com.mypurecloud.sdk.v2.model.RegisterArchitectJobResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteArchitectEmergencygroupRequest;
@@ -122,6 +124,7 @@ import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatablesDivisionviewRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatablesDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsExecutionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsMilestoneRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsMilestonesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsMilestonesDivisionviewsRequest;
@@ -152,6 +155,7 @@ import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatableImportJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatableRowsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatablesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsExecutionsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostFlowsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsMilestonesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsOutcomesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectEmergencygroupRequest;
@@ -4672,6 +4676,82 @@ public class ArchitectApiAsync {
 
   
   /**
+   * Fetch Architect Job Status
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ArchitectJobStateResponse> getFlowsJobAsync(GetFlowsJobRequest request, final AsyncApiCallback<ArchitectJobStateResponse> callback) {
+    try {
+      final SettableFuture<ArchitectJobStateResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ArchitectJobStateResponse>() {}, new AsyncApiCallback<ApiResponse<ArchitectJobStateResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ArchitectJobStateResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Fetch Architect Job Status
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ArchitectJobStateResponse>> getFlowsJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ArchitectJobStateResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ArchitectJobStateResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ArchitectJobStateResponse>() {}, new AsyncApiCallback<ApiResponse<ArchitectJobStateResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ArchitectJobStateResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ArchitectJobStateResponse> response = (ApiResponse<ArchitectJobStateResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ArchitectJobStateResponse> response = (ApiResponse<ArchitectJobStateResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Get a flow milestone
    * Returns a specified flow milestone
    * @param request the request object
@@ -6939,6 +7019,82 @@ public class ArchitectApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<FlowExecutionLaunchResponse> response = (ApiResponse<FlowExecutionLaunchResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Register Architect Job. Returns a URL where a file, such as an Architect flow YAML file, can be PUT which will then initiate the job.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<RegisterArchitectJobResponse> postFlowsJobsAsync(PostFlowsJobsRequest request, final AsyncApiCallback<RegisterArchitectJobResponse> callback) {
+    try {
+      final SettableFuture<RegisterArchitectJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RegisterArchitectJobResponse>() {}, new AsyncApiCallback<ApiResponse<RegisterArchitectJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<RegisterArchitectJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Register Architect Job. Returns a URL where a file, such as an Architect flow YAML file, can be PUT which will then initiate the job.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<RegisterArchitectJobResponse>> postFlowsJobsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<RegisterArchitectJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<RegisterArchitectJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<RegisterArchitectJobResponse>() {}, new AsyncApiCallback<ApiResponse<RegisterArchitectJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<RegisterArchitectJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RegisterArchitectJobResponse> response = (ApiResponse<RegisterArchitectJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RegisterArchitectJobResponse> response = (ApiResponse<RegisterArchitectJobResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

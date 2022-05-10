@@ -288,14 +288,14 @@ public class QueueRequest  implements Serializable {
 
   
   /**
-   * The routing rules for the queue, used for routing to known or preferred agents.
+   * The routing rules for the queue, used for Preferred Agent Routing.
    **/
   public QueueRequest routingRules(List<RoutingRule> routingRules) {
     this.routingRules = routingRules;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The routing rules for the queue, used for routing to known or preferred agents.")
+  @ApiModelProperty(example = "null", value = "The routing rules for the queue, used for Preferred Agent Routing.")
   @JsonProperty("routingRules")
   public List<RoutingRule> getRoutingRules() {
     return routingRules;
@@ -306,14 +306,14 @@ public class QueueRequest  implements Serializable {
 
   
   /**
-   * The bulls-eye settings for the queue.
+   * The bullseye settings for the queue.
    **/
   public QueueRequest bullseye(Bullseye bullseye) {
     this.bullseye = bullseye;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The bulls-eye settings for the queue.")
+  @ApiModelProperty(example = "null", value = "The bullseye settings for the queue.")
   @JsonProperty("bullseye")
   public Bullseye getBullseye() {
     return bullseye;

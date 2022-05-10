@@ -45,7 +45,8 @@ public class MemberGroup  implements Serializable {
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     TEAM("TEAM"),
-    GROUP("GROUP");
+    GROUP("GROUP"),
+    SKILLGROUP("SKILLGROUP");
 
     private String value;
 

@@ -3471,7 +3471,7 @@ TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String sortBy = "sortBy_example"; // String | Sort by
-String number = "number_example"; // String | Number
+String number = "number_example"; // String | Deprecated, filtering by number not supported
 try {
     ExtensionPoolEntityListing result = apiInstance.getTelephonyProvidersEdgesExtensionpools(pageSize, pageNumber, sortBy, number);
     System.out.println(result);
@@ -3489,7 +3489,7 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **sortBy** | **String**| Sort by | [optional] 
-| **number** | **String**| Number | [optional] 
+| **number** | **String**| Deprecated, filtering by number not supported | [optional] 
 {: class="table-striped"}
 
 

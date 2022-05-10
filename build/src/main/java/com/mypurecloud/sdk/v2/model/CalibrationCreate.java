@@ -10,7 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.Conversation;
+import com.mypurecloud.sdk.v2.model.ConversationReference;
 import com.mypurecloud.sdk.v2.model.Evaluation;
 import com.mypurecloud.sdk.v2.model.EvaluationForm;
 import com.mypurecloud.sdk.v2.model.User;
@@ -31,7 +31,7 @@ public class CalibrationCreate  implements Serializable {
   private String name = null;
   private User calibrator = null;
   private User agent = null;
-  private Conversation conversation = null;
+  private ConversationReference conversation = null;
   private EvaluationForm evaluationForm = null;
   private String contextId = null;
   private Integer averageScore = null;
@@ -106,17 +106,17 @@ public class CalibrationCreate  implements Serializable {
   /**
    * The conversation to use for the calibration.
    **/
-  public CalibrationCreate conversation(Conversation conversation) {
+  public CalibrationCreate conversation(ConversationReference conversation) {
     this.conversation = conversation;
     return this;
   }
   
   @ApiModelProperty(example = "null", required = true, value = "The conversation to use for the calibration.")
   @JsonProperty("conversation")
-  public Conversation getConversation() {
+  public ConversationReference getConversation() {
     return conversation;
   }
-  public void setConversation(Conversation conversation) {
+  public void setConversation(ConversationReference conversation) {
     this.conversation = conversation;
   }
 

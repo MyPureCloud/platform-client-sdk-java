@@ -86,6 +86,20 @@ import com.mypurecloud.sdk.v2.model.QueueRequest;
 
 public class GetRoutingEmailDomainsRequest {
     
+	private Boolean excludeStatus;
+	public Boolean getExcludeStatus() {
+		return this.excludeStatus;
+	}
+
+	public void setExcludeStatus(Boolean excludeStatus) {
+		this.excludeStatus = excludeStatus;
+	}
+
+	public GetRoutingEmailDomainsRequest withExcludeStatus(Boolean excludeStatus) {
+	    this.setExcludeStatus(excludeStatus);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -109,6 +123,8 @@ public class GetRoutingEmailDomainsRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/routing/email/domains")
+                .withQueryParameters("excludeStatus", "", excludeStatus)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -129,6 +145,11 @@ public class GetRoutingEmailDomainsRequest {
 			request = new GetRoutingEmailDomainsRequest();
 		}
 
+		
+		public Builder withExcludeStatus(Boolean excludeStatus) {
+			request.setExcludeStatus(excludeStatus);
+			return this;
+		}
 		
 
 		

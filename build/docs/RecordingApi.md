@@ -29,6 +29,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRecordingJob**](RecordingApi.html#getRecordingJob) | Get the status of the job associated with the job id. |
 | [**getRecordingJobFailedrecordings**](RecordingApi.html#getRecordingJobFailedrecordings) | Get IDs of recordings that the bulk job failed for |
 | [**getRecordingJobs**](RecordingApi.html#getRecordingJobs) | Get the status of all jobs within the user&#39;s organization |
+| [**getRecordingKeyconfiguration**](RecordingApi.html#getRecordingKeyconfiguration) | Get the encryption key configurations |
+| [**getRecordingKeyconfigurations**](RecordingApi.html#getRecordingKeyconfigurations) | Get a list of key configurations data |
 | [**getRecordingLocalkeysSetting**](RecordingApi.html#getRecordingLocalkeysSetting) | Get the local encryption settings |
 | [**getRecordingLocalkeysSettings**](RecordingApi.html#getRecordingLocalkeysSettings) | gets a list local key settings data |
 | [**getRecordingMediaretentionpolicies**](RecordingApi.html#getRecordingMediaretentionpolicies) | Gets media retention policy list with query options to filter on name and enabled. |
@@ -43,7 +45,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationRecordingAnnotations**](RecordingApi.html#postConversationRecordingAnnotations) | Create annotation |
 | [**postRecordingBatchrequests**](RecordingApi.html#postRecordingBatchrequests) | Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration. |
 | [**postRecordingCrossplatformMediaretentionpolicies**](RecordingApi.html#postRecordingCrossplatformMediaretentionpolicies) | Create media retention policy |
-| [**postRecordingJobs**](RecordingApi.html#postRecordingJobs) | Create a recording bulk job |
+| [**postRecordingJobs**](RecordingApi.html#postRecordingJobs) | Create a recording bulk job. |
+| [**postRecordingKeyconfigurations**](RecordingApi.html#postRecordingKeyconfigurations) | Setup configurations for encryption key creation |
+| [**postRecordingKeyconfigurationsValidate**](RecordingApi.html#postRecordingKeyconfigurationsValidate) | Validate encryption key configurations without saving it |
 | [**postRecordingLocalkeys**](RecordingApi.html#postRecordingLocalkeys) | create a local recording key |
 | [**postRecordingLocalkeysSettings**](RecordingApi.html#postRecordingLocalkeysSettings) | create settings for local key creation |
 | [**postRecordingMediaretentionpolicies**](RecordingApi.html#postRecordingMediaretentionpolicies) | Create media retention policy |
@@ -56,6 +60,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putOrphanrecording**](RecordingApi.html#putOrphanrecording) | Updates an orphan recording to a regular recording with retention values |
 | [**putRecordingCrossplatformMediaretentionpolicy**](RecordingApi.html#putRecordingCrossplatformMediaretentionpolicy) | Update a media retention policy |
 | [**putRecordingJob**](RecordingApi.html#putRecordingJob) | Execute the recording bulk job. |
+| [**putRecordingKeyconfiguration**](RecordingApi.html#putRecordingKeyconfiguration) | Update the encryption key configurations |
 | [**putRecordingLocalkeysSetting**](RecordingApi.html#putRecordingLocalkeysSetting) | Update the local encryption settings |
 | [**putRecordingMediaretentionpolicy**](RecordingApi.html#putRecordingMediaretentionpolicy) | Update a media retention policy |
 | [**putRecordingRecordingkeysRotationschedule**](RecordingApi.html#putRecordingRecordingkeysRotationschedule) | Update key rotation schedule |
@@ -1203,7 +1208,7 @@ try {
 
 
 
-> [PolicyEntityListing](PolicyEntityListing.html) getRecordingCrossplatformMediaretentionpolicies(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, enabled, summary, hasErrors)
+> [PolicyEntityListing](PolicyEntityListing.html) getRecordingCrossplatformMediaretentionpolicies(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, enabled, summary, hasErrors, deleteDaysThreshold)
 
 Gets media retention policy list with query options to filter on name and enabled.
 
@@ -1247,8 +1252,9 @@ String name = "name_example"; // String | the policy name - used for filtering r
 Boolean enabled = true; // Boolean | checks to see if policy is enabled - use enabled = true or enabled = false
 Boolean summary = false; // Boolean | provides a less verbose response of policy lists.
 Boolean hasErrors = true; // Boolean | provides a way to fetch all policies with errors or policies that do not have errors
+Integer deleteDaysThreshold = 56; // Integer | provides a way to fetch all policies with any actions having deleteDays exceeding the provided value
 try {
-    PolicyEntityListing result = apiInstance.getRecordingCrossplatformMediaretentionpolicies(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, enabled, summary, hasErrors);
+    PolicyEntityListing result = apiInstance.getRecordingCrossplatformMediaretentionpolicies(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, enabled, summary, hasErrors, deleteDaysThreshold);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RecordingApi#getRecordingCrossplatformMediaretentionpolicies");
@@ -1271,6 +1277,7 @@ try {
 | **enabled** | **Boolean**| checks to see if policy is enabled - use enabled = true or enabled = false | [optional] 
 | **summary** | **Boolean**| provides a less verbose response of policy lists. | [optional] [default to false] 
 | **hasErrors** | **Boolean**| provides a way to fetch all policies with errors or policies that do not have errors | [optional] 
+| **deleteDaysThreshold** | **Integer**| provides a way to fetch all policies with any actions having deleteDays exceeding the provided value | [optional] 
 {: class="table-striped"}
 
 
@@ -1552,6 +1559,128 @@ try {
 
 [**RecordingJobEntityListing**](RecordingJobEntityListing.html)
 
+<a name="getRecordingKeyconfiguration"></a>
+
+# **getRecordingKeyconfiguration**
+
+
+
+> [RecordingEncryptionConfiguration](RecordingEncryptionConfiguration.html) getRecordingKeyconfiguration(keyConfigurationId)
+
+Get the encryption key configurations
+
+
+
+Wraps GET /api/v2/recording/keyconfigurations/{keyConfigurationId}  
+
+Requires ANY permissions: 
+
+* recording:encryptionKey:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RecordingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RecordingApi apiInstance = new RecordingApi();
+String keyConfigurationId = "keyConfigurationId_example"; // String | Key Configurations Id
+try {
+    RecordingEncryptionConfiguration result = apiInstance.getRecordingKeyconfiguration(keyConfigurationId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RecordingApi#getRecordingKeyconfiguration");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **keyConfigurationId** | **String**| Key Configurations Id | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**RecordingEncryptionConfiguration**](RecordingEncryptionConfiguration.html)
+
+<a name="getRecordingKeyconfigurations"></a>
+
+# **getRecordingKeyconfigurations**
+
+
+
+> [RecordingEncryptionConfigurationListing](RecordingEncryptionConfigurationListing.html) getRecordingKeyconfigurations()
+
+Get a list of key configurations data
+
+
+
+Wraps GET /api/v2/recording/keyconfigurations  
+
+Requires ANY permissions: 
+
+* recording:encryptionKey:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RecordingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RecordingApi apiInstance = new RecordingApi();
+try {
+    RecordingEncryptionConfigurationListing result = apiInstance.getRecordingKeyconfigurations();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RecordingApi#getRecordingKeyconfigurations");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**RecordingEncryptionConfigurationListing**](RecordingEncryptionConfigurationListing.html)
+
 <a name="getRecordingLocalkeysSetting"></a>
 
 # **getRecordingLocalkeysSetting**
@@ -1680,7 +1809,7 @@ This endpoint does not require any parameters.
 
 
 
-> [PolicyEntityListing](PolicyEntityListing.html) getRecordingMediaretentionpolicies(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, enabled, summary, hasErrors)
+> [PolicyEntityListing](PolicyEntityListing.html) getRecordingMediaretentionpolicies(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, enabled, summary, hasErrors, deleteDaysThreshold)
 
 Gets media retention policy list with query options to filter on name and enabled.
 
@@ -1724,8 +1853,9 @@ String name = "name_example"; // String | the policy name - used for filtering r
 Boolean enabled = true; // Boolean | checks to see if policy is enabled - use enabled = true or enabled = false
 Boolean summary = false; // Boolean | provides a less verbose response of policy lists.
 Boolean hasErrors = true; // Boolean | provides a way to fetch all policies with errors or policies that do not have errors
+Integer deleteDaysThreshold = 56; // Integer | provides a way to fetch all policies with any actions having deleteDays exceeding the provided value
 try {
-    PolicyEntityListing result = apiInstance.getRecordingMediaretentionpolicies(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, enabled, summary, hasErrors);
+    PolicyEntityListing result = apiInstance.getRecordingMediaretentionpolicies(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, enabled, summary, hasErrors, deleteDaysThreshold);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RecordingApi#getRecordingMediaretentionpolicies");
@@ -1748,6 +1878,7 @@ try {
 | **enabled** | **Boolean**| checks to see if policy is enabled - use enabled = true or enabled = false | [optional] 
 | **summary** | **Boolean**| provides a less verbose response of policy lists. | [optional] [default to false] 
 | **hasErrors** | **Boolean**| provides a way to fetch all policies with errors or policies that do not have errors | [optional] 
+| **deleteDaysThreshold** | **Integer**| provides a way to fetch all policies with any actions having deleteDays exceeding the provided value | [optional] 
 {: class="table-striped"}
 
 
@@ -2465,9 +2596,9 @@ try {
 
 > [RecordingJob](RecordingJob.html) postRecordingJobs(body)
 
-Create a recording bulk job
+Create a recording bulk job.
 
-
+Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state.
 
 Wraps POST /api/v2/recording/jobs  
 
@@ -2519,6 +2650,132 @@ try {
 ### Return type
 
 [**RecordingJob**](RecordingJob.html)
+
+<a name="postRecordingKeyconfigurations"></a>
+
+# **postRecordingKeyconfigurations**
+
+
+
+> [RecordingEncryptionConfiguration](RecordingEncryptionConfiguration.html) postRecordingKeyconfigurations(body)
+
+Setup configurations for encryption key creation
+
+
+
+Wraps POST /api/v2/recording/keyconfigurations  
+
+Requires ANY permissions: 
+
+* recording:encryptionKey:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RecordingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RecordingApi apiInstance = new RecordingApi();
+RecordingEncryptionConfiguration body = new RecordingEncryptionConfiguration(); // RecordingEncryptionConfiguration | Encryption Configuration
+try {
+    RecordingEncryptionConfiguration result = apiInstance.postRecordingKeyconfigurations(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RecordingApi#postRecordingKeyconfigurations");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**RecordingEncryptionConfiguration**](RecordingEncryptionConfiguration.html)| Encryption Configuration | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**RecordingEncryptionConfiguration**](RecordingEncryptionConfiguration.html)
+
+<a name="postRecordingKeyconfigurationsValidate"></a>
+
+# **postRecordingKeyconfigurationsValidate**
+
+
+
+> [RecordingEncryptionConfiguration](RecordingEncryptionConfiguration.html) postRecordingKeyconfigurationsValidate(body)
+
+Validate encryption key configurations without saving it
+
+
+
+Wraps POST /api/v2/recording/keyconfigurations/validate  
+
+Requires ANY permissions: 
+
+* recording:encryptionKey:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RecordingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RecordingApi apiInstance = new RecordingApi();
+RecordingEncryptionConfiguration body = new RecordingEncryptionConfiguration(); // RecordingEncryptionConfiguration | Encryption Configuration
+try {
+    RecordingEncryptionConfiguration result = apiInstance.postRecordingKeyconfigurationsValidate(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RecordingApi#postRecordingKeyconfigurationsValidate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**RecordingEncryptionConfiguration**](RecordingEncryptionConfiguration.html)| Encryption Configuration | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**RecordingEncryptionConfiguration**](RecordingEncryptionConfiguration.html)
 
 <a name="postRecordingLocalkeys"></a>
 
@@ -3288,6 +3545,71 @@ try {
 ### Return type
 
 [**RecordingJob**](RecordingJob.html)
+
+<a name="putRecordingKeyconfiguration"></a>
+
+# **putRecordingKeyconfiguration**
+
+
+
+> [RecordingEncryptionConfiguration](RecordingEncryptionConfiguration.html) putRecordingKeyconfiguration(keyConfigurationId, body)
+
+Update the encryption key configurations
+
+
+
+Wraps PUT /api/v2/recording/keyconfigurations/{keyConfigurationId}  
+
+Requires ANY permissions: 
+
+* recording:encryptionKey:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RecordingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RecordingApi apiInstance = new RecordingApi();
+String keyConfigurationId = "keyConfigurationId_example"; // String | Key Configurations Id
+RecordingEncryptionConfiguration body = new RecordingEncryptionConfiguration(); // RecordingEncryptionConfiguration | Encryption key configuration metadata
+try {
+    RecordingEncryptionConfiguration result = apiInstance.putRecordingKeyconfiguration(keyConfigurationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RecordingApi#putRecordingKeyconfiguration");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **keyConfigurationId** | **String**| Key Configurations Id | 
+| **body** | [**RecordingEncryptionConfiguration**](RecordingEncryptionConfiguration.html)| Encryption key configuration metadata | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**RecordingEncryptionConfiguration**](RecordingEncryptionConfiguration.html)
 
 <a name="putRecordingLocalkeysSetting"></a>
 

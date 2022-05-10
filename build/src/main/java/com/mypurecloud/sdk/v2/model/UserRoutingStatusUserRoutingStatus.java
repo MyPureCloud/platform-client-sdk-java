@@ -11,7 +11,6 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UserRoutingStatusErrorInfo;
-import com.mypurecloud.sdk.v2.model.UserRoutingStatusObject;
 import com.mypurecloud.sdk.v2.model.UserRoutingStatusRoutingStatus;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -23,24 +22,25 @@ import java.io.Serializable;
 
 public class UserRoutingStatusUserRoutingStatus  implements Serializable {
   
-  private UserRoutingStatusObject id = null;
+  private String id = null;
   private UserRoutingStatusRoutingStatus routingStatus = null;
   private UserRoutingStatusErrorInfo errorInfo = null;
 
   
   /**
+   * The unique identifier of the user.
    **/
-  public UserRoutingStatusUserRoutingStatus id(UserRoutingStatusObject id) {
+  public UserRoutingStatusUserRoutingStatus id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The unique identifier of the user.")
   @JsonProperty("id")
-  public UserRoutingStatusObject getId() {
+  public String getId() {
     return id;
   }
-  public void setId(UserRoutingStatusObject id) {
+  public void setId(String id) {
     this.id = id;
   }
 

@@ -25,7 +25,6 @@ import com.mypurecloud.sdk.v2.model.OrganizationPresence;
 import com.mypurecloud.sdk.v2.model.OrganizationPresenceEntityListing;
 import com.mypurecloud.sdk.v2.model.SystemPresence;
 import com.mypurecloud.sdk.v2.model.UserPresence;
-import com.mypurecloud.sdk.v2.model.PresenceExpand;
 
 public class PutUsersPresencesBulkRequest {
     

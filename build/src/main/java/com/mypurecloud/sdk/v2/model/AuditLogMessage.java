@@ -89,7 +89,8 @@ public class AuditLogMessage  implements Serializable {
     SUPPORTABILITY("Supportability"),
     CALLBACK("Callback"),
     WORKITEMS("Workitems"),
-    SCIM("SCIM");
+    SCIM("SCIM"),
+    NUMBERPURCHASING("NumberPurchasing");
 
     private String value;
 
@@ -455,6 +456,55 @@ public class AuditLogMessage  implements Serializable {
     }
   }
   private EntityTypeEnum entityType = null;
+
+  private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
+    public StatusEnumDeserializer() {
+      super(StatusEnumDeserializer.class);
+    }
+
+    @Override
+    public StatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return StatusEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Status of the event being audited
+   */
+ @JsonDeserialize(using = StatusEnumDeserializer.class)
+  public enum StatusEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    SUCCESS("SUCCESS"),
+    FAILURE("FAILURE"),
+    WARNING("WARNING");
+
+    private String value;
+
+    StatusEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static StatusEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (StatusEnum value : StatusEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return StatusEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private StatusEnum status = null;
   private List<PropertyChange> propertyChanges = new ArrayList<PropertyChange>();
   private Map<String, String> context = null;
 
@@ -658,6 +708,24 @@ public class AuditLogMessage  implements Serializable {
 
   
   /**
+   * Status of the event being audited
+   **/
+  public AuditLogMessage status(StatusEnum status) {
+    this.status = status;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Status of the event being audited")
+  @JsonProperty("status")
+  public StatusEnum getStatus() {
+    return status;
+  }
+  public void setStatus(StatusEnum status) {
+    this.status = status;
+  }
+
+  
+  /**
    * List of properties that were changed and changes made to those properties.
    **/
   public AuditLogMessage propertyChanges(List<PropertyChange> propertyChanges) {
@@ -714,13 +782,14 @@ public class AuditLogMessage  implements Serializable {
         Objects.equals(this.action, auditLogMessage.action) &&
         Objects.equals(this.entity, auditLogMessage.entity) &&
         Objects.equals(this.entityType, auditLogMessage.entityType) &&
+        Objects.equals(this.status, auditLogMessage.status) &&
         Objects.equals(this.propertyChanges, auditLogMessage.propertyChanges) &&
         Objects.equals(this.context, auditLogMessage.context);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, userHomeOrgId, user, client, remoteIp, serviceName, eventDate, message, action, entity, entityType, propertyChanges, context);
+    return Objects.hash(id, userHomeOrgId, user, client, remoteIp, serviceName, eventDate, message, action, entity, entityType, status, propertyChanges, context);
   }
 
   @Override
@@ -739,6 +808,7 @@ public class AuditLogMessage  implements Serializable {
     sb.append("    action: ").append(toIndentedString(action)).append("\n");
     sb.append("    entity: ").append(toIndentedString(entity)).append("\n");
     sb.append("    entityType: ").append(toIndentedString(entityType)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    propertyChanges: ").append(toIndentedString(propertyChanges)).append("\n");
     sb.append("    context: ").append(toIndentedString(context)).append("\n");
     sb.append("}");

@@ -28,8 +28,8 @@ public class QueueMemberEntityListing  implements Serializable {
   private Integer pageSize = null;
   private String firstUri = null;
   private String selfUri = null;
-  private String nextUri = null;
   private String previousUri = null;
+  private String nextUri = null;
 
   
   /**
@@ -119,23 +119,6 @@ public class QueueMemberEntityListing  implements Serializable {
   
   /**
    **/
-  public QueueMemberEntityListing nextUri(String nextUri) {
-    this.nextUri = nextUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("nextUri")
-  public String getNextUri() {
-    return nextUri;
-  }
-  public void setNextUri(String nextUri) {
-    this.nextUri = nextUri;
-  }
-
-  
-  /**
-   **/
   public QueueMemberEntityListing previousUri(String previousUri) {
     this.previousUri = previousUri;
     return this;
@@ -148,6 +131,23 @@ public class QueueMemberEntityListing  implements Serializable {
   }
   public void setPreviousUri(String previousUri) {
     this.previousUri = previousUri;
+  }
+
+  
+  /**
+   **/
+  public QueueMemberEntityListing nextUri(String nextUri) {
+    this.nextUri = nextUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("nextUri")
+  public String getNextUri() {
+    return nextUri;
+  }
+  public void setNextUri(String nextUri) {
+    this.nextUri = nextUri;
   }
 
   
@@ -166,13 +166,13 @@ public class QueueMemberEntityListing  implements Serializable {
         Objects.equals(this.pageSize, queueMemberEntityListing.pageSize) &&
         Objects.equals(this.firstUri, queueMemberEntityListing.firstUri) &&
         Objects.equals(this.selfUri, queueMemberEntityListing.selfUri) &&
-        Objects.equals(this.nextUri, queueMemberEntityListing.nextUri) &&
-        Objects.equals(this.previousUri, queueMemberEntityListing.previousUri);
+        Objects.equals(this.previousUri, queueMemberEntityListing.previousUri) &&
+        Objects.equals(this.nextUri, queueMemberEntityListing.nextUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageNumber, pageSize, firstUri, selfUri, nextUri, previousUri);
+    return Objects.hash(entities, pageNumber, pageSize, firstUri, selfUri, previousUri, nextUri);
   }
 
   @Override
@@ -185,8 +185,8 @@ public class QueueMemberEntityListing  implements Serializable {
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
-    sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
+    sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("}");
     return sb.toString();
   }

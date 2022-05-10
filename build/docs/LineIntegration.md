@@ -11,6 +11,7 @@ title: LineIntegration
 | **id** | <!----><!---->**String**<!----> | A unique Integration Id |  |
 | **name** | <!----><!---->**String**<!----> | The name of the LINE Integration |  |
 | **supportedContent** | <!----><!---->[**SupportedContentReference**](SupportedContentReference.html)<!----> | Defines the SupportedContent profile configured for an integration |  [optional] |
+| **messagingSetting** | <!----><!---->[**MessagingSettingReference**](MessagingSettingReference.html)<!----> |  |  [optional] |
 | **channelId** | <!----><!---->**String**<!----> | The Channel Id from LINE messenger |  |
 | **webhookUri** | <!----><!---->**String**<!----> | The Webhook URI to be updated in LINE platform |  |
 | **status** | <!----><!---->**String**<!----> | The status of the LINE Integration |  [optional] |

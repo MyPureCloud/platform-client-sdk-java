@@ -12,6 +12,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AssessmentForm;
+import com.mypurecloud.sdk.v2.model.LearningModuleCoverArtRequest;
 import com.mypurecloud.sdk.v2.model.LearningModuleInformStepRequest;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -80,6 +81,7 @@ public class LearningModuleRequest  implements Serializable {
   }
   private TypeEnum type = null;
   private AssessmentForm assessmentForm = null;
+  private LearningModuleCoverArtRequest coverArt = null;
 
   
   /**
@@ -190,6 +192,24 @@ public class LearningModuleRequest  implements Serializable {
   }
 
   
+  /**
+   * The cover art for the learning module
+   **/
+  public LearningModuleRequest coverArt(LearningModuleCoverArtRequest coverArt) {
+    this.coverArt = coverArt;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The cover art for the learning module")
+  @JsonProperty("coverArt")
+  public LearningModuleCoverArtRequest getCoverArt() {
+    return coverArt;
+  }
+  public void setCoverArt(LearningModuleCoverArtRequest coverArt) {
+    this.coverArt = coverArt;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -205,12 +225,13 @@ public class LearningModuleRequest  implements Serializable {
         Objects.equals(this.completionTimeInDays, learningModuleRequest.completionTimeInDays) &&
         Objects.equals(this.informSteps, learningModuleRequest.informSteps) &&
         Objects.equals(this.type, learningModuleRequest.type) &&
-        Objects.equals(this.assessmentForm, learningModuleRequest.assessmentForm);
+        Objects.equals(this.assessmentForm, learningModuleRequest.assessmentForm) &&
+        Objects.equals(this.coverArt, learningModuleRequest.coverArt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, completionTimeInDays, informSteps, type, assessmentForm);
+    return Objects.hash(name, description, completionTimeInDays, informSteps, type, assessmentForm, coverArt);
   }
 
   @Override
@@ -224,6 +245,7 @@ public class LearningModuleRequest  implements Serializable {
     sb.append("    informSteps: ").append(toIndentedString(informSteps)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    assessmentForm: ").append(toIndentedString(assessmentForm)).append("\n");
+    sb.append("    coverArt: ").append(toIndentedString(coverArt)).append("\n");
     sb.append("}");
     return sb.toString();
   }

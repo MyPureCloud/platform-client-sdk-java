@@ -80,10 +80,21 @@ public class AnswerOption  implements Serializable {
   }
 
   
+  /**
+   * List of assistance conditions which are combined together with a logical AND operator. Eg ( assistanceCondtion1 && assistanceCondition2 ) wherein assistanceCondition could be ( EXISTS topic1 || topic2 || ... ) or (NOTEXISTS topic3 || topic4 || ...).
+   **/
+  public AnswerOption assistanceConditions(List<AssistanceCondition> assistanceConditions) {
+    this.assistanceConditions = assistanceConditions;
+    return this;
+  }
+  
   @ApiModelProperty(example = "null", value = "List of assistance conditions which are combined together with a logical AND operator. Eg ( assistanceCondtion1 && assistanceCondition2 ) wherein assistanceCondition could be ( EXISTS topic1 || topic2 || ... ) or (NOTEXISTS topic3 || topic4 || ...).")
   @JsonProperty("assistanceConditions")
   public List<AssistanceCondition> getAssistanceConditions() {
     return assistanceConditions;
+  }
+  public void setAssistanceConditions(List<AssistanceCondition> assistanceConditions) {
+    this.assistanceConditions = assistanceConditions;
   }
 
   

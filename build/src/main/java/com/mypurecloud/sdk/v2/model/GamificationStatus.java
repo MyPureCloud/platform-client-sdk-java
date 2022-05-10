@@ -24,6 +24,7 @@ public class GamificationStatus  implements Serializable {
   private Boolean isActive = null;
   private LocalDate dateStart = null;
   private Boolean automaticUserAssignment = null;
+  private LocalDate dateStartPersonalBest = null;
 
   
   /**
@@ -80,6 +81,24 @@ public class GamificationStatus  implements Serializable {
   }
 
   
+  /**
+   * Personal best aggregation starting date. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+   **/
+  public GamificationStatus dateStartPersonalBest(LocalDate dateStartPersonalBest) {
+    this.dateStartPersonalBest = dateStartPersonalBest;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Personal best aggregation starting date. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
+  @JsonProperty("dateStartPersonalBest")
+  public LocalDate getDateStartPersonalBest() {
+    return dateStartPersonalBest;
+  }
+  public void setDateStartPersonalBest(LocalDate dateStartPersonalBest) {
+    this.dateStartPersonalBest = dateStartPersonalBest;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -92,12 +111,13 @@ public class GamificationStatus  implements Serializable {
     GamificationStatus gamificationStatus = (GamificationStatus) o;
     return Objects.equals(this.isActive, gamificationStatus.isActive) &&
         Objects.equals(this.dateStart, gamificationStatus.dateStart) &&
-        Objects.equals(this.automaticUserAssignment, gamificationStatus.automaticUserAssignment);
+        Objects.equals(this.automaticUserAssignment, gamificationStatus.automaticUserAssignment) &&
+        Objects.equals(this.dateStartPersonalBest, gamificationStatus.dateStartPersonalBest);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(isActive, dateStart, automaticUserAssignment);
+    return Objects.hash(isActive, dateStart, automaticUserAssignment, dateStartPersonalBest);
   }
 
   @Override
@@ -108,6 +128,7 @@ public class GamificationStatus  implements Serializable {
     sb.append("    isActive: ").append(toIndentedString(isActive)).append("\n");
     sb.append("    dateStart: ").append(toIndentedString(dateStart)).append("\n");
     sb.append("    automaticUserAssignment: ").append(toIndentedString(automaticUserAssignment)).append("\n");
+    sb.append("    dateStartPersonalBest: ").append(toIndentedString(dateStartPersonalBest)).append("\n");
     sb.append("}");
     return sb.toString();
   }

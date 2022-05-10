@@ -583,13 +583,13 @@ try {
 
 
 
-> [PerformanceProfile](PerformanceProfile.html) getGamificationProfile(performanceProfileId)
+> [PerformanceProfile](PerformanceProfile.html) getGamificationProfile(profileId)
 
 Performance profile by id
 
 
 
-Wraps GET /api/v2/gamification/profiles/{performanceProfileId}  
+Wraps GET /api/v2/gamification/profiles/{profileId}  
 
 Requires ANY permissions: 
 
@@ -619,9 +619,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 GamificationApi apiInstance = new GamificationApi();
-String performanceProfileId = "performanceProfileId_example"; // String | Performance Profile Id
+String profileId = "profileId_example"; // String | performanceProfileId
 try {
-    PerformanceProfile result = apiInstance.getGamificationProfile(performanceProfileId);
+    PerformanceProfile result = apiInstance.getGamificationProfile(profileId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling GamificationApi#getGamificationProfile");
@@ -634,7 +634,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **performanceProfileId** | **String**| Performance Profile Id | 
+| **profileId** | **String**| performanceProfileId | 
 {: class="table-striped"}
 
 
@@ -2477,13 +2477,13 @@ try {
 
 
 
-> [PerformanceProfile](PerformanceProfile.html) postGamificationProfileActivate(performanceProfileId)
+> [PerformanceProfile](PerformanceProfile.html) postGamificationProfileActivate(profileId)
 
 Activate a performance profile
 
 
 
-Wraps POST /api/v2/gamification/profiles/{performanceProfileId}/activate  
+Wraps POST /api/v2/gamification/profiles/{profileId}/activate  
 
 Requires ANY permissions: 
 
@@ -2511,9 +2511,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 GamificationApi apiInstance = new GamificationApi();
-String performanceProfileId = "performanceProfileId_example"; // String | Performance Profile Id
+String profileId = "profileId_example"; // String | performanceProfileId
 try {
-    PerformanceProfile result = apiInstance.postGamificationProfileActivate(performanceProfileId);
+    PerformanceProfile result = apiInstance.postGamificationProfileActivate(profileId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling GamificationApi#postGamificationProfileActivate");
@@ -2526,7 +2526,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **performanceProfileId** | **String**| Performance Profile Id | 
+| **profileId** | **String**| performanceProfileId | 
 {: class="table-striped"}
 
 
@@ -2540,13 +2540,13 @@ try {
 
 
 
-> [PerformanceProfile](PerformanceProfile.html) postGamificationProfileDeactivate(performanceProfileId)
+> [PerformanceProfile](PerformanceProfile.html) postGamificationProfileDeactivate(profileId)
 
 Deactivate a performance profile
 
 
 
-Wraps POST /api/v2/gamification/profiles/{performanceProfileId}/deactivate  
+Wraps POST /api/v2/gamification/profiles/{profileId}/deactivate  
 
 Requires ANY permissions: 
 
@@ -2574,9 +2574,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 GamificationApi apiInstance = new GamificationApi();
-String performanceProfileId = "performanceProfileId_example"; // String | Performance Profile Id
+String profileId = "profileId_example"; // String | performanceProfileId
 try {
-    PerformanceProfile result = apiInstance.postGamificationProfileDeactivate(performanceProfileId);
+    PerformanceProfile result = apiInstance.postGamificationProfileDeactivate(profileId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling GamificationApi#postGamificationProfileDeactivate");
@@ -2589,7 +2589,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **performanceProfileId** | **String**| Performance Profile Id | 
+| **profileId** | **String**| performanceProfileId | 
 {: class="table-striped"}
 
 
@@ -2997,13 +2997,13 @@ try {
 
 
 
-> [PerformanceProfile](PerformanceProfile.html) putGamificationProfile(performanceProfileId, body)
+> [PerformanceProfile](PerformanceProfile.html) putGamificationProfile(profileId, body)
 
 Updates a performance profile
 
 
 
-Wraps PUT /api/v2/gamification/profiles/{performanceProfileId}  
+Wraps PUT /api/v2/gamification/profiles/{profileId}  
 
 Requires ANY permissions: 
 
@@ -3031,10 +3031,10 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 GamificationApi apiInstance = new GamificationApi();
-String performanceProfileId = "performanceProfileId_example"; // String | Performance Profile Id
+String profileId = "profileId_example"; // String | performanceProfileId
 PerformanceProfile body = new PerformanceProfile(); // PerformanceProfile | performanceProfile
 try {
-    PerformanceProfile result = apiInstance.putGamificationProfile(performanceProfileId, body);
+    PerformanceProfile result = apiInstance.putGamificationProfile(profileId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling GamificationApi#putGamificationProfile");
@@ -3047,7 +3047,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **performanceProfileId** | **String**| Performance Profile Id | 
+| **profileId** | **String**| performanceProfileId | 
 | **body** | [**PerformanceProfile**](PerformanceProfile.html)| performanceProfile | [optional] 
 {: class="table-striped"}
 

@@ -23,7 +23,7 @@ title: UserScheduleAdherence
 | **adherenceState** | [**AdherenceStateEnum**](#AdherenceStateEnum)<!----> | The user&#39;s current adherence state |  [optional] |
 | **impact** | [**ImpactEnum**](#ImpactEnum)<!----> | The impact of the user&#39;s current adherenceState |  [optional] |
 | **timeOfAdherenceChange** | <!----><!---->[**Date**](Date.html)<!----> | Time when the user entered the current adherenceState in ISO-8601 format |  [optional] |
-| **presenceUpdateTime** | <!----><!---->[**Date**](Date.html)<!----> | Time when presence was last updated.  Used to calculate time in current status. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **presenceUpdateTime** | <!----><!---->[**Date**](Date.html)<!----> | Time when presence was last updated. Used to calculate time in current status. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **activeQueues** | <!----><!---->[**List&lt;QueueReference&gt;**](QueueReference.html)<!----> | The list of queues to which this user is joined |  [optional] |
 | **activeQueuesModifiedTime** | <!----><!---->[**Date**](Date.html)<!----> | Time when the list of active queues for this user was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **removedFromManagementUnit** | <!----><!---->**Boolean**<!----> | For notification purposes. Used to indicate that a user was removed from the management unit |  [optional] |
@@ -116,6 +116,7 @@ title: UserScheduleAdherence
 | UNSCHEDULED | &quot;Unscheduled&quot; |
 | UNKNOWN | &quot;Unknown&quot; |
 | IGNORED | &quot;Ignored&quot; |
+| EXPLAINED | &quot;Explained&quot; |
 {: class="table table-striped"}
 
 

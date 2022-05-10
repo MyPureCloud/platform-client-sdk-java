@@ -1643,7 +1643,7 @@ try {
 
 
 
-> [InboundDomainEntityListing](InboundDomainEntityListing.html) getRoutingEmailDomains()
+> [InboundDomainEntityListing](InboundDomainEntityListing.html) getRoutingEmailDomains(excludeStatus)
 
 Get domains
 
@@ -1677,8 +1677,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 RoutingApi apiInstance = new RoutingApi();
+Boolean excludeStatus = false; // Boolean | Exclude MX record data
 try {
-    InboundDomainEntityListing result = apiInstance.getRoutingEmailDomains();
+    InboundDomainEntityListing result = apiInstance.getRoutingEmailDomains(excludeStatus);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingEmailDomains");
@@ -1688,8 +1689,11 @@ try {
 
 ### Parameters
 
-This endpoint does not require any parameters.
 
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **excludeStatus** | **Boolean**| Exclude MX record data | [optional] [default to false] 
+{: class="table-striped"}
 
 
 ### Return type

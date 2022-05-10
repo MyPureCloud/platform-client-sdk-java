@@ -1198,14 +1198,14 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
 
   
   /**
-   * Extended email delivery status
+   * Extended delivery status
    **/
   public ConversationMetricsTopicConversationMetricRecord extendedDeliveryStatus(String extendedDeliveryStatus) {
     this.extendedDeliveryStatus = extendedDeliveryStatus;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Extended email delivery status")
+  @ApiModelProperty(example = "null", value = "Extended delivery status")
   @JsonProperty("extendedDeliveryStatus")
   public String getExtendedDeliveryStatus() {
     return extendedDeliveryStatus;

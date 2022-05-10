@@ -51,7 +51,11 @@ title: ReportingTurnAction
 | ASKFORSTRINGACTION | &quot;AskForStringAction&quot; |
 | SENDRESPONSEACTION | &quot;SendResponseAction&quot; |
 | GETRESPONSEACTION | &quot;GetResponseAction&quot; |
-| JUMPTOTASKACTION | &quot;JumpToTaskAction&quot; |
+| EXTRACTSECUREDATAACTION | &quot;ExtractSecureDataAction&quot; |
+| SECUREACTION | &quot;SecureAction&quot; |
+| TRANSFERTASKACTION | &quot;TransferTaskAction&quot; |
+| DIGITALMENUACTION | &quot;DigitalMenuAction&quot; |
+| WAITFORINPUTACTION | &quot;WaitForInputAction&quot; |
 | UNKNOWN | &quot;Unknown&quot; |
 {: class="table table-striped"}
 

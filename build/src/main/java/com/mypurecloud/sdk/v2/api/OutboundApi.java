@@ -53,6 +53,9 @@ import com.mypurecloud.sdk.v2.model.MessagingCampaignDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.RuleSet;
 import com.mypurecloud.sdk.v2.model.RuleSetEntityListing;
 import com.mypurecloud.sdk.v2.model.CampaignSchedule;
+import com.mypurecloud.sdk.v2.model.EmailCampaignSchedule;
+import com.mypurecloud.sdk.v2.model.MessagingCampaignScheduleEntityListing;
+import com.mypurecloud.sdk.v2.model.MessagingCampaignSchedule;
 import com.mypurecloud.sdk.v2.model.SequenceSchedule;
 import com.mypurecloud.sdk.v2.model.CampaignSequence;
 import com.mypurecloud.sdk.v2.model.CampaignSequenceEntityListing;
@@ -82,8 +85,11 @@ import com.mypurecloud.sdk.v2.api.request.DeleteOutboundContactlistfilterRequest
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundContactlistsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundDnclistRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundMessagingcampaignRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteOutboundMessagingcampaignProgressRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundRulesetRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundSchedulesCampaignRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteOutboundSchedulesEmailcampaignRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteOutboundSchedulesMessagingcampaignRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundSchedulesSequenceRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundSequenceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundAttemptlimitRequest;
@@ -132,6 +138,10 @@ import com.mypurecloud.sdk.v2.api.request.GetOutboundRulesetRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundRulesetsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundSchedulesCampaignRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundSchedulesCampaignsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundSchedulesEmailcampaignRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundSchedulesEmailcampaignsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundSchedulesMessagingcampaignRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundSchedulesMessagingcampaignsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundSchedulesSequenceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundSchedulesSequencesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundSequenceRequest;
@@ -176,6 +186,8 @@ import com.mypurecloud.sdk.v2.api.request.PutOutboundDnclistRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundMessagingcampaignRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundRulesetRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundSchedulesCampaignRequest;
+import com.mypurecloud.sdk.v2.api.request.PutOutboundSchedulesEmailcampaignRequest;
+import com.mypurecloud.sdk.v2.api.request.PutOutboundSchedulesMessagingcampaignRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundSchedulesSequenceRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundSequenceRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundWrapupcodemappingsRequest;
@@ -1202,6 +1214,82 @@ public class OutboundApi {
 
   
   /**
+   * Reset messaging campaign progress and recycle the messaging campaign
+   * 
+   * @param messagingCampaignId The Messaging Campaign ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteOutboundMessagingcampaignProgress(String messagingCampaignId) throws IOException, ApiException {
+     deleteOutboundMessagingcampaignProgress(createDeleteOutboundMessagingcampaignProgressRequest(messagingCampaignId));
+  }
+
+  /**
+   * Reset messaging campaign progress and recycle the messaging campaign
+   * 
+   * @param messagingCampaignId The Messaging Campaign ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteOutboundMessagingcampaignProgressWithHttpInfo(String messagingCampaignId) throws IOException {
+    return deleteOutboundMessagingcampaignProgress(createDeleteOutboundMessagingcampaignProgressRequest(messagingCampaignId).withHttpInfo());
+  }
+
+  private DeleteOutboundMessagingcampaignProgressRequest createDeleteOutboundMessagingcampaignProgressRequest(String messagingCampaignId) {
+    return DeleteOutboundMessagingcampaignProgressRequest.builder()
+            .withMessagingCampaignId(messagingCampaignId)
+    
+            .build();
+  }
+
+  /**
+   * Reset messaging campaign progress and recycle the messaging campaign
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteOutboundMessagingcampaignProgress(DeleteOutboundMessagingcampaignProgressRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Reset messaging campaign progress and recycle the messaging campaign
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteOutboundMessagingcampaignProgress(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Delete a Rule Set.
    * 
    * @param ruleSetId Rule Set ID (required)
@@ -1331,6 +1419,158 @@ public class OutboundApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteOutboundSchedulesCampaign(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Delete an email campaign schedule.
+   * 
+   * @param emailCampaignId Email Campaign ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteOutboundSchedulesEmailcampaign(String emailCampaignId) throws IOException, ApiException {
+     deleteOutboundSchedulesEmailcampaign(createDeleteOutboundSchedulesEmailcampaignRequest(emailCampaignId));
+  }
+
+  /**
+   * Delete an email campaign schedule.
+   * 
+   * @param emailCampaignId Email Campaign ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteOutboundSchedulesEmailcampaignWithHttpInfo(String emailCampaignId) throws IOException {
+    return deleteOutboundSchedulesEmailcampaign(createDeleteOutboundSchedulesEmailcampaignRequest(emailCampaignId).withHttpInfo());
+  }
+
+  private DeleteOutboundSchedulesEmailcampaignRequest createDeleteOutboundSchedulesEmailcampaignRequest(String emailCampaignId) {
+    return DeleteOutboundSchedulesEmailcampaignRequest.builder()
+            .withEmailCampaignId(emailCampaignId)
+    
+            .build();
+  }
+
+  /**
+   * Delete an email campaign schedule.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteOutboundSchedulesEmailcampaign(DeleteOutboundSchedulesEmailcampaignRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete an email campaign schedule.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteOutboundSchedulesEmailcampaign(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Delete a messaging campaign schedule.
+   * 
+   * @param messagingCampaignId Messaging Campaign ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteOutboundSchedulesMessagingcampaign(String messagingCampaignId) throws IOException, ApiException {
+     deleteOutboundSchedulesMessagingcampaign(createDeleteOutboundSchedulesMessagingcampaignRequest(messagingCampaignId));
+  }
+
+  /**
+   * Delete a messaging campaign schedule.
+   * 
+   * @param messagingCampaignId Messaging Campaign ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteOutboundSchedulesMessagingcampaignWithHttpInfo(String messagingCampaignId) throws IOException {
+    return deleteOutboundSchedulesMessagingcampaign(createDeleteOutboundSchedulesMessagingcampaignRequest(messagingCampaignId).withHttpInfo());
+  }
+
+  private DeleteOutboundSchedulesMessagingcampaignRequest createDeleteOutboundSchedulesMessagingcampaignRequest(String messagingCampaignId) {
+    return DeleteOutboundSchedulesMessagingcampaignRequest.builder()
+            .withMessagingCampaignId(messagingCampaignId)
+    
+            .build();
+  }
+
+  /**
+   * Delete a messaging campaign schedule.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteOutboundSchedulesMessagingcampaign(DeleteOutboundSchedulesMessagingcampaignRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a messaging campaign schedule.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteOutboundSchedulesMessagingcampaign(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -5680,6 +5920,314 @@ public class OutboundApi {
 
   
   /**
+   * Get an email campaign schedule.
+   * 
+   * @param emailCampaignId Email Campaign ID (required)
+   * @return EmailCampaignSchedule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EmailCampaignSchedule getOutboundSchedulesEmailcampaign(String emailCampaignId) throws IOException, ApiException {
+    return  getOutboundSchedulesEmailcampaign(createGetOutboundSchedulesEmailcampaignRequest(emailCampaignId));
+  }
+
+  /**
+   * Get an email campaign schedule.
+   * 
+   * @param emailCampaignId Email Campaign ID (required)
+   * @return EmailCampaignSchedule
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EmailCampaignSchedule> getOutboundSchedulesEmailcampaignWithHttpInfo(String emailCampaignId) throws IOException {
+    return getOutboundSchedulesEmailcampaign(createGetOutboundSchedulesEmailcampaignRequest(emailCampaignId).withHttpInfo());
+  }
+
+  private GetOutboundSchedulesEmailcampaignRequest createGetOutboundSchedulesEmailcampaignRequest(String emailCampaignId) {
+    return GetOutboundSchedulesEmailcampaignRequest.builder()
+            .withEmailCampaignId(emailCampaignId)
+    
+            .build();
+  }
+
+  /**
+   * Get an email campaign schedule.
+   * 
+   * @param request The request object
+   * @return EmailCampaignSchedule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EmailCampaignSchedule getOutboundSchedulesEmailcampaign(GetOutboundSchedulesEmailcampaignRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EmailCampaignSchedule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EmailCampaignSchedule>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get an email campaign schedule.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EmailCampaignSchedule> getOutboundSchedulesEmailcampaign(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EmailCampaignSchedule>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmailCampaignSchedule> response = (ApiResponse<EmailCampaignSchedule>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmailCampaignSchedule> response = (ApiResponse<EmailCampaignSchedule>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Query for a list of email campaign schedules.
+   * 
+   * @return MessagingCampaignScheduleEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessagingCampaignScheduleEntityListing getOutboundSchedulesEmailcampaigns() throws IOException, ApiException {
+    return  getOutboundSchedulesEmailcampaigns(createGetOutboundSchedulesEmailcampaignsRequest());
+  }
+
+  /**
+   * Query for a list of email campaign schedules.
+   * 
+   * @return MessagingCampaignScheduleEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessagingCampaignScheduleEntityListing> getOutboundSchedulesEmailcampaignsWithHttpInfo() throws IOException {
+    return getOutboundSchedulesEmailcampaigns(createGetOutboundSchedulesEmailcampaignsRequest().withHttpInfo());
+  }
+
+  private GetOutboundSchedulesEmailcampaignsRequest createGetOutboundSchedulesEmailcampaignsRequest() {
+    return GetOutboundSchedulesEmailcampaignsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Query for a list of email campaign schedules.
+   * 
+   * @param request The request object
+   * @return MessagingCampaignScheduleEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessagingCampaignScheduleEntityListing getOutboundSchedulesEmailcampaigns(GetOutboundSchedulesEmailcampaignsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MessagingCampaignScheduleEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MessagingCampaignScheduleEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for a list of email campaign schedules.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessagingCampaignScheduleEntityListing> getOutboundSchedulesEmailcampaigns(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MessagingCampaignScheduleEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessagingCampaignScheduleEntityListing> response = (ApiResponse<MessagingCampaignScheduleEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessagingCampaignScheduleEntityListing> response = (ApiResponse<MessagingCampaignScheduleEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a messaging campaign schedule.
+   * 
+   * @param messagingCampaignId Messaging Campaign ID (required)
+   * @return MessagingCampaignSchedule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessagingCampaignSchedule getOutboundSchedulesMessagingcampaign(String messagingCampaignId) throws IOException, ApiException {
+    return  getOutboundSchedulesMessagingcampaign(createGetOutboundSchedulesMessagingcampaignRequest(messagingCampaignId));
+  }
+
+  /**
+   * Get a messaging campaign schedule.
+   * 
+   * @param messagingCampaignId Messaging Campaign ID (required)
+   * @return MessagingCampaignSchedule
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessagingCampaignSchedule> getOutboundSchedulesMessagingcampaignWithHttpInfo(String messagingCampaignId) throws IOException {
+    return getOutboundSchedulesMessagingcampaign(createGetOutboundSchedulesMessagingcampaignRequest(messagingCampaignId).withHttpInfo());
+  }
+
+  private GetOutboundSchedulesMessagingcampaignRequest createGetOutboundSchedulesMessagingcampaignRequest(String messagingCampaignId) {
+    return GetOutboundSchedulesMessagingcampaignRequest.builder()
+            .withMessagingCampaignId(messagingCampaignId)
+    
+            .build();
+  }
+
+  /**
+   * Get a messaging campaign schedule.
+   * 
+   * @param request The request object
+   * @return MessagingCampaignSchedule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessagingCampaignSchedule getOutboundSchedulesMessagingcampaign(GetOutboundSchedulesMessagingcampaignRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MessagingCampaignSchedule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MessagingCampaignSchedule>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a messaging campaign schedule.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessagingCampaignSchedule> getOutboundSchedulesMessagingcampaign(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MessagingCampaignSchedule>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessagingCampaignSchedule> response = (ApiResponse<MessagingCampaignSchedule>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessagingCampaignSchedule> response = (ApiResponse<MessagingCampaignSchedule>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Query for a list of messaging campaign schedules.
+   * 
+   * @return MessagingCampaignScheduleEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessagingCampaignScheduleEntityListing getOutboundSchedulesMessagingcampaigns() throws IOException, ApiException {
+    return  getOutboundSchedulesMessagingcampaigns(createGetOutboundSchedulesMessagingcampaignsRequest());
+  }
+
+  /**
+   * Query for a list of messaging campaign schedules.
+   * 
+   * @return MessagingCampaignScheduleEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessagingCampaignScheduleEntityListing> getOutboundSchedulesMessagingcampaignsWithHttpInfo() throws IOException {
+    return getOutboundSchedulesMessagingcampaigns(createGetOutboundSchedulesMessagingcampaignsRequest().withHttpInfo());
+  }
+
+  private GetOutboundSchedulesMessagingcampaignsRequest createGetOutboundSchedulesMessagingcampaignsRequest() {
+    return GetOutboundSchedulesMessagingcampaignsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Query for a list of messaging campaign schedules.
+   * 
+   * @param request The request object
+   * @return MessagingCampaignScheduleEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessagingCampaignScheduleEntityListing getOutboundSchedulesMessagingcampaigns(GetOutboundSchedulesMessagingcampaignsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MessagingCampaignScheduleEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MessagingCampaignScheduleEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for a list of messaging campaign schedules.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessagingCampaignScheduleEntityListing> getOutboundSchedulesMessagingcampaigns(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MessagingCampaignScheduleEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessagingCampaignScheduleEntityListing> response = (ApiResponse<MessagingCampaignScheduleEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessagingCampaignScheduleEntityListing> response = (ApiResponse<MessagingCampaignScheduleEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get a dialer sequence schedule.
    * 
    * @param sequenceId Sequence ID (required)
@@ -9262,6 +9810,172 @@ public class OutboundApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<CampaignSchedule> response = (ApiResponse<CampaignSchedule>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update an email campaign schedule.
+   * 
+   * @param emailCampaignId Email Campaign ID (required)
+   * @param body EmailCampaignSchedule (required)
+   * @return EmailCampaignSchedule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EmailCampaignSchedule putOutboundSchedulesEmailcampaign(String emailCampaignId, EmailCampaignSchedule body) throws IOException, ApiException {
+    return  putOutboundSchedulesEmailcampaign(createPutOutboundSchedulesEmailcampaignRequest(emailCampaignId, body));
+  }
+
+  /**
+   * Update an email campaign schedule.
+   * 
+   * @param emailCampaignId Email Campaign ID (required)
+   * @param body EmailCampaignSchedule (required)
+   * @return EmailCampaignSchedule
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EmailCampaignSchedule> putOutboundSchedulesEmailcampaignWithHttpInfo(String emailCampaignId, EmailCampaignSchedule body) throws IOException {
+    return putOutboundSchedulesEmailcampaign(createPutOutboundSchedulesEmailcampaignRequest(emailCampaignId, body).withHttpInfo());
+  }
+
+  private PutOutboundSchedulesEmailcampaignRequest createPutOutboundSchedulesEmailcampaignRequest(String emailCampaignId, EmailCampaignSchedule body) {
+    return PutOutboundSchedulesEmailcampaignRequest.builder()
+            .withEmailCampaignId(emailCampaignId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update an email campaign schedule.
+   * 
+   * @param request The request object
+   * @return EmailCampaignSchedule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EmailCampaignSchedule putOutboundSchedulesEmailcampaign(PutOutboundSchedulesEmailcampaignRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EmailCampaignSchedule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EmailCampaignSchedule>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update an email campaign schedule.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EmailCampaignSchedule> putOutboundSchedulesEmailcampaign(ApiRequest<EmailCampaignSchedule> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EmailCampaignSchedule>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmailCampaignSchedule> response = (ApiResponse<EmailCampaignSchedule>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmailCampaignSchedule> response = (ApiResponse<EmailCampaignSchedule>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update a new messaging campaign schedule.
+   * 
+   * @param messagingCampaignId Messaging Campaign ID (required)
+   * @param body MessagingCampaignSchedule (required)
+   * @return MessagingCampaignSchedule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessagingCampaignSchedule putOutboundSchedulesMessagingcampaign(String messagingCampaignId, MessagingCampaignSchedule body) throws IOException, ApiException {
+    return  putOutboundSchedulesMessagingcampaign(createPutOutboundSchedulesMessagingcampaignRequest(messagingCampaignId, body));
+  }
+
+  /**
+   * Update a new messaging campaign schedule.
+   * 
+   * @param messagingCampaignId Messaging Campaign ID (required)
+   * @param body MessagingCampaignSchedule (required)
+   * @return MessagingCampaignSchedule
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessagingCampaignSchedule> putOutboundSchedulesMessagingcampaignWithHttpInfo(String messagingCampaignId, MessagingCampaignSchedule body) throws IOException {
+    return putOutboundSchedulesMessagingcampaign(createPutOutboundSchedulesMessagingcampaignRequest(messagingCampaignId, body).withHttpInfo());
+  }
+
+  private PutOutboundSchedulesMessagingcampaignRequest createPutOutboundSchedulesMessagingcampaignRequest(String messagingCampaignId, MessagingCampaignSchedule body) {
+    return PutOutboundSchedulesMessagingcampaignRequest.builder()
+            .withMessagingCampaignId(messagingCampaignId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update a new messaging campaign schedule.
+   * 
+   * @param request The request object
+   * @return MessagingCampaignSchedule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessagingCampaignSchedule putOutboundSchedulesMessagingcampaign(PutOutboundSchedulesMessagingcampaignRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MessagingCampaignSchedule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MessagingCampaignSchedule>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a new messaging campaign schedule.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessagingCampaignSchedule> putOutboundSchedulesMessagingcampaign(ApiRequest<MessagingCampaignSchedule> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MessagingCampaignSchedule>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessagingCampaignSchedule> response = (ApiResponse<MessagingCampaignSchedule>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessagingCampaignSchedule> response = (ApiResponse<MessagingCampaignSchedule>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

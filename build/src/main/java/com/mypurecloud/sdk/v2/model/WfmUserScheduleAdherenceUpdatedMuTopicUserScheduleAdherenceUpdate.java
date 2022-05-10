@@ -13,6 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WfmUserScheduleAdherenceUpdatedMuTopicActivityCodeReference;
 import com.mypurecloud.sdk.v2.model.WfmUserScheduleAdherenceUpdatedMuTopicQueueReference;
+import com.mypurecloud.sdk.v2.model.WfmUserScheduleAdherenceUpdatedMuTopicRealTimeAdherenceExplanation;
 import com.mypurecloud.sdk.v2.model.WfmUserScheduleAdherenceUpdatedMuTopicUriReference;
 import com.mypurecloud.sdk.v2.model.WfmUserScheduleAdherenceUpdatedMuTopicUserReference;
 import io.swagger.annotations.ApiModel;
@@ -113,7 +114,8 @@ public class WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate  
     OUTOFADHERENCE("OutOfAdherence"),
     UNSCHEDULED("Unscheduled"),
     UNKNOWN("Unknown"),
-    IGNORED("Ignored");
+    IGNORED("Ignored"),
+    EXPLAINED("Explained");
 
     private String value;
 
@@ -142,6 +144,7 @@ public class WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate  
   }
   private AdherenceStateEnum adherenceState = null;
   private String impact = null;
+  private WfmUserScheduleAdherenceUpdatedMuTopicRealTimeAdherenceExplanation adherenceExplanation = null;
   private Date adherenceChangeTime = null;
   private Date presenceUpdateTime = null;
   private List<WfmUserScheduleAdherenceUpdatedMuTopicQueueReference> activeQueues = new ArrayList<WfmUserScheduleAdherenceUpdatedMuTopicQueueReference>();
@@ -355,6 +358,23 @@ public class WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate  
   
   /**
    **/
+  public WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate adherenceExplanation(WfmUserScheduleAdherenceUpdatedMuTopicRealTimeAdherenceExplanation adherenceExplanation) {
+    this.adherenceExplanation = adherenceExplanation;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("adherenceExplanation")
+  public WfmUserScheduleAdherenceUpdatedMuTopicRealTimeAdherenceExplanation getAdherenceExplanation() {
+    return adherenceExplanation;
+  }
+  public void setAdherenceExplanation(WfmUserScheduleAdherenceUpdatedMuTopicRealTimeAdherenceExplanation adherenceExplanation) {
+    this.adherenceExplanation = adherenceExplanation;
+  }
+
+  
+  /**
+   **/
   public WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate adherenceChangeTime(Date adherenceChangeTime) {
     this.adherenceChangeTime = adherenceChangeTime;
     return this;
@@ -460,6 +480,7 @@ public class WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate  
         Objects.equals(this.isOutOfOffice, wfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate.isOutOfOffice) &&
         Objects.equals(this.adherenceState, wfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate.adherenceState) &&
         Objects.equals(this.impact, wfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate.impact) &&
+        Objects.equals(this.adherenceExplanation, wfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate.adherenceExplanation) &&
         Objects.equals(this.adherenceChangeTime, wfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate.adherenceChangeTime) &&
         Objects.equals(this.presenceUpdateTime, wfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate.presenceUpdateTime) &&
         Objects.equals(this.activeQueues, wfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate.activeQueues) &&
@@ -469,7 +490,7 @@ public class WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate  
 
   @Override
   public int hashCode() {
-    return Objects.hash(user, managementUnitId, team, scheduledActivityCategory, scheduledActivityCode, systemPresence, organizationSecondaryPresenceId, routingStatus, actualActivityCategory, isOutOfOffice, adherenceState, impact, adherenceChangeTime, presenceUpdateTime, activeQueues, activeQueuesModifiedTime, removedFromManagementUnit);
+    return Objects.hash(user, managementUnitId, team, scheduledActivityCategory, scheduledActivityCode, systemPresence, organizationSecondaryPresenceId, routingStatus, actualActivityCategory, isOutOfOffice, adherenceState, impact, adherenceExplanation, adherenceChangeTime, presenceUpdateTime, activeQueues, activeQueuesModifiedTime, removedFromManagementUnit);
   }
 
   @Override
@@ -489,6 +510,7 @@ public class WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate  
     sb.append("    isOutOfOffice: ").append(toIndentedString(isOutOfOffice)).append("\n");
     sb.append("    adherenceState: ").append(toIndentedString(adherenceState)).append("\n");
     sb.append("    impact: ").append(toIndentedString(impact)).append("\n");
+    sb.append("    adherenceExplanation: ").append(toIndentedString(adherenceExplanation)).append("\n");
     sb.append("    adherenceChangeTime: ").append(toIndentedString(adherenceChangeTime)).append("\n");
     sb.append("    presenceUpdateTime: ").append(toIndentedString(presenceUpdateTime)).append("\n");
     sb.append("    activeQueues: ").append(toIndentedString(activeQueues)).append("\n");

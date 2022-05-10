@@ -272,6 +272,7 @@ title: ViewFilter
 | OUTBOUNDCALL | &quot;outboundcall&quot; |
 | SECURECALL | &quot;securecall&quot; |
 | SURVEYINVITE | &quot;surveyinvite&quot; |
+| VOICE | &quot;voice&quot; |
 | VOICEMAIL | &quot;voicemail&quot; |
 | WORKFLOW | &quot;workflow&quot; |
 | WORKITEM | &quot;workitem&quot; |
@@ -386,6 +387,7 @@ title: ViewFilter
 | INVALIDSCHEDULE | &quot;InvalidSchedule&quot; |
 | INPROGRESS | &quot;InProgress&quot; |
 | COMPLETED | &quot;Completed&quot; |
+| NOTCOMPLETED | &quot;NotCompleted&quot; |
 {: class="table table-striped"}
 
 
@@ -442,6 +444,9 @@ title: ViewFilter
 | NUANCEDLG | &quot;NuanceDlg&quot; |
 | GOOGLEDIALOGFLOWCX | &quot;GoogleDialogFlowCx&quot; |
 | GENESYSBYOB | &quot;GenesysByob&quot; |
+| AMAZONLEXV2 | &quot;AmazonLexV2&quot; |
+| GOOGLEDIALOGFLOWCXRESELL | &quot;GoogleDialogFlowCxResell&quot; |
+| MICROSOFTSTTBOTFLOW | &quot;MicrosoftSttBotFlow&quot; |
 {: class="table table-striped"}
 
 

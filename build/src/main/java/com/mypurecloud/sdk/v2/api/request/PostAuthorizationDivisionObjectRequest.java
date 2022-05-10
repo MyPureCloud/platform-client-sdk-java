@@ -76,7 +76,8 @@ public class PostAuthorizationDivisionObjectRequest {
 		WORKBIN("WORKBIN"), 
 		WORKTYPE("WORKTYPE"), 
 		EXTENSIONPOOL("EXTENSIONPOOL"), 
-		SKILLGROUP("SKILLGROUP");
+		SKILLGROUP("SKILLGROUP"), 
+		SCRIPT("SCRIPT");
 
 		private String value;
 

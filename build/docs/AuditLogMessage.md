@@ -19,6 +19,7 @@ title: AuditLogMessage
 | **action** | [**ActionEnum**](#ActionEnum)<!----> | Action that took place. |  [optional] |
 | **entity** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | Entity that was impacted. |  [optional] |
 | **entityType** | [**EntityTypeEnum**](#EntityTypeEnum)<!----> | Type of the entity that was impacted. |  [optional] |
+| **status** | [**StatusEnum**](#StatusEnum)<!----> | Status of the event being audited |  [optional] |
 | **propertyChanges** | <!----><!---->[**List&lt;PropertyChange&gt;**](PropertyChange.html)<!----> | List of properties that were changed and changes made to those properties. |  [optional] |
 | **context** | <!----><!---->**Map&lt;String, String&gt;**<!----> | Additional context for this message. |  [optional] |
 {: class="table table-striped"}
@@ -67,6 +68,7 @@ title: AuditLogMessage
 | CALLBACK | &quot;Callback&quot; |
 | WORKITEMS | &quot;Workitems&quot; |
 | SCIM | &quot;SCIM&quot; |
+| NUMBERPURCHASING | &quot;NumberPurchasing&quot; |
 {: class="table table-striped"}
 
 
@@ -330,6 +332,19 @@ title: AuditLogMessage
 | WRAPUPCODE | &quot;WrapupCode&quot; |
 | WRAPUPCODEMAPPING | &quot;WrapUpCodeMapping&quot; |
 | PARTICIPANT | &quot;Participant&quot; |
+{: class="table table-striped"}
+
+
+<a name="StatusEnum"></a>
+
+## Enum: StatusEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| SUCCESS | &quot;SUCCESS&quot; |
+| FAILURE | &quot;FAILURE&quot; |
+| WARNING | &quot;WARNING&quot; |
 {: class="table table-striped"}
 
 

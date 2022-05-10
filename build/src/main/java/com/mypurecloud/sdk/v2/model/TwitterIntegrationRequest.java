@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.MessagingSettingReference;
 import com.mypurecloud.sdk.v2.model.SupportedContentReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -25,6 +26,7 @@ public class TwitterIntegrationRequest  implements Serializable {
   private String id = null;
   private String name = null;
   private SupportedContentReference supportedContent = null;
+  private MessagingSettingReference messagingSetting = null;
   private String accessTokenKey = null;
   private String accessTokenSecret = null;
   private String consumerKey = null;
@@ -121,6 +123,23 @@ public class TwitterIntegrationRequest  implements Serializable {
   }
   public void setSupportedContent(SupportedContentReference supportedContent) {
     this.supportedContent = supportedContent;
+  }
+
+  
+  /**
+   **/
+  public TwitterIntegrationRequest messagingSetting(MessagingSettingReference messagingSetting) {
+    this.messagingSetting = messagingSetting;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("messagingSetting")
+  public MessagingSettingReference getMessagingSetting() {
+    return messagingSetting;
+  }
+  public void setMessagingSetting(MessagingSettingReference messagingSetting) {
+    this.messagingSetting = messagingSetting;
   }
 
   
@@ -252,6 +271,7 @@ public class TwitterIntegrationRequest  implements Serializable {
     return Objects.equals(this.id, twitterIntegrationRequest.id) &&
         Objects.equals(this.name, twitterIntegrationRequest.name) &&
         Objects.equals(this.supportedContent, twitterIntegrationRequest.supportedContent) &&
+        Objects.equals(this.messagingSetting, twitterIntegrationRequest.messagingSetting) &&
         Objects.equals(this.accessTokenKey, twitterIntegrationRequest.accessTokenKey) &&
         Objects.equals(this.accessTokenSecret, twitterIntegrationRequest.accessTokenSecret) &&
         Objects.equals(this.consumerKey, twitterIntegrationRequest.consumerKey) &&
@@ -263,7 +283,7 @@ public class TwitterIntegrationRequest  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, supportedContent, accessTokenKey, accessTokenSecret, consumerKey, consumerSecret, tier, envName, selfUri);
+    return Objects.hash(id, name, supportedContent, messagingSetting, accessTokenKey, accessTokenSecret, consumerKey, consumerSecret, tier, envName, selfUri);
   }
 
   @Override
@@ -274,6 +294,7 @@ public class TwitterIntegrationRequest  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    supportedContent: ").append(toIndentedString(supportedContent)).append("\n");
+    sb.append("    messagingSetting: ").append(toIndentedString(messagingSetting)).append("\n");
     sb.append("    accessTokenKey: ").append(toIndentedString(accessTokenKey)).append("\n");
     sb.append("    accessTokenSecret: ").append(toIndentedString(accessTokenSecret)).append("\n");
     sb.append("    consumerKey: ").append(toIndentedString(consumerKey)).append("\n");

@@ -14,6 +14,7 @@ title: LearningModuleRequest
 | **informSteps** | <!----><!---->[**List&lt;LearningModuleInformStepRequest&gt;**](LearningModuleInformStepRequest.html)<!----> | The list of inform steps in a learning module |  [optional] |
 | **type** | [**TypeEnum**](#TypeEnum)<!----> | The type for the learning module |  [optional] |
 | **assessmentForm** | <!----><!---->[**AssessmentForm**](AssessmentForm.html)<!----> | The assessment form for learning module |  [optional] |
+| **coverArt** | <!----><!---->[**LearningModuleCoverArtRequest**](LearningModuleCoverArtRequest.html)<!----> | The cover art for the learning module |  [optional] |
 {: class="table table-striped"}
 
 

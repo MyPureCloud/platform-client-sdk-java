@@ -12,7 +12,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Calibration;
-import com.mypurecloud.sdk.v2.model.Conversation;
+import com.mypurecloud.sdk.v2.model.ConversationReference;
 import com.mypurecloud.sdk.v2.model.EvaluationForm;
 import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.Queue;
@@ -32,7 +32,7 @@ public class Evaluation  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private Conversation conversation = null;
+  private ConversationReference conversation = null;
   private EvaluationForm evaluationForm = null;
   private User evaluator = null;
   private User agent = null;
@@ -230,17 +230,17 @@ public class Evaluation  implements Serializable {
   
   /**
    **/
-  public Evaluation conversation(Conversation conversation) {
+  public Evaluation conversation(ConversationReference conversation) {
     this.conversation = conversation;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("conversation")
-  public Conversation getConversation() {
+  public ConversationReference getConversation() {
     return conversation;
   }
-  public void setConversation(Conversation conversation) {
+  public void setConversation(ConversationReference conversation) {
     this.conversation = conversation;
   }
 

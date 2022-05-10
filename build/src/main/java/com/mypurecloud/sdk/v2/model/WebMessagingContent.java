@@ -11,6 +11,8 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ContentCard;
+import com.mypurecloud.sdk.v2.model.ContentCarousel;
 import com.mypurecloud.sdk.v2.model.WebMessagingAttachment;
 import com.mypurecloud.sdk.v2.model.WebMessagingButtonResponse;
 import com.mypurecloud.sdk.v2.model.WebMessagingGeneric;
@@ -48,7 +50,9 @@ public class WebMessagingContent  implements Serializable {
     ATTACHMENT("Attachment"),
     QUICKREPLY("QuickReply"),
     BUTTONRESPONSE("ButtonResponse"),
-    GENERICTEMPLATE("GenericTemplate");
+    GENERICTEMPLATE("GenericTemplate"),
+    CARD("Card"),
+    CAROUSEL("Carousel");
 
     private String value;
 
@@ -80,6 +84,8 @@ public class WebMessagingContent  implements Serializable {
   private WebMessagingQuickReply quickReply = null;
   private WebMessagingButtonResponse buttonResponse = null;
   private WebMessagingGeneric generic = null;
+  private ContentCard card = null;
+  private ContentCarousel carousel = null;
 
   
   @ApiModelProperty(example = "null", value = "Type of this content element. If contentType = \"Attachment\" only one item is allowed.")
@@ -150,6 +156,42 @@ public class WebMessagingContent  implements Serializable {
   }
 
   
+  /**
+   * Card content
+   **/
+  public WebMessagingContent card(ContentCard card) {
+    this.card = card;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Card content")
+  @JsonProperty("card")
+  public ContentCard getCard() {
+    return card;
+  }
+  public void setCard(ContentCard card) {
+    this.card = card;
+  }
+
+  
+  /**
+   * Carousel content
+   **/
+  public WebMessagingContent carousel(ContentCarousel carousel) {
+    this.carousel = carousel;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Carousel content")
+  @JsonProperty("carousel")
+  public ContentCarousel getCarousel() {
+    return carousel;
+  }
+  public void setCarousel(ContentCarousel carousel) {
+    this.carousel = carousel;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -164,12 +206,14 @@ public class WebMessagingContent  implements Serializable {
         Objects.equals(this.attachment, webMessagingContent.attachment) &&
         Objects.equals(this.quickReply, webMessagingContent.quickReply) &&
         Objects.equals(this.buttonResponse, webMessagingContent.buttonResponse) &&
-        Objects.equals(this.generic, webMessagingContent.generic);
+        Objects.equals(this.generic, webMessagingContent.generic) &&
+        Objects.equals(this.card, webMessagingContent.card) &&
+        Objects.equals(this.carousel, webMessagingContent.carousel);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(contentType, attachment, quickReply, buttonResponse, generic);
+    return Objects.hash(contentType, attachment, quickReply, buttonResponse, generic, card, carousel);
   }
 
   @Override
@@ -182,6 +226,8 @@ public class WebMessagingContent  implements Serializable {
     sb.append("    quickReply: ").append(toIndentedString(quickReply)).append("\n");
     sb.append("    buttonResponse: ").append(toIndentedString(buttonResponse)).append("\n");
     sb.append("    generic: ").append(toIndentedString(generic)).append("\n");
+    sb.append("    card: ").append(toIndentedString(card)).append("\n");
+    sb.append("    carousel: ").append(toIndentedString(carousel)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -19,9 +19,9 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * Generic content object.
+ * Deprecated, should use Card.
  */
-@ApiModel(description = "Generic content object.")
+@ApiModel(description = "Deprecated, should use Card.")
 
 public class ContentGeneric  implements Serializable {
   
@@ -106,14 +106,14 @@ public class ContentGeneric  implements Serializable {
 
   
   /**
-   * Actions to be taken.
+   * Actions to be taken (Deprecated).
    **/
   public ContentGeneric actions(ContentActions actions) {
     this.actions = actions;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Actions to be taken.")
+  @ApiModelProperty(example = "null", value = "Actions to be taken (Deprecated).")
   @JsonProperty("actions")
   public ContentActions getActions() {
     return actions;

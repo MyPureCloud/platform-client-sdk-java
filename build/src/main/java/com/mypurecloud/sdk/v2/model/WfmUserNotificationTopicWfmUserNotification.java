@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.WfmUserNotificationTopicAdherenceExplanationNotification;
 import com.mypurecloud.sdk.v2.model.WfmUserNotificationTopicShiftTradeNotification;
 import com.mypurecloud.sdk.v2.model.WfmUserNotificationTopicTimeOffRequestNotification;
 import io.swagger.annotations.ApiModel;
@@ -49,7 +50,8 @@ public class WfmUserNotificationTopicWfmUserNotification  implements Serializabl
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     SHIFTTRADE("ShiftTrade"),
-    TIMEOFFREQUEST("TimeOffRequest");
+    TIMEOFFREQUEST("TimeOffRequest"),
+    ADHERENCEEXPLANATION("AdherenceExplanation");
 
     private String value;
 
@@ -79,6 +81,7 @@ public class WfmUserNotificationTopicWfmUserNotification  implements Serializabl
   private TypeEnum type = null;
   private WfmUserNotificationTopicShiftTradeNotification shiftTrade = null;
   private WfmUserNotificationTopicTimeOffRequestNotification timeOffRequest = null;
+  private WfmUserNotificationTopicAdherenceExplanationNotification adherenceExplanation = null;
   private Boolean agentNotification = null;
   private List<String> otherNotificationIdsInGroup = new ArrayList<String>();
   private Boolean markedAsRead = null;
@@ -188,6 +191,23 @@ public class WfmUserNotificationTopicWfmUserNotification  implements Serializabl
   
   /**
    **/
+  public WfmUserNotificationTopicWfmUserNotification adherenceExplanation(WfmUserNotificationTopicAdherenceExplanationNotification adherenceExplanation) {
+    this.adherenceExplanation = adherenceExplanation;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("adherenceExplanation")
+  public WfmUserNotificationTopicAdherenceExplanationNotification getAdherenceExplanation() {
+    return adherenceExplanation;
+  }
+  public void setAdherenceExplanation(WfmUserNotificationTopicAdherenceExplanationNotification adherenceExplanation) {
+    this.adherenceExplanation = adherenceExplanation;
+  }
+
+  
+  /**
+   **/
   public WfmUserNotificationTopicWfmUserNotification agentNotification(Boolean agentNotification) {
     this.agentNotification = agentNotification;
     return this;
@@ -253,6 +273,7 @@ public class WfmUserNotificationTopicWfmUserNotification  implements Serializabl
         Objects.equals(this.type, wfmUserNotificationTopicWfmUserNotification.type) &&
         Objects.equals(this.shiftTrade, wfmUserNotificationTopicWfmUserNotification.shiftTrade) &&
         Objects.equals(this.timeOffRequest, wfmUserNotificationTopicWfmUserNotification.timeOffRequest) &&
+        Objects.equals(this.adherenceExplanation, wfmUserNotificationTopicWfmUserNotification.adherenceExplanation) &&
         Objects.equals(this.agentNotification, wfmUserNotificationTopicWfmUserNotification.agentNotification) &&
         Objects.equals(this.otherNotificationIdsInGroup, wfmUserNotificationTopicWfmUserNotification.otherNotificationIdsInGroup) &&
         Objects.equals(this.markedAsRead, wfmUserNotificationTopicWfmUserNotification.markedAsRead);
@@ -260,7 +281,7 @@ public class WfmUserNotificationTopicWfmUserNotification  implements Serializabl
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, mutableGroupId, timestamp, type, shiftTrade, timeOffRequest, agentNotification, otherNotificationIdsInGroup, markedAsRead);
+    return Objects.hash(id, mutableGroupId, timestamp, type, shiftTrade, timeOffRequest, adherenceExplanation, agentNotification, otherNotificationIdsInGroup, markedAsRead);
   }
 
   @Override
@@ -274,6 +295,7 @@ public class WfmUserNotificationTopicWfmUserNotification  implements Serializabl
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    shiftTrade: ").append(toIndentedString(shiftTrade)).append("\n");
     sb.append("    timeOffRequest: ").append(toIndentedString(timeOffRequest)).append("\n");
+    sb.append("    adherenceExplanation: ").append(toIndentedString(adherenceExplanation)).append("\n");
     sb.append("    agentNotification: ").append(toIndentedString(agentNotification)).append("\n");
     sb.append("    otherNotificationIdsInGroup: ").append(toIndentedString(otherNotificationIdsInGroup)).append("\n");
     sb.append("    markedAsRead: ").append(toIndentedString(markedAsRead)).append("\n");

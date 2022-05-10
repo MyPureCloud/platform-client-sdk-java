@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.MessageMedia;
 import com.mypurecloud.sdk.v2.model.MessageSticker;
 import io.swagger.annotations.ApiModel;
@@ -85,6 +86,7 @@ public class MessageDetails  implements Serializable {
   private Date messageTime = null;
   private List<MessageMedia> media = new ArrayList<MessageMedia>();
   private List<MessageSticker> stickers = new ArrayList<MessageSticker>();
+  private ErrorBody errorInfo = null;
 
   
   /**
@@ -213,6 +215,24 @@ public class MessageDetails  implements Serializable {
   }
 
   
+  /**
+   * Provider specific error information for a communication.
+   **/
+  public MessageDetails errorInfo(ErrorBody errorInfo) {
+    this.errorInfo = errorInfo;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Provider specific error information for a communication.")
+  @JsonProperty("errorInfo")
+  public ErrorBody getErrorInfo() {
+    return errorInfo;
+  }
+  public void setErrorInfo(ErrorBody errorInfo) {
+    this.errorInfo = errorInfo;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -229,12 +249,13 @@ public class MessageDetails  implements Serializable {
         Objects.equals(this.messageSegmentCount, messageDetails.messageSegmentCount) &&
         Objects.equals(this.messageTime, messageDetails.messageTime) &&
         Objects.equals(this.media, messageDetails.media) &&
-        Objects.equals(this.stickers, messageDetails.stickers);
+        Objects.equals(this.stickers, messageDetails.stickers) &&
+        Objects.equals(this.errorInfo, messageDetails.errorInfo);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(messageId, messageURI, messageStatus, messageSegmentCount, messageTime, media, stickers);
+    return Objects.hash(messageId, messageURI, messageStatus, messageSegmentCount, messageTime, media, stickers, errorInfo);
   }
 
   @Override
@@ -249,6 +270,7 @@ public class MessageDetails  implements Serializable {
     sb.append("    messageTime: ").append(toIndentedString(messageTime)).append("\n");
     sb.append("    media: ").append(toIndentedString(media)).append("\n");
     sb.append("    stickers: ").append(toIndentedString(stickers)).append("\n");
+    sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
     sb.append("}");
     return sb.toString();
   }

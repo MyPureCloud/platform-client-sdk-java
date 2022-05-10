@@ -20,8 +20,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteOutboundContactlists**](OutboundApi.html#deleteOutboundContactlists) | Delete multiple contact lists. |
 | [**deleteOutboundDnclist**](OutboundApi.html#deleteOutboundDnclist) | Delete dialer DNC list |
 | [**deleteOutboundMessagingcampaign**](OutboundApi.html#deleteOutboundMessagingcampaign) | Delete an Outbound Messaging Campaign |
+| [**deleteOutboundMessagingcampaignProgress**](OutboundApi.html#deleteOutboundMessagingcampaignProgress) | Reset messaging campaign progress and recycle the messaging campaign |
 | [**deleteOutboundRuleset**](OutboundApi.html#deleteOutboundRuleset) | Delete a Rule Set. |
 | [**deleteOutboundSchedulesCampaign**](OutboundApi.html#deleteOutboundSchedulesCampaign) | Delete a dialer campaign schedule. |
+| [**deleteOutboundSchedulesEmailcampaign**](OutboundApi.html#deleteOutboundSchedulesEmailcampaign) | Delete an email campaign schedule. |
+| [**deleteOutboundSchedulesMessagingcampaign**](OutboundApi.html#deleteOutboundSchedulesMessagingcampaign) | Delete a messaging campaign schedule. |
 | [**deleteOutboundSchedulesSequence**](OutboundApi.html#deleteOutboundSchedulesSequence) | Delete a dialer sequence schedule. |
 | [**deleteOutboundSequence**](OutboundApi.html#deleteOutboundSequence) | Delete a dialer campaign sequence. |
 | [**getOutboundAttemptlimit**](OutboundApi.html#getOutboundAttemptlimit) | Get attempt limits |
@@ -70,6 +73,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getOutboundRulesets**](OutboundApi.html#getOutboundRulesets) | Query a list of Rule Sets. |
 | [**getOutboundSchedulesCampaign**](OutboundApi.html#getOutboundSchedulesCampaign) | Get a dialer campaign schedule. |
 | [**getOutboundSchedulesCampaigns**](OutboundApi.html#getOutboundSchedulesCampaigns) | Query for a list of dialer campaign schedules. |
+| [**getOutboundSchedulesEmailcampaign**](OutboundApi.html#getOutboundSchedulesEmailcampaign) | Get an email campaign schedule. |
+| [**getOutboundSchedulesEmailcampaigns**](OutboundApi.html#getOutboundSchedulesEmailcampaigns) | Query for a list of email campaign schedules. |
+| [**getOutboundSchedulesMessagingcampaign**](OutboundApi.html#getOutboundSchedulesMessagingcampaign) | Get a messaging campaign schedule. |
+| [**getOutboundSchedulesMessagingcampaigns**](OutboundApi.html#getOutboundSchedulesMessagingcampaigns) | Query for a list of messaging campaign schedules. |
 | [**getOutboundSchedulesSequence**](OutboundApi.html#getOutboundSchedulesSequence) | Get a dialer sequence schedule. |
 | [**getOutboundSchedulesSequences**](OutboundApi.html#getOutboundSchedulesSequences) | Query for a list of dialer sequence schedules. |
 | [**getOutboundSequence**](OutboundApi.html#getOutboundSequence) | Get a dialer campaign sequence. |
@@ -114,6 +121,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putOutboundMessagingcampaign**](OutboundApi.html#putOutboundMessagingcampaign) | Update an Outbound Messaging Campaign |
 | [**putOutboundRuleset**](OutboundApi.html#putOutboundRuleset) | Update a Rule Set. |
 | [**putOutboundSchedulesCampaign**](OutboundApi.html#putOutboundSchedulesCampaign) | Update a new campaign schedule. |
+| [**putOutboundSchedulesEmailcampaign**](OutboundApi.html#putOutboundSchedulesEmailcampaign) | Update an email campaign schedule. |
+| [**putOutboundSchedulesMessagingcampaign**](OutboundApi.html#putOutboundSchedulesMessagingcampaign) | Update a new messaging campaign schedule. |
 | [**putOutboundSchedulesSequence**](OutboundApi.html#putOutboundSchedulesSequence) | Update a new sequence schedule. |
 | [**putOutboundSequence**](OutboundApi.html#putOutboundSequence) | Update a new campaign sequence. |
 | [**putOutboundWrapupcodemappings**](OutboundApi.html#putOutboundWrapupcodemappings) | Update the Dialer wrap up code mapping. |
@@ -932,6 +941,69 @@ try {
 
 [**MessagingCampaign**](MessagingCampaign.html)
 
+<a name="deleteOutboundMessagingcampaignProgress"></a>
+
+# **deleteOutboundMessagingcampaignProgress**
+
+
+
+> Void deleteOutboundMessagingcampaignProgress(messagingCampaignId)
+
+Reset messaging campaign progress and recycle the messaging campaign
+
+
+
+Wraps DELETE /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress  
+
+Requires ANY permissions: 
+
+* outbound:messagingCampaign:edit
+* outbound:emailCampaign:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String messagingCampaignId = "messagingCampaignId_example"; // String | The Messaging Campaign ID
+try {
+    apiInstance.deleteOutboundMessagingcampaignProgress(messagingCampaignId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#deleteOutboundMessagingcampaignProgress");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **messagingCampaignId** | **String**| The Messaging Campaign ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
 <a name="deleteOutboundRuleset"></a>
 
 # **deleteOutboundRuleset**
@@ -1049,6 +1121,130 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **campaignId** | **String**| Campaign ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteOutboundSchedulesEmailcampaign"></a>
+
+# **deleteOutboundSchedulesEmailcampaign**
+
+
+
+> Void deleteOutboundSchedulesEmailcampaign(emailCampaignId)
+
+Delete an email campaign schedule.
+
+
+
+Wraps DELETE /api/v2/outbound/schedules/emailcampaigns/{emailCampaignId}  
+
+Requires ANY permissions: 
+
+* outbound:emailCampaignSchedule:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String emailCampaignId = "emailCampaignId_example"; // String | Email Campaign ID
+try {
+    apiInstance.deleteOutboundSchedulesEmailcampaign(emailCampaignId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#deleteOutboundSchedulesEmailcampaign");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **emailCampaignId** | **String**| Email Campaign ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteOutboundSchedulesMessagingcampaign"></a>
+
+# **deleteOutboundSchedulesMessagingcampaign**
+
+
+
+> Void deleteOutboundSchedulesMessagingcampaign(messagingCampaignId)
+
+Delete a messaging campaign schedule.
+
+
+
+Wraps DELETE /api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}  
+
+Requires ANY permissions: 
+
+* outbound:messagingCampaignSchedule:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String messagingCampaignId = "messagingCampaignId_example"; // String | Messaging Campaign ID
+try {
+    apiInstance.deleteOutboundSchedulesMessagingcampaign(messagingCampaignId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#deleteOutboundSchedulesMessagingcampaign");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **messagingCampaignId** | **String**| Messaging Campaign ID | 
 {: class="table-striped"}
 
 
@@ -4359,6 +4555,250 @@ This endpoint does not require any parameters.
 
 [**List&lt;CampaignSchedule&gt;**](CampaignSchedule.html)
 
+<a name="getOutboundSchedulesEmailcampaign"></a>
+
+# **getOutboundSchedulesEmailcampaign**
+
+
+
+> [EmailCampaignSchedule](EmailCampaignSchedule.html) getOutboundSchedulesEmailcampaign(emailCampaignId)
+
+Get an email campaign schedule.
+
+
+
+Wraps GET /api/v2/outbound/schedules/emailcampaigns/{emailCampaignId}  
+
+Requires ANY permissions: 
+
+* outbound:emailCampaignSchedule:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String emailCampaignId = "emailCampaignId_example"; // String | Email Campaign ID
+try {
+    EmailCampaignSchedule result = apiInstance.getOutboundSchedulesEmailcampaign(emailCampaignId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#getOutboundSchedulesEmailcampaign");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **emailCampaignId** | **String**| Email Campaign ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**EmailCampaignSchedule**](EmailCampaignSchedule.html)
+
+<a name="getOutboundSchedulesEmailcampaigns"></a>
+
+# **getOutboundSchedulesEmailcampaigns**
+
+
+
+> [MessagingCampaignScheduleEntityListing](MessagingCampaignScheduleEntityListing.html) getOutboundSchedulesEmailcampaigns()
+
+Query for a list of email campaign schedules.
+
+
+
+Wraps GET /api/v2/outbound/schedules/emailcampaigns  
+
+Requires ANY permissions: 
+
+* outbound:emailCampaignSchedule:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+try {
+    MessagingCampaignScheduleEntityListing result = apiInstance.getOutboundSchedulesEmailcampaigns();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#getOutboundSchedulesEmailcampaigns");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**MessagingCampaignScheduleEntityListing**](MessagingCampaignScheduleEntityListing.html)
+
+<a name="getOutboundSchedulesMessagingcampaign"></a>
+
+# **getOutboundSchedulesMessagingcampaign**
+
+
+
+> [MessagingCampaignSchedule](MessagingCampaignSchedule.html) getOutboundSchedulesMessagingcampaign(messagingCampaignId)
+
+Get a messaging campaign schedule.
+
+
+
+Wraps GET /api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}  
+
+Requires ANY permissions: 
+
+* outbound:messagingCampaignSchedule:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String messagingCampaignId = "messagingCampaignId_example"; // String | Messaging Campaign ID
+try {
+    MessagingCampaignSchedule result = apiInstance.getOutboundSchedulesMessagingcampaign(messagingCampaignId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#getOutboundSchedulesMessagingcampaign");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **messagingCampaignId** | **String**| Messaging Campaign ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**MessagingCampaignSchedule**](MessagingCampaignSchedule.html)
+
+<a name="getOutboundSchedulesMessagingcampaigns"></a>
+
+# **getOutboundSchedulesMessagingcampaigns**
+
+
+
+> [MessagingCampaignScheduleEntityListing](MessagingCampaignScheduleEntityListing.html) getOutboundSchedulesMessagingcampaigns()
+
+Query for a list of messaging campaign schedules.
+
+
+
+Wraps GET /api/v2/outbound/schedules/messagingcampaigns  
+
+Requires ANY permissions: 
+
+* outbound:messagingCampaignSchedule:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+try {
+    MessagingCampaignScheduleEntityListing result = apiInstance.getOutboundSchedulesMessagingcampaigns();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#getOutboundSchedulesMessagingcampaigns");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**MessagingCampaignScheduleEntityListing**](MessagingCampaignScheduleEntityListing.html)
+
 <a name="getOutboundSchedulesSequence"></a>
 
 # **getOutboundSchedulesSequence**
@@ -7187,6 +7627,136 @@ try {
 ### Return type
 
 [**CampaignSchedule**](CampaignSchedule.html)
+
+<a name="putOutboundSchedulesEmailcampaign"></a>
+
+# **putOutboundSchedulesEmailcampaign**
+
+
+
+> [EmailCampaignSchedule](EmailCampaignSchedule.html) putOutboundSchedulesEmailcampaign(emailCampaignId, body)
+
+Update an email campaign schedule.
+
+
+
+Wraps PUT /api/v2/outbound/schedules/emailcampaigns/{emailCampaignId}  
+
+Requires ANY permissions: 
+
+* outbound:emailCampaignSchedule:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String emailCampaignId = "emailCampaignId_example"; // String | Email Campaign ID
+EmailCampaignSchedule body = new EmailCampaignSchedule(); // EmailCampaignSchedule | EmailCampaignSchedule
+try {
+    EmailCampaignSchedule result = apiInstance.putOutboundSchedulesEmailcampaign(emailCampaignId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#putOutboundSchedulesEmailcampaign");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **emailCampaignId** | **String**| Email Campaign ID | 
+| **body** | [**EmailCampaignSchedule**](EmailCampaignSchedule.html)| EmailCampaignSchedule | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**EmailCampaignSchedule**](EmailCampaignSchedule.html)
+
+<a name="putOutboundSchedulesMessagingcampaign"></a>
+
+# **putOutboundSchedulesMessagingcampaign**
+
+
+
+> [MessagingCampaignSchedule](MessagingCampaignSchedule.html) putOutboundSchedulesMessagingcampaign(messagingCampaignId, body)
+
+Update a new messaging campaign schedule.
+
+
+
+Wraps PUT /api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}  
+
+Requires ANY permissions: 
+
+* outbound:messagingCampaignSchedule:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String messagingCampaignId = "messagingCampaignId_example"; // String | Messaging Campaign ID
+MessagingCampaignSchedule body = new MessagingCampaignSchedule(); // MessagingCampaignSchedule | MessagingCampaignSchedule
+try {
+    MessagingCampaignSchedule result = apiInstance.putOutboundSchedulesMessagingcampaign(messagingCampaignId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#putOutboundSchedulesMessagingcampaign");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **messagingCampaignId** | **String**| Messaging Campaign ID | 
+| **body** | [**MessagingCampaignSchedule**](MessagingCampaignSchedule.html)| MessagingCampaignSchedule | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**MessagingCampaignSchedule**](MessagingCampaignSchedule.html)
 
 <a name="putOutboundSchedulesSequence"></a>
 

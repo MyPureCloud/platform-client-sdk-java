@@ -12,6 +12,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
+import com.mypurecloud.sdk.v2.model.MessagingSettingReference;
 import com.mypurecloud.sdk.v2.model.SupportedContentReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -27,6 +28,7 @@ public class MessagingIntegration  implements Serializable {
   private String id = null;
   private String name = null;
   private SupportedContentReference supportedContent = null;
+  private MessagingSettingReference messagingSetting = null;
 
   private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
     public StatusEnumDeserializer() {
@@ -175,6 +177,23 @@ public class MessagingIntegration  implements Serializable {
   }
 
   
+  /**
+   **/
+  public MessagingIntegration messagingSetting(MessagingSettingReference messagingSetting) {
+    this.messagingSetting = messagingSetting;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("messagingSetting")
+  public MessagingSettingReference getMessagingSetting() {
+    return messagingSetting;
+  }
+  public void setMessagingSetting(MessagingSettingReference messagingSetting) {
+    this.messagingSetting = messagingSetting;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The status of the Integration")
   @JsonProperty("status")
   public StatusEnum getStatus() {
@@ -251,6 +270,7 @@ public class MessagingIntegration  implements Serializable {
     return Objects.equals(this.id, messagingIntegration.id) &&
         Objects.equals(this.name, messagingIntegration.name) &&
         Objects.equals(this.supportedContent, messagingIntegration.supportedContent) &&
+        Objects.equals(this.messagingSetting, messagingIntegration.messagingSetting) &&
         Objects.equals(this.status, messagingIntegration.status) &&
         Objects.equals(this.messengerType, messagingIntegration.messengerType) &&
         Objects.equals(this.recipient, messagingIntegration.recipient) &&
@@ -264,7 +284,7 @@ public class MessagingIntegration  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, supportedContent, status, messengerType, recipient, dateCreated, dateModified, createdBy, modifiedBy, version, selfUri);
+    return Objects.hash(id, name, supportedContent, messagingSetting, status, messengerType, recipient, dateCreated, dateModified, createdBy, modifiedBy, version, selfUri);
   }
 
   @Override
@@ -275,6 +295,7 @@ public class MessagingIntegration  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    supportedContent: ").append(toIndentedString(supportedContent)).append("\n");
+    sb.append("    messagingSetting: ").append(toIndentedString(messagingSetting)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    messengerType: ").append(toIndentedString(messengerType)).append("\n");
     sb.append("    recipient: ").append(toIndentedString(recipient)).append("\n");

@@ -101,7 +101,7 @@ public class ContentButtonResponse  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Describes the button that resulted in the Button Response.")
+  @ApiModelProperty(example = "null", required = true, value = "Describes the button that resulted in the Button Response.")
   @JsonProperty("type")
   public TypeEnum getType() {
     return type;

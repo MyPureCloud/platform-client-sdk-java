@@ -72,7 +72,11 @@ public class ReportingTurnAction  implements Serializable {
     ASKFORSTRINGACTION("AskForStringAction"),
     SENDRESPONSEACTION("SendResponseAction"),
     GETRESPONSEACTION("GetResponseAction"),
-    JUMPTOTASKACTION("JumpToTaskAction"),
+    EXTRACTSECUREDATAACTION("ExtractSecureDataAction"),
+    SECUREACTION("SecureAction"),
+    TRANSFERTASKACTION("TransferTaskAction"),
+    DIGITALMENUACTION("DigitalMenuAction"),
+    WAITFORINPUTACTION("WaitForInputAction"),
     UNKNOWN("Unknown");
 
     private String value;

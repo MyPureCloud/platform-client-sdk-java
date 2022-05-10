@@ -25,6 +25,8 @@ import com.mypurecloud.sdk.v2.model.CrossPlatformPolicy;
 import com.mypurecloud.sdk.v2.model.RecordingJob;
 import com.mypurecloud.sdk.v2.model.FailedRecordingEntityListing;
 import com.mypurecloud.sdk.v2.model.RecordingJobEntityListing;
+import com.mypurecloud.sdk.v2.model.RecordingEncryptionConfiguration;
+import com.mypurecloud.sdk.v2.model.RecordingEncryptionConfigurationListing;
 import com.mypurecloud.sdk.v2.model.LocalEncryptionConfiguration;
 import com.mypurecloud.sdk.v2.model.LocalEncryptionConfigurationListing;
 import com.mypurecloud.sdk.v2.model.Policy;
@@ -72,6 +74,8 @@ import com.mypurecloud.sdk.v2.api.request.GetRecordingCrossplatformMediaretentio
 import com.mypurecloud.sdk.v2.api.request.GetRecordingJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingJobFailedrecordingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRecordingKeyconfigurationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRecordingKeyconfigurationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingLocalkeysSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingLocalkeysSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingMediaretentionpoliciesRequest;
@@ -87,6 +91,8 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationRecordingAnnotationsRe
 import com.mypurecloud.sdk.v2.api.request.PostRecordingBatchrequestsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingCrossplatformMediaretentionpoliciesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRecordingKeyconfigurationsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRecordingKeyconfigurationsValidateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingLocalkeysRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingLocalkeysSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingMediaretentionpoliciesRequest;
@@ -99,6 +105,7 @@ import com.mypurecloud.sdk.v2.api.request.PutConversationRecordingAnnotationRequ
 import com.mypurecloud.sdk.v2.api.request.PutOrphanrecordingRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRecordingCrossplatformMediaretentionpolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRecordingJobRequest;
+import com.mypurecloud.sdk.v2.api.request.PutRecordingKeyconfigurationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRecordingLocalkeysSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRecordingMediaretentionpolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRecordingRecordingkeysRotationscheduleRequest;
@@ -1798,6 +1805,158 @@ public class RecordingApiAsync {
 
   
   /**
+   * Get the encryption key configurations
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<RecordingEncryptionConfiguration> getRecordingKeyconfigurationAsync(GetRecordingKeyconfigurationRequest request, final AsyncApiCallback<RecordingEncryptionConfiguration> callback) {
+    try {
+      final SettableFuture<RecordingEncryptionConfiguration> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RecordingEncryptionConfiguration>() {}, new AsyncApiCallback<ApiResponse<RecordingEncryptionConfiguration>>() {
+        @Override
+        public void onCompleted(ApiResponse<RecordingEncryptionConfiguration> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the encryption key configurations
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<RecordingEncryptionConfiguration>> getRecordingKeyconfigurationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<RecordingEncryptionConfiguration>> callback) {
+    try {
+      final SettableFuture<ApiResponse<RecordingEncryptionConfiguration>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<RecordingEncryptionConfiguration>() {}, new AsyncApiCallback<ApiResponse<RecordingEncryptionConfiguration>>() {
+        @Override
+        public void onCompleted(ApiResponse<RecordingEncryptionConfiguration> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RecordingEncryptionConfiguration> response = (ApiResponse<RecordingEncryptionConfiguration>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RecordingEncryptionConfiguration> response = (ApiResponse<RecordingEncryptionConfiguration>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get a list of key configurations data
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<RecordingEncryptionConfigurationListing> getRecordingKeyconfigurationsAsync(GetRecordingKeyconfigurationsRequest request, final AsyncApiCallback<RecordingEncryptionConfigurationListing> callback) {
+    try {
+      final SettableFuture<RecordingEncryptionConfigurationListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RecordingEncryptionConfigurationListing>() {}, new AsyncApiCallback<ApiResponse<RecordingEncryptionConfigurationListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<RecordingEncryptionConfigurationListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of key configurations data
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<RecordingEncryptionConfigurationListing>> getRecordingKeyconfigurationsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<RecordingEncryptionConfigurationListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<RecordingEncryptionConfigurationListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<RecordingEncryptionConfigurationListing>() {}, new AsyncApiCallback<ApiResponse<RecordingEncryptionConfigurationListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<RecordingEncryptionConfigurationListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RecordingEncryptionConfigurationListing> response = (ApiResponse<RecordingEncryptionConfigurationListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RecordingEncryptionConfigurationListing> response = (ApiResponse<RecordingEncryptionConfigurationListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Get the local encryption settings
    * 
    * @param request the request object
@@ -2862,8 +3021,8 @@ public class RecordingApiAsync {
 
   
   /**
-   * Create a recording bulk job
-   * 
+   * Create a recording bulk job.
+   * Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2896,8 +3055,8 @@ public class RecordingApiAsync {
   }
 
   /**
-   * Create a recording bulk job
-   * 
+   * Create a recording bulk job.
+   * Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2925,6 +3084,158 @@ public class RecordingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<RecordingJob> response = (ApiResponse<RecordingJob>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Setup configurations for encryption key creation
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<RecordingEncryptionConfiguration> postRecordingKeyconfigurationsAsync(PostRecordingKeyconfigurationsRequest request, final AsyncApiCallback<RecordingEncryptionConfiguration> callback) {
+    try {
+      final SettableFuture<RecordingEncryptionConfiguration> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RecordingEncryptionConfiguration>() {}, new AsyncApiCallback<ApiResponse<RecordingEncryptionConfiguration>>() {
+        @Override
+        public void onCompleted(ApiResponse<RecordingEncryptionConfiguration> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Setup configurations for encryption key creation
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<RecordingEncryptionConfiguration>> postRecordingKeyconfigurationsAsync(ApiRequest<RecordingEncryptionConfiguration> request, final AsyncApiCallback<ApiResponse<RecordingEncryptionConfiguration>> callback) {
+    try {
+      final SettableFuture<ApiResponse<RecordingEncryptionConfiguration>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<RecordingEncryptionConfiguration>() {}, new AsyncApiCallback<ApiResponse<RecordingEncryptionConfiguration>>() {
+        @Override
+        public void onCompleted(ApiResponse<RecordingEncryptionConfiguration> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RecordingEncryptionConfiguration> response = (ApiResponse<RecordingEncryptionConfiguration>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RecordingEncryptionConfiguration> response = (ApiResponse<RecordingEncryptionConfiguration>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Validate encryption key configurations without saving it
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<RecordingEncryptionConfiguration> postRecordingKeyconfigurationsValidateAsync(PostRecordingKeyconfigurationsValidateRequest request, final AsyncApiCallback<RecordingEncryptionConfiguration> callback) {
+    try {
+      final SettableFuture<RecordingEncryptionConfiguration> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RecordingEncryptionConfiguration>() {}, new AsyncApiCallback<ApiResponse<RecordingEncryptionConfiguration>>() {
+        @Override
+        public void onCompleted(ApiResponse<RecordingEncryptionConfiguration> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Validate encryption key configurations without saving it
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<RecordingEncryptionConfiguration>> postRecordingKeyconfigurationsValidateAsync(ApiRequest<RecordingEncryptionConfiguration> request, final AsyncApiCallback<ApiResponse<RecordingEncryptionConfiguration>> callback) {
+    try {
+      final SettableFuture<ApiResponse<RecordingEncryptionConfiguration>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<RecordingEncryptionConfiguration>() {}, new AsyncApiCallback<ApiResponse<RecordingEncryptionConfiguration>>() {
+        @Override
+        public void onCompleted(ApiResponse<RecordingEncryptionConfiguration> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RecordingEncryptionConfiguration> response = (ApiResponse<RecordingEncryptionConfiguration>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RecordingEncryptionConfiguration> response = (ApiResponse<RecordingEncryptionConfiguration>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -3837,6 +4148,82 @@ public class RecordingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<RecordingJob> response = (ApiResponse<RecordingJob>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Update the encryption key configurations
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<RecordingEncryptionConfiguration> putRecordingKeyconfigurationAsync(PutRecordingKeyconfigurationRequest request, final AsyncApiCallback<RecordingEncryptionConfiguration> callback) {
+    try {
+      final SettableFuture<RecordingEncryptionConfiguration> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RecordingEncryptionConfiguration>() {}, new AsyncApiCallback<ApiResponse<RecordingEncryptionConfiguration>>() {
+        @Override
+        public void onCompleted(ApiResponse<RecordingEncryptionConfiguration> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update the encryption key configurations
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<RecordingEncryptionConfiguration>> putRecordingKeyconfigurationAsync(ApiRequest<RecordingEncryptionConfiguration> request, final AsyncApiCallback<ApiResponse<RecordingEncryptionConfiguration>> callback) {
+    try {
+      final SettableFuture<ApiResponse<RecordingEncryptionConfiguration>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<RecordingEncryptionConfiguration>() {}, new AsyncApiCallback<ApiResponse<RecordingEncryptionConfiguration>>() {
+        @Override
+        public void onCompleted(ApiResponse<RecordingEncryptionConfiguration> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RecordingEncryptionConfiguration> response = (ApiResponse<RecordingEncryptionConfiguration>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RecordingEncryptionConfiguration> response = (ApiResponse<RecordingEncryptionConfiguration>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

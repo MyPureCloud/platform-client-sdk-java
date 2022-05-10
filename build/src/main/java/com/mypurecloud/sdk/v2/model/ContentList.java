@@ -173,14 +173,14 @@ public class ContentList  implements Serializable {
 
   
   /**
-   * The list actions.
+   * The list actions (Deprecated).
    **/
   public ContentList actions(ContentActions actions) {
     this.actions = actions;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The list actions.")
+  @ApiModelProperty(example = "null", value = "The list actions (Deprecated).")
   @JsonProperty("actions")
   public ContentActions getActions() {
     return actions;

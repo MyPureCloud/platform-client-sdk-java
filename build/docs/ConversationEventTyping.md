@@ -9,6 +9,7 @@ title: ConversationEventTyping
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **type** | [**TypeEnum**](#TypeEnum)<!----> | Describes the type of Typing event. |  |
+| **duration** | <!----><!---->**Long**<!----> | The duration of the Typing event in milliseconds. |  [optional] |
 {: class="table table-striped"}
 
 

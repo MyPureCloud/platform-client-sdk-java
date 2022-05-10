@@ -138,6 +138,35 @@ public class GetConversationsMessagingStickerRequest {
 	    this.setMessengerType(messengerType);
 	    return this;
 	} 
+
+	public enum messengerTypeValues { 
+		LINE("line");
+
+		private String value;
+
+		messengerTypeValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static messengerTypeValues fromString(String key) {
+			if (key == null) return null;
+
+			for (messengerTypeValues value : messengerTypeValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return messengerTypeValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private Integer pageSize;
 	public Integer getPageSize() {
@@ -230,6 +259,11 @@ public class GetConversationsMessagingStickerRequest {
 		public Builder withMessengerType(String messengerType) {
 			request.setMessengerType(messengerType);
 			return this;
+		}
+
+		public Builder withMessengerType(messengerTypeValues messengerType) {
+		    request.setMessengerType(messengerType.toString());
+		    return this;
 		}
 		
 		public Builder withPageSize(Integer pageSize) {

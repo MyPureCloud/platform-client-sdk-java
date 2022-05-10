@@ -13,6 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.FileUploadSettings;
 import com.mypurecloud.sdk.v2.model.LauncherButtonSettings;
 import com.mypurecloud.sdk.v2.model.MessengerApps;
+import com.mypurecloud.sdk.v2.model.MessengerHomeScreen;
 import com.mypurecloud.sdk.v2.model.MessengerStyles;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -30,6 +31,7 @@ public class MessengerSettings  implements Serializable {
   private LauncherButtonSettings launcherButton = null;
   private FileUploadSettings fileUpload = null;
   private MessengerApps apps = null;
+  private MessengerHomeScreen homeScreen = null;
 
   
   /**
@@ -122,6 +124,24 @@ public class MessengerSettings  implements Serializable {
   }
 
   
+  /**
+   * The homescreen settings for messenger
+   **/
+  public MessengerSettings homeScreen(MessengerHomeScreen homeScreen) {
+    this.homeScreen = homeScreen;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The homescreen settings for messenger")
+  @JsonProperty("homeScreen")
+  public MessengerHomeScreen getHomeScreen() {
+    return homeScreen;
+  }
+  public void setHomeScreen(MessengerHomeScreen homeScreen) {
+    this.homeScreen = homeScreen;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -136,12 +156,13 @@ public class MessengerSettings  implements Serializable {
         Objects.equals(this.styles, messengerSettings.styles) &&
         Objects.equals(this.launcherButton, messengerSettings.launcherButton) &&
         Objects.equals(this.fileUpload, messengerSettings.fileUpload) &&
-        Objects.equals(this.apps, messengerSettings.apps);
+        Objects.equals(this.apps, messengerSettings.apps) &&
+        Objects.equals(this.homeScreen, messengerSettings.homeScreen);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(enabled, styles, launcherButton, fileUpload, apps);
+    return Objects.hash(enabled, styles, launcherButton, fileUpload, apps, homeScreen);
   }
 
   @Override
@@ -154,6 +175,7 @@ public class MessengerSettings  implements Serializable {
     sb.append("    launcherButton: ").append(toIndentedString(launcherButton)).append("\n");
     sb.append("    fileUpload: ").append(toIndentedString(fileUpload)).append("\n");
     sb.append("    apps: ").append(toIndentedString(apps)).append("\n");
+    sb.append("    homeScreen: ").append(toIndentedString(homeScreen)).append("\n");
     sb.append("}");
     return sb.toString();
   }

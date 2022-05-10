@@ -73,7 +73,8 @@ public class GetLearningAssignmentRequest {
 	public enum expandValues { 
 		MODULE("module"), 
 		ASSESSMENT("assessment"), 
-		ASSESSMENTFORM("assessmentForm");
+		ASSESSMENTFORM("assessmentForm"), 
+		MODULE_COVERART("module.coverArt");
 
 		private String value;
 

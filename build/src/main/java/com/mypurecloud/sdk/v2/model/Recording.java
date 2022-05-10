@@ -253,6 +253,7 @@ public class Recording  implements Serializable {
   }
   private RecordingErrorStatusEnum recordingErrorStatus = null;
   private Date originalRecordingStartTime = null;
+  private Date creationTime = null;
   private String selfUri = null;
 
   
@@ -780,6 +781,24 @@ public class Recording  implements Serializable {
   }
 
   
+  /**
+   * The creation time of the recording. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public Recording creationTime(Date creationTime) {
+    this.creationTime = creationTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The creation time of the recording. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("creationTime")
+  public Date getCreationTime() {
+    return creationTime;
+  }
+  public void setCreationTime(Date creationTime) {
+    this.creationTime = creationTime;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -827,12 +846,13 @@ public class Recording  implements Serializable {
         Objects.equals(this.recordingFileRole, recording.recordingFileRole) &&
         Objects.equals(this.recordingErrorStatus, recording.recordingErrorStatus) &&
         Objects.equals(this.originalRecordingStartTime, recording.originalRecordingStartTime) &&
+        Objects.equals(this.creationTime, recording.creationTime) &&
         Objects.equals(this.selfUri, recording.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, conversationId, path, startTime, endTime, media, annotations, transcript, emailTranscript, messagingTranscript, fileState, restoreExpirationTime, mediaUris, estimatedTranscodeTimeMs, actualTranscodeTimeMs, archiveDate, archiveMedium, deleteDate, exportDate, exportedDate, outputDurationMs, outputSizeInBytes, maxAllowedRestorationsForOrg, remainingRestorationsAllowedForOrg, sessionId, users, recordingFileRole, recordingErrorStatus, originalRecordingStartTime, selfUri);
+    return Objects.hash(id, name, conversationId, path, startTime, endTime, media, annotations, transcript, emailTranscript, messagingTranscript, fileState, restoreExpirationTime, mediaUris, estimatedTranscodeTimeMs, actualTranscodeTimeMs, archiveDate, archiveMedium, deleteDate, exportDate, exportedDate, outputDurationMs, outputSizeInBytes, maxAllowedRestorationsForOrg, remainingRestorationsAllowedForOrg, sessionId, users, recordingFileRole, recordingErrorStatus, originalRecordingStartTime, creationTime, selfUri);
   }
 
   @Override
@@ -870,6 +890,7 @@ public class Recording  implements Serializable {
     sb.append("    recordingFileRole: ").append(toIndentedString(recordingFileRole)).append("\n");
     sb.append("    recordingErrorStatus: ").append(toIndentedString(recordingErrorStatus)).append("\n");
     sb.append("    originalRecordingStartTime: ").append(toIndentedString(originalRecordingStartTime)).append("\n");
+    sb.append("    creationTime: ").append(toIndentedString(creationTime)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

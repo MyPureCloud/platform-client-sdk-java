@@ -11,6 +11,7 @@ title: TwitterIntegration
 | **id** | <!----><!---->**String**<!----> | A unique Integration Id |  |
 | **name** | <!----><!---->**String**<!----> | The name of the Twitter Integration |  |
 | **supportedContent** | <!----><!---->[**SupportedContentReference**](SupportedContentReference.html)<!----> | Defines the SupportedContent profile configured for an integration |  [optional] |
+| **messagingSetting** | <!----><!---->[**MessagingSettingReference**](MessagingSettingReference.html)<!----> |  |  [optional] |
 | **accessTokenKey** | <!----><!---->**String**<!----> | The Access Token Key from Twitter messenger |  |
 | **consumerKey** | <!----><!---->**String**<!----> | The Consumer Key from Twitter messenger |  |
 | **username** | <!----><!---->**String**<!----> | The Username from Twitter |  [optional] |

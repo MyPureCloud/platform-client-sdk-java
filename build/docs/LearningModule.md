@@ -27,6 +27,7 @@ title: LearningModule
 | **informSteps** | <!----><!---->[**List&lt;LearningModuleInformStep&gt;**](LearningModuleInformStep.html)<!----> | The list of inform steps in a learning module |  [optional] |
 | **assessmentForm** | <!----><!---->[**AssessmentForm**](AssessmentForm.html)<!----> | The assessment form for learning module |  [optional] |
 | **summaryData** | <!----><!---->[**LearningModuleSummary**](LearningModuleSummary.html)<!----> | The learning module summary data |  [optional] |
+| **coverArt** | <!----><!---->[**LearningModuleCoverArtResponse**](LearningModuleCoverArtResponse.html)<!----> | The cover art for the learning module |  [optional] |
 {: class="table table-striped"}
 
 

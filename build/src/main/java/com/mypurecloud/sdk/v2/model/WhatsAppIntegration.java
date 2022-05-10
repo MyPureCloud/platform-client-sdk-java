@@ -13,7 +13,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.MessagingSettingReference;
 import com.mypurecloud.sdk.v2.model.SupportedContentReference;
+import com.mypurecloud.sdk.v2.model.WhatsAppAvailablePhoneNumberDetailsListing;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -28,7 +30,9 @@ public class WhatsAppIntegration  implements Serializable {
   private String id = null;
   private String name = null;
   private SupportedContentReference supportedContent = null;
+  private MessagingSettingReference messagingSetting = null;
   private String phoneNumber = null;
+  private WhatsAppAvailablePhoneNumberDetailsListing availablePhoneNumbers = null;
 
   private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
     public StatusEnumDeserializer() {
@@ -238,20 +242,44 @@ public class WhatsAppIntegration  implements Serializable {
 
   
   /**
-   * The phone number associated to the whatsApp integration.
+   **/
+  public WhatsAppIntegration messagingSetting(MessagingSettingReference messagingSetting) {
+    this.messagingSetting = messagingSetting;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("messagingSetting")
+  public MessagingSettingReference getMessagingSetting() {
+    return messagingSetting;
+  }
+  public void setMessagingSetting(MessagingSettingReference messagingSetting) {
+    this.messagingSetting = messagingSetting;
+  }
+
+  
+  /**
+   * The phone number associated to the WhatsApp integration.
    **/
   public WhatsAppIntegration phoneNumber(String phoneNumber) {
     this.phoneNumber = phoneNumber;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The phone number associated to the whatsApp integration.")
+  @ApiModelProperty(example = "null", required = true, value = "The phone number associated to the WhatsApp integration.")
   @JsonProperty("phoneNumber")
   public String getPhoneNumber() {
     return phoneNumber;
   }
   public void setPhoneNumber(String phoneNumber) {
     this.phoneNumber = phoneNumber;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "The list of available WhatsApp phone numbers for this account. Please select one phone number from this list to use with the created integration.")
+  @JsonProperty("availablePhoneNumbers")
+  public WhatsAppAvailablePhoneNumberDetailsListing getAvailablePhoneNumbers() {
+    return availablePhoneNumbers;
   }
 
   
@@ -418,7 +446,9 @@ public class WhatsAppIntegration  implements Serializable {
     return Objects.equals(this.id, whatsAppIntegration.id) &&
         Objects.equals(this.name, whatsAppIntegration.name) &&
         Objects.equals(this.supportedContent, whatsAppIntegration.supportedContent) &&
+        Objects.equals(this.messagingSetting, whatsAppIntegration.messagingSetting) &&
         Objects.equals(this.phoneNumber, whatsAppIntegration.phoneNumber) &&
+        Objects.equals(this.availablePhoneNumbers, whatsAppIntegration.availablePhoneNumbers) &&
         Objects.equals(this.status, whatsAppIntegration.status) &&
         Objects.equals(this.recipient, whatsAppIntegration.recipient) &&
         Objects.equals(this.dateCreated, whatsAppIntegration.dateCreated) &&
@@ -435,7 +465,7 @@ public class WhatsAppIntegration  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, supportedContent, phoneNumber, status, recipient, dateCreated, dateModified, createdBy, modifiedBy, version, activationStatusCode, activationErrorInfo, createStatus, createError, selfUri);
+    return Objects.hash(id, name, supportedContent, messagingSetting, phoneNumber, availablePhoneNumbers, status, recipient, dateCreated, dateModified, createdBy, modifiedBy, version, activationStatusCode, activationErrorInfo, createStatus, createError, selfUri);
   }
 
   @Override
@@ -446,7 +476,9 @@ public class WhatsAppIntegration  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    supportedContent: ").append(toIndentedString(supportedContent)).append("\n");
+    sb.append("    messagingSetting: ").append(toIndentedString(messagingSetting)).append("\n");
     sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
+    sb.append("    availablePhoneNumbers: ").append(toIndentedString(availablePhoneNumbers)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    recipient: ").append(toIndentedString(recipient)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");

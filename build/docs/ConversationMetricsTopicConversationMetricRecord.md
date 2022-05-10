@@ -34,7 +34,7 @@ title: ConversationMetricsTopicConversationMetricRecord
 | **dnis** | <!----><!---->**String**<!----> | Dialed number identification service (number dialed by the calling party) |  [optional] |
 | **edgeId** | <!----><!---->**String**<!----> | Unique identifier of the edge device |  [optional] |
 | **eligibleAgentCounts** | <!----><!---->**List&lt;Integer&gt;**<!----> | Number of eligible agents for each predictive routing attempt |  [optional] |
-| **extendedDeliveryStatus** | <!----><!---->**String**<!----> | Extended email delivery status |  [optional] |
+| **extendedDeliveryStatus** | <!----><!---->**String**<!----> | Extended delivery status |  [optional] |
 | **externalContactId** | <!----><!---->**String**<!----> | External contact identifier |  [optional] |
 | **externalMediaCount** | <!----><!---->**Integer**<!----> | Count of any media (images, files, etc) included on the external session |  [optional] |
 | **externalOrganizationId** | <!----><!---->**String**<!----> | External organization identifier |  [optional] |

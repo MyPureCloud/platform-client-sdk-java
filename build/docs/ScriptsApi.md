@@ -11,7 +11,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getScriptPage**](ScriptsApi.html#getScriptPage) | Get a page |
 | [**getScriptPages**](ScriptsApi.html#getScriptPages) | Get the list of pages |
 | [**getScripts**](ScriptsApi.html#getScripts) | Get the list of scripts |
+| [**getScriptsDivisionviews**](ScriptsApi.html#getScriptsDivisionviews) | Get the metadata for a list of scripts |
 | [**getScriptsPublished**](ScriptsApi.html#getScriptsPublished) | Get the published scripts. |
+| [**getScriptsPublishedDivisionviews**](ScriptsApi.html#getScriptsPublishedDivisionviews) | Get the published scripts metadata. |
 | [**getScriptsPublishedScriptId**](ScriptsApi.html#getScriptsPublishedScriptId) | Get the published script. |
 | [**getScriptsPublishedScriptIdPage**](ScriptsApi.html#getScriptsPublishedScriptIdPage) | Get the published page. |
 | [**getScriptsPublishedScriptIdPages**](ScriptsApi.html#getScriptsPublishedScriptIdPages) | Get the list of published pages |
@@ -221,7 +223,7 @@ try {
 
 
 
-> [ScriptEntityListing](ScriptEntityListing.html) getScripts(pageSize, pageNumber, expand, name, feature, flowId, sortBy, sortOrder, scriptDataVersion)
+> [ScriptEntityListing](ScriptEntityListing.html) getScripts(pageSize, pageNumber, expand, name, feature, flowId, sortBy, sortOrder, scriptDataVersion, divisionIds)
 
 Get the list of scripts
 
@@ -264,8 +266,9 @@ String flowId = "flowId_example"; // String | Secure flow id filter
 String sortBy = "sortBy_example"; // String | SortBy
 String sortOrder = "sortOrder_example"; // String | SortOrder
 String scriptDataVersion = "scriptDataVersion_example"; // String | Advanced usage - controls the data version of the script
+String divisionIds = "divisionIds_example"; // String | Filters scripts to requested divisionIds
 try {
-    ScriptEntityListing result = apiInstance.getScripts(pageSize, pageNumber, expand, name, feature, flowId, sortBy, sortOrder, scriptDataVersion);
+    ScriptEntityListing result = apiInstance.getScripts(pageSize, pageNumber, expand, name, feature, flowId, sortBy, sortOrder, scriptDataVersion, divisionIds);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ScriptsApi#getScripts");
@@ -287,6 +290,88 @@ try {
 | **sortBy** | **String**| SortBy | [optional]<br />**Values**: modifiedDate, createdDate 
 | **sortOrder** | **String**| SortOrder | [optional]<br />**Values**: ascending, descending 
 | **scriptDataVersion** | **String**| Advanced usage - controls the data version of the script | [optional] 
+| **divisionIds** | **String**| Filters scripts to requested divisionIds | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ScriptEntityListing**](ScriptEntityListing.html)
+
+<a name="getScriptsDivisionviews"></a>
+
+# **getScriptsDivisionviews**
+
+
+
+> [ScriptEntityListing](ScriptEntityListing.html) getScriptsDivisionviews(pageSize, pageNumber, expand, name, feature, flowId, sortBy, sortOrder, scriptDataVersion, divisionIds)
+
+Get the metadata for a list of scripts
+
+
+
+Wraps GET /api/v2/scripts/divisionviews  
+
+Requires ANY permissions: 
+
+* scripter:script:search
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ScriptsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ScriptsApi apiInstance = new ScriptsApi();
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+String expand = "expand_example"; // String | Expand
+String name = "name_example"; // String | Name filter
+String feature = "feature_example"; // String | Feature filter
+String flowId = "flowId_example"; // String | Secure flow id filter
+String sortBy = "sortBy_example"; // String | SortBy
+String sortOrder = "sortOrder_example"; // String | SortOrder
+String scriptDataVersion = "scriptDataVersion_example"; // String | Advanced usage - controls the data version of the script
+String divisionIds = "divisionIds_example"; // String | Filters scripts to requested divisionIds
+try {
+    ScriptEntityListing result = apiInstance.getScriptsDivisionviews(pageSize, pageNumber, expand, name, feature, flowId, sortBy, sortOrder, scriptDataVersion, divisionIds);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ScriptsApi#getScriptsDivisionviews");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **expand** | **String**| Expand | [optional] 
+| **name** | **String**| Name filter | [optional] 
+| **feature** | **String**| Feature filter | [optional] 
+| **flowId** | **String**| Secure flow id filter | [optional] 
+| **sortBy** | **String**| SortBy | [optional]<br />**Values**: modifiedDate, createdDate 
+| **sortOrder** | **String**| SortOrder | [optional]<br />**Values**: ascending, descending 
+| **scriptDataVersion** | **String**| Advanced usage - controls the data version of the script | [optional] 
+| **divisionIds** | **String**| Filters scripts to requested divisionIds | [optional] 
 {: class="table-striped"}
 
 
@@ -300,7 +385,7 @@ try {
 
 
 
-> [ScriptEntityListing](ScriptEntityListing.html) getScriptsPublished(pageSize, pageNumber, expand, name, feature, flowId, scriptDataVersion)
+> [ScriptEntityListing](ScriptEntityListing.html) getScriptsPublished(pageSize, pageNumber, expand, name, feature, flowId, scriptDataVersion, divisionIds)
 
 Get the published scripts.
 
@@ -341,8 +426,9 @@ String name = "name_example"; // String | Name filter
 String feature = "feature_example"; // String | Feature filter
 String flowId = "flowId_example"; // String | Secure flow id filter
 String scriptDataVersion = "scriptDataVersion_example"; // String | Advanced usage - controls the data version of the script
+String divisionIds = "divisionIds_example"; // String | Filters scripts to requested divisionIds
 try {
-    ScriptEntityListing result = apiInstance.getScriptsPublished(pageSize, pageNumber, expand, name, feature, flowId, scriptDataVersion);
+    ScriptEntityListing result = apiInstance.getScriptsPublished(pageSize, pageNumber, expand, name, feature, flowId, scriptDataVersion, divisionIds);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ScriptsApi#getScriptsPublished");
@@ -362,6 +448,84 @@ try {
 | **feature** | **String**| Feature filter | [optional] 
 | **flowId** | **String**| Secure flow id filter | [optional] 
 | **scriptDataVersion** | **String**| Advanced usage - controls the data version of the script | [optional] 
+| **divisionIds** | **String**| Filters scripts to requested divisionIds | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ScriptEntityListing**](ScriptEntityListing.html)
+
+<a name="getScriptsPublishedDivisionviews"></a>
+
+# **getScriptsPublishedDivisionviews**
+
+
+
+> [ScriptEntityListing](ScriptEntityListing.html) getScriptsPublishedDivisionviews(pageSize, pageNumber, expand, name, feature, flowId, scriptDataVersion, divisionIds)
+
+Get the published scripts metadata.
+
+
+
+Wraps GET /api/v2/scripts/published/divisionviews  
+
+Requires ANY permissions: 
+
+* scripter:publishedScript:search
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ScriptsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ScriptsApi apiInstance = new ScriptsApi();
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+String expand = "expand_example"; // String | Expand
+String name = "name_example"; // String | Name filter
+String feature = "feature_example"; // String | Feature filter
+String flowId = "flowId_example"; // String | Secure flow id filter
+String scriptDataVersion = "scriptDataVersion_example"; // String | Advanced usage - controls the data version of the script
+String divisionIds = "divisionIds_example"; // String | Filters scripts to requested divisionIds
+try {
+    ScriptEntityListing result = apiInstance.getScriptsPublishedDivisionviews(pageSize, pageNumber, expand, name, feature, flowId, scriptDataVersion, divisionIds);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ScriptsApi#getScriptsPublishedDivisionviews");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **expand** | **String**| Expand | [optional] 
+| **name** | **String**| Name filter | [optional] 
+| **feature** | **String**| Feature filter | [optional] 
+| **flowId** | **String**| Secure flow id filter | [optional] 
+| **scriptDataVersion** | **String**| Advanced usage - controls the data version of the script | [optional] 
+| **divisionIds** | **String**| Filters scripts to requested divisionIds | [optional] 
 {: class="table-striped"}
 
 
@@ -653,7 +817,7 @@ Wraps GET /api/v2/scripts/uploads/{uploadId}/status
 
 Requires ANY permissions: 
 
-* scripter:script:view
+* scripter:script:search
 
 ### Example
 

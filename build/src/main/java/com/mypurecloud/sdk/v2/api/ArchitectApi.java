@@ -49,6 +49,7 @@ import com.mypurecloud.sdk.v2.model.DataTableRowEntityListing;
 import com.mypurecloud.sdk.v2.model.DataTablesDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowRuntimeExecution;
+import com.mypurecloud.sdk.v2.model.ArchitectJobStateResponse;
 import com.mypurecloud.sdk.v2.model.FlowMilestone;
 import com.mypurecloud.sdk.v2.model.FlowMilestoneListing;
 import com.mypurecloud.sdk.v2.model.FlowMilestoneDivisionViewEntityListing;
@@ -58,6 +59,7 @@ import com.mypurecloud.sdk.v2.model.FlowOutcomeDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 import com.mypurecloud.sdk.v2.model.FlowExecutionLaunchResponse;
 import com.mypurecloud.sdk.v2.model.FlowExecutionLaunchRequest;
+import com.mypurecloud.sdk.v2.model.RegisterArchitectJobResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteArchitectEmergencygroupRequest;
@@ -119,6 +121,7 @@ import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatablesDivisionviewRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatablesDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsExecutionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsMilestoneRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsMilestonesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsMilestonesDivisionviewsRequest;
@@ -149,6 +152,7 @@ import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatableImportJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatableRowsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatablesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsExecutionsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostFlowsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsMilestonesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsOutcomesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectEmergencygroupRequest;
@@ -5452,6 +5456,89 @@ public class ArchitectApi {
 
   
   /**
+   * Fetch Architect Job Status
+   * 
+   * @param jobId Job ID (required)
+   * @param expand Which fields, if any, to expand. (optional)
+   * @return ArchitectJobStateResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ArchitectJobStateResponse getFlowsJob(String jobId, List<String> expand) throws IOException, ApiException {
+    return  getFlowsJob(createGetFlowsJobRequest(jobId, expand));
+  }
+
+  /**
+   * Fetch Architect Job Status
+   * 
+   * @param jobId Job ID (required)
+   * @param expand Which fields, if any, to expand. (optional)
+   * @return ArchitectJobStateResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ArchitectJobStateResponse> getFlowsJobWithHttpInfo(String jobId, List<String> expand) throws IOException {
+    return getFlowsJob(createGetFlowsJobRequest(jobId, expand).withHttpInfo());
+  }
+
+  private GetFlowsJobRequest createGetFlowsJobRequest(String jobId, List<String> expand) {
+    return GetFlowsJobRequest.builder()
+            .withJobId(jobId)
+    
+            .withExpand(expand)
+    
+            .build();
+  }
+
+  /**
+   * Fetch Architect Job Status
+   * 
+   * @param request The request object
+   * @return ArchitectJobStateResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ArchitectJobStateResponse getFlowsJob(GetFlowsJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ArchitectJobStateResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ArchitectJobStateResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Fetch Architect Job Status
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ArchitectJobStateResponse> getFlowsJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ArchitectJobStateResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ArchitectJobStateResponse> response = (ApiResponse<ArchitectJobStateResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ArchitectJobStateResponse> response = (ApiResponse<ArchitectJobStateResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get a flow milestone
    * Returns a specified flow milestone
    * @param milestoneId flow milestone ID (required)
@@ -7949,6 +8036,81 @@ public class ArchitectApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<FlowExecutionLaunchResponse> response = (ApiResponse<FlowExecutionLaunchResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Register Architect Job. Returns a URL where a file, such as an Architect flow YAML file, can be PUT which will then initiate the job.
+   * 
+   * @return RegisterArchitectJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RegisterArchitectJobResponse postFlowsJobs() throws IOException, ApiException {
+    return  postFlowsJobs(createPostFlowsJobsRequest());
+  }
+
+  /**
+   * Register Architect Job. Returns a URL where a file, such as an Architect flow YAML file, can be PUT which will then initiate the job.
+   * 
+   * @return RegisterArchitectJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RegisterArchitectJobResponse> postFlowsJobsWithHttpInfo() throws IOException {
+    return postFlowsJobs(createPostFlowsJobsRequest().withHttpInfo());
+  }
+
+  private PostFlowsJobsRequest createPostFlowsJobsRequest() {
+    return PostFlowsJobsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Register Architect Job. Returns a URL where a file, such as an Architect flow YAML file, can be PUT which will then initiate the job.
+   * 
+   * @param request The request object
+   * @return RegisterArchitectJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RegisterArchitectJobResponse postFlowsJobs(PostFlowsJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<RegisterArchitectJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RegisterArchitectJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Register Architect Job. Returns a URL where a file, such as an Architect flow YAML file, can be PUT which will then initiate the job.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RegisterArchitectJobResponse> postFlowsJobs(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RegisterArchitectJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RegisterArchitectJobResponse> response = (ApiResponse<RegisterArchitectJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RegisterArchitectJobResponse> response = (ApiResponse<RegisterArchitectJobResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.Division;
 import com.mypurecloud.sdk.v2.model.Page;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -26,6 +27,7 @@ public class Script  implements Serializable {
   
   private String id = null;
   private String name = null;
+  private Division division = null;
   private String versionId = null;
   private Date createdDate = null;
   private Date modifiedDate = null;
@@ -61,6 +63,24 @@ public class Script  implements Serializable {
   }
   public void setName(String name) {
     this.name = name;
+  }
+
+  
+  /**
+   * The division to which this entity belongs.
+   **/
+  public Script division(Division division) {
+    this.division = division;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The division to which this entity belongs.")
+  @JsonProperty("division")
+  public Division getDivision() {
+    return division;
+  }
+  public void setDivision(Division division) {
+    this.division = division;
   }
 
   
@@ -274,6 +294,7 @@ public class Script  implements Serializable {
     Script script = (Script) o;
     return Objects.equals(this.id, script.id) &&
         Objects.equals(this.name, script.name) &&
+        Objects.equals(this.division, script.division) &&
         Objects.equals(this.versionId, script.versionId) &&
         Objects.equals(this.createdDate, script.createdDate) &&
         Objects.equals(this.modifiedDate, script.modifiedDate) &&
@@ -290,7 +311,7 @@ public class Script  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, versionId, createdDate, modifiedDate, publishedDate, versionDate, startPageId, startPageName, features, variables, customActions, pages, selfUri);
+    return Objects.hash(id, name, division, versionId, createdDate, modifiedDate, publishedDate, versionDate, startPageId, startPageName, features, variables, customActions, pages, selfUri);
   }
 
   @Override
@@ -300,6 +321,7 @@ public class Script  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    versionId: ").append(toIndentedString(versionId)).append("\n");
     sb.append("    createdDate: ").append(toIndentedString(createdDate)).append("\n");
     sb.append("    modifiedDate: ").append(toIndentedString(modifiedDate)).append("\n");

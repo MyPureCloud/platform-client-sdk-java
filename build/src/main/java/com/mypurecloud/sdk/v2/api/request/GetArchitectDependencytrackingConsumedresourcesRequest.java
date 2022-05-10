@@ -59,6 +59,7 @@ import com.mypurecloud.sdk.v2.model.DataTableRowEntityListing;
 import com.mypurecloud.sdk.v2.model.DataTablesDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowRuntimeExecution;
+import com.mypurecloud.sdk.v2.model.ArchitectJobStateResponse;
 import com.mypurecloud.sdk.v2.model.FlowMilestone;
 import com.mypurecloud.sdk.v2.model.FlowMilestoneListing;
 import com.mypurecloud.sdk.v2.model.FlowMilestoneDivisionViewEntityListing;
@@ -68,6 +69,7 @@ import com.mypurecloud.sdk.v2.model.FlowOutcomeDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 import com.mypurecloud.sdk.v2.model.FlowExecutionLaunchResponse;
 import com.mypurecloud.sdk.v2.model.FlowExecutionLaunchRequest;
+import com.mypurecloud.sdk.v2.model.RegisterArchitectJobResponse;
 
 public class GetArchitectDependencytrackingConsumedresourcesRequest {
     
@@ -171,6 +173,7 @@ public class GetArchitectDependencytrackingConsumedresourcesRequest {
 		TTSVOICE("TTSVOICE"), 
 		USER("USER"), 
 		USERPROMPT("USERPROMPT"), 
+		VOICEFLOW("VOICEFLOW"), 
 		VOICEMAILFLOW("VOICEMAILFLOW"), 
 		WIDGET("WIDGET"), 
 		WORKFLOW("WORKFLOW"), 
@@ -274,6 +277,7 @@ public class GetArchitectDependencytrackingConsumedresourcesRequest {
 		TTSVOICE("TTSVOICE"), 
 		USER("USER"), 
 		USERPROMPT("USERPROMPT"), 
+		VOICEFLOW("VOICEFLOW"), 
 		VOICEMAILFLOW("VOICEMAILFLOW"), 
 		WIDGET("WIDGET"), 
 		WORKFLOW("WORKFLOW"), 

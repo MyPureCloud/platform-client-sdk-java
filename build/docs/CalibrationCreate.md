@@ -12,7 +12,7 @@ title: CalibrationCreate
 | **name** | <!----><!---->**String**<!----> |  |  [optional] |
 | **calibrator** | <!----><!---->[**User**](User.html)<!----> |  |  [optional] |
 | **agent** | <!----><!---->[**User**](User.html)<!----> |  |  [optional] |
-| **conversation** | <!----><!---->[**Conversation**](Conversation.html)<!----> | The conversation to use for the calibration. |  |
+| **conversation** | <!----><!---->[**ConversationReference**](ConversationReference.html)<!----> | The conversation to use for the calibration. |  |
 | **evaluationForm** | <!----><!---->[**EvaluationForm**](EvaluationForm.html)<!----> |  |  [optional] |
 | **contextId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **averageScore** | <!----><!---->**Integer**<!----> |  |  [optional] |

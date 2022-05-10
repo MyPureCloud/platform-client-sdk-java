@@ -13,6 +13,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationContentAttachment;
 import com.mypurecloud.sdk.v2.model.ConversationContentButtonResponse;
+import com.mypurecloud.sdk.v2.model.ConversationContentCard;
+import com.mypurecloud.sdk.v2.model.ConversationContentCarousel;
 import com.mypurecloud.sdk.v2.model.ConversationContentGeneric;
 import com.mypurecloud.sdk.v2.model.ConversationContentLocation;
 import com.mypurecloud.sdk.v2.model.ConversationContentNotificationTemplate;
@@ -54,7 +56,9 @@ public class ConversationMessageContent  implements Serializable {
     QUICKREPLY("QuickReply"),
     NOTIFICATION("Notification"),
     BUTTONRESPONSE("ButtonResponse"),
-    GENERICTEMPLATE("GenericTemplate");
+    GENERICTEMPLATE("GenericTemplate"),
+    CARD("Card"),
+    CAROUSEL("Carousel");
 
     private String value;
 
@@ -89,6 +93,8 @@ public class ConversationMessageContent  implements Serializable {
   private ConversationContentNotificationTemplate template = null;
   private ConversationContentButtonResponse buttonResponse = null;
   private ConversationContentGeneric generic = null;
+  private ConversationContentCard card = null;
+  private ConversationContentCarousel carousel = null;
 
   
   /**
@@ -235,6 +241,42 @@ public class ConversationMessageContent  implements Serializable {
   }
 
   
+  /**
+   * Card (Generic Template) Object
+   **/
+  public ConversationMessageContent card(ConversationContentCard card) {
+    this.card = card;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Card (Generic Template) Object")
+  @JsonProperty("card")
+  public ConversationContentCard getCard() {
+    return card;
+  }
+  public void setCard(ConversationContentCard card) {
+    this.card = card;
+  }
+
+  
+  /**
+   * Carousel (Multiple Generic Template) Object
+   **/
+  public ConversationMessageContent carousel(ConversationContentCarousel carousel) {
+    this.carousel = carousel;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Carousel (Multiple Generic Template) Object")
+  @JsonProperty("carousel")
+  public ConversationContentCarousel getCarousel() {
+    return carousel;
+  }
+  public void setCarousel(ConversationContentCarousel carousel) {
+    this.carousel = carousel;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -252,12 +294,14 @@ public class ConversationMessageContent  implements Serializable {
         Objects.equals(this.quickReply, conversationMessageContent.quickReply) &&
         Objects.equals(this.template, conversationMessageContent.template) &&
         Objects.equals(this.buttonResponse, conversationMessageContent.buttonResponse) &&
-        Objects.equals(this.generic, conversationMessageContent.generic);
+        Objects.equals(this.generic, conversationMessageContent.generic) &&
+        Objects.equals(this.card, conversationMessageContent.card) &&
+        Objects.equals(this.carousel, conversationMessageContent.carousel);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(contentType, location, story, attachment, quickReply, template, buttonResponse, generic);
+    return Objects.hash(contentType, location, story, attachment, quickReply, template, buttonResponse, generic, card, carousel);
   }
 
   @Override
@@ -273,6 +317,8 @@ public class ConversationMessageContent  implements Serializable {
     sb.append("    template: ").append(toIndentedString(template)).append("\n");
     sb.append("    buttonResponse: ").append(toIndentedString(buttonResponse)).append("\n");
     sb.append("    generic: ").append(toIndentedString(generic)).append("\n");
+    sb.append("    card: ").append(toIndentedString(card)).append("\n");
+    sb.append("    carousel: ").append(toIndentedString(carousel)).append("\n");
     sb.append("}");
     return sb.toString();
   }

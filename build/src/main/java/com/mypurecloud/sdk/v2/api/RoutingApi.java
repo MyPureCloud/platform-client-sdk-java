@@ -2103,26 +2103,30 @@ public class RoutingApi {
   /**
    * Get domains
    * 
+   * @param excludeStatus Exclude MX record data (optional, default to false)
    * @return InboundDomainEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public InboundDomainEntityListing getRoutingEmailDomains() throws IOException, ApiException {
-    return  getRoutingEmailDomains(createGetRoutingEmailDomainsRequest());
+  public InboundDomainEntityListing getRoutingEmailDomains(Boolean excludeStatus) throws IOException, ApiException {
+    return  getRoutingEmailDomains(createGetRoutingEmailDomainsRequest(excludeStatus));
   }
 
   /**
    * Get domains
    * 
+   * @param excludeStatus Exclude MX record data (optional, default to false)
    * @return InboundDomainEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<InboundDomainEntityListing> getRoutingEmailDomainsWithHttpInfo() throws IOException {
-    return getRoutingEmailDomains(createGetRoutingEmailDomainsRequest().withHttpInfo());
+  public ApiResponse<InboundDomainEntityListing> getRoutingEmailDomainsWithHttpInfo(Boolean excludeStatus) throws IOException {
+    return getRoutingEmailDomains(createGetRoutingEmailDomainsRequest(excludeStatus).withHttpInfo());
   }
 
-  private GetRoutingEmailDomainsRequest createGetRoutingEmailDomainsRequest() {
+  private GetRoutingEmailDomainsRequest createGetRoutingEmailDomainsRequest(Boolean excludeStatus) {
     return GetRoutingEmailDomainsRequest.builder()
+            .withExcludeStatus(excludeStatus)
+    
             .build();
   }
 

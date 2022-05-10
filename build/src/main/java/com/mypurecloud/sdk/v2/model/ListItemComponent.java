@@ -188,14 +188,14 @@ public class ListItemComponent  implements Serializable {
 
   
   /**
-   * The list item actions.
+   * The list item actions (Deprecated).
    **/
   public ListItemComponent actions(ContentActions actions) {
     this.actions = actions;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The list item actions.")
+  @ApiModelProperty(example = "null", value = "The list item actions (Deprecated).")
   @JsonProperty("actions")
   public ContentActions getActions() {
     return actions;

@@ -11,6 +11,7 @@ title: MessagingIntegration
 | **id** | <!----><!---->**String**<!----> | A unique Integration Id |  |
 | **name** | <!----><!---->**String**<!----> | The name of the Integration |  |
 | **supportedContent** | <!----><!---->[**SupportedContentReference**](SupportedContentReference.html)<!----> | Defines the SupportedContent profile configured for an integration |  [optional] |
+| **messagingSetting** | <!----><!---->[**MessagingSettingReference**](MessagingSettingReference.html)<!----> |  |  [optional] |
 | **status** | [**StatusEnum**](#StatusEnum)<!----> | The status of the Integration |  [optional] |
 | **messengerType** | [**MessengerTypeEnum**](#MessengerTypeEnum)<!----> | The type of Messaging Integration |  |
 | **recipient** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | The recipient associated to the Integration. This recipient is used to associate a flow to an integration |  [optional] |

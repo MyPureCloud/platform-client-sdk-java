@@ -69,6 +69,7 @@ public class ConversationEventTyping  implements Serializable {
     }
   }
   private TypeEnum type = null;
+  private Long duration = null;
 
   
   /**
@@ -89,6 +90,13 @@ public class ConversationEventTyping  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "The duration of the Typing event in milliseconds.")
+  @JsonProperty("duration")
+  public Long getDuration() {
+    return duration;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -99,12 +107,13 @@ public class ConversationEventTyping  implements Serializable {
       return false;
     }
     ConversationEventTyping conversationEventTyping = (ConversationEventTyping) o;
-    return Objects.equals(this.type, conversationEventTyping.type);
+    return Objects.equals(this.type, conversationEventTyping.type) &&
+        Objects.equals(this.duration, conversationEventTyping.duration);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type);
+    return Objects.hash(type, duration);
   }
 
   @Override
@@ -113,6 +122,7 @@ public class ConversationEventTyping  implements Serializable {
     sb.append("class ConversationEventTyping {\n");
     
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
     sb.append("}");
     return sb.toString();
   }

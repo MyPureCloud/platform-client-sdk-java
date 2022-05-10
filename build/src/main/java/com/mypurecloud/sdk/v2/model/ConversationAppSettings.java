@@ -11,6 +11,8 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.AutoStart;
+import com.mypurecloud.sdk.v2.model.Markdown;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -38,7 +40,7 @@ public class ConversationAppSettings  implements Serializable {
     }
   }
   /**
-   * The auto start type for the messenger conversation
+   * Deprecated. The auto start type for the messenger conversation
    */
  @JsonDeserialize(using = AutoStartTypeEnumDeserializer.class)
   public enum AutoStartTypeEnum {
@@ -72,6 +74,8 @@ public class ConversationAppSettings  implements Serializable {
     }
   }
   private AutoStartTypeEnum autoStartType = null;
+  private AutoStart autoStart = null;
+  private Markdown markdown = null;
 
   
   /**
@@ -111,20 +115,56 @@ public class ConversationAppSettings  implements Serializable {
 
   
   /**
-   * The auto start type for the messenger conversation
+   * Deprecated. The auto start type for the messenger conversation
    **/
   public ConversationAppSettings autoStartType(AutoStartTypeEnum autoStartType) {
     this.autoStartType = autoStartType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The auto start type for the messenger conversation")
+  @ApiModelProperty(example = "null", value = "Deprecated. The auto start type for the messenger conversation")
   @JsonProperty("autoStartType")
   public AutoStartTypeEnum getAutoStartType() {
     return autoStartType;
   }
   public void setAutoStartType(AutoStartTypeEnum autoStartType) {
     this.autoStartType = autoStartType;
+  }
+
+  
+  /**
+   * The auto start for the messenger conversation
+   **/
+  public ConversationAppSettings autoStart(AutoStart autoStart) {
+    this.autoStart = autoStart;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The auto start for the messenger conversation")
+  @JsonProperty("autoStart")
+  public AutoStart getAutoStart() {
+    return autoStart;
+  }
+  public void setAutoStart(AutoStart autoStart) {
+    this.autoStart = autoStart;
+  }
+
+  
+  /**
+   * The markdown for the messenger app
+   **/
+  public ConversationAppSettings markdown(Markdown markdown) {
+    this.markdown = markdown;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The markdown for the messenger app")
+  @JsonProperty("markdown")
+  public Markdown getMarkdown() {
+    return markdown;
+  }
+  public void setMarkdown(Markdown markdown) {
+    this.markdown = markdown;
   }
 
   
@@ -140,12 +180,14 @@ public class ConversationAppSettings  implements Serializable {
     ConversationAppSettings conversationAppSettings = (ConversationAppSettings) o;
     return Objects.equals(this.showAgentTypingIndicator, conversationAppSettings.showAgentTypingIndicator) &&
         Objects.equals(this.showUserTypingIndicator, conversationAppSettings.showUserTypingIndicator) &&
-        Objects.equals(this.autoStartType, conversationAppSettings.autoStartType);
+        Objects.equals(this.autoStartType, conversationAppSettings.autoStartType) &&
+        Objects.equals(this.autoStart, conversationAppSettings.autoStart) &&
+        Objects.equals(this.markdown, conversationAppSettings.markdown);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(showAgentTypingIndicator, showUserTypingIndicator, autoStartType);
+    return Objects.hash(showAgentTypingIndicator, showUserTypingIndicator, autoStartType, autoStart, markdown);
   }
 
   @Override
@@ -156,6 +198,8 @@ public class ConversationAppSettings  implements Serializable {
     sb.append("    showAgentTypingIndicator: ").append(toIndentedString(showAgentTypingIndicator)).append("\n");
     sb.append("    showUserTypingIndicator: ").append(toIndentedString(showUserTypingIndicator)).append("\n");
     sb.append("    autoStartType: ").append(toIndentedString(autoStartType)).append("\n");
+    sb.append("    autoStart: ").append(toIndentedString(autoStart)).append("\n");
+    sb.append("    markdown: ").append(toIndentedString(markdown)).append("\n");
     sb.append("}");
     return sb.toString();
   }

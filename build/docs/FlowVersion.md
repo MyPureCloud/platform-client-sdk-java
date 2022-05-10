@@ -63,6 +63,7 @@ title: FlowVersion
 | SECURECALL | &quot;SECURECALL&quot; |
 | SPEECH | &quot;SPEECH&quot; |
 | SURVEYINVITE | &quot;SURVEYINVITE&quot; |
+| VOICE | &quot;VOICE&quot; |
 | VOICEMAIL | &quot;VOICEMAIL&quot; |
 | WORKFLOW | &quot;WORKFLOW&quot; |
 | WORKITEM | &quot;WORKITEM&quot; |

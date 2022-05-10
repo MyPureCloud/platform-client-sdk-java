@@ -466,6 +466,7 @@ public class ViewFilter  implements Serializable {
     OUTBOUNDCALL("outboundcall"),
     SECURECALL("securecall"),
     SURVEYINVITE("surveyinvite"),
+    VOICE("voice"),
     VOICEMAIL("voicemail"),
     WORKFLOW("workflow"),
     WORKITEM("workitem");
@@ -890,7 +891,8 @@ public class ViewFilter  implements Serializable {
     SCHEDULED("Scheduled"),
     INVALIDSCHEDULE("InvalidSchedule"),
     INPROGRESS("InProgress"),
-    COMPLETED("Completed");
+    COMPLETED("Completed"),
+    NOTCOMPLETED("NotCompleted");
 
     private String value;
 
@@ -1066,7 +1068,10 @@ public class ViewFilter  implements Serializable {
     GENESYSBOTFLOW("GenesysBotFlow"),
     NUANCEDLG("NuanceDlg"),
     GOOGLEDIALOGFLOWCX("GoogleDialogFlowCx"),
-    GENESYSBYOB("GenesysByob");
+    GENESYSBYOB("GenesysByob"),
+    AMAZONLEXV2("AmazonLexV2"),
+    GOOGLEDIALOGFLOWCXRESELL("GoogleDialogFlowCxResell"),
+    MICROSOFTSTTBOTFLOW("MicrosoftSttBotFlow");
 
     private String value;
 

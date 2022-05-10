@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.MessagingSettingReference;
 import com.mypurecloud.sdk.v2.model.SupportedContentReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -27,6 +28,7 @@ public class OpenIntegrationUpdateRequest  implements Serializable {
   private String id = null;
   private String name = null;
   private SupportedContentReference supportedContent = null;
+  private MessagingSettingReference messagingSetting = null;
   private String outboundNotificationWebhookUrl = null;
   private String outboundNotificationWebhookSignatureSecretToken = null;
   private Map<String, String> webhookHeaders = null;
@@ -73,6 +75,23 @@ public class OpenIntegrationUpdateRequest  implements Serializable {
   }
   public void setSupportedContent(SupportedContentReference supportedContent) {
     this.supportedContent = supportedContent;
+  }
+
+  
+  /**
+   **/
+  public OpenIntegrationUpdateRequest messagingSetting(MessagingSettingReference messagingSetting) {
+    this.messagingSetting = messagingSetting;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("messagingSetting")
+  public MessagingSettingReference getMessagingSetting() {
+    return messagingSetting;
+  }
+  public void setMessagingSetting(MessagingSettingReference messagingSetting) {
+    this.messagingSetting = messagingSetting;
   }
 
   
@@ -150,6 +169,7 @@ public class OpenIntegrationUpdateRequest  implements Serializable {
     return Objects.equals(this.id, openIntegrationUpdateRequest.id) &&
         Objects.equals(this.name, openIntegrationUpdateRequest.name) &&
         Objects.equals(this.supportedContent, openIntegrationUpdateRequest.supportedContent) &&
+        Objects.equals(this.messagingSetting, openIntegrationUpdateRequest.messagingSetting) &&
         Objects.equals(this.outboundNotificationWebhookUrl, openIntegrationUpdateRequest.outboundNotificationWebhookUrl) &&
         Objects.equals(this.outboundNotificationWebhookSignatureSecretToken, openIntegrationUpdateRequest.outboundNotificationWebhookSignatureSecretToken) &&
         Objects.equals(this.webhookHeaders, openIntegrationUpdateRequest.webhookHeaders) &&
@@ -158,7 +178,7 @@ public class OpenIntegrationUpdateRequest  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, supportedContent, outboundNotificationWebhookUrl, outboundNotificationWebhookSignatureSecretToken, webhookHeaders, selfUri);
+    return Objects.hash(id, name, supportedContent, messagingSetting, outboundNotificationWebhookUrl, outboundNotificationWebhookSignatureSecretToken, webhookHeaders, selfUri);
   }
 
   @Override
@@ -169,6 +189,7 @@ public class OpenIntegrationUpdateRequest  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    supportedContent: ").append(toIndentedString(supportedContent)).append("\n");
+    sb.append("    messagingSetting: ").append(toIndentedString(messagingSetting)).append("\n");
     sb.append("    outboundNotificationWebhookUrl: ").append(toIndentedString(outboundNotificationWebhookUrl)).append("\n");
     sb.append("    outboundNotificationWebhookSignatureSecretToken: ").append(toIndentedString(outboundNotificationWebhookSignatureSecretToken)).append("\n");
     sb.append("    webhookHeaders: ").append(toIndentedString(webhookHeaders)).append("\n");

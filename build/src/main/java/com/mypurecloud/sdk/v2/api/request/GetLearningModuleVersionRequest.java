@@ -85,7 +85,8 @@ public class GetLearningModuleVersionRequest {
 	} 
 
 	public enum expandValues { 
-		ASSESSMENTFORM("assessmentForm");
+		ASSESSMENTFORM("assessmentForm"), 
+		COVERART("coverArt");
 
 		private String value;
 

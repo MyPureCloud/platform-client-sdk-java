@@ -10,12 +10,15 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ContactAddress;
+import com.mypurecloud.sdk.v2.model.ContactAddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.DataSchema;
 import com.mypurecloud.sdk.v2.model.ExternalDataSource;
 import com.mypurecloud.sdk.v2.model.ExternalOrganization;
 import com.mypurecloud.sdk.v2.model.FacebookId;
 import com.mypurecloud.sdk.v2.model.LineId;
+import com.mypurecloud.sdk.v2.model.MergeOperation;
 import com.mypurecloud.sdk.v2.model.PhoneNumber;
 import com.mypurecloud.sdk.v2.model.TwitterId;
 import com.mypurecloud.sdk.v2.model.WhatsAppId;
@@ -60,6 +63,58 @@ public class ExternalContact  implements Serializable {
   private DataSchema schema = null;
   private Map<String, Object> customFields = null;
   private List<ExternalDataSource> externalDataSources = new ArrayList<ExternalDataSource>();
+
+  private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
+    public TypeEnumDeserializer() {
+      super(TypeEnumDeserializer.class);
+    }
+
+    @Override
+    public TypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return TypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The type of contact
+   */
+ @JsonDeserialize(using = TypeEnumDeserializer.class)
+  public enum TypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    EPHEMERAL("Ephemeral"),
+    IDENTIFIED("Identified"),
+    CURATED("Curated");
+
+    private String value;
+
+    TypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static TypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (TypeEnum value : TypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return TypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private TypeEnum type = null;
+  private ContactAddressableEntityRef canonicalContact = null;
+  private List<ContactAddressableEntityRef> mergeSet = new ArrayList<ContactAddressableEntityRef>();
+  private MergeOperation mergeOperation = null;
   private String selfUri = null;
 
   
@@ -503,6 +558,34 @@ public class ExternalContact  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "The type of contact")
+  @JsonProperty("type")
+  public TypeEnum getType() {
+    return type;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "The contact at the head of the merge tree. If null, this contact is not a part of any merge.")
+  @JsonProperty("canonicalContact")
+  public ContactAddressableEntityRef getCanonicalContact() {
+    return canonicalContact;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "The set of all contacts that are a part of the merge tree. If null, this contact is not a part of any merge.")
+  @JsonProperty("mergeSet")
+  public List<ContactAddressableEntityRef> getMergeSet() {
+    return mergeSet;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "Information about the merge history of this contact. If null, this contact is not a part of any merge.")
+  @JsonProperty("mergeOperation")
+  public MergeOperation getMergeOperation() {
+    return mergeOperation;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -546,12 +629,16 @@ public class ExternalContact  implements Serializable {
         Objects.equals(this.schema, externalContact.schema) &&
         Objects.equals(this.customFields, externalContact.customFields) &&
         Objects.equals(this.externalDataSources, externalContact.externalDataSources) &&
+        Objects.equals(this.type, externalContact.type) &&
+        Objects.equals(this.canonicalContact, externalContact.canonicalContact) &&
+        Objects.equals(this.mergeSet, externalContact.mergeSet) &&
+        Objects.equals(this.mergeOperation, externalContact.mergeOperation) &&
         Objects.equals(this.selfUri, externalContact.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, firstName, middleName, lastName, salutation, title, workPhone, cellPhone, homePhone, otherPhone, workEmail, personalEmail, otherEmail, address, twitterId, lineId, whatsAppId, facebookId, modifyDate, createDate, externalOrganization, surveyOptOut, externalSystemUrl, schema, customFields, externalDataSources, selfUri);
+    return Objects.hash(id, firstName, middleName, lastName, salutation, title, workPhone, cellPhone, homePhone, otherPhone, workEmail, personalEmail, otherEmail, address, twitterId, lineId, whatsAppId, facebookId, modifyDate, createDate, externalOrganization, surveyOptOut, externalSystemUrl, schema, customFields, externalDataSources, type, canonicalContact, mergeSet, mergeOperation, selfUri);
   }
 
   @Override
@@ -585,6 +672,10 @@ public class ExternalContact  implements Serializable {
     sb.append("    schema: ").append(toIndentedString(schema)).append("\n");
     sb.append("    customFields: ").append(toIndentedString(customFields)).append("\n");
     sb.append("    externalDataSources: ").append(toIndentedString(externalDataSources)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    canonicalContact: ").append(toIndentedString(canonicalContact)).append("\n");
+    sb.append("    mergeSet: ").append(toIndentedString(mergeSet)).append("\n");
+    sb.append("    mergeOperation: ").append(toIndentedString(mergeOperation)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -22,6 +22,8 @@ import com.mypurecloud.sdk.v2.model.CrossPlatformPolicy;
 import com.mypurecloud.sdk.v2.model.RecordingJob;
 import com.mypurecloud.sdk.v2.model.FailedRecordingEntityListing;
 import com.mypurecloud.sdk.v2.model.RecordingJobEntityListing;
+import com.mypurecloud.sdk.v2.model.RecordingEncryptionConfiguration;
+import com.mypurecloud.sdk.v2.model.RecordingEncryptionConfigurationListing;
 import com.mypurecloud.sdk.v2.model.LocalEncryptionConfiguration;
 import com.mypurecloud.sdk.v2.model.LocalEncryptionConfigurationListing;
 import com.mypurecloud.sdk.v2.model.Policy;
@@ -69,6 +71,8 @@ import com.mypurecloud.sdk.v2.api.request.GetRecordingCrossplatformMediaretentio
 import com.mypurecloud.sdk.v2.api.request.GetRecordingJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingJobFailedrecordingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRecordingKeyconfigurationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRecordingKeyconfigurationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingLocalkeysSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingLocalkeysSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingMediaretentionpoliciesRequest;
@@ -84,6 +88,8 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationRecordingAnnotationsRe
 import com.mypurecloud.sdk.v2.api.request.PostRecordingBatchrequestsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingCrossplatformMediaretentionpoliciesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRecordingKeyconfigurationsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRecordingKeyconfigurationsValidateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingLocalkeysRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingLocalkeysSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingMediaretentionpoliciesRequest;
@@ -96,6 +102,7 @@ import com.mypurecloud.sdk.v2.api.request.PutConversationRecordingAnnotationRequ
 import com.mypurecloud.sdk.v2.api.request.PutOrphanrecordingRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRecordingCrossplatformMediaretentionpolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRecordingJobRequest;
+import com.mypurecloud.sdk.v2.api.request.PutRecordingKeyconfigurationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRecordingLocalkeysSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRecordingMediaretentionpolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRecordingRecordingkeysRotationscheduleRequest;
@@ -1591,12 +1598,13 @@ public class RecordingApi {
    * @param enabled checks to see if policy is enabled - use enabled = true or enabled = false (optional)
    * @param summary provides a less verbose response of policy lists. (optional, default to false)
    * @param hasErrors provides a way to fetch all policies with errors or policies that do not have errors (optional)
+   * @param deleteDaysThreshold provides a way to fetch all policies with any actions having deleteDays exceeding the provided value (optional)
    * @return PolicyEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public PolicyEntityListing getRecordingCrossplatformMediaretentionpolicies(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String name, Boolean enabled, Boolean summary, Boolean hasErrors) throws IOException, ApiException {
-    return  getRecordingCrossplatformMediaretentionpolicies(createGetRecordingCrossplatformMediaretentionpoliciesRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, enabled, summary, hasErrors));
+  public PolicyEntityListing getRecordingCrossplatformMediaretentionpolicies(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String name, Boolean enabled, Boolean summary, Boolean hasErrors, Integer deleteDaysThreshold) throws IOException, ApiException {
+    return  getRecordingCrossplatformMediaretentionpolicies(createGetRecordingCrossplatformMediaretentionpoliciesRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, enabled, summary, hasErrors, deleteDaysThreshold));
   }
 
   /**
@@ -1612,14 +1620,15 @@ public class RecordingApi {
    * @param enabled checks to see if policy is enabled - use enabled = true or enabled = false (optional)
    * @param summary provides a less verbose response of policy lists. (optional, default to false)
    * @param hasErrors provides a way to fetch all policies with errors or policies that do not have errors (optional)
+   * @param deleteDaysThreshold provides a way to fetch all policies with any actions having deleteDays exceeding the provided value (optional)
    * @return PolicyEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PolicyEntityListing> getRecordingCrossplatformMediaretentionpoliciesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String name, Boolean enabled, Boolean summary, Boolean hasErrors) throws IOException {
-    return getRecordingCrossplatformMediaretentionpolicies(createGetRecordingCrossplatformMediaretentionpoliciesRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, enabled, summary, hasErrors).withHttpInfo());
+  public ApiResponse<PolicyEntityListing> getRecordingCrossplatformMediaretentionpoliciesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String name, Boolean enabled, Boolean summary, Boolean hasErrors, Integer deleteDaysThreshold) throws IOException {
+    return getRecordingCrossplatformMediaretentionpolicies(createGetRecordingCrossplatformMediaretentionpoliciesRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, enabled, summary, hasErrors, deleteDaysThreshold).withHttpInfo());
   }
 
-  private GetRecordingCrossplatformMediaretentionpoliciesRequest createGetRecordingCrossplatformMediaretentionpoliciesRequest(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String name, Boolean enabled, Boolean summary, Boolean hasErrors) {
+  private GetRecordingCrossplatformMediaretentionpoliciesRequest createGetRecordingCrossplatformMediaretentionpoliciesRequest(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String name, Boolean enabled, Boolean summary, Boolean hasErrors, Integer deleteDaysThreshold) {
     return GetRecordingCrossplatformMediaretentionpoliciesRequest.builder()
             .withPageSize(pageSize)
     
@@ -1640,6 +1649,8 @@ public class RecordingApi {
             .withSummary(summary)
     
             .withHasErrors(hasErrors)
+    
+            .withDeleteDaysThreshold(deleteDaysThreshold)
     
             .build();
   }
@@ -2054,6 +2065,160 @@ public class RecordingApi {
 
   
   /**
+   * Get the encryption key configurations
+   * 
+   * @param keyConfigurationId Key Configurations Id (required)
+   * @return RecordingEncryptionConfiguration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RecordingEncryptionConfiguration getRecordingKeyconfiguration(String keyConfigurationId) throws IOException, ApiException {
+    return  getRecordingKeyconfiguration(createGetRecordingKeyconfigurationRequest(keyConfigurationId));
+  }
+
+  /**
+   * Get the encryption key configurations
+   * 
+   * @param keyConfigurationId Key Configurations Id (required)
+   * @return RecordingEncryptionConfiguration
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RecordingEncryptionConfiguration> getRecordingKeyconfigurationWithHttpInfo(String keyConfigurationId) throws IOException {
+    return getRecordingKeyconfiguration(createGetRecordingKeyconfigurationRequest(keyConfigurationId).withHttpInfo());
+  }
+
+  private GetRecordingKeyconfigurationRequest createGetRecordingKeyconfigurationRequest(String keyConfigurationId) {
+    return GetRecordingKeyconfigurationRequest.builder()
+            .withKeyConfigurationId(keyConfigurationId)
+    
+            .build();
+  }
+
+  /**
+   * Get the encryption key configurations
+   * 
+   * @param request The request object
+   * @return RecordingEncryptionConfiguration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RecordingEncryptionConfiguration getRecordingKeyconfiguration(GetRecordingKeyconfigurationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<RecordingEncryptionConfiguration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RecordingEncryptionConfiguration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the encryption key configurations
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RecordingEncryptionConfiguration> getRecordingKeyconfiguration(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RecordingEncryptionConfiguration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RecordingEncryptionConfiguration> response = (ApiResponse<RecordingEncryptionConfiguration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RecordingEncryptionConfiguration> response = (ApiResponse<RecordingEncryptionConfiguration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a list of key configurations data
+   * 
+   * @return RecordingEncryptionConfigurationListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RecordingEncryptionConfigurationListing getRecordingKeyconfigurations() throws IOException, ApiException {
+    return  getRecordingKeyconfigurations(createGetRecordingKeyconfigurationsRequest());
+  }
+
+  /**
+   * Get a list of key configurations data
+   * 
+   * @return RecordingEncryptionConfigurationListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RecordingEncryptionConfigurationListing> getRecordingKeyconfigurationsWithHttpInfo() throws IOException {
+    return getRecordingKeyconfigurations(createGetRecordingKeyconfigurationsRequest().withHttpInfo());
+  }
+
+  private GetRecordingKeyconfigurationsRequest createGetRecordingKeyconfigurationsRequest() {
+    return GetRecordingKeyconfigurationsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get a list of key configurations data
+   * 
+   * @param request The request object
+   * @return RecordingEncryptionConfigurationListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RecordingEncryptionConfigurationListing getRecordingKeyconfigurations(GetRecordingKeyconfigurationsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<RecordingEncryptionConfigurationListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RecordingEncryptionConfigurationListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of key configurations data
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RecordingEncryptionConfigurationListing> getRecordingKeyconfigurations(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RecordingEncryptionConfigurationListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RecordingEncryptionConfigurationListing> response = (ApiResponse<RecordingEncryptionConfigurationListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RecordingEncryptionConfigurationListing> response = (ApiResponse<RecordingEncryptionConfigurationListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get the local encryption settings
    * 
    * @param settingsId Settings Id (required)
@@ -2220,12 +2385,13 @@ public class RecordingApi {
    * @param enabled checks to see if policy is enabled - use enabled = true or enabled = false (optional)
    * @param summary provides a less verbose response of policy lists. (optional, default to false)
    * @param hasErrors provides a way to fetch all policies with errors or policies that do not have errors (optional)
+   * @param deleteDaysThreshold provides a way to fetch all policies with any actions having deleteDays exceeding the provided value (optional)
    * @return PolicyEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public PolicyEntityListing getRecordingMediaretentionpolicies(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String name, Boolean enabled, Boolean summary, Boolean hasErrors) throws IOException, ApiException {
-    return  getRecordingMediaretentionpolicies(createGetRecordingMediaretentionpoliciesRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, enabled, summary, hasErrors));
+  public PolicyEntityListing getRecordingMediaretentionpolicies(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String name, Boolean enabled, Boolean summary, Boolean hasErrors, Integer deleteDaysThreshold) throws IOException, ApiException {
+    return  getRecordingMediaretentionpolicies(createGetRecordingMediaretentionpoliciesRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, enabled, summary, hasErrors, deleteDaysThreshold));
   }
 
   /**
@@ -2241,14 +2407,15 @@ public class RecordingApi {
    * @param enabled checks to see if policy is enabled - use enabled = true or enabled = false (optional)
    * @param summary provides a less verbose response of policy lists. (optional, default to false)
    * @param hasErrors provides a way to fetch all policies with errors or policies that do not have errors (optional)
+   * @param deleteDaysThreshold provides a way to fetch all policies with any actions having deleteDays exceeding the provided value (optional)
    * @return PolicyEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PolicyEntityListing> getRecordingMediaretentionpoliciesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String name, Boolean enabled, Boolean summary, Boolean hasErrors) throws IOException {
-    return getRecordingMediaretentionpolicies(createGetRecordingMediaretentionpoliciesRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, enabled, summary, hasErrors).withHttpInfo());
+  public ApiResponse<PolicyEntityListing> getRecordingMediaretentionpoliciesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String name, Boolean enabled, Boolean summary, Boolean hasErrors, Integer deleteDaysThreshold) throws IOException {
+    return getRecordingMediaretentionpolicies(createGetRecordingMediaretentionpoliciesRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, enabled, summary, hasErrors, deleteDaysThreshold).withHttpInfo());
   }
 
-  private GetRecordingMediaretentionpoliciesRequest createGetRecordingMediaretentionpoliciesRequest(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String name, Boolean enabled, Boolean summary, Boolean hasErrors) {
+  private GetRecordingMediaretentionpoliciesRequest createGetRecordingMediaretentionpoliciesRequest(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String name, Boolean enabled, Boolean summary, Boolean hasErrors, Integer deleteDaysThreshold) {
     return GetRecordingMediaretentionpoliciesRequest.builder()
             .withPageSize(pageSize)
     
@@ -2269,6 +2436,8 @@ public class RecordingApi {
             .withSummary(summary)
     
             .withHasErrors(hasErrors)
+    
+            .withDeleteDaysThreshold(deleteDaysThreshold)
     
             .build();
   }
@@ -3213,8 +3382,8 @@ public class RecordingApi {
 
   
   /**
-   * Create a recording bulk job
-   * 
+   * Create a recording bulk job.
+   * Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state.
    * @param body query (required)
    * @return RecordingJob
    * @throws ApiException if the request fails on the server
@@ -3225,8 +3394,8 @@ public class RecordingApi {
   }
 
   /**
-   * Create a recording bulk job
-   * 
+   * Create a recording bulk job.
+   * Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state.
    * @param body query (required)
    * @return RecordingJob
    * @throws IOException if the request fails to be processed
@@ -3243,8 +3412,8 @@ public class RecordingApi {
   }
 
   /**
-   * Create a recording bulk job
-   * 
+   * Create a recording bulk job.
+   * Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state.
    * @param request The request object
    * @return RecordingJob
    * @throws ApiException if the request fails on the server
@@ -3262,8 +3431,8 @@ public class RecordingApi {
   }
 
   /**
-   * Create a recording bulk job
-   * 
+   * Create a recording bulk job.
+   * Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -3286,6 +3455,164 @@ public class RecordingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<RecordingJob> response = (ApiResponse<RecordingJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Setup configurations for encryption key creation
+   * 
+   * @param body Encryption Configuration (required)
+   * @return RecordingEncryptionConfiguration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RecordingEncryptionConfiguration postRecordingKeyconfigurations(RecordingEncryptionConfiguration body) throws IOException, ApiException {
+    return  postRecordingKeyconfigurations(createPostRecordingKeyconfigurationsRequest(body));
+  }
+
+  /**
+   * Setup configurations for encryption key creation
+   * 
+   * @param body Encryption Configuration (required)
+   * @return RecordingEncryptionConfiguration
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RecordingEncryptionConfiguration> postRecordingKeyconfigurationsWithHttpInfo(RecordingEncryptionConfiguration body) throws IOException {
+    return postRecordingKeyconfigurations(createPostRecordingKeyconfigurationsRequest(body).withHttpInfo());
+  }
+
+  private PostRecordingKeyconfigurationsRequest createPostRecordingKeyconfigurationsRequest(RecordingEncryptionConfiguration body) {
+    return PostRecordingKeyconfigurationsRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Setup configurations for encryption key creation
+   * 
+   * @param request The request object
+   * @return RecordingEncryptionConfiguration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RecordingEncryptionConfiguration postRecordingKeyconfigurations(PostRecordingKeyconfigurationsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<RecordingEncryptionConfiguration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RecordingEncryptionConfiguration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Setup configurations for encryption key creation
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RecordingEncryptionConfiguration> postRecordingKeyconfigurations(ApiRequest<RecordingEncryptionConfiguration> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RecordingEncryptionConfiguration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RecordingEncryptionConfiguration> response = (ApiResponse<RecordingEncryptionConfiguration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RecordingEncryptionConfiguration> response = (ApiResponse<RecordingEncryptionConfiguration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Validate encryption key configurations without saving it
+   * 
+   * @param body Encryption Configuration (required)
+   * @return RecordingEncryptionConfiguration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RecordingEncryptionConfiguration postRecordingKeyconfigurationsValidate(RecordingEncryptionConfiguration body) throws IOException, ApiException {
+    return  postRecordingKeyconfigurationsValidate(createPostRecordingKeyconfigurationsValidateRequest(body));
+  }
+
+  /**
+   * Validate encryption key configurations without saving it
+   * 
+   * @param body Encryption Configuration (required)
+   * @return RecordingEncryptionConfiguration
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RecordingEncryptionConfiguration> postRecordingKeyconfigurationsValidateWithHttpInfo(RecordingEncryptionConfiguration body) throws IOException {
+    return postRecordingKeyconfigurationsValidate(createPostRecordingKeyconfigurationsValidateRequest(body).withHttpInfo());
+  }
+
+  private PostRecordingKeyconfigurationsValidateRequest createPostRecordingKeyconfigurationsValidateRequest(RecordingEncryptionConfiguration body) {
+    return PostRecordingKeyconfigurationsValidateRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Validate encryption key configurations without saving it
+   * 
+   * @param request The request object
+   * @return RecordingEncryptionConfiguration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RecordingEncryptionConfiguration postRecordingKeyconfigurationsValidate(PostRecordingKeyconfigurationsValidateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<RecordingEncryptionConfiguration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RecordingEncryptionConfiguration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Validate encryption key configurations without saving it
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RecordingEncryptionConfiguration> postRecordingKeyconfigurationsValidate(ApiRequest<RecordingEncryptionConfiguration> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RecordingEncryptionConfiguration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RecordingEncryptionConfiguration> response = (ApiResponse<RecordingEncryptionConfiguration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RecordingEncryptionConfiguration> response = (ApiResponse<RecordingEncryptionConfiguration>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -4256,6 +4583,89 @@ public class RecordingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<RecordingJob> response = (ApiResponse<RecordingJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update the encryption key configurations
+   * 
+   * @param keyConfigurationId Key Configurations Id (required)
+   * @param body Encryption key configuration metadata (required)
+   * @return RecordingEncryptionConfiguration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RecordingEncryptionConfiguration putRecordingKeyconfiguration(String keyConfigurationId, RecordingEncryptionConfiguration body) throws IOException, ApiException {
+    return  putRecordingKeyconfiguration(createPutRecordingKeyconfigurationRequest(keyConfigurationId, body));
+  }
+
+  /**
+   * Update the encryption key configurations
+   * 
+   * @param keyConfigurationId Key Configurations Id (required)
+   * @param body Encryption key configuration metadata (required)
+   * @return RecordingEncryptionConfiguration
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RecordingEncryptionConfiguration> putRecordingKeyconfigurationWithHttpInfo(String keyConfigurationId, RecordingEncryptionConfiguration body) throws IOException {
+    return putRecordingKeyconfiguration(createPutRecordingKeyconfigurationRequest(keyConfigurationId, body).withHttpInfo());
+  }
+
+  private PutRecordingKeyconfigurationRequest createPutRecordingKeyconfigurationRequest(String keyConfigurationId, RecordingEncryptionConfiguration body) {
+    return PutRecordingKeyconfigurationRequest.builder()
+            .withKeyConfigurationId(keyConfigurationId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update the encryption key configurations
+   * 
+   * @param request The request object
+   * @return RecordingEncryptionConfiguration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RecordingEncryptionConfiguration putRecordingKeyconfiguration(PutRecordingKeyconfigurationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<RecordingEncryptionConfiguration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RecordingEncryptionConfiguration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update the encryption key configurations
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RecordingEncryptionConfiguration> putRecordingKeyconfiguration(ApiRequest<RecordingEncryptionConfiguration> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RecordingEncryptionConfiguration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RecordingEncryptionConfiguration> response = (ApiResponse<RecordingEncryptionConfiguration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RecordingEncryptionConfiguration> response = (ApiResponse<RecordingEncryptionConfiguration>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

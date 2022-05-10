@@ -14,6 +14,7 @@ title: ConversationMessageEventTopicMessageDetails
 | **messageStatus** | [**MessageStatusEnum**](#MessageStatusEnum)<!----> |  |  [optional] |
 | **media** | <!----><!---->[**List&lt;ConversationMessageEventTopicMessageMedia&gt;**](ConversationMessageEventTopicMessageMedia.html)<!----> |  |  [optional] |
 | **stickers** | <!----><!---->[**List&lt;ConversationMessageEventTopicMessageSticker&gt;**](ConversationMessageEventTopicMessageSticker.html)<!----> |  |  [optional] |
+| **errorInfo** | <!----><!---->[**ConversationMessageEventTopicErrorDetails**](ConversationMessageEventTopicErrorDetails.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

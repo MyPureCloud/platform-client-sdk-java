@@ -207,6 +207,20 @@ public class GetIntegrationsActionsDraftsRequest {
 	    return this;
 	} 
 	
+	private String ids;
+	public String getIds() {
+		return this.ids;
+	}
+
+	public void setIds(String ids) {
+		this.ids = ids;
+	}
+
+	public GetIntegrationsActionsDraftsRequest withIds(String ids) {
+	    this.setIds(ids);
+	    return this;
+	} 
+	
 	private String secure;
 	public String getSecure() {
 		return this.secure;
@@ -334,6 +348,8 @@ public class GetIntegrationsActionsDraftsRequest {
         
                 .withQueryParameters("name", "", name)
         
+                .withQueryParameters("ids", "", ids)
+        
                 .withQueryParameters("secure", "", secure)
         
                 .withQueryParameters("includeAuthActions", "", includeAuthActions)
@@ -401,6 +417,11 @@ public class GetIntegrationsActionsDraftsRequest {
 		
 		public Builder withName(String name) {
 			request.setName(name);
+			return this;
+		}
+		
+		public Builder withIds(String ids) {
+			request.setIds(ids);
 			return this;
 		}
 		

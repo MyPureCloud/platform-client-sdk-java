@@ -572,7 +572,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String businessUnitId = "businessUnitId_example"; // String | The business unit ID of the business unit to which the forecast belongs
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
 LocalDate weekDateId = new LocalDate(); // LocalDate | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 String forecastId = "forecastId_example"; // String | The ID of the forecast
 try {
@@ -588,7 +588,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **businessUnitId** | **String**| The business unit ID of the business unit to which the forecast belongs | 
+| **businessUnitId** | **String**| The ID of the business unit to which the forecast belongs | 
 | **weekDateId** | **LocalDate**| The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
 | **forecastId** | **String**| The ID of the forecast | 
 {: class="table-striped"}
@@ -758,7 +758,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit.
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
 String timeOffLimitId = "timeOffLimitId_example"; // String | The ID of the time off limit object to delete
 try {
     apiInstance.deleteWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId);
@@ -773,7 +773,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The management unit ID of the management unit. | 
+| **managementUnitId** | **String**| The ID of the management unit. | 
 | **timeOffLimitId** | **String**| The ID of the time off limit object to delete | 
 {: class="table-striped"}
 
@@ -822,7 +822,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String managementUnitId = "managementUnitId_example"; // String | The management unit ID.
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit
 String timeOffPlanId = "timeOffPlanId_example"; // String | The ID of the time off plan to delete
 try {
     apiInstance.deleteWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId);
@@ -837,7 +837,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The management unit ID. | 
+| **managementUnitId** | **String**| The ID of the management unit | 
 | **timeOffPlanId** | **String**| The ID of the time off plan to delete | 
 {: class="table-striped"}
 
@@ -1636,7 +1636,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String businessUnitId = "businessUnitId_example"; // String | The business unit ID of the business unit
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 LocalDate date = new LocalDate(); // LocalDate | yyyy-MM-dd date string interpreted in the configured business unit time zone. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 try {
     WfmIntradayPlanningGroupListing result = apiInstance.getWorkforcemanagementBusinessunitIntradayPlanninggroups(businessUnitId, date);
@@ -1652,7 +1652,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **businessUnitId** | **String**| The business unit ID of the business unit | 
+| **businessUnitId** | **String**| The ID of the business unit | 
 | **date** | **LocalDate**| yyyy-MM-dd date string interpreted in the configured business unit time zone. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
 {: class="table-striped"}
 
@@ -2578,7 +2578,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String businessUnitId = "businessUnitId_example"; // String | The business unit ID of the business unit to which the forecast belongs
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
 LocalDate weekDateId = new LocalDate(); // LocalDate | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 String forecastId = "forecastId_example"; // String | The ID of the forecast
 List<String> expand = Arrays.asList("expand_example"); // List<String> | 
@@ -2596,7 +2596,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **businessUnitId** | **String**| The business unit ID of the business unit to which the forecast belongs | 
+| **businessUnitId** | **String**| The ID of the business unit to which the forecast belongs | 
 | **weekDateId** | **LocalDate**| The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
 | **forecastId** | **String**| The ID of the forecast | 
 | **expand** | [**List&lt;String&gt;**](String.html)|  | [optional]<br />**Values**: planningGroups, generationResults 
@@ -2647,7 +2647,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String businessUnitId = "businessUnitId_example"; // String | The business unit ID of the business unit to which the forecast belongs
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
 LocalDate weekDateId = new LocalDate(); // LocalDate | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 String forecastId = "forecastId_example"; // String | The ID of the forecast
 Integer weekNumber = 56; // Integer | The week number to fetch (for multi-week forecasts)
@@ -2666,7 +2666,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **businessUnitId** | **String**| The business unit ID of the business unit to which the forecast belongs | 
+| **businessUnitId** | **String**| The ID of the business unit to which the forecast belongs | 
 | **weekDateId** | **LocalDate**| The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
 | **forecastId** | **String**| The ID of the forecast | 
 | **weekNumber** | **Integer**| The week number to fetch (for multi-week forecasts) | [optional] 
@@ -2718,7 +2718,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String businessUnitId = "businessUnitId_example"; // String | The business unit ID of the business unit to which the forecast belongs
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
 LocalDate weekDateId = new LocalDate(); // LocalDate | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 String forecastId = "forecastId_example"; // String | The ID of the forecast
 try {
@@ -2735,7 +2735,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **businessUnitId** | **String**| The business unit ID of the business unit to which the forecast belongs | 
+| **businessUnitId** | **String**| The ID of the business unit to which the forecast belongs | 
 | **weekDateId** | **LocalDate**| The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
 | **forecastId** | **String**| The ID of the forecast | 
 {: class="table-striped"}
@@ -2785,7 +2785,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String businessUnitId = "businessUnitId_example"; // String | The business unit ID of the business unit to which the forecast belongs
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
 LocalDate weekDateId = new LocalDate(); // LocalDate | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 String forecastId = "forecastId_example"; // String | The ID of the forecast
 Boolean forceDownloadService = true; // Boolean | Force the result of this operation to be sent via download service.  For testing/app development purposes
@@ -2803,7 +2803,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **businessUnitId** | **String**| The business unit ID of the business unit to which the forecast belongs | 
+| **businessUnitId** | **String**| The ID of the business unit to which the forecast belongs | 
 | **weekDateId** | **LocalDate**| The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
 | **forecastId** | **String**| The ID of the forecast | 
 | **forceDownloadService** | **Boolean**| Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional] 
@@ -2856,7 +2856,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String businessUnitId = "businessUnitId_example"; // String | The business unit ID of the business unit to which the forecast belongs
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
 LocalDate weekDateId = new LocalDate(); // LocalDate | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 String forecastId = "forecastId_example"; // String | The ID of the forecast
 try {
@@ -2873,7 +2873,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **businessUnitId** | **String**| The business unit ID of the business unit to which the forecast belongs | 
+| **businessUnitId** | **String**| The ID of the business unit to which the forecast belongs | 
 | **weekDateId** | **LocalDate**| The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
 | **forecastId** | **String**| The ID of the forecast | 
 {: class="table-striped"}
@@ -2924,7 +2924,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String businessUnitId = "businessUnitId_example"; // String | The business unit ID of the business unit to which the forecast belongs
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
 String weekDateId = "weekDateId_example"; // String | The week start date of the forecast in yyyy-MM-dd format or 'recent' (without quotes) to fetch recent forecasts
 try {
     BuShortTermForecastListing result = apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecasts(businessUnitId, weekDateId);
@@ -2940,7 +2940,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **businessUnitId** | **String**| The business unit ID of the business unit to which the forecast belongs | 
+| **businessUnitId** | **String**| The ID of the business unit to which the forecast belongs | 
 | **weekDateId** | **String**| The week start date of the forecast in yyyy-MM-dd format or &#39;recent&#39; (without quotes) to fetch recent forecasts | 
 {: class="table-striped"}
 
@@ -3568,7 +3568,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit.
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit
 Boolean forceDownloadService = true; // Boolean | Force the result of this operation to be sent via download service.  For testing/app development purposes
 try {
     UserScheduleAdherenceListing result = apiInstance.getWorkforcemanagementManagementunitAdherence(managementUnitId, forceDownloadService);
@@ -3584,7 +3584,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The management unit ID of the management unit. | 
+| **managementUnitId** | **String**| The ID of the management unit | 
 | **forceDownloadService** | **Boolean**| Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional] 
 {: class="table-striped"}
 
@@ -3633,7 +3633,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String managementUnitId = "managementUnitId_example"; // String | The id of the management unit, or 'mine' for the management unit of the logged-in user.
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 String agentId = "agentId_example"; // String | The agent id
 Boolean excludeCapabilities = true; // Boolean | Excludes all capabilities of the agent such as queues, languages, and skills
 try {
@@ -3650,7 +3650,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The id of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **agentId** | **String**| The agent id | 
 | **excludeCapabilities** | **Boolean**| Excludes all capabilities of the agent such as queues, languages, and skills | [optional] 
 {: class="table-striped"}
@@ -3701,7 +3701,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String managementUnitId = "managementUnitId_example"; // String | The id of the management unit, or 'mine' for the management unit of the logged-in user.
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 String agentId = "agentId_example"; // String | The agent id
 try {
     ShiftTradeListResponse result = apiInstance.getWorkforcemanagementManagementunitAgentShifttrades(managementUnitId, agentId);
@@ -3717,7 +3717,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The id of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **agentId** | **String**| The agent id | 
 {: class="table-striped"}
 
@@ -3767,7 +3767,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 try {
     ShiftTradeMatchesSummaryResponse result = apiInstance.getWorkforcemanagementManagementunitShifttradesMatched(managementUnitId);
     System.out.println(result);
@@ -3782,7 +3782,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 {: class="table-striped"}
 
 
@@ -3830,7 +3830,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 try {
     WfmUserEntityListing result = apiInstance.getWorkforcemanagementManagementunitShifttradesUsers(managementUnitId);
     System.out.println(result);
@@ -3845,7 +3845,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 {: class="table-striped"}
 
 
@@ -3893,7 +3893,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit.
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
 String timeOffLimitId = "timeOffLimitId_example"; // String | The ID of the time off limit to fetch
 try {
     TimeOffLimit result = apiInstance.getWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId);
@@ -3909,7 +3909,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The management unit ID of the management unit. | 
+| **managementUnitId** | **String**| The ID of the management unit. | 
 | **timeOffLimitId** | **String**| The ID of the time off limit to fetch | 
 {: class="table-striped"}
 
@@ -3959,7 +3959,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit.
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
 try {
     TimeOffLimitListing result = apiInstance.getWorkforcemanagementManagementunitTimeofflimits(managementUnitId);
     System.out.println(result);
@@ -3974,7 +3974,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The management unit ID of the management unit. | 
+| **managementUnitId** | **String**| The ID of the management unit. | 
 {: class="table-striped"}
 
 
@@ -4022,7 +4022,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String managementUnitId = "managementUnitId_example"; // String | The management unit ID.
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit
 String timeOffPlanId = "timeOffPlanId_example"; // String | The ID of the time off plan to fetch
 try {
     TimeOffPlan result = apiInstance.getWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId);
@@ -4038,7 +4038,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The management unit ID. | 
+| **managementUnitId** | **String**| The ID of the management unit | 
 | **timeOffPlanId** | **String**| The ID of the time off plan to fetch | 
 {: class="table-striped"}
 
@@ -4087,7 +4087,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String managementUnitId = "managementUnitId_example"; // String | The management unit ID.
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit
 try {
     TimeOffPlanListing result = apiInstance.getWorkforcemanagementManagementunitTimeoffplans(managementUnitId);
     System.out.println(result);
@@ -4102,7 +4102,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The management unit ID. | 
+| **managementUnitId** | **String**| The ID of the management unit | 
 {: class="table-striped"}
 
 
@@ -4150,7 +4150,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String managementUnitId = "managementUnitId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 String userId = "userId_example"; // String | The userId to whom the Time Off Request applies.
 String timeOffRequestId = "timeOffRequestId_example"; // String | Time Off Request Id
 try {
@@ -4167,7 +4167,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **userId** | **String**| The userId to whom the Time Off Request applies. | 
 | **timeOffRequestId** | **String**| Time Off Request Id | 
 {: class="table-striped"}
@@ -4218,7 +4218,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit.
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
 String userId = "userId_example"; // String | The userId to whom the time off request applies.
 String timeOffRequestId = "timeOffRequestId_example"; // String | The ID of the time off request, which dates and activityCodeId determine limit values to retrieve
 try {
@@ -4235,7 +4235,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The management unit ID of the management unit. | 
+| **managementUnitId** | **String**| The ID of the management unit. | 
 | **userId** | **String**| The userId to whom the time off request applies. | 
 | **timeOffRequestId** | **String**| The ID of the time off request, which dates and activityCodeId determine limit values to retrieve | 
 {: class="table-striped"}
@@ -4285,7 +4285,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String managementUnitId = "managementUnitId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 String userId = "userId_example"; // String | The userId to whom the Time Off Request applies.
 Boolean recentlyReviewed = false; // Boolean | Limit results to requests that have been reviewed within the preceding 30 days
 try {
@@ -4302,7 +4302,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **userId** | **String**| The userId to whom the Time Off Request applies. | 
 | **recentlyReviewed** | **Boolean**| Limit results to requests that have been reviewed within the preceding 30 days | [optional] [default to false] 
 {: class="table-striped"}
@@ -4359,7 +4359,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 try {
     WfmUserEntityListing result = apiInstance.getWorkforcemanagementManagementunitUsers(managementUnitId);
     System.out.println(result);
@@ -4374,7 +4374,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 {: class="table-striped"}
 
 
@@ -4567,7 +4567,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 LocalDate weekDateId = new LocalDate(); // LocalDate | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 Boolean evaluateMatches = true; // Boolean | Whether to evaluate the matches for violations
 try {
@@ -4584,7 +4584,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **weekDateId** | **LocalDate**| The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
 | **evaluateMatches** | **Boolean**| Whether to evaluate the matches for violations | [optional] [default to true] 
 {: class="table-striped"}
@@ -5219,7 +5219,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String timeOffRequestId = "timeOffRequestId_example"; // String | Time Off Request Id
+String timeOffRequestId = "timeOffRequestId_example"; // String | The ID of the time off request
 try {
     TimeOffRequestResponse result = apiInstance.getWorkforcemanagementTimeoffrequest(timeOffRequestId);
     System.out.println(result);
@@ -5234,7 +5234,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **timeOffRequestId** | **String**| Time Off Request Id | 
+| **timeOffRequestId** | **String**| The ID of the time off request | 
 {: class="table-striped"}
 
 
@@ -5282,7 +5282,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String timeOffRequestId = "timeOffRequestId_example"; // String | Time Off Request Id
+String timeOffRequestId = "timeOffRequestId_example"; // String | The ID of the time off request
 try {
     WaitlistPositionListing result = apiInstance.getWorkforcemanagementTimeoffrequestWaitlistpositions(timeOffRequestId);
     System.out.println(result);
@@ -5297,7 +5297,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **timeOffRequestId** | **String**| Time Off Request Id | 
+| **timeOffRequestId** | **String**| The ID of the time off request | 
 {: class="table-striped"}
 
 
@@ -5806,7 +5806,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit.
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
 String timeOffLimitId = "timeOffLimitId_example"; // String | The id of time off limit object to update
 UpdateTimeOffLimitRequest body = new UpdateTimeOffLimitRequest(); // UpdateTimeOffLimitRequest | body
 try {
@@ -5823,7 +5823,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The management unit ID of the management unit. | 
+| **managementUnitId** | **String**| The ID of the management unit. | 
 | **timeOffLimitId** | **String**| The id of time off limit object to update | 
 | **body** | [**UpdateTimeOffLimitRequest**](UpdateTimeOffLimitRequest.html)| body | [optional] 
 {: class="table-striped"}
@@ -5873,7 +5873,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String managementUnitId = "managementUnitId_example"; // String | The management unit ID.
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit
 String timeOffPlanId = "timeOffPlanId_example"; // String | The ID of the time off plan to update
 UpdateTimeOffPlanRequest body = new UpdateTimeOffPlanRequest(); // UpdateTimeOffPlanRequest | body
 try {
@@ -5890,7 +5890,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The management unit ID. | 
+| **managementUnitId** | **String**| The ID of the management unit | 
 | **timeOffPlanId** | **String**| The ID of the time off plan to update | 
 | **body** | [**UpdateTimeOffPlanRequest**](UpdateTimeOffPlanRequest.html)| body | [optional] 
 {: class="table-striped"}
@@ -5940,7 +5940,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String managementUnitId = "managementUnitId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 String userId = "userId_example"; // String | The id of the user the requested time off request belongs to
 String timeOffRequestId = "timeOffRequestId_example"; // String | The id of the time off request to update
 AdminTimeOffRequestPatch body = new AdminTimeOffRequestPatch(); // AdminTimeOffRequestPatch | body
@@ -5958,7 +5958,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **userId** | **String**| The id of the user the requested time off request belongs to | 
 | **timeOffRequestId** | **String**| The id of the time off request to update | 
 | **body** | [**AdminTimeOffRequestPatch**](AdminTimeOffRequestPatch.html)| body | [optional] 
@@ -6009,7 +6009,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 LocalDate weekDateId = new LocalDate(); // LocalDate | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 PatchShiftTradeRequest body = new PatchShiftTradeRequest(); // PatchShiftTradeRequest | body
 String tradeId = "tradeId_example"; // String | The ID of the shift trade to update
@@ -6027,7 +6027,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **weekDateId** | **LocalDate**| The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
 | **body** | [**PatchShiftTradeRequest**](PatchShiftTradeRequest.html)| body | 
 | **tradeId** | **String**| The ID of the shift trade to update | 
@@ -6214,7 +6214,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String timeOffRequestId = "timeOffRequestId_example"; // String | Time Off Request Id
+String timeOffRequestId = "timeOffRequestId_example"; // String | The ID of the time off request
 AgentTimeOffRequestPatch body = new AgentTimeOffRequestPatch(); // AgentTimeOffRequestPatch | body
 try {
     TimeOffRequestResponse result = apiInstance.patchWorkforcemanagementTimeoffrequest(timeOffRequestId, body);
@@ -6230,7 +6230,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **timeOffRequestId** | **String**| Time Off Request Id | 
+| **timeOffRequestId** | **String**| The ID of the time off request | 
 | **body** | [**AgentTimeOffRequestPatch**](AgentTimeOffRequestPatch.html)| body | [optional] 
 {: class="table-striped"}
 
@@ -6540,7 +6540,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String businessUnitId = "businessUnitId_example"; // String | The business unit ID of the business unit
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 Boolean forceAsync = true; // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
 IntradayPlanningGroupRequest body = new IntradayPlanningGroupRequest(); // IntradayPlanningGroupRequest | body
 try {
@@ -6557,7 +6557,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **businessUnitId** | **String**| The business unit ID of the business unit | 
+| **businessUnitId** | **String**| The ID of the business unit | 
 | **forceAsync** | **Boolean**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional] 
 | **body** | [**IntradayPlanningGroupRequest**](IntradayPlanningGroupRequest.html)| body | [optional] 
 {: class="table-striped"}
@@ -7355,7 +7355,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String businessUnitId = "businessUnitId_example"; // String | The business unit ID of the business unit to which the forecast belongs
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
 LocalDate weekDateId = new LocalDate(); // LocalDate | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 String forecastId = "forecastId_example"; // String | The ID of the forecast to copy
 CopyBuForecastRequest body = new CopyBuForecastRequest(); // CopyBuForecastRequest | body
@@ -7374,7 +7374,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **businessUnitId** | **String**| The business unit ID of the business unit to which the forecast belongs | 
+| **businessUnitId** | **String**| The ID of the business unit to which the forecast belongs | 
 | **weekDateId** | **LocalDate**| The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
 | **forecastId** | **String**| The ID of the forecast to copy | 
 | **body** | [**CopyBuForecastRequest**](CopyBuForecastRequest.html)| body | 
@@ -7426,7 +7426,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String businessUnitId = "businessUnitId_example"; // String | The business unit ID of the business unit to which the forecast belongs
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
 LocalDate weekDateId = new LocalDate(); // LocalDate | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 GenerateBuForecastRequest body = new GenerateBuForecastRequest(); // GenerateBuForecastRequest | 
 Boolean forceAsync = true; // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
@@ -7444,7 +7444,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **businessUnitId** | **String**| The business unit ID of the business unit to which the forecast belongs | 
+| **businessUnitId** | **String**| The ID of the business unit to which the forecast belongs | 
 | **weekDateId** | **LocalDate**| The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
 | **body** | [**GenerateBuForecastRequest**](GenerateBuForecastRequest.html)|  | 
 | **forceAsync** | **Boolean**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional] 
@@ -7495,7 +7495,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String businessUnitId = "businessUnitId_example"; // String | The business unit ID of the business unit to which the forecast belongs
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
 LocalDate weekDateId = new LocalDate(); // LocalDate | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 WfmProcessUploadRequest body = new WfmProcessUploadRequest(); // WfmProcessUploadRequest | 
 try {
@@ -7512,7 +7512,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **businessUnitId** | **String**| The business unit ID of the business unit to which the forecast belongs | 
+| **businessUnitId** | **String**| The ID of the business unit to which the forecast belongs | 
 | **weekDateId** | **LocalDate**| First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
 | **body** | [**WfmProcessUploadRequest**](WfmProcessUploadRequest.html)|  | 
 {: class="table-striped"}
@@ -7562,7 +7562,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String businessUnitId = "businessUnitId_example"; // String | The business unit ID of the business unit to which the forecast belongs
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
 LocalDate weekDateId = new LocalDate(); // LocalDate | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 UploadUrlRequestBody body = new UploadUrlRequestBody(); // UploadUrlRequestBody | body
 try {
@@ -7579,7 +7579,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **businessUnitId** | **String**| The business unit ID of the business unit to which the forecast belongs | 
+| **businessUnitId** | **String**| The ID of the business unit to which the forecast belongs | 
 | **weekDateId** | **LocalDate**| First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
 | **body** | [**UploadUrlRequestBody**](UploadUrlRequestBody.html)| body | 
 {: class="table-striped"}
@@ -7878,7 +7878,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 BuSearchAgentSchedulesRequest body = new BuSearchAgentSchedulesRequest(); // BuSearchAgentSchedulesRequest | body
 Boolean forceAsync = true; // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
 Boolean forceDownloadService = true; // Boolean | Force the result of this operation to be sent via download service.  For testing/app development purposes
@@ -7896,7 +7896,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **body** | [**BuSearchAgentSchedulesRequest**](BuSearchAgentSchedulesRequest.html)| body | [optional] 
 | **forceAsync** | **Boolean**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional] 
 | **forceDownloadService** | **Boolean**| Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional] 
@@ -7947,7 +7947,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit
 WfmHistoricalAdherenceQuery body = new WfmHistoricalAdherenceQuery(); // WfmHistoricalAdherenceQuery | body
 try {
     WfmHistoricalAdherenceResponse result = apiInstance.postWorkforcemanagementManagementunitHistoricaladherencequery(managementUnitId, body);
@@ -7963,7 +7963,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The management unit ID of the management unit | 
+| **managementUnitId** | **String**| The ID of the management unit | 
 | **body** | [**WfmHistoricalAdherenceQuery**](WfmHistoricalAdherenceQuery.html)| body | [optional] 
 {: class="table-striped"}
 
@@ -8078,7 +8078,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 UserListScheduleRequestBody body = new UserListScheduleRequestBody(); // UserListScheduleRequestBody | body
 try {
     UserScheduleContainer result = apiInstance.postWorkforcemanagementManagementunitSchedulesSearch(managementUnitId, body);
@@ -8094,7 +8094,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **body** | [**UserListScheduleRequestBody**](UserListScheduleRequestBody.html)| body | [optional] 
 {: class="table-striped"}
 
@@ -8143,7 +8143,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit.
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
 CreateTimeOffLimitRequest body = new CreateTimeOffLimitRequest(); // CreateTimeOffLimitRequest | body
 try {
     TimeOffLimit result = apiInstance.postWorkforcemanagementManagementunitTimeofflimits(managementUnitId, body);
@@ -8159,7 +8159,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The management unit ID of the management unit. | 
+| **managementUnitId** | **String**| The ID of the management unit. | 
 | **body** | [**CreateTimeOffLimitRequest**](CreateTimeOffLimitRequest.html)| body | [optional] 
 {: class="table-striped"}
 
@@ -8208,7 +8208,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit.
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
 QueryTimeOffLimitValuesRequest body = new QueryTimeOffLimitValuesRequest(); // QueryTimeOffLimitValuesRequest | body
 try {
     QueryTimeOffLimitValuesResponse result = apiInstance.postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(managementUnitId, body);
@@ -8224,7 +8224,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The management unit ID of the management unit. | 
+| **managementUnitId** | **String**| The ID of the management unit. | 
 | **body** | [**QueryTimeOffLimitValuesRequest**](QueryTimeOffLimitValuesRequest.html)| body | [optional] 
 {: class="table-striped"}
 
@@ -8273,7 +8273,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String managementUnitId = "managementUnitId_example"; // String | The management unit ID.
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit
 CreateTimeOffPlanRequest body = new CreateTimeOffPlanRequest(); // CreateTimeOffPlanRequest | body
 try {
     TimeOffPlan result = apiInstance.postWorkforcemanagementManagementunitTimeoffplans(managementUnitId, body);
@@ -8289,7 +8289,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The management unit ID. | 
+| **managementUnitId** | **String**| The ID of the management unit | 
 | **body** | [**CreateTimeOffPlanRequest**](CreateTimeOffPlanRequest.html)| body | [optional] 
 {: class="table-striped"}
 
@@ -8338,7 +8338,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String managementUnitId = "managementUnitId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 CreateAdminTimeOffRequest body = new CreateAdminTimeOffRequest(); // CreateAdminTimeOffRequest | body
 try {
     TimeOffRequestList result = apiInstance.postWorkforcemanagementManagementunitTimeoffrequests(managementUnitId, body);
@@ -8354,7 +8354,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **body** | [**CreateAdminTimeOffRequest**](CreateAdminTimeOffRequest.html)| body | [optional] 
 {: class="table-striped"}
 
@@ -8403,7 +8403,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String managementUnitId = "managementUnitId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 TimeOffRequestQueryBody body = new TimeOffRequestQueryBody(); // TimeOffRequestQueryBody | body
 try {
     TimeOffRequestListing result = apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsQuery(managementUnitId, body);
@@ -8419,7 +8419,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **body** | [**TimeOffRequestQueryBody**](TimeOffRequestQueryBody.html)| body | [optional] 
 {: class="table-striped"}
 
@@ -8468,7 +8468,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit.
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
 QueryWaitlistPositionsRequest body = new QueryWaitlistPositionsRequest(); // QueryWaitlistPositionsRequest | body
 try {
     WaitlistPositionListing result = apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery(managementUnitId, body);
@@ -8484,7 +8484,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The management unit ID of the management unit. | 
+| **managementUnitId** | **String**| The ID of the management unit. | 
 | **body** | [**QueryWaitlistPositionsRequest**](QueryWaitlistPositionsRequest.html)| body | [optional] 
 {: class="table-striped"}
 
@@ -8533,7 +8533,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 LocalDate weekDateId = new LocalDate(); // LocalDate | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 MatchShiftTradeRequest body = new MatchShiftTradeRequest(); // MatchShiftTradeRequest | body
 String tradeId = "tradeId_example"; // String | The ID of the shift trade to update
@@ -8551,7 +8551,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **weekDateId** | **LocalDate**| The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
 | **body** | [**MatchShiftTradeRequest**](MatchShiftTradeRequest.html)| body | 
 | **tradeId** | **String**| The ID of the shift trade to update | 
@@ -8602,7 +8602,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 LocalDate weekDateId = new LocalDate(); // LocalDate | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 AddShiftTradeRequest body = new AddShiftTradeRequest(); // AddShiftTradeRequest | body
 try {
@@ -8619,7 +8619,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **weekDateId** | **LocalDate**| The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
 | **body** | [**AddShiftTradeRequest**](AddShiftTradeRequest.html)| body | 
 {: class="table-striped"}
@@ -8669,7 +8669,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 LocalDate weekDateId = new LocalDate(); // LocalDate | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 SearchShiftTradesRequest body = new SearchShiftTradesRequest(); // SearchShiftTradesRequest | body
 try {
@@ -8686,7 +8686,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **weekDateId** | **LocalDate**| The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
 | **body** | [**SearchShiftTradesRequest**](SearchShiftTradesRequest.html)| body | 
 {: class="table-striped"}
@@ -8737,7 +8737,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 LocalDate weekDateId = new LocalDate(); // LocalDate | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 BulkShiftTradeStateUpdateRequest body = new BulkShiftTradeStateUpdateRequest(); // BulkShiftTradeStateUpdateRequest | body
 Boolean forceAsync = true; // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
@@ -8755,7 +8755,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **weekDateId** | **LocalDate**| The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
 | **body** | [**BulkShiftTradeStateUpdateRequest**](BulkShiftTradeStateUpdateRequest.html)| body | 
 | **forceAsync** | **Boolean**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional] 
@@ -9456,7 +9456,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit.
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
 String timeOffLimitId = "timeOffLimitId_example"; // String | The ID of the time off limit object to set values for
 SetTimeOffLimitValuesRequest body = new SetTimeOffLimitValuesRequest(); // SetTimeOffLimitValuesRequest | body
 try {
@@ -9473,7 +9473,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The management unit ID of the management unit. | 
+| **managementUnitId** | **String**| The ID of the management unit. | 
 | **timeOffLimitId** | **String**| The ID of the time off limit object to set values for | 
 | **body** | [**SetTimeOffLimitValuesRequest**](SetTimeOffLimitValuesRequest.html)| body | [optional] 
 {: class="table-striped"}

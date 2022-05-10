@@ -277,7 +277,8 @@ public class UserScheduleAdherence  implements Serializable {
     OUTOFADHERENCE("OutOfAdherence"),
     UNSCHEDULED("Unscheduled"),
     UNKNOWN("Unknown"),
-    IGNORED("Ignored");
+    IGNORED("Ignored"),
+    EXPLAINED("Explained");
 
     private String value;
 
@@ -478,7 +479,7 @@ public class UserScheduleAdherence  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "Time when presence was last updated.  Used to calculate time in current status. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @ApiModelProperty(example = "null", value = "Time when presence was last updated. Used to calculate time in current status. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("presenceUpdateTime")
   public Date getPresenceUpdateTime() {
     return presenceUpdateTime;
